@@ -1,0 +1,4 @@
+﻿User-agent: *
+Disallow: /notes/tags*
+
+Sitemap: https://kostyanetsky.me/sitemap.xml
