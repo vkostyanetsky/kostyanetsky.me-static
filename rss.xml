@@ -4,7 +4,22 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 09 Mar 2020 05:21:32 +0700</lastBuildDate>
+        <lastBuildDate>Mon, 19 Oct 2020 18:35:56 +0700</lastBuildDate>
+        
+        <item>
+            <title>Nerd View</title>
+            <link>https://kostyanetsky.me/notes/nerdview/</link>
+            <guid isPermaLink="false">note-nerdview</guid>
+            <pubDate>Mon, 19 Oct 2020 18:35:56 +0700</pubDate>
+            <description><p class="measure-wide"><img alt="A chat with my daughter" src="https://kostyanetsky.me/notes/nerdview/telegram.png"/></p>
+<p class="measure-wide">On the screenshot above my little one is just letting me know where she is: walking down the street, at the school, at a playground. It's not her fault that I have a sort of nerd view: when I look at this chat I see nothing but code on Cherkin, which is just a bit broken. A little patch here and there and it will be fine :-)</p>
+<pre><code>And I exit home
+Then I enter school
+And I exit school
+Then I gonna swing
+</code></pre>
+<p class="measure-wide">We use Gherkin to write our autotests for <a class="link blue dim bb" href="https://github.com/Pr-Mex/vanessa-automation">Vanessa Automation</a>. I haven't made very much of them (especially in comparison with some of my colleagues). Well, it looks like I've done enough to twist the reality a few.</p></description>
+        </item>
         
         <item>
             <title>The Ninth Wave</title>
@@ -101,16 +116,6 @@
             <pubDate>Sat, 31 Mar 2018 00:00:00 +0700</pubDate>
             <description><p class="measure-wide">As for me, it's a great <a class="link blue dim bb" href="https://www.instagram.com/p/BXTBuGugG5y">illustration</a> for an everlasting moan "why do you always stare at your smartphone blah blah blah". A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
 <p class="measure-wide">The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p></description>
-        </item>
-        
-        <item>
-            <title>Double "i"</title>
-            <link>https://kostyanetsky.me/notes/double-i/</link>
-            <guid isPermaLink="false">note-double-i</guid>
-            <pubDate>Fri, 09 Mar 2018 14:07:40 +0700</pubDate>
-            <description><p class="measure-wide">I was trying to understand how to transliterate my surname properly yesterday. Ministry of Foreign Affairs says it should be written as "Kostianetskii" in English — with double "i" at the end. It's the quite rare combination: "skiing" is the only frequency word that I'm able to remember.</p>
-<p class="measure-wide">It caused my curiosity and I googled it. The possible reason I came across is funny: cursive writing! Double "i" looks well only on a computer screen but it suddenly turns into "u" when you try to write it on paper.</p>
-<p class="measure-wide">More details are <a class="link blue dim bb" href="https://spellingisnotcrazy.weebly.com/blog/category/the-letter-i">here</a>.</p></description>
         </item>
         
     </channel>
