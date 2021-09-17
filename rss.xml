@@ -4,7 +4,22 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Wed, 08 Sep 2021 00:12:00 +0700</lastBuildDate>
+        <lastBuildDate>Wed, 15 Sep 2021 21:47:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Hammer & Nails</title>
+            <link>https://kostyanetsky.me/notes/hammer-and-nails/</link>
+            <guid isPermaLink="false">note-hammer-and-nails</guid>
+            <pubDate>Wed, 15 Sep 2021 21:47:48 +0700</pubDate>
+            <description><p class="measure-wide">I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
+<p class="measure-wide">Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
+<p class="measure-wide">The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
+<p class="measure-wide">However, instead of a short cycle I saw this:</p>
+<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
+<p class="measure-wide">There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
+<p class="measure-wide">Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be quite small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
+<p class="measure-wide">You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities! If all you have is a hammer, everything around looks like nails.</p></description>
+        </item>
         
         <item>
             <title>No Comment</title>
@@ -122,15 +137,6 @@ Then I gonna swing
             <description><p class="measure-wide">1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
 <p class="measure-wide">Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
 <p class="measure-wide">In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a class="link blue dim bb" href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
-        </item>
-        
-        <item>
-            <title>These Nasty Smartphones</title>
-            <link>https://kostyanetsky.me/notes/these-nasty-smartphones/</link>
-            <guid isPermaLink="false">note-these-nasty-smartphones</guid>
-            <pubDate>Sat, 31 Mar 2018 00:00:00 +0700</pubDate>
-            <description><p class="measure-wide">As for me, it's a great <a class="link blue dim bb" href="https://www.instagram.com/p/BXTBuGugG5y" target="_blank">illustration</a> for an everlasting moan "why do you always stare at your smartphone blah blah blah". A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
-<p class="measure-wide">The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p></description>
         </item>
         
     </channel>
