@@ -4,7 +4,21 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Wed, 15 Sep 2021 21:47:48 +0700</lastBuildDate>
+        <lastBuildDate>Wed, 22 Sep 2021 21:25:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Diablo</title>
+            <link>https://kostyanetsky.me/notes/diablo/</link>
+            <guid isPermaLink="false">note-diablo</guid>
+            <pubDate>Wed, 22 Sep 2021 21:25:48 +0700</pubDate>
+            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
+<p class="measure-wide">The nice release of the “We Are Doomed” IT podcast about developer burnout. No insights, but you can find something useful. For example, what about not switching to pet projects after work, but close your laptop and go for a walk?</p>
+<p class="measure-wide">I liked the analogy with video games, somewhere closer to the middle:</p>
+<blockquote>
+<p class="measure-wide">There was such a game — Diablo. RPG, all sorts of spells, you know. A character has mana and health, and when you have no mana to cast… Ha, I sound like a nerd! Well, nevermind. Briefly speaking, when you have no mana to cast, it's taken from your health.</p>
+</blockquote>
+<p class="measure-wide">— Doctor Cat</p></description>
+        </item>
         
         <item>
             <title>Hammer & Nails</title>
@@ -114,16 +128,6 @@ Then I gonna swing
 <p class="measure-wide"><em>― Richard Feynman, ”Surely You're Joking, Mr. Feynman!”</em></p>
 </blockquote>
 <p class="measure-wide">As for me, there is a lot of efforts between “all kinds of mistakes” and “love to listen”, but it is such a good synopsis. Working on it!</p></description>
-        </item>
-        
-        <item>
-            <title>Message to User</title>
-            <link>https://kostyanetsky.me/notes/message-to-user/</link>
-            <guid isPermaLink="false">note-message-to-user</guid>
-            <pubDate>Mon, 30 Apr 2018 09:37:18 +0700</pubDate>
-            <description><p class="measure-wide">1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
-<p class="measure-wide">Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
-<p class="measure-wide">In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a class="link blue dim bb" href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
         </item>
         
     </channel>
