@@ -4,7 +4,31 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Wed, 22 Sep 2021 21:25:48 +0700</lastBuildDate>
+        <lastBuildDate>Wed, 29 Sep 2021 22:00:00 +0700</lastBuildDate>
+        
+        <item>
+            <title>Building This Site on GitHub</title>
+            <link>https://kostyanetsky.me/notes/build-on-github/</link>
+            <guid isPermaLink="false">note-build-on-github</guid>
+            <pubDate>Wed, 29 Sep 2021 22:00:00 +0700</pubDate>
+            <description><p class="measure-wide">For the last year this site has been working on a simple platform: statics, GitHub and my domain. All the pages were pre-generated and placed in a GitHub's <a class="link blue dim bb" href="https://github.com/vkostyanetsky/kostyanetsky.me-static" target="_blank">repository</a> with <a class="link blue dim bb" href="https://pages.github.com/" target="_blank">GitHub Pages</a> enabled.</p>
+<p class="measure-wide">I collected statics using a script. It was working with a list of text files, pedantically arranged in folders. The script rummaged through them and generated HTML files. Then I manually pushed them to the repository.</p>
+<p class="measure-wide">This scheme worked well, but the number of clicks annoyed me. Here is the script pull, and there is the script pull, and then you have to tinker with the git. I wanted it to be simpler.</p>
+<p class="measure-wide">At some point, I figured out that not only the deployment of statics, but also the assembly can be shifted onto the shoulders of GitHub! I put together some thoughts and added two more repositories:</p>
+<ol class="measure-wide">
+<li>A <a class="link blue dim bb" href="https://github.com/vkostyanetsky/kostyanetsky.me" target="_blank">repository</a> of initial data. Here I put the content of the site: the text files and a bit of metadata (page titles, dates of pages creation, tags for notes, and so on).</li>
+<li>A <a class="link blue dim bb" href="https://github.com/vkostyanetsky/BlogBuilder" target="_blank">repository</a> of the script for generating statics. In addition to the script itself, I put various assets here (icons, styles, manifests — in general, everything that doesn't need to be generated every time, but you have to “put” it next to the resulting HTML).</li>
+</ol>
+<p class="measure-wide">Then I wrote an <a class="link blue dim bb" href="https://github.com/vkostyanetsky/kostyanetsky.me/blob/main/.github/workflows/main.yml" target="_blank">action</a> that wakes up with every push to the repository with the initial data. Shortly, its logic:</p>
+<ol class="measure-wide">
+<li>Clone the repository with statics and the repository with the generating script;</li>
+<li>Update the repository with statics using the generating script;</li>
+<li>Push changes of the repository with static to the main branch;</li>
+<li>Notify the owner (me) via Telegram.</li>
+</ol>
+<p class="measure-wide">Voilà! Now, whenever the repository with the original data changes, the GitHub immediately (well, as soon as possible — within a minute) updates the repository with the site and deploys it via GitHub Pages. A bonus is a web interface to manage the site (in fact, the GitHub site). No Code. :-)</p>
+<p class="measure-wide">While I'm at it, I added links for editing pages directly to the site (the pencil icon in the upper-right corner). This is intended as a convenience for me, but anyone who finds a typo can send a PR. Thank you in advance!</p></description>
+        </item>
         
         <item>
             <title>Diablo</title>
@@ -112,21 +136,6 @@ Then I gonna swing
             <pubDate>Sun, 22 Jul 2018 19:00:55 +0700</pubDate>
             <description><p class="measure-wide">Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
 <p class="measure-wide">The book is really good, I had <a class="link blue dim bb" href="https://kostyanetsky.me/notes/hpmor" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a class="link blue dim bb" href="https://planeta.ru/campaigns/hpmor" target="_blank">make a request</a> now.</p></description>
-        </item>
-        
-        <item>
-            <title>FCE Results</title>
-            <link>https://kostyanetsky.me/notes/fce-results/</link>
-            <guid isPermaLink="false">note-fce-results</guid>
-            <pubDate>Sun, 15 Jul 2018 10:48:00 +0700</pubDate>
-            <description><p class="measure-wide">Cambridge just sent me results of my FCE exam in June and — dramatic drum roll — I passed it! According to the statement of results, I made a bunch of mistakes in writing tasks but particularly took it out during a Speaking test. It's a pity that examiners don't give comments and reasons so it's hard to estimate the results properly; however, it's quite clear what to do next :) My English teacher said that Cambridge used to provide an overall score only earlier and it sounded like “take it any way you want, dear pretenders”.</p>
-<p class="measure-wide">Well, I guess I should begin my preparation for CAE in the next year.</p>
-<p class="measure-wide">Speaking about languages, I remembered Feynman with his famous “Surely You're Joking”. Among many things, he told that he learned to play on a frigideira when he lived in Brazil and had reached so high level of skill that he served as a model for local musicians.</p>
-<blockquote>
-<p class="measure-wide">My theory is that it's like a person who speaks French who comes to America. At first they're making all kinds of mistakes, and you can hardly understand them. Then they keep on practicing until they speak rather well, and you find there's a delightful twist to their way of speaking their accent is rather nice, and you love to listen to it.</p>
-<p class="measure-wide"><em>― Richard Feynman, ”Surely You're Joking, Mr. Feynman!”</em></p>
-</blockquote>
-<p class="measure-wide">As for me, there is a lot of efforts between “all kinds of mistakes” and “love to listen”, but it is such a good synopsis. Working on it!</p></description>
         </item>
         
     </channel>
