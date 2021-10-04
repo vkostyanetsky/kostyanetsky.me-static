@@ -10,11 +10,11 @@
 
     <title>
         
-            Hammer & Nails
+            Top Salaries
         
     </title>
 
-    <meta name="description" content="How to solve a simple task in an extremely difficult way?" />
+    <meta name="description" content="A few words about Nikita Tonsky's experiment about CSV parsing in different languages." />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Hammer & Nails"/>
-    <meta property="og:description" content="How to solve a simple task in an extremely difficult way?"/>
+    <meta property="og:title" content="Top Salaries"/>
+    <meta property="og:description" content="A few words about Nikita Tonsky's experiment about CSV parsing in different languages."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/1c/hammer-and-nails/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/1c/top-salaries/" />    
 
     <!-- Google Fonts -->
 
@@ -58,8 +58,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/1c/no-comment/';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/1c/top-salaries/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/1c/hammer-and-nails/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -107,7 +107,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/1c/hammer-and-nails/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/tags/1c/top-salaries/" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -115,7 +115,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/hammer-and-nails/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
+                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/top-salaries/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
             
 
             </div>
@@ -131,32 +131,24 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Hammer & Nails</h1>
+        <h1 class="f-subheadline lh-solid">Top Salaries</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
-<p class="measure-wide">Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
-<p class="measure-wide">The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
-<p class="measure-wide">However, instead of a short cycle, I saw this:</p>
-<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
-<p class="measure-wide">There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
-<p class="measure-wide">Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
-<p class="measure-wide">You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p>
+        <blockquote>
+<p class="measure-wide">There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
+<p class="measure-wide"><em><a class="link blue dim bb" href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
+</blockquote>
+<p class="measure-wide">Threw in my <a class="link blue dim bb" href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter on the bash, so I just wrote it as I was used to.</p>
+<p class="measure-wide">What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
+<p class="measure-wide">In general, the whole story reminded Eugene Stepanishev's <a class="link blue dim bb" href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
+<p class="measure-wide">What was funny: for a couple of <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p>
         <p class="f6 mt4">
-            15 September 2021
+            2 October 2021
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
                 </span>
             
         </p>
@@ -176,11 +168,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/no-comment/">No Comment</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/hammer-and-nails/">Hammer & Nails</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/top-salaries/">Top Salaries</a>
                                 
 
             </p> 
