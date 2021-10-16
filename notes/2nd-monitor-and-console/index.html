@@ -10,11 +10,11 @@
 
     <title>
         
-            Top Salaries
+            Second Monitor Management via Console
         
     </title>
 
-    <meta name="description" content="A few words about Nikita Tonsky's experiment about CSV parsing in different languages." />
+    <meta name="description" content="A few words about an utility which allow to manage monitors via command line." />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Top Salaries"/>
-    <meta property="og:description" content="A few words about Nikita Tonsky's experiment about CSV parsing in different languages."/>
+    <meta property="og:title" content="Second Monitor Management via Console"/>
+    <meta property="og:description" content="A few words about an utility which allow to manage monitors via command line."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/top-salaries/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/2nd-monitor-and-console/" />    
 
     <!-- Google Fonts -->
 
@@ -58,8 +58,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/build-on-github/';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/2nd-monitor-and-console/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/top-salaries/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -107,7 +107,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/top-salaries/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/2nd-monitor-and-console/" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -115,7 +115,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/top-salaries/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
+                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/2nd-monitor-and-console/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
             
 
             </div>
@@ -131,24 +131,30 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Top Salaries</h1>
+        <h1 class="f-subheadline lh-solid">Second Monitor Management via Console</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <blockquote>
-<p class="measure-wide">There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
-<p class="measure-wide"><em><a class="link blue dim bb" href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
-</blockquote>
-<p class="measure-wide">Threw in my <a class="link blue dim bb" href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
-<p class="measure-wide">What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
-<p class="measure-wide">In general, the whole story reminded Eugene Stepanishev's <a class="link blue dim bb" href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
-<p class="measure-wide">What was funny: for a couple of <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p>
+        <p class="measure-wide">I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
+<p class="measure-wide">What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
+<p class="measure-wide">I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
+<pre><code>MultiMonitorTool.exe / disable 2
+MultiMonitorTool.exe / enable 2
+MultiMonitorTool.exe / switch 2
+</code></pre>
+<p class="measure-wide">For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
+<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">And then, when you need to turn on the monitor, load the saved config:</p>
+<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p>
         <p class="f6 mt4">
-            2 October 2021
+            16 October 2021
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/workplace/">workplace</a>
                 </span>
             
         </p>
@@ -168,11 +174,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/build-on-github/">Building This Site on GitHub</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/top-salaries/">Top Salaries</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/2nd-monitor-and-console/">Second Monitor Management via Console</a>
                                 
 
             </p> 

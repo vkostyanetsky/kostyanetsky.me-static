@@ -137,6 +137,39 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/2nd-monitor-and-console/">Second Monitor Management via Console</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
+<p class="measure-wide">What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
+<p class="measure-wide">I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
+<pre><code>MultiMonitorTool.exe / disable 2
+MultiMonitorTool.exe / enable 2
+MultiMonitorTool.exe / switch 2
+</code></pre>
+<p class="measure-wide">For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
+<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">And then, when you need to turn on the monitor, load the saved config:</p>
+<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p>
+        <p class="f6 mt4">
+            16 October 2021
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/workplace/">workplace</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/top-salaries/">Top Salaries</a></h2>
 
             

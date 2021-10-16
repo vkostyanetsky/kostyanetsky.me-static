@@ -4,7 +4,28 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 02 Oct 2021 16:49:35 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 16 Oct 2021 19:55:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Second Monitor Management via Console</title>
+            <link>https://kostyanetsky.me/notes/2nd-monitor-and-console/</link>
+            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
+            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
+            <description><p class="measure-wide">I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
+<p class="measure-wide">What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
+<p class="measure-wide">I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
+<pre><code>MultiMonitorTool.exe / disable 2
+MultiMonitorTool.exe / enable 2
+MultiMonitorTool.exe / switch 2
+</code></pre>
+<p class="measure-wide">For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
+<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">And then, when you need to turn on the monitor, load the saved config:</p>
+<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
+        </item>
         
         <item>
             <title>Top Salaries</title>
@@ -131,17 +152,6 @@ Then I gonna swing
             <pubDate>Sun, 02 Sep 2018 16:36:53 +0700</pubDate>
             <description><p class="measure-wide">There is a good <a class="link blue dim bb" href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I've <a class="link blue dim bb" href="https://www.facebook.com/lilya.kim/posts/490845771117074" target="_blank">learnt</a> in Facebook a couple of years ago. As for me, it uses different words to make the same point.</p>
 <p class="measure-wide">By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p></description>
-        </item>
-        
-        <item>
-            <title>Beware the Daughter of the Sea</title>
-            <link>https://kostyanetsky.me/notes/jaina/</link>
-            <guid isPermaLink="false">note-jaina</guid>
-            <pubDate>Sun, 29 Jul 2018 16:19:10 +0700</pubDate>
-            <description><p class="measure-wide">Natalia O'Shea has sung a Jaina's song in a Russian version of a trailer for a future update of World of Warcraft. As for me, she's extraordinary good in it — I mean, she knows how to make a proper mood and season a speech with steel.</p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5j-S448XC8k" width="560"></iframe>
-<p class="measure-wide">By the way, speaking about her and “Melnitsa” as a whole thing — all of their most powerful songs are about something particular. We were at a concert dedicated to the “Luciferase” release and it's hard to compare, seriously. Perhaps, I didn't know something essential to understanding a context, but sometimes it was even barely possible to figure out a story which I was hearing.</p>
-<p class="measure-wide">Just watch a video I posted under. You don't need to know something special about the World of Warcraft universe, do you? For example, I haven't played WoW and not planning to do it, but the end of the song literally creeps me out :-)</p></description>
         </item>
         
     </channel>
