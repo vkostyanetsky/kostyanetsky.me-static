@@ -4,7 +4,18 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 16 Oct 2021 19:55:48 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 30 Oct 2021 17:14:56 +0700</lastBuildDate>
+        
+        <item>
+            <title>Matryoshka</title>
+            <link>https://kostyanetsky.me/notes/matryoshka/</link>
+            <guid isPermaLink="false">note-matryoshka</guid>
+            <pubDate>Sat, 30 Oct 2021 17:14:56 +0700</pubDate>
+            <description><p class="measure-wide">A few days ago, there was a link to 1Ci certificate in the team chat (a colleague passed their junior <a class="link blue dim bb" href="https://academy.1ci.com/courses/1c-junior-developer" target="_blank">course</a>). I go over, I get a PDF. Everything is OK, right? Well, then I open the file:</p>
+<p class="measure-wide"><img alt="Error.pdf" src="https://kostyanetsky.me/notes/matryoshka/not-your-certificate.png"/></p>
+<p class="measure-wide">Honestly? I am even delighted. We need to implement this UX in our products: you press, for example, the “print” button for a document, and it gives you a PDF! And inside it — a link to another PDF! And inside it — “entity is not filled”, so go fill.</p>
+<p class="measure-wide">You can sell it as a Russian way of dealing with errors. This is, like, for historical reasons! Blame all the damned matryoshkas, and <a class="link blue dim bb" href="https://en.wikipedia.org/wiki/Koschei" target="_blank">Koschei</a> with his needle. It is, as you remember, in the egg, and it is in the duck, which is in the rabbit, tucked into the chest, and further along the chain of nesting.</p></description>
+        </item>
         
         <item>
             <title>Second Monitor Management via Console</title>
@@ -143,15 +154,6 @@ Then I gonna swing
 </blockquote>
 <p class="measure-wide">Surprisingly, you're certainly satisfied with the trip when it's done.</p>
 <p class="measure-wide">There's some kind of magic in it.</p></description>
-        </item>
-        
-        <item>
-            <title>A Principle of Non-Judgemental Attitude</title>
-            <link>https://kostyanetsky.me/notes/non-judgmental-attitude/</link>
-            <guid isPermaLink="false">note-non-judgmental-attitude</guid>
-            <pubDate>Sun, 02 Sep 2018 16:36:53 +0700</pubDate>
-            <description><p class="measure-wide">There is a good <a class="link blue dim bb" href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I've <a class="link blue dim bb" href="https://www.facebook.com/lilya.kim/posts/490845771117074" target="_blank">learnt</a> in Facebook a couple of years ago. As for me, it uses different words to make the same point.</p>
-<p class="measure-wide">By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p></description>
         </item>
         
     </channel>
