@@ -4,7 +4,22 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 30 Oct 2021 17:14:56 +0700</lastBuildDate>
+        <lastBuildDate>Tue, 16 Nov 2021 23:40:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Infostart Event 2021</title>
+            <link>https://kostyanetsky.me/notes/infostart-event-2021/</link>
+            <guid isPermaLink="false">note-infostart-event-2021</guid>
+            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
+            <description><p class="measure-wide">Last week I visited Moscow for <a class="link blue dim bb" href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
+<ul class="measure-wide">
+<li>Listen to some interesting reports — check;</li>
+<li>Get to know a few cool people — check;</li>
+<li>Chat with friends — check!</li>
+</ul>
+<p class="measure-wide">As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
+<p class="measure-wide">In order not to <s>get up</s> to fly twice, I passed the <a class="link blue dim bb" href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p></description>
+        </item>
         
         <item>
             <title>Matryoshka</title>
@@ -139,21 +154,6 @@ Then I gonna swing
             <description><p class="measure-wide">Yesterday morning, I was buying gifts for my women. While a florist was makings bouquets for me, we had a small talk and I suddenly caught her eye. She was looking at the growing crowd of customers with calmness and a clearly readable shadow of doom. This is probably how sailors looking at a surging wave which is about to bury their boat :-)</p>
 <p class="measure-wide">People outside the flower industry grin sometimes — they say, eight of March is such a magical holiday for all the florists who make a fortune in ten hours. Well, income is really good these days, but literally anybody who has ever worked in this sphere more often associates the holiday (and a couple of days before it, by the way) with a monstrous strain on health and nerves.</p>
 <p class="measure-wide">I can say that I got off cheaply: was just deploying and servicing some IT of a local net of flower shops, nothing more (by the way, I want to proudly <a class="link blue dim bb" href="http://rosetta.florist/" target="_blank">recommend</a> my former colleagues!). Nonetheless, the smell of flowers caused me Vietnam syndrome for a long time :-)</p></description>
-        </item>
-        
-        <item>
-            <title>Snowboard Effect</title>
-            <link>https://kostyanetsky.me/notes/snowboard-effect/</link>
-            <guid isPermaLink="false">note-snowboard-effect</guid>
-            <pubDate>Sat, 01 Dec 2018 13:58:43 +0700</pubDate>
-            <description><p class="measure-wide"><a href="https://kostyanetsky.me/notes/snowboard-effect/standing.jpg" target="_blank"><img alt="Standing!" src="https://kostyanetsky.me/notes/snowboard-effect/standing-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/snowboard-effect/sitting.jpg" target="_blank"><img alt="Sitting!" src="https://kostyanetsky.me/notes/snowboard-effect/sitting-thumbnail.jpg"/></a></p>
-<p class="measure-wide">You're sliding down the side of a mountain and trying to feel an equilibrium point, for the hundredth time. However, your nagging back is the only thing you're able to feel, and the Vaas speech from Far Cry 3 isn't going out of your mind.</p>
-<blockquote>
-<p class="measure-wide">Did I ever tell you what the definition of insanity is? Insanity is doing the exact… Same fucking thing… Over and over again expecting… Shit to change… That. Is. Crazy.</p>
-<p class="measure-wide"><em>― Vaas Montenegro, Far Cry 3</em></p>
-</blockquote>
-<p class="measure-wide">Surprisingly, you're certainly satisfied with the trip when it's done.</p>
-<p class="measure-wide">There's some kind of magic in it.</p></description>
         </item>
         
     </channel>

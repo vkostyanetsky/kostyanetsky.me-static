@@ -10,11 +10,11 @@
 
     <title>
         
-            Done
+            Infostart Event 2021
         
     </title>
 
-    <meta name="description" content="My notes about life, work and other fascinating things around me." />
+    <meta name="description" content="A short note about the last conference." />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Done"/>
-    <meta property="og:description" content="My notes about life, work and other fascinating things around me."/>
+    <meta property="og:title" content="Infostart Event 2021"/>
+    <meta property="og:description" content="A short note about the last conference."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/done/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/pgsql/infostart-event-2021/" />    
 
     <!-- Google Fonts -->
 
@@ -107,7 +107,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/done/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/tags/pgsql/infostart-event-2021/" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -115,7 +115,7 @@
             <div class="mt3">
 
             
-                    <span class="f4 f4-ns">✎</span>
+                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/infostart-event-2021/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
             
 
             </div>
@@ -129,17 +129,11 @@
 <section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
     
 
-    <article>
-
-        <h1 class="f-subheadline lh-solid">Done</h1>
-
-        
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/infostart-event-2021/">Infostart Event 2021</a></h2>
-
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Infostart Event 2021</h1>
             
+        
     
     <div class="f4 lh-copy black mb5">
         <p class="measure-wide">Last week I visited Moscow for <a class="link blue dim bb" href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
@@ -158,11 +152,11 @@
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
                 </span>
             
         </p>
@@ -170,48 +164,13 @@
 
 
 
+        <div class="likely">
+            <div class="twitter">Tweet</div>
+            <div class="telegram">Send</div>        
+            <div class="vkontakte">Share</div>
+            <div class="facebook">Share</div>
+        </div>
         
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/build-on-github/">Building This Site on GitHub</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">For the last year this site has been working on a simple platform: statics, GitHub and my domain. All the pages were pre-generated and placed in a GitHub's <a class="link blue dim bb" href="https://github.com/vkostyanetsky/kostyanetsky.me-static" target="_blank">repository</a> with <a class="link blue dim bb" href="https://pages.github.com/" target="_blank">GitHub Pages</a> enabled.</p>
-<p class="measure-wide">I collected statics using a script. It was working with a list of text files, pedantically arranged in folders. The script rummaged through them and generated HTML files. Then I manually pushed them to the repository.</p>
-<p class="measure-wide">This scheme worked well, but the number of clicks annoyed me. Here is the script pull, and there is the script pull, and then you have to tinker with the git. I wanted it to be simpler.</p>
-<p class="measure-wide">At some point, I figured out that not only the deployment of statics, but also the assembly can be shifted onto the shoulders of GitHub. I put together some thoughts and added two more repositories:</p>
-<ol class="measure-wide">
-<li>A <a class="link blue dim bb" href="https://github.com/vkostyanetsky/kostyanetsky.me" target="_blank">repository</a> of initial data. Here I put the content of the site: the text files and a bit of metadata (page titles, dates of pages creation, tags for notes, and so on).</li>
-<li>A <a class="link blue dim bb" href="https://github.com/vkostyanetsky/BlogBuilder" target="_blank">repository</a> of the script for generating statics. In addition to the script itself, I put various assets here (icons, styles, manifests — in general, everything that doesn't need to be generated every time, but you have to “put” it next to the resulting HTML).</li>
-</ol>
-<p class="measure-wide">Then I wrote an <a class="link blue dim bb" href="https://github.com/vkostyanetsky/kostyanetsky.me/blob/main/.github/workflows/main.yml" target="_blank">action</a> that wakes up with every push to the repository with the initial data. Shortly, its logic:</p>
-<ol class="measure-wide">
-<li>Clone the repository with statics and the repository with the generating script;</li>
-<li>Update the repository with statics using the generating script;</li>
-<li>Push changes of the repository with static to the main branch;</li>
-<li>Notify the owner (me) via Telegram.</li>
-</ol>
-<p class="measure-wide">Voilà! Now, whenever the repository with the original data changes, the GitHub immediately (well, as soon as possible — within a minute) updates the repository with the site and deploys it via GitHub Pages. A bonus is a web interface to manage the site (in fact, the GitHub site). No Code. :-)</p>
-<p class="measure-wide">While I'm at it, I added links for editing pages directly to the site (the pencil icon in the upper-right corner). This is intended as a convenience for me, but anyone who finds a typo can send a PR. Thank you in advance!</p>
-        <p class="f6 mt4">
-            29 September 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/blog/">blog</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
         
 
     </article>
