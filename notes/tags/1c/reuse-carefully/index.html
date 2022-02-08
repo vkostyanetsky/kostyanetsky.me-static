@@ -1,0 +1,207 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            Reuse Carefully
+        
+    </title>
+
+    <meta name="description" content="When you work with modules that reuses of return values, you can make an unpleasant error." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Reuse Carefully"/>
+    <meta property="og:description" content="When you work with modules that reuses of return values, you can make an unpleasant error."/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/1c/reuse-carefully/" />    
+
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"> 
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="https://kostyanetsky.me/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/likely/likely.css">    
+
+    <!-- Twitter -->
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/1c/infostart-event-2021/';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/blog.css">
+    <script src="https://kostyanetsky.me/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href="https://kostyanetsky.me"><img class="br-100" src="https://kostyanetsky.me/assets/images/me.jpg" title="Hi!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me">Vlad's Site</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me/skills/">Skills</a>
+            
+
+            <!--
+
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me/projects/">Projects</a>
+                        
+
+            -->
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.me/notes/">Notes</a>
+            
+
+        </div>
+        
+    </nav>
+    
+    <nav class="dtc-l v-mid tc tr-l">
+
+        
+            <a href="https://kostyanetsky.ru/notes/tags/1c/reuse-carefully/" class="link f5 f5-ns dim blue bb">RU</a>
+        
+
+        
+
+            <div class="mt3">
+
+            
+                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/reuse-carefully/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
+            
+
+            </div>
+            
+        
+
+    </nav>
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Reuse Carefully</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">I'll tell you about a funny and a little embarrassing case that I took apart in January. The essence in a nutshell: a huge auto-test based on Vanessa, which is intended to check the VAT calculation, falls somewhere near the end.</p>
+<p class="measure-wide">I start investigating. First, I look at the screenshots in Allure: OK, the reason is obvious – in one of the documents, the conditional appearance for the field with the VAT amount doesn't work. The test expected it to be unavailable if the VAT rate is zero, but it turned out to be available somehow.</p>
+<p class="measure-wide">It's a mess, it needs to be fixed! I look at the condition in the code: well, it locks the field if the VAT rate is in the list of “zero” rates (list of VAT rates whose rate is equal to zero). Everything appears to be simple and logical. What the hell could possibly go wrong here?</p>
+<div class="blog-embedded-tweet" data-tweet-id="1489980393675702281"><a class="link blue dim bb" href="https://twitter.com/EffinBirds/status/1489980393675702281" target="_blank">Tweet</a></div>
+<p class="measure-wide">Well, I try to reproduce the bug manually. And there, all of a sudden, everything is nice: the conditional appearance works as it should. Floating bug, or what? I run the auto-test again, at the right moment I jump in with the debugger and find some outright garbage: in the list of “zero” rates, besides themselves, there are a bunch of empty links!</p>
+<p class="measure-wide">Frankly speaking, I was scratching the back of my head. The document receives this list from the common module with <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/5ec036ee148606aad9caefbc9305bfb0" target="_blank">this code</a>. An empty ref from here, even theoretically, cannot be obtained. Moreover, the module has the “Reuse Return Values” option ​​enabled, and the function is actually executes once somewhere at the beginning of the test, before all complex data manipulations. So, the test cannot affect it in any way, in theory.</p>
+<p class="measure-wide">Is it a dead end? Well, experienced colleagues have probably already guessed everything, but I had to dance around the bug  and even check the <a class="link blue dim bb" href="https://its.1c.ru/db/v8std/content/724/hdoc" target="_blank">standard</a>, until got the following: <strong>return values ​​cache in 1C can be changed</strong>. I mean, not by calling RefreshReusableValues​​(), but by changing reusable values directly.</p>
+<p class="measure-wide">How? Well, if you get some values ​​from a cached common module, and they are not of a primitive type (string, number, etc.), you will not get the value itself, but a pointer to it somewhere in memory. You write this pointer to a variable and try to change it – you change the cache.</p>
+<p class="measure-wide">It's that simple, yes. This is what happened in my case: the form of another document called the method that generates the list of “zero” rates. Having received a list of values, it added an empty ref to it and used it in its logic. Thus, each time this form opens, the list cache contains more and more empty refs, which eventually broke the document at the other end of the configuration.</p>
+<div class="blog-embedded-tweet" data-tweet-id="1488165946342662144"><a class="link blue dim bb" href="https://twitter.com/EffinBirds/status/1488165946342662144" target="_blank">Tweet</a></div>
+<p class="measure-wide">In a good way, the platform should throw exceptions when developer trying to change the cache, but until this happens, you have to take care yourself. For example, when developing cached modules, return immutable data types from them (FixedStructure instead of Structure, FixedArray instead of Array, and so on). True, this is not a 100% protection: firstly, fixed types are not applicable everywhere, and secondly, even in the latest versions of the SSL, this is far from being done everywhere. Do you know many configurations not based on SSL?</p>
+<p class="measure-wide">Sonar also know nothing about the problem, as well as less popular software. No silver bullet, in short – check your code, look at the code of your colleagues and try not to forget about another elegant way to bang ourselves in the foot.</p>
+        <p class="f6 mt4">
+            8 February 2022
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        <div class="likely">
+            <div class="twitter">Tweet</div>
+            <div class="telegram">Send</div>        
+            <div class="vkontakte">Share</div>
+            <div class="facebook">Share</div>
+        </div>
+        
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/infostart-event-2021/">Infostart Event 2021</a> &larr;
+                
+                Ctrl
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Email: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.me</a></p>
+    <p class="f6 lh-solid">Telegram: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">GitHub: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="https://kostyanetsky.me/rss.xml">RSS</a> 
+
+</footer>
+
+</div>
+</body>
+</html>
