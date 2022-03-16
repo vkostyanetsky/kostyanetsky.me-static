@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/do-not-confuse/</loc>
+        <lastmod>2022-03-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/no-more-google-fonts/</loc>
         <lastmod>2022-02-19</lastmod>
         <changefreq>weekly</changefreq>
