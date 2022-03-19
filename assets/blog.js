@@ -1,16 +1,3 @@
-// Twitter
-
-window.addEventListener('load', function () {
-    
-    document.querySelectorAll('.blog-embedded-tweet').forEach(function (tweetEl) {
-        
-        tweetEl.innerHTML = '';
-        twttr.widgets.createTweet(tweetEl.dataset.tweetId, tweetEl);
-        
-    });
-  
-})
-
 // Hotkeys
 
 document.addEventListener('keydown', function(event) {
