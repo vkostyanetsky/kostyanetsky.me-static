@@ -129,6 +129,45 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/blog/no-more-embedded-tweets/">No More Embedded Tweets</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">As soon as I <a class="link blue dim bb" href="https://kostyanetsky.me/notes/no-more-google-fonts/" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
+<p class="measure-wide">How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a class="link blue dim bb" href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
+<p class="measure-wide">How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
+<p class="measure-wide"><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
+<p class="measure-wide">The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
+<p class="measure-wide">A few words about the technical side. I was too lazy to screen each tweet manually, so I went online, thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a class="link blue dim bb" href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
+<p class="measure-wide">Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
+<blockquote>
+<p class="measure-wide">npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
+</blockquote>
+<p class="measure-wide">That's all. Some kind of fairy tale, I would say!</p>
+<p class="measure-wide">I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p>
+        <p class="f6 mt4">
+            21 Marth 2022
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/blog/">blog</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/webdev/">webdev</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/nodejs/">Node.js</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/blog/no-more-google-fonts/">No More Google Fonts</a></h2>
 
             
