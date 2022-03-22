@@ -16,12 +16,12 @@
 <p class="measure-wide">How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
 <p class="measure-wide"><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
 <p class="measure-wide">The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
-<p class="measure-wide">A few words about the technical side. I was too lazy to screen each tweet manually, so I went online, thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a class="link blue dim bb" href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
+<p class="measure-wide">A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a class="link blue dim bb" href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
 <p class="measure-wide">Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
 <blockquote>
 <p class="measure-wide">npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
 </blockquote>
-<p class="measure-wide">That's all. Some kind of fairy tale, I would say!</p>
+<p class="measure-wide">That's all. I want to donate the author, really.</p>
 <p class="measure-wide">I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p></description>
         </item>
         
