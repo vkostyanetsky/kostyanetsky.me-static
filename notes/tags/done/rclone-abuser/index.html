@@ -10,11 +10,11 @@
 
     <title>
         
-            Second Monitor Management via Console
+            A Script to Sync With NAS
         
     </title>
 
-    <meta name="description" content="A few words about an utility which allow to manage monitors via command line." />
+    <meta name="description" content="I posted on GitHub a Python script which I use to sync with NAS using rclone." />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Second Monitor Management via Console"/>
-    <meta property="og:description" content="A few words about an utility which allow to manage monitors via command line."/>
+    <meta property="og:title" content="A Script to Sync With NAS"/>
+    <meta property="og:description" content="I posted on GitHub a Python script which I use to sync with NAS using rclone."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/workplace/2nd-monitor-and-console/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/done/rclone-abuser/" />    
 
     <!-- Tachyons -->
 
@@ -50,8 +50,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/workplace/rclone-abuser/';
-        let ctrlRightUrl    = '';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/done/build-on-github/';
 
     </script>
     
@@ -99,7 +99,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/workplace/2nd-monitor-and-console/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/tags/done/rclone-abuser/" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -107,7 +107,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/2nd-monitor-and-console/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
+                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/rclone-abuser/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
             
 
             </div>
@@ -123,30 +123,27 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Second Monitor Management via Console</h1>
+        <h1 class="f-subheadline lh-solid">A Script to Sync With NAS</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
-<p class="measure-wide">What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
-<p class="measure-wide">I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
-<pre><code>MultiMonitorTool.exe / disable 2
-MultiMonitorTool.exe / enable 2
-MultiMonitorTool.exe / switch 2
-</code></pre>
-<p class="measure-wide">For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
-<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
-</code></pre>
-<p class="measure-wide">And then, when you need to turn on the monitor, load the saved config:</p>
-<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
-</code></pre>
-<p class="measure-wide">The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p>
+        <p class="measure-wide">I posted on GitHub a Python <a class="link blue dim bb" href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
+<p class="measure-wide">I suffered with the problem for some time and eventually returned to the good old <a class="link blue dim bb" href="https://rclone.org" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
+<p class="measure-wide">Secondly, I had many files and folders to sync: a directory here, a directory there, a config from there, a profile from here… In order not to produce spaghetti code, I wrote a simple script that takes sources and receivers from a config file, and then executes rclone for each pair.</p>
         <p class="f6 mt4">
-            16 October 2021
+            7 June 2021
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/workplace/">workplace</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/python/">Python</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/workplace/">workplace</a>
                 </span>
             
         </p>
@@ -164,9 +161,9 @@ MultiMonitorTool.exe / switch 2
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/workplace/rclone-abuser/">A Script to Sync With NAS</a> &larr;
-                
                 Ctrl
+                
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/build-on-github/">Building This Site on GitHub</a>
                                 
 
             </p> 
