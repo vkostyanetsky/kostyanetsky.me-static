@@ -21,21 +21,6 @@
         </item>
         
         <item>
-            <title>Changes</title>
-            <link>https://kostyanetsky.me/notes/changes/</link>
-            <guid isPermaLink="false">note-changes</guid>
-            <pubDate>Mon, 02 May 2022 19:20:00 +0700</pubDate>
-            <description><p class="measure-wide"><a href="https://twitter.com/140sm/status/1358739902326833155" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/changes/snap-tweet-140sm-1358739902326833155.png"/></a></p>
-<blockquote>
-<p class="measure-wide">In Hokkaido, a cameraman filmed a deer with the head of another, defeated in battle, stuck in its antlers. So he walks like this all his life and pierces into dead eyes.</p>
-<p class="measure-wide">The best allegory of war and the post-war time that I have come across.</p>
-</blockquote>
-<p class="measure-wide">The further it goes, the more difficult it becomes to write notes. Even as irregularly as I used to do it. Programming? Household stuff? Anything else? Whatever I decide to write about, everything ends up seeming stupid, unnecessary, and inappropriate.</p>
-<p class="measure-wide">However, many topics that were previously taken seriously, but not really close — now literally acquired form, sound, taste, and color. For example, the tweet at the beginning of this note: before current events it was sad and gloomy, but now, when it's time to look into those eyes, it feels entirely different.</p>
-<p class="measure-wide">Peace for everyone.</p></description>
-        </item>
-        
-        <item>
             <title>No More Embedded Tweets</title>
             <link>https://kostyanetsky.me/notes/no-more-embedded-tweets/</link>
             <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
@@ -155,6 +140,21 @@ MultiMonitorTool.exe / switch 2
 <pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
 </code></pre>
 <p class="measure-wide">The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
+        </item>
+        
+        <item>
+            <title>Top Salaries</title>
+            <link>https://kostyanetsky.me/notes/top-salaries/</link>
+            <guid isPermaLink="false">note-top-salaries</guid>
+            <pubDate>Sat, 02 Oct 2021 16:49:35 +0700</pubDate>
+            <description><blockquote>
+<p class="measure-wide">There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
+<p class="measure-wide"><em><a class="link blue dim bb" href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
+</blockquote>
+<p class="measure-wide">Threw in my <a class="link blue dim bb" href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
+<p class="measure-wide">What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
+<p class="measure-wide">In general, the whole story reminded Eugene Stepanishev's <a class="link blue dim bb" href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
+<p class="measure-wide">What was funny: for a couple of <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p></description>
         </item>
         
     </channel>
