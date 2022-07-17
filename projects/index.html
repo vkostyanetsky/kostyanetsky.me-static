@@ -1,0 +1,155 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            Projects
+        
+    </title>
+
+    <meta name="description" content="Projects I work on. From newest to oldest." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Projects"/>
+    <meta property="og:description" content="Projects I work on. From newest to oldest."/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/projects/" />    
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="https://kostyanetsky.me/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/likely/likely.css">    
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/blog.css">
+    <script src="https://kostyanetsky.me/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href="https://kostyanetsky.me"><img class="br-100" src="https://kostyanetsky.me/assets/images/me.jpg" title="Hi!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me">Vlad's Site</a>
+            
+
+            
+                <span class="black dib f4 mr3">Projects</span>
+                        
+
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me/notes/">Notes</a>
+            
+
+        </div>
+        
+    </nav>
+    
+    <nav class="dtc-l v-mid tc tr-l">
+
+        
+            <a href="https://kostyanetsky.ru/projects/" class="link f5 f5-ns dim blue bb">RU</a>
+        
+
+        
+
+            <div class="mt3">
+
+            
+                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/projects/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+            
+
+            </div>
+            
+        
+
+    </nav>
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>
+
+        
+            <h1 class="f-subheadline lh-solid">Projects</h1>
+        
+
+        <div class="f4 lh-copy black"><p class="measure-wide">There are projects I worked on and wanted to write something about. From newest to oldest.</p>
+<h2>External Web Interface for Suppliers</h2>
+<p class="measure-wide"><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span></p>
+<p class="measure-wide">Our customer was the owner of a trading company. Part of its activity is pricing: employees of the company contacted suppliers, determining which of them was more profitable to place customer orders considering prices, delivery times and other conditions.</p>
+<p class="measure-wide">We were required to make it so that they could simply send suppliers links to a web interface where they could enter prices and answer additional questions.</p>
+<p class="measure-wide">The platform's web interface could not be used due to license savings. Therefore, I wrote a React.js web application that works with the 1C:Enterprise database through a REST interface specially designed for this.</p>
+<h2>UAC Currency Rates Crawler</h2>
+<p class="measure-wide"><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">MongoDB</span></p>
+<p class="measure-wide">We wanted to give FirstBit ERP users the ability to automatically receive dirham exchange rates published by the UAE Central Bank website.</p>
+<p class="measure-wide">The site parsing code could be added to the configuration itself, but this idea seemed to be problematic from several points of view: there is no convenient mechanism for obtaining rates on the Central Bank website, the site itself is unstable, and it is difficult to change the parsing logic in many databases in case we need to.</p>
+<p class="measure-wide">Therefore, I wrote a Python console application that regularly parses published exchange rates to a special database and sends them through a REST service. We deployed this application on our server, and I added only regular requests to the service on FirstBit ERP side.</p>
+<p class="measure-wide">Have a <a class="link blue dim bb" href="https://github.com/vkostyanetsky/CurrencyRatesCrawler" target="_blank">look</a> at project's code on my GitHub.</p></div>
+        
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Email: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.me</a></p>
+    <p class="f6 lh-solid">Telegram: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">GitHub: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="https://kostyanetsky.me/rss.xml">RSS</a> 
+
+</footer>
+
+</div>
+</body>
+</html>
