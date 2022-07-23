@@ -4,7 +4,18 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Fri, 22 Jul 2022 13:13:00 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 23 Jul 2022 11:32:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Not, But!</title>
+            <link>https://kostyanetsky.me/notes/not-but/</link>
+            <guid isPermaLink="false">note-not-but</guid>
+            <pubDate>Sat, 23 Jul 2022 11:32:48 +0700</pubDate>
+            <description><p class="measure-wide">Someone told me about the Croatian comic <a class="link blue dim bb" href="http://www.to-zo.com/notbut" target="_blank">NOT/BUT</a> at the beginning of last year, when I was seriously learning to draw. Each strip there is about some kind of traumatic or simply gloomy thought that comes into the artist’s head while working. The idea is to push a reader in the right direction and give them a more practical perspective on the situation they're in.</p>
+<p class="measure-wide">I quit drawing a year later, at the end of February: it became clear that I no longer had time for a hobby. But comics are completely universal; look through, even if you have no idea what a kneaded eraser is :-)</p>
+<p class="measure-wide"><a href="http://www.to-zo.com/notbut" target="_blank"><img alt="What the actual fuck?" src="https://kostyanetsky.me/notes/not-but/mistakes.png"/></a></p>
+<p class="measure-wide">All these endless soul-searching are well known to any professional, and the way out of them is not always obvious. Especially if you are angry, tired, and the deadline for the project expired somewhere last week.</p></description>
+        </item>
         
         <item>
             <title>Okay!</title>
@@ -129,27 +140,6 @@
 <p class="measure-wide"><img alt="Error.pdf" src="https://kostyanetsky.me/notes/matryoshka/not-your-certificate.png"/></p>
 <p class="measure-wide">Honestly, I am even delighted. We need to implement this UX in our products: you press, for example, the “print” button for a document, and it gives you a PDF! And inside it — a link to another PDF! And inside it — “entity is not filled”, so go fill.</p>
 <p class="measure-wide">You can sell it as a Russian way of dealing with errors. This is, like, for historical reasons! Blame all the damned matryoshkas, and <a class="link blue dim bb" href="https://en.wikipedia.org/wiki/Koschei" target="_blank">Koschei</a> with his needle. It is, as you remember, in the egg, and it is in the duck, which is in the rabbit, tucked into the chest, and further along the chain of nesting.</p></description>
-        </item>
-        
-        <item>
-            <title>Second Monitor Management via Console</title>
-            <link>https://kostyanetsky.me/notes/2nd-monitor-and-console/</link>
-            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
-            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
-            <description><p class="measure-wide">I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
-<p class="measure-wide">What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
-<p class="measure-wide">I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
-<pre><code>MultiMonitorTool.exe / disable 2
-MultiMonitorTool.exe / enable 2
-MultiMonitorTool.exe / switch 2
-</code></pre>
-<p class="measure-wide">For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
-<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
-</code></pre>
-<p class="measure-wide">And then, when you need to turn on the monitor, load the saved config:</p>
-<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
-</code></pre>
-<p class="measure-wide">The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
         </item>
         
     </channel>
