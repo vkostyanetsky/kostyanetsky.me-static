@@ -4,7 +4,22 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 07 Aug 2022 19:04:51 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 25 Sep 2022 19:02:53 +0700</lastBuildDate>
+        
+        <item>
+            <title>Slack Advises</title>
+            <link>https://kostyanetsky.me/notes/slack/</link>
+            <guid isPermaLink="false">note-slack</guid>
+            <pubDate>Sun, 25 Sep 2022 19:02:53 +0700</pubDate>
+            <description><p class="measure-wide">Slack, of course, is a thing to scold. For being slow, for having bugs, for notifications. But I just love his stubs in case there are no new messages.</p>
+<p class="measure-wide">Look at this cuteness:</p>
+<p class="measure-wide"><img alt="All done. The future is yours." src="https://kostyanetsky.me/notes/slack/all-done.png"/> <img alt="All clear." src="https://kostyanetsky.me/notes/slack/all-clear.png"/></p>
+<p class="measure-wide">Why do we need psychotherapists at all?</p>
+<p class="measure-wide"><img alt="You're up to date. Go forth and do great things." src="https://kostyanetsky.me/notes/slack/up-to-date.png"/> <img alt="Done and done." src="https://kostyanetsky.me/notes/slack/done-and-done.png"/></p>
+<p class="measure-wide">Or this:</p>
+<p class="measure-wide"><img alt="You're all read. Here is a tractor." src="https://kostyanetsky.me/notes/slack/here-is-tractor.png"/></p>
+<p class="measure-wide">Geez-Louise, Slack, hold on. You're not the first who advices this, believe me.</p></description>
+        </item>
         
         <item>
             <title>Shaken, Not Stirred</title>
@@ -153,21 +168,6 @@ EndProcedure
 <p class="measure-wide"><a href="https://twitter.com/EffinBirds/status/1488165946342662144" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/reuse-carefully/snap-tweet-EffinBirds-1488165946342662144.png"/></a></p>
 <p class="measure-wide">In a good way, the platform should throw exceptions when developer trying to change the cache, but until this happens, you have to take care yourself. For example, when developing cached modules, return immutable data types from them (FixedStructure instead of Structure, FixedArray instead of Array, and so on). True, this is not a 100% protection: firstly, fixed types are not applicable everywhere, and secondly, even in the latest versions of the SSL, this is far from being done everywhere. Do you know many configurations not based on SSL?</p>
 <p class="measure-wide">Sonar also know nothing about the problem, as well as less popular software. No silver bullet, in short – check your code, look at the code of your colleagues and try not to forget about another elegant way to bang ourselves in the foot.</p></description>
-        </item>
-        
-        <item>
-            <title>Infostart Event 2021</title>
-            <link>https://kostyanetsky.me/notes/infostart-event-2021/</link>
-            <guid isPermaLink="false">note-infostart-event-2021</guid>
-            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
-            <description><p class="measure-wide">Last week I visited Moscow for <a class="link blue dim bb" href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
-<ul class="measure-wide">
-<li>Listen to numbers of interesting reports — check;</li>
-<li>Meet a few cool people in real life — check;</li>
-<li>Chat with friends — check!</li>
-</ul>
-<p class="measure-wide">As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
-<p class="measure-wide">In order not to <s>get up</s> to fly twice, I passed the <a class="link blue dim bb" href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p></description>
         </item>
         
     </channel>
