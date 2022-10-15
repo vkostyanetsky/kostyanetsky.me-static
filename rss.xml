@@ -4,7 +4,22 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 18 Sep 2022 16:25:48 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 15 Oct 2022 18:22:43 +0700</lastBuildDate>
+        
+        <item>
+            <title>About Strange Bitrix</title>
+            <link>https://kostyanetsky.me/notes/strange-bitrix/</link>
+            <guid isPermaLink="false">note-strange-bitrix</guid>
+            <pubDate>Sat, 15 Oct 2022 18:22:43 +0700</pubDate>
+            <description><p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets is.</p>
+<p class="measure-wide">Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
+<p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
+<p class="measure-wide">You didn't guess, the correct answer is OPPORTUNITY.</p>
+<p class="measure-wide"><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
+<p class="measure-wide">But let's get back to a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
+<p class="measure-wide">Well, yes, but no. The product fill actually contains ID, but for the VAT rate field it's the rate value. What's for the unit of measure? Well, it contains the measurement code 🤷‍♂️</p>
+<p class="measure-wide">Database normalization? What? What does it mean? Get lost, bro, you're distracting us from work.</p></description>
+        </item>
         
         <item>
             <title>Group Work in Google Docs</title>
@@ -144,21 +159,6 @@ EndProcedure
 <p class="measure-wide">A year ago, damn it. Okay, hello everyone! Johnny Slowpoke is here! Today we will throw out Google Fonts from my blog. I used to load the main font (PT Sans) from this service, but it makes almost no sense without cross-domain caching. Frankly speaking, the only point to do this further is if a server on which the site is running is slow, so it is faster to load fonts from Google. </p>
 <p class="measure-wide">I host my blog on GitHub servers and have no complaints about performance. So, I'm self-hosting PT Sans now, and you know what? The difference is dramatic. When updating a page before, there was clearly a noticeable delay between loading the page and loading the font. For now, it is barely recognizable. If you have a blog and want to try to self-host fonts — here is a cool <a class="link blue dim bb" href="https://google-webfonts-helper.herokuapp.com/fonts" target="_blank">service</a> that solves the problem in a few clicks.</p>
 <p class="measure-wide">Don't forget to put a big, nice star on the <a class="link blue dim bb" href="https://github.com/majodev/google-webfonts-helper" target="_blank">repository</a>!</p></description>
-        </item>
-        
-        <item>
-            <title>Totals of 2021</title>
-            <link>https://kostyanetsky.me/notes/totals-of-2021/</link>
-            <guid isPermaLink="false">note-totals-of-2021</guid>
-            <pubDate>Tue, 08 Feb 2022 13:25:00 +0700</pubDate>
-            <description><p class="measure-wide">It is a bit late to sum up, isn't it? Well, the previous couple of months have been, um, tight, so I had no actual time  to sit down and think. Now I'm on vacation for 2021 – so no time like the present. I'm writing, like, from the past.</p>
-<p class="measure-wide">Write out each achievement doesn't attract me at all. The year definitely turned out to be good: I did a lot of complex work on FirstBit ERP (wrote new modules, rewrote existing ones, crushed bugs, wrote functional and load tests – yes, there were countless things). This had a good effect both on the configuration itself and on the profits of my company. In addition, I passed 1C expert exam and a PostgreSQL professional exam. Hip-hip-hooray.</p>
-<p class="measure-wide">There were fails as well. I still feel lazy to jot them down, but the main one is obvious – I became monstrously fat and instead of losing ten kilograms (that was the original plan) – I gained five more.</p>
-<p class="measure-wide">Looking back, the root of most of the problems over the past year is this: I focused too much on task flow. They were all interesting in their own way, from a carefully written technical task to challenges like “find a problem in the code using your witcher's instincts”. You do one task, another, a third, a hundredth, and you do not notice that you have ignored almost everything except work. As a result, you get a lot of experience, but the world dries up to the Configurator window and there is no strength to somehow apply this experience. Unhealthy bullshit.</p>
-<p class="measure-wide">In short, if you imagine me as a character in some video game, it looks like this: attack and intelligence have grown noticeably over the year, but health, agility, charisma, and almost everything else in general, have dropped. Now I need to do something to deal with this mess.</p>
-<p class="measure-wide">You know what? I'll take ten kilometers run for a start.</p>
-<p class="measure-wide"><a href="https://twitter.com/EffinBirds/status/1329575199667347459" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/totals-of-2021/snap-tweet-EffinBirds-1329575199667347459.png"/></a></p>
-<p class="measure-wide">Maybe, birdie, maybe.</p></description>
         </item>
         
     </channel>

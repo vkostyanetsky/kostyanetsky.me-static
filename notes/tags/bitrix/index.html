@@ -10,11 +10,11 @@
 
     <title>
         
-            Group Work in Google Docs
+            Bitrix
         
     </title>
 
-    <meta name="description" content="Three men in a boat (to say nothing of the anonymous quokka)." />
+    <meta name="description" content="My notes about life, work and other fascinating things around me." />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Group Work in Google Docs"/>
-    <meta property="og:description" content="Three men in a boat (to say nothing of the anonymous quokka)."/>
+    <meta property="og:title" content="Bitrix"/>
+    <meta property="og:description" content="My notes about life, work and other fascinating things around me."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/anonymous-quokka/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/bitrix/" />    
 
     <!-- Tachyons -->
 
@@ -50,8 +50,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/slack/';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/strange-bitrix/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +92,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/anonymous-quokka/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/tags/bitrix/" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -100,7 +100,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/anonymous-quokka/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                    <span class="f4 f4-ns">✎</span>
             
 
             </div>
@@ -114,11 +114,48 @@
 <section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
     
 
-    <article>    
-                    
-        <h1 class="f-subheadline lh-solid">Group Work in Google Docs</h1>
-            
+    <article>
+
+        <h1 class="f-subheadline lh-solid">Bitrix</h1>
+
         
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/strange-bitrix/">About Strange Bitrix</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets is.</p>
+<p class="measure-wide">Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
+<p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
+<p class="measure-wide">You didn't guess, the correct answer is OPPORTUNITY.</p>
+<p class="measure-wide"><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
+<p class="measure-wide">But let's get back to a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
+<p class="measure-wide">Well, yes, but no. The product fill actually contains ID, but for the VAT rate field it's the rate value. What's for the unit of measure? Well, it contains the measurement code 🤷‍♂️</p>
+<p class="measure-wide">Database normalization? What? What does it mean? Get lost, bro, you're distracting us from work.</p>
+        <p class="f6 mt4">
+            15 October 2022
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/anonymous-quokka/">Group Work in Google Docs</a></h2>
+
+            
     
     <div class="f4 lh-copy black mb5">
         <p class="measure-wide">For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
@@ -132,7 +169,7 @@
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
                 </span>
             
                 <span class="pl2">
@@ -144,25 +181,8 @@
 
 
 
-        <div class="likely">
-            <div class="twitter">Tweet</div>
-            <div class="telegram">Send</div>        
-        </div>
-        
         
 
-            <p class="mt5 mb3 f6">
-
-                
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/slack/">Slack Advises</a> &larr;
-                
-                Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/strange-bitrix/">About Strange Bitrix</a>
-                                
-
-            </p> 
-            
         
 
     </article>

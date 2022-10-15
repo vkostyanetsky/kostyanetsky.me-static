@@ -10,11 +10,11 @@
 
     <title>
         
-            Group Work in Google Docs
+            About Strange Bitrix
         
     </title>
 
-    <meta name="description" content="Three men in a boat (to say nothing of the anonymous quokka)." />
+    <meta name="description" content="Currently I'm developing integration with Bitrix for a client. Oh my gosh, it is so strange sometimes!" />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Group Work in Google Docs"/>
-    <meta property="og:description" content="Three men in a boat (to say nothing of the anonymous quokka)."/>
+    <meta property="og:title" content="About Strange Bitrix"/>
+    <meta property="og:description" content="Currently I'm developing integration with Bitrix for a client. Oh my gosh, it is so strange sometimes!"/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/anonymous-quokka/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/bitrix/strange-bitrix/" />    
 
     <!-- Tachyons -->
 
@@ -50,8 +50,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/slack/';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/strange-bitrix/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/bitrix/anonymous-quokka/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +92,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/anonymous-quokka/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/tags/bitrix/strange-bitrix/" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -100,7 +100,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/anonymous-quokka/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/strange-bitrix/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -116,27 +116,28 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Group Work in Google Docs</h1>
+        <h1 class="f-subheadline lh-solid">About Strange Bitrix</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
-<p class="measure-wide">They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a class="link blue dim bb" href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
-<p class="measure-wide">Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p>
+        <p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets is.</p>
+<p class="measure-wide">Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
+<p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
+<p class="measure-wide">You didn't guess, the correct answer is OPPORTUNITY.</p>
+<p class="measure-wide"><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
+<p class="measure-wide">But let's get back to a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
+<p class="measure-wide">Well, yes, but no. The product fill actually contains ID, but for the VAT rate field it's the rate value. What's for the unit of measure? Well, it contains the measurement code 🤷‍♂️</p>
+<p class="measure-wide">Database normalization? What? What does it mean? Get lost, bro, you're distracting us from work.</p>
         <p class="f6 mt4">
-            18 September 2022
+            15 October 2022
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
                 </span>
             
         </p>
@@ -154,11 +155,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/slack/">Slack Advises</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/anonymous-quokka/">Group Work in Google Docs</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/strange-bitrix/">About Strange Bitrix</a>
                                 
 
             </p> 
