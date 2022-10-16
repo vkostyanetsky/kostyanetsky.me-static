@@ -11,12 +11,12 @@
             <link>https://kostyanetsky.me/notes/strange-bitrix/</link>
             <guid isPermaLink="false">note-strange-bitrix</guid>
             <pubDate>Sat, 15 Oct 2022 18:22:43 +0700</pubDate>
-            <description><p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets is.</p>
+            <description><p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets are.</p>
 <p class="measure-wide">Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
 <p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
 <p class="measure-wide">You didn't guess, the correct answer is OPPORTUNITY.</p>
 <p class="measure-wide"><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p class="measure-wide">But let's get back to a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
+<p class="measure-wide">Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
 <p class="measure-wide">Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's the rate value. What's for the unit of measure? Well, it contains the measurement code 🤷‍♂️</p>
 <p class="measure-wide">Database normalization? What? What does it mean? Get lost, bro, you're distracting us from work.</p></description>
         </item>
@@ -121,6 +121,21 @@ EndProcedure
         </item>
         
         <item>
+            <title>Changes</title>
+            <link>https://kostyanetsky.me/notes/_changes/</link>
+            <guid isPermaLink="false">note-_changes</guid>
+            <pubDate>Mon, 02 May 2022 19:20:00 +0700</pubDate>
+            <description><p class="measure-wide"><a href="https://twitter.com/140sm/status/1358739902326833155" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/_changes/snap-tweet-140sm-1358739902326833155.png"/></a></p>
+<blockquote>
+<p class="measure-wide">In Hokkaido, a cameraman filmed a deer with the head of another, defeated in battle, stuck in its antlers. So he walks like this all his life and pierces into dead eyes.</p>
+<p class="measure-wide">The best allegory of war and the post-war time that I have come across.</p>
+</blockquote>
+<p class="measure-wide">The further it goes, the more difficult it becomes to write notes. Even as irregularly as I used to do it. Programming? Household stuff? Anything else? Whatever I decide to write about, everything ends up seeming stupid, unnecessary, and inappropriate.</p>
+<p class="measure-wide">However, many topics that were previously taken seriously, but not really close — now literally acquired form, sound, taste, and color. For example, the tweet at the beginning of this note: before current events it was sad and gloomy, but now, when it's time to look into those eyes, it feels entirely different.</p>
+<p class="measure-wide">Peace for everyone.</p></description>
+        </item>
+        
+        <item>
             <title>No More Embedded Tweets</title>
             <link>https://kostyanetsky.me/notes/no-more-embedded-tweets/</link>
             <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
@@ -148,17 +163,6 @@ EndProcedure
 <p class="measure-wide">If the type of operation is the sale of goods or real estate, then open the common form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
 <p class="measure-wide">However, if the type of operation is a return to the supplier, then open the general form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is the EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
 <p class="measure-wide">I hope you won't confuse.</p></description>
-        </item>
-        
-        <item>
-            <title>No More Google Fonts</title>
-            <link>https://kostyanetsky.me/notes/no-more-google-fonts/</link>
-            <guid isPermaLink="false">note-no-more-google-fonts</guid>
-            <pubDate>Sat, 19 Feb 2022 20:25:48 +0700</pubDate>
-            <description><p class="measure-wide"><a href="https://twitter.com/PixelAmbacht/status/1494272370076536840" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/no-more-google-fonts/snap-tweet-PixelAmbacht-1494272370076536840.png"/></a></p>
-<p class="measure-wide">A year ago, damn it. Okay, hello everyone! Johnny Slowpoke is here! Today we will throw out Google Fonts from my blog. I used to load the main font (PT Sans) from this service, but it makes almost no sense without cross-domain caching. Frankly speaking, the only point to do this further is if a server on which the site is running is slow, so it is faster to load fonts from Google. </p>
-<p class="measure-wide">I host my blog on GitHub servers and have no complaints about performance. So, I'm self-hosting PT Sans now, and you know what? The difference is dramatic. When updating a page before, there was clearly a noticeable delay between loading the page and loading the font. For now, it is barely recognizable. If you have a blog and want to try to self-host fonts — here is a cool <a class="link blue dim bb" href="https://google-webfonts-helper.herokuapp.com/fonts" target="_blank">service</a> that solves the problem in a few clicks.</p>
-<p class="measure-wide">Don't forget to put a big, nice star on the <a class="link blue dim bb" href="https://github.com/majodev/google-webfonts-helper" target="_blank">repository</a>!</p></description>
         </item>
         
     </channel>

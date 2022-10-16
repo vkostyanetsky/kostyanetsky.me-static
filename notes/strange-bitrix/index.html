@@ -121,12 +121,12 @@
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets is.</p>
+        <p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets are.</p>
 <p class="measure-wide">Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
 <p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
 <p class="measure-wide">You didn't guess, the correct answer is OPPORTUNITY.</p>
 <p class="measure-wide"><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p class="measure-wide">But let's get back to a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
+<p class="measure-wide">Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
 <p class="measure-wide">Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's the rate value. What's for the unit of measure? Well, it contains the measurement code 🤷‍♂️</p>
 <p class="measure-wide">Database normalization? What? What does it mean? Get lost, bro, you're distracting us from work.</p>
         <p class="f6 mt4">

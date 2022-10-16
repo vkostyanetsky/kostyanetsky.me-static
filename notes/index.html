@@ -127,12 +127,12 @@
             
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets is.</p>
+        <p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets are.</p>
 <p class="measure-wide">Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
 <p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
 <p class="measure-wide">You didn't guess, the correct answer is OPPORTUNITY.</p>
 <p class="measure-wide"><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p class="measure-wide">But let's get back to a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
+<p class="measure-wide">Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
 <p class="measure-wide">Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's the rate value. What's for the unit of measure? Well, it contains the measurement code 🤷‍♂️</p>
 <p class="measure-wide">Database normalization? What? What does it mean? Get lost, bro, you're distracting us from work.</p>
         <p class="f6 mt4">
@@ -331,6 +331,33 @@ EndProcedure
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/_changes/">Changes</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide"><a href="https://twitter.com/140sm/status/1358739902326833155" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/_changes/snap-tweet-140sm-1358739902326833155.png"/></a></p>
+<blockquote>
+<p class="measure-wide">In Hokkaido, a cameraman filmed a deer with the head of another, defeated in battle, stuck in its antlers. So he walks like this all his life and pierces into dead eyes.</p>
+<p class="measure-wide">The best allegory of war and the post-war time that I have come across.</p>
+</blockquote>
+<p class="measure-wide">The further it goes, the more difficult it becomes to write notes. Even as irregularly as I used to do it. Programming? Household stuff? Anything else? Whatever I decide to write about, everything ends up seeming stupid, unnecessary, and inappropriate.</p>
+<p class="measure-wide">However, many topics that were previously taken seriously, but not really close — now literally acquired form, sound, taste, and color. For example, the tweet at the beginning of this note: before current events it was sad and gloomy, but now, when it's time to look into those eyes, it feels entirely different.</p>
+<p class="measure-wide">Peace for everyone.</p>
+        <p class="f6 mt4">
+            2 May 2022
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
                 </span>
             
         </p>
@@ -708,33 +735,6 @@ MultiMonitorTool.exe / switch 2
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/no-comment/">No Comment</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">I did not notice when I gave up the habit of pedantically commenting on every method with which I have to work. This practice has some clever name for sure, but I don't care, to be honest. I mean the style when a description is added to every meaningful block of code, like this:</p>
-<script src="https://gist.github.com/vkostyanetsky/afae4dee09d639f34156d6c02b29c2a5.js">Gist</script>
-<p class="measure-wide">The meaning here is simple: when you dig in some dense legacy and run back and forth between chaotically scattered, big procedures — it is rather difficult to keep the logic of each of them in your head. The next cup of coffee will wash everything away. Therefore, such notes greatly speed up orientation on the ground, and the more time passes between approaches to the code, the more noticeable the effect.</p>
-<p class="measure-wide">However, at some point it became clear that this know-how is just a crutch supporting the frankly crappy code design. If you have a long procedure or function - take a breath, sit down and cut the fatty one into smaller methods. You will save both time and nerves, and you will figure out the code faster, and you will delight SonarCube.</p>
-        <p class="f6 mt4">
-            8 September 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
