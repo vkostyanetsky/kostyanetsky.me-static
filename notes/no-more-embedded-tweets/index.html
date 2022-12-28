@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            No More Embedded Tweets
-        
-    </title>
+    <title>No More Embedded Tweets</title>
 
-    <meta name="description" content="Had to remove embedded tweets. Damn!" />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="No More Embedded Tweets"/>
-    <meta property="og:description" content="Had to remove embedded tweets. Damn!"/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/no-more-embedded-tweets/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/no-more-embedded-tweets" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/do-not-confuse/';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/_changes/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/no-more-embedded-tweets/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/no-more-embedded-tweets" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/no-more-embedded-tweets/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/no-more-embedded-tweets/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,21 +116,21 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">As soon as I <a class="link blue dim bb" href="https://kostyanetsky.me/notes/no-more-google-fonts/" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
-<p class="measure-wide">How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a class="link blue dim bb" href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
-<p class="measure-wide">How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
-<p class="measure-wide"><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
-<p class="measure-wide">The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
-<p class="measure-wide">A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a class="link blue dim bb" href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
-<p class="measure-wide">Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>As soon as I <a href="https://kostyanetsky.me//notes/no-more-google-fonts/" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
+<p>How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
+<p>How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
+<p><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
+<p>The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
+<p>A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
+<p>Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
 <blockquote>
-<p class="measure-wide">npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
+<p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
 </blockquote>
-<p class="measure-wide">That's all. I want to donate the author, really.</p>
-<p class="measure-wide">I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p>
+<p>That's all. I want to donate the author, really.</p>
+<p>I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p>
         <p class="f6 mt4">
-            21 Marth 2022
+            2022-03-21 20:25:48
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/blog/">blog</a>
@@ -163,11 +159,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/do-not-confuse/">Do Not Confuse</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/do-not-confuse">Do Not Confuse</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/_changes/">Changes</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/cookie-jar">Cookie Jar</a>
                                 
 
             </p> 

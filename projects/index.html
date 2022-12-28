@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Projects
-        
-    </title>
+    <title>Projects</title>
 
-    <meta name="description" content="Projects I work on. From newest to oldest." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Projects"/>
-    <meta property="og:description" content="Projects I work on. From newest to oldest."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/projects/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/projects" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/projects/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/projects" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/projects/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/projects/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,30 +116,30 @@
             <h1 class="f-subheadline lh-solid">Projects</h1>
         
 
-        <div class="f4 lh-copy black"><p class="measure-wide">There are projects I worked on and wanted to write something about. From newest to oldest.</p>
+        <div class="f4 lh-copy black measure-wide"><p>There are projects I worked on and wanted to write something about. From newest to oldest.</p>
 <h2>External Web Interface for Suppliers</h2>
-<p class="measure-wide"><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span></p>
-<p class="measure-wide">Our customer was the owner of a trading company. Part of its activity is pricing: employees of the company contacted suppliers, determining which of them was more profitable to place customer orders considering prices, delivery times and other conditions.</p>
-<p class="measure-wide">We were required to make it so that they could simply send suppliers links to a web interface where they could enter prices and answer additional questions.</p>
-<p class="measure-wide">The platform's web interface could not be used due to license savings. Therefore, I wrote a React.js web application that works with the 1C:Enterprise database through a REST interface specially designed for this.</p>
-<p class="measure-wide">Have a <a class="link blue dim bb" href="https://github.com/vkostyanetsky/RFQ" target="_blank">look</a> at project's demo on my GitHub.</p>
+<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span></p>
+<p>Our customer was the owner of a trading company. Part of its activity is pricing: employees of the company contacted suppliers, determining which of them was more profitable to place customer orders considering prices, delivery times and other conditions.</p>
+<p>We were required to make it so that they could simply send suppliers links to a web interface where they could enter prices and answer additional questions.</p>
+<p>The platform's web interface could not be used due to license savings. Therefore, I wrote a React.js web application that works with the 1C:Enterprise database through a REST interface specially designed for this.</p>
+<p>Have a <a href="https://github.com/vkostyanetsky/RFQ" target="_blank">look</a> at project's demo on my GitHub.</p>
 <h2>UAC Currency Rates Crawler</h2>
-<p class="measure-wide"><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">MongoDB</span></p>
-<p class="measure-wide">We wanted to give FirstBit ERP users the ability to automatically receive dirham exchange rates published by the UAE Central Bank website.</p>
-<p class="measure-wide">The site parsing code could be added to the configuration itself, but this idea seemed to be problematic from several points of view: there is no convenient mechanism for obtaining rates on the Central Bank website, the site itself is unstable, and it is difficult to change the parsing logic in many databases in case we need to.</p>
-<p class="measure-wide">Therefore, I wrote a Python console application that regularly parses published exchange rates to a special database and sends them through a REST service. We deployed this application on our server, and I added only regular requests to the service on FirstBit ERP side.</p>
-<p class="measure-wide">Have a <a class="link blue dim bb" href="https://github.com/vkostyanetsky/UAExchangeRates" target="_blank">look</a> at project's backend code on my GitHub.</p>
+<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">MongoDB</span></p>
+<p>We wanted to give FirstBit ERP users the ability to automatically receive dirham exchange rates published by the UAE Central Bank website.</p>
+<p>The site parsing code could be added to the configuration itself, but this idea seemed to be problematic from several points of view: there is no convenient mechanism for obtaining rates on the Central Bank website, the site itself is unstable, and it is difficult to change the parsing logic in many databases in case we need to.</p>
+<p>Therefore, I wrote a Python console application that regularly parses published exchange rates to a special database and sends them through a REST service. We deployed this application on our server, and I added only regular requests to the service on FirstBit ERP side.</p>
+<p>Have a <a href="https://github.com/vkostyanetsky/UAExchangeRates" target="_blank">look</a> at project's backend code on my GitHub.</p>
 <h2>Native Data History for FirstBit ERP</h2>
-<p class="measure-wide"><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span></p>
-<p class="measure-wide">I replaced the BSP versioning subsystem In the FirstBit ERP configuration with a platform's built-in mechanism that solves the same problem. The project included:</p>
-<ol class="measure-wide">
+<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span></p>
+<p>I replaced the BSP versioning subsystem In the FirstBit ERP configuration with a platform's built-in mechanism that solves the same problem. The project included:</p>
+<ol>
 <li>An algorithm for migrating the accumulated data history from information registers to the native storage.</li>
-<li>A data processor to turn on and off the history for objects and their attributes. An early version can be <a class="link blue dim bb" href="https://github.com/vkostyanetsky/AuditLogSettings" target="_blank">viewed</a> on GitHub.</li>
+<li>A data processor to turn on and off the history for objects and their attributes. An early version can be <a href="https://github.com/vkostyanetsky/AuditLogSettings" target="_blank">viewed</a> on GitHub.</li>
 <li>A data processor capable of displaying changes in different objects for a specified period in one list.</li>
 <li>Analysis of configuration objects (it was needed to turn off the data history for objects that do not make sense to version – non-shared 1cFresh objects, service catalogs, and so on).</li>
 <li>Improvements for the algorithm of unloading the infobase into XML files and loading from them to make it work with native data history.</li>
 </ol></div>
-        
+
     </article>
 
 

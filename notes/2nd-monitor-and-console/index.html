@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Second Monitor Management via Console
-        
-    </title>
+    <title>Second Monitor Management via Console</title>
 
-    <meta name="description" content="A few words about an utility which allow to manage monitors via command line." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Second Monitor Management via Console"/>
-    <meta property="og:description" content="A few words about an utility which allow to manage monitors via command line."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/2nd-monitor-and-console/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/2nd-monitor-and-console" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/top-salaries/';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/matryoshka/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/2nd-monitor-and-console/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/2nd-monitor-and-console" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/2nd-monitor-and-console/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/2nd-monitor-and-console/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,23 +116,23 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
-<p class="measure-wide">What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
-<p class="measure-wide">I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
+<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
+<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
 <pre><code>MultiMonitorTool.exe / disable 2
 MultiMonitorTool.exe / enable 2
 MultiMonitorTool.exe / switch 2
 </code></pre>
-<p class="measure-wide">For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
+<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
 <pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
 </code></pre>
-<p class="measure-wide">And then, when you need to turn on the monitor, load the saved config:</p>
+<p>And then, when you need to turn on the monitor, load the saved config:</p>
 <pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
 </code></pre>
-<p class="measure-wide">The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p>
+<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p>
         <p class="f6 mt4">
-            16 October 2021
+            2021-10-16 19:55:48
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/workplace/">workplace</a>
@@ -157,11 +153,11 @@ MultiMonitorTool.exe / switch 2
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/top-salaries/">Top Salaries</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/top-salaries">Top Salaries</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/matryoshka/">Matryoshka</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/matryoshka">Matryoshka</a>
                                 
 
             </p> 

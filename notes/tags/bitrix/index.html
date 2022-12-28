@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Bitrix
-        
-    </title>
+    <title>Bitrix</title>
 
-    <meta name="description" content="My notes about life, work and other fascinating things around me." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Bitrix"/>
-    <meta property="og:description" content="My notes about life, work and other fascinating things around me."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/bitrix/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/bitrix" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/bitrix/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/tags/bitrix" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -126,17 +122,17 @@
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets are. It is expressed in different ways.</p>
-<p class="measure-wide">Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
-<p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
-<p class="measure-wide">You didn't guess, the correct answer is OPPORTUNITY.</p>
-<p class="measure-wide"><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p class="measure-wide">Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
-<p class="measure-wide">Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's a rate value. What's for the unit of measure field? Well, it contains a measurement code ¯\_(ツ)_/¯</p>
-<p class="measure-wide">Database normalization? What? What does it mean? Back off, man, you're distracting us from work.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets are. It is expressed in different ways.</p>
+<p>Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
+<p>AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
+<p>You didn't guess, the correct answer is OPPORTUNITY.</p>
+<p><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
+<p>Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
+<p>Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's a rate value. What's for the unit of measure field? Well, it contains a measurement code ¯\_(ツ)_/¯</p>
+<p>Database normalization? What? What does it mean? Back off, man, you're distracting us from work.</p>
         <p class="f6 mt4">
-            15 October 2022
+            2022-10-15 18:22:43
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
@@ -157,12 +153,12 @@
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
-<p class="measure-wide">They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a class="link blue dim bb" href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
-<p class="measure-wide">Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
+<p>They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
+<p>Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p>
         <p class="f6 mt4">
-            18 September 2022
+            2022-09-18 16:25:48
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>

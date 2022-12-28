@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Hammer & Nails
-        
-    </title>
+    <title>Hammer & Nails</title>
 
-    <meta name="description" content="How to solve a simple task in an extremely difficult way?" />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Hammer & Nails"/>
-    <meta property="og:description" content="How to solve a simple task in an extremely difficult way?"/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/hammer-and-nails/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/hammer-and-nails" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/no-comment/';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/diablo/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/hammer-and-nails/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/hammer-and-nails" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/hammer-and-nails/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/hammer-and-nails/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,17 +116,17 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
-<p class="measure-wide">Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
-<p class="measure-wide">The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
-<p class="measure-wide">However, instead of a short cycle, I saw this:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
+<p>Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
+<p>The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
+<p>However, instead of a short cycle, I saw this:</p>
 <script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
-<p class="measure-wide">There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
-<p class="measure-wide">Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
-<p class="measure-wide">You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p>
+<p>There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
+<p>Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
+<p>You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p>
         <p class="f6 mt4">
-            15 September 2021
+            2021-09-15 21:47:48
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -159,11 +155,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/no-comment/">No Comment</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/no-comment">No Comment</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/diablo/">Diablo</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/diablo">Diablo</a>
                                 
 
             </p> 

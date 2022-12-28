@@ -4,165 +4,155 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 15 Oct 2022 18:22:43 +0700</lastBuildDate>
+        <lastBuildDate>Wed, 08 Sep 2021 00:12:00 +0700</lastBuildDate>
         
         <item>
-            <title>About Strange Bitrix</title>
-            <link>https://kostyanetsky.me/notes/strange-bitrix/</link>
-            <guid isPermaLink="false">note-strange-bitrix</guid>
-            <pubDate>Sat, 15 Oct 2022 18:22:43 +0700</pubDate>
-            <description><p class="measure-wide">The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets are. It is expressed in different ways.</p>
-<p class="measure-wide">Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
-<p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
-<p class="measure-wide">You didn't guess, the correct answer is OPPORTUNITY.</p>
-<p class="measure-wide"><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p class="measure-wide">Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
-<p class="measure-wide">Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's a rate value. What's for the unit of measure field? Well, it contains a measurement code ¯\_(ツ)_/¯</p>
-<p class="measure-wide">Database normalization? What? What does it mean? Back off, man, you're distracting us from work.</p></description>
+            <title>No Comment</title>
+            <link>https://kostyanetsky.me/notes/no-comment</link>
+            <guid isPermaLink="false">note-no-comment</guid>
+            <pubDate>Wed, 08 Sep 2021 00:12:00 +0700</pubDate>
+            <description><p>I did not notice when I gave up the habit of pedantically commenting on every method with which I have to work. This practice has some clever name for sure, but I don't care, to be honest. I mean the style when a description is added to every meaningful block of code, like this:</p>
+<script src="https://gist.github.com/vkostyanetsky/afae4dee09d639f34156d6c02b29c2a5.js">Gist</script>
+<p>The meaning here is simple: when you dig in some dense legacy and run back and forth between chaotically scattered, big procedures — it is rather difficult to keep the logic of each of them in your head. The next cup of coffee will wash everything away. Therefore, such notes greatly speed up orientation on the ground, and the more time passes between approaches to the code, the more noticeable the effect.</p>
+<p>However, at some point it became clear that this know-how is just a crutch supporting the frankly crappy code design. If you have a long procedure or function - take a breath, sit down and cut the fatty one into smaller methods. You will save both time and nerves, and you will figure out the code faster, and you will delight SonarCube.</p></description>
         </item>
         
         <item>
-            <title>Group Work in Google Docs</title>
-            <link>https://kostyanetsky.me/notes/anonymous-quokka/</link>
-            <guid isPermaLink="false">note-anonymous-quokka</guid>
-            <pubDate>Sun, 18 Sep 2022 16:25:48 +0700</pubDate>
-            <description><p class="measure-wide">For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
-<p class="measure-wide">They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a class="link blue dim bb" href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
-<p class="measure-wide">Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p></description>
+            <title>Top Salaries</title>
+            <link>https://kostyanetsky.me/notes/top-salaries</link>
+            <guid isPermaLink="false">note-top-salaries</guid>
+            <pubDate>Sat, 02 Oct 2021 16:49:35 +0700</pubDate>
+            <description><blockquote>
+<p>There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
+<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
+</blockquote>
+<p>Threw in my <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
+<p>What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
+<p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
+<p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p></description>
+        </item>
+        
+        <item>
+            <title>Sebby x Player</title>
+            <link>https://kostyanetsky.me/notes/sebby-x-player</link>
+            <guid isPermaLink="false">note-sebby-x-player</guid>
+            <pubDate>Mon, 14 Aug 2017 00:00:00 +0700</pubDate>
+            <description><p>I have <a href="https://acomics.ru/~sebby-x-player" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">went out</a> a couple of years ago).</p>
+<p>It was an amusing experience. Firstly, an author of the manga is Chinese and her work was already translated from Chinese to English. I'm not sure what was the bigger problem — cultural differences or language skills, but several frames were a bit difficult to understand what's going on. Secondly, I've figured out that it's a real challenge to pick proper Russian words and not to get something like a quote from an official government's letter in the end.</p>
+<p>So, a part of sense had lost during the process, I guess, although I tried to keep everything I could and even had a word with the author in order to solve the most problematic cases. It was quite funny — I don't know Chinese, she doesn't know Russian, so our a bit poor English was the only way to understand each other.</p>
+<p>Something could have been translated better, I suppose, and several pictures definitely could have been changed more accurately. But you know what? Hell it out, perfection is a cruel mistress and I like the result yet. Yeah, there is no big deal or something like it — a drawing style is quite common, a plot has no significant differences with the game, but… I don't know. Perhaps, visual novels made a too sentimental son of a bitch out of me :-)</p>
+<p>Thanks to <a href="https://vk.com/id54890849" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" target="_blank">Quantus</a> for the manga.</p></description>
+        </item>
+        
+        <item>
+            <title>The Ninth Wave</title>
+            <link>https://kostyanetsky.me/notes/ninth-wave</link>
+            <guid isPermaLink="false">note-ninth-wave</guid>
+            <pubDate>Mon, 09 Mar 2020 05:21:32 +0700</pubDate>
+            <description><p>Yesterday morning, I was buying gifts for my women. While a florist was makings bouquets for me, we had a small talk and I suddenly caught her eye. She was looking at the growing crowd of customers with calmness and a clearly readable shadow of doom. This is probably how sailors looking at a surging wave which is about to bury their boat :-)</p>
+<p>People outside the flower industry grin sometimes — they say, eight of March is such a magical holiday for all the florists who make a fortune in ten hours. Well, income is really good these days, but literally anybody who has ever worked in this sphere more often associates the holiday (and a couple of days before it, by the way) with a monstrous strain on health and nerves.</p>
+<p>I can say that I got off cheaply: was just deploying and servicing some IT of a local net of flower shops, nothing more (by the way, I want to proudly <a href="http://rosetta.florist/" target="_blank">recommend</a> my former colleagues!). Nonetheless, the smell of flowers caused me Vietnam syndrome for a long time :-)</p></description>
+        </item>
+        
+        <item>
+            <title>Building The Blog on GitHub</title>
+            <link>https://kostyanetsky.me/notes/build-on-github</link>
+            <guid isPermaLink="false">note-build-on-github</guid>
+            <pubDate>Wed, 29 Sep 2021 22:00:00 +0700</pubDate>
+            <description><p>For the last year this site has been working on a simple platform: statics, GitHub and my domain. All the pages were pre-generated and placed in a GitHub's <a href="https://github.com/vkostyanetsky/kostyanetsky.me-static" target="_blank">repository</a> with <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> enabled.</p>
+<p>I collected statics using a script. It was working with a list of text files, pedantically arranged in folders. The script rummaged through them and generated HTML files. Then I manually pushed them to the repository.</p>
+<p>This scheme worked well, but the number of clicks annoyed me. Here is the script pull, and there is the script pull, and then you have to tinker with the git. I wanted it to be simpler.</p>
+<p>At some point, I figured out that not only the deployment of statics, but also the assembly can be shifted onto the shoulders of GitHub. I put together some thoughts and added two more repositories:</p>
+<ol>
+<li>A <a href="https://github.com/vkostyanetsky/kostyanetsky.me" target="_blank">repository</a> of initial data. Here I put the content of the site: the text files and a bit of metadata (page titles, dates of pages creation, tags for notes, and so on).</li>
+<li>A <a href="https://github.com/vkostyanetsky/BlogBuilder" target="_blank">repository</a> of the script for generating statics. In addition to the script itself, I put various assets here (icons, styles, manifests — in general, everything that doesn't need to be generated every time, but you have to “put” it next to the resulting HTML).</li>
+</ol>
+<p>Then I wrote an <a href="https://github.com/vkostyanetsky/kostyanetsky.me/blob/main/.github/workflows/main.yml" target="_blank">action</a> that wakes up with every push to the repository with the initial data. Shortly, its logic:</p>
+<ol>
+<li>Clone the repository with statics and the repository with the generating script;</li>
+<li>Update the repository with statics using the generating script;</li>
+<li>Push changes of the repository with static to the main branch;</li>
+<li>Notify the owner (me) via Telegram.</li>
+</ol>
+<p>Voilà! Now, whenever the repository with the original data changes, the GitHub immediately (well, as soon as possible — within a minute) updates the repository with the site and deploys it via GitHub Pages. A bonus is a web interface to manage the site (in fact, the GitHub site). No Code. :-)</p>
+<p>While I'm at it, I added links for editing pages directly to the site (the pencil icon in the upper-right corner). This is intended as a convenience for me, but anyone who finds a typo can send a PR. Thank you in advance!</p></description>
+        </item>
+        
+        <item>
+            <title>Infostart Event 2021</title>
+            <link>https://kostyanetsky.me/notes/infostart-event-2021</link>
+            <guid isPermaLink="false">note-infostart-event-2021</guid>
+            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
+            <description><p>Last week I visited Moscow for <a href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
+<ul>
+<li>Listen to numbers of interesting reports — check;</li>
+<li>Meet a few cool people in real life — check;</li>
+<li>Chat with friends — check!</li>
+</ul>
+<p>As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
+<p>In order not to <s>get up</s> to fly twice, I passed the <a href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p></description>
+        </item>
+        
+        <item>
+            <title>Second Monitor Management via Console</title>
+            <link>https://kostyanetsky.me/notes/2nd-monitor-and-console</link>
+            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
+            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
+            <description><p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
+<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
+<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
+<pre><code>MultiMonitorTool.exe / disable 2
+MultiMonitorTool.exe / enable 2
+MultiMonitorTool.exe / switch 2
+</code></pre>
+<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
+<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
+</code></pre>
+<p>And then, when you need to turn on the monitor, load the saved config:</p>
+<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
+</code></pre>
+<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
+        </item>
+        
+        <item>
+            <title>These Nasty Smartphones</title>
+            <link>https://kostyanetsky.me/notes/these-nasty-smartphones</link>
+            <guid isPermaLink="false">note-these-nasty-smartphones</guid>
+            <pubDate>Sat, 31 Mar 2018 00:00:00 +0700</pubDate>
+            <description><p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
+<p>The artist is <a href="https://www.patreon.com/adamtots" target="_blank">Adam Ellis</a>.</p>
+<p>As for me, it's a great illustration for an everlasting moan “why do you always stare at your smartphone blah blah blah”. A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
+<p>The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p></description>
+        </item>
+        
+        <item>
+            <title>About Strange Bitrix</title>
+            <link>https://kostyanetsky.me/notes/strange-bitrix</link>
+            <guid isPermaLink="false">note-strange-bitrix</guid>
+            <pubDate>Sat, 15 Oct 2022 18:22:43 +0700</pubDate>
+            <description><p>The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets are. It is expressed in different ways.</p>
+<p>Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
+<p>AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
+<p>You didn't guess, the correct answer is OPPORTUNITY.</p>
+<p><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
+<p>Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
+<p>Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's a rate value. What's for the unit of measure field? Well, it contains a measurement code ¯\_(ツ)_/¯</p>
+<p>Database normalization? What? What does it mean? Back off, man, you're distracting us from work.</p></description>
         </item>
         
         <item>
             <title>Slack Advises</title>
-            <link>https://kostyanetsky.me/notes/slack/</link>
+            <link>https://kostyanetsky.me/notes/slack</link>
             <guid isPermaLink="false">note-slack</guid>
             <pubDate>Thu, 25 Aug 2022 19:02:53 +0700</pubDate>
-            <description><p class="measure-wide">Slack, of course, is a thing to scold. For being slow, for having bugs, for notifications. However, I just love his stubs in case there are no new messages.</p>
-<p class="measure-wide">Look at this cuteness:</p>
-<p class="measure-wide"><img alt="All done. The future is yours." src="https://kostyanetsky.me/notes/slack/all-done.png"/></p>
-<p class="measure-wide">Why do we need psychotherapists at all?</p>
-<p class="measure-wide"><img alt="You're up to date. Go forth and do great things." src="https://kostyanetsky.me/notes/slack/up-to-date.png"/></p>
-<p class="measure-wide">Or this:</p>
-<p class="measure-wide"><img alt="You're all read. Here is a tractor." src="https://kostyanetsky.me/notes/slack/here-is-tractor.png"/></p>
-<p class="measure-wide">Geez-Louise, Slack, hold on. You're not the first who advices this, believe me.</p></description>
-        </item>
-        
-        <item>
-            <title>Shaken, Not Stirred</title>
-            <link>https://kostyanetsky.me/notes/shaken-not-stirred/</link>
-            <guid isPermaLink="false">note-shaken-not-stirred</guid>
-            <pubDate>Sun, 07 Aug 2022 19:04:51 +0700</pubDate>
-            <description><p class="measure-wide">Let's speak a bit about organization of the code. If you need to describe a set of objects with common properties, think about whether this description should be divided into separate methods, each of which intended to describe one specific object?</p>
-<p class="measure-wide">Let's look at this example — a method that describes tabular parts of documents suitable for some task:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-</code></pre>
-<p class="measure-wide">Everything seems fine, right? Descriptions are there; tabular parts are listed; splitting them by comma doesn't look expensive at all.</p>
-<p class="measure-wide">However, there are many documents in the method. Eventually, some colleague (or you) will need to refer to another tabular part of the document, which is already mentioned in the method. Something will distract they, they will forget to look for an existing line and something like this will turn out:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-
-&lt;...&gt;
-
-SupportedTypes["Document.OpeningBalancesEntering"]  = "PayrollDeductions";
-</code></pre>
-<p class="measure-wide">As a result, a part of description will be erased, and it's good if the related functionality is covered by tests.</p>
-<p class="measure-wide">Conclusion? Well, you can write a helper method that will take the document type and the name of <strong>one</strong> table part as input. The helper will add items to the SupportedTypes map and ensure that the data already added is not lost.</p>
-<p class="measure-wide">However, if you need a better solution, then consider doing as I wrote at the beginning of this note: split the method into auxiliary methods. One method contains description for one document only (for all its tabular sections). Something like:</p>
-<pre><code>Procedure AddOpeningBalancesEnteringDocument(SupportedTypes)
-
-    TabularSections = New Array;
-
-    TabularSections.Add("CustomerAccounts");
-    TabularSections.Add("VendorAccounts");
-    TabularSections.Add("PayrollDeductions");
-
-    SupportedTypes["Document.Requisition"] = StrConcat(TabularSections, ",");
-
-EndProcedure
-</code></pre>
-<p class="measure-wide">What do we get here? Firstly, nobody will accidentally erase the description of the document. Secondly, SonarQube will be pleased: it is highly likely to begin swearing at repeating literals with the names of tabular parts, if the helper is implemented instead of code splitting.</p></description>
-        </item>
-        
-        <item>
-            <title>Not, But!</title>
-            <link>https://kostyanetsky.me/notes/not-but/</link>
-            <guid isPermaLink="false">note-not-but</guid>
-            <pubDate>Sat, 23 Jul 2022 11:32:48 +0700</pubDate>
-            <description><p class="measure-wide">Someone told me about the Croatian comic strips <a class="link blue dim bb" href="http://www.to-zo.com/notbut" target="_blank">NOT/BUT</a> at the beginning of last year, when I was seriously learning to draw. Each strip there is about some kind of traumatic or simply gloomy thought that comes into the artist’s head while working. The idea is to push a reader in the right direction and give them a more practical perspective on the situation they're in.</p>
-<p class="measure-wide">I quit drawing a year later, at the end of February: it became clear that I no longer had time for a hobby. But comics are completely universal; look through, even if you have no idea what a kneaded eraser is :-)</p>
-<p class="measure-wide"><a href="http://www.to-zo.com/notbut" target="_blank"><img alt="What the actual fuck?" src="https://kostyanetsky.me/notes/not-but/mistakes.png"/></a></p>
-<p class="measure-wide">All these endless soul-searching are well known to any professional, and the way out of them is not always obvious. Especially if you are angry, tired, and the deadline for the project expired somewhere last week.</p></description>
-        </item>
-        
-        <item>
-            <title>Okay!</title>
-            <link>https://kostyanetsky.me/notes/ok/</link>
-            <guid isPermaLink="false">note-ok</guid>
-            <pubDate>Fri, 22 Jul 2022 13:13:00 +0700</pubDate>
-            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/GuIPxcXwF30" width="560"></iframe>
-<p class="measure-wide">Oh, shoot! Just watched the video and realized that I got used to writing OK in morning statuses when asked “how do you feel today”. Like, everything is normal with me, I'm alive and doing well, nothing affects my work, etc.</p>
-<p class="measure-wide">Now I'm afraid to guess what colleagues thought about me. I hope they also did not know that okay in the answer to such a question does not mean okay at all :-)</p></description>
-        </item>
-        
-        <item>
-            <title>Cookie Jar</title>
-            <link>https://kostyanetsky.me/notes/cookie-jar/</link>
-            <guid isPermaLink="false">note-cookie-jar</guid>
-            <pubDate>Sat, 28 May 2022 21:34:38 +0700</pubDate>
-            <description><p class="measure-wide">The other day, I was working with cookies in one of my scripts. While searching for the optimal solution, I came across an absolutely charming (100% working, by the way) <a class="link blue dim bb" href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">tip</a> from StackOverflow:</p>
-<blockquote>
-<p class="measure-wide">You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
-</blockquote>
-<p class="measure-wide">So, literally: keep your cookies in a jar, and to store them, pickle them. The jar with pickled cookies, by the way, can be put on the shelf later.</p>
-<p class="measure-wide">How can you not love python after that, huh?</p>
-<p class="measure-wide">P.S. While writing this post, I got curious – why pickle and not serialization? So, briefly: <a class="link blue dim bb" href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">this is the way</a>.</p></description>
-        </item>
-        
-        <item>
-            <title>Changes</title>
-            <link>https://kostyanetsky.me/notes/_changes/</link>
-            <guid isPermaLink="false">note-_changes</guid>
-            <pubDate>Mon, 02 May 2022 19:20:00 +0700</pubDate>
-            <description><p class="measure-wide"><a href="https://twitter.com/140sm/status/1358739902326833155" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/_changes/snap-tweet-140sm-1358739902326833155.png"/></a></p>
-<blockquote>
-<p class="measure-wide">In Hokkaido, a cameraman filmed a deer with the head of another, defeated in battle, stuck in its antlers. So he walks like this all his life and pierces into dead eyes.</p>
-<p class="measure-wide">The best allegory of war and the post-war time that I have come across.</p>
-</blockquote>
-<p class="measure-wide">The further it goes, the more difficult it becomes to write notes. Even as irregularly as I used to do it. Programming? Household stuff? Anything else? Whatever I decide to write about, everything ends up seeming stupid, unnecessary, and inappropriate.</p>
-<p class="measure-wide">However, many topics that were previously taken seriously, but not really close — now literally acquired form, sound, taste, and color. For example, the tweet at the beginning of this note: before current events it was sad and gloomy, but now, when it's time to look into those eyes, it feels entirely different.</p>
-<p class="measure-wide">Peace for everyone.</p></description>
-        </item>
-        
-        <item>
-            <title>No More Embedded Tweets</title>
-            <link>https://kostyanetsky.me/notes/no-more-embedded-tweets/</link>
-            <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
-            <pubDate>Mon, 21 Mar 2022 20:25:48 +0700</pubDate>
-            <description><p class="measure-wide">As soon as I <a class="link blue dim bb" href="https://kostyanetsky.me/notes/no-more-google-fonts/" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
-<p class="measure-wide">How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a class="link blue dim bb" href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
-<p class="measure-wide">How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
-<p class="measure-wide"><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
-<p class="measure-wide">The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
-<p class="measure-wide">A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a class="link blue dim bb" href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
-<p class="measure-wide">Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
-<blockquote>
-<p class="measure-wide">npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
-</blockquote>
-<p class="measure-wide">That's all. I want to donate the author, really.</p>
-<p class="measure-wide">I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p></description>
-        </item>
-        
-        <item>
-            <title>Do Not Confuse</title>
-            <link>https://kostyanetsky.me/notes/do-not-confuse/</link>
-            <guid isPermaLink="false">note-do-not-confuse</guid>
-            <pubDate>Wed, 16 Mar 2022 20:09:31 +0700</pubDate>
-            <description><p class="measure-wide"><img alt="Code" src="https://kostyanetsky.me/notes/do-not-confuse/do-not-confuse.png"/></p>
-<p class="measure-wide">If the type of operation is the sale of goods or real estate, then open the common form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
-<p class="measure-wide">However, if the type of operation is a return to the supplier, then open the general form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is the EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
-<p class="measure-wide">I hope you won't confuse.</p></description>
+            <description><p>Slack, of course, is a thing to scold. For being slow, for having bugs, for notifications. However, I just love his stubs in case there are no new messages.</p>
+<p>Look at this cuteness:</p>
+<p><img alt="All done. The future is yours." src="https://kostyanetsky.me/notes/slack/all-done.png"/></p>
+<p>Why do we need psychotherapists at all?</p>
+<p><img alt="You're up to date. Go forth and do great things." src="https://kostyanetsky.me/notes/slack/up-to-date.png"/></p>
+<p>Or this:</p>
+<p><img alt="You're all read. Here is a tractor." src="https://kostyanetsky.me/notes/slack/here-is-tractor.png"/></p>
+<p>Geez-Louise, Slack, hold on. You're not the first who advices this, believe me.</p></description>
         </item>
         
     </channel>

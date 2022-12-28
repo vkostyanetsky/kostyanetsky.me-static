@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Top Salaries
-        
-    </title>
+    <title>Top Salaries</title>
 
-    <meta name="description" content="A few words about Nikita Tonsky's experiment about CSV parsing in different languages." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Top Salaries"/>
-    <meta property="og:description" content="A few words about Nikita Tonsky's experiment about CSV parsing in different languages."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/1c/top-salaries/" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/top-salaries" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/1c/hammer-and-nails/';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/1c/matryoshka/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/1c/top-salaries/" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/top-salaries" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/pages/notes/top-salaries/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/top-salaries/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,17 +116,17 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
+    <div class="f4 lh-copy black mb5 measure-wide">
         <blockquote>
-<p class="measure-wide">There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
-<p class="measure-wide"><em><a class="link blue dim bb" href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
+<p>There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
+<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
 </blockquote>
-<p class="measure-wide">Threw in my <a class="link blue dim bb" href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
-<p class="measure-wide">What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
-<p class="measure-wide">In general, the whole story reminded Eugene Stepanishev's <a class="link blue dim bb" href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
-<p class="measure-wide">What was funny: for a couple of <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p>
+<p>Threw in my <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
+<p>What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
+<p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
+<p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p>
         <p class="f6 mt4">
-            2 October 2021
+            2021-10-02 16:49:35
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -151,11 +147,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/hammer-and-nails/">Hammer & Nails</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/hammer-and-nails">Hammer & Nails</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/matryoshka/">Matryoshka</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/matryoshka">Matryoshka</a>
                                 
 
             </p> 
