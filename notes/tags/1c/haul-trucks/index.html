@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Shaken, Not Stirred</title>
+    <title>Haul Trucks</title>
 
-    <meta name="description" content="How to refactor object descriptions?" />
+    <meta name="description" content="Which car the platform is?" />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Shaken, Not Stirred"/>
-    <meta property="og:description" content="How to refactor object descriptions?"/>
+    <meta property="og:title" content="Haul Trucks"/>
+    <meta property="og:description" content="Which car the platform is?"/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/shaken-not-stirred" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/haul-trucks" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/shaken-not-stirred" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/haul-trucks" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/shaken-not-stirred/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/haul-trucks/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,45 +112,16 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Shaken, Not Stirred</h1>
+        <h1 class="f-subheadline lh-solid">Haul Trucks</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Let's speak a bit about organization of the code. If you need to describe a set of objects with common properties, think about whether this description should be divided into separate methods, each of which intended to describe one specific object?</p>
-<p>Let's look at this example — a method that describes tabular parts of documents suitable for some task:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-</code></pre>
-<p>Everything seems fine, right? Descriptions are there; tabular parts are listed; splitting them by comma doesn't look expensive at all.</p>
-<p>However, there are many documents in the method. Eventually, some colleague (or you) will need to refer to another tabular part of the document, which is already mentioned in the method. Something will distract they, they will forget to look for an existing line and something like this will turn out:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-
-&lt;...&gt;
-
-SupportedTypes["Document.OpeningBalancesEntering"]  = "PayrollDeductions";
-</code></pre>
-<p>As a result, a part of description will be erased, and it's good if the related functionality is covered by tests.</p>
-<p>Conclusion? Well, you can write a helper method that will take the document type and the name of <strong>one</strong> table part as input. The helper will add items to the SupportedTypes map and ensure that the data already added is not lost.</p>
-<p>However, if you need a better solution, then consider doing as I wrote at the beginning of this note: split the method into auxiliary methods. One method contains description for one document only (for all its tabular sections). Something like:</p>
-<pre><code>Procedure AddOpeningBalancesEnteringDocument(SupportedTypes)
-
-    TabularSections = New Array;
-
-    TabularSections.Add("CustomerAccounts");
-    TabularSections.Add("VendorAccounts");
-    TabularSections.Add("PayrollDeductions");
-
-    SupportedTypes["Document.Requisition"] = StrConcat(TabularSections, ",");
-
-EndProcedure
-</code></pre>
-<p>What do we get here? Firstly, nobody will accidentally erase the description of the document. Secondly, SonarQube will be pleased: it is highly likely to begin swearing at repeating literals with the names of tabular parts, if the helper is implemented instead of code splitting.</p>
+        <p><img alt="Cars" src="https://kostyanetsky.me/notes/haul-trucks/cars.jpg"/></p>
+<p>The colleague grumbled that if you think like that, then the configurator will be Zhiguli, and the EDT will be Kama1 (this is an electric car that has been developed somewhere in the depths of KAMAZ for many years and still can’t gather strength and, finally, show their wonder of the world).</p>
+<p>Well, I try to look at things with optimism. I think the platform and its IDE are such mining trucks. No one in their right mind rides them on household chores, but these beasts are irreplaceable on a cut!</p>
         <p class="f6 mt4">
-            2022-08-07 19:04:51
+            2023-02-20 09:00:00
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -171,11 +142,9 @@ EndProcedure
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/do-not-confuse">Do Not Confuse</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/shaken-not-stirred">Shaken, Not Stirred</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/haul-trucks">Haul Trucks</a>
                                 
 
             </p> 

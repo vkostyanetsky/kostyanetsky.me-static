@@ -4,7 +4,18 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Wed, 22 Sep 2021 21:25:48 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 30 Oct 2021 17:14:56 +0700</lastBuildDate>
+        
+        <item>
+            <title>Matryoshka</title>
+            <link>https://kostyanetsky.me/notes/matryoshka</link>
+            <guid isPermaLink="false">note-matryoshka</guid>
+            <pubDate>Sat, 30 Oct 2021 17:14:56 +0700</pubDate>
+            <description><p>A few days ago, there was a link to 1Ci certificate in the team chat (a colleague passed their junior <a href="https://academy.1ci.com/courses/1c-junior-developer" target="_blank">course</a>). I go over and see no auth form, no errors — I just get a PDF file. Everything is OK, right? Well, then I open the file:</p>
+<p><img alt="Error.pdf" src="https://kostyanetsky.me/notes/matryoshka/not-your-certificate.png"/></p>
+<p>Honestly, I am even delighted. We need to implement this UX in our products: you press, for example, the “print” button for a document, and it gives you a PDF! And inside it — a link to another PDF! And inside it — “entity is not filled”, so go fill.</p>
+<p>You can sell it as a Russian way of dealing with errors. This is, like, for historical reasons! Blame all the damned matryoshkas, and <a href="https://en.wikipedia.org/wiki/Koschei" target="_blank">Koschei</a> with his needle. It is, as you remember, in the egg, and it is in the duck, which is in the rabbit, tucked into the chest, and further along the chain of nesting.</p></description>
+        </item>
         
         <item>
             <title>Diablo</title>
@@ -20,38 +31,6 @@
         </item>
         
         <item>
-            <title>Beware the Daughter of the Sea</title>
-            <link>https://kostyanetsky.me/notes/jaina</link>
-            <guid isPermaLink="false">note-jaina</guid>
-            <pubDate>Sun, 29 Jul 2018 16:19:10 +0700</pubDate>
-            <description><p>Natalia O'Shea has sung a Jaina's song in a Russian version of a trailer for a future update of World of Warcraft. As for me, she's extraordinary good in it — I mean, she knows how to make a proper mood and season a speech with steel.</p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5j-S448XC8k" width="560"></iframe>
-<p>By the way, speaking about her and “Melnitsa” as a whole thing — all of their most powerful songs are about something particular. We were at a concert dedicated to the “Luciferase” release and it's hard to compare, seriously. Perhaps, I didn't know something essential to understanding a context, but sometimes it was even barely possible to figure out a story which I was hearing.</p>
-<p>Just watch a video I posted under. You don't need to know something special about the World of Warcraft universe, do you? For example, I haven't played WoW and not planning to do it, but the end of the song literally creeps me out :-)</p></description>
-        </item>
-        
-        <item>
-            <title>Message to User</title>
-            <link>https://kostyanetsky.me/notes/message-to-user</link>
-            <guid isPermaLink="false">note-message-to-user</guid>
-            <pubDate>Mon, 30 Apr 2018 09:37:18 +0700</pubDate>
-            <description><p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
-<p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
-<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
-        </item>
-        
-        <item>
-            <title>Do Not Confuse</title>
-            <link>https://kostyanetsky.me/notes/do-not-confuse</link>
-            <guid isPermaLink="false">note-do-not-confuse</guid>
-            <pubDate>Wed, 16 Mar 2022 20:09:31 +0700</pubDate>
-            <description><p><img alt="Code" src="https://kostyanetsky.me/notes/do-not-confuse/do-not-confuse.png"/></p>
-<p>If the type of operation is the sale of goods or real estate, then open the common form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
-<p>However, if the type of operation is a return to the supplier, then open the general form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is the EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
-<p>I hope you won't confuse.</p></description>
-        </item>
-        
-        <item>
             <title>A Script to Sync With NAS</title>
             <link>https://kostyanetsky.me/notes/rclone-abuser</link>
             <guid isPermaLink="false">note-rclone-abuser</guid>
@@ -62,29 +41,41 @@
         </item>
         
         <item>
-            <title>Top Salaries</title>
-            <link>https://kostyanetsky.me/notes/top-salaries</link>
-            <guid isPermaLink="false">note-top-salaries</guid>
-            <pubDate>Sat, 02 Oct 2021 16:49:35 +0700</pubDate>
-            <description><blockquote>
-<p>There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
-<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
-</blockquote>
-<p>Threw in my <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
-<p>What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
-<p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
-<p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p></description>
+            <title>HPMoR Printing</title>
+            <link>https://kostyanetsky.me/notes/hpmor-printing</link>
+            <guid isPermaLink="false">note-hpmor-printing</guid>
+            <pubDate>Sun, 22 Jul 2018 19:00:55 +0700</pubDate>
+            <description><p>Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
+<p>The book is really good, I had <a href="https://kostyanetsky.me//notes/hpmor" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a href="https://planeta.ru/campaigns/hpmor" target="_blank">make a request</a> now.</p></description>
         </item>
         
         <item>
-            <title>These Nasty Smartphones</title>
-            <link>https://kostyanetsky.me/notes/these-nasty-smartphones</link>
-            <guid isPermaLink="false">note-these-nasty-smartphones</guid>
-            <pubDate>Sat, 31 Mar 2018 00:00:00 +0700</pubDate>
-            <description><p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
-<p>The artist is <a href="https://www.patreon.com/adamtots" target="_blank">Adam Ellis</a>.</p>
-<p>As for me, it's a great illustration for an everlasting moan “why do you always stare at your smartphone blah blah blah”. A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
-<p>The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p></description>
+            <title>Cookie Jar</title>
+            <link>https://kostyanetsky.me/notes/cookie-jar</link>
+            <guid isPermaLink="false">note-cookie-jar</guid>
+            <pubDate>Sat, 28 May 2022 21:34:38 +0700</pubDate>
+            <description><p>The other day, I was working with cookies in one of my scripts. While searching for the optimal solution, I came across an absolutely charming (100% working, by the way) <a href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">tip</a> from StackOverflow:</p>
+<blockquote>
+<p>You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
+</blockquote>
+<p>So, literally: keep your cookies in a jar, and to store them, pickle them. The jar with pickled cookies, by the way, can be put on the shelf later.</p>
+<p>How can you not love python after that, huh?</p>
+<p>P.S. While writing this post, I got curious – why pickle and not serialization? So, briefly: <a href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">this is the way</a>.</p></description>
+        </item>
+        
+        <item>
+            <title>Nerd View</title>
+            <link>https://kostyanetsky.me/notes/nerdview</link>
+            <guid isPermaLink="false">note-nerdview</guid>
+            <pubDate>Mon, 19 Oct 2020 18:35:56 +0700</pubDate>
+            <description><p><img alt="A chat with my daughter" src="https://kostyanetsky.me/notes/nerdview/telegram.png"/></p>
+<p>On the screenshot above my little one is just letting me know where she is: walking down the street, at the school, at a playground. It's not her fault that I have a sort of nerd view: when I look at this chat I see nothing but code on Gherkin, which is just a bit broken. A little patch here and there and it will be fine :-)</p>
+<pre><code>And I exit home
+Then I enter school
+And I exit school
+Then I gonna swing
+</code></pre>
+<p>We use Gherkin to write our autotests for <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. I can't say I've made very many of them, especially in comparison with some of my colleagues… Well, it seems like I've made them enough to twist the reality a few.</p></description>
         </item>
         
         <item>
@@ -98,35 +89,32 @@
         </item>
         
         <item>
-            <title>Second Monitor Management via Console</title>
-            <link>https://kostyanetsky.me/notes/2nd-monitor-and-console</link>
-            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
-            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
-            <description><p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
-<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
-<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
-<pre><code>MultiMonitorTool.exe / disable 2
-MultiMonitorTool.exe / enable 2
-MultiMonitorTool.exe / switch 2
-</code></pre>
-<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
-<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
-</code></pre>
-<p>And then, when you need to turn on the monitor, load the saved config:</p>
-<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
-</code></pre>
-<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
+            <title>Group Work in Google Docs</title>
+            <link>https://kostyanetsky.me/notes/anonymous-quokka</link>
+            <guid isPermaLink="false">note-anonymous-quokka</guid>
+            <pubDate>Sun, 18 Sep 2022 16:25:48 +0700</pubDate>
+            <description><p>For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
+<p>They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
+<p>Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p></description>
         </item>
         
         <item>
-            <title>No More Google Fonts</title>
-            <link>https://kostyanetsky.me/notes/no-more-google-fonts</link>
-            <guid isPermaLink="false">note-no-more-google-fonts</guid>
-            <pubDate>Sat, 19 Feb 2022 20:25:48 +0700</pubDate>
-            <description><p><a href="https://twitter.com/PixelAmbacht/status/1494272370076536840" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/no-more-google-fonts/snap-tweet-PixelAmbacht-1494272370076536840.png"/></a></p>
-<p>A year ago, damn it. Okay, hello everyone! Johnny Slowpoke is here! Today we will throw out Google Fonts from my blog. I used to load the main font (PT Sans) from this service, but it makes almost no sense without cross-domain caching. Frankly speaking, the only point to do this further is if a server on which the site is running is slow, so it is faster to load fonts from Google. </p>
-<p>I host my blog on GitHub servers and have no complaints about performance. So, I'm self-hosting PT Sans now, and you know what? The difference is dramatic. When updating a page before, there was clearly a noticeable delay between loading the page and loading the font. For now, it is barely recognizable. If you have a blog and want to try to self-host fonts — here is a cool <a href="https://google-webfonts-helper.herokuapp.com/fonts" target="_blank">service</a> that solves the problem in a few clicks.</p>
-<p>Don't forget to put a big, nice star on the <a href="https://github.com/majodev/google-webfonts-helper" target="_blank">repository</a>!</p></description>
+            <title>Message to User</title>
+            <link>https://kostyanetsky.me/notes/message-to-user</link>
+            <guid isPermaLink="false">note-message-to-user</guid>
+            <pubDate>Mon, 30 Apr 2018 09:37:18 +0700</pubDate>
+            <description><p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
+<p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
+<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
+        </item>
+        
+        <item>
+            <title>Why So Serious?</title>
+            <link>https://kostyanetsky.me/notes/why-so-serious</link>
+            <guid isPermaLink="false">note-why-so-serious</guid>
+            <pubDate>Sat, 17 Feb 2018 00:00:00 +0700</pubDate>
+            <description><p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
+<p>It's what you should avoid despite it looks funny. You'll rewrite code you've written month or two later and it will be hard to shame its author because it is you.</p></description>
         </item>
         
     </channel>
