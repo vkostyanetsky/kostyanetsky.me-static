@@ -57,6 +57,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/rest-service-4-sm</loc>
+        <lastmod>2023-02-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/hpmor</loc>
         <lastmod>2016-11-06</lastmod>
         <changefreq>weekly</changefreq>

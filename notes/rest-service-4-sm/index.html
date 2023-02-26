@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Haul Trucks</title>
+    <title>REST service for Service Manager</title>
 
-    <meta name="description" content="Which car the platform is?" />
+    <meta name="description" content="A few words about a shoe that rubbed my foot." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Haul Trucks"/>
-    <meta property="og:description" content="Which car the platform is?"/>
+    <meta property="og:title" content="REST service for Service Manager"/>
+    <meta property="og:description" content="A few words about a shoe that rubbed my foot."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/haul-trucks" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/rest-service-4-sm" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/haul-trucks" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/rest-service-4-sm" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/haul-trucks/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/rest-service-4-sm/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,19 +112,30 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Haul Trucks</h1>
+        <h1 class="f-subheadline lh-solid">REST service for Service Manager</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Cars" src="https://kostyanetsky.me/notes/haul-trucks/cars.jpg"/></p>
-<p>The colleague grumbled that if you think like that, then the configurator will be Zhiguli, and the EDT will be Kama1 (this is an electric car that has been developed somewhere in the depths of KAMAZ for many years and still can’t gather strength and, finally, show the wonder to the world).</p>
-<p>Well, I try to look at things with optimism. I think the platform and its IDE are such haul trucks. No one in their right mind rides them on household chores, but these beasts are irreplaceable on a cut!</p>
+        <p>This week, I developed a REST service to set up our service manager (this is a configuration for managing a 1cFresh instance). Deploying the development environment is a regular task for us, and every time the manager's database had to be tuned by hand: tweaking the storefront, changing application addresses, overwriting scheduled tasks, and so on.</p>
+<p>The implementation was simple. Come up with a JSON structure, write a parser, find a code in the configuration, make it work by external call, and make sure you don't break anything. Routine work, in general, but I love to do such things from time to time: I mean, to look around and try to figure out which of the daily tasks is annoying enough.</p>
+<p>This one is a good example. To be frank, setting up the Service Manager wasn't a problem (launching the app and fiddling with the settings), but it was a thing to pay attention &amp; spend time to. What do we have now:</p>
+<ol>
+<li>There is a JSON file with all the settings;</li>
+<li>There is a REST service for its processing;</li>
+<li>There is a script that will put the first into the second;</li>
+<li>There is a pipeline that will do it all by itself.</li>
+</ol>
+<p>In short, a boot was rubbing a leg, and now it isn't. Yahoo!</p>
         <p class="f6 mt4">
-            2023-02-20 09:00:00
+            2023-02-25 19:02:49
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
         </p>
@@ -142,11 +153,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/shaken-not-stirred">Shaken, Not Stirred</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/haul-trucks">Haul Trucks</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/rest-service-4-sm">REST service for Service Manager</a>
                                 
 
             </p> 

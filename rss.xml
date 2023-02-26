@@ -79,6 +79,23 @@ Then I gonna swing
         </item>
         
         <item>
+            <title>REST service for Service Manager</title>
+            <link>https://kostyanetsky.me/notes/rest-service-4-sm</link>
+            <guid isPermaLink="false">note-rest-service-4-sm</guid>
+            <pubDate>Sat, 25 Feb 2023 19:02:49 +0700</pubDate>
+            <description><p>This week, I developed a REST service to set up our service manager (this is a configuration for managing a 1cFresh instance). Deploying the development environment is a regular task for us, and every time the manager's database had to be tuned by hand: tweaking the storefront, changing application addresses, overwriting scheduled tasks, and so on.</p>
+<p>The implementation was simple. Come up with a JSON structure, write a parser, find a code in the configuration, make it work by external call, and make sure you don't break anything. Routine work, in general, but I love to do such things from time to time: I mean, to look around and try to figure out which of the daily tasks is annoying enough.</p>
+<p>This one is a good example. To be frank, setting up the Service Manager wasn't a problem (launching the app and fiddling with the settings), but it was a thing to pay attention &amp; spend time to. What do we have now:</p>
+<ol>
+<li>There is a JSON file with all the settings;</li>
+<li>There is a REST service for its processing;</li>
+<li>There is a script that will put the first into the second;</li>
+<li>There is a pipeline that will do it all by itself.</li>
+</ol>
+<p>In short, a boot was rubbing a leg, and now it isn't. Yahoo!</p></description>
+        </item>
+        
+        <item>
             <title>HPMoR</title>
             <link>https://kostyanetsky.me/notes/hpmor</link>
             <guid isPermaLink="false">note-hpmor</guid>
@@ -106,15 +123,6 @@ Then I gonna swing
             <description><p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
 <p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
 <p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
-        </item>
-        
-        <item>
-            <title>Why So Serious?</title>
-            <link>https://kostyanetsky.me/notes/why-so-serious</link>
-            <guid isPermaLink="false">note-why-so-serious</guid>
-            <pubDate>Sat, 17 Feb 2018 00:00:00 +0700</pubDate>
-            <description><p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
-<p>It's what you should avoid despite it looks funny. You'll rewrite code you've written month or two later and it will be hard to shame its author because it is you.</p></description>
         </item>
         
     </channel>
