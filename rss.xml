@@ -50,6 +50,16 @@
         </item>
         
         <item>
+            <title>Slow down, I&#x27;m recording</title>
+            <link>https://kostyanetsky.me/notes/outgoing-requests-limiter</link>
+            <guid isPermaLink="false">note-outgoing-requests-limiter</guid>
+            <pubDate>Sun, 05 Mar 2023 15:54:51 +0700</pubDate>
+            <description><p>Usually the idea of developing is simple: the faster it works, the better. For example, the more requests an application manages to execute per unit of time, the faster the task for which these requests are needed will be solved.</p>
+<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
+<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p></description>
+        </item>
+        
+        <item>
             <title>Cookie Jar</title>
             <link>https://kostyanetsky.me/notes/cookie-jar</link>
             <guid isPermaLink="false">note-cookie-jar</guid>
@@ -113,16 +123,6 @@ Then I gonna swing
             <description><p>For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
 <p>They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
 <p>Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p></description>
-        </item>
-        
-        <item>
-            <title>Message to User</title>
-            <link>https://kostyanetsky.me/notes/message-to-user</link>
-            <guid isPermaLink="false">note-message-to-user</guid>
-            <pubDate>Mon, 30 Apr 2018 09:37:18 +0700</pubDate>
-            <description><p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
-<p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
-<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
         </item>
         
     </channel>
