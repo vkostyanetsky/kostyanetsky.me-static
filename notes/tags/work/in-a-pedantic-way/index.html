@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Do Not Confuse</title>
+    <title>In a Pedantic Way</title>
 
-    <meta name="description" content="Thoughtful logic, forgotten in our configuration by one of its developers." />
+    <meta name="description" content="How to compare two boolean variables?" />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Do Not Confuse"/>
-    <meta property="og:description" content="Thoughtful logic, forgotten in our configuration by one of its developers."/>
+    <meta property="og:title" content="In a Pedantic Way"/>
+    <meta property="og:description" content="How to compare two boolean variables?"/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/do-not-confuse" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/in-a-pedantic-way" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/do-not-confuse" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/in-a-pedantic-way" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/do-not-confuse/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/in-a-pedantic-way/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,24 +112,32 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Do Not Confuse</h1>
+        <h1 class="f-subheadline lh-solid">In a Pedantic Way</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Code" src="https://kostyanetsky.me/notes/do-not-confuse/do-not-confuse.png"/></p>
-<p>If the type of operation is the sale of goods or real estate, then open the common form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
-<p>However, if the type of operation is a return to the supplier, then open the general form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is the EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
-<p>I hope you won't confuse.</p>
+        <p>The daily award for most philosophical code goes to the author of this elegant way to check that a pair of boolean variables are not equal to each other:</p>
+<pre><code>If DataStructure.Property("AmountVATIn")
+    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
+    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
+    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
+EndIf;
+</code></pre>
+<p>I'm thinking of adding something like “And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)” here to spice it up with a subtle note of insanity.</p>
         <p class="f6 mt4">
-            2022-03-16 20:09:31
+            2023-03-21 20:26:43
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
                 </span>
             
         </p>
@@ -147,11 +155,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/hammer-and-nails">Hammer & Nails</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/environmental-storytelling">Environmental Storytelling</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/in-a-pedantic-way">In a Pedantic Way</a>
                                 
 
             </p> 
