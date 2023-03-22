@@ -120,7 +120,7 @@ MultiMonitorTool.exe / switch 2
             <link>https://kostyanetsky.me/notes/in-a-pedantic-way</link>
             <guid isPermaLink="false">note-in-a-pedantic-way</guid>
             <pubDate>Tue, 21 Mar 2023 20:26:43 +0700</pubDate>
-            <description><p>The daily award for most philosophical code goes to the author of this elegant way to check that two boolean variables are not equal to each other:</p>
+            <description><p>The daily award for the most philosophical code goes to the author of this elegant way to check that two boolean variables are not equal to each other:</p>
 <pre><code>If DataStructure.Property("AmountVATIn")
     And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
     OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
