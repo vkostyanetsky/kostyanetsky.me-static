@@ -4,115 +4,79 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 19 Mar 2023 15:51:48 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 05 Mar 2023 15:54:51 +0700</lastBuildDate>
         
         <item>
-            <title>Environmental Storytelling</title>
-            <link>https://kostyanetsky.me/notes/environmental-storytelling</link>
-            <guid isPermaLink="false">note-environmental-storytelling</guid>
-            <pubDate>Sun, 19 Mar 2023 15:51:48 +0700</pubDate>
-            <description><p>I like to notice things in the world around me that clearly have a story behind them. In video games, this is called “environmental storytelling”: they don’t tell you the story directly, but if you look around, you can guess which gun was hanging on the wall and who fired from it.</p>
-<p>For example, I recently celebrated the company's 10th anniversary with colleagues at a local golf club. Balls had to be sent flying from the second floor; there are no railings for obvious reasons, but a net is stretched in case someone loses their balance.</p>
-<p><img alt="Photo from the club website to make it clearer." src="https://kostyanetsky.me/notes/environmental-storytelling/topgolf.jpeg"/></p>
-<p>Why are you talking about this, you ask? Well, there are warnings on the walls: jump into the net of your own free will and pay <abbr title="About two hundred thousand rubles at this moment.">ten thousand dirhams</abbr>. Recording this heroic leap of faith on camera is fine as well, just prepare five thousand more.</p>
-<p>Do you feel the smell of a good history? </p>
-<p>Another example: once flew to Turkey to rest and decided, just in case, to look through the rules of the airline (what can be taken on board, what can not). Among the list of items prohibited from being carried on board, I found “steel spear” and “steel flail” 😬</p>
-<p>UPD: Another great <a href="https://kostyanetsky.me/notes/environmental-storytelling/soundproof.jpeg" target="_blank">example</a> from somewhere on the Internet.</p></description>
+            <title>Slow down, I&#x27;m recording</title>
+            <link>https://kostyanetsky.me/notes/outgoing-requests-limiter</link>
+            <guid isPermaLink="false">note-outgoing-requests-limiter</guid>
+            <pubDate>Sun, 05 Mar 2023 15:54:51 +0700</pubDate>
+            <description><p>Usually the idea of developing is simple: the faster it works, the better. For example, the more requests an application manages to execute per unit of time, the faster the task for which these requests are needed will be solved.</p>
+<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
+<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p></description>
         </item>
         
         <item>
-            <title>The Ninth Wave</title>
-            <link>https://kostyanetsky.me/notes/ninth-wave</link>
-            <guid isPermaLink="false">note-ninth-wave</guid>
-            <pubDate>Mon, 09 Mar 2020 05:21:32 +0700</pubDate>
-            <description><p>Yesterday morning, I was buying gifts for my women. While a florist was makings bouquets for me, we had a small talk and I suddenly caught her eye. She was looking at the growing crowd of customers with calmness and a clearly readable shadow of doom. This is probably how sailors looking at a surging wave which is about to bury their boat :-)</p>
-<p>People outside the flower industry grin sometimes — they say, eight of March is such a magical holiday for all the florists who make a fortune in ten hours. Well, income is really good these days, but literally anybody who has ever worked in this sphere more often associates the holiday (and a couple of days before it, by the way) with a monstrous strain on health and nerves.</p>
-<p>I can say that I got off cheaply: was just deploying and servicing some IT of a local net of flower shops, nothing more (by the way, I want to proudly <a href="http://rosetta.florist/" target="_blank">recommend</a> my former colleagues!). Nonetheless, the smell of flowers caused me Vietnam syndrome for a long time :-)</p></description>
+            <title>No More Google Fonts</title>
+            <link>https://kostyanetsky.me/notes/no-more-google-fonts</link>
+            <guid isPermaLink="false">note-no-more-google-fonts</guid>
+            <pubDate>Sat, 19 Feb 2022 20:25:48 +0700</pubDate>
+            <description><p><a href="https://twitter.com/PixelAmbacht/status/1494272370076536840" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/no-more-google-fonts/snap-tweet-PixelAmbacht-1494272370076536840.png"/></a></p>
+<p>A year ago, damn it. Okay, hello everyone! Johnny Slowpoke is here! Today we will throw out Google Fonts from my blog. I used to load the main font (PT Sans) from this service, but it makes almost no sense without cross-domain caching. Frankly speaking, the only point to do this further is if a server on which the site is running is slow, so it is faster to load fonts from Google. </p>
+<p>I host my blog on GitHub servers and have no complaints about performance. So, I'm self-hosting PT Sans now, and you know what? The difference is dramatic. When updating a page before, there was clearly a noticeable delay between loading the page and loading the font. For now, it is barely recognizable. If you have a blog and want to try to self-host fonts — here is a cool <a href="https://google-webfonts-helper.herokuapp.com/fonts" target="_blank">service</a> that solves the problem in a few clicks.</p>
+<p>Don't forget to put a big, nice star on the <a href="https://github.com/majodev/google-webfonts-helper" target="_blank">repository</a>!</p></description>
         </item>
         
         <item>
-            <title>Totals of 2021</title>
-            <link>https://kostyanetsky.me/notes/totals-of-2021</link>
-            <guid isPermaLink="false">note-totals-of-2021</guid>
-            <pubDate>Tue, 08 Feb 2022 13:25:00 +0700</pubDate>
-            <description><p>It is a bit late to sum up, isn't it? Well, the previous couple of months have been, um, tight, so I had no actual time  to sit down and think. Now I'm on vacation for 2021 – so no time like the present. I'm writing, like, from the past.</p>
-<p>Write out each achievement doesn't attract me at all. The year definitely turned out to be good: I did a lot of complex work on FirstBit ERP (wrote new modules, rewrote existing ones, crushed bugs, wrote functional and load tests – yes, there were countless things). This had a good effect both on the configuration itself and on the profits of my company. In addition, I passed 1C expert exam and a PostgreSQL professional exam. Hip-hip-hooray.</p>
-<p>There were fails as well. I still feel lazy to jot them down, but the main one is obvious – I became monstrously fat and instead of losing ten kilograms (that was the original plan) – I gained five more.</p>
-<p>Looking back, the root of most of the problems over the past year is this: I focused too much on task flow. They were all interesting in their own way, from a carefully written technical task to challenges like “find a problem in the code using your witcher's instincts”. You do one task, another, a third, a hundredth, and you do not notice that you have ignored almost everything except work. As a result, you get a lot of experience, but the world dries up to the Configurator window and there is no strength to somehow apply this experience. Unhealthy bullshit.</p>
-<p>In short, if you imagine me as a character in some video game, it looks like this: attack and intelligence have grown noticeably over the year, but health, agility, charisma, and almost everything else in general, have dropped. Now I need to do something to deal with this mess.</p>
-<p>You know what? I'll take ten kilometers run for a start.</p>
-<p><a href="https://twitter.com/EffinBirds/status/1329575199667347459" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/totals-of-2021/snap-tweet-EffinBirds-1329575199667347459.png"/></a></p>
-<p>Maybe, birdie, maybe.</p></description>
+            <title>These Nasty Smartphones</title>
+            <link>https://kostyanetsky.me/notes/these-nasty-smartphones</link>
+            <guid isPermaLink="false">note-these-nasty-smartphones</guid>
+            <pubDate>Sat, 31 Mar 2018 00:00:00 +0700</pubDate>
+            <description><p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
+<p>The artist is <a href="https://www.patreon.com/adamtots" target="_blank">Adam Ellis</a>.</p>
+<p>As for me, it's a great illustration for an everlasting moan “why do you always stare at your smartphone blah blah blah”. A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
+<p>The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p></description>
         </item>
         
         <item>
-            <title>Second Monitor Management via Console</title>
-            <link>https://kostyanetsky.me/notes/2nd-monitor-and-console</link>
-            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
-            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
-            <description><p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
-<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
-<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
-<pre><code>MultiMonitorTool.exe / disable 2
-MultiMonitorTool.exe / enable 2
-MultiMonitorTool.exe / switch 2
-</code></pre>
-<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
-<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
-</code></pre>
-<p>And then, when you need to turn on the monitor, load the saved config:</p>
-<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
-</code></pre>
-<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
+            <title>Sebby x Player</title>
+            <link>https://kostyanetsky.me/notes/sebby-x-player</link>
+            <guid isPermaLink="false">note-sebby-x-player</guid>
+            <pubDate>Mon, 14 Aug 2017 00:00:00 +0700</pubDate>
+            <description><p>I have <a href="https://acomics.ru/~sebby-x-player" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">went out</a> a couple of years ago).</p>
+<p>It was an amusing experience. Firstly, an author of the manga is Chinese and her work was already translated from Chinese to English. I'm not sure what was the bigger problem — cultural differences or language skills, but several frames were a bit difficult to understand what's going on. Secondly, I've figured out that it's a real challenge to pick proper Russian words and not to get something like a quote from an official government's letter in the end.</p>
+<p>So, a part of sense had lost during the process, I guess, although I tried to keep everything I could and even had a word with the author in order to solve the most problematic cases. It was quite funny — I don't know Chinese, she doesn't know Russian, so our a bit poor English was the only way to understand each other.</p>
+<p>Something could have been translated better, I suppose, and several pictures definitely could have been changed more accurately. But you know what? Hell it out, perfection is a cruel mistress and I like the result yet. Yeah, there is no big deal or something like it — a drawing style is quite common, a plot has no significant differences with the game, but… I don't know. Perhaps, visual novels made a too sentimental son of a bitch out of me :-)</p>
+<p>Thanks to <a href="https://vk.com/id54890849" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" target="_blank">Quantus</a> for the manga.</p></description>
         </item>
         
         <item>
-            <title>No More Embedded Tweets</title>
-            <link>https://kostyanetsky.me/notes/no-more-embedded-tweets</link>
-            <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
-            <pubDate>Mon, 21 Mar 2022 20:25:48 +0700</pubDate>
-            <description><p>As soon as I <a href="https://kostyanetsky.me//notes/no-more-google-fonts/" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
-<p>How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
-<p>How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
-<p><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
-<p>The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
-<p>A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
-<p>Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
-<blockquote>
-<p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
+            <title>Top Salaries</title>
+            <link>https://kostyanetsky.me/notes/top-salaries</link>
+            <guid isPermaLink="false">note-top-salaries</guid>
+            <pubDate>Sat, 02 Oct 2021 16:49:35 +0700</pubDate>
+            <description><blockquote>
+<p>There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
+<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
 </blockquote>
-<p>That's all. I want to donate the author, really.</p>
-<p>I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p></description>
+<p>Threw in my <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
+<p>What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
+<p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
+<p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p></description>
         </item>
         
         <item>
-            <title>Beware the Daughter of the Sea</title>
-            <link>https://kostyanetsky.me/notes/jaina</link>
-            <guid isPermaLink="false">note-jaina</guid>
-            <pubDate>Sun, 29 Jul 2018 16:19:10 +0700</pubDate>
-            <description><p>Natalia O'Shea has sung a Jaina's song in a Russian version of a trailer for a future update of World of Warcraft. As for me, she's extraordinary good in it — I mean, she knows how to make a proper mood and season a speech with steel.</p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5j-S448XC8k" width="560"></iframe>
-<p>By the way, speaking about her and “Melnitsa” as a whole thing — all of their most powerful songs are about something particular. We were at a concert dedicated to the “Luciferase” release and it's hard to compare, seriously. Perhaps, I didn't know something essential to understanding a context, but sometimes it was even barely possible to figure out a story which I was hearing.</p>
-<p>Just watch a video I posted under. You don't need to know something special about the World of Warcraft universe, do you? For example, I haven't played WoW and not planning to do it, but the end of the song literally creeps me out :-)</p></description>
-        </item>
-        
-        <item>
-            <title>Reuse Carefully</title>
-            <link>https://kostyanetsky.me/notes/reuse-carefully</link>
-            <guid isPermaLink="false">note-reuse-carefully</guid>
-            <pubDate>Tue, 08 Feb 2022 09:00:11 +0700</pubDate>
-            <description><p>I'll tell you about a funny and a little embarrassing case that I took apart in January. The essence in a nutshell: a huge auto-test based on Vanessa, which is intended to check the VAT calculation, falls somewhere near the end.</p>
-<p>I start investigating. First, I look at the screenshots in Allure: OK, the reason is obvious – in one of the documents, the conditional appearance for the field with the VAT amount doesn't work. The test expected it to be unavailable if the VAT rate is zero, but it turned out to be available somehow.</p>
-<p>It's a mess, it needs to be fixed! I look at the condition in the code: well, it locks the field if the VAT rate is in the list of “zero” rates (list of VAT rates whose rate is equal to zero). Everything appears to be simple and logical. What the hell could possibly go wrong here?</p>
-<p><a href="https://twitter.com/EffinBirds/status/1489980393675702281" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/reuse-carefully/snap-tweet-EffinBirds-1489980393675702281.png"/></a></p>
-<p>Well, I try to reproduce the bug manually. And there, all of a sudden, everything is nice: the conditional appearance works as it should. Floating bug, or what? I run the auto-test again, at the right moment I jump in with the debugger and find some outright garbage: in the list of “zero” rates, besides themselves, there are a bunch of empty links!</p>
-<p>Frankly speaking, I was scratching the back of my head. The document receives this list from the common module with <a href="https://gist.github.com/vkostyanetsky/5ec036ee148606aad9caefbc9305bfb0" target="_blank">this code</a>. An empty ref from here, even theoretically, cannot be obtained. Moreover, the module has the “Reuse Return Values” option ​​enabled, and the function is actually executes once somewhere at the beginning of the test, before all complex data manipulations. So, the test cannot affect it in any way, in theory.</p>
-<p>Is it a dead end? Well, experienced colleagues have probably already guessed everything, but I had to dance around the bug  and even check the <a href="https://its.1c.ru/db/v8std/content/724/hdoc" target="_blank">standard</a>, until got the following: <strong>return values ​​cache in 1C can be changed</strong>. I mean, not by calling RefreshReusableValues​​(), but by changing reusable values directly.</p>
-<p>How? Well, if you get some values ​​from a cached common module, and they are not of a primitive type (string, number, etc.), you will not get the value itself, but a pointer to it somewhere in memory. You write this pointer to a variable and try to change it – you change the cache.</p>
-<p>It's that simple, yes. This is what happened in my case: the form of another document called the method that generates the list of “zero” rates. Having received a list of values, it added an empty ref to it and used it in its logic. Thus, each time this form opens, the list cache contains more and more empty refs, which eventually broke the document at the other end of the configuration.</p>
-<p><a href="https://twitter.com/EffinBirds/status/1488165946342662144" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/reuse-carefully/snap-tweet-EffinBirds-1488165946342662144.png"/></a></p>
-<p>In a good way, the platform should throw exceptions when developer trying to change the cache, but until this happens, you have to take care yourself. For example, when developing cached modules, return immutable data types from them (FixedStructure instead of Structure, FixedArray instead of Array, and so on). True, this is not a 100% protection: firstly, fixed types are not applicable everywhere, and secondly, even in the latest versions of the SSL, this is far from being done everywhere. Do you know many configurations not based on SSL?</p>
-<p>Sonar also know nothing about the problem, as well as less popular software. No silver bullet, in short – check your code, look at the code of your colleagues and try not to forget about another elegant way to bang ourselves in the foot.</p></description>
+            <title>Cookie Jar</title>
+            <link>https://kostyanetsky.me/notes/cookie-jar</link>
+            <guid isPermaLink="false">note-cookie-jar</guid>
+            <pubDate>Sat, 28 May 2022 21:34:38 +0700</pubDate>
+            <description><p>The other day, I was working with cookies in one of my scripts. While searching for the optimal solution, I came across an absolutely charming (100% working, by the way) <a href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">tip</a> from StackOverflow:</p>
+<blockquote>
+<p>You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
+</blockquote>
+<p>So, literally: keep your cookies in a jar, and to store them, pickle them. The jar with pickled cookies, by the way, can be put on the shelf later.</p>
+<p>How can you not love python after that, huh?</p>
+<p>P.S. While writing this post, I got curious – why pickle and not serialization? So, briefly: <a href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">this is the way</a>.</p></description>
         </item>
         
         <item>
@@ -131,22 +95,36 @@ EndIf;
         </item>
         
         <item>
-            <title>A Principle of Non-Judgemental Attitude</title>
-            <link>https://kostyanetsky.me/notes/non-judgmental-attitude</link>
-            <guid isPermaLink="false">note-non-judgmental-attitude</guid>
-            <pubDate>Sun, 02 Sep 2018 16:36:53 +0700</pubDate>
-            <description><p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
-<p>By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p></description>
+            <title>HPMoR Printing</title>
+            <link>https://kostyanetsky.me/notes/hpmor-printing</link>
+            <guid isPermaLink="false">note-hpmor-printing</guid>
+            <pubDate>Sun, 22 Jul 2018 19:00:55 +0700</pubDate>
+            <description><p>Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
+<p>The book is really good, I had <a href="https://kostyanetsky.me//notes/hpmor" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a href="https://planeta.ru/campaigns/hpmor" target="_blank">make a request</a> now.</p></description>
         </item>
         
         <item>
-            <title>Slow down, I&#x27;m recording</title>
-            <link>https://kostyanetsky.me/notes/outgoing-requests-limiter</link>
-            <guid isPermaLink="false">note-outgoing-requests-limiter</guid>
-            <pubDate>Sun, 05 Mar 2023 15:54:51 +0700</pubDate>
-            <description><p>Usually the idea of developing is simple: the faster it works, the better. For example, the more requests an application manages to execute per unit of time, the faster the task for which these requests are needed will be solved.</p>
-<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
-<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p></description>
+            <title>Why So Serious?</title>
+            <link>https://kostyanetsky.me/notes/why-so-serious</link>
+            <guid isPermaLink="false">note-why-so-serious</guid>
+            <pubDate>Sat, 17 Feb 2018 00:00:00 +0700</pubDate>
+            <description><p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
+<p>It's what you should avoid despite it looks funny. You'll rewrite code you've written month or two later and it will be hard to shame its author because it is you.</p></description>
+        </item>
+        
+        <item>
+            <title>Infostart Event 2021</title>
+            <link>https://kostyanetsky.me/notes/infostart-event-2021</link>
+            <guid isPermaLink="false">note-infostart-event-2021</guid>
+            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
+            <description><p>Last week I visited Moscow for <a href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
+<ul>
+<li>Listen to numbers of interesting reports — check;</li>
+<li>Meet a few cool people in real life — check;</li>
+<li>Chat with friends — check!</li>
+</ul>
+<p>As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
+<p>In order not to <s>get up</s> to fly twice, I passed the <a href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p></description>
         </item>
         
     </channel>
