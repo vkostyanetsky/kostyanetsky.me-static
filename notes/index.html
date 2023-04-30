@@ -118,6 +118,30 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/pause/">Pause()</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <blockquote>
+<p>An important detail: the CallPause method is not available in a client-server call; when a client calls a server method in which CallPause is called, the exception "Cannot call the CallPause method in a client-server call" will be thrown.</p>
+</blockquote>
+<p>A strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it will make it there anyway (by checking the time in the cycle, for example). Does security by obscurity worth the efforts?</p>
+<p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p>
+        <p class="f6 mt4">
+            2023-04-30 14:30:43
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/in-a-pedantic-way/">In a Pedantic Way</a></h2>
 
             
@@ -694,39 +718,6 @@ EndProcedure
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/2nd-monitor-and-console/">Second Monitor Management via Console</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
-<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
-<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
-<pre><code>MultiMonitorTool.exe / disable 2
-MultiMonitorTool.exe / enable 2
-MultiMonitorTool.exe / switch 2
-</code></pre>
-<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
-<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
-</code></pre>
-<p>And then, when you need to turn on the monitor, load the saved config:</p>
-<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
-</code></pre>
-<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p>
-        <p class="f6 mt4">
-            2021-10-16 19:55:48
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/workplace/">workplace</a>
                 </span>
             
         </p>

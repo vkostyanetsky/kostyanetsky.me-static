@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>In a Pedantic Way</title>
+    <title>Pause()</title>
 
-    <meta name="description" content="How to compare two boolean variables?" />
+    <meta name="description" content="About a strange restriction in the long-awaited implementation of Pause()." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="In a Pedantic Way"/>
-    <meta property="og:description" content="How to compare two boolean variables?"/>
+    <meta property="og:title" content="Pause()"/>
+    <meta property="og:description" content="About a strange restriction in the long-awaited implementation of Pause()."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/in-a-pedantic-way" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/pause" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/in-a-pedantic-way" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/pause" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/in-a-pedantic-way/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/pause/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,32 +112,21 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">In a Pedantic Way</h1>
+        <h1 class="f-subheadline lh-solid">Pause()</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>The daily award for the most philosophical code goes to the author of this elegant way to check that two boolean variables are not equal to each other:</p>
-<pre><code>If DataStructure.Property("AmountVATIn")
-    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
-    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
-    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
-EndIf;
-</code></pre>
-<p>I'm thinking of adding something like “And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)” here to spice it up with a subtle note of insanity.</p>
+        <blockquote>
+<p>An important detail: the CallPause method is not available in a client-server call; when a client calls a server method in which CallPause is called, the exception "Cannot call the CallPause method in a client-server call" will be thrown.</p>
+</blockquote>
+<p>A strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it will make it there anyway (by checking the time in the cycle, for example). Does security by obscurity worth the efforts?</p>
+<p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p>
         <p class="f6 mt4">
-            2023-03-21 20:26:43
+            2023-04-30 14:30:43
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
                 </span>
             
         </p>
@@ -155,11 +144,9 @@ EndIf;
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/outgoing-requests-limiter">Slow down, I'm recording</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/in-a-pedantic-way">In a Pedantic Way</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/pause">Pause()</a>
                                 
 
             </p> 
