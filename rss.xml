@@ -4,7 +4,17 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 05 Mar 2023 15:54:51 +0700</lastBuildDate>
+        <lastBuildDate>Mon, 08 May 2023 09:12:34 +0700</lastBuildDate>
+        
+        <item>
+            <title>Going Postal</title>
+            <link>https://kostyanetsky.me/notes/going-postal</link>
+            <guid isPermaLink="false">note-going-postal</guid>
+            <pubDate>Mon, 08 May 2023 09:12:34 +0700</pubDate>
+            <description><p>I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked everyone, including colleagues and visitors.</p>
+<p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry so that you become like a rocket that has lost control”, “explode with anger”.</p>
+<p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable or sorta useful cases. Like, the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars (instead of just exploding) :-)</p></description>
+        </item>
         
         <item>
             <title>Slow down, I&#x27;m recording</title>
@@ -110,21 +120,6 @@ EndIf;
             <pubDate>Sat, 17 Feb 2018 00:00:00 +0700</pubDate>
             <description><p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
 <p>It's what you should avoid despite it looks funny. You'll rewrite code you've written month or two later and it will be hard to shame its author because it is you.</p></description>
-        </item>
-        
-        <item>
-            <title>Infostart Event 2021</title>
-            <link>https://kostyanetsky.me/notes/infostart-event-2021</link>
-            <guid isPermaLink="false">note-infostart-event-2021</guid>
-            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
-            <description><p>Last week I visited Moscow for <a href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
-<ul>
-<li>Listen to numbers of interesting reports — check;</li>
-<li>Meet a few cool people in real life — check;</li>
-<li>Chat with friends — check!</li>
-</ul>
-<p>As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
-<p>In order not to <s>get up</s> to fly twice, I passed the <a href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p></description>
         </item>
         
     </channel>

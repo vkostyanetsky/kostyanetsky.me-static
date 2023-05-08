@@ -15,6 +15,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/going-postal</loc>
+        <lastmod>2023-05-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/outgoing-requests-limiter</loc>
         <lastmod>2023-03-05</lastmod>
         <changefreq>weekly</changefreq>
