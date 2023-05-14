@@ -4,75 +4,31 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 08 May 2023 09:12:34 +0700</lastBuildDate>
+        <lastBuildDate>Mon, 19 Oct 2020 18:35:56 +0700</lastBuildDate>
         
         <item>
-            <title>Going Postal</title>
-            <link>https://kostyanetsky.me/notes/going-postal</link>
-            <guid isPermaLink="false">note-going-postal</guid>
-            <pubDate>Mon, 08 May 2023 09:12:34 +0700</pubDate>
-            <description><p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
-<p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry that strong so you become a rocket which lost control”. Or, to simplify, “explode with anger”.</p>
-<p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable cases. Mostly, they implies something like "the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars". Sounds a bit better than a simple explosion — you didn't completely waste the precious resource, at least :-)</p></description>
+            <title>Nerd View</title>
+            <link>https://kostyanetsky.me/notes/nerdview</link>
+            <guid isPermaLink="false">note-nerdview</guid>
+            <pubDate>Mon, 19 Oct 2020 18:35:56 +0700</pubDate>
+            <description><p><img alt="A chat with my daughter" src="https://kostyanetsky.me/notes/nerdview/telegram.png"/></p>
+<p>On the screenshot above my little one is just letting me know where she is: walking down the street, at the school, at a playground. It's not her fault that I have a sort of nerd view: when I look at this chat I see nothing but code on Gherkin, which is just a bit broken. A little patch here and there and it will be fine :-)</p>
+<pre><code>And I exit home
+Then I enter school
+And I exit school
+Then I gonna swing
+</code></pre>
+<p>We use Gherkin to write our autotests for <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. I can't say I've made very many of them, especially in comparison with some of my colleagues… Well, it seems like I've made them enough to twist the reality a few.</p></description>
         </item>
         
         <item>
-            <title>Slow down, I&#x27;m recording</title>
-            <link>https://kostyanetsky.me/notes/outgoing-requests-limiter</link>
-            <guid isPermaLink="false">note-outgoing-requests-limiter</guid>
-            <pubDate>Sun, 05 Mar 2023 15:54:51 +0700</pubDate>
-            <description><p>Usually the idea of developing is simple: the faster it works, the better. For example, the more requests an application manages to execute per unit of time, the faster the task for which these requests are needed will be solved.</p>
-<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
-<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p></description>
-        </item>
-        
-        <item>
-            <title>No More Google Fonts</title>
-            <link>https://kostyanetsky.me/notes/no-more-google-fonts</link>
-            <guid isPermaLink="false">note-no-more-google-fonts</guid>
-            <pubDate>Sat, 19 Feb 2022 20:25:48 +0700</pubDate>
-            <description><p><a href="https://twitter.com/PixelAmbacht/status/1494272370076536840" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/no-more-google-fonts/snap-tweet-PixelAmbacht-1494272370076536840.png"/></a></p>
-<p>A year ago, damn it. Okay, hello everyone! Johnny Slowpoke is here! Today we will throw out Google Fonts from my blog. I used to load the main font (PT Sans) from this service, but it makes almost no sense without cross-domain caching. Frankly speaking, the only point to do this further is if a server on which the site is running is slow, so it is faster to load fonts from Google. </p>
-<p>I host my blog on GitHub servers and have no complaints about performance. So, I'm self-hosting PT Sans now, and you know what? The difference is dramatic. When updating a page before, there was clearly a noticeable delay between loading the page and loading the font. For now, it is barely recognizable. If you have a blog and want to try to self-host fonts — here is a cool <a href="https://google-webfonts-helper.herokuapp.com/fonts" target="_blank">service</a> that solves the problem in a few clicks.</p>
-<p>Don't forget to put a big, nice star on the <a href="https://github.com/majodev/google-webfonts-helper" target="_blank">repository</a>!</p></description>
-        </item>
-        
-        <item>
-            <title>These Nasty Smartphones</title>
-            <link>https://kostyanetsky.me/notes/these-nasty-smartphones</link>
-            <guid isPermaLink="false">note-these-nasty-smartphones</guid>
-            <pubDate>Sat, 31 Mar 2018 00:00:00 +0700</pubDate>
-            <description><p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
-<p>The artist is <a href="https://www.patreon.com/adamtots" target="_blank">Adam Ellis</a>.</p>
-<p>As for me, it's a great illustration for an everlasting moan “why do you always stare at your smartphone blah blah blah”. A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
-<p>The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p></description>
-        </item>
-        
-        <item>
-            <title>Sebby x Player</title>
-            <link>https://kostyanetsky.me/notes/sebby-x-player</link>
-            <guid isPermaLink="false">note-sebby-x-player</guid>
-            <pubDate>Mon, 14 Aug 2017 00:00:00 +0700</pubDate>
-            <description><p>I have <a href="https://acomics.ru/~sebby-x-player" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">went out</a> a couple of years ago).</p>
-<p>It was an amusing experience. Firstly, an author of the manga is Chinese and her work was already translated from Chinese to English. I'm not sure what was the bigger problem — cultural differences or language skills, but several frames were a bit difficult to understand what's going on. Secondly, I've figured out that it's a real challenge to pick proper Russian words and not to get something like a quote from an official government's letter in the end.</p>
-<p>So, a part of sense had lost during the process, I guess, although I tried to keep everything I could and even had a word with the author in order to solve the most problematic cases. It was quite funny — I don't know Chinese, she doesn't know Russian, so our a bit poor English was the only way to understand each other.</p>
-<p>Something could have been translated better, I suppose, and several pictures definitely could have been changed more accurately. But you know what? Hell it out, perfection is a cruel mistress and I like the result yet. Yeah, there is no big deal or something like it — a drawing style is quite common, a plot has no significant differences with the game, but… I don't know. Perhaps, visual novels made a too sentimental son of a bitch out of me :-)</p>
-<p>Thanks to <a href="https://vk.com/id54890849" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" target="_blank">Quantus</a> for the manga.</p></description>
-        </item>
-        
-        <item>
-            <title>Top Salaries</title>
-            <link>https://kostyanetsky.me/notes/top-salaries</link>
-            <guid isPermaLink="false">note-top-salaries</guid>
-            <pubDate>Sat, 02 Oct 2021 16:49:35 +0700</pubDate>
-            <description><blockquote>
-<p>There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
-<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
-</blockquote>
-<p>Threw in my <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
-<p>What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
-<p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
-<p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p></description>
+            <title>HPMoR</title>
+            <link>https://kostyanetsky.me/notes/hpmor</link>
+            <guid isPermaLink="false">note-hpmor</guid>
+            <pubDate>Sun, 06 Nov 2016 15:32:00 +0700</pubDate>
+            <description><p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
+<p>First of all, it is the magnificent rethinking of the original saga. Many aspects seem not less fascinating, I may say; moreover, the plot itself is certainly excellent — I read two-thirds of the story without switching <a href="https://kostyanetsky.me/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Gene Wilder</a> off :-) Nevertheless, the author was skillful enough to make all points meet and finish a storyline in such a pretty way that I had almost nothing to complain about.</p>
+<p>In any case, this book is a well way to meet with a lot of scientific and just interesting things which were mentioned along the way. The author is smart and his book is a smart one too.</p></description>
         </item>
         
         <item>
@@ -90,36 +46,97 @@
         </item>
         
         <item>
-            <title>In a Pedantic Way</title>
-            <link>https://kostyanetsky.me/notes/in-a-pedantic-way</link>
-            <guid isPermaLink="false">note-in-a-pedantic-way</guid>
-            <pubDate>Tue, 21 Mar 2023 20:26:43 +0700</pubDate>
-            <description><p>The daily award for the most philosophical code goes to the author of this elegant way to check that two boolean variables are not equal to each other:</p>
-<pre><code>If DataStructure.Property("AmountVATIn")
-    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
-    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
-    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
-EndIf;
+            <title>A Script to Sync With NAS</title>
+            <link>https://kostyanetsky.me/notes/rclone-abuser</link>
+            <guid isPermaLink="false">note-rclone-abuser</guid>
+            <pubDate>Mon, 07 Jun 2021 19:04:48 +0700</pubDate>
+            <description><p>I posted on GitHub a Python <a href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
+<p>I suffered with the problem for some time and eventually returned to the good old <a href="https://rclone.org" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
+<p>Secondly, I had many files and folders to sync: a directory here, a directory there, a config from there, a profile from here… In order not to produce spaghetti code, I wrote a simple script that takes sources and receivers from a config file, and then executes rclone for each pair.</p></description>
+        </item>
+        
+        <item>
+            <title>Pause()</title>
+            <link>https://kostyanetsky.me/notes/pause</link>
+            <guid isPermaLink="false">note-pause</guid>
+            <pubDate>Sun, 30 Apr 2023 14:30:43 +0700</pubDate>
+            <description><blockquote>
+<p>An important detail: the CallPause method is not available in a client-server call; when a client calls a server method in which CallPause is called, the exception "Cannot call the CallPause method in a client-server call" will be thrown.</p>
+<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" target="_blank">CallPause Method</a> (RU)</p>
+</blockquote>
+<p>What a strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it makes it anyway (by checking time in a cycle, for example). Does security by obscurity worth the efforts?</p>
+<p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. You know what? Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p></description>
+        </item>
+        
+        <item>
+            <title>Second Monitor Management via Console</title>
+            <link>https://kostyanetsky.me/notes/2nd-monitor-and-console</link>
+            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
+            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
+            <description><p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
+<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
+<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
+<pre><code>MultiMonitorTool.exe / disable 2
+MultiMonitorTool.exe / enable 2
+MultiMonitorTool.exe / switch 2
 </code></pre>
-<p>I'm thinking of adding something like “And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)” here to spice it up with a subtle note of insanity.</p></description>
+<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
+<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
+</code></pre>
+<p>And then, when you need to turn on the monitor, load the saved config:</p>
+<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
+</code></pre>
+<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
         </item>
         
         <item>
-            <title>HPMoR Printing</title>
-            <link>https://kostyanetsky.me/notes/hpmor-printing</link>
-            <guid isPermaLink="false">note-hpmor-printing</guid>
-            <pubDate>Sun, 22 Jul 2018 19:00:55 +0700</pubDate>
-            <description><p>Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
-<p>The book is really good, I had <a href="https://kostyanetsky.me//notes/hpmor" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a href="https://planeta.ru/campaigns/hpmor" target="_blank">make a request</a> now.</p></description>
+            <title>No More Embedded Tweets</title>
+            <link>https://kostyanetsky.me/notes/no-more-embedded-tweets</link>
+            <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
+            <pubDate>Mon, 21 Mar 2022 20:25:48 +0700</pubDate>
+            <description><p>As soon as I <a href="https://kostyanetsky.me//notes/no-more-google-fonts/" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
+<p>How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
+<p>How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
+<p><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
+<p>The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
+<p>A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
+<p>Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
+<blockquote>
+<p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
+</blockquote>
+<p>That's all. I want to donate the author, really.</p>
+<p>I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p></description>
         </item>
         
         <item>
-            <title>Why So Serious?</title>
-            <link>https://kostyanetsky.me/notes/why-so-serious</link>
-            <guid isPermaLink="false">note-why-so-serious</guid>
-            <pubDate>Sat, 17 Feb 2018 00:00:00 +0700</pubDate>
-            <description><p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
-<p>It's what you should avoid despite it looks funny. You'll rewrite code you've written month or two later and it will be hard to shame its author because it is you.</p></description>
+            <title>Going Postal</title>
+            <link>https://kostyanetsky.me/notes/going-postal</link>
+            <guid isPermaLink="false">note-going-postal</guid>
+            <pubDate>Mon, 08 May 2023 09:12:34 +0700</pubDate>
+            <description><p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
+<p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry that strong so you become a rocket which lost control”. Or, to simplify, “explode with anger”.</p>
+<p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable cases. Mostly, they implies something like "the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars". Sounds a bit better than a simple explosion — you didn't completely waste the precious resource, at least :-)</p></description>
+        </item>
+        
+        <item>
+            <title>Different Sides of One Coin</title>
+            <link>https://kostyanetsky.me/notes/different-sides-of-one-coin</link>
+            <guid isPermaLink="false">note-different-sides-of-one-coin</guid>
+            <pubDate>Mon, 05 Mar 2018 00:00:00 +0700</pubDate>
+            <description><p><img alt="Hi!" src="https://kostyanetsky.me/notes/different-sides-of-one-coin/en.png"/></p>
+<p>Feedback is one of the coolest things in my work. It's not my first year of programming and I've written a lot of tools, mechanics and interfaces. However, ever complicated mechanism working as it should is… I don't know. It's like hearing “yes” on a graduation party, again and again :-)</p>
+<p>It partially compensates another side of the coin. I mean a case when you are trying to understand one hundred levels of some application's abstraction for the hundredth time, again and again, through a lot of mistakes. Meanwhile, it's 2 a.m. already and coffee had replaced blood in your veins ages ago.</p></description>
+        </item>
+        
+        <item>
+            <title>No Comment</title>
+            <link>https://kostyanetsky.me/notes/no-comment</link>
+            <guid isPermaLink="false">note-no-comment</guid>
+            <pubDate>Wed, 08 Sep 2021 00:12:00 +0700</pubDate>
+            <description><p>I did not notice when I gave up the habit of pedantically commenting on every method with which I have to work. This practice has some clever name for sure, but I don't care, to be honest. I mean the style when a description is added to every meaningful block of code, like this:</p>
+<script src="https://gist.github.com/vkostyanetsky/afae4dee09d639f34156d6c02b29c2a5.js">Gist</script>
+<p>The meaning here is simple: when you dig in some dense legacy and run back and forth between chaotically scattered, big procedures — it is rather difficult to keep the logic of each of them in your head. The next cup of coffee will wash everything away. Therefore, such notes greatly speed up orientation on the ground, and the more time passes between approaches to the code, the more noticeable the effect.</p>
+<p>However, at some point it became clear that this know-how is just a crutch supporting the frankly crappy code design. If you have a long procedure or function - take a breath, sit down and cut the fatty one into smaller methods. You will save both time and nerves, and you will figure out the code faster, and you will delight SonarCube.</p></description>
         </item>
         
     </channel>
