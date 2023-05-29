@@ -125,7 +125,7 @@
     <div class="f4 lh-copy black mb5 measure-wide">
         <p>I forgot to tell you that a couple of months ago I <a href="https://github.com/vkostyanetsky/RequestRheostat" target="_blank">posted</a> on GitHub an example of code that limits the number of requests per second that can be sent to some third-party resource from a 1C:Enterprise infobase.</p>
 <p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. The queue is not guaranteed, but is more or less respected.</p>
-<p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 directly requires not to send requests to it more than twice per second, and if it exceeds it, it bans you.</p>
+<p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 requires not to send requests to it more than twice per second, and if you exceed it, it bans you.</p>
         <p class="f6 mt4">
             2023-05-27 13:20:05
             
