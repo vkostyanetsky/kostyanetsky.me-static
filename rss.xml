@@ -4,118 +4,15 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 19 Oct 2020 18:35:56 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 02 Sep 2018 16:36:53 +0700</lastBuildDate>
         
         <item>
-            <title>Nerd View</title>
-            <link>https://kostyanetsky.me/notes/nerdview</link>
-            <guid isPermaLink="false">note-nerdview</guid>
-            <pubDate>Mon, 19 Oct 2020 18:35:56 +0700</pubDate>
-            <description><p><img alt="A chat with my daughter" src="https://kostyanetsky.me/notes/nerdview/telegram.png"/></p>
-<p>On the screenshot above my little one is just letting me know where she is: walking down the street, at the school, at a playground. It's not her fault that I have a sort of nerd view: when I look at this chat I see nothing but code on Gherkin, which is just a bit broken. A little patch here and there and it will be fine :-)</p>
-<pre><code>And I exit home
-Then I enter school
-And I exit school
-Then I gonna swing
-</code></pre>
-<p>We use Gherkin to write our autotests for <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. I can't say I've made very many of them, especially in comparison with some of my colleagues… Well, it seems like I've made them enough to twist the reality a few.</p></description>
-        </item>
-        
-        <item>
-            <title>HPMoR</title>
-            <link>https://kostyanetsky.me/notes/hpmor</link>
-            <guid isPermaLink="false">note-hpmor</guid>
-            <pubDate>Sun, 06 Nov 2016 15:32:00 +0700</pubDate>
-            <description><p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
-<p>First of all, it is the magnificent rethinking of the original saga. Many aspects seem not less fascinating, I may say; moreover, the plot itself is certainly excellent — I read two-thirds of the story without switching <a href="https://kostyanetsky.me/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Gene Wilder</a> off :-) Nevertheless, the author was skillful enough to make all points meet and finish a storyline in such a pretty way that I had almost nothing to complain about.</p>
-<p>In any case, this book is a well way to meet with a lot of scientific and just interesting things which were mentioned along the way. The author is smart and his book is a smart one too.</p></description>
-        </item>
-        
-        <item>
-            <title>Cookie Jar</title>
-            <link>https://kostyanetsky.me/notes/cookie-jar</link>
-            <guid isPermaLink="false">note-cookie-jar</guid>
-            <pubDate>Sat, 28 May 2022 21:34:38 +0700</pubDate>
-            <description><p>The other day, I was working with cookies in one of my scripts. While searching for the optimal solution, I came across an absolutely charming (100% working, by the way) <a href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">tip</a> from StackOverflow:</p>
-<blockquote>
-<p>You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
-</blockquote>
-<p>So, literally: keep your cookies in a jar, and to store them, pickle them. The jar with pickled cookies, by the way, can be put on the shelf later.</p>
-<p>How can you not love python after that, huh?</p>
-<p>P.S. While writing this post, I got curious – why pickle and not serialization? So, briefly: <a href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">this is the way</a>.</p></description>
-        </item>
-        
-        <item>
-            <title>A Script to Sync With NAS</title>
-            <link>https://kostyanetsky.me/notes/rclone-abuser</link>
-            <guid isPermaLink="false">note-rclone-abuser</guid>
-            <pubDate>Mon, 07 Jun 2021 19:04:48 +0700</pubDate>
-            <description><p>I posted on GitHub a Python <a href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
-<p>I suffered with the problem for some time and eventually returned to the good old <a href="https://rclone.org" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
-<p>Secondly, I had many files and folders to sync: a directory here, a directory there, a config from there, a profile from here… In order not to produce spaghetti code, I wrote a simple script that takes sources and receivers from a config file, and then executes rclone for each pair.</p></description>
-        </item>
-        
-        <item>
-            <title>Pause()</title>
-            <link>https://kostyanetsky.me/notes/pause</link>
-            <guid isPermaLink="false">note-pause</guid>
-            <pubDate>Sun, 30 Apr 2023 14:30:43 +0700</pubDate>
-            <description><blockquote>
-<p>An important detail: the CallPause method is not available in a client-server call; when a client calls a server method in which CallPause is called, the exception "Cannot call the CallPause method in a client-server call" will be thrown.</p>
-<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" target="_blank">CallPause Method</a> (RU)</p>
-</blockquote>
-<p>What a strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it makes it anyway (by checking time in a cycle, for example). Does security by obscurity worth the efforts?</p>
-<p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. You know what? Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p></description>
-        </item>
-        
-        <item>
-            <title>Second Monitor Management via Console</title>
-            <link>https://kostyanetsky.me/notes/2nd-monitor-and-console</link>
-            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
-            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
-            <description><p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
-<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
-<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
-<pre><code>MultiMonitorTool.exe / disable 2
-MultiMonitorTool.exe / enable 2
-MultiMonitorTool.exe / switch 2
-</code></pre>
-<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
-<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
-</code></pre>
-<p>And then, when you need to turn on the monitor, load the saved config:</p>
-<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
-</code></pre>
-<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
-        </item>
-        
-        <item>
-            <title>No More Embedded Tweets</title>
-            <link>https://kostyanetsky.me/notes/no-more-embedded-tweets</link>
-            <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
-            <pubDate>Mon, 21 Mar 2022 20:25:48 +0700</pubDate>
-            <description><p>As soon as I <a href="https://kostyanetsky.me//notes/no-more-google-fonts/" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
-<p>How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
-<p>How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
-<p><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
-<p>The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
-<p>A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
-<p>Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
-<blockquote>
-<p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
-</blockquote>
-<p>That's all. I want to donate the author, really.</p>
-<p>I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p></description>
-        </item>
-        
-        <item>
-            <title>Going Postal</title>
-            <link>https://kostyanetsky.me/notes/going-postal</link>
-            <guid isPermaLink="false">note-going-postal</guid>
-            <pubDate>Mon, 08 May 2023 09:12:34 +0700</pubDate>
-            <description><p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
-<p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry that strong so you become a rocket which lost control”. Or, to simplify, “explode with anger”.</p>
-<p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable cases. Mostly, they implies something like "the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars". Sounds a bit better than a simple explosion — you didn't completely waste the precious resource, at least :-)</p></description>
+            <title>A Principle of Non-Judgemental Attitude</title>
+            <link>https://kostyanetsky.me/notes/non-judgmental-attitude</link>
+            <guid isPermaLink="false">note-non-judgmental-attitude</guid>
+            <pubDate>Sun, 02 Sep 2018 16:36:53 +0700</pubDate>
+            <description><p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
+<p>By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p></description>
         </item>
         
         <item>
@@ -129,14 +26,106 @@ MultiMonitorTool.exe / switch 2
         </item>
         
         <item>
-            <title>No Comment</title>
-            <link>https://kostyanetsky.me/notes/no-comment</link>
-            <guid isPermaLink="false">note-no-comment</guid>
-            <pubDate>Wed, 08 Sep 2021 00:12:00 +0700</pubDate>
-            <description><p>I did not notice when I gave up the habit of pedantically commenting on every method with which I have to work. This practice has some clever name for sure, but I don't care, to be honest. I mean the style when a description is added to every meaningful block of code, like this:</p>
-<script src="https://gist.github.com/vkostyanetsky/afae4dee09d639f34156d6c02b29c2a5.js">Gist</script>
-<p>The meaning here is simple: when you dig in some dense legacy and run back and forth between chaotically scattered, big procedures — it is rather difficult to keep the logic of each of them in your head. The next cup of coffee will wash everything away. Therefore, such notes greatly speed up orientation on the ground, and the more time passes between approaches to the code, the more noticeable the effect.</p>
-<p>However, at some point it became clear that this know-how is just a crutch supporting the frankly crappy code design. If you have a long procedure or function - take a breath, sit down and cut the fatty one into smaller methods. You will save both time and nerves, and you will figure out the code faster, and you will delight SonarCube.</p></description>
+            <title>Totals of 2021</title>
+            <link>https://kostyanetsky.me/notes/totals-of-2021</link>
+            <guid isPermaLink="false">note-totals-of-2021</guid>
+            <pubDate>Tue, 08 Feb 2022 13:25:00 +0700</pubDate>
+            <description><p>It is a bit late to sum up, isn't it? Well, the previous couple of months have been, um, tight, so I had no actual time  to sit down and think. Now I'm on vacation for 2021 – so no time like the present. I'm writing, like, from the past.</p>
+<p>Write out each achievement doesn't attract me at all. The year definitely turned out to be good: I did a lot of complex work on FirstBit ERP (wrote new modules, rewrote existing ones, crushed bugs, wrote functional and load tests – yes, there were countless things). This had a good effect both on the configuration itself and on the profits of my company. In addition, I passed 1C expert exam and a PostgreSQL professional exam. Hip-hip-hooray.</p>
+<p>There were fails as well. I still feel lazy to jot them down, but the main one is obvious – I became monstrously fat and instead of losing ten kilograms (that was the original plan) – I gained five more.</p>
+<p>Looking back, the root of most of the problems over the past year is this: I focused too much on task flow. They were all interesting in their own way, from a carefully written technical task to challenges like “find a problem in the code using your witcher's instincts”. You do one task, another, a third, a hundredth, and you do not notice that you have ignored almost everything except work. As a result, you get a lot of experience, but the world dries up to the Configurator window and there is no strength to somehow apply this experience. Unhealthy bullshit.</p>
+<p>In short, if you imagine me as a character in some video game, it looks like this: attack and intelligence have grown noticeably over the year, but health, agility, charisma, and almost everything else in general, have dropped. Now I need to do something to deal with this mess.</p>
+<p>You know what? I'll take ten kilometers run for a start.</p>
+<p><a href="https://twitter.com/EffinBirds/status/1329575199667347459" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/totals-of-2021/snap-tweet-EffinBirds-1329575199667347459.png"/></a></p>
+<p>Maybe, birdie, maybe.</p></description>
+        </item>
+        
+        <item>
+            <title>Haul Trucks</title>
+            <link>https://kostyanetsky.me/notes/haul-trucks</link>
+            <guid isPermaLink="false">note-haul-trucks</guid>
+            <pubDate>Mon, 20 Feb 2023 09:00:00 +0700</pubDate>
+            <description><p><img alt="Cars" src="https://kostyanetsky.me/notes/haul-trucks/cars.jpg"/></p>
+<p>The colleague grumbled that if you think like that, then the configurator will be Zhiguli, and the EDT will be Kama1 (this is an electric car that has been developed somewhere in the depths of KAMAZ for many years and still can’t gather strength and, finally, show the wonder to the world).</p>
+<p>Well, I try to look at things with optimism. I think the platform and its IDE are such haul trucks. No one in their right mind rides them on household chores, but these beasts are irreplaceable on a cut!</p></description>
+        </item>
+        
+        <item>
+            <title>Infostart Event 2021</title>
+            <link>https://kostyanetsky.me/notes/infostart-event-2021</link>
+            <guid isPermaLink="false">note-infostart-event-2021</guid>
+            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
+            <description><p>Last week I visited Moscow for <a href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
+<ul>
+<li>Listen to numbers of interesting reports — check;</li>
+<li>Meet a few cool people in real life — check;</li>
+<li>Chat with friends — check!</li>
+</ul>
+<p>As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
+<p>In order not to <s>get up</s> to fly twice, I passed the <a href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p></description>
+        </item>
+        
+        <item>
+            <title>HPMoR</title>
+            <link>https://kostyanetsky.me/notes/hpmor</link>
+            <guid isPermaLink="false">note-hpmor</guid>
+            <pubDate>Sun, 06 Nov 2016 15:32:00 +0700</pubDate>
+            <description><p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
+<p>First of all, it is the magnificent rethinking of the original saga. Many aspects seem not less fascinating, I may say; moreover, the plot itself is certainly excellent — I read two-thirds of the story without switching <a href="https://kostyanetsky.me/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Gene Wilder</a> off :-) Nevertheless, the author was skillful enough to make all points meet and finish a storyline in such a pretty way that I had almost nothing to complain about.</p>
+<p>In any case, this book is a well way to meet with a lot of scientific and just interesting things which were mentioned along the way. The author is smart and his book is a smart one too.</p></description>
+        </item>
+        
+        <item>
+            <title>Reuse Carefully</title>
+            <link>https://kostyanetsky.me/notes/reuse-carefully</link>
+            <guid isPermaLink="false">note-reuse-carefully</guid>
+            <pubDate>Tue, 08 Feb 2022 09:00:11 +0700</pubDate>
+            <description><p>I'll tell you about a funny and a little embarrassing case that I took apart in January. The essence in a nutshell: a huge auto-test based on Vanessa, which is intended to check the VAT calculation, falls somewhere near the end.</p>
+<p>I start investigating. First, I look at the screenshots in Allure: OK, the reason is obvious – in one of the documents, the conditional appearance for the field with the VAT amount doesn't work. The test expected it to be unavailable if the VAT rate is zero, but it turned out to be available somehow.</p>
+<p>It's a mess, it needs to be fixed! I look at the condition in the code: well, it locks the field if the VAT rate is in the list of “zero” rates (list of VAT rates whose rate is equal to zero). Everything appears to be simple and logical. What the hell could possibly go wrong here?</p>
+<p><a href="https://twitter.com/EffinBirds/status/1489980393675702281" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/reuse-carefully/snap-tweet-EffinBirds-1489980393675702281.png"/></a></p>
+<p>Well, I try to reproduce the bug manually. And there, all of a sudden, everything is nice: the conditional appearance works as it should. Floating bug, or what? I run the auto-test again, at the right moment I jump in with the debugger and find some outright garbage: in the list of “zero” rates, besides themselves, there are a bunch of empty links!</p>
+<p>Frankly speaking, I was scratching the back of my head. The document receives this list from the common module with <a href="https://gist.github.com/vkostyanetsky/5ec036ee148606aad9caefbc9305bfb0" target="_blank">this code</a>. An empty ref from here, even theoretically, cannot be obtained. Moreover, the module has the “Reuse Return Values” option ​​enabled, and the function is actually executes once somewhere at the beginning of the test, before all complex data manipulations. So, the test cannot affect it in any way, in theory.</p>
+<p>Is it a dead end? Well, experienced colleagues have probably already guessed everything, but I had to dance around the bug  and even check the <a href="https://its.1c.ru/db/v8std/content/724/hdoc" target="_blank">standard</a>, until got the following: <strong>return values ​​cache in 1C can be changed</strong>. I mean, not by calling RefreshReusableValues​​(), but by changing reusable values directly.</p>
+<p>How? Well, if you get some values ​​from a cached common module, and they are not of a primitive type (string, number, etc.), you will not get the value itself, but a pointer to it somewhere in memory. You write this pointer to a variable and try to change it – you change the cache.</p>
+<p>It's that simple, yes. This is what happened in my case: the form of another document called the method that generates the list of “zero” rates. Having received a list of values, it added an empty ref to it and used it in its logic. Thus, each time this form opens, the list cache contains more and more empty refs, which eventually broke the document at the other end of the configuration.</p>
+<p><a href="https://twitter.com/EffinBirds/status/1488165946342662144" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/reuse-carefully/snap-tweet-EffinBirds-1488165946342662144.png"/></a></p>
+<p>In a good way, the platform should throw exceptions when developer trying to change the cache, but until this happens, you have to take care yourself. For example, when developing cached modules, return immutable data types from them (FixedStructure instead of Structure, FixedArray instead of Array, and so on). True, this is not a 100% protection: firstly, fixed types are not applicable everywhere, and secondly, even in the latest versions of the SSL, this is far from being done everywhere. Do you know many configurations not based on SSL?</p>
+<p>Sonar also know nothing about the problem, as well as less popular software. No silver bullet, in short – check your code, look at the code of your colleagues and try not to forget about another elegant way to bang ourselves in the foot.</p></description>
+        </item>
+        
+        <item>
+            <title>Request Rheostat</title>
+            <link>https://kostyanetsky.me/notes/request-rheostat</link>
+            <guid isPermaLink="false">note-request-rheostat</guid>
+            <pubDate>Sat, 27 May 2023 13:20:05 +0700</pubDate>
+            <description><p>I forgot to tell you that a couple of months ago I <a href="https://github.com/vkostyanetsky/RequestRheostat" target="_blank">posted</a> on GitHub an example of code that limits the number of requests per second that can be sent to some third-party resource from a 1C:Enterprise infobase.</p>
+<p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. The queue is not guaranteed, but is more or less respected.</p>
+<p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 requires not to send requests to it more than twice per second, and if you exceed it, it bans you.</p></description>
+        </item>
+        
+        <item>
+            <title>Diablo</title>
+            <link>https://kostyanetsky.me/notes/diablo</link>
+            <guid isPermaLink="false">note-diablo</guid>
+            <pubDate>Wed, 22 Sep 2021 21:25:48 +0700</pubDate>
+            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
+<p>The nice episode of the “We Are Doomed” IT podcast about developer burnout. No insights, but you can hear something useful for yourself. I liked the analogy with video games, somewhere close to the middle:</p>
+<blockquote>
+<p>There was such a game — Diablo. RPG, all sorts of spells, you know. A character has mana and health, and when you have no mana to cast… Ha, I sound like a nerd! Well, nevermind. Briefly speaking, when you have no mana to cast, it's taken from your health.</p>
+<p><em>— Doctor Cat</em></p>
+</blockquote></description>
+        </item>
+        
+        <item>
+            <title>These Nasty Smartphones</title>
+            <link>https://kostyanetsky.me/notes/these-nasty-smartphones</link>
+            <guid isPermaLink="false">note-these-nasty-smartphones</guid>
+            <pubDate>Sat, 31 Mar 2018 00:00:00 +0700</pubDate>
+            <description><p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
+<p>The artist is <a href="https://www.patreon.com/adamtots" target="_blank">Adam Ellis</a>.</p>
+<p>As for me, it's a great illustration for an everlasting moan “why do you always stare at your smartphone blah blah blah”. A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
+<p>The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p></description>
         </item>
         
     </channel>
