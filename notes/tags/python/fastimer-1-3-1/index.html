@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Request Rheostat</title>
+    <title>New Fastimer</title>
 
-    <meta name="description" content="Code that limits the number of requests sent from the 1C:Enterprise infobase." />
+    <meta name="description" content="Issued a new version of my console timer for intermittent fasting." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Request Rheostat"/>
-    <meta property="og:description" content="Code that limits the number of requests sent from the 1C:Enterprise infobase."/>
+    <meta property="og:title" content="New Fastimer"/>
+    <meta property="og:description" content="Issued a new version of my console timer for intermittent fasting."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/request-rheostat" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/fastimer-1-3-1" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/request-rheostat" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/fastimer-1-3-1" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/request-rheostat/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/fastimer-1-3-1/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,23 +112,22 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Request Rheostat</h1>
+        <h1 class="f-subheadline lh-solid">New Fastimer</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I forgot to tell you that a couple of months ago I <a href="https://github.com/vkostyanetsky/RequestRheostat" target="_blank">posted</a> on GitHub an example of code that limits the number of requests per second that can be sent to some third-party resource from a 1C:Enterprise infobase.</p>
-<p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. The queue is not guaranteed, but is more or less respected.</p>
-<p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 requires not to send requests to it more than twice per second, and if you exceed it, it bans you.</p>
+        <p>Released a new <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" target="_blank">version</a> of my console timer for <a href="https://en.wikipedia.org/wiki/Intermittent_fasting" target="_blank">intermittent fasting</a>. I wrote this app about a year ago, when I was once again upset by the <a href="https://www.zerolongevity.com/" target="_blank">Zero</a> application for Android: some very primitive functions (like viewing a specific interval) did not work. Oh my gosh, guys, you had one job!</p>
+<p>The main difference between 1.3.1 and 1.2.3 is that the console menu has been cut to hell in favor of the good old arguments and options. The menu concept looks convenient only if an application has few features. However, as soon as you take a step forward, the need to answer a list of questions each time you need something starts to irritate you.</p>
         <p class="f6 mt4">
-            2023-05-27 13:20:05
+            2023-08-23 20:58:32
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/python/">Python</a>
                 </span>
             
         </p>
@@ -146,11 +145,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/do-you-speak-english">Do you speak English?</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/python/cookie-jar">Cookie Jar</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/fastimer-1-3-1">New Fastimer</a>
                                 
 
             </p> 
