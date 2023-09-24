@@ -4,47 +4,87 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 20 Feb 2023 09:00:00 +0700</lastBuildDate>
+        <lastBuildDate>Wed, 15 Sep 2021 21:47:48 +0700</lastBuildDate>
         
         <item>
-            <title>Haul Trucks</title>
-            <link>https://kostyanetsky.me/notes/haul-trucks</link>
-            <guid isPermaLink="false">note-haul-trucks</guid>
-            <pubDate>Mon, 20 Feb 2023 09:00:00 +0700</pubDate>
-            <description><p><img alt="Cars" src="https://kostyanetsky.me/notes/haul-trucks/cars.jpg"/></p>
-<p>The colleague grumbled that if you think like that, then the configurator will be Zhiguli, and the EDT will be Kama1 (this is an electric car that has been developed somewhere in the depths of KAMAZ for many years and still can’t gather strength and, finally, show the wonder to the world).</p>
-<p>Well, I try to look at things with optimism. I think the platform and its IDE are such haul trucks. No one in their right mind rides them on household chores, but these beasts are irreplaceable on a cut!</p></description>
+            <title>Hammer &amp; Nails</title>
+            <link>https://kostyanetsky.me/notes/hammer-and-nails</link>
+            <guid isPermaLink="false">note-hammer-and-nails</guid>
+            <pubDate>Wed, 15 Sep 2021 21:47:48 +0700</pubDate>
+            <description><p>I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
+<p>Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
+<p>The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
+<p>However, instead of a short cycle, I saw this:</p>
+<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
+<p>There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
+<p>Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
+<p>You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p></description>
         </item>
         
         <item>
-            <title>Second Monitor Management via Console</title>
-            <link>https://kostyanetsky.me/notes/2nd-monitor-and-console</link>
-            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
-            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
-            <description><p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
-<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
-<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
-<pre><code>MultiMonitorTool.exe / disable 2
-MultiMonitorTool.exe / enable 2
-MultiMonitorTool.exe / switch 2
-</code></pre>
-<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
-<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
-</code></pre>
-<p>And then, when you need to turn on the monitor, load the saved config:</p>
-<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
-</code></pre>
-<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p></description>
+            <title>Do Not Confuse</title>
+            <link>https://kostyanetsky.me/notes/do-not-confuse</link>
+            <guid isPermaLink="false">note-do-not-confuse</guid>
+            <pubDate>Wed, 16 Mar 2022 20:09:31 +0700</pubDate>
+            <description><p><img alt="Code" src="https://kostyanetsky.me/notes/do-not-confuse/do-not-confuse.png"/></p>
+<p>If the type of operation is the sale of goods or real estate, then open the common form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
+<p>However, if the type of operation is a return to the supplier, then open the general form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is the EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
+<p>I hope you won't confuse.</p></description>
         </item>
         
         <item>
-            <title>HPMoR</title>
-            <link>https://kostyanetsky.me/notes/hpmor</link>
-            <guid isPermaLink="false">note-hpmor</guid>
-            <pubDate>Sun, 06 Nov 2016 15:32:00 +0700</pubDate>
-            <description><p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
-<p>First of all, it is the magnificent rethinking of the original saga. Many aspects seem not less fascinating, I may say; moreover, the plot itself is certainly excellent — I read two-thirds of the story without switching <a href="https://kostyanetsky.me/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Gene Wilder</a> off :-) Nevertheless, the author was skillful enough to make all points meet and finish a storyline in such a pretty way that I had almost nothing to complain about.</p>
-<p>In any case, this book is a well way to meet with a lot of scientific and just interesting things which were mentioned along the way. The author is smart and his book is a smart one too.</p></description>
+            <title>Environmental Storytelling</title>
+            <link>https://kostyanetsky.me/notes/environmental-storytelling</link>
+            <guid isPermaLink="false">note-environmental-storytelling</guid>
+            <pubDate>Sun, 19 Mar 2023 15:51:48 +0700</pubDate>
+            <description><p>I like to notice things in the world around me that clearly have a story behind them. In video games, this is called “environmental storytelling”: they don’t tell you the story directly, but if you look around, you can guess which gun was hanging on the wall and who fired from it.</p>
+<p>For example, I recently celebrated the company's 10th anniversary with colleagues at a local golf club. Balls had to be sent flying from the second floor; there are no railings for obvious reasons, but a net is stretched in case someone loses their balance.</p>
+<p><img alt="Photo from the club website to make it clearer." src="https://kostyanetsky.me/notes/environmental-storytelling/topgolf.jpeg"/></p>
+<p>Why are you talking about this, you ask? Well, there are warnings on the walls: jump into the net of your own free will and pay <abbr title="About two hundred thousand rubles at this moment.">ten thousand dirhams</abbr>. Recording this heroic leap of faith on camera is fine as well, just prepare five thousand more.</p>
+<p>Do you feel the smell of a good history? </p>
+<p>Another example: once flew to Turkey to rest and decided, just in case, to look through the rules of the airline (what can be taken on board, what can not). Among the list of items prohibited from being carried on board, I found “steel spear” and “steel flail” 😬</p>
+<p>UPD: Another great <a href="https://kostyanetsky.me/notes/environmental-storytelling/soundproof.jpeg" target="_blank">example</a> from somewhere on the Internet.</p></description>
+        </item>
+        
+        <item>
+            <title>Top Salaries</title>
+            <link>https://kostyanetsky.me/notes/top-salaries</link>
+            <guid isPermaLink="false">note-top-salaries</guid>
+            <pubDate>Sat, 02 Oct 2021 16:49:35 +0700</pubDate>
+            <description><blockquote>
+<p>There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
+<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
+</blockquote>
+<p>Threw in my <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
+<p>What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
+<p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
+<p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p></description>
+        </item>
+        
+        <item>
+            <title>REST service for Service Manager</title>
+            <link>https://kostyanetsky.me/notes/rest-service-4-sm</link>
+            <guid isPermaLink="false">note-rest-service-4-sm</guid>
+            <pubDate>Sat, 25 Feb 2023 19:02:49 +0700</pubDate>
+            <description><p>This week, I developed a REST service to set up our service manager (this is a configuration for managing a 1cFresh instance). Deploying the development environment is a regular task for us, and every time the manager's database had to be tuned by hand: tweaking the storefront, changing application addresses, overwriting scheduled tasks, and so on.</p>
+<p>The implementation was simple. Come up with a JSON structure, write a parser, find a code in the configuration, make it work by external call, and make sure you don't break anything. Routine work, in general, but I love to do such things from time to time: I mean, to look around and try to figure out which of the daily tasks is annoying enough.</p>
+<p>This one is a good example. To be frank, setting up the Service Manager wasn't a problem (launching the app and fiddling with the settings), but it was a thing to pay attention &amp; spend time to. What do we have now:</p>
+<ol>
+<li>There is a JSON file with all the settings;</li>
+<li>There is a REST service for its processing;</li>
+<li>There is a script that will put the first into the second;</li>
+<li>There is a pipeline that will do it all by itself.</li>
+</ol>
+<p>In short, a boot was rubbing a leg, and now it isn't. Yahoo!</p></description>
+        </item>
+        
+        <item>
+            <title>A Principle of Non-Judgemental Attitude</title>
+            <link>https://kostyanetsky.me/notes/non-judgmental-attitude</link>
+            <guid isPermaLink="false">note-non-judgmental-attitude</guid>
+            <pubDate>Sun, 02 Sep 2018 16:36:53 +0700</pubDate>
+            <description><p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
+<p>By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p></description>
         </item>
         
         <item>
@@ -87,6 +127,29 @@ EndProcedure
         </item>
         
         <item>
+            <title>HPMoR</title>
+            <link>https://kostyanetsky.me/notes/hpmor</link>
+            <guid isPermaLink="false">note-hpmor</guid>
+            <pubDate>Sun, 06 Nov 2016 15:32:00 +0700</pubDate>
+            <description><p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
+<p>First of all, it is the magnificent rethinking of the original saga. Many aspects seem not less fascinating, I may say; moreover, the plot itself is certainly excellent — I read two-thirds of the story without switching <a href="https://kostyanetsky.me/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Gene Wilder</a> off :-) Nevertheless, the author was skillful enough to make all points meet and finish a storyline in such a pretty way that I had almost nothing to complain about.</p>
+<p>In any case, this book is a well way to meet with a lot of scientific and just interesting things which were mentioned along the way. The author is smart and his book is a smart one too.</p></description>
+        </item>
+        
+        <item>
+            <title>Diablo</title>
+            <link>https://kostyanetsky.me/notes/diablo</link>
+            <guid isPermaLink="false">note-diablo</guid>
+            <pubDate>Wed, 22 Sep 2021 21:25:48 +0700</pubDate>
+            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
+<p>The nice episode of the “We Are Doomed” IT podcast about developer burnout. No insights, but you can hear something useful for yourself. I liked the analogy with video games, somewhere close to the middle:</p>
+<blockquote>
+<p>There was such a game — Diablo. RPG, all sorts of spells, you know. A character has mana and health, and when you have no mana to cast… Ha, I sound like a nerd! Well, nevermind. Briefly speaking, when you have no mana to cast, it's taken from your health.</p>
+<p><em>— Doctor Cat</em></p>
+</blockquote></description>
+        </item>
+        
+        <item>
             <title>Message to User</title>
             <link>https://kostyanetsky.me/notes/message-to-user</link>
             <guid isPermaLink="false">note-message-to-user</guid>
@@ -94,68 +157,6 @@ EndProcedure
             <description><p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
 <p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
 <p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
-        </item>
-        
-        <item>
-            <title>Do you speak English?</title>
-            <link>https://kostyanetsky.me/notes/do-you-speak-english</link>
-            <guid isPermaLink="false">note-do-you-speak-english</guid>
-            <pubDate>Sun, 14 May 2023 10:15:16 +0700</pubDate>
-            <description><p>The repository login form of the current platform (8.3.22.1923, to be precise) launched with the English interface:</p>
-<p><img alt="Login Form" src="https://kostyanetsky.me/notes/do-you-speak-english/login-form.png"/></p>
-<p>You had one job, literally.</p>
-<p>I heard some rumors that development of the Designer was stopped largely due to the monstrous amount of technical debt that slows down any new features. But here are interface glitches right on one of the first application windows! Curious how it got through the build tests.</p>
-<p>Maybe they don't exist at all.</p></description>
-        </item>
-        
-        <item>
-            <title>Infostart Event 2021</title>
-            <link>https://kostyanetsky.me/notes/infostart-event-2021</link>
-            <guid isPermaLink="false">note-infostart-event-2021</guid>
-            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
-            <description><p>Last week I visited Moscow for <a href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
-<ul>
-<li>Listen to numbers of interesting reports — check;</li>
-<li>Meet a few cool people in real life — check;</li>
-<li>Chat with friends — check!</li>
-</ul>
-<p>As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
-<p>In order not to <s>get up</s> to fly twice, I passed the <a href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p></description>
-        </item>
-        
-        <item>
-            <title>Going Postal</title>
-            <link>https://kostyanetsky.me/notes/going-postal</link>
-            <guid isPermaLink="false">note-going-postal</guid>
-            <pubDate>Mon, 08 May 2023 09:12:34 +0700</pubDate>
-            <description><p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
-<p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry that strong so you become a rocket which lost control”. Or, to simplify, “explode with anger”.</p>
-<p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable cases. Mostly, they implies something like "the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars". Sounds a bit better than a simple explosion — you didn't completely waste the precious resource, at least :-)</p></description>
-        </item>
-        
-        <item>
-            <title>A Script to Sync With NAS</title>
-            <link>https://kostyanetsky.me/notes/rclone-abuser</link>
-            <guid isPermaLink="false">note-rclone-abuser</guid>
-            <pubDate>Mon, 07 Jun 2021 19:04:48 +0700</pubDate>
-            <description><p>I posted on GitHub a Python <a href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
-<p>I suffered with the problem for some time and eventually returned to the good old <a href="https://rclone.org" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
-<p>Secondly, I had many files and folders to sync: a directory here, a directory there, a config from there, a profile from here… In order not to produce spaghetti code, I wrote a simple script that takes sources and receivers from a config file, and then executes rclone for each pair.</p></description>
-        </item>
-        
-        <item>
-            <title>About Strange Bitrix</title>
-            <link>https://kostyanetsky.me/notes/strange-bitrix</link>
-            <guid isPermaLink="false">note-strange-bitrix</guid>
-            <pubDate>Sat, 15 Oct 2022 18:22:43 +0700</pubDate>
-            <description><p>The more I explore the Bitrix24 REST interface, the more I am amazed at how different its developers mindsets are. It is expressed in different ways.</p>
-<p>Let's take, for example, the interface of deals and product rows related to them. There is no amount field in the table of the products: like, you need the amount for each line – count it yourself, that's it. However, there is the amount field at the document level! Can you guess what the field is named?</p>
-<p>AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
-<p>You didn't guess, the correct answer is OPPORTUNITY.</p>
-<p><img alt="What the fuck?" src="https://kostyanetsky.me/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p>Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
-<p>Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's a rate value. What's for the unit of measure field? Well, it contains a measurement code ¯\_(ツ)_/¯</p>
-<p>Database normalization? What? What does it mean? Back off, man, you're distracting us from work.</p></description>
         </item>
         
     </channel>
