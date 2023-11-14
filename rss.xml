@@ -4,32 +4,88 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Wed, 15 Sep 2021 21:47:48 +0700</lastBuildDate>
+        <lastBuildDate>Mon, 09 Mar 2020 05:21:32 +0700</lastBuildDate>
         
         <item>
-            <title>Hammer &amp; Nails</title>
-            <link>https://kostyanetsky.me/notes/hammer-and-nails</link>
-            <guid isPermaLink="false">note-hammer-and-nails</guid>
-            <pubDate>Wed, 15 Sep 2021 21:47:48 +0700</pubDate>
-            <description><p>I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
-<p>Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
-<p>The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
-<p>However, instead of a short cycle, I saw this:</p>
-<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
-<p>There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
-<p>Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
-<p>You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p></description>
+            <title>The Ninth Wave</title>
+            <link>https://kostyanetsky.me/notes/ninth-wave</link>
+            <guid isPermaLink="false">note-ninth-wave</guid>
+            <pubDate>Mon, 09 Mar 2020 05:21:32 +0700</pubDate>
+            <description><p>Yesterday morning, I was buying gifts for my women. While a florist was makings bouquets for me, we had a small talk and I suddenly caught her eye. She was looking at the growing crowd of customers with calmness and a clearly readable shadow of doom. This is probably how sailors looking at a surging wave which is about to bury their boat :-)</p>
+<p>People outside the flower industry grin sometimes — they say, eight of March is such a magical holiday for all the florists who make a fortune in ten hours. Well, income is really good these days, but literally anybody who has ever worked in this sphere more often associates the holiday (and a couple of days before it, by the way) with a monstrous strain on health and nerves.</p>
+<p>I can say that I got off cheaply: was just deploying and servicing some IT of a local net of flower shops, nothing more (by the way, I want to proudly <a href="http://rosetta.florist/" target="_blank">recommend</a> my former colleagues!). Nonetheless, the smell of flowers caused me Vietnam syndrome for a long time :-)</p></description>
         </item>
         
         <item>
-            <title>Do Not Confuse</title>
-            <link>https://kostyanetsky.me/notes/do-not-confuse</link>
-            <guid isPermaLink="false">note-do-not-confuse</guid>
-            <pubDate>Wed, 16 Mar 2022 20:09:31 +0700</pubDate>
-            <description><p><img alt="Code" src="https://kostyanetsky.me/notes/do-not-confuse/do-not-confuse.png"/></p>
-<p>If the type of operation is the sale of goods or real estate, then open the common form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
-<p>However, if the type of operation is a return to the supplier, then open the general form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is the EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
-<p>I hope you won't confuse.</p></description>
+            <title>Romania&#x27;s Feature</title>
+            <link>https://kostyanetsky.me/notes/crossed</link>
+            <guid isPermaLink="false">note-crossed</guid>
+            <pubDate>Wed, 30 Aug 2023 01:02:24 +0700</pubDate>
+            <description><p>Making a password recover function via SMS for our customer portal. Got to the Twilio <a href="https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID" target="_blank">documentation</a> related to <a href="https://www.twilio.com/docs/glossary/what-alphanumeric-sender-id" target="_blank">alphanumeric sender ID</a> support in different countries; this feature allows you to send messages so that the recipient sees not the sender's number but something meaningful (a company name, for example).</p>
+<p>The feature is regulated differently everywhere: in some countries it just works, but in others registration is possible or even required.</p>
+<p>Well, let's take a look:</p>
+<p><img alt="Screenshot" src="https://kostyanetsky.me/notes/crossed/twilio.png"/></p>
+<p>🤔</p>
+<ul>
+<li>Portugal: yes</li>
+<li>Puerto Rico: no</li>
+<li>Qatar: yes (with registration)</li>
+<li>Reunion: yes</li>
+<li>Romania: yes (with registration) (but be afraid of Dracula)</li>
+</ul>
+<p>I don’t know how else I can explain this cemetery.</p>
+<p>UPD: Found the answer. Grave crosses mean you have to pay $700 to register.</p>
+<p>To be frank, I like the explanation about Dracula much more.</p></description>
+        </item>
+        
+        <item>
+            <title>Reuse Carefully</title>
+            <link>https://kostyanetsky.me/notes/reuse-carefully</link>
+            <guid isPermaLink="false">note-reuse-carefully</guid>
+            <pubDate>Tue, 08 Feb 2022 09:00:11 +0700</pubDate>
+            <description><p>I'll tell you about a funny and a little embarrassing case that I took apart in January. The essence in a nutshell: a huge auto-test based on Vanessa, which is intended to check the VAT calculation, falls somewhere near the end.</p>
+<p>I start investigating. First, I look at the screenshots in Allure: OK, the reason is obvious – in one of the documents, the conditional appearance for the field with the VAT amount doesn't work. The test expected it to be unavailable if the VAT rate is zero, but it turned out to be available somehow.</p>
+<p>It's a mess, it needs to be fixed! I look at the condition in the code: well, it locks the field if the VAT rate is in the list of “zero” rates (list of VAT rates whose rate is equal to zero). Everything appears to be simple and logical. What the hell could possibly go wrong here?</p>
+<p><a href="https://twitter.com/EffinBirds/status/1489980393675702281" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/reuse-carefully/snap-tweet-EffinBirds-1489980393675702281.png"/></a></p>
+<p>Well, I try to reproduce the bug manually. And there, all of a sudden, everything is nice: the conditional appearance works as it should. Floating bug, or what? I run the auto-test again, at the right moment I jump in with the debugger and find some outright garbage: in the list of “zero” rates, besides themselves, there are a bunch of empty links!</p>
+<p>Frankly speaking, I was scratching the back of my head. The document receives this list from the common module with <a href="https://gist.github.com/vkostyanetsky/5ec036ee148606aad9caefbc9305bfb0" target="_blank">this code</a>. An empty ref from here, even theoretically, cannot be obtained. Moreover, the module has the “Reuse Return Values” option ​​enabled, and the function is actually executes once somewhere at the beginning of the test, before all complex data manipulations. So, the test cannot affect it in any way, in theory.</p>
+<p>Is it a dead end? Well, experienced colleagues have probably already guessed everything, but I had to dance around the bug  and even check the <a href="https://its.1c.ru/db/v8std/content/724/hdoc" target="_blank">standard</a>, until got the following: <strong>return values ​​cache in 1C can be changed</strong>. I mean, not by calling RefreshReusableValues​​(), but by changing reusable values directly.</p>
+<p>How? Well, if you get some values ​​from a cached common module, and they are not of a primitive type (string, number, etc.), you will not get the value itself, but a pointer to it somewhere in memory. You write this pointer to a variable and try to change it – you change the cache.</p>
+<p>It's that simple, yes. This is what happened in my case: the form of another document called the method that generates the list of “zero” rates. Having received a list of values, it added an empty ref to it and used it in its logic. Thus, each time this form opens, the list cache contains more and more empty refs, which eventually broke the document at the other end of the configuration.</p>
+<p><a href="https://twitter.com/EffinBirds/status/1488165946342662144" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/reuse-carefully/snap-tweet-EffinBirds-1488165946342662144.png"/></a></p>
+<p>In a good way, the platform should throw exceptions when developer trying to change the cache, but until this happens, you have to take care yourself. For example, when developing cached modules, return immutable data types from them (FixedStructure instead of Structure, FixedArray instead of Array, and so on). True, this is not a 100% protection: firstly, fixed types are not applicable everywhere, and secondly, even in the latest versions of the SSL, this is far from being done everywhere. Do you know many configurations not based on SSL?</p>
+<p>Sonar also know nothing about the problem, as well as less popular software. No silver bullet, in short – check your code, look at the code of your colleagues and try not to forget about another elegant way to bang ourselves in the foot.</p></description>
+        </item>
+        
+        <item>
+            <title>New Fastimer</title>
+            <link>https://kostyanetsky.me/notes/fastimer-1-3-1</link>
+            <guid isPermaLink="false">note-fastimer-1-3-1</guid>
+            <pubDate>Wed, 23 Aug 2023 20:58:32 +0700</pubDate>
+            <description><p>Released a new <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" target="_blank">version</a> of my console timer for <a href="https://en.wikipedia.org/wiki/Intermittent_fasting" target="_blank">intermittent fasting</a>. I wrote this app about a year ago, when I was once again upset by the <a href="https://www.zerolongevity.com/" target="_blank">Zero</a> application for Android: some very primitive functions (like viewing a specific interval) did not work. Oh my gosh, guys, you had one job!</p>
+<p>The main difference between 1.3.1 and 1.2.3 is that the console menu has been cut to hell in favor of the good old arguments and options. The menu concept looks convenient only if an application has few features. However, as soon as you take a step forward, the need to answer a list of questions each time you need something starts to irritate you.</p></description>
+        </item>
+        
+        <item>
+            <title>Sebby x Player</title>
+            <link>https://kostyanetsky.me/notes/sebby-x-player</link>
+            <guid isPermaLink="false">note-sebby-x-player</guid>
+            <pubDate>Mon, 14 Aug 2017 00:00:00 +0700</pubDate>
+            <description><p>I have <a href="https://acomics.ru/~sebby-x-player" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">went out</a> a couple of years ago).</p>
+<p>It was an amusing experience. Firstly, an author of the manga is Chinese and her work was already translated from Chinese to English. I'm not sure what was the bigger problem — cultural differences or language skills, but several frames were a bit difficult to understand what's going on. Secondly, I've figured out that it's a real challenge to pick proper Russian words and not to get something like a quote from an official government's letter in the end.</p>
+<p>So, a part of sense had lost during the process, I guess, although I tried to keep everything I could and even had a word with the author in order to solve the most problematic cases. It was quite funny — I don't know Chinese, she doesn't know Russian, so our a bit poor English was the only way to understand each other.</p>
+<p>Something could have been translated better, I suppose, and several pictures definitely could have been changed more accurately. But you know what? Hell it out, perfection is a cruel mistress and I like the result yet. Yeah, there is no big deal or something like it — a drawing style is quite common, a plot has no significant differences with the game, but… I don't know. Perhaps, visual novels made a too sentimental son of a bitch out of me :-)</p>
+<p>Thanks to <a href="https://vk.com/id54890849" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" target="_blank">Quantus</a> for the manga.</p></description>
+        </item>
+        
+        <item>
+            <title>Haul Trucks</title>
+            <link>https://kostyanetsky.me/notes/haul-trucks</link>
+            <guid isPermaLink="false">note-haul-trucks</guid>
+            <pubDate>Mon, 20 Feb 2023 09:00:00 +0700</pubDate>
+            <description><p><img alt="Cars" src="https://kostyanetsky.me/notes/haul-trucks/cars.jpg"/></p>
+<p>The colleague grumbled that if you think like that, then the configurator will be Zhiguli, and the EDT will be Kama1 (this is an electric car that has been developed somewhere in the depths of KAMAZ for many years and still can’t gather strength and, finally, show the wonder to the world).</p>
+<p>Well, I try to look at things with optimism. I think the platform and its IDE are such haul trucks. No one in their right mind rides them on household chores, but these beasts are irreplaceable on a cut!</p></description>
         </item>
         
         <item>
@@ -47,44 +103,22 @@
         </item>
         
         <item>
-            <title>Top Salaries</title>
-            <link>https://kostyanetsky.me/notes/top-salaries</link>
-            <guid isPermaLink="false">note-top-salaries</guid>
-            <pubDate>Sat, 02 Oct 2021 16:49:35 +0700</pubDate>
-            <description><blockquote>
-<p>There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
-<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Link</a></em></p>
-</blockquote>
-<p>Threw in my <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
-<p>What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
-<p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
-<p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p></description>
-        </item>
-        
-        <item>
-            <title>REST service for Service Manager</title>
-            <link>https://kostyanetsky.me/notes/rest-service-4-sm</link>
-            <guid isPermaLink="false">note-rest-service-4-sm</guid>
-            <pubDate>Sat, 25 Feb 2023 19:02:49 +0700</pubDate>
-            <description><p>This week, I developed a REST service to set up our service manager (this is a configuration for managing a 1cFresh instance). Deploying the development environment is a regular task for us, and every time the manager's database had to be tuned by hand: tweaking the storefront, changing application addresses, overwriting scheduled tasks, and so on.</p>
-<p>The implementation was simple. Come up with a JSON structure, write a parser, find a code in the configuration, make it work by external call, and make sure you don't break anything. Routine work, in general, but I love to do such things from time to time: I mean, to look around and try to figure out which of the daily tasks is annoying enough.</p>
-<p>This one is a good example. To be frank, setting up the Service Manager wasn't a problem (launching the app and fiddling with the settings), but it was a thing to pay attention &amp; spend time to. What do we have now:</p>
-<ol>
-<li>There is a JSON file with all the settings;</li>
-<li>There is a REST service for its processing;</li>
-<li>There is a script that will put the first into the second;</li>
-<li>There is a pipeline that will do it all by itself.</li>
-</ol>
-<p>In short, a boot was rubbing a leg, and now it isn't. Yahoo!</p></description>
-        </item>
-        
-        <item>
             <title>A Principle of Non-Judgemental Attitude</title>
             <link>https://kostyanetsky.me/notes/non-judgmental-attitude</link>
             <guid isPermaLink="false">note-non-judgmental-attitude</guid>
             <pubDate>Sun, 02 Sep 2018 16:36:53 +0700</pubDate>
             <description><p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
 <p>By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p></description>
+        </item>
+        
+        <item>
+            <title>Message to User</title>
+            <link>https://kostyanetsky.me/notes/message-to-user</link>
+            <guid isPermaLink="false">note-message-to-user</guid>
+            <pubDate>Mon, 30 Apr 2018 09:37:18 +0700</pubDate>
+            <description><p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
+<p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
+<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
         </item>
         
         <item>
@@ -124,39 +158,6 @@ SupportedTypes["Document.OpeningBalancesEntering"]  = "PayrollDeductions";
 EndProcedure
 </code></pre>
 <p>What do we get here? Firstly, nobody will accidentally erase the description of the document. Secondly, SonarQube will be pleased: it is highly likely to begin swearing at repeating literals with the names of tabular parts, if the helper is implemented instead of code splitting.</p></description>
-        </item>
-        
-        <item>
-            <title>HPMoR</title>
-            <link>https://kostyanetsky.me/notes/hpmor</link>
-            <guid isPermaLink="false">note-hpmor</guid>
-            <pubDate>Sun, 06 Nov 2016 15:32:00 +0700</pubDate>
-            <description><p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
-<p>First of all, it is the magnificent rethinking of the original saga. Many aspects seem not less fascinating, I may say; moreover, the plot itself is certainly excellent — I read two-thirds of the story without switching <a href="https://kostyanetsky.me/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Gene Wilder</a> off :-) Nevertheless, the author was skillful enough to make all points meet and finish a storyline in such a pretty way that I had almost nothing to complain about.</p>
-<p>In any case, this book is a well way to meet with a lot of scientific and just interesting things which were mentioned along the way. The author is smart and his book is a smart one too.</p></description>
-        </item>
-        
-        <item>
-            <title>Diablo</title>
-            <link>https://kostyanetsky.me/notes/diablo</link>
-            <guid isPermaLink="false">note-diablo</guid>
-            <pubDate>Wed, 22 Sep 2021 21:25:48 +0700</pubDate>
-            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
-<p>The nice episode of the “We Are Doomed” IT podcast about developer burnout. No insights, but you can hear something useful for yourself. I liked the analogy with video games, somewhere close to the middle:</p>
-<blockquote>
-<p>There was such a game — Diablo. RPG, all sorts of spells, you know. A character has mana and health, and when you have no mana to cast… Ha, I sound like a nerd! Well, nevermind. Briefly speaking, when you have no mana to cast, it's taken from your health.</p>
-<p><em>— Doctor Cat</em></p>
-</blockquote></description>
-        </item>
-        
-        <item>
-            <title>Message to User</title>
-            <link>https://kostyanetsky.me/notes/message-to-user</link>
-            <guid isPermaLink="false">note-message-to-user</guid>
-            <pubDate>Mon, 30 Apr 2018 09:37:18 +0700</pubDate>
-            <description><p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
-<p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
-<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p></description>
         </item>
         
     </channel>
