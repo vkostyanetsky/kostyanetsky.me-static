@@ -118,6 +118,47 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/last-meth/">Last Meth</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>I'm digging into the code of an external component for 1C platform, published by its developers as an example. The good thing is: well, it can be compiled and if you tweak it a little — it does the job.</p>
+<p>As for other things, there are a lot of bruh moments. For example, the project can't be opened in modern Visual Studio (you need to specify CMake manually). The code is quite sloppy; there is no documentation, comments, or formatting. I believe it can be difficult for a developer without solid experience in C++ to get the hang of it.</p>
+<p>Was a bit amused by the naming in the code below:</p>
+<pre><code>long CAddInNative::FindMethod(const WCHAR_T* wsMethodName)
+{ 
+    long plMethodNum = -1;
+    wchar_t* name = 0;
+
+    ::convFromShortWchar(&amp;name, wsMethodName);
+
+    plMethodNum = findName(g_MethodNames, name, eMethLast);
+
+    if (plMethodNum == -1)
+        plMethodNum = findName(g_MethodNamesRu, name, eMethLast);
+
+    delete[] name;
+
+    return plMethodNum;
+}
+</code></pre>
+<p>I see here the inexplicable love for abbreviations. What made the author name the variable “eMethLast”, not “eMethodLast”? They already created "wsMethodName" and "plMethodNum", after all.</p>
+<p>Perhaps this is an Easter egg with a reference to Breaking Bad? Then I like it for sure :)</p>
+        <p class="f6 mt4">
+            2023-12-17 19:34:42
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/wrong-freeway-entrance/">Wrong Freeway Entrance</a></h2>
 
             
@@ -667,32 +708,6 @@ EndProcedure
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/cookie-jar/">Cookie Jar</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>The other day, I was working with cookies in one of my scripts. While searching for the optimal solution, I came across an absolutely charming (100% working, by the way) <a href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">tip</a> from StackOverflow:</p>
-<blockquote>
-<p>You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
-</blockquote>
-<p>So, literally: keep your cookies in a jar, and to store them, pickle them. The jar with pickled cookies, by the way, can be put on the shelf later.</p>
-<p>How can you not love python after that, huh?</p>
-<p>P.S. While writing this post, I got curious – why pickle and not serialization? So, briefly: <a href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">this is the way</a>.</p>
-        <p class="f6 mt4">
-            2022-05-28 21:34:38
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/python/">Python</a>
                 </span>
             
         </p>
