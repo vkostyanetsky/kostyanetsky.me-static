@@ -4,63 +4,35 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 09 Mar 2020 05:21:32 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 17 Dec 2023 19:34:42 +0700</lastBuildDate>
         
         <item>
-            <title>The Ninth Wave</title>
-            <link>https://kostyanetsky.me/notes/ninth-wave</link>
-            <guid isPermaLink="false">note-ninth-wave</guid>
-            <pubDate>Mon, 09 Mar 2020 05:21:32 +0700</pubDate>
-            <description><p>Yesterday morning, I was buying gifts for my women. While a florist was makings bouquets for me, we had a small talk and I suddenly caught her eye. She was looking at the growing crowd of customers with calmness and a clearly readable shadow of doom. This is probably how sailors looking at a surging wave which is about to bury their boat :-)</p>
-<p>People outside the flower industry grin sometimes — they say, eight of March is such a magical holiday for all the florists who make a fortune in ten hours. Well, income is really good these days, but literally anybody who has ever worked in this sphere more often associates the holiday (and a couple of days before it, by the way) with a monstrous strain on health and nerves.</p>
-<p>I can say that I got off cheaply: was just deploying and servicing some IT of a local net of flower shops, nothing more (by the way, I want to proudly <a href="http://rosetta.florist/" target="_blank">recommend</a> my former colleagues!). Nonetheless, the smell of flowers caused me Vietnam syndrome for a long time :-)</p></description>
-        </item>
-        
-        <item>
-            <title>New Fastimer</title>
-            <link>https://kostyanetsky.me/notes/fastimer-1-3-1</link>
-            <guid isPermaLink="false">note-fastimer-1-3-1</guid>
-            <pubDate>Wed, 23 Aug 2023 20:58:32 +0700</pubDate>
-            <description><p>Released a new <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" target="_blank">version</a> of my console timer for <a href="https://en.wikipedia.org/wiki/Intermittent_fasting" target="_blank">intermittent fasting</a>. I wrote this app about a year ago, when I was once again upset by the <a href="https://www.zerolongevity.com/" target="_blank">Zero</a> application for Android: some very primitive functions (like viewing a specific interval) did not work. Oh my gosh, guys, you had one job!</p>
-<p>The main difference between 1.3.1 and 1.2.3 is that the console menu has been cut to hell in favor of the good old arguments and options. The menu concept looks convenient only if an application has few features. However, as soon as you take a step forward, the need to answer a list of questions each time you need something starts to irritate you.</p></description>
-        </item>
-        
-        <item>
-            <title>Haul Trucks</title>
-            <link>https://kostyanetsky.me/notes/haul-trucks</link>
-            <guid isPermaLink="false">note-haul-trucks</guid>
-            <pubDate>Mon, 20 Feb 2023 09:00:00 +0700</pubDate>
-            <description><p><img alt="Cars" src="https://kostyanetsky.me/notes/haul-trucks/cars.jpg"/></p>
-<p>The colleague grumbled that if you think like that, then the configurator will be Zhiguli, and the EDT will be Kama1 (this is an electric car that has been developed somewhere in the depths of KAMAZ for many years and still can’t gather strength and, finally, show the wonder to the world).</p>
-<p>Well, I try to look at things with optimism. I think the platform and its IDE are such haul trucks. No one in their right mind rides them on household chores, but these beasts are irreplaceable on a cut!</p></description>
-        </item>
-        
-        <item>
-            <title>Infostart Event 2021</title>
-            <link>https://kostyanetsky.me/notes/infostart-event-2021</link>
-            <guid isPermaLink="false">note-infostart-event-2021</guid>
-            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
-            <description><p>Last week I visited Moscow for <a href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
-<ul>
-<li>Listen to numbers of interesting reports — check;</li>
-<li>Meet a few cool people in real life — check;</li>
-<li>Chat with friends — check!</li>
-</ul>
-<p>As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
-<p>In order not to <s>get up</s> to fly twice, I passed the <a href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p></description>
-        </item>
-        
-        <item>
-            <title>Diablo</title>
-            <link>https://kostyanetsky.me/notes/diablo</link>
-            <guid isPermaLink="false">note-diablo</guid>
-            <pubDate>Wed, 22 Sep 2021 21:25:48 +0700</pubDate>
-            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
-<p>The nice episode of the “We Are Doomed” IT podcast about developer burnout. No insights, but you can hear something useful for yourself. I liked the analogy with video games, somewhere close to the middle:</p>
-<blockquote>
-<p>There was such a game — Diablo. RPG, all sorts of spells, you know. A character has mana and health, and when you have no mana to cast… Ha, I sound like a nerd! Well, nevermind. Briefly speaking, when you have no mana to cast, it's taken from your health.</p>
-<p><em>— Doctor Cat</em></p>
-</blockquote></description>
+            <title>Last Meth</title>
+            <link>https://kostyanetsky.me/notes/last-meth</link>
+            <guid isPermaLink="false">note-last-meth</guid>
+            <pubDate>Sun, 17 Dec 2023 19:34:42 +0700</pubDate>
+            <description><p>I'm digging into the code of an external component for 1C platform, published by its developers as an example. The good thing is: well, it can be compiled and if you tweak it a little — it does the job.</p>
+<p>As for other things, there are a lot of bruh moments. For example, the project can't be opened in modern Visual Studio (you need to specify CMake manually). The code is quite sloppy; there is no documentation, comments, or formatting. Long story short: I believe, it can be difficult for a developer without solid experience in C++ to get the hang of this.</p>
+<p>Was a bit amused by the naming in the code below:</p>
+<pre><code>long CAddInNative::FindMethod(const WCHAR_T* wsMethodName)
+{ 
+    long plMethodNum = -1;
+    wchar_t* name = 0;
+
+    ::convFromShortWchar(&amp;name, wsMethodName);
+
+    plMethodNum = findName(g_MethodNames, name, eMethLast);
+
+    if (plMethodNum == -1)
+        plMethodNum = findName(g_MethodNamesRu, name, eMethLast);
+
+    delete[] name;
+
+    return plMethodNum;
+}
+</code></pre>
+<p>I see here the inexplicable love for abbreviations. What made the author name the variable “eMethLast”, not “eMethodLast”? They already created "wsMethodName" and "plMethodNum", after all.</p>
+<p>Perhaps this is an Easter egg with a reference to Breaking Bad. Then I like it for sure :)</p></description>
         </item>
         
         <item>
@@ -77,24 +49,14 @@
         </item>
         
         <item>
-            <title>Double “i”</title>
-            <link>https://kostyanetsky.me/notes/double-i</link>
-            <guid isPermaLink="false">note-double-i</guid>
-            <pubDate>Fri, 09 Mar 2018 14:07:40 +0700</pubDate>
-            <description><p>I was trying to understand how to transliterate my surname properly yesterday. Ministry of Foreign Affairs says it should be written as “Kostianetskii” in English — with double “i” at the end. It's the quite rare combination: “skiing” is the only frequency word that I'm able to remember.</p>
-<p>It caused my curiosity and I googled it. The possible reason I came across is funny: cursive writing! Double “i” looks well only on a computer screen but it suddenly turns into “u” when you try to write it on paper.</p>
-<p>More details are <a href="https://spellingisnotcrazy.weebly.com/blog/category/the-letter-i" target="_blank">here</a>.</p></description>
-        </item>
-        
-        <item>
-            <title>Matryoshka</title>
-            <link>https://kostyanetsky.me/notes/matryoshka</link>
-            <guid isPermaLink="false">note-matryoshka</guid>
-            <pubDate>Sat, 30 Oct 2021 17:14:56 +0700</pubDate>
-            <description><p>A few days ago, there was a link to 1Ci certificate in the team chat (a colleague passed their junior <a href="https://academy.1ci.com/courses/1c-junior-developer" target="_blank">course</a>). I go over and see no auth form, no errors — I just get a PDF file. Everything is OK, right? Well, then I open the file:</p>
-<p><img alt="Error.pdf" src="https://kostyanetsky.me/notes/matryoshka/not-your-certificate.png"/></p>
-<p>Honestly, I am even delighted. We need to implement this UX in our products: you press, for example, the “print” button for a document, and it gives you a PDF! And inside it — a link to another PDF! And inside it — “entity is not filled”, so go fill.</p>
-<p>You can sell it as a Russian way of dealing with errors. This is, like, for historical reasons! Blame all the damned matryoshkas, and <a href="https://en.wikipedia.org/wiki/Koschei" target="_blank">Koschei</a> with his needle. It is, as you remember, in the egg, and it is in the duck, which is in the rabbit, tucked into the chest, and further along the chain of nesting.</p></description>
+            <title>Everyday Heroism</title>
+            <link>https://kostyanetsky.me/notes/how-to-be-a-hero</link>
+            <guid isPermaLink="false">note-how-to-be-a-hero</guid>
+            <pubDate>Sun, 24 Sep 2023 23:06:30 +0700</pubDate>
+            <description><p>Some time ago, I was setting up <a href="https://swagger.io" target="_blank">Swagger</a> for the internal API. While I was fiddling around, it became clear that some functionality did not need to be included in the documentation. I was looking for a way to do this without crutches and came across a funny <a href="https://github.com/tiangolo/full-stack-fastapi-couchbase/issues/10" target="_blank">question</a> on GitHub.</p>
+<p>What's funny, you ask? Well, I involuntarily remembered <a href="https://forum.mista.ru" target="_blank">Mista</a>. Among 1C developers, this is synonymous with the word “toxicity”: if you ask anything there, you get a bucket of slop by the collar instead of an answer. Here, of course, everything is not so neglected, but holy crap! These persistent guys who referring to the 14-page manual made me laugh a lot.</p>
+<p>One thing is good: by the end of the thread, there appeared a brave rebel who just answered the question. They, like, named the required parameter for a FastAPI method's decorator, which is not supposed to be shown in the documentation. No links — could you imagine?</p>
+<p>Not all heroes wear capes, I would say.</p></description>
         </item>
         
         <item>
@@ -120,12 +82,72 @@
         </item>
         
         <item>
-            <title>A Principle of Non-Judgemental Attitude</title>
-            <link>https://kostyanetsky.me/notes/non-judgmental-attitude</link>
-            <guid isPermaLink="false">note-non-judgmental-attitude</guid>
-            <pubDate>Sun, 02 Sep 2018 16:36:53 +0700</pubDate>
-            <description><p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
-<p>By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p></description>
+            <title>New Fastimer</title>
+            <link>https://kostyanetsky.me/notes/fastimer-1-3-1</link>
+            <guid isPermaLink="false">note-fastimer-1-3-1</guid>
+            <pubDate>Wed, 23 Aug 2023 20:58:32 +0700</pubDate>
+            <description><p>Released a new <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" target="_blank">version</a> of my console timer for <a href="https://en.wikipedia.org/wiki/Intermittent_fasting" target="_blank">intermittent fasting</a>. I wrote this app about a year ago, when I was once again upset by the <a href="https://www.zerolongevity.com/" target="_blank">Zero</a> application for Android: some very primitive functions (like viewing a specific interval) did not work. Oh my gosh, guys, you had one job!</p>
+<p>The main difference between 1.3.1 and 1.2.3 is that the console menu has been cut to hell in favor of the good old arguments and options. The menu concept looks convenient only if an application has few features. However, as soon as you take a step forward, the need to answer a list of questions each time you need something starts to irritate you.</p></description>
+        </item>
+        
+        <item>
+            <title>Request Rheostat</title>
+            <link>https://kostyanetsky.me/notes/request-rheostat</link>
+            <guid isPermaLink="false">note-request-rheostat</guid>
+            <pubDate>Sat, 27 May 2023 13:20:05 +0700</pubDate>
+            <description><p>I forgot to tell you that a couple of months ago I <a href="https://github.com/vkostyanetsky/RequestRheostat" target="_blank">posted</a> on GitHub an example of code that limits the number of requests per second that can be sent to some third-party resource from a 1C:Enterprise infobase.</p>
+<p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. The queue is not guaranteed, but is more or less respected.</p>
+<p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 requires not to send requests to it more than twice per second, and if you exceed it, it bans you.</p></description>
+        </item>
+        
+        <item>
+            <title>Do you speak English?</title>
+            <link>https://kostyanetsky.me/notes/do-you-speak-english</link>
+            <guid isPermaLink="false">note-do-you-speak-english</guid>
+            <pubDate>Sun, 14 May 2023 10:15:16 +0700</pubDate>
+            <description><p>The repository login form of the current platform (8.3.22.1923, to be precise) launched with the English interface:</p>
+<p><img alt="Login Form" src="https://kostyanetsky.me/notes/do-you-speak-english/login-form.png"/></p>
+<p>You had one job, literally.</p>
+<p>I heard some rumors that development of the Designer was stopped largely due to the monstrous amount of technical debt that slows down any new features. But here are interface glitches right on one of the first application windows! Curious how it got through the build tests.</p>
+<p>Maybe they don't exist at all.</p></description>
+        </item>
+        
+        <item>
+            <title>Going Postal</title>
+            <link>https://kostyanetsky.me/notes/going-postal</link>
+            <guid isPermaLink="false">note-going-postal</guid>
+            <pubDate>Mon, 08 May 2023 09:12:34 +0700</pubDate>
+            <description><p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
+<p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry that strong so you become a rocket which lost control”. Or, to simplify, “explode with anger”.</p>
+<p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable cases. Mostly, they implies something like "the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars". Sounds a bit better than a simple explosion — you didn't completely waste the precious resource, at least :-)</p></description>
+        </item>
+        
+        <item>
+            <title>Pause()</title>
+            <link>https://kostyanetsky.me/notes/pause</link>
+            <guid isPermaLink="false">note-pause</guid>
+            <pubDate>Sun, 30 Apr 2023 14:30:43 +0700</pubDate>
+            <description><blockquote>
+<p>An important detail: the CallPause method is not available in a client-server call; when a client calls a server method in which CallPause is called, the exception "Cannot call the CallPause method in a client-server call" will be thrown.</p>
+<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" target="_blank">CallPause Method</a> (RU)</p>
+</blockquote>
+<p>What a strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it makes it anyway (by checking time in a cycle, for example). Does security by obscurity worth the efforts?</p>
+<p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. You know what? Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p></description>
+        </item>
+        
+        <item>
+            <title>In a Pedantic Way</title>
+            <link>https://kostyanetsky.me/notes/in-a-pedantic-way</link>
+            <guid isPermaLink="false">note-in-a-pedantic-way</guid>
+            <pubDate>Tue, 21 Mar 2023 20:26:43 +0700</pubDate>
+            <description><p>The daily award for the most philosophical code goes to the author of this elegant way to check that two boolean variables are not equal to each other:</p>
+<pre><code>If DataStructure.Property("AmountVATIn")
+    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
+    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
+    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
+EndIf;
+</code></pre>
+<p>I'm thinking of adding something like “And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)” here to spice it up with a subtle note of insanity.</p></description>
         </item>
         
     </channel>
