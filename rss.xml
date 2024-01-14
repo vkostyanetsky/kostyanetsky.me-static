@@ -4,7 +4,22 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 17 Dec 2023 19:34:42 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 14 Jan 2024 22:25:45 +0700</lastBuildDate>
+        
+        <item>
+            <title>Do? Do Not?</title>
+            <link>https://kostyanetsky.me/notes/do-not</link>
+            <guid isPermaLink="false">note-do-not</guid>
+            <pubDate>Sun, 14 Jan 2024 22:25:45 +0700</pubDate>
+            <description><p>Among our projects, we have one where two systems are communicating with each other: ERP and CRM. Data exchange is done well: a push'n'pull server has been set up, subscriptions to events have been registered, a REST API has been implemented, and so on. There are many other fascinating technical details, but I'm not talking about that now.</p>
+<p>The exchange has various logic chains inside. For instance, if a new company appears in CRM, it sends the data to ERP. The other day, a problem appeared with this: a company was not sent from the CRM, no matter how many times you tried to write it. So we went to investigate, suspecting the worst: CRM is written in PHP (nothing personal; it’s just not our technical stack), and there’s a lot of different legacy stuff there. It's easier to shoot yourself in the foot than to blow your nose.</p>
+<p>However, it didn't take much digging. We opened the company’s page in CRM and saw that he had the “Do Not Export To ERP” checkbox, which, in fact, blocked the sending. A manager made an obvious mistake.</p>
+<p>Should we uncheck the box and close the ticket?</p>
+<p><img alt="Well yes, but actually no" src="https://kostyanetsky.me/notes/do-not/actually.jpg"/></p>
+<p>This will solve the problem with that particular company, but not the reason it appeared. It is actually in the interface, specifically in the name of the option: “do not” is used, which is advisable to avoid due to the fact that it is more difficult for users to read the wording correctly. By the way, this also applies to a simple “do”.</p>
+<p>It is often difficult for programmers to understand why this is so: we are used to instantly calculating Boolean expressions in our heads, and variations like “not (not true)” are commonplace for us. But people with a different background can get confused. Just a little, but sometimes this is enough for them to perceive “do not export” as “do export” in the heat of the day, click the option, and move on.</p>
+<p>To sum up, the solution is to rename the checkbox. “Disable Export” or “Stop Export” are both fine, for example. “Prohibit Export” also comes to mind, but it’s more about interpersonal relationships, and in general, a ban on doing something does not mean that it won’t be done :)</p></description>
+        </item>
         
         <item>
             <title>Last Meth</title>
@@ -133,21 +148,6 @@
 </blockquote>
 <p>What a strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it makes it anyway (by checking time in a cycle, for example). Does security by obscurity worth the efforts?</p>
 <p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. You know what? Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p></description>
-        </item>
-        
-        <item>
-            <title>In a Pedantic Way</title>
-            <link>https://kostyanetsky.me/notes/in-a-pedantic-way</link>
-            <guid isPermaLink="false">note-in-a-pedantic-way</guid>
-            <pubDate>Tue, 21 Mar 2023 20:26:43 +0700</pubDate>
-            <description><p>The daily award for the most philosophical code goes to the author of this elegant way to check that two boolean variables are not equal to each other:</p>
-<pre><code>If DataStructure.Property("AmountVATIn")
-    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
-    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
-    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
-EndIf;
-</code></pre>
-<p>I'm thinking of adding something like “And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)” here to spice it up with a subtle note of insanity.</p></description>
         </item>
         
     </channel>

@@ -211,6 +211,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/do-not</loc>
+        <lastmod>2024-01-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/shaken-not-stirred</loc>
         <lastmod>2022-08-07</lastmod>
         <changefreq>weekly</changefreq>
