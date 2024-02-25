@@ -4,7 +4,17 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Tue, 13 Feb 2024 01:08:58 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 25 Feb 2024 22:49:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Not Only Everything</title>
+            <link>https://kostyanetsky.me/notes/not-only-everything</link>
+            <guid isPermaLink="false">note-not-only-everything</guid>
+            <pubDate>Sun, 25 Feb 2024 22:49:48 +0700</pubDate>
+            <description><p>This developers' commentary in the platform documentation for the WriteJSON() method of XDTOSerializer is enviably deep, I would say:</p>
+<p><img alt="Not only everyhing" src="https://kostyanetsky.me/notes/not-only-everything/write-json.jpg"/></p>
+<p>Well, yes. The method dumps data into JSON, not XML. So it’s hard to argue that not all value types can be packed into XML using it (to be precise, none). Such a pity that there is an obvious copy-paste from the help for WriteXML() further in the text! I almost decided that it was an Easter egg from the developers :)</p></description>
+        </item>
         
         <item>
             <title>Fastimer for Obsidian</title>
@@ -136,16 +146,6 @@
 <p>You had one job, literally.</p>
 <p>I heard some rumors that development of the Designer was stopped largely due to the monstrous amount of technical debt that slows down any new features. But here are interface glitches right on one of the first application windows! Curious how it got through the build tests.</p>
 <p>Maybe they don't exist at all.</p></description>
-        </item>
-        
-        <item>
-            <title>Going Postal</title>
-            <link>https://kostyanetsky.me/notes/going-postal</link>
-            <guid isPermaLink="false">note-going-postal</guid>
-            <pubDate>Mon, 08 May 2023 09:12:34 +0700</pubDate>
-            <description><p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
-<p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry that strong so you become a rocket which lost control”. Or, to simplify, “explode with anger”.</p>
-<p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable cases. Mostly, they implies something like "the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars". Sounds a bit better than a simple explosion — you didn't completely waste the precious resource, at least :-)</p></description>
         </item>
         
     </channel>
