@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Slow down, I'm recording</title>
+    <title>Fastimer for Obsidian</title>
 
-    <meta name="description" content="A relatively simple way to slow down the execution of requests from a configuration to external services." />
+    <meta name="description" content="I made a plugin for Obsidian to work with intermittent fasting intervals." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Slow down, I'm recording"/>
-    <meta property="og:description" content="A relatively simple way to slow down the execution of requests from a configuration to external services."/>
+    <meta property="og:title" content="Fastimer for Obsidian"/>
+    <meta property="og:description" content="I made a plugin for Obsidian to work with intermittent fasting intervals."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/outgoing-requests-limiter" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/obsidian-fastimer" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/outgoing-requests-limiter" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/obsidian-fastimer" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/outgoing-requests-limiter/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/obsidian-fastimer/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,27 +112,28 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Slow down, I'm recording</h1>
+        <h1 class="f-subheadline lh-solid">Fastimer for Obsidian</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Usually the idea of developing is simple: the faster it works, the better. For example, the more requests an application manages to execute per unit of time, the faster the task for which these requests are needed will be solved.</p>
-<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
-<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p>
+        <p>The <a href="https://obsidian.md/" target="_blank">Obsidian </a> developers recently approved one of my TypeScript pet plugins — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" target="_blank">Fastimer</a>. It is an intermittent fasting tracker that adds a new code block to your vault: you enter the start date of the fasting interval and get the date of its finish, the time until this moment, and a list of the zones to be passed.</p>
+<p>The block shows an up-to-date picture every time Obsidian renders it, which means you can monitor your progress in real time. When a fasting window ends, you can enter the end date, and the code block will show the result: whether you managed to achieve the goal, how much time you fasted beyond the plan, and so on.</p>
+<p>I'm thinking of improving the visual part a bit (currently, everything is displayed as plain text without any design). In addition, I want to add functions for calculating statistics so that you can draw cute graphs like <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" target="_blank">Charts </a> and show achievements. I already made the same in implementing the same <a href="https://github.com/vkostyanetsky/Fastimer" target="_blank">application</a> in Python, but I’m unlikely to return to it — it’s easier to solve the task in the Obsidian vault than to roll out an additional utility.</p>
+<p>In short, check out the plugin! :) You can find it by name (Fastimer) in the Obsidian library, or install it manually from the repository.</p>
         <p class="f6 mt4">
-            2023-03-05 15:54:51
+            2022-07-23 11:32:48
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/typescript/">TypeScript</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
                 </span>
             
         </p>
@@ -145,20 +146,6 @@
             <div class="telegram">Send</div>        
         </div>
         
-        
-
-            <p class="mt5 mb3 f6">
-
-                
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/obsidian-fastimer">Fastimer for Obsidian</a> &larr;
-                
-                Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/fastimer-1-3-1">New Fastimer</a>
-                                
-
-            </p> 
-            
         
 
     </article>
