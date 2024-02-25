@@ -4,7 +4,18 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 14 Jan 2024 22:25:45 +0700</lastBuildDate>
+        <lastBuildDate>Tue, 13 Feb 2024 01:08:58 +0700</lastBuildDate>
+        
+        <item>
+            <title>Fastimer for Obsidian</title>
+            <link>https://kostyanetsky.me/notes/obsidian-fastimer</link>
+            <guid isPermaLink="false">note-obsidian-fastimer</guid>
+            <pubDate>Tue, 13 Feb 2024 01:08:58 +0700</pubDate>
+            <description><p>The <a href="https://obsidian.md/" target="_blank">Obsidian </a> developers recently approved one of my TypeScript pet plugins — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" target="_blank">Fastimer</a>. It is an intermittent fasting tracker that adds a new code block to your vault: you enter the start date of the fasting interval and get the date of its finish, the time until this moment, and a list of the zones to be passed.</p>
+<p>The block shows an up-to-date picture every time Obsidian renders it, which means you can monitor your progress in real time. When a fasting window ends, you can enter the end date, and the code block will show the result: whether you managed to achieve the goal, how much time you fasted beyond the plan, and so on.</p>
+<p>I'm thinking of improving the visual part a bit (currently, everything is displayed as plain text without any design). In addition, I want to add functions for calculating statistics so that you can draw cute graphs like <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" target="_blank">Charts </a> and show achievements. I already made the same in implementing the same <a href="https://github.com/vkostyanetsky/Fastimer" target="_blank">application</a> in Python, but I’m unlikely to return to it — it’s easier to solve the task in the Obsidian vault than to roll out an additional utility.</p>
+<p>In short, check out the plugin! :) You can find it by name (Fastimer) in the Obsidian library, or install it manually from the repository.</p></description>
+        </item>
         
         <item>
             <title>Do? Do Not?</title>
@@ -135,19 +146,6 @@
             <description><p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
 <p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry that strong so you become a rocket which lost control”. Or, to simplify, “explode with anger”.</p>
 <p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable cases. Mostly, they implies something like "the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars". Sounds a bit better than a simple explosion — you didn't completely waste the precious resource, at least :-)</p></description>
-        </item>
-        
-        <item>
-            <title>Pause()</title>
-            <link>https://kostyanetsky.me/notes/pause</link>
-            <guid isPermaLink="false">note-pause</guid>
-            <pubDate>Sun, 30 Apr 2023 14:30:43 +0700</pubDate>
-            <description><blockquote>
-<p>An important detail: the CallPause method is not available in a client-server call; when a client calls a server method in which CallPause is called, the exception "Cannot call the CallPause method in a client-server call" will be thrown.</p>
-<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" target="_blank">CallPause Method</a> (RU)</p>
-</blockquote>
-<p>What a strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it makes it anyway (by checking time in a cycle, for example). Does security by obscurity worth the efforts?</p>
-<p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. You know what? Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p></description>
         </item>
         
     </channel>
