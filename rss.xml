@@ -4,7 +4,16 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 25 Feb 2024 22:49:48 +0700</lastBuildDate>
+        <lastBuildDate>Wed, 06 Mar 2024 21:22:43 +0700</lastBuildDate>
+        
+        <item>
+            <title>Маленькие радости</title>
+            <link>https://kostyanetsky.me/notes/small-pleasures</link>
+            <guid isPermaLink="false">note-small-pleasures</guid>
+            <pubDate>Wed, 06 Mar 2024 21:22:43 +0700</pubDate>
+            <description><p>I was wasting time at the supermarket checkout: it’s evening, there aren’t many customers anymore, but the elderly cashier is clearly tired and isn’t in too much of a hurry. Standing in front a tall, gray-haired man with a luxurious beard distantly examines the rack of chocolates next to the cash register.</p>
+<p>Finally, he takes a Snickers, twirls it in his hands thoughtfully. Then he pushes two more towards himself and, broadly, with visible pleasure, smiles into his mustache :)</p></description>
+        </item>
         
         <item>
             <title>Not Only Everything</title>
@@ -134,18 +143,6 @@
             <description><p>I forgot to tell you that a couple of months ago I <a href="https://github.com/vkostyanetsky/RequestRheostat" target="_blank">posted</a> on GitHub an example of code that limits the number of requests per second that can be sent to some third-party resource from a 1C:Enterprise infobase.</p>
 <p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. The queue is not guaranteed, but is more or less respected.</p>
 <p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 requires not to send requests to it more than twice per second, and if you exceed it, it bans you.</p></description>
-        </item>
-        
-        <item>
-            <title>Do you speak English?</title>
-            <link>https://kostyanetsky.me/notes/do-you-speak-english</link>
-            <guid isPermaLink="false">note-do-you-speak-english</guid>
-            <pubDate>Sun, 14 May 2023 10:15:16 +0700</pubDate>
-            <description><p>The repository login form of the current platform (8.3.22.1923, to be precise) launched with the English interface:</p>
-<p><img alt="Login Form" src="https://kostyanetsky.me/notes/do-you-speak-english/login-form.png"/></p>
-<p>You had one job, literally.</p>
-<p>I heard some rumors that development of the Designer was stopped largely due to the monstrous amount of technical debt that slows down any new features. But here are interface glitches right on one of the first application windows! Curious how it got through the build tests.</p>
-<p>Maybe they don't exist at all.</p></description>
         </item>
         
     </channel>
