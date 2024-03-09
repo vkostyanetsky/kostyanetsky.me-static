@@ -4,7 +4,20 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Wed, 06 Mar 2024 21:22:43 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 09 Mar 2024 17:44:32 +0700</lastBuildDate>
+        
+        <item>
+            <title>Fastimer&#x27;s Look</title>
+            <link>https://kostyanetsky.me/notes/callouts-for-fastimer</link>
+            <guid isPermaLink="false">note-callouts-for-fastimer</guid>
+            <pubDate>Sat, 09 Mar 2024 17:44:32 +0700</pubDate>
+            <description><p>I just implemented <a href="https://kostyanetsky.me/notes/callouts-for-fastimer/notes/obsidian-fastimer" target="_blank">Fastimer</a>'s rendering through callouts: this is an Obsidian mechanic that allows you to turn an ordinary quote into a designed block of text that attracts the reader's attention. You've probably seen blocks like “advice” and “pay attention” — these are callouts.</p>
+<p>You can read more in <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a>. </p>
+<p>As a result, the timer now takes on a different color depending on the state: blue for an active fast, green for completed, and red for a failed one.</p>
+<p>In addition, I made the text more compact and worked on styling:</p>
+<p><img alt="Example" src="https://kostyanetsky.me/notes/callouts-for-fastimer/example.png"/></p>
+<p>It turned out to be way nicer than the block of preformatted text as it was before.</p></description>
+        </item>
         
         <item>
             <title>Small Pleasures</title>
@@ -133,16 +146,6 @@
             <pubDate>Wed, 23 Aug 2023 20:58:32 +0700</pubDate>
             <description><p>Released a new <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" target="_blank">version</a> of my console timer for <a href="https://en.wikipedia.org/wiki/Intermittent_fasting" target="_blank">intermittent fasting</a>. I wrote this app about a year ago, when I was once again upset by the <a href="https://www.zerolongevity.com/" target="_blank">Zero</a> application for Android: some very primitive functions (like viewing a specific interval) did not work. Oh my gosh, guys, you had one job!</p>
 <p>The main difference between 1.3.1 and 1.2.3 is that the console menu has been cut to hell in favor of the good old arguments and options. The menu concept looks convenient only if an application has few features. However, as soon as you take a step forward, the need to answer a list of questions each time you need something starts to irritate you.</p></description>
-        </item>
-        
-        <item>
-            <title>Request Rheostat</title>
-            <link>https://kostyanetsky.me/notes/request-rheostat</link>
-            <guid isPermaLink="false">note-request-rheostat</guid>
-            <pubDate>Sat, 27 May 2023 13:20:05 +0700</pubDate>
-            <description><p>I forgot to tell you that a couple of months ago I <a href="https://github.com/vkostyanetsky/RequestRheostat" target="_blank">posted</a> on GitHub an example of code that limits the number of requests per second that can be sent to some third-party resource from a 1C:Enterprise infobase.</p>
-<p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. The queue is not guaranteed, but is more or less respected.</p>
-<p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 requires not to send requests to it more than twice per second, and if you exceed it, it bans you.</p></description>
         </item>
         
     </channel>
