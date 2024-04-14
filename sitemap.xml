@@ -43,6 +43,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/obsidian-foodiary</loc>
+        <lastmod>2024-04-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/haul-trucks</loc>
         <lastmod>2023-02-20</lastmod>
         <changefreq>weekly</changefreq>
