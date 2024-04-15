@@ -127,7 +127,7 @@
 <p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. The queue is not guaranteed, but is more or less respected.</p>
 <p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 requires not to send requests to it more than twice per second, and if you exceed it, it bans you.</p>
         <p class="f6 mt4">
-            2023-05-27 13:20:05
+            2023-05-27
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -153,7 +153,7 @@
 <p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
 <p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p>
         <p class="f6 mt4">
-            2023-03-05 15:54:51
+            2023-03-05
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -188,7 +188,7 @@
 <p>Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's a rate value. What's for the unit of measure field? Well, it contains a measurement code ¯\_(ツ)_/¯</p>
 <p>Database normalization? What? What does it mean? Back off, man, you're distracting us from work.</p>
         <p class="f6 mt4">
-            2022-10-15 18:22:43
+            2022-10-15
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
@@ -214,7 +214,7 @@
 <p>They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
 <p>Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p>
         <p class="f6 mt4">
-            2022-09-18 16:25:48
+            2022-09-18
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
