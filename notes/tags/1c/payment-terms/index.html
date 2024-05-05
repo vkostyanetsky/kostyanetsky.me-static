@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Not Only Everything</title>
+    <title>One Request More, One Request Less</title>
 
-    <meta name="description" content="A funny mistake in documentation of WriteJSON()." />
+    <meta name="description" content="The story is that it is better not to make a query that you don’t have to make." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Not Only Everything"/>
-    <meta property="og:description" content="A funny mistake in documentation of WriteJSON()."/>
+    <meta property="og:title" content="One Request More, One Request Less"/>
+    <meta property="og:description" content="The story is that it is better not to make a query that you don’t have to make."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/not-only-everything" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/payment-terms" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/not-only-everything" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/payment-terms" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/not-only-everything/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/payment-terms/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,19 +112,32 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Not Only Everything</h1>
+        <h1 class="f-subheadline lh-solid">One Request More, One Request Less</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>This commentary in the documentation for the WriteJSON() method of XDTOSerializer is enviably deep, I would say:</p>
-<p><img alt="Not only everyhing" src="https://kostyanetsky.me/notes/not-only-everything/write-json.jpg"/></p>
-<p>Well, yes. The method dumps data into JSON, not XML. So it’s hard to argue that not all value types can be packed into XML using it (to be precise, none). Such a pity that there is an obvious copy-paste from the help for WriteXML() further in the text! I almost decided that it was an Easter egg from the developers :)</p>
+        <p>I regularly hear the take: one request more, one request less - it doesn’t matter. Like, the main thing is that the request must be cheap: it doesn’t read too much, gets into the index, and so on.</p>
+<p>This point makes sense, but mindlessly machine-gunning queries is a dangerous idea. Even if everything looks good at the moment, the system may change slightly in the future. And then a seemingly harmless patch will destroy your production server right on Friday.</p>
+<p>Let me tell you about one example from recent practice. There is an ERP that contains a table with payment stages for customer orders. One of these stages is prepayment; until it is received, you cannot create an order for the supplier.</p>
+<p>Technically, the purchase order simply stores the customer's order ID; if the field is filled (that is, if the purchase order is created by the customer's order), ERP needs to read the payment stages of the customer's order and understand whether the purchase can be made.</p>
+<p>It sounds elementary, but monitoring shows that the operation is slow as hell and eats up memory as if it were the last time. </p>
+<p>Welp, let's go find out. We saw something like this:</p>
+<p><img alt="825701 records" src="https://kostyanetsky.me/notes/payment-terms/payment-terms.png"/></p>
+<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP receives almost a million! How this could be possible?</p>
+<p>It turned out that the problem was with those purchase orders that were not related to customer orders at all. The developer considered that the logic for them could not be changed: the customer’s order ID is empty and the query will not find payment stages for this ID. This means that the same result will be obtained as if there were no query at all. And an extra query - well... One request more, one requests less... Not a big deal.</p>
+<p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
+<p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
+<p>Do you know what I think? If the result of a query is known, there is probably no need to do it after all.</p>
         <p class="f6 mt4">
-            2024-02-25
+            2024-05-05
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
                 </span>
             
         </p>
@@ -142,11 +155,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/last-meth">Last Meth</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/not-only-everything">Not Only Everything</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/payment-terms">One Request More, One Request Less</a>
                                 
 
             </p> 

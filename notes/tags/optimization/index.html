@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>1С</title>
+    <title>Optimization</title>
 
     <meta name="description" content="" />
     
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="1С"/>
+    <meta property="og:title" content="Optimization"/>
     <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/1c" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/optimization" />    
 
     <!-- Tachyons -->
 
@@ -44,7 +44,7 @@
 
     <script>
 
-        let ctrlUpUrl       = 'https://kostyanetsky.me/notes/tags/1c';
+        let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
         let ctrlLeftUrl     = '';
         let ctrlRightUrl    = '';
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/1c" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/tags/optimization" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -112,56 +112,38 @@
 
     <article>
 
-        <h1 class="f-subheadline lh-solid">1С</h1>
-
-        
-
-            <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt3 mb3" href="https://kostyanetsky.me/notes/tags/1c">Later</a> Ctrl + &uarr;
-            </p>
+        <h1 class="f-subheadline lh-solid">Optimization</h1>
 
         
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/message-to-user/">Message to User</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/payment-terms/">One Request More, One Request Less</a></h2>
 
             
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
-<p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
-<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p>
+        <p>I regularly hear the take: one request more, one request less - it doesn’t matter. Like, the main thing is that the request must be cheap: it doesn’t read too much, gets into the index, and so on.</p>
+<p>This point makes sense, but mindlessly machine-gunning queries is a dangerous idea. Even if everything looks good at the moment, the system may change slightly in the future. And then a seemingly harmless patch will destroy your production server right on Friday.</p>
+<p>Let me tell you about one example from recent practice. There is an ERP that contains a table with payment stages for customer orders. One of these stages is prepayment; until it is received, you cannot create an order for the supplier.</p>
+<p>Technically, the purchase order simply stores the customer's order ID; if the field is filled (that is, if the purchase order is created by the customer's order), ERP needs to read the payment stages of the customer's order and understand whether the purchase can be made.</p>
+<p>It sounds elementary, but monitoring shows that the operation is slow as hell and eats up memory as if it were the last time. </p>
+<p>Welp, let's go find out. We saw something like this:</p>
+<p><img alt="825701 records" src="https://kostyanetsky.me/notes/payment-terms/payment-terms.png"/></p>
+<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP receives almost a million! How this could be possible?</p>
+<p>It turned out that the problem was with those purchase orders that were not related to customer orders at all. The developer considered that the logic for them could not be changed: the customer’s order ID is empty and the query will not find payment stages for this ID. This means that the same result will be obtained as if there were no query at all. And an extra query - well... One request more, one requests less... Not a big deal.</p>
+<p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
+<p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
+<p>Do you know what I think? If the result of a query is known, there is probably no need to do it after all.</p>
         <p class="f6 mt4">
-            2018-04-30
+            2024-05-05
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/why-so-serious/">Why So Serious?</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
-<p>It's what you should avoid despite it looks funny. You'll rewrite code you've written month or two later and it will be hard to shame its author because it is you.</p>
-        <p class="f6 mt4">
-            2018-02-17
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/films/">films</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
                 </span>
             
         </p>

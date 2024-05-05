@@ -4,7 +4,26 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 14 Apr 2024 22:36:58 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 05 May 2024 21:25:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>One Request More, One Request Less</title>
+            <link>https://kostyanetsky.me/notes/payment-terms</link>
+            <guid isPermaLink="false">note-payment-terms</guid>
+            <pubDate>Sun, 05 May 2024 21:25:48 +0700</pubDate>
+            <description><p>I regularly hear the take: one request more, one request less - it doesn’t matter. Like, the main thing is that the request must be cheap: it doesn’t read too much, gets into the index, and so on.</p>
+<p>This point makes sense, but mindlessly machine-gunning queries is a dangerous idea. Even if everything looks good at the moment, the system may change slightly in the future. And then a seemingly harmless patch will destroy your production server right on Friday.</p>
+<p>Let me tell you about one example from recent practice. There is an ERP that contains a table with payment stages for customer orders. One of these stages is prepayment; until it is received, you cannot create an order for the supplier.</p>
+<p>Technically, the purchase order simply stores the customer's order ID; if the field is filled (that is, if the purchase order is created by the customer's order), ERP needs to read the payment stages of the customer's order and understand whether the purchase can be made.</p>
+<p>It sounds elementary, but monitoring shows that the operation is slow as hell and eats up memory as if it were the last time. </p>
+<p>Welp, let's go find out. We saw something like this:</p>
+<p><img alt="825701 records" src="https://kostyanetsky.me/notes/payment-terms/payment-terms.png"/></p>
+<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP receives almost a million! How this could be possible?</p>
+<p>It turned out that the problem was with those purchase orders that were not related to customer orders at all. The developer considered that the logic for them could not be changed: the customer’s order ID is empty and the query will not find payment stages for this ID. This means that the same result will be obtained as if there were no query at all. And an extra query - well... One request more, one requests less... Not a big deal.</p>
+<p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
+<p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
+<p>Do you know what I think? If the result of a query is known, there is probably no need to do it after all.</p></description>
+        </item>
         
         <item>
             <title>Foodiary for Obsidian</title>
@@ -132,28 +151,6 @@
 <p>What's funny, you ask? Well, I involuntarily remembered <a href="https://forum.mista.ru" target="_blank">Mista</a>. Among 1C developers, this is synonymous with the word “toxicity”: if you ask anything there, you get a bucket of slop by the collar instead of an answer. Here, of course, everything is not so neglected, but holy crap! These persistent guys who referring to the 14-page manual made me laugh a lot.</p>
 <p>One thing is good: by the end of the thread, there appeared a brave rebel who just answered the question. They, like, named the required parameter for a FastAPI method's decorator, which is not supposed to be shown in the documentation. No links — could you imagine?</p>
 <p>Not all heroes wear capes, I would say.</p></description>
-        </item>
-        
-        <item>
-            <title>Romania&#x27;s Feature</title>
-            <link>https://kostyanetsky.me/notes/crossed</link>
-            <guid isPermaLink="false">note-crossed</guid>
-            <pubDate>Wed, 30 Aug 2023 01:02:24 +0700</pubDate>
-            <description><p>Making a password recover function via SMS for our customer portal. Got to the Twilio <a href="https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID" target="_blank">documentation</a> related to <a href="https://www.twilio.com/docs/glossary/what-alphanumeric-sender-id" target="_blank">alphanumeric sender ID</a> support in different countries; this feature allows you to send messages so that the recipient sees not the sender's number but something meaningful (a company name, for example).</p>
-<p>The feature is regulated differently everywhere: in some countries it just works, but in others registration is possible or even required.</p>
-<p>Well, let's take a look:</p>
-<p><img alt="Screenshot" src="https://kostyanetsky.me/notes/crossed/twilio.png"/></p>
-<p>🤔</p>
-<ul>
-<li>Portugal: yes</li>
-<li>Puerto Rico: no</li>
-<li>Qatar: yes (with registration)</li>
-<li>Reunion: yes</li>
-<li>Romania: yes (with registration) (but be afraid of Dracula)</li>
-</ul>
-<p>I don’t know how else I can explain this cemetery.</p>
-<p>UPD: Found the answer. Grave crosses mean you have to pay $700 to register.</p>
-<p>To be frank, I like the explanation about Dracula much more.</p></description>
         </item>
         
     </channel>
