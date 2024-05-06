@@ -11,7 +11,7 @@
             <link>https://kostyanetsky.me/notes/payment-terms</link>
             <guid isPermaLink="false">note-payment-terms</guid>
             <pubDate>Sun, 05 May 2024 21:25:48 +0700</pubDate>
-            <description><p>One query more, one query less — it doesn’t matter, people often say. Like, the main thing is that the query must be cheap: it doesn’t read too much, gets into the index, and so on.</p>
+            <description><p>One query more, one query less — it doesn’t matter, people often say. Like, the main thing is that the query must be cheap: it doesn’t read too much, uses index, and so on.</p>
 <p>This point of view makes sense, but mindlessly machine-gunning queries is a dangerous idea. Even if everything looks good at the moment, the system may change slightly in the future. And then a seemingly harmless patch will burn your production server to the ground right on Friday.</p>
 <p>Let me tell you about one example from recent practice. There is an ERP that contains a table with payment stages for customer orders. One of these stages is prepayment; until it is received, you cannot create an order for the supplier.</p>
 <p>Technically, the purchase order simply stores the customer's order ID; if the field is filled (that is, if the purchase order is created by the customer's order), ERP needs to read the payment stages of the customer's order and understand whether the purchase can be made.</p>
