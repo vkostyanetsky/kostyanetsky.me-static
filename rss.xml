@@ -4,7 +4,17 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 05 May 2024 21:25:48 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 12 May 2024 17:50:58 +0700</lastBuildDate>
+        
+        <item>
+            <title>Timesheet for Obsidian</title>
+            <link>https://kostyanetsky.me/notes/obsidian-timesheet</link>
+            <guid isPermaLink="false">note-obsidian-timesheet</guid>
+            <pubDate>Sun, 12 May 2024 17:50:58 +0700</pubDate>
+            <description><p>I made another <a href="https://obsidian.md" target="_blank">Obsidian</a> plugin, this time for <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">daily notes</a>. Draws a nice report: what tasks I worked on, what I did, and how much time I spent. I tried to describe how it works in the <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">repository</a>; will be glad to receive any feedback!</p>
+<p>Funny thing: for the examples in the README, I used issues like FBI-1, FBI-2, and so on. This is not a reference to the X-Files or Twin Peaks — it's just the first prefix that came to mind. The fact is that our internal project for the development of FirstBit ERP is called First Bit Internal, abbreviated as FBI :) The main pool of tasks we are working on is created and tracked in it.</p>
+<p>We’re already used to it, but our colleagues outside the company always find our screenshots from JIRA or SonarQube amusing.</p></description>
+        </item>
         
         <item>
             <title>One Query More, One Query Less</title>
@@ -140,17 +150,6 @@
 </blockquote>
 <p>Programmers have exactly the same emotions when they spend a long time working on something. They suddenly realize that part of it should be designed differently. Moreover, this is exactly what you have to do since it solves several problems at once. This is where technical debt is born. </p>
 <p>However, right now you don’t change anything but continue to work with the part of the code that already exists. After all, you are professional, and you have a release date! You have to make it on time and then pay the debt, but you hate every inch of code you write because you're going away from your goal.</p></description>
-        </item>
-        
-        <item>
-            <title>Everyday Heroism</title>
-            <link>https://kostyanetsky.me/notes/how-to-be-a-hero</link>
-            <guid isPermaLink="false">note-how-to-be-a-hero</guid>
-            <pubDate>Sun, 24 Sep 2023 23:06:30 +0700</pubDate>
-            <description><p>Some time ago, I was setting up <a href="https://swagger.io" target="_blank">Swagger</a> for the internal API. While I was fiddling around, it became clear that some functionality did not need to be included in the documentation. I was looking for a way to do this without crutches and came across a funny <a href="https://github.com/tiangolo/full-stack-fastapi-couchbase/issues/10" target="_blank">question</a> on GitHub.</p>
-<p>What's funny, you ask? Well, I involuntarily remembered <a href="https://forum.mista.ru" target="_blank">Mista</a>. Among 1C developers, this is synonymous with the word “toxicity”: if you ask anything there, you get a bucket of slop by the collar instead of an answer. Here, of course, everything is not so neglected, but holy crap! These persistent guys who referring to the 14-page manual made me laugh a lot.</p>
-<p>One thing is good: by the end of the thread, there appeared a brave rebel who just answered the question. They, like, named the required parameter for a FastAPI method's decorator, which is not supposed to be shown in the documentation. No links — could you imagine?</p>
-<p>Not all heroes wear capes, I would say.</p></description>
         </item>
         
     </channel>
