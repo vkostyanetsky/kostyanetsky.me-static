@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 12 May 2024 17:50:58 +0700</lastBuildDate>
+        <lastBuildDate>Mon, 20 May 2024 00:03:07 +0700</lastBuildDate>
+        
+        <item>
+            <title>Screenshot With Sound</title>
+            <link>https://kostyanetsky.me/notes/last-resort</link>
+            <guid isPermaLink="false">note-last-resort</guid>
+            <pubDate>Mon, 20 May 2024 00:03:07 +0700</pubDate>
+            <description><p>Recently, we came up with the idea of dividing the internal ERP into several independent parts and organizing data exchange between them. We discussed the outlines of the task, the exchange model, transport, and roughly agreed on deadlines — in general, we did what we usually do.</p>
+<p>I created a task for the stuff. We give them names in English, so I wrote in the first wording that came to mind.</p>
+<p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.me/notes/last-resort/last-resort.png"/></p>
+<p>The title came out with sound. Okay, this one is funny, but what should I call it then? Well, let it be Distributed Internal ERP. Abbreviated... DIE?</p>
+<p>I let the first one be. Long live Papa Roach :)</p></description>
+        </item>
         
         <item>
             <title>Timesheet for Obsidian</title>
@@ -28,7 +40,7 @@
 <p>It sounds elementary, but monitoring shows that the operation is slow as hell and eats up memory as if it were the last time. </p>
 <p>Welp, let's go find out. We saw something like this:</p>
 <p><img alt="825701 records" src="https://kostyanetsky.me/notes/payment-terms/payment-terms.png"/></p>
-<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP receives almost a million! How this could be possible?</p>
+<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP reads almost a million! How this could be possible?</p>
 <p>It turned out that the problem was with those purchase orders that were not related to customer orders at all. The developer considered that the logic for them could not be changed: the customer’s order ID is empty and the query will not find payment stages for this ID. This means that the same result will be obtained as if there were no query at all. And an extra query — well... One query more, one query less... Not a big deal.</p>
 <p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
 <p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
@@ -137,19 +149,6 @@
 </code></pre>
 <p>I see here the inexplicable love for abbreviations. What made the author name the variable “eMethLast”, not “eMethodLast”? They already created "wsMethodName" and "plMethodNum", after all.</p>
 <p>Perhaps this is an Easter egg with a reference to Breaking Bad. Then I like it for sure :)</p></description>
-        </item>
-        
-        <item>
-            <title>Wrong Freeway Entrance</title>
-            <link>https://kostyanetsky.me/notes/wrong-freeway-entrance</link>
-            <guid isPermaLink="false">note-wrong-freeway-entrance</guid>
-            <pubDate>Tue, 14 Nov 2023 09:34:10 +0700</pubDate>
-            <description><blockquote>
-<p>Have you ever taken the wrong freeway entrance? You need to drive to the next exit to turn around, but you hate every inch of travel because you're going away from your goal.</p>
-<p><em>― Andy Weir, "The Martian"</em></p>
-</blockquote>
-<p>Programmers have exactly the same emotions when they spend a long time working on something. They suddenly realize that part of it should be designed differently. Moreover, this is exactly what you have to do since it solves several problems at once. This is where technical debt is born. </p>
-<p>However, right now you don’t change anything but continue to work with the part of the code that already exists. After all, you are professional, and you have a release date! You have to make it on time and then pay the debt, but you hate every inch of code you write because you're going away from your goal.</p></description>
         </item>
         
     </channel>

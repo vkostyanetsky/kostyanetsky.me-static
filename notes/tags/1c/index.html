@@ -130,7 +130,7 @@
 <p>It sounds elementary, but monitoring shows that the operation is slow as hell and eats up memory as if it were the last time. </p>
 <p>Welp, let's go find out. We saw something like this:</p>
 <p><img alt="825701 records" src="https://kostyanetsky.me/notes/payment-terms/payment-terms.png"/></p>
-<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP receives almost a million! How this could be possible?</p>
+<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP reads almost a million! How this could be possible?</p>
 <p>It turned out that the problem was with those purchase orders that were not related to customer orders at all. The developer considered that the logic for them could not be changed: the customer’s order ID is empty and the query will not find payment stages for this ID. This means that the same result will be obtained as if there were no query at all. And an extra query — well... One query more, one query less... Not a big deal.</p>
 <p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
 <p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
