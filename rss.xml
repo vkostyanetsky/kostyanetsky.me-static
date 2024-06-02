@@ -4,7 +4,20 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 20 May 2024 00:03:07 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 02 Jun 2024 23:18:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>The Main Issue of UUID</title>
+            <link>https://kostyanetsky.me/notes/uuid-main-issue</link>
+            <guid isPermaLink="false">note-uuid-main-issue</guid>
+            <pubDate>Sun, 02 Jun 2024 23:18:48 +0700</pubDate>
+            <description><p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
+<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
+<p>P.S. The remark about the probability of creating two identical UUIDs in one database made me laugh:</p>
+<blockquote>
+<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
+</blockquote></description>
+        </item>
         
         <item>
             <title>Screenshot With Sound</title>
@@ -120,35 +133,6 @@
 <p>This will solve the problem with that particular company, but not the reason it appeared. It is actually in the interface, specifically in the name of the option: “do not” is used, which is advisable to avoid due to the fact that it is more difficult for users to read the wording correctly. By the way, this also applies to a simple “do”.</p>
 <p>It is often difficult for programmers to understand why this is so: we are used to instantly calculating Boolean expressions in our heads, and variations like “not (not true)” are commonplace for us. But people with a different background can get confused. Just a little, but sometimes this is enough for them to perceive “do not export” as “do export” in the heat of the day, click the option, and move on.</p>
 <p>To sum up, the solution is to rename the checkbox. “Disable Export” or “Stop Export” are both fine, for example. “Prohibit Export” also comes to mind, but it’s more about interpersonal relationships, and in general, a ban on doing something does not mean that it won’t be done :)</p></description>
-        </item>
-        
-        <item>
-            <title>Last Meth</title>
-            <link>https://kostyanetsky.me/notes/last-meth</link>
-            <guid isPermaLink="false">note-last-meth</guid>
-            <pubDate>Sun, 17 Dec 2023 19:34:42 +0700</pubDate>
-            <description><p>I'm digging into the code of an external component for 1C platform, published by its developers as an example. The good thing is: well, it can be compiled and if you tweak it a little — it does the job.</p>
-<p>As for other things, there are a lot of bruh moments. For example, the project can't be opened in modern Visual Studio (you need to specify CMake manually). The code is quite sloppy; there is no documentation, comments, or formatting. Long story short: I believe, it can be difficult for a developer without solid experience in C++ to get the hang of this.</p>
-<p>Was a bit amused by the naming in the code below:</p>
-<pre><code>long CAddInNative::FindMethod(const WCHAR_T* wsMethodName)
-{ 
-    long plMethodNum = -1;
-    wchar_t* name = 0;
-
-    ::convFromShortWchar(&amp;name, wsMethodName);
-
-    plMethodNum = findName(g_MethodNames, name, eMethLast);
-
-    if (plMethodNum == -1)
-        plMethodNum = findName(g_MethodNamesRu, name, eMethLast);
-
-    delete[] name;
-
-    return plMethodNum;
-}
-</code></pre>
-<p>I see here the inexplicable love for abbreviations. What made the author name the variable “eMethLast”, not “eMethodLast”? They already created "wsMethodName" and "plMethodNum", after all.</p>
-<p>Perhaps this is an Easter egg with a reference to Breaking Bad. Then I like it for sure :)</p></description>
         </item>
         
     </channel>

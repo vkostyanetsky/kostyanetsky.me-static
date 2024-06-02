@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Screenshot With Sound</title>
+    <title>The Main Issue of UUID</title>
 
-    <meta name="description" content="About the difficulties with naming tasks when you have good taste in music." />
+    <meta name="description" content="About the problem that UUID brings with itself." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Screenshot With Sound"/>
-    <meta property="og:description" content="About the difficulties with naming tasks when you have good taste in music."/>
+    <meta property="og:title" content="The Main Issue of UUID"/>
+    <meta property="og:description" content="About the problem that UUID brings with itself."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/last-resort" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/uuid-main-issue" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/last-resort" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/uuid-main-issue" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/last-resort/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/uuid-main-issue/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,25 +112,22 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Screenshot With Sound</h1>
+        <h1 class="f-subheadline lh-solid">The Main Issue of UUID</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Recently, we came up with the idea of dividing the internal ERP into several independent parts and organizing data exchange between them. We discussed the outlines of the task, the exchange model, transport, and roughly agreed on deadlines — in general, we did what we usually do.</p>
-<p>I created a task for the stuff. We give them names in English, so I wrote in the first wording that came to mind.</p>
-<p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.me/notes/last-resort/last-resort.png"/></p>
-<p>The title came out with sound. Okay, this one is funny, but what should I call it then? Well, let it be Distributed Internal ERP. Abbreviated... DIE?</p>
-<p>I let the first one be. Long live Papa Roach :)</p>
+        <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
+<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
+<p>P.S. The remark about the probability of creating two identical UUIDs in one database made me laugh:</p>
+<blockquote>
+<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
+</blockquote>
         <p class="f6 mt4">
-            2024-05-20
+            2024-06-02
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
@@ -148,11 +145,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-timesheet">Timesheet for Obsidian</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/last-resort">Screenshot With Sound</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/uuid-main-issue">The Main Issue of UUID</a>
                                 
 
             </p> 

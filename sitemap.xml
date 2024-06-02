@@ -239,6 +239,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/uuid-main-issue</loc>
+        <lastmod>2024-06-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/callouts-for-fastimer</loc>
         <lastmod>2024-03-09</lastmod>
         <changefreq>weekly</changefreq>

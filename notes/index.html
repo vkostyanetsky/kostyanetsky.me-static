@@ -118,6 +118,31 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/uuid-main-issue/">The Main Issue of UUID</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
+<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
+<p>P.S. The remark about the probability of creating two identical UUIDs in one database made me laugh:</p>
+<blockquote>
+<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
+</blockquote>
+        <p class="f6 mt4">
+            2024-06-02
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/last-resort/">Screenshot With Sound</a></h2>
 
             
@@ -673,36 +698,6 @@ EndIf;
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/environmental-storytelling/">Environmental Storytelling</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I like to notice things in the world around me that clearly have a story behind them. In video games, this is called “environmental storytelling”: they don’t tell you the story directly, but if you look around, you can guess which gun was hanging on the wall and who fired from it.</p>
-<p>For example, I recently celebrated the company's 10th anniversary with colleagues at a local golf club. Balls had to be sent flying from the second floor; there are no railings for obvious reasons, but a net is stretched in case someone loses their balance.</p>
-<p><img alt="Photo from the club website to make it clearer." src="https://kostyanetsky.me/notes/environmental-storytelling/topgolf.jpeg"/></p>
-<p>Why are you talking about this, you ask? Well, there are warnings on the walls: jump into the net of your own free will and pay <abbr title="About two hundred thousand rubles at this moment.">ten thousand dirhams</abbr>. Recording this heroic leap of faith on camera is fine as well, just prepare five thousand more.</p>
-<p>Do you feel the smell of a good history? </p>
-<p>Another example: once flew to Turkey to rest and decided, just in case, to look through the rules of the airline (what can be taken on board, what can not). Among the list of items prohibited from being carried on board, I found “steel spear” and “steel flail” 😬</p>
-<p>UPD: Another great <a href="https://kostyanetsky.me/notes/environmental-storytelling/soundproof.jpeg" target="_blank">example</a> from somewhere on the Internet.</p>
-        <p class="f6 mt4">
-            2023-03-19
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
         </p>
