@@ -118,6 +118,49 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/data-history-duplication/">Not Unique Metadata</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Once again, I came across a nasty bug when the platform broke the data history metadata table.</p>
+<p>Outwardly, it looks like this: you update the database configuration, and when you try to restructure, the error “The data history metadata table contains duplicate records. Delete the duplicate records” pops up. The platform does not offer any clear way to find such records.</p>
+<p><img alt="The data history metadata table contains duplicate records. Delete the duplicate records" src="https://kostyanetsky.me/notes/data-history-duplication/error.png"/></p>
+<p>The problem can be solved at the database level. The table referenced by the error is _DataHistoryMetadata. It contains metadata versions of each object for which data history is being maintained. This allows the platform to understand what attributes the object had at any point in time if the data history is maintained for the object.</p>
+<p>How it works? Well, when the list of an object’s attributes changes (for example, an attribute was added to the catalog), the platform writes its metadata: specifically, it adds a new entry to _DataHistoryMetadata and stores in it the current list of object attributes, as well as the version number of this list (for example, when history is enabled for an object, the first version of metadata is saved, when adding some attribute, the second version is saved, and so on).</p>
+<p>The platform also puts a mark in the created record that this particular version of the object is the most actual, and then removes this mark from the version that was marked as actual before.</p>
+<p>So, the problem is that the platform sometimes forgets to take the last step, and two versions appear in the table at once, marked as current. The Designer understands this but cannot do anything.</p>
+<p>The solution follows from the algorithm above: you need to find conflicting versions and revoke the mark of actuality from the one that is older. It is better to use queries: data history is often enabled for a bunch of objects, and the list of their attributes is constantly changing - in general, there will be so many versions in the table that the devil will break his leg.</p>
+<p>If you also encountered this problem and are therefore reading this text, you can use the <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" target="_blank">queries</a> that I wrote:</p>
+<ol>
+<li>get-issues.sql checks that there is an issue: it looks for metadata versions that are also marked as actual.</li>
+<li>fix-issues.sql removes the actuality mark from those versions that are actually outdated.</li>
+</ol>
+<p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" target="_blank">here they are</a> for this DBMS.</p>
+<p>The queries will require slight adaptation to a specific database: they use the _fld626 field, which is the data separator. In your _DataHistoryMetadata table, this field may be called differently, so you need to update its name to the current one. It will be difficult to make a mistake - the table has only one field with the _fld prefix.</p>
+<p>P.S. Please bear in mind that the license agreement prohibits access to the database, bypassing the platform’s tools, so you can only go for such experiments if there are no other options left.</p>
+        <p class="f6 mt4">
+            2024-06-08
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/uuid-main-issue/">The Main Issue of UUID</a></h2>
 
             
@@ -695,33 +738,6 @@ EndProcedure
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/no-comment/">No Comment</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I did not notice when I gave up the habit of pedantically commenting on every method with which I have to work. This practice has some clever name for sure, but I don't care, to be honest. I mean the style when a description is added to every meaningful block of code, like this:</p>
-<script src="https://gist.github.com/vkostyanetsky/afae4dee09d639f34156d6c02b29c2a5.js">Gist</script>
-<p>The meaning here is simple: when you dig in some dense legacy and run back and forth between chaotically scattered, big procedures — it is rather difficult to keep the logic of each of them in your head. The next cup of coffee will wash everything away. Therefore, such notes greatly speed up orientation on the ground, and the more time passes between approaches to the code, the more noticeable the effect.</p>
-<p>However, at some point it became clear that this know-how is just a crutch supporting the frankly crappy code design. If you have a long procedure or function - take a breath, sit down and cut the fatty one into smaller methods. You will save both time and nerves, and you will figure out the code faster, and you will delight SonarCube.</p>
-        <p class="f6 mt4">
-            2021-09-08
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">

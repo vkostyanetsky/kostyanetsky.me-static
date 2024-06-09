@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>PostgreSQL</title>
+    <title>Not Unique Metadata</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="Once again encountered a bug: the platform breaks the data history metadata table." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="PostgreSQL"/>
-    <meta property="og:description" content=""/>
+    <meta property="og:title" content="Not Unique Metadata"/>
+    <meta property="og:description" content="Once again encountered a bug: the platform breaks the data history metadata table."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/pgsql" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/data-history-duplication" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/pgsql" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/data-history-duplication" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                    <span class="f4 f4-ns">✎</span>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/data-history-duplication/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -110,17 +110,11 @@
 <section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
     
 
-    <article>
-
-        <h1 class="f-subheadline lh-solid">PostgreSQL</h1>
-
-        
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/data-history-duplication/">Not Unique Metadata</a></h2>
-
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Not Unique Metadata</h1>
             
+        
     
     <div class="f4 lh-copy black mb5 measure-wide">
         <p>Once again, I came across a nasty bug when the platform broke the data history metadata table.</p>
@@ -159,72 +153,23 @@
 
 
 
+        <div class="likely">
+            <div class="twitter">Tweet</div>
+            <div class="telegram">Send</div>        
+        </div>
+        
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/uuid-main-issue/">The Main Issue of UUID</a></h2>
+            <p class="mt5 mb3 f6">
 
+                
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/uuid-main-issue">The Main Issue of UUID</a> &larr;
+                
+                Ctrl
+                                
+
+            </p> 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
-<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
-<p>P.S. The remark about the probability of creating two identical UUIDs in one database made me laugh:</p>
-<blockquote>
-<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
-</blockquote>
-        <p class="f6 mt4">
-            2024-06-02
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/infostart-event-2021/">Infostart Event 2021</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Last week I visited Moscow for <a href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
-<ul>
-<li>Listen to numbers of interesting reports — check;</li>
-<li>Meet a few cool people in real life — check;</li>
-<li>Chat with friends — check!</li>
-</ul>
-<p>As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
-<p>In order not to <s>get up</s> to fly twice, I passed the <a href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p>
-        <p class="f6 mt4">
-            2021-11-16
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
         
 
     </article>

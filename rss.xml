@@ -4,7 +4,30 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 02 Jun 2024 23:18:48 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 08 Jun 2024 18:28:35 +0700</lastBuildDate>
+        
+        <item>
+            <title>Not Unique Metadata</title>
+            <link>https://kostyanetsky.me/notes/data-history-duplication</link>
+            <guid isPermaLink="false">note-data-history-duplication</guid>
+            <pubDate>Sat, 08 Jun 2024 18:28:35 +0700</pubDate>
+            <description><p>Once again, I came across a nasty bug when the platform broke the data history metadata table.</p>
+<p>Outwardly, it looks like this: you update the database configuration, and when you try to restructure, the error “The data history metadata table contains duplicate records. Delete the duplicate records” pops up. The platform does not offer any clear way to find such records.</p>
+<p><img alt="The data history metadata table contains duplicate records. Delete the duplicate records" src="https://kostyanetsky.me/notes/data-history-duplication/error.png"/></p>
+<p>The problem can be solved at the database level. The table referenced by the error is _DataHistoryMetadata. It contains metadata versions of each object for which data history is being maintained. This allows the platform to understand what attributes the object had at any point in time if the data history is maintained for the object.</p>
+<p>How it works? Well, when the list of an object’s attributes changes (for example, an attribute was added to the catalog), the platform writes its metadata: specifically, it adds a new entry to _DataHistoryMetadata and stores in it the current list of object attributes, as well as the version number of this list (for example, when history is enabled for an object, the first version of metadata is saved, when adding some attribute, the second version is saved, and so on).</p>
+<p>The platform also puts a mark in the created record that this particular version of the object is the most actual, and then removes this mark from the version that was marked as actual before.</p>
+<p>So, the problem is that the platform sometimes forgets to take the last step, and two versions appear in the table at once, marked as current. The Designer understands this but cannot do anything.</p>
+<p>The solution follows from the algorithm above: you need to find conflicting versions and revoke the mark of actuality from the one that is older. It is better to use queries: data history is often enabled for a bunch of objects, and the list of their attributes is constantly changing - in general, there will be so many versions in the table that the devil will break his leg.</p>
+<p>If you also encountered this problem and are therefore reading this text, you can use the <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" target="_blank">queries</a> that I wrote:</p>
+<ol>
+<li>get-issues.sql checks that there is an issue: it looks for metadata versions that are also marked as actual.</li>
+<li>fix-issues.sql removes the actuality mark from those versions that are actually outdated.</li>
+</ol>
+<p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" target="_blank">here they are</a> for this DBMS.</p>
+<p>The queries will require slight adaptation to a specific database: they use the _fld626 field, which is the data separator. In your _DataHistoryMetadata table, this field may be called differently, so you need to update its name to the current one. It will be difficult to make a mistake - the table has only one field with the _fld prefix.</p>
+<p>P.S. Please bear in mind that the license agreement prohibits access to the database, bypassing the platform’s tools, so you can only go for such experiments if there are no other options left.</p></description>
+        </item>
         
         <item>
             <title>The Main Issue of UUID</title>
@@ -118,21 +141,6 @@
 <p>The block shows an up-to-date picture every time Obsidian renders it, which means you can monitor your progress in real time. When a fasting window ends, you can enter the end date, and the code block will show the result: whether you managed to achieve the goal, how much time you fasted beyond the plan, and so on.</p>
 <p>I'm thinking of improving the visual part a bit (currently, everything is displayed as plain text without any design). In addition, I want to add functions for calculating statistics so that you can draw cute graphs like <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" target="_blank">Charts </a> and show achievements. I already made the same in implementing the same <a href="https://github.com/vkostyanetsky/Fastimer" target="_blank">application</a> in Python, but I’m unlikely to return to it — it’s easier to solve the task in the Obsidian vault than to roll out an additional utility.</p>
 <p>In short, check out the plugin! :) You can find it by name (Fastimer) in the Obsidian library, or install it manually from the repository.</p></description>
-        </item>
-        
-        <item>
-            <title>Do? Do Not?</title>
-            <link>https://kostyanetsky.me/notes/do-not</link>
-            <guid isPermaLink="false">note-do-not</guid>
-            <pubDate>Sun, 14 Jan 2024 22:25:45 +0700</pubDate>
-            <description><p>Among our projects, we have one where two systems are communicating with each other: ERP and CRM. Data exchange is done well: a push'n'pull server has been set up, subscriptions to events have been registered, a REST API has been implemented, and so on. There are many other fascinating technical details, but I'm not talking about that now.</p>
-<p>The exchange has various logic chains inside. For instance, if a new company appears in CRM, it sends the data to ERP. The other day, a problem appeared: a company was not sent from the CRM, no matter how many times you tried to write it. So we went to investigate, suspecting the worst: CRM is written in PHP (nothing personal; it’s just not our technical stack), and there’s a lot of different legacy stuff there. It's easier to shoot yourself in the foot than to blow your nose.</p>
-<p>However, it didn't take much digging. We opened the company’s page in CRM and saw that he had the “Do Not Export To ERP” checkbox, which, in fact, blocked the sending. A manager made an obvious mistake.</p>
-<p>Should we uncheck the box and close the ticket?</p>
-<p><img alt="Well yes, but actually no" src="https://kostyanetsky.me/notes/do-not/actually.jpg"/></p>
-<p>This will solve the problem with that particular company, but not the reason it appeared. It is actually in the interface, specifically in the name of the option: “do not” is used, which is advisable to avoid due to the fact that it is more difficult for users to read the wording correctly. By the way, this also applies to a simple “do”.</p>
-<p>It is often difficult for programmers to understand why this is so: we are used to instantly calculating Boolean expressions in our heads, and variations like “not (not true)” are commonplace for us. But people with a different background can get confused. Just a little, but sometimes this is enough for them to perceive “do not export” as “do export” in the heat of the day, click the option, and move on.</p>
-<p>To sum up, the solution is to rename the checkbox. “Disable Export” or “Stop Export” are both fine, for example. “Prohibit Export” also comes to mind, but it’s more about interpersonal relationships, and in general, a ban on doing something does not mean that it won’t be done :)</p></description>
         </item>
         
     </channel>
