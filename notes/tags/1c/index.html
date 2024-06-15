@@ -135,7 +135,7 @@
 <p>The queries will require a slight adaptation to a specific database: they use the _fld626 field, which is the data separator. In your _DataHistoryMetadata table, this field may be called differently, so you need to update its name to the current one. It will be difficult to make a mistake — the table has only one field with the _fld prefix.</p>
 <p>P.S. Please bear in mind that the license agreement prohibits access to the database, bypassing the platform’s tools, so you can only go for such experiments if there are no other options left.</p>
         <p class="f6 mt4">
-            2024-06-08
+            8 June 2024
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -168,7 +168,7 @@
 <p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
 </blockquote>
         <p class="f6 mt4">
-            2024-06-02
+            2 June 2024
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -203,7 +203,7 @@
 <p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
 <p>Do you know what I think? If the result of a query is known, there is probably no need to do it after all.</p>
         <p class="f6 mt4">
-            2024-05-05
+            5 May 2024
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -229,7 +229,7 @@
 <p><img alt="Not only everyhing" src="https://kostyanetsky.me/notes/not-only-everything/write-json.jpg"/></p>
 <p>Well, yes. The method dumps data into JSON, not XML. So it’s hard to argue that not all value types can be packed into XML using it (to be precise, none). Such a pity that there is an obvious copy-paste from the help for WriteXML() further in the text! I almost decided that it was an Easter egg from the developers :)</p>
         <p class="f6 mt4">
-            2024-02-25
+            25 February 2024
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -270,7 +270,7 @@
 <p>I see here the inexplicable love for abbreviations. What made the author name the variable “eMethLast”, not “eMethodLast”? They already created "wsMethodName" and "plMethodNum", after all.</p>
 <p>Perhaps this is an Easter egg with a reference to Breaking Bad. Then I like it for sure :)</p>
         <p class="f6 mt4">
-            2023-12-17
+            17 December 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -293,7 +293,7 @@
 <p>One thing is good: by the end of the thread, there appeared a brave rebel who just answered the question. They, like, named the required parameter for a FastAPI method's decorator, which is not supposed to be shown in the documentation. No links — could you imagine?</p>
 <p>Not all heroes wear capes, I would say.</p>
         <p class="f6 mt4">
-            2023-09-24
+            24 September 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -323,7 +323,7 @@
 <p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. The queue is not guaranteed, but is more or less respected.</p>
 <p>It can be useful for managing the load on an external system. For example, the cloud-based Bitrix24 requires not to send requests to it more than twice per second, and if you exceed it, it bans you.</p>
         <p class="f6 mt4">
-            2023-05-27
+            27 May 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -351,7 +351,7 @@
 <p>I heard some rumors that development of the Designer was stopped largely due to the monstrous amount of technical debt that slows down any new features. But here are interface glitches right on one of the first application windows! Curious how it got through the build tests.</p>
 <p>Maybe they don't exist at all.</p>
         <p class="f6 mt4">
-            2023-05-14
+            14 May 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -376,7 +376,7 @@
 <p>What a strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it makes it anyway (by checking time in a cycle, for example). Does security by obscurity worth the efforts?</p>
 <p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. You know what? Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p>
         <p class="f6 mt4">
-            2023-04-30
+            30 April 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -403,7 +403,7 @@ EndIf;
 </code></pre>
 <p>I'm thinking of adding something like “And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)” here to spice it up with a subtle note of insanity.</p>
         <p class="f6 mt4">
-            2023-03-21
+            21 Marth 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -433,7 +433,7 @@ EndIf;
 <p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
 <p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p>
         <p class="f6 mt4">
-            2023-03-05
+            5 Marth 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -470,7 +470,7 @@ EndIf;
 </ol>
 <p>In short, a boot was rubbing a leg, and now it isn't. Yahoo!</p>
         <p class="f6 mt4">
-            2023-02-25
+            25 February 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -496,7 +496,7 @@ EndIf;
 <p>The colleague grumbled that if you think like that, then the configurator will be Zhiguli, and the EDT will be Kama1 (this is an electric car that has been developed somewhere in the depths of KAMAZ for many years and still can’t gather strength and, finally, show the wonder to the world).</p>
 <p>Well, I try to look at things with optimism. I think the platform and its IDE are such haul trucks. No one in their right mind rides them on household chores, but these beasts are irreplaceable on a cut!</p>
         <p class="f6 mt4">
-            2023-02-20
+            20 February 2023
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -547,7 +547,7 @@ EndProcedure
 </code></pre>
 <p>What do we get here? Firstly, nobody will accidentally erase the description of the document. Secondly, SonarQube will be pleased: it is highly likely to begin swearing at repeating literals with the names of tabular parts, if the helper is implemented instead of code splitting.</p>
         <p class="f6 mt4">
-            2022-08-07
+            7 August 2022
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -570,7 +570,7 @@ EndProcedure
 <p>However, if the type of operation is a return to the supplier, then open the general form AdvancesPickFormWithVAT with the parameters defined in the PickParameters structure. The callback is the EditPrepaymentOffsetEnd method, defined in the same module; pass it the AdditionalParameters structure. The form needs to be opened so that it locks the whole interface.</p>
 <p>I hope you won't confuse.</p>
         <p class="f6 mt4">
-            2022-03-16
+            16 Marth 2022
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -605,7 +605,7 @@ EndProcedure
 <p>In a good way, the platform should throw exceptions when developer trying to change the cache, but until this happens, you have to take care yourself. For example, when developing cached modules, return immutable data types from them (FixedStructure instead of Structure, FixedArray instead of Array, and so on). True, this is not a 100% protection: firstly, fixed types are not applicable everywhere, and secondly, even in the latest versions of the SSL, this is far from being done everywhere. Do you know many configurations not based on SSL?</p>
 <p>Sonar also know nothing about the problem, as well as less popular software. No silver bullet, in short – check your code, look at the code of your colleagues and try not to forget about another elegant way to bang ourselves in the foot.</p>
         <p class="f6 mt4">
-            2022-02-08
+            8 February 2022
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -636,7 +636,7 @@ EndProcedure
 <p>As a result, I suddenly felt rested despite the flights, stress, and fuss. I think it's because I'm working remotely, so it was really cool to look at so many colleagues in real life (not as a stream of electrons, I mean).</p>
 <p>In order not to <s>get up</s> to fly twice, I passed the <a href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">first test</a> for PostgreSQL administration in the PostgresPro office. There are three more tests ahead, and the final one does not exist at all yet — but the walking one will master the road, I guess.</p>
         <p class="f6 mt4">
-            2021-11-16
+            16 November 2021
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -667,7 +667,7 @@ EndProcedure
 <p>Honestly, I am even delighted. We need to implement this UX in our products: you press, for example, the “print” button for a document, and it gives you a PDF! And inside it — a link to another PDF! And inside it — “entity is not filled”, so go fill.</p>
 <p>You can sell it as a Russian way of dealing with errors. This is, like, for historical reasons! Blame all the damned matryoshkas, and <a href="https://en.wikipedia.org/wiki/Koschei" target="_blank">Koschei</a> with his needle. It is, as you remember, in the egg, and it is in the duck, which is in the rabbit, tucked into the chest, and further along the chain of nesting.</p>
         <p class="f6 mt4">
-            2021-10-30
+            30 October 2021
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -698,7 +698,7 @@ EndProcedure
 <p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
 <p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p>
         <p class="f6 mt4">
-            2021-10-02
+            2 October 2021
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -725,7 +725,7 @@ EndProcedure
 <p>Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
 <p>You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p>
         <p class="f6 mt4">
-            2021-09-15
+            15 September 2021
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
