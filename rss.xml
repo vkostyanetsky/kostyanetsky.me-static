@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 08 Jun 2024 18:28:35 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 22 Jun 2024 23:46:57 +0700</lastBuildDate>
+        
+        <item>
+            <title>Singapure Doll</title>
+            <link>https://kostyanetsky.me/notes/singapure-doll</link>
+            <guid isPermaLink="false">note-singapure-doll</guid>
+            <pubDate>Sat, 22 Jun 2024 23:46:57 +0700</pubDate>
+            <description><p>Is it possible to love your country's currency more than the people of Saudi Arabia? It is a rhetorical question: the answer is no.</p>
+<p>I'm currently looking at the <a href="https://www.sama.gov.sa/en-US/FinExc/Pages/Currency.aspx" target="_blank">website</a> of their central bank. The country's currency is the Saudi riyal, and the Central Bank sets rates for other currencies in relation to it. Consequently, there is no point in asking the bank for the rate of the riyal itself. However, the website calmly suggests choosing it twice:</p>
+<p><img alt="The selection form" src="https://kostyanetsky.me/notes/singapure-doll/cb.png"/></p>
+<p>For your information, the first option breaks the website, and the second one pedantically displays “1” for any date.</p>
+<p>Another funny thing: colleagues seem to store currency names as 14-character strings. Otherwise, it is difficult to explain why, according to their data, Canada uses not the Canadian dollar but CANADIAN DOLLA, and Romanians use NEW ROMANIAN L instead of the leu. However, these two are rather lucky: Singapore, for example, conducts payments in SINGAPORE DOLL.</p></description>
+        </item>
         
         <item>
             <title>Non-Unique Metadata</title>
@@ -130,17 +142,6 @@
             <description><p>This commentary in the documentation for the WriteJSON() method of XDTOSerializer is enviably deep, I would say:</p>
 <p><img alt="Not only everyhing" src="https://kostyanetsky.me/notes/not-only-everything/write-json.jpg"/></p>
 <p>Well, yes. The method dumps data into JSON, not XML. So it’s hard to argue that not all value types can be packed into XML using it (to be precise, none). Such a pity that there is an obvious copy-paste from the help for WriteXML() further in the text! I almost decided that it was an Easter egg from the developers :)</p></description>
-        </item>
-        
-        <item>
-            <title>Fastimer for Obsidian</title>
-            <link>https://kostyanetsky.me/notes/obsidian-fastimer</link>
-            <guid isPermaLink="false">note-obsidian-fastimer</guid>
-            <pubDate>Tue, 13 Feb 2024 01:08:58 +0700</pubDate>
-            <description><p>The <a href="https://obsidian.md/" target="_blank">Obsidian</a> developers recently approved one of my TypeScript pet plugins — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" target="_blank">Fastimer</a>. It is an intermittent fasting tracker that adds a new code block to your vault: you enter the start date of the fasting interval and get the date of its finish, the time until this moment, and a list of the zones to be passed.</p>
-<p>The block shows an up-to-date picture every time Obsidian renders it, which means you can monitor your progress in real time. When a fasting window ends, you can enter the end date, and the code block will show the result: whether you managed to achieve the goal, how much time you fasted beyond the plan, and so on.</p>
-<p>I'm thinking of improving the visual part a bit (currently, everything is displayed as plain text without any design). In addition, I want to add functions for calculating statistics so that you can draw cute graphs like <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" target="_blank">Charts </a> and show achievements. I already made the same in implementing the same <a href="https://github.com/vkostyanetsky/Fastimer" target="_blank">application</a> in Python, but I’m unlikely to return to it — it’s easier to solve the task in the Obsidian vault than to roll out an additional utility.</p>
-<p>In short, check out the plugin! :) You can find it by name (Fastimer) in the Obsidian library, or install it manually from the repository.</p></description>
         </item>
         
     </channel>
