@@ -120,13 +120,6 @@
     </url>
     
     <url>
-        <loc>https://kostyanetsky.me/notes/singapure-doll</loc>
-        <lastmod>2024-06-22</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
         <loc>https://kostyanetsky.me/notes/totals-of-2021</loc>
         <lastmod>2022-02-08</lastmod>
         <changefreq>weekly</changefreq>
@@ -185,6 +178,13 @@
     <url>
         <loc>https://kostyanetsky.me/notes/going-postal</loc>
         <lastmod>2023-05-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/singapore-doll</loc>
+        <lastmod>2024-06-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
