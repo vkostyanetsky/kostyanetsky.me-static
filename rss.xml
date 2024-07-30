@@ -4,7 +4,23 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 07 Jul 2024 20:29:24 +0700</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 01:21:21 +0700</lastBuildDate>
+        
+        <item>
+            <title>Yaga</title>
+            <link>https://kostyanetsky.me/notes/yaga</link>
+            <guid isPermaLink="false">note-yaga</guid>
+            <pubDate>Mon, 29 Jul 2024 01:21:21 +0700</pubDate>
+            <description><p>I accidentally remembered that six months ago, one of my colleagues threw a link to <a href="https://yaga.rt.ru" target="_blank">Yaga</a> into the work chat. It is a future (I guess) competitor of JIRA in Russia. Judging by the URL, the guys from Rostelecom are developing it. Here my curiosity was awakened — how is it there, did it take off?</p>
+<p>Alas, but looks like nope. At least, the landing page has the “leave a request and wait for a response beep” vibe. Only a simplified version is available for smaller teams that I can't touch as well: being not in Russia and clicking on the “Start using” button leads me to a ban. Welp, next time, maybe.</p>
+<p>The naming is clickbait, of course. But I’m not sure if it’s really a good choice. For example, “1C” may provoke forced jokes (One s! Odin's ass! Haha), but if you google “1C”, you are more likely to find information about the platform or at least the vendor. Not a bunch of articles, fan fiction, fan art, or video games, as in the case of Yaga.</p>
+<p>Moreover, some wrong associations come to mind. What does Baba Yaga reminds you of? A hut on chicken legs? It looks like an initially <a href="https://kostyanetsky.me/notes/evolution" target="_blank">poorly designed</a> application that was somehow remade right on production. A mortar? A crutch? Damn, if you look at it from the point of view of programmers — these are not red flags, but real scarlet banners fluttering in the wind :)</p>
+<p>One more thing: I'm probably spoiled, but when I hear the word “Yaga”, the first thing that pops into my head is not a powerful witch from Slavic folklore, but <a href="https://en.wikipedia.org/wiki/Jaguar_(drink)" target="_blank">disgusting booze</a> from the 2000s.</p>
+<blockquote>
+<p>Now Baba with Yaga are no longer redneck, but a patriotic programmer!</p>
+<p>― colleague</p>
+</blockquote></description>
+        </item>
         
         <item>
             <title>Ibrahim</title>
@@ -139,15 +155,6 @@
 <p>In addition, I made the text more compact and worked on styling:</p>
 <p><img alt="Example" src="https://kostyanetsky.me/notes/callouts-for-fastimer/example.png"/></p>
 <p>It turned out to be way nicer than the block of preformatted text as it was before.</p></description>
-        </item>
-        
-        <item>
-            <title>Small Pleasures</title>
-            <link>https://kostyanetsky.me/notes/small-pleasures</link>
-            <guid isPermaLink="false">note-small-pleasures</guid>
-            <pubDate>Wed, 06 Mar 2024 21:22:43 +0700</pubDate>
-            <description><p>I was wasting time at the supermarket checkout: it’s evening, there aren’t many customers anymore, but the elderly cashier is clearly tired and isn’t in too much of a hurry. Standing in front a tall, gray-haired man with a luxurious beard whiles away the time studying the rack of chocolates next to the cash register.</p>
-<p>Finally, he takes a Snickers, twirls it in his hands thoughtfully. Then he pushes two more towards himself and, broadly, with visible pleasure, smiles into his mustache :)</p></description>
         </item>
         
     </channel>
