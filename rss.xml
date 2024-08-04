@@ -4,7 +4,18 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 29 Jul 2024 01:21:21 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 04 Aug 2024 19:26:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Make Window a Door</title>
+            <link>https://kostyanetsky.me/notes/make-my-window-a-door</link>
+            <guid isPermaLink="false">note-make-my-window-a-door</guid>
+            <pubDate>Sun, 04 Aug 2024 19:26:48 +0700</pubDate>
+            <description><p>I was listening to <a href="https://music.yandex.ru/album/13443698/track/24134841" target="_blank">Be Somebody</a> by Thousand Foot Krutch yesterday and suddenly caught the phrase “you made my window a door”. I used to think that this idiom is rather funny: like, damn, the idea to replace a window with a door somehow sounds unsafe. You can fall from the tenth floor, you know?</p>
+<p>At the same time, the song is wonderful and not about that at all! I got curious and started digging around to find out what meaning native speakers put into it.</p>
+<p>It turned out that it is actually about two different positions: a passive observer and an active participant. That is, if there is a window in front of you, you only look through it at something or someone. But you can open the door and finally do something. Hence, “when I could only see the floor you made my window a door” means something like “when my hands dropped, you helped me up”.</p>
+<p>By the way, there is another similar idiom — “to be a better window than a door”. The abstraction here is the same: if a person is like a window, and not a door — they hardly ever let people close to them, making passive observers even from people very close to him.</p></description>
+        </item>
         
         <item>
             <title>Yaga</title>
@@ -142,19 +153,6 @@
 <p>In fact, there is a lot of software for this task. I tried some of them but was dissatisfied: it either has terrible design, is bugged, or is constantly trying to sell me a monthly subscription. In short, it's more annoying than helpful. I wanted something native, built into the usual routine; so, if routine settles in Obsidian, then the solution seems to suggest itself.</p>
 <p>You can install the plugin directly from the program — the developers have already approved it. Otherwise, everything is simple: you write in a daily note what you ate and how much it weighed, and you receive a simple table sorted by calories with numbers by proteins, fats, and carbohydrates.</p>
 <p>There are examples in the repository at the link above.</p></description>
-        </item>
-        
-        <item>
-            <title>Fastimer&#x27;s Look</title>
-            <link>https://kostyanetsky.me/notes/callouts-for-fastimer</link>
-            <guid isPermaLink="false">note-callouts-for-fastimer</guid>
-            <pubDate>Sat, 09 Mar 2024 17:44:32 +0700</pubDate>
-            <description><p>I just implemented <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">Fastimer</a>'s rendering through callouts: this is an Obsidian mechanic that allows you to turn an ordinary quote into a designed block of text that attracts the reader's attention. You've probably seen blocks like “advice” and “pay attention” — these are callouts.</p>
-<p>You can read more in <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a>. </p>
-<p>As a result, the timer now takes on a different color depending on the state: blue for an active fast, green for completed, and red for a failed one.</p>
-<p>In addition, I made the text more compact and worked on styling:</p>
-<p><img alt="Example" src="https://kostyanetsky.me/notes/callouts-for-fastimer/example.png"/></p>
-<p>It turned out to be way nicer than the block of preformatted text as it was before.</p></description>
         </item>
         
     </channel>
