@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 04 Aug 2024 19:26:48 +0700</lastBuildDate>
+        <lastBuildDate>Fri, 09 Aug 2024 23:09:32 +0700</lastBuildDate>
+        
+        <item>
+            <title>Clementine Will Remember That</title>
+            <link>https://kostyanetsky.me/notes/clementine</link>
+            <guid isPermaLink="false">note-clementine</guid>
+            <pubDate>Fri, 09 Aug 2024 23:09:32 +0700</pubDate>
+            <description><p>When ChatGPT remembers a detail from a conversation for the future, it displays a "Memory updated" badge above its response. Like, got it:</p>
+<p><img alt="Memory updated" src="https://kostyanetsky.me/notes/clementine/memory-updated.jpg"/></p>
+<p>Every time I see it, it makes me smile because it instantly reminds me of The Walking Dead and the meme "Clementine will remember that." In that game, the characters surrounding the protagonist would remember his decisions, and it would influence their behavior. This included Clementine — a girl the main character saved at the beginning of the game.</p>
+<p><img alt="Clementine will remember that" src="https://kostyanetsky.me/notes/clementine/remember.jpeg"/></p>
+<p>In the game, this mechanic was honestly implemented in a rather mediocre way, but when it comes to ChatGPT — it works. The attention to detail is so strong that sometimes I have to remind myself that I’m talking to a language model, not an extraordinarily attentive and very knowledgeable person.</p></description>
+        </item>
         
         <item>
             <title>Make Window a Door</title>
@@ -136,23 +148,6 @@
 <p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
 <p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
 <p>Do you know what I think? If the result of a query is known, there is probably no need to do it after all.</p></description>
-        </item>
-        
-        <item>
-            <title>Foodiary for Obsidian</title>
-            <link>https://kostyanetsky.me/notes/obsidian-foodiary</link>
-            <guid isPermaLink="false">note-obsidian-foodiary</guid>
-            <pubDate>Sun, 14 Apr 2024 22:36:58 +0700</pubDate>
-            <description><p>Following my <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">first</a> plugin for Obsidian, I released <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" target="_blank">the second one</a> a couple of weeks ago. Counts calories, proteins, fats, and carbohydrates in food. It helps not to overeat out of nowhere — it’s rather difficult to judge by eye how much you’ve eaten today and whether you can afford that donut.</p>
-<p>In short, a useful thing if you:</p>
-<ol>
-<li>Fatty (like me)</li>
-<li>Want to stop being fatty (like me)</li>
-<li>You take notes in Obsidian (like me) 🙂</li>
-</ol>
-<p>In fact, there is a lot of software for this task. I tried some of them but was dissatisfied: it either has terrible design, is bugged, or is constantly trying to sell me a monthly subscription. In short, it's more annoying than helpful. I wanted something native, built into the usual routine; so, if routine settles in Obsidian, then the solution seems to suggest itself.</p>
-<p>You can install the plugin directly from the program — the developers have already approved it. Otherwise, everything is simple: you write in a daily note what you ate and how much it weighed, and you receive a simple table sorted by calories with numbers by proteins, fats, and carbohydrates.</p>
-<p>There are examples in the repository at the link above.</p></description>
         </item>
         
     </channel>
