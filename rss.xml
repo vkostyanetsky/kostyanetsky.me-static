@@ -4,7 +4,23 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Fri, 09 Aug 2024 23:09:32 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 17 Aug 2024 15:11:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Day Switcher for Obsidian</title>
+            <link>https://kostyanetsky.me/notes/obsidian-day-switcher</link>
+            <guid isPermaLink="false">note-obsidian-day-switcher</guid>
+            <pubDate>Sat, 17 Aug 2024 15:11:48 +0700</pubDate>
+            <description><p>When you're actively working in daily notes in Obsidian, you often want to quickly peek into the note from yesterday or, conversely, for tomorrow. For example, when sorting today's tasks and wanting to postpone some of them for tomorrow.</p>
+<p>I'm too lazy to type the exact date every time, so I wrote a <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" target="_blank">script</a> for this. It takes the note's date from its title (expects it to be in <abbr title="2024-08-17, for example.">ISO 8601</abbr> format) and generates a tooltip with links to yesterday's and tomorrow's notes. The day of the week is displayed in the header for additional convenience:</p>
+<p><img alt="Example" src="https://kostyanetsky.me/notes/obsidian-day-switcher/callout.jpg"/></p>
+<p>The script is written for the <a href="https://github.com/blacksmithgu/obsidian-dataview" target="_blank">Dataview</a> plugin since I'm already using it for other tasks. In general, it can easily be adapted for <a href="https://github.com/SilentVoid13/Templater" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" target="_blank">CustomJS</a>, or even turned into a standalone plugin (again, I'm too lazy to bother with that).</p>
+<p>If you plan to use it:</p>
+<ol>
+<li>In the noteLink() function, specify the path to your daily notes folder (currently, the path contains a 'Days' folder for example; I mean the path is indicated in the Daily notes/Template file location setting);</li>
+<li>Include the script in your daily note template (Daily notes/Template file location setting).</li>
+</ol></description>
+        </item>
         
         <item>
             <title>Clementine Will Remember That</title>
@@ -129,25 +145,6 @@
             <description><p>I made another <a href="https://obsidian.md" target="_blank">Obsidian</a> plugin, this time for <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">daily notes</a>. Draws a nice report: what tasks I worked on, what I did, and how much time I spent. I tried to describe how it works in the <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">repository</a>; will be glad if it is useful to someone else!</p>
 <p>Funny thing: for the examples in the README, I used issue numbers FBI-1, FBI-2, and so on. This isn't a reference to the X-Files or Twin Peaks — it's just the first thing that came to mind. The fact is that our internal project for the development of FirstBit ERP is called First Bit Internal, abbreviated as FBI. The main pool of tasks we work on lives in it.</p>
 <p>We’re already used to it, but our colleagues outside the company always find our screenshots from JIRA or SonarQube amusing. Did you imagine that you were Agent Cooper? Well, I almost don’t even need to :)</p></description>
-        </item>
-        
-        <item>
-            <title>One Query More, One Query Less</title>
-            <link>https://kostyanetsky.me/notes/payment-terms</link>
-            <guid isPermaLink="false">note-payment-terms</guid>
-            <pubDate>Sun, 05 May 2024 21:25:48 +0700</pubDate>
-            <description><p>One query more, one query less — it doesn’t matter, people often say. Like, the main thing is that the query must be cheap: it doesn’t read too much, uses index, and so on.</p>
-<p>This point of view makes sense, but mindlessly machine-gunning queries is a dangerous idea. Even if everything looks good at the moment, the system may change slightly in the future. And then a seemingly harmless patch will burn your production server to the ground right on Friday.</p>
-<p>Let me tell you about one example from recent practice. There is an ERP that contains a table with payment stages for customer orders. One of these stages is prepayment; until it is received, you cannot create an order for the supplier.</p>
-<p>Technically, the purchase order simply stores the customer's order ID; if the field is filled (that is, if the purchase order is created by the customer's order), ERP needs to read the payment stages of the customer's order and understand whether the purchase can be made.</p>
-<p>It sounds elementary, but monitoring shows that the operation is slow as hell and eats up memory as if it were the last time. </p>
-<p>Welp, let's go find out. We saw something like this:</p>
-<p><img alt="825701 records" src="https://kostyanetsky.me/notes/payment-terms/payment-terms.png"/></p>
-<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP reads almost a million! How this could be possible?</p>
-<p>It turned out that the problem was with those purchase orders that were not related to customer orders at all. The developer considered that the logic for them could not be changed: the customer’s order ID is empty and the query will not find payment stages for this ID. This means that the same result will be obtained as if there were no query at all. And an extra query — well... One query more, one query less... Not a big deal.</p>
-<p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
-<p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
-<p>Do you know what I think? If the result of a query is known, there is probably no need to do it after all.</p></description>
         </item>
         
     </channel>

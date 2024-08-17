@@ -113,6 +113,34 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-day-switcher/">Day Switcher for Obsidian</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>When you're actively working in daily notes in Obsidian, you often want to quickly peek into the note from yesterday or, conversely, for tomorrow. For example, when sorting today's tasks and wanting to postpone some of them for tomorrow.</p>
+<p>I'm too lazy to type the exact date every time, so I wrote a <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" target="_blank">script</a> for this. It takes the note's date from its title (expects it to be in <abbr title="2024-08-17, for example.">ISO 8601</abbr> format) and generates a tooltip with links to yesterday's and tomorrow's notes. The day of the week is displayed in the header for additional convenience:</p>
+<p><img alt="Example" src="https://kostyanetsky.me/notes/obsidian-day-switcher/callout.jpg"/></p>
+<p>The script is written for the <a href="https://github.com/blacksmithgu/obsidian-dataview" target="_blank">Dataview</a> plugin since I'm already using it for other tasks. In general, it can easily be adapted for <a href="https://github.com/SilentVoid13/Templater" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" target="_blank">CustomJS</a>, or even turned into a standalone plugin (again, I'm too lazy to bother with that).</p>
+<p>If you plan to use it:</p>
+<ol>
+<li>In the noteLink() function, specify the path to your daily notes folder (currently, the path contains a 'Days' folder for example; I mean the path is indicated in the Daily notes/Template file location setting);</li>
+<li>Include the script in your daily note template (Daily notes/Template file location setting).</li>
+</ol>
+        <p class="f6 mt4">
+            17 August 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/clementine/">Clementine Will Remember That</a></h2>
 
             
@@ -680,44 +708,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/swagger/">Swagger</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/crossed/">Romania's Feature</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Making a password recover function via SMS for our customer portal. Got to the Twilio <a href="https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID" target="_blank">documentation</a> related to <a href="https://www.twilio.com/docs/glossary/what-alphanumeric-sender-id" target="_blank">alphanumeric sender ID</a> support in different countries; this feature allows you to send messages so that the recipient sees not the sender's number but something meaningful (a company name, for example).</p>
-<p>The feature is regulated differently everywhere: in some countries it just works, but in others registration is possible or even required.</p>
-<p>Well, let's take a look:</p>
-<p><img alt="Screenshot" src="https://kostyanetsky.me/notes/crossed/twilio.png"/></p>
-<p>🤔</p>
-<ul>
-<li>Portugal: yes</li>
-<li>Puerto Rico: no</li>
-<li>Qatar: yes (with registration)</li>
-<li>Reunion: yes</li>
-<li>Romania: yes (with registration) (but be afraid of Dracula)</li>
-</ul>
-<p>I don’t know how else I can explain this cemetery.</p>
-<p>UPD: Found the answer. Grave crosses mean you have to pay $700 to register.</p>
-<p>To be frank, I like the explanation about Dracula much more.</p>
-        <p class="f6 mt4">
-            30 August 2023
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
         </p>
