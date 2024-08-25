@@ -4,7 +4,23 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 17 Aug 2024 15:11:48 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 25 Aug 2024 14:07:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>My First Approach to Gen Models</title>
+            <link>https://kostyanetsky.me/notes/first-pancake</link>
+            <guid isPermaLink="false">note-first-pancake</guid>
+            <pubDate>Sun, 25 Aug 2024 14:07:48 +0700</pubDate>
+            <description><p>I needed to quickly generate some images for a pet project. I grabbed the first tool at hand — WaifuDiffusion (a clone of StableDiffusion, but trained specifically on anime and manga).</p>
+<p>Prompt: </p>
+<blockquote>
+<p>A dimly lit, empty classroom with faintly visible music notes on the chalkboard. A young woman with long blue hair and blue eyes, is standing behind the teacher's desk, packing her things into a small handbag. She looks tired and worried.</p>
+</blockquote>
+<p>Result:</p>
+<p><img alt="Young woman" src="https://kostyanetsky.me/notes/first-pancake/young-woman.jpg"/></p>
+<p>It seems like a great opportunity to talk about how far neural networks have come! The model instantly got the idea and decided to introduce into the scene... Hmm... A wise bearded man? Or perhaps it was suggesting that I should learn to appreciate unexpected surprises more?</p>
+<p>I think WaifuDiffusion just wanted to brighten my mood. They say laughter extends life. In any case, I consider the first generation a success! But it definitely needs some calibration :)</p></description>
+        </item>
         
         <item>
             <title>Day Switcher for Obsidian</title>
@@ -135,16 +151,6 @@
 <p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.me/notes/last-resort/last-resort.png"/></p>
 <p>The title came out with sound. Okay, this one is funny, but what should I call it then? Well, let it be Distributed Internal ERP. Abbreviated... DIE?</p>
 <p>I let the first one be. Long live Papa Roach :)</p></description>
-        </item>
-        
-        <item>
-            <title>Timesheet for Obsidian</title>
-            <link>https://kostyanetsky.me/notes/obsidian-timesheet</link>
-            <guid isPermaLink="false">note-obsidian-timesheet</guid>
-            <pubDate>Sun, 12 May 2024 17:50:58 +0700</pubDate>
-            <description><p>I made another <a href="https://obsidian.md" target="_blank">Obsidian</a> plugin, this time for <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">daily notes</a>. Draws a nice report: what tasks I worked on, what I did, and how much time I spent. I tried to describe how it works in the <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">repository</a>; will be glad if it is useful to someone else!</p>
-<p>Funny thing: for the examples in the README, I used issue numbers FBI-1, FBI-2, and so on. This isn't a reference to the X-Files or Twin Peaks — it's just the first thing that came to mind. The fact is that our internal project for the development of FirstBit ERP is called First Bit Internal, abbreviated as FBI. The main pool of tasks we work on lives in it.</p>
-<p>We’re already used to it, but our colleagues outside the company always find our screenshots from JIRA or SonarQube amusing. Did you imagine that you were Agent Cooper? Well, I almost don’t even need to :)</p></description>
         </item>
         
     </channel>
