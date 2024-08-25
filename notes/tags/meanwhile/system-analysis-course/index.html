@@ -1,0 +1,179 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>System Analysis</title>
+
+    <meta name="description" content="Completed a course on systems analysis from the School of Tough Developers." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="System Analysis"/>
+    <meta property="og:description" content="Completed a course on systems analysis from the School of Tough Developers."/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/system-analysis-course" />    
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/meanwhile/yaga';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="https://kostyanetsky.me/assets/blog.css">
+    <script src="https://kostyanetsky.me/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href="https://kostyanetsky.me"><img class="br-100" src="https://kostyanetsky.me/assets/images/me.jpg" title="Hi!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me">Vlad's Site</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me/projects/">Projects</a>
+                        
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.me/notes/">Notes</a>
+            
+
+        </div>
+        
+    </nav>
+    
+    <nav class="dtc-l v-mid tc tr-l">
+
+        
+            <a href="https://kostyanetsky.ru/notes/system-analysis-course" class="link f5 f5-ns dim blue bb">RU</a>
+        
+
+        
+
+            <div class="mt3">
+
+            
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/system-analysis-course/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+            
+
+            </div>
+            
+        
+
+    </nav>
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">System Analysis</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Amidst all these pet projects and the August whirlwind, I forgot to mention that I completed a <a href="https://tough-dev.school/system-analysis" target="_blank">course</a> on system analysis, which I recently <a href="https://kostyanetsky.me/notes/ibrahim" target="_blank">wrote about</a>.</p>
+<p><img alt="Certificate" src="https://kostyanetsky.me/notes/system-analysis-course/certificate.png"/></p>
+<p>The course was structured so that throughout the sessions, we worked on the same system, identifying problems and gradually solving them. Before the first lesson, we were asked to design the initial version of the system so that we could compare it with the final version at the end of the course and assess our progress. Well, I’m happy with the comparison — I mean, it’s really hard to look at that first version without laughing (or crying) :)</p>
+<p>There wasn’t much time for reflection during the course, so I plan to continue working on the materials and turning the lessons into personal notes. It’s not that simple, given that our company deals heavily with solutions based on 1C:Enterprise, and much of my work involves various integrations of 1C instances with solutions outside the 1C stack.</p>
+<p>However, 1C instances can be considered as monoliths with a specific set of characteristics (depending on the tasks being solved within them), and in most other respects, communication with them doesn’t differ much from traditional solutions: the same events (like RabbitMQ), the same incoming/outgoing HTTP calls, the same instability metric, and so on.</p>
+<p>At this point, I’m definitely adopting (or have already adopted):</p>
+<ol>
+<li>Breaking down the technical specifications into numbered items (US-XXX) and storing them in one place with tags like "updated at," "canceled at," etc. This format seems quite effective.</li>
+<li>Maintaining an ADR (Architecture Decision Record). I’ve already implemented this, actually. However, it’s a bit concerning that some items occasionally get stored there that aren’t strictly architectural (e.g., logging principles for certain sections). Still, such things seem crucial for decision-making.</li>
+<li>Event Storming as a way to visualize business processes. I can’t say it’s a huge improvement over the patchwork we used before, but the result looks nice, and having a standard is better than having none.</li>
+<li>Application service diagrams with stickers indicating each service's characteristics. This is quite functional when you need to look at the project from a high level, and it’s not as dry as endless tables. That way, if the bus factor kicks in, the next person is more likely to notice these details.</li>
+<li>I want to work on BPMN and Activity Diagrams. I like the format, but so far, my attempts haven’t been satisfactory. I’ll keep trying.</li>
+<li>The concept of separating functionality to reduce dependencies unexpectedly resonated with me. It used to seem simpler to combine similar functionalities to reduce code volume, but now it seems this approach increases complexity and internal cohesion, potentially causing more harm than good.</li>
+</ol>
+<p>Overall, I’m very satisfied with the course. It seems like the best investment of effort over the past year. If you’re thinking of taking it but are unsure — go for it :)</p>
+        <p class="f6 mt4">
+            25 August 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+        
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/yaga">Yaga</a> &larr;
+                
+                Ctrl
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Email: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.me</a></p>
+    <p class="f6 lh-solid">Telegram: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">GitHub: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="https://kostyanetsky.me/rss.xml">RSS</a> 
+
+</footer>
+
+</div>
+</body>
+</html>
