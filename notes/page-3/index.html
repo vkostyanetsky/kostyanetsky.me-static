@@ -119,6 +119,75 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/cookie-jar/">Cookie Jar</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>The other day, I was working with cookies in one of my scripts. While searching for the optimal solution, I came across an absolutely charming (100% working, by the way) <a href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">tip</a> from StackOverflow:</p>
+<blockquote>
+<p>You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
+</blockquote>
+<p>So, literally: keep your cookies in a jar, and to store them, pickle them. The jar with pickled cookies, by the way, can be put on the shelf later.</p>
+<p>How can you not love python after that, huh?</p>
+<p>P.S. While writing this post, I got curious – why pickle and not serialization? So, briefly: <a href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">this is the way</a>.</p>
+        <p class="f6 mt4">
+            28 May 2022
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/no-more-embedded-tweets/">No More Embedded Tweets</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>As soon as I <a href="https://kostyanetsky.me/notes/no-more-google-fonts" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
+<p>How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
+<p>How does it work now? You're right, it does not! Twitter is blocked in Russia, so its javascript works with VPN enabled only.</p>
+<p><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
+<p>The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
+<p>A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
+<p>Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
+<blockquote>
+<p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
+</blockquote>
+<p>That's all. I want to donate the author, really.</p>
+<p>I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p>
+        <p class="f6 mt4">
+            21 Marth 2022
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/blog/">blog</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/webdev/">webdev</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/nodejs/">Node.js</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/javascript/">JavaScript</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/do-not-confuse/">Do Not Confuse</a></h2>
 
             
@@ -637,58 +706,6 @@ Then I gonna swing
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/hpmor-printing/">HPMoR Printing</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
-<p>The book is really good, I had <a href="https://kostyanetsky.me/notes/hpmor" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a href="https://planeta.ru/campaigns/hpmor" target="_blank">make a request</a> now.</p>
-        <p class="f6 mt4">
-            22 Jule 2018
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/books/">books</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/fce-results/">FCE Results</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Cambridge just sent me results of my FCE exam in June and — dramatic drum roll — I passed it! According to the statement of results, I made a bunch of mistakes in writing tasks but particularly took it out during a Speaking test. It's a pity that examiners don't give comments and reasons so it's hard to estimate the results properly; however, it's quite clear what to do next :) My English teacher said that Cambridge used to provide an overall score only earlier and it sounded like “take it any way you want, dear pretenders”.</p>
-<p>Well, I guess I should begin my preparation for CAE in the next year.</p>
-<p>Speaking about languages, I remembered Feynman with his famous “Surely You're Joking”. Among many things, he told that he learned to play on a frigideira when he lived in Brazil and had reached so high level of skill that he served as a model for local musicians.</p>
-<blockquote>
-<p>My theory is that it's like a person who speaks French who comes to America. At first they're making all kinds of mistakes, and you can hardly understand them. Then they keep on practicing until they speak rather well, and you find there's a delightful twist to their way of speaking their accent is rather nice, and you love to listen to it.</p>
-<p><em>― Richard Feynman, ”Surely You're Joking, Mr. Feynman!”</em></p>
-</blockquote>
-<p>As for me, there is a lot of efforts between “all kinds of mistakes” and “love to listen”, but it is such a good synopsis. Working on it!</p>
-        <p class="f6 mt4">
-            15 Jule 2018
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/books/">books</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
                 </span>
             
         </p>
