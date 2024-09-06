@@ -113,6 +113,30 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/pdf/">About PDF</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>I get a ticket: the client can’t log into the customer portal. I check the database — the account is fine. So what’s the problem? I check the login and see a strange sight:</p>
+<p><img alt="PDF" src="https://kostyanetsky.me/notes/pdf/pdf.png"/></p>
+<p>Above is what’s in the database, and below is what the user entered. My first thought: how on earth did a document end up in the string? :D</p>
+<p>I’ll skip the further investigation. The key here is asking the right questions (otherwise, both Google and AI will be thinking about the popular file format, not the symbol). So, PDF in the context of Unicode means Pop Directional Formatting! It’s a symbol that controls text direction; it’s needed, for example, to properly render Arabic (which can contain both left-to-right and right-to-left text).</p>
+<p>In short, it was a one-call problem. However, I’d like to point out that the PDF file format existed long before this symbol. I get that these are different technical fields, and the developers probably didn’t see the overlapping terminology as a significant issue. But deep down, I’m sure someone was smirking, anticipating today’s confusion.</p>
+        <p class="f6 mt4">
+            6 September 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/rapture/">Rapture</a></h2>
 
             
@@ -676,37 +700,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-fastimer/">Fastimer for Obsidian</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>The <a href="https://obsidian.md/" target="_blank">Obsidian</a> developers recently approved one of my TypeScript pet plugins — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" target="_blank">Fastimer</a>. It is an intermittent fasting tracker that adds a new code block to your vault: you enter the start date of the fasting interval and get the date of its finish, the time until this moment, and a list of the zones to be passed.</p>
-<p>The block shows an up-to-date picture every time Obsidian renders it, which means you can monitor your progress in real time. When a fasting window ends, you can enter the end date, and the code block will show the result: whether you managed to achieve the goal, how much time you fasted beyond the plan, and so on.</p>
-<p>I'm thinking of improving the visual part a bit (currently, everything is displayed as plain text without any design). In addition, I want to add functions for calculating statistics so that you can draw cute graphs like <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" target="_blank">Charts </a> and show achievements. I already made the same in implementing the same <a href="https://github.com/vkostyanetsky/Fastimer" target="_blank">application</a> in Python, but I’m unlikely to return to it — it’s easier to solve the task in the Obsidian vault than to roll out an additional utility.</p>
-<p>In short, check out the plugin! :) You can find it by name (Fastimer) in the Obsidian library, or install it manually from the repository.</p>
-        <p class="f6 mt4">
-            13 February 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/typescript/">TypeScript</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
                 </span>
             
         </p>

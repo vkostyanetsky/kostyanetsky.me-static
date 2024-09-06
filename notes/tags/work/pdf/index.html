@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Singapore Doll</title>
+    <title>About PDF</title>
 
-    <meta name="description" content="There are funny bugs at the front of the central bank of Saudi Arabia." />
+    <meta name="description" content="PDF is not just a Portable Document Format!" />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Singapore Doll"/>
-    <meta property="og:description" content="There are funny bugs at the front of the central bank of Saudi Arabia."/>
+    <meta property="og:title" content="About PDF"/>
+    <meta property="og:description" content="PDF is not just a Portable Document Format!"/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/singapore-doll" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/pdf" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/work/last-resort';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/work/pdf';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/work/singapore-doll';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/singapore-doll" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/pdf" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/singapore-doll/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/pdf/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,18 +107,18 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Singapore Doll</h1>
+        <h1 class="f-subheadline lh-solid">About PDF</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Is it possible to love your country's currency more than the people of Saudi Arabia? It is a rhetorical question: the answer is no.</p>
-<p>I'm currently looking at the <a href="https://www.sama.gov.sa/en-US/FinExc/Pages/Currency.aspx" target="_blank">website</a> of their central bank. The country's currency is the Saudi riyal, and the Central Bank sets rates for other currencies in relation to it. Consequently, there is no point in asking the bank for the rate of the riyal itself. However, the website calmly suggests choosing it twice:</p>
-<p><img alt="The selection form" src="https://kostyanetsky.me/notes/singapore-doll/cb.png"/></p>
-<p>For your information, the first option breaks the website, and the second one pedantically displays “1” for any date.</p>
-<p>Another funny thing: colleagues seem to store currency names as 14-character strings. Otherwise, it is difficult to explain why, according to their data, Canada uses not the Canadian dollar but CANADIAN DOLLA, and Romania uses mysterious NEW ROMANIAN L instead of its leu. However, these two are rather lucky: Singapore, for example, conducts payments in SINGAPORE DOLL.</p>
+        <p>I get a ticket: the client can’t log into the customer portal. I check the database — the account is fine. So what’s the problem? I check the login and see a strange sight:</p>
+<p><img alt="PDF" src="https://kostyanetsky.me/notes/pdf/pdf.png"/></p>
+<p>Above is what’s in the database, and below is what the user entered. My first thought: how on earth did a document end up in the string? :D</p>
+<p>I’ll skip the further investigation. The key here is asking the right questions (otherwise, both Google and AI will be thinking about the popular file format, not the symbol). So, PDF in the context of Unicode means Pop Directional Formatting! It’s a symbol that controls text direction; it’s needed, for example, to properly render Arabic (which can contain both left-to-right and right-to-left text).</p>
+<p>In short, it was a one-call problem. However, I’d like to point out that the PDF file format existed long before this symbol. I get that these are different technical fields, and the developers probably didn’t see the overlapping terminology as a significant issue. But deep down, I’m sure someone was smirking, anticipating today’s confusion.</p>
         <p class="f6 mt4">
-            22 June 2024
+            6 September 2024
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
@@ -134,11 +134,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/last-resort">Screenshot With Sound</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/singapore-doll">Singapore Doll</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/pdf">About PDF</a>
                                 
 
             </p> 
