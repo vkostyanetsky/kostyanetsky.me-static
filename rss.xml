@@ -4,7 +4,18 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 21 Sep 2024 11:59:34 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 29 Sep 2024 14:57:41 +0700</lastBuildDate>
+        
+        <item>
+            <title>ChatGPT Mimicry</title>
+            <link>https://kostyanetsky.me/notes/love</link>
+            <guid isPermaLink="false">note-love</guid>
+            <pubDate>Sun, 29 Sep 2024 14:57:41 +0700</pubDate>
+            <description><p>Colleagues are actively <a href="https://t.me/denissexy/8767" target="_blank">experimenting</a> with o1-preview from OpenAI: the model turned out to be genuinely interesting. Unfortunately, tasks for it don’t come up too often — regular 4o handles most day-to-day stuff just fine. Bug-finding in code, analyzing medical tests in an unfamiliar language, or trying to recall the name of a childhood book with only a vague recollection of the plot — I can’t easily think of anything it wouldn’t handle.</p>
+<p>It’s always fascinating to see how the AI reasons, jokes, and generally tries to act human. I’d say it won’t pass the Turing test just yet, but every now and then, it comes eerily close.</p>
+<p><img alt="Carrot" src="https://kostyanetsky.me/notes/love/carrot.jpg"/> <img alt="Fists" src="https://kostyanetsky.me/notes/love/fists.jpg"/> <img alt="Jokes" src="https://kostyanetsky.me/notes/love/joke.jpg"/></p>
+<p>The answer below made me smile. Even leaving philosophy aside — looks like Skynet is off the table! :) Though, I’m afraid the future from the <a href="https://store.steampowered.com/app/282140/SOMA/" target="_blank">SOMA</a> ending is still possible.</p></description>
+        </item>
         
         <item>
             <title>Cool Stuff!</title>
@@ -126,22 +137,6 @@
 <p>At the same time, the song is wonderful and not about that at all! I got curious and started digging around to find out what meaning native speakers put into it.</p>
 <p>It turned out that it is actually about two different positions: a passive observer and an active participant. That is, if there is a window in front of you, you only look through it at something or someone. But you can open the door and finally do something. Hence, “when I could only see the floor you made my window a door” means something like “when my hands dropped, you helped me up”.</p>
 <p>By the way, there is another similar idiom — “to be a better window than a door”. The abstraction here is the same: if a person is like a window, and not a door — they hardly ever let people close to them, making passive observers even out of people very close to them.</p></description>
-        </item>
-        
-        <item>
-            <title>Yaga</title>
-            <link>https://kostyanetsky.me/notes/yaga</link>
-            <guid isPermaLink="false">note-yaga</guid>
-            <pubDate>Mon, 29 Jul 2024 01:21:21 +0700</pubDate>
-            <description><p>I accidentally remembered that six months ago, one of my colleagues threw a link to <a href="https://yaga.rt.ru" target="_blank">Yaga</a> into the work chat. It is a future (I guess) competitor of JIRA in Russia. Judging by the URL, the guys from Rostelecom are developing it. Here my curiosity was awakened — how is it there, did it take off?</p>
-<p>Alas, but looks like nope. At least, the landing page has the “leave a request and wait for a response beep” vibe. Only a simplified version is available for smaller teams that I can't touch as well: being not in Russia and clicking on the “Start using” button leads me to a ban. Welp, next time, maybe.</p>
-<p>The naming is clickbait, of course. But I’m not sure if it’s really a good choice. For example, “1C” may provoke forced jokes (One s! Odin's ass! Haha), but if you google this, you are more likely to find information about the platform or at least the vendor. Not a bunch of articles, fan fiction, fan art, or video games, as in the case of Yaga.</p>
-<p>Moreover, some wrong associations come to mind. What does Baba Yaga reminds you of? A hut on chicken legs? It looks like an initially <a href="https://kostyanetsky.me/notes/evolution" target="_blank">poorly designed</a> application that was somehow remade right on production. A mortar? A crutch? Damn, if you look at it from the point of view of programmers — these are not red flags, but real scarlet banners fluttering in the wind :)</p>
-<p>One more thing: I'm probably spoiled, but when I hear the word “Yaga”, the first thing that pops into my head is not a powerful witch from Slavic folklore, but <a href="https://en.wikipedia.org/wiki/Jaguar_(drink)" target="_blank">disgusting booze</a> from the 2000s.</p>
-<blockquote>
-<p>Now Baba with Yaga are no longer redneck, but a patriotic programmer!</p>
-<p>― colleague</p>
-</blockquote></description>
         </item>
         
     </channel>
