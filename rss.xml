@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 29 Sep 2024 14:57:41 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 12 Oct 2024 20:45:16 +0700</lastBuildDate>
+        
+        <item>
+            <title>Log &amp; Bug</title>
+            <link>https://kostyanetsky.me/notes/butterfly</link>
+            <guid isPermaLink="false">note-butterfly</guid>
+            <pubDate>Sat, 12 Oct 2024 20:45:16 +0700</pubDate>
+            <description><p>I love digging into the origins of words from time to time. For example, "log" comes from maritime terminology and literally means a log: a wooden float attached to a rope, which was thrown overboard from a ship. The rope had knots tied at regular intervals, and by counting how many knots unwound in a certain amount of time, sailors could determine the speed of the ship.</p>
+<p>These measurements were recorded in the ship's journal, which was also called a log. Over time, the term started being used for any kind of record or journal of events, and in IT, the word got a second life :)</p>
+<p>Or take "bug" — well, you’ve probably heard about this one. A moth, which messed with a computer’s operation over seventy years ago, was documented in the log as "the first actual case of a bug being found". The insect gained a kind of digital immortality: now any mistake, especially in a program, is called a bug.</p>
+<p>It’s just a pity that it wasn’t a prettier insect — like a butterfly, for instance? That would’ve added a touch of romance to our work.</p>
+<p>Though, if you think about it... maybe "bug" isn’t such a bad option after all. "Butterfly" is a bit too long. Besides, someone would’ve shortened it to "butt," and right now, we’d be fixing butts instead of bugs.</p></description>
+        </item>
         
         <item>
             <title>ChatGPT Mimicry</title>
@@ -127,17 +139,6 @@
 <p>Every time I see it, it makes me smile because it instantly reminds me of <a href="https://store.steampowered.com/app/207610/The_Walking_Dead/" target="_blank">The Walking Dead</a> and the meme “Clementine will remember that”. In that game, the characters surrounding the protagonist would remember his decisions, and it would influence their behavior. This included Clementine — a girl the main character saved at the beginning of the game.</p>
 <p><img alt="Clementine will remember that" src="https://kostyanetsky.me/notes/clementine/remember.jpeg"/></p>
 <p>In the game, this mechanic was honestly implemented in a rather mediocre way, but when it comes to ChatGPT — it works. The attention to detail is so strong that sometimes I have to remind myself that I’m talking to a language model, not an extraordinarily attentive and very knowledgeable person.</p></description>
-        </item>
-        
-        <item>
-            <title>Make Window a Door</title>
-            <link>https://kostyanetsky.me/notes/make-my-window-a-door</link>
-            <guid isPermaLink="false">note-make-my-window-a-door</guid>
-            <pubDate>Sun, 04 Aug 2024 19:26:48 +0700</pubDate>
-            <description><p>I was listening to <a href="https://open.spotify.com/track/33MnSYLvtOrbj5zwfioEiH?si=19fec91123394826" target="_blank">Be Somebody</a> by Thousand Foot Krutch yesterday and suddenly caught the phrase “you made my window a door”. I used to think that this idiom is rather funny: like, damn, the idea to replace a window with a door somehow sounds unsafe. You can fall from the tenth floor, you know?</p>
-<p>At the same time, the song is wonderful and not about that at all! I got curious and started digging around to find out what meaning native speakers put into it.</p>
-<p>It turned out that it is actually about two different positions: a passive observer and an active participant. That is, if there is a window in front of you, you only look through it at something or someone. But you can open the door and finally do something. Hence, “when I could only see the floor you made my window a door” means something like “when my hands dropped, you helped me up”.</p>
-<p>By the way, there is another similar idiom — “to be a better window than a door”. The abstraction here is the same: if a person is like a window, and not a door — they hardly ever let people close to them, making passive observers even out of people very close to them.</p></description>
         </item>
         
     </channel>
