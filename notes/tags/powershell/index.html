@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Work</title>
+    <title>PowerShell</title>
 
     <meta name="description" content="" />
     
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Work"/>
+    <meta property="og:title" content="PowerShell"/>
     <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/work" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/powershell" />    
 
     <!-- Tachyons -->
 
@@ -39,7 +39,7 @@
 
     <script>
 
-        let ctrlUpUrl       = 'https://kostyanetsky.me/notes/tags/work';
+        let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
         let ctrlLeftUrl     = '';
         let ctrlRightUrl    = '';
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/work" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/tags/powershell" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -107,66 +107,35 @@
 
     <article>
 
-        <h1 class="f-subheadline lh-solid">Work</h1>
-
-        
-
-            <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt3 mb3" href="https://kostyanetsky.me/notes/tags/work">Later</a> Ctrl + &uarr;
-            </p>
+        <h1 class="f-subheadline lh-solid">PowerShell</h1>
 
         
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/nerdview/">Nerd View</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/powershell/slack-summary/">Summary to Slack</a></h2>
 
             
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="A chat with my daughter" src="https://kostyanetsky.me/notes/nerdview/telegram.png"/></p>
-<p>On the screenshot above my little one is just letting me know where she is: walking down the street, at the school, at a playground. It's not her fault that I have a sort of nerd view: when I look at this chat I see nothing but code on Gherkin, which is just a bit broken. A little patch here and there and it will be fine :-)</p>
-<pre><code>And I exit home
-Then I enter school
-And I exit school
-Then I gonna swing
-</code></pre>
-<p>We use Gherkin to write our autotests for <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. I can't say I've made very many of them, especially in comparison with some of my colleagues… Well, it seems like I've made them enough to twist the reality a few.</p>
+        <p>I found a <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">script</a> on hand that I wrote a couple of years ago for our work GitLab. In short, we run our development repository through a barrage of tests on Vanessa daily, resulting in a nice report showing how many tests passed, which ones failed, the reasons for failures, and so on.</p>
+<p>The report needs to be analyzed regularly, at least at a glance. Of course, we haven’t seen fully "green" tests in a long time, and that’s expected: for example, in the case of interdependent development, commits can break the checked functionality, and the tests still need adjustments. However, keeping a pulse on it is still essential.</p>
+<p>To simplify this routine, I expanded the pipeline code a bit: after generating the report, GitLab first creates a brief summary (client type, database type, test statistics) and sends it to Slack.</p>
+<p><img alt="Report" src="https://kostyanetsky.me/notes/slack-summary/report.jpg"/></p>
+<p>As a bonus, it’s now easier to answer the philosophical question, "who broke everything". Most often, it’s the author of the first commit on which the Scenarios Failed metric in the screenshot above hit the ceiling :)</p>
         <p class="f6 mt4">
-            19 October 2020
+            10 November 2024
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/family/">family</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/different-sides-of-one-coin/">Different Sides of One Coin</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Hi!" src="https://kostyanetsky.me/notes/different-sides-of-one-coin/en.png"/></p>
-<p>Feedback is one of the coolest things in my work. It's not my first year of programming and I've written a lot of tools, mechanics and interfaces. However, ever complicated mechanism working as it should is… I don't know. It's like hearing “yes” on a graduation party, again and again :-)</p>
-<p>It partially compensates another side of the coin. I mean a case when you are trying to understand one hundred levels of some application's abstraction for the hundredth time, again and again, through a lot of mistakes. Meanwhile, it's 2 a.m. already and coffee had replaced blood in your veins ages ago.</p>
-        <p class="f6 mt4">
-            5 Marth 2018
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/powershell/">PowerShell</a>
                 </span>
             
         </p>

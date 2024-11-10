@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>About PDF</title>
+    <title>Summary to Slack</title>
 
-    <meta name="description" content="PDF is not just a Portable Document Format!" />
+    <meta name="description" content="About a script sending test resulsts to Slack." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="About PDF"/>
-    <meta property="og:description" content="PDF is not just a Portable Document Format!"/>
+    <meta property="og:title" content="Summary to Slack"/>
+    <meta property="og:description" content="About a script sending test resulsts to Slack."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/pdf" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/slack-summary" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/work/singapore-doll';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/work/slack-summary';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/pdf" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/slack-summary" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/pdf/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/slack-summary/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,21 +107,29 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">About PDF</h1>
+        <h1 class="f-subheadline lh-solid">Summary to Slack</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I get a complaint: a client can’t log into our customer portal. I check the database — the account is fine. So what’s the problem? I check the login and see a strange sight:</p>
-<p><img alt="PDF" src="https://kostyanetsky.me/notes/pdf/pdf.png"/></p>
-<p>Above is what the user entered, and below is what’s in the database. My first thought: how on earth did a document end up in the string? :D</p>
-<p>I’ll skip the further investigation. The key here is asking the right questions (otherwise, both Google and AI will be thinking about the popular file format, not the symbol). So, PDF in the context of Unicode means Pop Directional Formatting! It’s a symbol that controls text direction; it’s needed, for example, to properly render Arabic (which can contain both left-to-right and right-to-left text). The user obviously enters the login in RTL mode (or copies it from somewhere), and the portal does not understand this nuance.</p>
-<p>In short, a piece of cake. However, I’d like to point out that the PDF file format existed long before the PDF symbol. I get that these are different technical fields, and the developers probably didn’t see the overlapping terminology as a significant issue. But deep down, I’m sure someone was smirking, anticipating today’s confusion.</p>
+        <p>I found a <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">script</a> on hand that I wrote a couple of years ago for our work GitLab. In short, we run our development repository through a barrage of tests on Vanessa daily, resulting in a nice report showing how many tests passed, which ones failed, the reasons for failures, and so on.</p>
+<p>The report needs to be analyzed regularly, at least at a glance. Of course, we haven’t seen fully "green" tests in a long time, and that’s expected: for example, in the case of interdependent development, commits can break the checked functionality, and the tests still need adjustments. However, keeping a pulse on it is still essential.</p>
+<p>To simplify this routine, I expanded the pipeline code a bit: after generating the report, GitLab first creates a brief summary (client type, database type, test statistics) and sends it to Slack.</p>
+<p><img alt="Report" src="https://kostyanetsky.me/notes/slack-summary/report.jpg"/></p>
+<p>As a bonus, it’s now easier to answer the philosophical question, "who broke everything". Most often, it’s the author of the first commit on which the Scenarios Failed metric in the screenshot above hit the ceiling :)</p>
         <p class="f6 mt4">
-            6 September 2024
+            10 November 2024
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/powershell/">PowerShell</a>
                 </span>
             
         </p>
@@ -129,20 +137,6 @@
 
 
         
-        
-
-            <p class="mt5 mb3 f6">
-
-                
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/singapore-doll">Singapore Doll</a> &larr;
-                
-                Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/slack-summary">Summary to Slack</a>
-                                
-
-            </p> 
-            
         
 
     </article>

@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 12 Oct 2024 20:45:16 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 10 Nov 2024 13:22:54 +0700</lastBuildDate>
+        
+        <item>
+            <title>Summary to Slack</title>
+            <link>https://kostyanetsky.me/notes/slack-summary</link>
+            <guid isPermaLink="false">note-slack-summary</guid>
+            <pubDate>Sun, 10 Nov 2024 13:22:54 +0700</pubDate>
+            <description><p>I found a <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">script</a> on hand that I wrote a couple of years ago for our work GitLab. In short, we run our development repository through a barrage of tests on Vanessa daily, resulting in a nice report showing how many tests passed, which ones failed, the reasons for failures, and so on.</p>
+<p>The report needs to be analyzed regularly, at least at a glance. Of course, we haven’t seen fully "green" tests in a long time, and that’s expected: for example, in the case of interdependent development, commits can break the checked functionality, and the tests still need adjustments. However, keeping a pulse on it is still essential.</p>
+<p>To simplify this routine, I expanded the pipeline code a bit: after generating the report, GitLab first creates a brief summary (client type, database type, test statistics) and sends it to Slack.</p>
+<p><img alt="Report" src="https://kostyanetsky.me/notes/slack-summary/report.jpg"/></p>
+<p>As a bonus, it’s now easier to answer the philosophical question, "who broke everything". Most often, it’s the author of the first commit on which the Scenarios Failed metric in the screenshot above hit the ceiling :)</p></description>
+        </item>
         
         <item>
             <title>Log &amp; Bug</title>
@@ -127,18 +139,6 @@
 <li>In the noteLink() function, specify the path to your daily notes folder (currently, the path contains a 'Days' folder for example; I mean the path is indicated in the Daily notes/Template file location setting);</li>
 <li>Include the script in your daily note template (Daily notes/Template file location setting).</li>
 </ol></description>
-        </item>
-        
-        <item>
-            <title>Clementine Will Remember That</title>
-            <link>https://kostyanetsky.me/notes/clementine</link>
-            <guid isPermaLink="false">note-clementine</guid>
-            <pubDate>Fri, 09 Aug 2024 23:09:32 +0700</pubDate>
-            <description><p>When ChatGPT remembers a detail from a conversation for the future, it displays a "Memory updated" badge above its response. Like, got it:</p>
-<p><img alt="Memory updated" src="https://kostyanetsky.me/notes/clementine/memory-updated.jpg"/></p>
-<p>Every time I see it, it makes me smile because it instantly reminds me of <a href="https://store.steampowered.com/app/207610/The_Walking_Dead/" target="_blank">The Walking Dead</a> and the meme “Clementine will remember that”. In that game, the characters surrounding the protagonist would remember his decisions, and it would influence their behavior. This included Clementine — a girl the main character saved at the beginning of the game.</p>
-<p><img alt="Clementine will remember that" src="https://kostyanetsky.me/notes/clementine/remember.jpeg"/></p>
-<p>In the game, this mechanic was honestly implemented in a rather mediocre way, but when it comes to ChatGPT — it works. The attention to detail is so strong that sometimes I have to remind myself that I’m talking to a language model, not an extraordinarily attentive and very knowledgeable person.</p></description>
         </item>
         
     </channel>
