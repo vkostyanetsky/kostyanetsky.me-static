@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Summary to Slack</title>
+    <title>Жуткое кладбище</title>
 
-    <meta name="description" content="About a script sending test resulsts to Slack." />
+    <meta name="description" content="Моя первая более или менее самостоятельная работа в 3D." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Summary to Slack"/>
-    <meta property="og:description" content="About a script sending test resulsts to Slack."/>
+    <meta property="og:title" content="Жуткое кладбище"/>
+    <meta property="og:description" content="Моя первая более или менее самостоятельная работа в 3D."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/slack-summary" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/creepy-graveyard" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/done/system-analysis-course';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/done/creepy-graveyard';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/slack-summary';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/slack-summary" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/creepy-graveyard" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/slack-summary/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/creepy-graveyard/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,29 +107,27 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Summary to Slack</h1>
+        <h1 class="f-subheadline lh-solid">Жуткое кладбище</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I found a <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">script</a> that I wrote a couple of years ago for our work GitLab. In short, we run our development repository through a barrage of tests on Vanessa daily, resulting in a nice report showing how many tests passed, which ones failed, the reasons for failures, and so on.</p>
-<p>The report needs to be analyzed regularly, at least at a glance. Of course, we haven’t seen fully "green" tests in a long time, and that’s expected: for example, in the case of interdependent development, commits can break the checked functionality, and the tests still need adjustments. However, keeping a pulse on it is still essential.</p>
-<p>To simplify this routine, I expanded the pipeline code a bit: after generating the report, GitLab first creates a brief summary (client type, database type, test statistics) and sends it to Slack.</p>
-<p><img alt="Report" src="https://kostyanetsky.me/notes/slack-summary/report.jpg"/></p>
-<p>As a bonus, it’s now easier to answer the philosophical question, "who broke everything". Most often, it’s the author of the first commit on which the Scenarios Failed metric in the screenshot above hit the ceiling :)</p>
+        <p>Still learning 3D in my free time. Here's my first somewhat independent project after finishing a <a href="https://www.udemy.com/course/blender-environments-megacourse-create-3d-environments/" target="_blank">course</a> recently.</p>
+<p><a href="https://kostyanetsky.me/notes/creepy-graveyard/creepy-graveyard.png" target="_blank"><img alt="Creepy Graveyard" src="https://kostyanetsky.me/notes/creepy-graveyard/creepy-graveyard.png"/></a></p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mraGFR_Tr5k" width="560"></iframe>
+<p>Of course, there are plenty of issues: the models, the colors, the composition... Honestly, pretty much everything. Good thing the scene is set at night with fog, so it's easy to hide the worst spots. I wouldn't be surprised if the course creators picked this setting on purpose to keep beginners from getting too discouraged :)</p>
+<p>That said, I'm happy with the result. At this stage, perfectionism feels more like an enemy than a friend. And hey, it’s definitely better than my last attempt! Back then, I was totally green in Blender and scared to deviate even slightly from the instructor: ten minutes of watching, ten minutes of copying.</p>
+<p>That approach works at the very beginning, but it doesn't help you learn how to solve problems. This time, I watched a few lessons back-to-back for about an hour or two, then tried to figure things out on my own. I only went back to the videos when I was completely stuck. Feels like I’m actually retaining a lot more this way.</p>
+<p>Long story short, the thing is done. On to the next one!</p>
         <p class="f6 mt4">
-            10 November 2024
+            26 November 2024
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/3d/">3D</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/powershell/">PowerShell</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
                 </span>
             
         </p>
@@ -142,11 +140,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/system-analysis-course">System Analysis</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/slack-summary">Summary to Slack</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/creepy-graveyard">Жуткое кладбище</a>
                                 
 
             </p> 

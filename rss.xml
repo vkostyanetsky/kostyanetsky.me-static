@@ -4,7 +4,21 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 10 Nov 2024 13:22:54 +0700</lastBuildDate>
+        <lastBuildDate>Tue, 26 Nov 2024 23:23:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Жуткое кладбище</title>
+            <link>https://kostyanetsky.me/notes/creepy-graveyard</link>
+            <guid isPermaLink="false">note-creepy-graveyard</guid>
+            <pubDate>Tue, 26 Nov 2024 23:23:48 +0700</pubDate>
+            <description><p>Still learning 3D in my free time. Here's my first somewhat independent project after finishing a <a href="https://www.udemy.com/course/blender-environments-megacourse-create-3d-environments/" target="_blank">course</a> recently.</p>
+<p><a href="https://kostyanetsky.me/notes/creepy-graveyard/creepy-graveyard.png" target="_blank"><img alt="Creepy Graveyard" src="https://kostyanetsky.me/notes/creepy-graveyard/creepy-graveyard.png"/></a></p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mraGFR_Tr5k" width="560"></iframe>
+<p>Of course, there are plenty of issues: the models, the colors, the composition... Honestly, pretty much everything. Good thing the scene is set at night with fog, so it's easy to hide the worst spots. I wouldn't be surprised if the course creators picked this setting on purpose to keep beginners from getting too discouraged :)</p>
+<p>That said, I'm happy with the result. At this stage, perfectionism feels more like an enemy than a friend. And hey, it’s definitely better than my last attempt! Back then, I was totally green in Blender and scared to deviate even slightly from the instructor: ten minutes of watching, ten minutes of copying.</p>
+<p>That approach works at the very beginning, but it doesn't help you learn how to solve problems. This time, I watched a few lessons back-to-back for about an hour or two, then tried to figure things out on my own. I only went back to the videos when I was completely stuck. Feels like I’m actually retaining a lot more this way.</p>
+<p>Long story short, the thing is done. On to the next one!</p></description>
+        </item>
         
         <item>
             <title>Summary to Slack</title>
@@ -123,22 +137,6 @@
 <p><img alt="Young woman" src="https://kostyanetsky.me/notes/first-pancake/young-woman.jpg"/></p>
 <p>It seems like a great opportunity to talk about how far neural networks have come! The model instantly got the idea and decided to introduce into the scene... Hmm... A wise bearded man? Or perhaps it was suggesting that I should learn to appreciate unexpected surprises more?</p>
 <p>I think WaifuDiffusion just wanted to brighten my mood. They say laughter extends life. In any case, I consider the first generation a success! But it definitely needs some calibration :)</p></description>
-        </item>
-        
-        <item>
-            <title>Day Switcher for Obsidian</title>
-            <link>https://kostyanetsky.me/notes/obsidian-day-switcher</link>
-            <guid isPermaLink="false">note-obsidian-day-switcher</guid>
-            <pubDate>Sat, 17 Aug 2024 15:11:48 +0700</pubDate>
-            <description><p>When you're actively working in daily notes in Obsidian, you often want to quickly peek into the note from yesterday or, conversely, for tomorrow. For example, when sorting today's tasks and wanting to postpone some of them for tomorrow.</p>
-<p>I'm too lazy to type the exact date every time, so I wrote a <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" target="_blank">script</a> for this. It takes the note's date from its title (expects it to be in <abbr title="2024-08-17, for example.">ISO 8601</abbr> format) and generates a tooltip with links to yesterday's and tomorrow's notes. The day of the week is displayed in the header for additional convenience:</p>
-<p><img alt="Example" src="https://kostyanetsky.me/notes/obsidian-day-switcher/callout.jpg"/></p>
-<p>The script is written for the <a href="https://github.com/blacksmithgu/obsidian-dataview" target="_blank">Dataview</a> plugin since I'm already using it for other tasks. In general, it can easily be adapted for <a href="https://github.com/SilentVoid13/Templater" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" target="_blank">CustomJS</a>, or even turned into a standalone plugin (again, I'm too lazy to bother with that).</p>
-<p>If you plan to use it:</p>
-<ol>
-<li>In the noteLink() function, specify the path to your daily notes folder (currently, the path contains a 'Days' folder for example; I mean the path is indicated in the Daily notes/Template file location setting);</li>
-<li>Include the script in your daily note template (Daily notes/Template file location setting).</li>
-</ol></description>
         </item>
         
     </channel>
