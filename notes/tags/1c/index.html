@@ -113,6 +113,37 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/bit-of-surgery/">A Little Bit Of Surgery</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>A few years ago, I stumbled upon a story about a programmer who had to debug software controlling a surgical robot — right in the middle of an operation. That blew my mind.</p>
+<p>Today, my colleague and I were fixing a 1C cluster with databases running on 1cFresh. After migrating it to a neighboring server, the thing suddenly started acting up. Long story short: trying to print a document would send the client app into its death throes.  </p>
+<p>While we were knee-deep in troubleshooting, I had this thought: sure, it doesn’t <strong>look</strong> as terrifying as debugging software that someone’s life literally depends on. But if you think about all the clients sitting on edge because their business is grinding to a halt... Well, who knows where the stress levels are higher?  </p>
+<p><strong>P.S. Nerdy details for the curious.</strong> During the migration, the permissions for the server cache folder didn’t transfer properly. This led to a funny (well, not so funny) effect: the logs would happily land there, but session data wouldn’t.  </p>
+<p>So, when someone opened a print form, the configuration tried saving it to the storage, and rphost, in turn, attempted to shove it into the session cache. Here’s where things went sideways: the worker' process (probably) got slapped on the wrist by the OS. Due to (apparently) some funky file system event handling in the platform, the exception wasn’t caught, so the poor thing had no better idea than to kill the session on the server. Naturally, this caused the client process to crash.  </p>
+<p>We fixed the permissions, rebooted the cluster, and voilà! The problem was gone.  </p>
+<p><img alt="End of Report" src="https://kostyanetsky.me/notes/bit-of-surgery/report.jpeg"/></p>
+<p>All other hypotheses — cluster manager acting up, lack of hardware resources, configuration bugs, client-side issues, broken security profiles, network problems between the client and server — got tossed out during the diagnostics process.</p>
+        <p class="f6 mt4">
+            17 December 2024
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/rapture/">Rapture</a></h2>
 
             
@@ -712,33 +743,6 @@ EndProcedure
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/matryoshka/">Matryoshka</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>A few days ago, there was a link to 1Ci certificate in the team chat (a colleague passed their junior <a href="https://academy.1ci.com/courses/1c-junior-developer" target="_blank">course</a>). I go over and see no auth form, no errors — I just get a PDF file. Everything is OK, right? Well, then I open the file:</p>
-<p><img alt="Error.pdf" src="https://kostyanetsky.me/notes/matryoshka/not-your-certificate.png"/></p>
-<p>Honestly, I am even delighted. We need to implement this UX in our products: you press, for example, the “print” button for a document, and it gives you a PDF! And inside it — a link to another PDF! And inside it — “entity is not filled”, so go fill.</p>
-<p>You can sell it as a Russian way of dealing with errors. This is, like, for historical reasons! Blame all the damned matryoshkas, and <a href="https://en.wikipedia.org/wiki/Koschei" target="_blank">Koschei</a> with his needle. It is, as you remember, in the egg, and it is in the duck, which is in the rabbit, tucked into the chest, and further along the chain of nesting.</p>
-        <p class="f6 mt4">
-            30 October 2021
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
         </p>

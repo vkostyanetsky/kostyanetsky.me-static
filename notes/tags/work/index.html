@@ -113,6 +113,37 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/bit-of-surgery/">A Little Bit Of Surgery</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>A few years ago, I stumbled upon a story about a programmer who had to debug software controlling a surgical robot — right in the middle of an operation. That blew my mind.</p>
+<p>Today, my colleague and I were fixing a 1C cluster with databases running on 1cFresh. After migrating it to a neighboring server, the thing suddenly started acting up. Long story short: trying to print a document would send the client app into its death throes.  </p>
+<p>While we were knee-deep in troubleshooting, I had this thought: sure, it doesn’t <strong>look</strong> as terrifying as debugging software that someone’s life literally depends on. But if you think about all the clients sitting on edge because their business is grinding to a halt... Well, who knows where the stress levels are higher?  </p>
+<p><strong>P.S. Nerdy details for the curious.</strong> During the migration, the permissions for the server cache folder didn’t transfer properly. This led to a funny (well, not so funny) effect: the logs would happily land there, but session data wouldn’t.  </p>
+<p>So, when someone opened a print form, the configuration tried saving it to the storage, and rphost, in turn, attempted to shove it into the session cache. Here’s where things went sideways: the worker' process (probably) got slapped on the wrist by the OS. Due to (apparently) some funky file system event handling in the platform, the exception wasn’t caught, so the poor thing had no better idea than to kill the session on the server. Naturally, this caused the client process to crash.  </p>
+<p>We fixed the permissions, rebooted the cluster, and voilà! The problem was gone.  </p>
+<p><img alt="End of Report" src="https://kostyanetsky.me/notes/bit-of-surgery/report.jpeg"/></p>
+<p>All other hypotheses — cluster manager acting up, lack of hardware resources, configuration bugs, client-side issues, broken security profiles, network problems between the client and server — got tossed out during the diagnostics process.</p>
+        <p class="f6 mt4">
+            17 December 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/slack-summary/">Summary to Slack</a></h2>
 
             
@@ -676,41 +707,6 @@ EndIf;
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/hammer-and-nails/">Hammer & Nails</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
-<p>Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
-<p>The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
-<p>However, instead of a short cycle, I saw this:</p>
-<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
-<p>There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
-<p>Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
-<p>You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p>
-        <p class="f6 mt4">
-            15 September 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
                 </span>
             
         </p>
