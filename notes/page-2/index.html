@@ -119,6 +119,35 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/uuid-main-issue/">The Main Issue of UUID</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
+<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
+<p>P.S. The remark about the probability of creating two identical UUIDs in one database made me laugh:</p>
+<blockquote>
+<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
+</blockquote>
+        <p class="f6 mt4">
+            2 June 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/last-resort/">Screenshot With Sound</a></h2>
 
             
@@ -678,37 +707,6 @@ EndIf;
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/outgoing-requests-limiter/">Slow down, I'm recording</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Usually the idea of developing is simple: the faster it works, the better. For example, the more requests an application manages to execute per unit of time, the faster the task for which these requests are needed will be solved.</p>
-<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
-<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p>
-<p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. This approach is not suitable for high-loaded systems, but otherwise it can come in handy.</p>
-        <p class="f6 mt4">
-            5 Marth 2023
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
                 </span>
             
         </p>

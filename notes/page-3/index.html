@@ -119,6 +119,37 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/outgoing-requests-limiter/">Slow down, I'm recording</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Usually the idea of developing is simple: the faster it works, the better. For example, the more requests an application manages to execute per unit of time, the faster the task for which these requests are needed will be solved.</p>
+<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
+<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p>
+<p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. This approach is not suitable for high-loaded systems, but otherwise it can come in handy.</p>
+        <p class="f6 mt4">
+            5 Marth 2023
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/rest-service-4-sm/">REST service for Service Manager</a></h2>
 
             
@@ -704,35 +735,6 @@ MultiMonitorTool.exe / switch 2
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/diablo/">Diablo</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
-<p>The nice episode of the “We Are Doomed” IT podcast about developer burnout. No insights, but you can hear something useful for yourself. I liked the analogy with video games, somewhere close to the middle:</p>
-<blockquote>
-<p>There was such a game — Diablo. RPG, all sorts of spells, you know. A character has mana and health, and when you have no mana to cast… Ha, I sound like a nerd! Well, nevermind. Briefly speaking, when you have no mana to cast, it's taken from your health.</p>
-<p><em>— Doctor Cat</em></p>
-</blockquote>
-        <p class="f6 mt4">
-            22 September 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
                 </span>
             
         </p>
