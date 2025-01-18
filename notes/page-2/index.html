@@ -119,6 +119,73 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/singapore-doll/">Singapore Doll</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Is it possible to love your country's currency more than the people of Saudi Arabia? It is a rhetorical question: the answer is no.</p>
+<p>I'm currently looking at the <a href="https://www.sama.gov.sa/en-US/FinExc/Pages/Currency.aspx" target="_blank">website</a> of their central bank. The country's currency is the Saudi riyal, and the Central Bank sets rates for other currencies in relation to it. Consequently, there is no point in asking the bank for the rate of the riyal itself. However, the website calmly suggests choosing it twice:</p>
+<p><img alt="The selection form" src="https://kostyanetsky.me/notes/singapore-doll/cb.png"/></p>
+<p>For your information, the first option breaks the website, and the second one pedantically displays “1” for any date.</p>
+<p>Another funny thing: colleagues seem to store currency names as 14-character strings. Otherwise, it is difficult to explain why, according to their data, Canada uses not the Canadian dollar but CANADIAN DOLLA, and Romania uses mysterious NEW ROMANIAN L instead of its leu. However, these two are rather lucky: Singapore, for example, conducts payments in SINGAPORE DOLL.</p>
+        <p class="f6 mt4">
+            22 June 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/data-history-duplication/">Non-Unique Metadata</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Once again, I came across a nasty bug when the platform broke the data history metadata table.</p>
+<p>Outwardly, it looks like this: you update the database configuration, and when you try to restructure, the error “The data history metadata table contains duplicate records. Delete the duplicate records” pops up. The platform does not offer any clear way to find such records.</p>
+<p><img alt="The data history metadata table contains duplicate records. Delete the duplicate records" src="https://kostyanetsky.me/notes/data-history-duplication/error.png"/></p>
+<p>The problem can be solved at the database level. The table referenced by the error is _DataHistoryMetadata. It contains metadata versions of each object for which data history is being maintained. This allows the platform to understand what attributes the object had at any point in time if the data history is maintained for the object.</p>
+<p>How does it work? Well, when the list of an object’s attributes changes (for example, an attribute was added to the catalog), the platform writes its metadata: specifically, it adds a new entry to _DataHistoryMetadata and stores in it the current list of object attributes, as well as the version number of this list (for example, when history is enabled for an object, the first version of metadata is saved, when adding some attribute, the second version is saved, and so on).</p>
+<p>The platform also puts a mark in the created record that this particular version of the object is the most actual, and then removes this mark from the version that was marked as actual before.</p>
+<p>So, the problem is that the platform sometimes forgets to take the last step, and two versions appear in the table at once, marked as current. The Designer understands this but cannot do anything.</p>
+<p>The solution follows from the algorithm above: you need to find conflicting versions and revoke the mark of actuality from the one that is older. It is better to use queries: data history is often enabled for a bunch of objects, and the list of their attributes is constantly changing — in general, there will be so many versions in the table that the devil will break his leg.</p>
+<p>If you also encountered this problem and are therefore reading this text, you can use the <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" target="_blank">queries</a> that I wrote:</p>
+<ol>
+<li>get-issues.sql checks that there is an issue: it looks for metadata versions that are also marked as actual.</li>
+<li>fix-issues.sql removes the actuality mark from those versions that are actually outdated.</li>
+</ol>
+<p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" target="_blank">here they are</a> for this DBMS.</p>
+<p>The queries will require a slight adaptation to a specific database: they use the _fld626 field, which is the data separator. In your _DataHistoryMetadata table, this field may be called differently, so you need to update its name to the current one. It will be difficult to make a mistake — the table has only one field with the _fld prefix.</p>
+<p>P.S. Please bear in mind that the license agreement prohibits access to the database, bypassing the platform’s tools, so you can only go for such experiments if there are no other options left.</p>
+        <p class="f6 mt4">
+            8 June 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/uuid-main-issue/">The Main Issue of UUID</a></h2>
 
             
@@ -642,71 +709,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/in-a-pedantic-way/">In a Pedantic Way</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>The daily award for the most philosophical code goes to the author of this elegant way to check that two boolean variables are not equal to each other:</p>
-<pre><code>If DataStructure.Property("AmountVATIn")
-    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
-    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
-    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
-EndIf;
-</code></pre>
-<p>I'm thinking of adding something like “And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)” here to spice it up with a subtle note of insanity.</p>
-        <p class="f6 mt4">
-            21 Marth 2023
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/code-smell/">code smell</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/environmental-storytelling/">Environmental Storytelling</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I like to notice things in the world around me that clearly have a story behind them. In video games, this is called “environmental storytelling”: they don’t tell you the story directly, but if you look around, you can guess which gun was hanging on the wall and who fired from it.</p>
-<p>For example, I recently celebrated the company's 10th anniversary with colleagues at a local golf club. Balls had to be sent flying from the second floor; there are no railings for obvious reasons, but a net is stretched in case someone loses their balance.</p>
-<p><img alt="Photo from the club website to make it clearer." src="https://kostyanetsky.me/notes/environmental-storytelling/topgolf.jpeg"/></p>
-<p>Why are you talking about this, you ask? Well, there are warnings on the walls: jump into the net of your own free will and pay <abbr title="About two hundred thousand rubles at this moment.">ten thousand dirhams</abbr>. Recording this heroic leap of faith on camera is fine as well, just prepare five thousand more.</p>
-<p>Do you feel the smell of a good history? </p>
-<p>Another example: once flew to Turkey to rest and decided, just in case, to look through the rules of the airline (what can be taken on board, what can not). Among the list of items prohibited from being carried on board, I found “steel spear” and “steel flail” 😬</p>
-<p>UPD: Another great <a href="https://kostyanetsky.me/notes/environmental-storytelling/soundproof.jpeg" target="_blank">example</a> from somewhere on the Internet.</p>
-        <p class="f6 mt4">
-            19 Marth 2023
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
         </p>

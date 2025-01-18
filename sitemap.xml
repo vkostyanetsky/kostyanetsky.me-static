@@ -274,6 +274,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/safe-code</loc>
+        <lastmod>2025-01-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/jaina</loc>
         <lastmod>2018-07-29</lastmod>
         <changefreq>weekly</changefreq>
@@ -367,6 +374,13 @@
     <url>
         <loc>https://kostyanetsky.me/notes/nerdview</loc>
         <lastmod>2020-10-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/across-meeting</loc>
+        <lastmod>2025-01-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>

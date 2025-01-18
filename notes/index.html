@@ -113,6 +113,61 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/across-meeting/">ERP Development In English</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mZwHTbu285A" width="560"></iframe>
+<p>Our lead developer recently shared some insights about our work — specifically, developing ERP systems on 1C for the UAE and, more recently, Saudi Arabia. The session was hosted by the online English school Across, so the audience was spot-on: Russian-speaking folks interested in building careers and exploring international markets.</p>
+<p>Overall, it turned out pretty cool, especially as a language practice. Just a reminder: learning foreign languages is still one of the best ways to give your brain a workout, and it’s also super accessible. There’s no shortage of resources, communities, and interest-based clubs out there — you just need the motivation :)</p>
+        <p class="f6 mt4">
+            19 January 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/safe-code/">Mysterious Code</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p><img alt="Code" src="https://kostyanetsky.me/notes/safe-code/code.jpg"/></p>
+<p>Somewhere on the streets of Tbilisi. As a big fan of the Dishonored series, I just couldn’t walk past this. I’m sure there’s a safe nearby that this code unlocks!</p>
+        <p class="f6 mt4">
+            18 January 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/georgia/">Georgia</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/negativity/">Go Away, Negativity!</a></h2>
 
             
@@ -619,73 +674,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/singapore-doll/">Singapore Doll</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Is it possible to love your country's currency more than the people of Saudi Arabia? It is a rhetorical question: the answer is no.</p>
-<p>I'm currently looking at the <a href="https://www.sama.gov.sa/en-US/FinExc/Pages/Currency.aspx" target="_blank">website</a> of their central bank. The country's currency is the Saudi riyal, and the Central Bank sets rates for other currencies in relation to it. Consequently, there is no point in asking the bank for the rate of the riyal itself. However, the website calmly suggests choosing it twice:</p>
-<p><img alt="The selection form" src="https://kostyanetsky.me/notes/singapore-doll/cb.png"/></p>
-<p>For your information, the first option breaks the website, and the second one pedantically displays “1” for any date.</p>
-<p>Another funny thing: colleagues seem to store currency names as 14-character strings. Otherwise, it is difficult to explain why, according to their data, Canada uses not the Canadian dollar but CANADIAN DOLLA, and Romania uses mysterious NEW ROMANIAN L instead of its leu. However, these two are rather lucky: Singapore, for example, conducts payments in SINGAPORE DOLL.</p>
-        <p class="f6 mt4">
-            22 June 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/data-history-duplication/">Non-Unique Metadata</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Once again, I came across a nasty bug when the platform broke the data history metadata table.</p>
-<p>Outwardly, it looks like this: you update the database configuration, and when you try to restructure, the error “The data history metadata table contains duplicate records. Delete the duplicate records” pops up. The platform does not offer any clear way to find such records.</p>
-<p><img alt="The data history metadata table contains duplicate records. Delete the duplicate records" src="https://kostyanetsky.me/notes/data-history-duplication/error.png"/></p>
-<p>The problem can be solved at the database level. The table referenced by the error is _DataHistoryMetadata. It contains metadata versions of each object for which data history is being maintained. This allows the platform to understand what attributes the object had at any point in time if the data history is maintained for the object.</p>
-<p>How does it work? Well, when the list of an object’s attributes changes (for example, an attribute was added to the catalog), the platform writes its metadata: specifically, it adds a new entry to _DataHistoryMetadata and stores in it the current list of object attributes, as well as the version number of this list (for example, when history is enabled for an object, the first version of metadata is saved, when adding some attribute, the second version is saved, and so on).</p>
-<p>The platform also puts a mark in the created record that this particular version of the object is the most actual, and then removes this mark from the version that was marked as actual before.</p>
-<p>So, the problem is that the platform sometimes forgets to take the last step, and two versions appear in the table at once, marked as current. The Designer understands this but cannot do anything.</p>
-<p>The solution follows from the algorithm above: you need to find conflicting versions and revoke the mark of actuality from the one that is older. It is better to use queries: data history is often enabled for a bunch of objects, and the list of their attributes is constantly changing — in general, there will be so many versions in the table that the devil will break his leg.</p>
-<p>If you also encountered this problem and are therefore reading this text, you can use the <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" target="_blank">queries</a> that I wrote:</p>
-<ol>
-<li>get-issues.sql checks that there is an issue: it looks for metadata versions that are also marked as actual.</li>
-<li>fix-issues.sql removes the actuality mark from those versions that are actually outdated.</li>
-</ol>
-<p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" target="_blank">here they are</a> for this DBMS.</p>
-<p>The queries will require a slight adaptation to a specific database: they use the _fld626 field, which is the data separator. In your _DataHistoryMetadata table, this field may be called differently, so you need to update its name to the current one. It will be difficult to make a mistake — the table has only one field with the _fld prefix.</p>
-<p>P.S. Please bear in mind that the license agreement prohibits access to the database, bypassing the platform’s tools, so you can only go for such experiments if there are no other options left.</p>
-        <p class="f6 mt4">
-            8 June 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/mssql/">MS SQL</a>
                 </span>
             
         </p>

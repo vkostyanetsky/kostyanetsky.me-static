@@ -4,7 +4,26 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 29 Dec 2024 23:09:32 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 19 Jan 2025 23:54:12 +0700</lastBuildDate>
+        
+        <item>
+            <title>ERP Development In English</title>
+            <link>https://kostyanetsky.me/notes/across-meeting</link>
+            <guid isPermaLink="false">note-across-meeting</guid>
+            <pubDate>Sun, 19 Jan 2025 23:54:12 +0700</pubDate>
+            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mZwHTbu285A" width="560"></iframe>
+<p>Our lead developer recently shared some insights about our work — specifically, developing ERP systems on 1C for the UAE and, more recently, Saudi Arabia. The session was hosted by the online English school Across, so the audience was spot-on: Russian-speaking folks interested in building careers and exploring international markets.</p>
+<p>Overall, it turned out pretty cool, especially as a language practice. Just a reminder: learning foreign languages is still one of the best ways to give your brain a workout, and it’s also super accessible. There’s no shortage of resources, communities, and interest-based clubs out there — you just need the motivation :)</p></description>
+        </item>
+        
+        <item>
+            <title>Mysterious Code</title>
+            <link>https://kostyanetsky.me/notes/safe-code</link>
+            <guid isPermaLink="false">note-safe-code</guid>
+            <pubDate>Sat, 18 Jan 2025 23:25:22 +0700</pubDate>
+            <description><p><img alt="Code" src="https://kostyanetsky.me/notes/safe-code/code.jpg"/></p>
+<p>Somewhere on the streets of Tbilisi. As a big fan of the Dishonored series, I just couldn’t walk past this. I’m sure there’s a safe nearby that this code unlocks!</p></description>
+        </item>
         
         <item>
             <title>Go Away, Negativity!</title>
@@ -101,28 +120,6 @@
 <p>The girls frown a little. Then one of them digs into her bag, pulls out a flyer, points to it, gives me a thumbs up like, “cool stuff!” — and hands it to me. </p>
 <p>Then they laugh and run off.</p>
 <p>Take that, language barrier!</p></description>
-        </item>
-        
-        <item>
-            <title>About PDF</title>
-            <link>https://kostyanetsky.me/notes/pdf</link>
-            <guid isPermaLink="false">note-pdf</guid>
-            <pubDate>Fri, 06 Sep 2024 12:43:48 +0700</pubDate>
-            <description><p>I get a complaint: a client can’t log into our customer portal. I check the database — the account is fine. So what’s the problem? I check the login and see a strange sight:</p>
-<p><img alt="PDF" src="https://kostyanetsky.me/notes/pdf/pdf.png"/></p>
-<p>Above is what the user entered, and below is what’s in the database. My first thought: how on earth did a document end up in the string? :D</p>
-<p>I’ll skip the further investigation. The key here is asking the right questions (otherwise, both Google and AI will be thinking about the popular file format, not the symbol). So, PDF in the context of Unicode means Pop Directional Formatting! It’s a symbol that controls text direction; it’s needed, for example, to properly render Arabic (which can contain both left-to-right and right-to-left text). The user obviously enters the login in RTL mode (or copies it from somewhere), and the portal does not understand this nuance.</p>
-<p>In short, a piece of cake. However, I’d like to point out that the PDF file format existed long before the PDF symbol. I get that these are different technical fields, and the developers probably didn’t see the overlapping terminology as a significant issue. But deep down, I’m sure someone was smirking, anticipating today’s confusion.</p></description>
-        </item>
-        
-        <item>
-            <title>Rapture</title>
-            <link>https://kostyanetsky.me/notes/rapture</link>
-            <guid isPermaLink="false">note-rapture</guid>
-            <pubDate>Sat, 31 Aug 2024 13:27:48 +0700</pubDate>
-            <description><p>I remember how amazed I was when I worked with window functions in PostgreSQL for the first time. You can adjust the calculation window for each row individually! And even segment it in advance. And all this is done natively, within a regular query, no extra add-ons needed. The standard aggregation with grouping and subqueries that I was used to in 1C suddenly turned into a pumpkin, just like Cinderella's carriage at midnight.</p>
-<p>Recently, I’ve been learning Blender, and I suddenly felt the same excitement for the same reason. The fact that you can freely move objects around the 3D Viewport with the Move command was clear from the start, fine. However, when it hit me that each object is a set of polygons, and that each polygon can also be moved freely, leading to a natural reshaping of the object's geometry — that’s when it really got me.</p>
-<p>Technology is amazing. Learning is awesome. Moments like these make me want to keep doing it over and over again :)</p></description>
         </item>
         
     </channel>
