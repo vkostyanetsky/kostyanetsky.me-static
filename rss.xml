@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 19 Jan 2025 23:54:12 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 06 Apr 2025 23:33:52 +0700</lastBuildDate>
+        
+        <item>
+            <title>Easter Eggs</title>
+            <link>https://kostyanetsky.me/notes/easter-eggs</link>
+            <guid isPermaLink="false">note-easter-eggs</guid>
+            <pubDate>Sun, 06 Apr 2025 23:33:52 +0700</pubDate>
+            <description><p><img alt="Thank you, Mario!" src="https://kostyanetsky.me/notes/easter-eggs/mario.jpg"/> <img alt="Awaiting Signal" src="https://kostyanetsky.me/notes/easter-eggs/mothership.jpg"/></p>
+<p>A couple of Easter eggs hidden inside FirstBit ERP. They're tucked away for the developers: in the first case, users see just the form title and notification text, while in the second, they see the standard "waiting for connection" message.</p>
+<p>I like to add little things like this from time to time — it helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t read Bystronovsky’s article "<a href="https://collab.ldwg.ru/stressless-design" target="_blank">Design Without Stress</a>" I highly recommend it (I wouldn’t be able to put it any better myself).</p>
+<p>Oh, and by the way, here’s another Easter egg! This one isn’t from our ERP system, but from the automated database update tool we’re building right now. Since it's for internal use, we can joke around with the user a bit :)</p>
+<p><img alt="Nice try, Marty!" src="https://kostyanetsky.me/notes/easter-eggs/marty.jpg"/></p></description>
+        </item>
         
         <item>
             <title>ERP Development In English</title>
@@ -108,18 +120,6 @@
 <p><img alt="Carrot" src="https://kostyanetsky.me/notes/love/carrot.jpg"/> <img alt="Fists" src="https://kostyanetsky.me/notes/love/fists.jpg"/> <img alt="Jokes" src="https://kostyanetsky.me/notes/love/joke.jpg"/></p>
 <p>The answer below made me smile. Even leaving philosophy aside — looks like Skynet is off the table! :) Though, I’m afraid the future from the <a href="https://store.steampowered.com/app/282140/SOMA/" target="_blank">SOMA</a> ending is still possible.</p>
 <p><img alt="Love" src="https://kostyanetsky.me/notes/love/love.jpg"/></p></description>
-        </item>
-        
-        <item>
-            <title>Cool Stuff!</title>
-            <link>https://kostyanetsky.me/notes/thumbs-up</link>
-            <guid isPermaLink="false">note-thumbs-up</guid>
-            <pubDate>Sat, 21 Sep 2024 11:59:34 +0700</pubDate>
-            <description><p>A knock at the door. I open it, and there are two bright, twenty-something girls standing there. Flashing huge smiles at me, they start talking a mile a minute.</p>
-<p>The Georgian language is beautiful, but I haven’t gotten around to learning it yet. I sigh and suggest we switch to English or Russian.</p>
-<p>The girls frown a little. Then one of them digs into her bag, pulls out a flyer, points to it, gives me a thumbs up like, “cool stuff!” — and hands it to me. </p>
-<p>Then they laugh and run off.</p>
-<p>Take that, language barrier!</p></description>
         </item>
         
     </channel>
