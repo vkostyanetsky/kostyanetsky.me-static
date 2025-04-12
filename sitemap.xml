@@ -568,6 +568,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/hottabych</loc>
+        <lastmod>2025-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/obsidian-fastimer</loc>
         <lastmod>2024-02-13</lastmod>
         <changefreq>weekly</changefreq>

@@ -4,7 +4,32 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 06 Apr 2025 23:33:52 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 12 Apr 2025 23:57:12 +0700</lastBuildDate>
+        
+        <item>
+            <title>The Genie Problem</title>
+            <link>https://kostyanetsky.me/notes/hottabych</link>
+            <guid isPermaLink="false">note-hottabych</guid>
+            <pubDate>Sat, 12 Apr 2025 23:57:12 +0700</pubDate>
+            <description><blockquote>
+<p>Returning to Volka's room, the old man turned round slyly, snapped the fingers of his left hand, and there appeared on the wall over the aquarium an exact copy of the telephone hanging in the hall.</p>
+<p>"Now you can talk to your friends as much as you like without leaving your
+own room."</p>
+<p>"Golly, thanks a lot!" Volka said gratefully. He removed the receiver, pressed it to his ear and listened. There was no dial tone.</p>
+<p>"Hello! Hello!" he shouted. He shook the receiver and then blew into it. Still, there was no dial tone.</p>
+<p>"The phone's broken," he explained to Hottabych. "FU unscrew the receiver and see what's wrong."</p>
+<p>However, despite all his efforts, he could not unscrew it.</p>
+<p>"It's made of the finest black marble," Hottabych boasted.</p>
+<p>"Then there's nothing inside?" Volka asked disappointedly.</p>
+<p>"Why, is there supposed to be something inside this, too? Just like in a watch?"</p>
+<p>"Now I know why it doesn't work. You've only made a model of a telephone, without anything that's supposed to go inside it. But the insides are the most important part."</p>
+<p><em>"The Old Genie Hottabych", Lazar Lagin</em></p>
+</blockquote>
+<p>When I’m doing 3D modeling, I often feel like that genie. He also tried to mimic the shape of things and jazz them up, but always ended up failing ‘cause he hadn’t got a clue about what was inside.</p>
+<p>I’m just the same. For the past month, I’ve been putting the finishing touches on a model of a school music room, and guess what? I’ve learned more about how pianos work than I have in my whole life before. I could even give a quick lecture on heating systems in Russian schools — talking about sectional, panel, cast iron, and aluminum radiators, which types pop up most, the spacing between them, why you shouldn’t hook up three in a row, and so on.</p>
+<p>I read about this effect: like when you're drawing, say, samurai armor — you end up inadvertently learning heaps about the properties of leather, the different kinds of metal, and the whole tech stack of the samurai era. I never thought I'd run into that from day one — but hey, I think it's a good thing. It fires up your neural connections, broadens your view of the world, sparks your creativity, and all that jazz.</p>
+<p>Plus, it’s way more fun working on a model when you actually know what’s going on under the hood.</p></description>
+        </item>
         
         <item>
             <title>Easter Eggs</title>
@@ -13,7 +38,7 @@
             <pubDate>Sun, 06 Apr 2025 23:33:52 +0700</pubDate>
             <description><p><img alt="Thank you, Mario!" src="https://kostyanetsky.me/notes/easter-eggs/mario.jpg"/> <img alt="Awaiting Signal" src="https://kostyanetsky.me/notes/easter-eggs/mothership.jpg"/></p>
 <p>A couple of Easter eggs hidden inside FirstBit ERP. They're tucked away for the developers: in the first case, users see just the form title and notification text, while in the second, they see the standard "waiting for connection" message.</p>
-<p>I like to add little things like this from time to time — it helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t checked out Bystronovsky’s "<a href="https://collab.ldwg.ru/stressless-design" target="_blank">Design Without Stress</a>", you really should — no way I could explain it better myself.</p>
+<p>I like to add little things like this from time to time — it's fun, and it also helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t checked out Bystronovsky’s "<a href="https://collab.ldwg.ru/stressless-design" target="_blank">Design Without Stress</a>", you really should — no way I could explain it better myself.</p>
 <p>By the way, here’s another Easter egg! Not from our ERP this time, but from a new tool we’re making for automated database updates. We're building it just for ourselves, so we can joke around with the user a bit :)</p>
 <p><img alt="Nice try, Marty!" src="https://kostyanetsky.me/notes/easter-eggs/marty.jpg"/></p></description>
         </item>
@@ -108,18 +133,6 @@
 <p>Or take "bug" — well, you’ve probably heard about this one. A moth, which messed with a computer’s operation over seventy years ago, was documented in the log as "the first actual case of a bug being found". The insect gained a kind of digital immortality: now any mistake, especially in a program, is called a bug.</p>
 <p>(It’s just a pity that it wasn’t a prettier insect — like a butterfly, for instance? That would’ve added a touch of romance to our work)</p>
 <p>(Though, if you think about it... maybe "bug" isn’t such a bad option after all. "Butterfly" is a bit too long. Besides, someone would’ve shortened it to "butt," and right now, we’d be fixing butts instead of bugs)</p></description>
-        </item>
-        
-        <item>
-            <title>ChatGPT Mimicry</title>
-            <link>https://kostyanetsky.me/notes/love</link>
-            <guid isPermaLink="false">note-love</guid>
-            <pubDate>Sun, 29 Sep 2024 14:57:41 +0700</pubDate>
-            <description><p>Colleagues are actively <a href="https://t.me/denissexy/8767" target="_blank">experimenting</a> with o1-preview from OpenAI: the model turned out to be genuinely interesting. Unfortunately, tasks for it don’t come up too often — regular 4o handles most day-to-day stuff just fine. Bug-finding in code, analyzing medical tests in an unfamiliar language, or trying to recall the name of a childhood book with only a vague recollection of the plot — I can’t easily think of anything it wouldn’t handle.</p>
-<p>It’s always fascinating to see how the AI reasons, jokes, and generally tries to act human. I’d say it won’t pass the Turing test just yet, but every now and then, it comes eerily close.</p>
-<p><img alt="Carrot" src="https://kostyanetsky.me/notes/love/carrot.jpg"/> <img alt="Fists" src="https://kostyanetsky.me/notes/love/fists.jpg"/> <img alt="Jokes" src="https://kostyanetsky.me/notes/love/joke.jpg"/></p>
-<p>The answer below made me smile. Even leaving philosophy aside — looks like Skynet is off the table! :) Though, I’m afraid the future from the <a href="https://store.steampowered.com/app/282140/SOMA/" target="_blank">SOMA</a> ending is still possible.</p>
-<p><img alt="Love" src="https://kostyanetsky.me/notes/love/love.jpg"/></p></description>
         </item>
         
     </channel>
