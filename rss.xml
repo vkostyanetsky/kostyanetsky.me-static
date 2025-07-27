@@ -4,7 +4,22 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Thu, 12 Jun 2025 10:40:43 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 27 Jul 2025 12:21:32 +0700</lastBuildDate>
+        
+        <item>
+            <title>Myth Buster</title>
+            <link>https://kostyanetsky.me/notes/myth-buster</link>
+            <guid isPermaLink="false">note-myth-buster</guid>
+            <pubDate>Sun, 27 Jul 2025 12:21:32 +0700</pubDate>
+            <description><p>I stumbled upon a hefty Infostart <a href="https://infostart.ru/1c/articles/2434171/" target="_blank">article</a> all about "debunking myths" around the platform. The headline was pretty tabloid, but hey, whatever — I went ahead and gave it a read.</p>
+<p>Honestly, about half of it reads like a joke; I can't take it any other way. It's like:</p>
+<blockquote>
+<p>Hot off the press! Crime, intrigue, investigations! File‑based infobase is faster than client–server! DCS is slower than a plain request! Calling a server method on the server counts as a brand-new server call! <s>UFO over Red Square!</s></p>
+</blockquote>
+<p>Still, there are some genuinely interesting nuggets! For instance, I'd never heard the claim that cramming your code into one single line makes it run ten times faster. Too bad you'd get your ass handed to you by the team for trying that kind of desperate swag before you even get to celebrate the speed boost. And let's be real — most enterprise app slowdowns usually come from totally different places.</p>
+<p>Or take their speed comparison for dumping data into a table: one test for object presentations and another for their descriptions. The presentation dump was literally tens of times slower! On paper, that sounds weird — both are just strings already pulled from the database at measurement time. My guess is it's down to typing: presentation strings can be unlimited length, unlike descriptions. So you get extra memory allocations, helper structures popping up, and bam — that's where the slowdown creeps in.</p>
+<p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> ValueIsFilled() and getting a nasty surprise from the built‑in <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">FindByNumber()</a>.</p></description>
+        </item>
         
         <item>
             <title>Geometry Deletion</title>
@@ -120,20 +135,6 @@ own room."</p>
             <pubDate>Sat, 14 Dec 2024 17:37:06 +0700</pubDate>
             <description><p><del>Meanwhile, OpenAI opened a branch in Tbilisi</del> Actually, they just sell vapes here, and the logo designer was probably inspired by clouds of steam. But every time I walk by, it still catches my eye :)</p>
 <p><img alt="Vaporia" src="https://kostyanetsky.me/notes/vaporia/vaporia.jpg"/></p></description>
-        </item>
-        
-        <item>
-            <title>Creepy Graveyard</title>
-            <link>https://kostyanetsky.me/notes/creepy-graveyard</link>
-            <guid isPermaLink="false">note-creepy-graveyard</guid>
-            <pubDate>Tue, 26 Nov 2024 23:23:48 +0700</pubDate>
-            <description><p>Still learning 3D in my free time. Here's my first somewhat independent project after finishing a <a href="https://www.udemy.com/course/blender-environments-megacourse-create-3d-environments/" target="_blank">course</a> recently.</p>
-<p><a href="https://kostyanetsky.me/notes/creepy-graveyard/creepy-graveyard.png" target="_blank"><img alt="Creepy Graveyard" src="https://kostyanetsky.me/notes/creepy-graveyard/creepy-graveyard.png"/></a></p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mraGFR_Tr5k" width="560"></iframe>
-<p>Of course, there are plenty of issues: the models, the colors, the composition... Honestly, pretty much everything. Good thing the scene is set at night with fog, so it's easy to hide the worst spots. I wouldn't be surprised if the course creators picked this setting on purpose to keep beginners from getting too discouraged :)</p>
-<p>That said, I'm happy with the result. At this stage, perfectionism feels more like an enemy than a friend. And hey, it’s definitely better than my last attempt! Back then, I was totally green in Blender and scared to deviate even slightly from the instructor: ten minutes of watching, ten minutes of copying.</p>
-<p>That approach works at the very beginning, but it doesn't help you learn how to solve problems. This time, I watched a few lessons back-to-back for about an hour or two, then tried to figure things out on my own. I only went back to the videos when I was completely stuck. Feels like I’m actually retaining a lot more this way.</p>
-<p>Long story short, the thing is done. On to the next one!</p></description>
         </item>
         
     </channel>

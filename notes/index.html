@@ -113,6 +113,33 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/myth-buster/">Myth Buster</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>I stumbled upon a hefty Infostart <a href="https://infostart.ru/1c/articles/2434171/" target="_blank">article</a> all about "debunking myths" around the platform. The headline was pretty tabloid, but hey, whatever — I went ahead and gave it a read.</p>
+<p>Honestly, about half of it reads like a joke; I can't take it any other way. It's like:</p>
+<blockquote>
+<p>Hot off the press! Crime, intrigue, investigations! File‑based infobase is faster than client–server! DCS is slower than a plain request! Calling a server method on the server counts as a brand-new server call! <s>UFO over Red Square!</s></p>
+</blockquote>
+<p>Still, there are some genuinely interesting nuggets! For instance, I'd never heard the claim that cramming your code into one single line makes it run ten times faster. Too bad you'd get your ass handed to you by the team for trying that kind of desperate swag before you even get to celebrate the speed boost. And let's be real — most enterprise app slowdowns usually come from totally different places.</p>
+<p>Or take their speed comparison for dumping data into a table: one test for object presentations and another for their descriptions. The presentation dump was literally tens of times slower! On paper, that sounds weird — both are just strings already pulled from the database at measurement time. My guess is it's down to typing: presentation strings can be unlimited length, unlike descriptions. So you get extra memory allocations, helper structures popping up, and bam — that's where the slowdown creeps in.</p>
+<p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> ValueIsFilled() and getting a nasty surprise from the built‑in <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">FindByNumber()</a>.</p>
+        <p class="f6 mt4">
+            27 Jule 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/delete-geometry/">Geometry Deletion</a></h2>
 
             
@@ -641,38 +668,6 @@ own room."</p>
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/ai/">AI</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-day-switcher/">Day Switcher for Obsidian</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>When you're actively working in daily notes in Obsidian, you often want to quickly peek into the note from yesterday or, conversely, for tomorrow. For example, when sorting today's tasks and wanting to postpone some of them for tomorrow.</p>
-<p>I'm too lazy to type the exact date every time, so I wrote a <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" target="_blank">script</a> for this. It takes the note's date from its title (expects it to be in <abbr title="2024-08-17, for example.">ISO 8601</abbr> format) and generates a tooltip with links to yesterday's and tomorrow's notes. The day of the week is displayed in the header for additional convenience:</p>
-<p><img alt="Example" src="https://kostyanetsky.me/notes/obsidian-day-switcher/callout.jpg"/></p>
-<p>The script is written for the <a href="https://github.com/blacksmithgu/obsidian-dataview" target="_blank">Dataview</a> plugin since I'm already using it for other tasks. In general, it can easily be adapted for <a href="https://github.com/SilentVoid13/Templater" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" target="_blank">CustomJS</a>, or even turned into a standalone plugin (again, I'm too lazy to bother with that).</p>
-<p>If you plan to use it:</p>
-<ol>
-<li>In the noteLink() function, specify the path to your daily notes folder (currently, the path contains a 'Days' folder for example; I mean the path is indicated in the Daily notes/Template file location setting);</li>
-<li>Include the script in your daily note template (Daily notes/Template file location setting).</li>
-</ol>
-        <p class="f6 mt4">
-            17 August 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/javascript/">JavaScript</a>
                 </span>
             
         </p>

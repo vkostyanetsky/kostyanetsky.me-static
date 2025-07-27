@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Geometry Deletion</title>
+    <title>Myth Buster</title>
 
-    <meta name="description" content="A cool trick for deleting geometry where two models intersect." />
+    <meta name="description" content="A note regarding the article about myths about the 1C platform." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Geometry Deletion"/>
-    <meta property="og:description" content="A cool trick for deleting geometry where two models intersect."/>
+    <meta property="og:title" content="Myth Buster"/>
+    <meta property="og:description" content="A note regarding the article about myths about the 1C platform."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/delete-geometry" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/myth-buster" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/no';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/myth-buster';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/1c/no';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/delete-geometry" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/myth-buster" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/delete-geometry/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/myth-buster/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,22 +107,24 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Geometry Deletion</h1>
+        <h1 class="f-subheadline lh-solid">Myth Buster</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I figured out a cool trick for cutting off parts of an object when it intersects with something else. Like, in this gif, there’s a monkey head model in the center, and as a plane moves through it, the part that intersects just disappears.</p>
-<p><img alt="Demo" src="https://kostyanetsky.me/notes/delete-geometry/demo.gif"/></p>
-<p><a href="https://github.com/vkostyanetsky/3DPlayground/blob/main/Geometry%20Nodes/DeleteGeometry.blend" target="_blank">The idea</a> is pretty simple: you shrink the geometry of the "cutter" object down to a cube, get its min and max coordinates along each axis, and then for every point on the object you're trimming, you check whether it falls within that range. If it does — boom, it gets deleted.</p>
-<p>There are tons of ways you could use this. For example, I used it to automatically trim parts of decorative music staff lines on a wall so they wouldn't go across a doorway.</p>
-<p><img alt="Example" src="https://kostyanetsky.me/notes/delete-geometry/case.jpg"/></p>
-<p>Sure, you could do it by hand, without geometry nodes, but that would kill flexibility. If the wall size, door size, or the angle of the lines changes — you'd have to redo everything from scratch.</p>
+        <p>I stumbled upon a hefty Infostart <a href="https://infostart.ru/1c/articles/2434171/" target="_blank">article</a> all about "debunking myths" around the platform. The headline was pretty tabloid, but hey, whatever — I went ahead and gave it a read.</p>
+<p>Honestly, about half of it reads like a joke; I can't take it any other way. It's like:</p>
+<blockquote>
+<p>Hot off the press! Crime, intrigue, investigations! File‑based infobase is faster than client–server! DCS is slower than a plain request! Calling a server method on the server counts as a brand-new server call! <s>UFO over Red Square!</s></p>
+</blockquote>
+<p>Still, there are some genuinely interesting nuggets! For instance, I'd never heard the claim that cramming your code into one single line makes it run ten times faster. Too bad you'd get your ass handed to you by the team for trying that kind of desperate swag before you even get to celebrate the speed boost. And let's be real — most enterprise app slowdowns usually come from totally different places.</p>
+<p>Or take their speed comparison for dumping data into a table: one test for object presentations and another for their descriptions. The presentation dump was literally tens of times slower! On paper, that sounds weird — both are just strings already pulled from the database at measurement time. My guess is it's down to typing: presentation strings can be unlimited length, unlike descriptions. So you get extra memory allocations, helper structures popping up, and bam — that's where the slowdown creeps in.</p>
+<p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> ValueIsFilled() and getting a nasty surprise from the built‑in <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">FindByNumber()</a>.</p>
         <p class="f6 mt4">
-            12 June 2025
+            27 Jule 2025
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/3d/">3D</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
@@ -135,11 +137,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/no">No</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/no">No</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/myth-buster">Myth Buster</a>
                                 
 
             </p> 
