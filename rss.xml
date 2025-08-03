@@ -4,7 +4,52 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 27 Jul 2025 12:21:32 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 03 Aug 2025 16:25:35 +0700</lastBuildDate>
+        
+        <item>
+            <title>Slow Removal of Fresh Areas</title>
+            <link>https://kostyanetsky.me/notes/data-history-missing-indexes</link>
+            <guid isPermaLink="false">note-data-history-missing-indexes</guid>
+            <pubDate>Sun, 03 Aug 2025 16:25:35 +0700</pubDate>
+            <description><p>A colleague noticed that on one of our Fresh instances, deleting data areas had become painfully slow. Dug into the metrics.</p>
+<pre>
+DELETE FROM T1
+FROM _DataHistoryMetadata T1
+WHERE 
+    T1._MetadataId = ?
+    AND T1._IsActual = 0x00 
+    AND NOT (
+        T1._MetadataVersionNumber IN (
+            SELECT T2._MetadataVersionNumber AS MetadataVersionNumber_
+            FROM _DataHistoryVersions T2
+            WHERE T2._HistoryDataId IN (
+                SELECT DataHistoryLatestVersions1.DataHistoryLatestVersions._HistoryDataId AS HistoryDataId_
+                FROM DataHistoryLatestVersions1.DataHistoryLatestVersions T3
+                WHERE DataHistoryLatestVersions1.DataHistoryLatestVersions._MetadataId = ?
+            )
+        )
+    )
+</pre>
+<p>Each of these queries was reading around 20GB from the history table. What's happening is mostly clear: the platform is trying to delete an area's data history, but the janky DB query causes a full scan over the whole history table across all areas instead of using an index. Someone on Dmitrovskaya got lazy again.</p>
+<p><a href="https://x.com/EffinBirds/status/1945545263407301033" target="_blank"><img alt="Why are you surpised?" src="https://kostyanetsky.me/notes/data-history-missing-indexes/why.png"/></a></p>
+<p>So we were losing between 30 seconds and a minute and a half per operation. Wanted it faster. Fix:</p>
+<pre>
+CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
+  ON dbo._DataHistoryLatestVersions1 (_MetadataId)
+  INCLUDE (_HistoryDataId)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+
+CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
+  ON dbo._DataHistoryVersions (_MetadataVersionNumber)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+</pre>
+<p>Deletion cost predictably dropped ~99%.</p>
+<p>If you're going to repeat this on your side — keep in mind:</p>
+<ol>
+<li>Technically this violates the license agreement, you've been warned and all that.</li>
+<li>There's a risk the platform will trip over the new indexes during future restructurings (especially on the "new" schema). Better to have a ready script to drop the index, and then (after restructuring) put it back.</li>
+</ol></description>
+        </item>
         
         <item>
             <title>Myth Buster</title>
@@ -126,15 +171,6 @@ own room."</p>
 <p>We fixed the permissions, rebooted the cluster, and voilà! The problem was gone.  </p>
 <p><img alt="End of Report" src="https://kostyanetsky.me/notes/bit-of-surgery/report.jpeg"/></p>
 <p>All other hypotheses — cluster manager acting up, lack of hardware resources, configuration bugs, client-side issues, broken security profiles, network problems between the client and server — got tossed out during the diagnostics process.</p></description>
-        </item>
-        
-        <item>
-            <title>Vaguely Familiar Logo</title>
-            <link>https://kostyanetsky.me/notes/vaporia</link>
-            <guid isPermaLink="false">note-vaporia</guid>
-            <pubDate>Sat, 14 Dec 2024 17:37:06 +0700</pubDate>
-            <description><p><del>Meanwhile, OpenAI opened a branch in Tbilisi</del> Actually, they just sell vapes here, and the logo designer was probably inspired by clouds of steam. But every time I walk by, it still catches my eye :)</p>
-<p><img alt="Vaporia" src="https://kostyanetsky.me/notes/vaporia/vaporia.jpg"/></p></description>
         </item>
         
     </channel>

@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>No</title>
+    <title>Slow Removal of Fresh Areas</title>
 
-    <meta name="description" content="On the succinctness of the refusal to connect to the 1C server database." />
+    <meta name="description" content="About slow deletion of Fresh areas due to inefficient 1C platform query." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="No"/>
-    <meta property="og:description" content="On the succinctness of the refusal to connect to the 1C server database."/>
+    <meta property="og:title" content="Slow Removal of Fresh Areas"/>
+    <meta property="og:description" content="About slow deletion of Fresh areas due to inefficient 1C platform query."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/no" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/data-history-missing-indexes" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/work/easter-eggs';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/work/data-history-missing-indexes';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/myth-buster';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/no" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/data-history-missing-indexes" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/no/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/data-history-missing-indexes/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,25 +107,58 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">No</h1>
+        <h1 class="f-subheadline lh-solid">Slow Removal of Fresh Areas</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="No" src="https://kostyanetsky.me/notes/no/no.jpg"/></p>
-<p>This is the message the current platform throws up when you try to connect to an offline server cluster. I do appreciate minimalism in interfaces, of course, but this is definitely over the top.</p>
-<p>What's more, the platform is installed with only a single language pack (English) and even launched with a hard override to "Ven VLen", yet somehow the native birches still manage to sprout up. Maybe the C++ library that fires off the message (DataExchangeTcpClientImpl.cpp) is looking at the OS language (Russian) in my case — hard to say.</p>
-<p>Anyway, I can't shake the Bugs Bunny vibes every time I see that dialog box.</p>
-<p><img alt="No" src="https://kostyanetsky.me/notes/no/bugs-bunny.png"/></p>
+        <p>A colleague noticed that on one of our Fresh instances, deleting data areas had become painfully slow. Dug into the metrics.</p>
+<pre>
+DELETE FROM T1
+FROM _DataHistoryMetadata T1
+WHERE 
+    T1._MetadataId = ?
+    AND T1._IsActual = 0x00 
+    AND NOT (
+        T1._MetadataVersionNumber IN (
+            SELECT T2._MetadataVersionNumber AS MetadataVersionNumber_
+            FROM _DataHistoryVersions T2
+            WHERE T2._HistoryDataId IN (
+                SELECT DataHistoryLatestVersions1.DataHistoryLatestVersions._HistoryDataId AS HistoryDataId_
+                FROM DataHistoryLatestVersions1.DataHistoryLatestVersions T3
+                WHERE DataHistoryLatestVersions1.DataHistoryLatestVersions._MetadataId = ?
+            )
+        )
+    )
+</pre>
+<p>Each of these queries was reading around 20GB from the history table. What's happening is mostly clear: the platform is trying to delete an area's data history, but the janky DB query causes a full scan over the whole history table across all areas instead of using an index. Someone on Dmitrovskaya got lazy again.</p>
+<p><a href="https://x.com/EffinBirds/status/1945545263407301033" target="_blank"><img alt="Why are you surpised?" src="https://kostyanetsky.me/notes/data-history-missing-indexes/why.png"/></a></p>
+<p>So we were losing between 30 seconds and a minute and a half per operation. Wanted it faster. Fix:</p>
+<pre>
+CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
+  ON dbo._DataHistoryLatestVersions1 (_MetadataId)
+  INCLUDE (_HistoryDataId)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+
+CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
+  ON dbo._DataHistoryVersions (_MetadataVersionNumber)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+</pre>
+<p>Deletion cost predictably dropped ~99%.</p>
+<p>If you're going to repeat this on your side — keep in mind:</p>
+<ol>
+<li>Technically this violates the license agreement, you've been warned and all that.</li>
+<li>There's a risk the platform will trip over the new indexes during future restructurings (especially on the "new" schema). Better to have a ready script to drop the index, and then (after restructuring) put it back.</li>
+</ol>
         <p class="f6 mt4">
-            11 June 2025
+            3 August 2025
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
         </p>
@@ -138,11 +171,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/easter-eggs">Easter Eggs</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/myth-buster">Myth Buster</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/data-history-missing-indexes">Slow Removal of Fresh Areas</a>
                                 
 
             </p> 

@@ -113,6 +113,67 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/data-history-missing-indexes/">Slow Removal of Fresh Areas</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>A colleague noticed that on one of our Fresh instances, deleting data areas had become painfully slow. Dug into the metrics.</p>
+<pre>
+DELETE FROM T1
+FROM _DataHistoryMetadata T1
+WHERE 
+    T1._MetadataId = ?
+    AND T1._IsActual = 0x00 
+    AND NOT (
+        T1._MetadataVersionNumber IN (
+            SELECT T2._MetadataVersionNumber AS MetadataVersionNumber_
+            FROM _DataHistoryVersions T2
+            WHERE T2._HistoryDataId IN (
+                SELECT DataHistoryLatestVersions1.DataHistoryLatestVersions._HistoryDataId AS HistoryDataId_
+                FROM DataHistoryLatestVersions1.DataHistoryLatestVersions T3
+                WHERE DataHistoryLatestVersions1.DataHistoryLatestVersions._MetadataId = ?
+            )
+        )
+    )
+</pre>
+<p>Each of these queries was reading around 20GB from the history table. What's happening is mostly clear: the platform is trying to delete an area's data history, but the janky DB query causes a full scan over the whole history table across all areas instead of using an index. Someone on Dmitrovskaya got lazy again.</p>
+<p><a href="https://x.com/EffinBirds/status/1945545263407301033" target="_blank"><img alt="Why are you surpised?" src="https://kostyanetsky.me/notes/data-history-missing-indexes/why.png"/></a></p>
+<p>So we were losing between 30 seconds and a minute and a half per operation. Wanted it faster. Fix:</p>
+<pre>
+CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
+  ON dbo._DataHistoryLatestVersions1 (_MetadataId)
+  INCLUDE (_HistoryDataId)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+
+CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
+  ON dbo._DataHistoryVersions (_MetadataVersionNumber)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+</pre>
+<p>Deletion cost predictably dropped ~99%.</p>
+<p>If you're going to repeat this on your side — keep in mind:</p>
+<ol>
+<li>Technically this violates the license agreement, you've been warned and all that.</li>
+<li>There's a risk the platform will trip over the new indexes during future restructurings (especially on the "new" schema). Better to have a ready script to drop the index, and then (after restructuring) put it back.</li>
+</ol>
+        <p class="f6 mt4">
+            3 August 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/no/">No</a></h2>
 
             
@@ -664,33 +725,6 @@ EndIf;
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
                 </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/totals-of-2021/">Totals of 2021</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>It is a bit late to sum up, isn't it? Well, the previous couple of months have been, um, tight, so I had no actual time  to sit down and think. Now I'm on vacation for 2021 – so no time like the present. I'm writing, like, from the past.</p>
-<p>Write out each achievement doesn't attract me at all. The year definitely turned out to be good: I did a lot of complex work on FirstBit ERP (wrote new modules, rewrote existing ones, crushed bugs, wrote functional and load tests – yes, there were countless things). This had a good effect both on the configuration itself and on the profits of my company. In addition, I passed 1C expert exam and a PostgreSQL professional exam. Hip-hip-hooray.</p>
-<p>There were fails as well. I still feel lazy to jot them down, but the main one is obvious – I became monstrously fat and instead of losing ten kilograms (that was the original plan) – I gained five more.</p>
-<p>Looking back, the root of most of the problems over the past year is this: I focused too much on task flow. They were all interesting in their own way, from a carefully written technical task to challenges like “find a problem in the code using your witcher's instincts”. You do one task, another, a third, a hundredth, and you do not notice that you have ignored almost everything except work. As a result, you get a lot of experience, but the world dries up to the Configurator window and there is no strength to somehow apply this experience. Unhealthy bullshit.</p>
-<p>In short, if you imagine me as a character in some video game, it looks like this: attack and intelligence have grown noticeably over the year, but health, agility, charisma, and almost everything else in general, have dropped. Now I need to do something to deal with this mess.</p>
-<p>You know what? I'll take ten kilometers run for a start.</p>
-<p><a href="https://twitter.com/EffinBirds/status/1329575199667347459" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/totals-of-2021/snap-tweet-EffinBirds-1329575199667347459.png"/></a></p>
-<p>Maybe, birdie, maybe.</p>
-        <p class="f6 mt4">
-            8 February 2022
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
