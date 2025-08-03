@@ -44,7 +44,7 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
   WITH (DROP_EXISTING = OFF, ONLINE = OFF);
 </pre>
 <p>Deletion cost predictably dropped ~99%.</p>
-<p>If you're going to repeat this on your side — keep in mind:</p>
+<p>If you're going to repeat this on your side:</p>
 <ol>
 <li>Technically this violates the license agreement, you've been warned and all that.</li>
 <li>There's a risk the platform will trip over the new indexes during future restructurings (especially on the "new" schema). Better to have a ready script to drop the index, and then (after restructuring) put it back.</li>
