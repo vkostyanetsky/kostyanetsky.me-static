@@ -11,7 +11,7 @@
             <link>https://kostyanetsky.me/notes/data-history-missing-indexes</link>
             <guid isPermaLink="false">note-data-history-missing-indexes</guid>
             <pubDate>Sun, 03 Aug 2025 16:25:35 +0700</pubDate>
-            <description><p>A colleague noticed that on one of our Fresh instances, deleting data areas had become painfully slow. Dug into the metrics.</p>
+            <description><p>A colleague noticed that on one of our Fresh instances, deleting data areas had become painfully slow. Dug into the metrics:</p>
 <pre>
 DELETE FROM T1
 FROM _DataHistoryMetadata T1
