@@ -28,7 +28,7 @@
 <p>So the v35 cache didn't contain either of these in their v36 identities, yet for some reason the platform insists on digging into that old cache.</p>
 <p>We still don't have a clean root cause. We traced it to a specific commit after which the bug started showing up, but the only weird thing there its <a href="https://kostyanetsky.me/notes/voodoo/the-commit.png" target="_blank">its name</a> (and honestly, there are nearby commits that look even <a href="https://kostyanetsky.me/notes/voodoo/the-other-commit.png" target="_blank">more suspicious</a> from this point of view). The rest were <a href="https://kostyanetsky.me/notes/voodoo/5ba6ac0956e0cc7bc6b520e5110420e6950478fe.diff" target="_blank">minor changes</a> that regenerate internal metadata IDs in the manifest. Yes, those IDs are tied to cache keys, but they get bumped on any metadata change and have never caused issues before.</p>
 <p>If you landed here from Google because you hit the same mess — make a no-op change to the problematic object so the platform refreshes the metadata IDs in the manifest. For example, add an empty method or even just a space in the module. That fixes the configuration so the recipe at the top stops corrupting the cache.</p>
-<p>Voodoo, sure — but hey, it works.</p></description>
+<p>Voodoo, sure — but hey, it works ¯_(ツ)_/¯</p></description>
         </item>
         
         <item>
