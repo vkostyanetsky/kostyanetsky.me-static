@@ -4,7 +4,32 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 03 Aug 2025 16:25:35 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 05 Oct 2025 23:54:12 +0700</lastBuildDate>
+        
+        <item>
+            <title>Voodoo</title>
+            <link>https://kostyanetsky.me/notes/voodoo</link>
+            <guid isPermaLink="false">note-voodoo</guid>
+            <pubDate>Sun, 05 Oct 2025 23:54:12 +0700</pubDate>
+            <description><p>Looks like we finally caught our first lab-reproducible case of platform cache corruption. Short synopsis:</p>
+<ul>
+<li>Spin up a fresh app from the v35 template of <a href="https://firstbit.ae" target="_blank">our ERP</a>.</li>
+<li>Run it and wait for initialization to finish.</li>
+<li>Swap the app configuration to the v36 release (specifically build 28537 from the dev repo) and run it again.</li>
+</ul>
+<p>After this super simple sequence, about half the team sees the platform suddenly lose one of the enums. And it's annoyingly selective: hit an enum value on the client — all good; do the same on the server — boom, exception.</p>
+<p>Same story with the manager module of one catalog: its methods exist and are exported, but after the update the platform pretends they don't and throw an exception when you call them.</p>
+<p><a href="https://x.com/EffinBirds/status/1970264357427704080" target="_blank"><img alt="Welcome To Dipshit Central" src="https://kostyanetsky.me/notes/voodoo/welcome.jpg"/></a></p>
+<p>As always, when the magic blooms — look at the cache. Clear it and symptoms vanish. There are indirect hints too; in v35/v36:</p>
+<ul>
+<li>The enum did exist in v35, but it was renamed in v36.</li>
+<li>Those manager-module methods didn't exist in v35 (they were added in v36).</li>
+</ul>
+<p>So the v35 cache didn't contain either of these in their v36 identities, yet for some reason the platform insists on digging into that old cache.</p>
+<p>We still don't have a clean root cause. We traced it to a specific commit after which the bug started showing up, but the only weird thing there its <a href="https://kostyanetsky.me/notes/voodoo/the-commit.png" target="_blank">its name</a> (and honestly, there are nearby commits that look even <a href="https://kostyanetsky.me/notes/voodoo/the-other-commit.png" target="_blank">more suspicious</a> from this point of view). The rest were <a href="https://kostyanetsky.me/notes/voodoo/5ba6ac0956e0cc7bc6b520e5110420e6950478fe.diff" target="_blank">minor changes</a> that regenerate internal metadata IDs in the manifest. Yes, those IDs are tied to cache keys, but they get bumped on any metadata change and have never caused issues before.</p>
+<p>If you landed here from Google because you hit the same mess — make a no-op change to the problematic object so the platform refreshes the metadata IDs in the manifest. For example, add an empty method or even just a space in the module. That fixes the configuration so the recipe at the top stops corrupting the cache.</p>
+<p>Voodoo, sure — but hey, it works.</p></description>
+        </item>
         
         <item>
             <title>Slow Removal of Fresh Areas</title>
@@ -156,21 +181,6 @@ own room."</p>
 <p>The white things in the background are called chichilaki. It’s a kind of Georgian New Year tree (in practice, it’s finely shaved hazelnut branches). It’s believed to absorb all the accumulated negativity, so after the holidays, it’s supposed to be burned (along with the negativity).</p>
 <p>Turns out, that last part is a bit of a challenge. The local police (and especially the fire department) view this good old tradition with suspicion — and understandably so (a chichilaki can be as tall as a person, making it quite the torch). So, we were advised to simply toss the "negativity-charged" chichilaki into the trash to avoid getting fresh troubles. Or donate it to the zoo — apparently, the animals play with them and even use them to clean their teeth.</p>
 <p>That last part made me smile. Getting rid of negativity with the help of cats — what a surprise. Big, toothy cats, sure, but still cats!</p></description>
-        </item>
-        
-        <item>
-            <title>A Little Bit Of Surgery</title>
-            <link>https://kostyanetsky.me/notes/bit-of-surgery</link>
-            <guid isPermaLink="false">note-bit-of-surgery</guid>
-            <pubDate>Tue, 17 Dec 2024 22:40:24 +0700</pubDate>
-            <description><p>A few years ago, I stumbled upon a story about a programmer who had to debug software controlling a surgical robot — right in the middle of an operation. That blew my mind, to be frank.</p>
-<p>Today, my colleague and I were fixing a 1C cluster with databases running on 1cFresh. After migrating it to a neighboring server, the thing suddenly started acting up. Long story short: trying to print a document would send the client app into its death throes.  </p>
-<p>While we were knee-deep in troubleshooting, I had this thought: sure, it doesn’t look as terrifying as debugging software that someone’s life literally depends on. But if you think about all the clients sitting on edge because their business is grinding to a halt... Well, who knows where the stress levels are higher?  </p>
-<p><strong>P.S. Nerdy details for the curious.</strong> During the migration, the permissions for the server cache folder didn’t transfer properly. This led to a funny (well, not so funny) effect: the logs would happily land there, but session data wouldn’t.  </p>
-<p>So, when someone opened a print form, the configuration tried saving it to the storage, and rphost, in turn, attempted to shove it into the session cache. Here’s where things went sideways: the worker' process (probably) got slapped on the wrist by the OS. Due to (apparently) some funky file system event handling in the platform, the exception wasn’t caught, so the poor thing had no better idea than to kill the session. Naturally, this caused the client process to crash.  </p>
-<p>We fixed the permissions, rebooted the cluster, and voilà! The problem was gone.  </p>
-<p><img alt="End of Report" src="https://kostyanetsky.me/notes/bit-of-surgery/report.jpeg"/></p>
-<p>All other hypotheses — cluster manager acting up, lack of hardware resources, configuration bugs, client-side issues, broken security profiles, network problems between the client and server — got tossed out during the diagnostics process.</p></description>
         </item>
         
     </channel>

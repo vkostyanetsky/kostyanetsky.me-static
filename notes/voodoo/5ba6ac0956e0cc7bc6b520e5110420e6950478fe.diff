@@ -1,0 +1,126 @@
+diff --git a/FirstBITERP/src/Catalogs/Notifications/Forms/ItemForm/Form.form b/FirstBITERP/src/Catalogs/Notifications/Forms/ItemForm/Form.form
+index e484d272cad2f165873eaebfe03f869b570e2eea..039158b62aa5359c3efa234fad0a1ce565083b40 100644
+--- a/FirstBITERP/src/Catalogs/Notifications/Forms/ItemForm/Form.form
++++ b/FirstBITERP/src/Catalogs/Notifications/Forms/ItemForm/Form.form
+@@ -997,7 +997,7 @@
+             <common>true</common>
+           </userVisible>
+           <dataPath xsi:type="form:DataPath">
+-            <segments>Object.Active</segments>
++            <segments>Object.DELETE_Active</segments>
+           </dataPath>
+           <extendedTooltip>
+             <name>ActiveExtendedTooltip</name>
+diff --git a/FirstBITERP/src/Catalogs/Notifications/Notifications.mdo b/FirstBITERP/src/Catalogs/Notifications/Notifications.mdo
+index f3f7e57697cee3522073e254d11c400d395b148b..450ca5a1defbfccd02ae97ad18c882aab0005b56 100644
+--- a/FirstBITERP/src/Catalogs/Notifications/Notifications.mdo
++++ b/FirstBITERP/src/Catalogs/Notifications/Notifications.mdo
+@@ -506,10 +506,10 @@
+     <dataHistory>Use</dataHistory>
+   </attributes>
+   <attributes uuid="223b785b-e706-4faf-a6e8-378f3e8a2874">
+-    <name>Active</name>
++    <name>DELETE_Active</name>
+     <synonym>
+       <key>en</key>
+-      <value>Active</value>
++      <value>DELETE active</value>
+     </synonym>
+     <synonym>
+       <key>ru</key>
+@@ -701,6 +701,25 @@
+     <fullTextSearch>Use</fullTextSearch>
+     <dataHistory>Use</dataHistory>
+   </attributes>
++  <attributes uuid="2fe531e5-92e0-46ca-ba78-590506a93172">
++    <name>Inactive</name>
++    <synonym>
++      <key>en</key>
++      <value>Inactive</value>
++    </synonym>
++    <synonym>
++      <key>ru</key>
++      <value>Неактивный</value>
++    </synonym>
++    <type>
++      <types>Boolean</types>
++    </type>
++    <minValue xsi:type="core:UndefinedValue"/>
++    <maxValue xsi:type="core:UndefinedValue"/>
++    <fillValue xsi:type="core:UndefinedValue"/>
++    <fullTextSearch>Use</fullTextSearch>
++    <dataHistory>Use</dataHistory>
++  </attributes>
+   <tabularSections uuid="1309c6e1-df79-4c67-880a-c02c034f2a5e">
+     <producedTypes>
+       <objectType typeId="fadd6d97-c0b1-4978-89a9-c85ca2d4f4e4" valueTypeId="ad2113b4-601c-4aba-94e5-a3217f3faddb"/>
+diff --git a/FirstBITERP/src/Catalogs/Notifications/ObjectModule.bsl b/FirstBITERP/src/Catalogs/Notifications/ObjectModule.bsl
+index 06838303f0200a2e01a86e26622290f5aac302f1..dfec67a734328a0d9c56f8035dcaf202cb17de5b 100644
+--- a/FirstBITERP/src/Catalogs/Notifications/ObjectModule.bsl
++++ b/FirstBITERP/src/Catalogs/Notifications/ObjectModule.bsl
+@@ -18,7 +18,7 @@ Procedure BeforeWrite(Cancel)
+ 		CheckIfThereAreRecipients(Cancel);		
+ 		
+ 		If DeletionMark Then
+-			Active = False;
++			Inactive = True; // FBI-6435
+ 		EndIf;		
+ 			
+ 	EndIf;
+@@ -72,8 +72,8 @@ Procedure OnWrite(Cancel)
+ 		
+ 		NotificationsServer.UnassignNotification(Ref, Cancel);
+ 		
+-		If Active And Not DeletionMark Then
+-			NotificationsServer.AssignNotification(Ref, EventType, ObjectType, CustomHandler, Cancel);	// FBI-6248
++		If Not Inactive Then // FBI-6435
++			NotificationsServer.AssignNotification(Ref, EventType, ObjectType, CustomHandler, Cancel); // FBI-6248
+ 		EndIf;
+ 		
+ 	EndIf;
+diff --git a/FirstBITERP/src/ConfigDumpInfo.xml b/FirstBITERP/src/ConfigDumpInfo.xml
+index 9cf836b0a860e927b915a8f9ba727c5b9b5d3fdd..904a23639f51529703670de5bd3a36dfb87b795d 100644
+--- a/FirstBITERP/src/ConfigDumpInfo.xml
++++ b/FirstBITERP/src/ConfigDumpInfo.xml
+@@ -4067,12 +4067,13 @@
+ 		<Metadata name="Catalog.NonCurrentAssetClasses.Form.ListForm.Form" id="b8814ed2-af23-4ba9-bcf2-3d55994c3ed0.0" configVersion="aa6cca883b85194ab710e8b27f34039b00000000"/>
+ 		<Metadata name="Catalog.NonCurrentAssetClasses.ManagerModule" id="b7983fe2-f0f3-4b1e-8707-8ace7dd8f4e4.3" configVersion="92f90eef29377f4ba600d77f1db6414000000000"/>
+ 		<Metadata name="Catalog.NonCurrentAssetClasses.ObjectModule" id="b7983fe2-f0f3-4b1e-8707-8ace7dd8f4e4.0" configVersion="537381eb4323ad42b6787b4dd34354cd00000000"/>
+-		<Metadata name="Catalog.Notifications" id="0b25c6b5-d4c4-4fd4-97b1-0b515498bcb4" configVersion="588b00d4a6bb5146b8fcafe6b6dc6d6f00000000">
++		<Metadata name="Catalog.Notifications" id="0b25c6b5-d4c4-4fd4-97b1-0b515498bcb4" configVersion="47b91af377039c40b7bea7f3d6c1aa1600000000">
+ 			<Metadata name="Catalog.Notifications.Attribute.DeliverByEmail" id="053a6b1a-b49e-4e7a-aa2c-f2cf1bcc5331"/>
+ 			<Metadata name="Catalog.Notifications.Attribute.DELETE_DeliverySetting" id="07e80673-8996-4d96-8ebe-8220304919eb"/>
+ 			<Metadata name="Catalog.Notifications.TabularSection.Recipients" id="1309c6e1-df79-4c67-880a-c02c034f2a5e"/>
+ 			<Metadata name="Catalog.Notifications.Attribute.TelegramBot" id="1f70c97d-40eb-4694-b419-0b2261f5cb48"/>
+-			<Metadata name="Catalog.Notifications.Attribute.Active" id="223b785b-e706-4faf-a6e8-378f3e8a2874"/>
++			<Metadata name="Catalog.Notifications.Attribute.DELETE_Active" id="223b785b-e706-4faf-a6e8-378f3e8a2874"/>
++			<Metadata name="Catalog.Notifications.Attribute.Inactive" id="2fe531e5-92e0-46ca-ba78-590506a93172"/>
+ 			<Metadata name="Catalog.Notifications.Attribute.DeliverByTelegramMessage" id="50901a29-df4c-4a5d-afad-6ce645e358fb"/>
+ 			<Metadata name="Catalog.Notifications.Attribute.Delete_SystemObject" id="5444a7c0-26ad-47f2-ac72-c09bd9bc998e"/>
+ 			<Metadata name="Catalog.Notifications.Attribute.EventType" id="63a425e4-a325-4444-b6d5-5fddc8c7d20b"/>
+@@ -4104,9 +4105,9 @@
+ 		<Metadata name="Catalog.Notifications.Form.ItemForm.Form" id="9f32140d-f0b6-488f-abe4-c8ce1022c4cb.0" configVersion="7d43a1f054b4ec409acb87b58450845a00000000"/>
+ 		<Metadata name="Catalog.Notifications.Form.ListForm" id="5511e52b-0a38-4841-86a1-b7712c9c8db3" configVersion="c49c0a00bb4b49428b694870a799562400000000"/>
+ 		<Metadata name="Catalog.Notifications.Form.ListForm.Form" id="5511e52b-0a38-4841-86a1-b7712c9c8db3.0" configVersion="3aa880474bcabf4fbf6a65830de6bef700000000"/>
+-		<Metadata name="Catalog.Notifications.ManagerModule" id="0b25c6b5-d4c4-4fd4-97b1-0b515498bcb4.3" configVersion="f7a823d0924db74886f8040df7ebaa2900000000"/>
+-		<Metadata name="Catalog.Notifications.ObjectModule" id="0b25c6b5-d4c4-4fd4-97b1-0b515498bcb4.0" configVersion="309a764fb5ac6c4f8866fce0db2ec65d00000000"/>
+-		<Metadata name="Catalog.Notifications.Predefined" id="0b25c6b5-d4c4-4fd4-97b1-0b515498bcb4.1c" configVersion="c3378a6493943c41b5660aea7ffa4e5d00000000"/>
++		<Metadata name="Catalog.Notifications.ManagerModule" id="0b25c6b5-d4c4-4fd4-97b1-0b515498bcb4.3" configVersion="93ac568433ade944b9e5fb7b2d8621e300000000"/>
++		<Metadata name="Catalog.Notifications.ObjectModule" id="0b25c6b5-d4c4-4fd4-97b1-0b515498bcb4.0" configVersion="6eb3aa189579e04f954baf0b20252bbb00000000"/>
++		<Metadata name="Catalog.Notifications.Predefined" id="0b25c6b5-d4c4-4fd4-97b1-0b515498bcb4.1c" configVersion="7f6da5c877753741bc447137dc0774a700000000"/>
+ 		<Metadata name="Catalog.NotificationsTemplates" id="2a1b3e92-9c11-4efb-9da5-0993eeb7c00d" configVersion="0ac38a512e08f34e856efa546d65cb5d00000000">
+ 			<Metadata name="Catalog.NotificationsTemplates.Attribute.Text" id="18be811d-cf5b-4848-9e58-25c20ed5930d"/>
+ 			<Metadata name="Catalog.NotificationsTemplates.Attribute.ObjectType" id="4c49577b-82f0-42ac-a494-633d4cc667c9"/>
+diff --git a/FirstBITERP/src/Roles/ReadCatalogDeliveryTerms/Rights.rights b/FirstBITERP/src/Roles/ReadCatalogDeliveryTerms/Rights.rights
+index dd78c277ea1c6b00ba0dd45726334e23f49e9511..f4fa2daefa74f08f6b1c1c448a731f8b9bf395fc 100644
+--- a/FirstBITERP/src/Roles/ReadCatalogDeliveryTerms/Rights.rights
++++ b/FirstBITERP/src/Roles/ReadCatalogDeliveryTerms/Rights.rights
+@@ -3447,7 +3447,7 @@
+ 		</right>
+ 	</object>
+ 	<object>
+-		<name>Catalog.Notifications.Attribute.Active</name>
++		<name>Catalog.Notifications.Attribute.DELETE_Active</name>
+ 		<right>
+ 			<name>View</name>
+ 			<value>false</value>
