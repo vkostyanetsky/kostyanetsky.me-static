@@ -121,7 +121,7 @@
 <p>After this super simple sequence, about half the team sees the platform suddenly lose one of the enums. And it's annoyingly selective: hit an enum value on the client — all good; do the same on the server — boom, exception.</p>
 <p>Same story with the manager module of one catalog: its methods exist and are exported, but after the update the platform pretends they don't and throw an exception when you call them.</p>
 <p><a href="https://x.com/EffinBirds/status/1970264357427704080" target="_blank"><img alt="Welcome To Dipshit Central" src="https://kostyanetsky.me/notes/voodoo/welcome.jpg"/></a></p>
-<p>As always, when the magic blooms — look at the cache. Clear it and symptoms vanish. There are indirect hints too; in v35/v36:</p>
+<p>As always, when the magic blooms — look at the cache. Clear it and symptoms vanish. There are indirect hints too:</p>
 <ul>
 <li>The enum did exist in v35, but it was renamed in v36.</li>
 <li>Those manager-module methods didn't exist in v35 (they were added in v36).</li>
