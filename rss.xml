@@ -17,6 +17,42 @@
         </item>
         
         <item>
+            <title>Harmless Harm</title>
+            <link>https://kostyanetsky.me/notes/harmless-harm</link>
+            <guid isPermaLink="false">note-harmless-harm</guid>
+            <pubDate>Sun, 16 Nov 2025 10:36:00 +0700</pubDate>
+            <description><p>The other day my colleague and I were debugging an issue, nothing fancy, just another "why is this query behaving weird?" moment.</p>
+<p>Simplified, the idea was: we read a table from the database and dump the result into a temp table. If a certain condition is met, we still want the temp table to be created, but it must be empty (regardless of whether the source table has rows or not).</p>
+<p>The query looked roughly like this:</p>
+<pre>
+SELECT
+    Table.Field1 AS Field1
+FROM
+    Table AS Table
+WHERE 
+    &amp;Parameter
+</pre>
+<p>If we needed to copy rows from the source table into the temp table, we passed TRUE into the parameter; if we wanted the temp table to be empty, we passed FALSE.</p>
+<p>Looks neat at first glance, but this trick is a silent performance foot-gun if the table being read is large.</p>
+<p>The reason is how DB engines work with parameterized queries. Both MS SQL and PostgreSQL build the execution plan based on the query text, and in this example the parameter value does <strong>not</strong> affect the decision of whether the table should be read or not.</p>
+<p>As a result, when this query runs, both engines will pedantically scan the whole table (or its index), even if the parameter is FALSE. In that case each row is just discarded, so the logic is technically correct, but we're wasting resources on a pointless scan and polluting the buffer cache, slowing down the system overall and diligently contributing to global warming :)</p>
+<p>The fix is simple: inline TRUE/FALSE in the query body as a constant instead of using a parameter. Or use TOP so the query text is even simpler:</p>
+<pre>
+SELECT TOP 0
+    Table.Field1 AS Field1
+FROM
+    Table AS Table
+</pre>
+<p>At the SQL level this turns into something like "SELECT TOP 0 ... FROM Table" for MS SQL and "SELECT ... FROM Table LIMIT 0" for PostgreSQL. The final plan will still contain a read operator, but the executor won't actually request any rows, so there's no real data scan (yay).</p>
+<p>P.S. If you don't care about having proper column types in the temp table, you can even do this:</p>
+<pre>
+SELECT TOP 0
+    UNDEFINED AS Field1
+</pre>
+<p>The performance gain, however, is so tiny that it's probably not worth over-optimizing for this. There are better hills to die on.</p></description>
+        </item>
+        
+        <item>
             <title>Voodoo</title>
             <link>https://kostyanetsky.me/notes/voodoo</link>
             <guid isPermaLink="false">note-voodoo</guid>
@@ -171,15 +207,6 @@ own room."</p>
             <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mZwHTbu285A" width="560"></iframe>
 <p>Our lead developer recently shared some insights about our work — specifically, developing ERP systems on 1C for the UAE and, more recently, Saudi Arabia. The session was hosted by the online English school Across, so the audience was spot-on: Russian-speaking folks interested in building careers and exploring international markets.</p>
 <p>Overall, it turned out pretty cool, especially as a language practice. Just a reminder: learning foreign languages is still one of the best ways to give your brain a workout, and it’s also super accessible. There’s no shortage of resources, communities, and interest-based clubs out there — you just need the motivation :)</p></description>
-        </item>
-        
-        <item>
-            <title>Mysterious Code</title>
-            <link>https://kostyanetsky.me/notes/safe-code</link>
-            <guid isPermaLink="false">note-safe-code</guid>
-            <pubDate>Sat, 18 Jan 2025 23:25:22 +0700</pubDate>
-            <description><p><img alt="Code" src="https://kostyanetsky.me/notes/safe-code/code.jpg"/></p>
-<p>Somewhere on the streets of Tbilisi. As a big fan of the Dishonored series, I just couldn’t walk past this. I’m sure there’s a safe nearby that this code unlocks!</p></description>
         </item>
         
     </channel>
