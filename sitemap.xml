@@ -302,6 +302,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/there-are-some</loc>
+        <lastmod>2025-11-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/nerdview</loc>
         <lastmod>2020-10-19</lastmod>
         <changefreq>weekly</changefreq>
@@ -465,13 +472,6 @@
     <url>
         <loc>https://kostyanetsky.me/notes/hottabych</loc>
         <lastmod>2025-04-12</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://kostyanetsky.me/notes/difficulties</loc>
-        <lastmod>2025-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
