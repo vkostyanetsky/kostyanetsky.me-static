@@ -92,6 +92,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/well-there-are-some</loc>
+        <lastmod>2025-11-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/environmental-storytelling</loc>
         <lastmod>2023-03-19</lastmod>
         <changefreq>weekly</changefreq>
@@ -297,13 +304,6 @@
     <url>
         <loc>https://kostyanetsky.me/notes/small-pleasures</loc>
         <lastmod>2024-03-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://kostyanetsky.me/notes/there-are-some</loc>
-        <lastmod>2025-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
