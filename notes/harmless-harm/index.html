@@ -124,7 +124,7 @@ WHERE
     &amp;Parameter
 </pre>
 <p>If we needed to copy rows from the source table into the temp table, we passed TRUE into the parameter; if we wanted the temp table to be empty, we passed FALSE.</p>
-<p>Looks neat at first glance, but this trick is a silent performance foot-gun if the table being read is large.</p>
+<p>Looks simple at first glance, but this trick is a silent performance foot-gun if the table being read is large.</p>
 <p>The reason is how DB engines work with parameterized queries. Both MS SQL and PostgreSQL build the execution plan based on the query text, and in this example the parameter value does <strong>not</strong> affect the decision of whether the table should be read or not.</p>
 <p>As a result, when this query runs, both engines will pedantically scan the whole table (or its index), even if the parameter is FALSE. In that case each row is just discarded, so the logic is technically correct, but we're wasting resources on a pointless scan and polluting the buffer cache, slowing down the system overall and diligently contributing to global warming :)</p>
 <p>The fix is simple: inline TRUE/FALSE in the query body as a constant instead of using a parameter. Or use TOP so the query text is even simpler:</p>
