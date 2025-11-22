@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 17 Nov 2025 13:26:00 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 23 Nov 2025 00:01:58 +0700</lastBuildDate>
+        
+        <item>
+            <title>Дневник питания в Obsidian Bases</title>
+            <link>https://kostyanetsky.me/notes/obsidian-foodiary-bases</link>
+            <guid isPermaLink="false">note-obsidian-foodiary-bases</guid>
+            <pubDate>Sun, 23 Nov 2025 00:01:58 +0700</pubDate>
+            <description><p>I've rebuilt last year’s <a href="https://kostyanetsky.me/notes/obsidian-foodiary" target="_blank">plugin</a> with <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> — it now tracks calories, protein, fat, and carbs in your food.</p>
+<p>The result is way more flexible and customizable than the plugin version: if you suddenly decide you want to count fiber as well or just shuffle some columns in the report, you don't have to rewrite, rebuild, or release anything. You just tweak it to your heart's content.</p>
+<p>And it doesn't look half bad either:</p>
+<p><img alt="UI" src="https://kostyanetsky.me/notes/obsidian-foodiary-bases/base.png"/></p>
+<p>All the necessary settings and scripts live in the <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">GitHub repo</a>.</p></description>
+        </item>
         
         <item>
             <title>Well, There Are Some</title>
@@ -197,16 +209,6 @@ own room."</p>
 <p>I like to add little things like this from time to time — it helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t checked out Bystronovsky’s "<a href="https://collab.ldwg.ru/stressless-design" target="_blank">Design Without Stress</a>", you really should — no way I could explain it better myself.</p>
 <p>By the way, here’s another Easter egg! Not from our ERP this time, but from a new tool we’re making for automated database updates. We're building it just for ourselves, so we can joke around with the user a bit :)</p>
 <p><img alt="Nice try, Marty!" src="https://kostyanetsky.me/notes/easter-eggs/marty.jpg"/></p></description>
-        </item>
-        
-        <item>
-            <title>ERP Development In English</title>
-            <link>https://kostyanetsky.me/notes/across-meeting</link>
-            <guid isPermaLink="false">note-across-meeting</guid>
-            <pubDate>Sun, 19 Jan 2025 23:54:12 +0700</pubDate>
-            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mZwHTbu285A" width="560"></iframe>
-<p>Our lead developer recently shared some insights about our work — specifically, developing ERP systems on 1C for the UAE and, more recently, Saudi Arabia. The session was hosted by the online English school Across, so the audience was spot-on: Russian-speaking folks interested in building careers and exploring international markets.</p>
-<p>Overall, it turned out pretty cool, especially as a language practice. Just a reminder: learning foreign languages is still one of the best ways to give your brain a workout, and it’s also super accessible. There’s no shortage of resources, communities, and interest-based clubs out there — you just need the motivation :)</p></description>
         </item>
         
     </channel>

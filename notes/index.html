@@ -113,6 +113,38 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-foodiary-bases/">Дневник питания в Obsidian Bases</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>I've rebuilt last year’s <a href="https://kostyanetsky.me/notes/obsidian-foodiary" target="_blank">plugin</a> with <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> — it now tracks calories, protein, fat, and carbs in your food.</p>
+<p>The result is way more flexible and customizable than the plugin version: if you suddenly decide you want to count fiber as well or just shuffle some columns in the report, you don't have to rewrite, rebuild, or release anything. You just tweak it to your heart's content.</p>
+<p>And it doesn't look half bad either:</p>
+<p><img alt="UI" src="https://kostyanetsky.me/notes/obsidian-foodiary-bases/base.png"/></p>
+<p>All the necessary settings and scripts live in the <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">GitHub repo</a>.</p>
+        <p class="f6 mt4">
+            23 November 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/typescript/">TypeScript</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/well-there-are-some/">Well, There Are Some</a></h2>
 
             
@@ -702,30 +734,6 @@ own room."</p>
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/georgia/">Georgia</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/pdf/">About PDF</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I get a complaint: a client can’t log into our customer portal. I check the database — the account is fine. So what’s the problem? I check the login and see a strange sight:</p>
-<p><img alt="PDF" src="https://kostyanetsky.me/notes/pdf/pdf.png"/></p>
-<p>Above is what the user entered, and below is what’s in the database. My first thought: how on earth did a document end up in the string? :D</p>
-<p>I’ll skip the further investigation. The key here is asking the right questions (otherwise, both Google and AI will be thinking about the popular file format, not the symbol). So, PDF in the context of Unicode means Pop Directional Formatting! It’s a symbol that controls text direction; it’s needed, for example, to properly render Arabic (which can contain both left-to-right and right-to-left text). The user obviously enters the login in RTL mode (or copies it from somewhere), and the portal does not understand this nuance.</p>
-<p>In short, a piece of cake. However, I’d like to point out that the PDF file format existed long before the PDF symbol. I get that these are different technical fields, and the developers probably didn’t see the overlapping terminology as a significant issue. But deep down, I’m sure someone was smirking, anticipating today’s confusion.</p>
-        <p class="f6 mt4">
-            6 September 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
         </p>
