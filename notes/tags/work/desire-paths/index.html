@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Optimization</title>
+    <title>Desire Paths</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="On the harm of template approaches in development." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Optimization"/>
-    <meta property="og:description" content=""/>
+    <meta property="og:title" content="Desire Paths"/>
+    <meta property="og:description" content="On the harm of template approaches in development."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/optimization" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/desire-paths" />    
 
     <!-- Tachyons -->
 
@@ -41,7 +41,7 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = '';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/work/voodoo';
         let ctrlRightUrl    = '';
 
     </script>
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/tags/optimization" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/desire-paths" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                    <span class="f4 f4-ns">✎</span>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/desire-paths/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -105,17 +105,11 @@
 <section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
     
 
-    <article>
-
-        <h1 class="f-subheadline lh-solid">Optimization</h1>
-
-        
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/desire-paths/">Desire Paths</a></h2>
-
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Desire Paths</h1>
             
+        
     
     <div class="f4 lh-copy black mb5 measure-wide">
         <p>Alright, Jean Fresco's riddle. You've got a table — say, ~50k rows. How do you end up reading half a billion?</p>
@@ -143,55 +137,30 @@ For Each Table1Row In Table1 Do
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
                 </span>
             
         </p>
     </div>
 
 
-
+        
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/payment-terms/">One Query More, One Query Less</a></h2>
+            <p class="mt5 mb3 f6">
 
+                
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/voodoo">Voodoo</a> &larr;
+                
+                Ctrl
+                                
+
+            </p> 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>One query more, one query less — it doesn’t matter, people often say. Like, the main thing is that the query must be cheap: it doesn’t read too much, uses index, and so on.</p>
-<p>This point of view makes sense, but mindlessly machine-gunning queries is a dangerous idea. Even if everything looks good at the moment, the system may change slightly in the future. And then a seemingly harmless patch will burn your production server to the ground right on Friday.</p>
-<p>Let me tell you about one example from recent practice. There is an ERP that contains a table with payment stages for customer orders. One of these stages is prepayment; until it is received, you cannot create an order for the supplier.</p>
-<p>Technically, the purchase order simply stores the customer's order ID; if the field is filled (that is, if the purchase order is created by the customer's order), ERP needs to read the payment stages of the customer's order and understand whether the purchase can be made.</p>
-<p>It sounds elementary, but monitoring shows that the operation is slow as hell and eats up memory as if it were the last time. </p>
-<p>Welp, let's go find out. We saw something like this:</p>
-<p><img alt="825701 records" src="https://kostyanetsky.me/notes/payment-terms/payment-terms.png"/></p>
-<p>What do we have here? Instead of taking two or three stages of payment for an order, ERP reads almost a million! How this could be possible?</p>
-<p>It turned out that the problem was with those purchase orders that were not related to customer orders at all. The developer considered that the logic for them could not be changed: the customer’s order ID is empty and the query will not find payment stages for this ID. This means that the same result will be obtained as if there were no query at all. And an extra query — well... One query more, one query less... Not a big deal.</p>
-<p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
-<p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
-<p>Do you know what I think? If the result of a query is known, there is probably no need to do it after all.</p>
-        <p class="f6 mt4">
-            5 May 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
         
 
     </article>

@@ -4,7 +4,31 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 23 Nov 2025 00:01:58 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 29 Nov 2025 21:00:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Desire Paths</title>
+            <link>https://kostyanetsky.me/notes/desire-paths</link>
+            <guid isPermaLink="false">note-desire-paths</guid>
+            <pubDate>Sat, 29 Nov 2025 21:00:48 +0700</pubDate>
+            <description><p>Alright, Jean Fresco's riddle. You've got a table — say, ~50k rows. How do you end up reading half a billion?</p>
+<p>Easy-peasy: Nested Loops + Clustered Index Seek:</p>
+<p><img alt="Half a billion" src="https://kostyanetsky.me/notes/desire-paths/500_million.png"/></p>
+<p>Clustered Index Seek is a bit of a marketing name here, of course. In reality, on every execution the operator walks the entire table (the whole clustered index) and checks every row against the predicates. And it does that 10 730 times for 51 391 rows. Result: 551 425 430 rows read, 13 343 returned.</p>
+<p><img alt="Ouch" src="https://kostyanetsky.me/notes/desire-paths/ouch.gif"/></p>
+<p>So yeah — a perfect textbook example of a horrible query plan in a vacuum. Put it in a museum. Nested Loops, if you've forgotten, works roughly like this:</p>
+<pre>
+For Each Table1Row In Table1 Do
+    For Each Table2Row In Table2 Do
+        ...
+</pre>
+<p>That's fine for small tables, but the DB can also pick it for bigger ones — for example, if it runs out of time to build a proper plan.</p>
+<p>That's exactly what happened here. Zooming out to the platform level: we've got a dynamic list that queries a documents table, and the devs bolted on like a dozen virtual tables from accumulation registers.</p>
+<p>Some of those registers were huge on their own, and the virtual tables poured gasoline on the fire (each one turns into 2+ nested queries). The DB honestly tried to come up with an efficient strategy, but at some point it basically decided: "a garbage plan is still better than no plan at all".</p>
+<p>And the user? They tried to search a document by number — and the client app just straight-up froze.</p>
+<p>So, about virtual tables in dynamic lists. There's a nice English phrase: "desire path" — the trail people naturally carve because it's the easiest way. Slapping a virtual table onto the main one really is often the simplest, fastest, most familiar way to solve the task. But it's <strong>not efficient</strong>.</p>
+<p>There's an alternative, for example the OnGetDataAtServer() handler. It takes longer to implement, but it lets you properly tune the virtual table and avoid the scenario above. Scrolling the list will produce more queries, sure — but they'll be smaller, faster, and way more efficient than one single giant monster query.</p></description>
+        </item>
         
         <item>
             <title>Food Diary In Obsidian Bases</title>
@@ -197,18 +221,6 @@ own room."</p>
 <p>I’m just the same. For the past month, I’ve been putting the finishing touches on a model of a school music room, and guess what? I’ve learned more about how pianos work than I have in my whole life before. I could even give a quick lecture on heating systems in Russian schools — talking about sectional, panel, cast iron, and aluminum radiators, which types pop up most, the spacing between them, why you shouldn’t hook up three in a row, and so on.</p>
 <p>I read about this effect: like when you're drawing, say, samurai armor — you end up inadvertently learning heaps about the properties of leather, the different kinds of metal, and the whole tech stack of the samurai era. I never thought I'd run into that from day one — but hey, I think it's a good thing. It fires up your neural connections, broadens your view of the world, sparks your creativity, and all that jazz.</p>
 <p>Plus, it’s way more fun working on a model when you actually know what’s going on under the hood.</p></description>
-        </item>
-        
-        <item>
-            <title>Easter Eggs</title>
-            <link>https://kostyanetsky.me/notes/easter-eggs</link>
-            <guid isPermaLink="false">note-easter-eggs</guid>
-            <pubDate>Sun, 06 Apr 2025 23:33:52 +0700</pubDate>
-            <description><p><img alt="Thank you, Mario!" src="https://kostyanetsky.me/notes/easter-eggs/mario.jpg"/> <img alt="Awaiting Signal" src="https://kostyanetsky.me/notes/easter-eggs/mothership.jpg"/></p>
-<p>A couple of Easter eggs hidden inside FirstBit ERP. They're tucked away for the developers: in the first case, users see just the form title and notification text, while in the second, they see the standard "waiting for connection" message.</p>
-<p>I like to add little things like this from time to time — it helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t checked out Bystronovsky’s "<a href="https://collab.ldwg.ru/stressless-design" target="_blank">Design Without Stress</a>", you really should — no way I could explain it better myself.</p>
-<p>By the way, here’s another Easter egg! Not from our ERP this time, but from a new tool we’re making for automated database updates. We're building it just for ourselves, so we can joke around with the user a bit :)</p>
-<p><img alt="Nice try, Marty!" src="https://kostyanetsky.me/notes/easter-eggs/marty.jpg"/></p></description>
         </item>
         
     </channel>

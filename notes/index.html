@@ -113,6 +113,50 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/desire-paths/">Desire Paths</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Alright, Jean Fresco's riddle. You've got a table — say, ~50k rows. How do you end up reading half a billion?</p>
+<p>Easy-peasy: Nested Loops + Clustered Index Seek:</p>
+<p><img alt="Half a billion" src="https://kostyanetsky.me/notes/desire-paths/500_million.png"/></p>
+<p>Clustered Index Seek is a bit of a marketing name here, of course. In reality, on every execution the operator walks the entire table (the whole clustered index) and checks every row against the predicates. And it does that 10 730 times for 51 391 rows. Result: 551 425 430 rows read, 13 343 returned.</p>
+<p><img alt="Ouch" src="https://kostyanetsky.me/notes/desire-paths/ouch.gif"/></p>
+<p>So yeah — a perfect textbook example of a horrible query plan in a vacuum. Put it in a museum. Nested Loops, if you've forgotten, works roughly like this:</p>
+<pre>
+For Each Table1Row In Table1 Do
+    For Each Table2Row In Table2 Do
+        ...
+</pre>
+<p>That's fine for small tables, but the DB can also pick it for bigger ones — for example, if it runs out of time to build a proper plan.</p>
+<p>That's exactly what happened here. Zooming out to the platform level: we've got a dynamic list that queries a documents table, and the devs bolted on like a dozen virtual tables from accumulation registers.</p>
+<p>Some of those registers were huge on their own, and the virtual tables poured gasoline on the fire (each one turns into 2+ nested queries). The DB honestly tried to come up with an efficient strategy, but at some point it basically decided: "a garbage plan is still better than no plan at all".</p>
+<p>And the user? They tried to search a document by number — and the client app just straight-up froze.</p>
+<p>So, about virtual tables in dynamic lists. There's a nice English phrase: "desire path" — the trail people naturally carve because it's the easiest way. Slapping a virtual table onto the main one really is often the simplest, fastest, most familiar way to solve the task. But it's <strong>not efficient</strong>.</p>
+<p>There's an alternative, for example the OnGetDataAtServer() handler. It takes longer to implement, but it lets you properly tune the virtual table and avoid the scenario above. Scrolling the list will produce more queries, sure — but they'll be smaller, faster, and way more efficient than one single giant monster query.</p>
+        <p class="f6 mt4">
+            29 November 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-foodiary-bases/">Food Diary In Obsidian Bases</a></h2>
 
             
@@ -702,34 +746,6 @@ own room."</p>
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/thumbs-up/">Cool Stuff!</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>A knock at the door. I open it, and there are two bright, twenty-something girls standing there. Flashing huge smiles at me, they start talking a mile a minute.</p>
-<p>The Georgian language is beautiful, but I haven’t gotten around to learning it yet. I sigh and suggest we switch to English or Russian.</p>
-<p>The girls frown a little. Then one of them digs into her bag, pulls out a flyer, points to it, gives me a thumbs up like, “cool stuff!” — and hands it to me. </p>
-<p>Then they laugh and run off.</p>
-<p>Take that, language barrier!</p>
-        <p class="f6 mt4">
-            21 September 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/georgia/">Georgia</a>
                 </span>
             
         </p>
