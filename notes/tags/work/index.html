@@ -113,6 +113,44 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/backup-ui/">Backup Management</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
+<p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
+<p>You can pick one of three backup types:</p>
+<ul>
+<li>Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);</li>
+<li>File backup (a regular .dt file you can download and spin up locally);</li>
+<li>Configuration + extensions backup (.cf + .cfe).</li>
+</ul>
+<p>Also, the new solution detects when someone tries to request a backup for an app that's already being generated right now. And it rate-limits things too: you can't back up the same app more than once per hour.</p>
+<p>And yes — we're still sneaking jokes into the UI. Obviously.</p>
+<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/> <img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p>
+        <p class="f6 mt4">
+            6 December 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/desire-paths/">Desire Paths</a></h2>
 
             
@@ -730,36 +768,6 @@ EndIf;
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/anonymous-quokka/">Group Work in Google Docs</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
-<p>They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
-<p>Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p>
-        <p class="f6 mt4">
-            18 September 2022
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/bitrix/">Bitrix</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
                 </span>
             
         </p>

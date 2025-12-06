@@ -113,6 +113,44 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/backup-ui/">Backup Management</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
+<p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
+<p>You can pick one of three backup types:</p>
+<ul>
+<li>Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);</li>
+<li>File backup (a regular .dt file you can download and spin up locally);</li>
+<li>Configuration + extensions backup (.cf + .cfe).</li>
+</ul>
+<p>Also, the new solution detects when someone tries to request a backup for an app that's already being generated right now. And it rate-limits things too: you can't back up the same app more than once per hour.</p>
+<p>And yes — we're still sneaking jokes into the UI. Obviously.</p>
+<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/> <img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p>
+        <p class="f6 mt4">
+            6 December 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/desire-paths/">Desire Paths</a></h2>
 
             
@@ -718,34 +756,6 @@ own room."</p>
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/love/">ChatGPT Mimicry</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Colleagues are actively <a href="https://t.me/denissexy/8767" target="_blank">experimenting</a> with o1-preview from OpenAI: the model turned out to be genuinely interesting. Unfortunately, tasks for it don’t come up too often — regular 4o handles most day-to-day stuff just fine. Bug-finding in code, analyzing medical tests in an unfamiliar language, or trying to recall the name of a childhood book with only a vague recollection of the plot — I can’t easily think of anything it wouldn’t handle.</p>
-<p>It’s always fascinating to see how the AI reasons, jokes, and generally tries to act human. I’d say it won’t pass the Turing test just yet, but every now and then, it comes eerily close.</p>
-<p><img alt="Carrot" src="https://kostyanetsky.me/notes/love/carrot.jpg"/> <img alt="Fists" src="https://kostyanetsky.me/notes/love/fists.jpg"/> <img alt="Jokes" src="https://kostyanetsky.me/notes/love/joke.jpg"/></p>
-<p>The answer below made me smile. Even leaving philosophy aside — looks like Skynet is off the table! :) Though, I’m afraid the future from the <a href="https://store.steampowered.com/app/282140/SOMA/" target="_blank">SOMA</a> ending is still possible.</p>
-<p><img alt="Love" src="https://kostyanetsky.me/notes/love/love.jpg"/></p>
-        <p class="f6 mt4">
-            29 September 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/ai/">AI</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
                 </span>
             
         </p>

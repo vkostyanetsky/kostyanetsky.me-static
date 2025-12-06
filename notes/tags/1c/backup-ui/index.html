@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Desire Paths</title>
+    <title>Backup Management</title>
 
-    <meta name="description" content="On the harm of template approaches in development." />
+    <meta name="description" content="About the new feature in the internal cloud management software." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Desire Paths"/>
-    <meta property="og:description" content="On the harm of template approaches in development."/>
+    <meta property="og:title" content="Backup Management"/>
+    <meta property="og:description" content="About the new feature in the internal cloud management software."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/desire-paths" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/backup-ui" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/1c/harmless-harm';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/1c/backup-ui';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/1c/desire-paths';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/desire-paths" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/backup-ui" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/desire-paths/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/backup-ui/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,30 +107,24 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Desire Paths</h1>
+        <h1 class="f-subheadline lh-solid">Backup Management</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Alright, Jean Fresco's riddle. You've got a table — say, ~50k rows. How do you end up reading half a billion?</p>
-<p>Easy-peasy: Nested Loops + Clustered Index Seek:</p>
-<p><img alt="Half a billion" src="https://kostyanetsky.me/notes/desire-paths/500_million.png"/></p>
-<p>Clustered Index Seek is a bit of a marketing name here, of course. In reality, on every execution the operator walks the entire table (the whole clustered index) and checks every row against the predicates. And it does that 10 730 times for 51 391 rows. Result: 551 425 430 rows read, 13 343 returned.</p>
-<p><img alt="Ouch" src="https://kostyanetsky.me/notes/desire-paths/ouch.gif"/></p>
-<p>So yeah — a perfect textbook example of a horrible query plan in a vacuum. Put it in a museum. Nested Loops, if you've forgotten, works roughly like this:</p>
-<pre>
-For Each Table1Row In Table1 Do
-    For Each Table2Row In Table2 Do
-        ...
-</pre>
-<p>That's fine for small tables, but the DB can also pick it for bigger ones — for example, if it runs out of time to build a proper plan.</p>
-<p>That's exactly what happened here. Zooming out to the platform level: we've got a dynamic list that queries a documents table, and the devs bolted on like a dozen virtual tables from accumulation registers.</p>
-<p>Some of those registers were huge on their own, and the virtual tables poured gasoline on the fire (each one turns into 2+ nested queries). The DB honestly tried to come up with an efficient strategy, but at some point it basically decided: "a garbage plan is still better than no plan at all".</p>
-<p>And the user? They tried to search a document by number — and the client app just straight-up froze.</p>
-<p>So, about virtual tables in dynamic lists. There's a nice English phrase: "desire path" — the trail people naturally carve because it's the easiest way. Slapping a virtual table onto the main one really is often the simplest, fastest, most familiar way to solve the task. But it's <strong>not efficient</strong>.</p>
-<p>There's an alternative, for example the OnGetDataAtServer() handler. It takes longer to implement, but it lets you properly tune the virtual table and avoid the scenario above. Scrolling the list will produce more queries, sure — but they'll be smaller, faster, and way more efficient than one single giant monster query.</p>
+        <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
+<p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
+<p>You can pick one of three backup types:</p>
+<ul>
+<li>Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);</li>
+<li>File backup (a regular .dt file you can download and spin up locally);</li>
+<li>Configuration + extensions backup (.cf + .cfe).</li>
+</ul>
+<p>Also, the new solution detects when someone tries to request a backup for an app that's already being generated right now. And it rate-limits things too: you can't back up the same app more than once per hour.</p>
+<p>And yes — we're still sneaking jokes into the UI. Obviously.</p>
+<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/> <img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p>
         <p class="f6 mt4">
-            29 November 2025
+            6 December 2025
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
@@ -141,7 +135,7 @@ For Each Table1Row In Table1 Do
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
                 </span>
             
         </p>
@@ -154,11 +148,9 @@ For Each Table1Row In Table1 Do
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/harmless-harm">Harmless Harm</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/desire-paths">Desire Paths</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/backup-ui">Backup Management</a>
                                 
 
             </p> 

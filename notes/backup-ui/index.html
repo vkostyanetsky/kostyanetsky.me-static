@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Food Diary In Obsidian Bases</title>
+    <title>Backup Management</title>
 
-    <meta name="description" content="Wrote a food calorie calculator using Obsidian Bases" />
+    <meta name="description" content="About the new feature in the internal cloud management software." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Food Diary In Obsidian Bases"/>
-    <meta property="og:description" content="Wrote a food calorie calculator using Obsidian Bases"/>
+    <meta property="og:title" content="Backup Management"/>
+    <meta property="og:description" content="About the new feature in the internal cloud management software."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/obsidian-foodiary-bases" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/backup-ui" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/tags/done/creepy-graveyard';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/tags/done/backup-ui';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/desire-paths';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.ru/notes/obsidian-foodiary-bases" class="link f5 f5-ns dim blue bb">RU</a>
+            <a href="https://kostyanetsky.ru/notes/backup-ui" class="link f5 f5-ns dim blue bb">RU</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/obsidian-foodiary-bases/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Found a typo? Edit me!" href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/backup-ui/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,25 +107,35 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Food Diary In Obsidian Bases</h1>
+        <h1 class="f-subheadline lh-solid">Backup Management</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I've rebuilt last year’s <a href="https://kostyanetsky.me/notes/obsidian-foodiary" target="_blank">plugin</a> with <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> — it now tracks calories, protein, fat, and carbs in your food.</p>
-<p>The result is way more flexible and customizable than the plugin version: if you suddenly decide you want to count fiber as well or just shuffle some columns in the report, you don't have to rewrite, rebuild, or release anything. You just tweak it to your heart's content.</p>
-<p>And it doesn't look half bad either:</p>
-<p><img alt="UI" src="https://kostyanetsky.me/notes/obsidian-foodiary-bases/base.png"/></p>
-<p>All the necessary settings and scripts live in the <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">GitHub repo</a>.</p>
+        <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
+<p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
+<p>You can pick one of three backup types:</p>
+<ul>
+<li>Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);</li>
+<li>File backup (a regular .dt file you can download and spin up locally);</li>
+<li>Configuration + extensions backup (.cf + .cfe).</li>
+</ul>
+<p>Also, the new solution detects when someone tries to request a backup for an app that's already being generated right now. And it rate-limits things too: you can't back up the same app more than once per hour.</p>
+<p>And yes — we're still sneaking jokes into the UI. Obviously.</p>
+<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/> <img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p>
         <p class="f6 mt4">
-            23 November 2025
+            6 December 2025
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
                 </span>
             
         </p>
@@ -138,11 +148,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/creepy-graveyard">Creepy Graveyard</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.me/notes/desire-paths">Desire Paths</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/backup-ui">Backup Management</a>
                                 
 
             </p> 

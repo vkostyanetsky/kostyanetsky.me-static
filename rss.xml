@@ -4,7 +4,25 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 29 Nov 2025 21:00:48 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 06 Dec 2025 20:57:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Backup Management</title>
+            <link>https://kostyanetsky.me/notes/backup-ui</link>
+            <guid isPermaLink="false">note-backup-ui</guid>
+            <pubDate>Sat, 06 Dec 2025 20:57:48 +0700</pubDate>
+            <description><p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
+<p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
+<p>You can pick one of three backup types:</p>
+<ul>
+<li>Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);</li>
+<li>File backup (a regular .dt file you can download and spin up locally);</li>
+<li>Configuration + extensions backup (.cf + .cfe).</li>
+</ul>
+<p>Also, the new solution detects when someone tries to request a backup for an app that's already being generated right now. And it rate-limits things too: you can't back up the same app more than once per hour.</p>
+<p>And yes — we're still sneaking jokes into the UI. Obviously.</p>
+<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/> <img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p></description>
+        </item>
         
         <item>
             <title>Desire Paths</title>
@@ -196,31 +214,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>What's more, the platform is installed with only a single language pack (English) and even launched with a hard override to "Ven VLen", yet somehow the native birches still manage to sprout up. Maybe the C++ library that fires off the message (DataExchangeTcpClientImpl.cpp) is looking at the OS language (Russian) in my case — hard to say.</p>
 <p>Anyway, I can't shake the Bugs Bunny vibes every time I see that dialog box.</p>
 <p><img alt="No" src="https://kostyanetsky.me/notes/no/bugs-bunny.png"/></p></description>
-        </item>
-        
-        <item>
-            <title>The Genie Problem</title>
-            <link>https://kostyanetsky.me/notes/hottabych</link>
-            <guid isPermaLink="false">note-hottabych</guid>
-            <pubDate>Sat, 12 Apr 2025 23:57:12 +0700</pubDate>
-            <description><blockquote>
-<p>Returning to Volka's room, the old man turned round slyly, snapped the fingers of his left hand, and there appeared on the wall over the aquarium an exact copy of the telephone hanging in the hall.</p>
-<p>"Now you can talk to your friends as much as you like without leaving your
-own room."</p>
-<p>"Golly, thanks a lot!" Volka said gratefully. He removed the receiver, pressed it to his ear and listened. There was no dial tone.</p>
-<p>"Hello! Hello!" he shouted. He shook the receiver and then blew into it. Still, there was no dial tone.</p>
-<p>"The phone's broken," he explained to Hottabych. "Let's unscrew the receiver and see what's wrong."</p>
-<p>However, despite all his efforts, he could not unscrew it.</p>
-<p>"It's made of the finest black marble," Hottabych boasted.</p>
-<p>"Then there's nothing inside?" Volka asked disappointedly.</p>
-<p>"Why, is there supposed to be something inside this, too? Just like in a watch?"</p>
-<p>"Now I know why it doesn't work. You've only made a model of a telephone, without anything that's supposed to go inside it. But the insides are the most important part."</p>
-<p><em>"The Old Genie Hottabych", Lazar Lagin</em></p>
-</blockquote>
-<p>When I’m doing 3D modeling, I often feel like that genie. He also tried to mimic the shape of things and jazz them up, but always ended up failing ‘cause he hadn’t got a clue about what was inside.</p>
-<p>I’m just the same. For the past month, I’ve been putting the finishing touches on a model of a school music room, and guess what? I’ve learned more about how pianos work than I have in my whole life before. I could even give a quick lecture on heating systems in Russian schools — talking about sectional, panel, cast iron, and aluminum radiators, which types pop up most, the spacing between them, why you shouldn’t hook up three in a row, and so on.</p>
-<p>I read about this effect: like when you're drawing, say, samurai armor — you end up inadvertently learning heaps about the properties of leather, the different kinds of metal, and the whole tech stack of the samurai era. I never thought I'd run into that from day one — but hey, I think it's a good thing. It fires up your neural connections, broadens your view of the world, sparks your creativity, and all that jazz.</p>
-<p>Plus, it’s way more fun working on a model when you actually know what’s going on under the hood.</p></description>
         </item>
         
     </channel>
