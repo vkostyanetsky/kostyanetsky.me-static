@@ -1,9 +1,9 @@
 ﻿
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -29,239 +29,580 @@
     <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/page-2" />    
 
-    <!-- Tachyons -->
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
+<style>
+
+  /* PT Sans (regular) — modern set */
+  @font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+      local("PT Sans"),
+      local("PTSans-Regular"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+  }
+
+  :root {
+    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+      "Apple Color Emoji", "Segoe UI Emoji";
+
+    --text: rgb(0 0 0);                /* black */
+    --text-strong: rgb(0 0 0);         /* black */
+    --muted: rgb(71 85 105);           /* slate-600 */
+    --link: rgb(15 23 42);             /* slate-900 */
+    --link-underline: rgb(203 213 225);/* slate-300 */
+    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+
+    --border: rgb(226 232 240);        /* slate-200 */
+    --surface: rgb(255 255 255);       /* white */
+    --surface-soft: rgb(248 250 252);  /* slate-50 */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+
+    --space-1: 0.35rem;
+    --space-2: 0.75rem;
+    --space-3: 0.9rem;
+    --space-4: 1.2rem;
+    --space-5: 1.8rem;
+  }
+
+  body {
+    font-family: var(--site-font);
+    color: var(--text);
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(226 232 240);
+  }
+
+  .prose-like > * + * {
+    margin-top: var(--space-3);
+  }
+
+  .prose-like p {
+    color: var(--text);
+  }
+
+  .prose-like strong {
+    color: var(--text-strong);
+    font-weight: 600;
+  }
+
+  .prose-like h2 {
+    margin-top: var(--space-5);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+
+  .prose-like ul,
+  .prose-like ol {
+    padding-left: 1.2rem;
+    color: var(--text);
+  }
+
+  .prose-like ul {
+    list-style: disc;
+  }
+
+  .prose-like ol {
+    list-style: decimal;
+  }
+
+  .prose-like li {
+    margin-top: var(--space-1);
+  }
+
+  .prose-like a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .prose-like a:hover {
+    text-decoration-color: var(--link-underline-hover);
+  }
+
+  .prose-like a:focus-visible {
+    outline: 2px solid rgb(148 163 184); /* slate-400 */
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  .prose-like :not(pre) > code {
+    font-size: 0.95em;
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface-soft);
+  }
+
+  .prose-like pre {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-soft);
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    tab-size: 2;
+  }
+
+  .prose-like pre code {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgb(15 23 42);
+    white-space: pre;
+    word-break: normal;
+  }
+
+  .prose-like a[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  .figure {
+    margin-top: var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .figure figcaption {
+    padding: var(--space-2) 1rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: var(--surface-soft);
+  }
+
+  .prose-like blockquote {
+    margin-top: var(--space-4);
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--border);
+    background: var(--surface-soft);
+    border-radius: var(--radius-sm);
+    color: rgb(30 41 59);
+  }
+
+  .prose-like hr {
+    margin-top: var(--space-5);
+    border: 0;
+    border-top: 1px solid var(--border);
+  }
+</style>
 
     <!-- Blog -->
 
     <script>
-
-        let ctrlUpUrl       = 'https://kostyanetsky.me/notes';
-        let ctrlDownUrl     = 'https://kostyanetsky.me/notes/page-3';
-        let ctrlLeftUrl     = '';
-        let ctrlRightUrl    = '';
-
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/page-3';
+        let ctrlRightUrl    = 'https://kostyanetsky.me/notes';
     </script>
     
-    <link rel="stylesheet" href="https://kostyanetsky.me/assets/blog.css">
-    <script src="https://kostyanetsky.me/assets/blog.js"></script>
-                
-</head>
+    <script src="https://kostyanetsky.me/assets/blog.js"></script>    
 
-<body class="w-100 bg-white">
+  </head>
 
-<div id="app">        
-<main>
+  <body class="min-h-screen bg-white text-slate-900">
 
-<header class="db dt-l w-100-l border-box pa3 ph5-l">
-
-    <nav class="flex items-center lh-copy pa3 ph0-l">
-    
-        <a href="https://kostyanetsky.me"><img class="br-100" src="https://kostyanetsky.me/assets/images/me.jpg" title="Hi!" /></a>
-
-        <div class="pl4 flex-auto">
+<!-- Shared wrapper: top menu -->
+<header class="border-b border-slate-200">
+  <div class="mx-auto w-full max-w-4xl px-4 py-5">
+    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+      
+      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
         
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me">Vlad's Site</a>
-            
-
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me/projects/">Projects</a>
-                        
-
-            
-                <span class="black dib f4 mr3">Notes</span>
-            
-
-        </div>
         
-    </nav>
-    
-    <nav class="dtc-l v-mid tc tr-l">
-
         
-            <a href="https://kostyanetsky.ru/notes" class="link f5 f5-ns dim blue bb">RU</a>
+        
         
 
         
-
-            <div class="mt3">
-
-            
-                    <span class="f4 f4-ns">✎</span>
-            
-
-            </div>
-            
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
         
 
-    </nav>
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+        
 
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+        
+      </nav>
+
+      
+      <div class="ml-auto flex items-center gap-4">
+        
+          
+            <span
+              class="inline-block text-[1.35rem] leading-none text-slate-400"
+              title="Found a typo? Edit me!"
+              aria-disabled="true"
+            >✎</span>
+          
+        
+
+        
+          
+          <a
+            href="https://kostyanetsky.ru/notes/page-2"
+            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+            title="RU"
+          >
+            RU
+          </a>
+        
+      </div>
+    </div>
+  </div>
 </header>
 
-<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
-    
+    <!-- Shared wrapper: content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="2"
+      data-total-notes="20"
+      data-total-pages="5"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
 
-    <article>
+      
 
-        <h1 class="f-subheadline lh-solid">Notes</h1>
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
 
-        
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search by title / tags/ text…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
 
-            <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt3 mb3" href="https://kostyanetsky.me/notes">Later</a> Ctrl + &uarr;
-            </p>
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
 
-        
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/love/">ChatGPT Mimicry</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Colleagues are actively <a href="https://t.me/denissexy/8767" target="_blank">experimenting</a> with o1-preview from OpenAI: the model turned out to be genuinely interesting. Unfortunately, tasks for it don’t come up too often — regular 4o handles most day-to-day stuff just fine. Bug-finding in code, analyzing medical tests in an unfamiliar language, or trying to recall the name of a childhood book with only a vague recollection of the plot — I can’t easily think of anything it wouldn’t handle.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/love" class="block text-2xl font-semibold tracking-tight hover:underline">ChatGPT Mimicry</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 September 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Videogames</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Colleagues are actively <a href="https://t.me/denissexy/8767" target="_blank">experimenting</a> with o1-preview from OpenAI: the model turned out to be genuinely interesting. Unfortunately, tasks for it don’t come up too often — regular 4o handles most day-to-day stuff just fine. Bug-finding in code, analyzing medical tests in an unfamiliar language, or trying to recall the name of a childhood book with only a vague recollection of the plot — I can’t easily think of anything it wouldn’t handle.</p>
 <p>It’s always fascinating to see how the AI reasons, jokes, and generally tries to act human. I’d say it won’t pass the Turing test just yet, but every now and then, it comes eerily close.</p>
 <p><img alt="Carrot" src="https://kostyanetsky.me/notes/love/carrot.jpg"/> <img alt="Fists" src="https://kostyanetsky.me/notes/love/fists.jpg"/> <img alt="Jokes" src="https://kostyanetsky.me/notes/love/joke.jpg"/></p>
 <p>The answer below made me smile. Even leaving philosophy aside — looks like Skynet is off the table! :) Though, I’m afraid the future from the <a href="https://store.steampowered.com/app/282140/SOMA/" target="_blank">SOMA</a> ending is still possible.</p>
 <p><img alt="Love" src="https://kostyanetsky.me/notes/love/love.jpg"/></p>
-        <p class="f6 mt4">
-            29 September 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/ai/">AI</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/thumbs-up/">Cool Stuff!</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>A knock at the door. I open it, and there are two bright, twenty-something girls standing there. Flashing huge smiles at me, they start talking a mile a minute.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/thumbs-up" class="block text-2xl font-semibold tracking-tight hover:underline">Cool Stuff!</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>21 September 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Georgia</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A knock at the door. I open it, and there are two bright, twenty-something girls standing there. Flashing huge smiles at me, they start talking a mile a minute.</p>
 <p>The Georgian language is beautiful, but I haven’t gotten around to learning it yet. I sigh and suggest we switch to English or Russian.</p>
 <p>The girls frown a little. Then one of them digs into her bag, pulls out a flyer, points to it, gives me a thumbs up like, “cool stuff!” — and hands it to me. </p>
 <p>Then they laugh and run off.</p>
 <p>Take that, language barrier!</p>
-        <p class="f6 mt4">
-            21 September 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/georgia/">Georgia</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/pdf/">About PDF</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I get a complaint: a client can’t log into our customer portal. I check the database — the account is fine. So what’s the problem? I check the login and see a strange sight:</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/pdf" class="block text-2xl font-semibold tracking-tight hover:underline">About PDF</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 September 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I get a complaint: a client can’t log into our customer portal. I check the database — the account is fine. So what’s the problem? I check the login and see a strange sight:</p>
 <p><img alt="PDF" src="https://kostyanetsky.me/notes/pdf/pdf.png"/></p>
 <p>Above is what the user entered, and below is what’s in the database. My first thought: how on earth did a document end up in the string? :D</p>
 <p>I’ll skip the further investigation. The key here is asking the right questions (otherwise, both Google and AI will be thinking about the popular file format, not the symbol). So, PDF in the context of Unicode means Pop Directional Formatting! It’s a symbol that controls text direction; it’s needed, for example, to properly render Arabic (which can contain both left-to-right and right-to-left text). The user obviously enters the login in RTL mode (or copies it from somewhere), and the portal does not understand this nuance.</p>
 <p>In short, a piece of cake. However, I’d like to point out that the PDF file format existed long before the PDF symbol. I get that these are different technical fields, and the developers probably didn’t see the overlapping terminology as a significant issue. But deep down, I’m sure someone was smirking, anticipating today’s confusion.</p>
-        <p class="f6 mt4">
-            6 September 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/rapture/">Rapture</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I remember how amazed I was when I worked with window functions in PostgreSQL for the first time. You can adjust the calculation window for each row individually! And even segment it in advance. And all this is done natively, within a regular query, no extra add-ons needed. The standard aggregation with grouping and subqueries that I was used to in 1C suddenly turned into a pumpkin, just like Cinderella's carriage at midnight.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/rapture" class="block text-2xl font-semibold tracking-tight hover:underline">Rapture</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 August 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">3D</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I remember how amazed I was when I worked with window functions in PostgreSQL for the first time. You can adjust the calculation window for each row individually! And even segment it in advance. And all this is done natively, within a regular query, no extra add-ons needed. The standard aggregation with grouping and subqueries that I was used to in 1C suddenly turned into a pumpkin, just like Cinderella's carriage at midnight.</p>
 <p>Recently, I’ve been learning Blender, and I suddenly felt the same excitement for the same reason. The fact that you can freely move objects around the 3D Viewport with the Move command was clear from the start, fine. However, when it hit me that each object is a set of polygons, and that each polygon can also be moved freely, leading to a natural reshaping of the object's geometry — that’s when it really got me.</p>
 <p>Technology is amazing. Learning is awesome. Moments like these make me want to keep doing it over and over again :)</p>
-        <p class="f6 mt4">
-            31 August 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/3d/">3D</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/nowhere-to-run/">Nowhere To Run</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Yesterday, I decided to take a break from work and go for a good run. I headed to the local park and did a few laps. Sitting there catching my breath, I grabbed my phone to switch the track, and there it was — a congratulations from my fitness tracker.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/nowhere-to-run" class="block text-2xl font-semibold tracking-tight hover:underline">Nowhere To Run</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 August 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Sport</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Yesterday, I decided to take a break from work and go for a good run. I headed to the local park and did a few laps. Sitting there catching my breath, I grabbed my phone to switch the track, and there it was — a congratulations from my fitness tracker.</p>
 <p><img alt="Oh hi" src="https://kostyanetsky.me/notes/nowhere-to-run/hi.jpg"/></p>
 <p>So much for taking a break. The platform is watching you, %username%!</p>
 <p>P.S. But hey, now I’ve got a custom badge with the platform's logo. Gotta wear it with pride!</p>
-        <p class="f6 mt4">
-            31 August 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/sport/">sport</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/system-analysis-course/">System Analysis</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Amidst all these pet projects and the August whirlwind, I forgot to mention that I completed a <a href="https://tough-dev.school/system-analysis" target="_blank">course</a> on system analysis, which I recently <a href="https://kostyanetsky.me/notes/ibrahim" target="_blank">wrote about</a>.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/system-analysis-course" class="block text-2xl font-semibold tracking-tight hover:underline">System Analysis</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>25 August 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Amidst all these pet projects and the August whirlwind, I forgot to mention that I completed a <a href="https://tough-dev.school/system-analysis" target="_blank">course</a> on system analysis, which I recently <a href="https://kostyanetsky.me/notes/ibrahim" target="_blank">wrote about</a>.</p>
 <p><img alt="Certificate" src="https://kostyanetsky.me/notes/system-analysis-course/certificate.png"/></p>
 <p>The course was structured so that throughout the sessions, we worked on the same system, identifying problems and gradually solving them. Before the first lesson, we were asked to design the initial version of the system so that we could compare it with the final version at the end of the course and assess our progress. Well, I’m happy with the comparison — I mean, it’s really hard to look at that first version without laughing (or crying) :)</p>
 <p>There wasn’t much time for reflection during the course, so I plan to continue working on the materials and turning the lessons into personal notes. It’s not that simple, given that our company deals heavily with solutions based on 1C:Enterprise, and much of my work involves various integrations of 1C instances with solutions outside the 1C stack.</p>
@@ -276,30 +617,44 @@
 <li>The concept of separating functionality to reduce dependencies unexpectedly resonated with me. It used to seem simpler to combine similar functionalities to reduce code volume, but now it seems this approach increases complexity and internal cohesion, potentially causing more harm than good.</li>
 </ol>
 <p>Overall, I’m very satisfied with the course. It seems like the best investment of effort over the past year. If you’re thinking of taking it but are unsure — go for it :)</p>
-        <p class="f6 mt4">
-            25 August 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/first-pancake/">My First Approach to Gen Models</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I needed to quickly generate some images for a pet project. I grabbed the first tool at hand — <a href="https://huggingface.co/hakurei/waifu-diffusion" target="_blank">WaifuDiffusion</a> (a clone of <a href="https://huggingface.co/stabilityai/stable-diffusion-3-medium" target="_blank">StableDiffusion</a>, but trained specifically on anime and manga).</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/first-pancake" class="block text-2xl font-semibold tracking-tight hover:underline">My First Approach to Gen Models</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>25 August 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I needed to quickly generate some images for a pet project. I grabbed the first tool at hand — <a href="https://huggingface.co/hakurei/waifu-diffusion" target="_blank">WaifuDiffusion</a> (a clone of <a href="https://huggingface.co/stabilityai/stable-diffusion-3-medium" target="_blank">StableDiffusion</a>, but trained specifically on anime and manga).</p>
 <p>Prompt: </p>
 <blockquote>
 <p>A dimly lit, empty classroom with faintly visible music notes on the chalkboard. A young woman with long blue hair and blue eyes, is standing behind the teacher's desk, packing her things into a small handbag. She looks tired and worried.</p>
@@ -308,26 +663,48 @@
 <p><img alt="Young woman" src="https://kostyanetsky.me/notes/first-pancake/young-woman.jpg"/></p>
 <p>It seems like a great opportunity to talk about how far neural networks have come! The model instantly got the idea and decided to introduce into the scene... Hmm... A wise bearded man? Or perhaps it was suggesting that I should learn to appreciate unexpected surprises more?</p>
 <p>I think WaifuDiffusion just wanted to brighten my mood. They say laughter extends life. In any case, I consider the first generation a success! But it definitely needs some calibration :)</p>
-        <p class="f6 mt4">
-            25 August 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/ai/">AI</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-day-switcher/">Day Switcher for Obsidian</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>When you're actively working in daily notes in Obsidian, you often want to quickly peek into the note from yesterday or, conversely, for tomorrow. For example, when sorting today's tasks and wanting to postpone some of them for tomorrow.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/obsidian-day-switcher" class="block text-2xl font-semibold tracking-tight hover:underline">Day Switcher for Obsidian</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 August 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">JavaScript</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>When you're actively working in daily notes in Obsidian, you often want to quickly peek into the note from yesterday or, conversely, for tomorrow. For example, when sorting today's tasks and wanting to postpone some of them for tomorrow.</p>
 <p>I'm too lazy to type the exact date every time, so I wrote a <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" target="_blank">script</a> for this. It takes the note's date from its title (expects it to be in <abbr title="2024-08-17, for example.">ISO 8601</abbr> format) and generates a tooltip with links to yesterday's and tomorrow's notes. The day of the week is displayed in the header for additional convenience:</p>
 <p><img alt="Example" src="https://kostyanetsky.me/notes/obsidian-day-switcher/callout.jpg"/></p>
 <p>The script is written for the <a href="https://github.com/blacksmithgu/obsidian-dataview" target="_blank">Dataview</a> plugin since I'm already using it for other tasks. In general, it can easily be adapted for <a href="https://github.com/SilentVoid13/Templater" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" target="_blank">CustomJS</a>, or even turned into a standalone plugin (again, I'm too lazy to bother with that).</p>
@@ -336,81 +713,135 @@
 <li>In the noteLink() function, specify the path to your daily notes folder (currently, the path contains a 'Days' folder for example; I mean the path is indicated in the Daily notes/Template file location setting);</li>
 <li>Include the script in your daily note template (Daily notes/Template file location setting).</li>
 </ol>
-        <p class="f6 mt4">
-            17 August 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/javascript/">JavaScript</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/clementine/">Clementine Will Remember That</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>When ChatGPT remembers a detail from a conversation for the future, it displays a "Memory updated" badge above its response. Like, got it:</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/clementine" class="block text-2xl font-semibold tracking-tight hover:underline">Clementine Will Remember That</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 August 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Videogames</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>When ChatGPT remembers a detail from a conversation for the future, it displays a "Memory updated" badge above its response. Like, got it:</p>
 <p><img alt="Memory updated" src="https://kostyanetsky.me/notes/clementine/memory-updated.jpg"/></p>
 <p>Every time I see it, it makes me smile because it instantly reminds me of <a href="https://store.steampowered.com/app/207610/The_Walking_Dead/" target="_blank">The Walking Dead</a> and the meme “Clementine will remember that”. In that game, the characters surrounding the protagonist would remember his decisions, and it would influence their behavior. This included Clementine — a girl the main character saved at the beginning of the game.</p>
 <p><img alt="Clementine will remember that" src="https://kostyanetsky.me/notes/clementine/remember.jpeg"/></p>
 <p>In the game, this mechanic was honestly implemented in a rather mediocre way, but when it comes to ChatGPT — it works. The attention to detail is so strong that sometimes I have to remind myself that I’m talking to a language model, not an extraordinarily attentive and very knowledgeable person.</p>
-        <p class="f6 mt4">
-            9 August 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/ai/">AI</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/make-my-window-a-door/">Make Window a Door</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I was listening to <a href="https://open.spotify.com/track/33MnSYLvtOrbj5zwfioEiH?si=19fec91123394826" target="_blank">Be Somebody</a> by Thousand Foot Krutch yesterday and suddenly caught the phrase “you made my window a door”. I used to think that this idiom is rather funny: like, damn, the idea to replace a window with a door somehow sounds unsafe. You can fall from the tenth floor, you know?</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/make-my-window-a-door" class="block text-2xl font-semibold tracking-tight hover:underline">Make Window a Door</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>4 August 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I was listening to <a href="https://open.spotify.com/track/33MnSYLvtOrbj5zwfioEiH?si=19fec91123394826" target="_blank">Be Somebody</a> by Thousand Foot Krutch yesterday and suddenly caught the phrase “you made my window a door”. I used to think that this idiom is rather funny: like, damn, the idea to replace a window with a door somehow sounds unsafe. You can fall from the tenth floor, you know?</p>
 <p>At the same time, the song is wonderful and not about that at all! I got curious and started digging around to find out what meaning native speakers put into it.</p>
 <p>It turned out that it is actually about two different positions: a passive observer and an active participant. That is, if there is a window in front of you, you only look through it at something or someone. But you can open the door and finally do something. Hence, “when I could only see the floor you made my window a door” means something like “when my hands dropped, you helped me up”.</p>
 <p>By the way, there is another similar idiom — “to be a better window than a door”. The abstraction here is the same: if a person is like a window, and not a door — they hardly ever let people close to them, making passive observers even out of people very close to them.</p>
-        <p class="f6 mt4">
-            4 August 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/yaga/">Yaga</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I accidentally remembered that six months ago, one of my colleagues threw a link to <a href="https://yaga.rt.ru" target="_blank">Yaga</a> into the work chat. It is a future (I guess) competitor of JIRA in Russia. Judging by the URL, the guys from Rostelecom are developing it. Here my curiosity was awakened — how is it there, did it take off?</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/yaga" class="block text-2xl font-semibold tracking-tight hover:underline">Yaga</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 Jule 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I accidentally remembered that six months ago, one of my colleagues threw a link to <a href="https://yaga.rt.ru" target="_blank">Yaga</a> into the work chat. It is a future (I guess) competitor of JIRA in Russia. Judging by the URL, the guys from Rostelecom are developing it. Here my curiosity was awakened — how is it there, did it take off?</p>
 <p>Alas, but looks like nope. At least, the landing page has the “leave a request and wait for a response beep” vibe. Only a simplified version is available for smaller teams that I can't touch as well: being not in Russia and clicking on the “Start using” button leads me to a ban. Welp, next time, maybe.</p>
 <p>The naming is clickbait, of course. But I’m not sure if it’s really a good choice. For example, “1C” may provoke forced jokes (One s! Odin's ass! Haha), but if you google this, you are more likely to find information about the platform or at least the vendor. Not a bunch of articles, fan fiction, fan art, or video games, as in the case of Yaga.</p>
 <p>Moreover, some wrong associations come to mind. What does Baba Yaga reminds you of? A hut on chicken legs? It looks like an initially <a href="https://kostyanetsky.me/notes/evolution" target="_blank">poorly designed</a> application that was somehow remade right on production. A mortar? A crutch? Damn, if you look at it from the point of view of programmers — these are not red flags, but real scarlet banners fluttering in the wind :)</p>
@@ -419,30 +850,44 @@
 <p>Now Baba with Yaga are no longer redneck, but a patriotic programmer!</p>
 <p>― colleague</p>
 </blockquote>
-        <p class="f6 mt4">
-            29 Jule 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/ibrahim/">Ibrahim</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Recently, I took a <a href="https://tough-dev.school/system-analysis" target="_blank">system analysis course</a>, which was taught by the guys from the “School of Strong Programmers”. I have two goals:</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/ibrahim" class="block text-2xl font-semibold tracking-tight hover:underline">Ibrahim</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>7 Jule 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Recently, I took a <a href="https://tough-dev.school/system-analysis" target="_blank">system analysis course</a>, which was taught by the guys from the “School of Strong Programmers”. I have two goals:</p>
 <ol>
 <li>First, I need to calibrate. I handle a dozen tech stacks that have different tool sets and concepts of beauty. This, of course, is a great development, but it distorts the perspective: I am drawn to solve the next problem, starting with minor technical things, simply because I am good at it. Meanwhile, if you look at the problem a little from above, think about it, and draw some diagrams, you will get a better or at least more meaningful solution. So I want to convince myself to do this more often.</li>
 <li>Secondly, I need to learn how to write clear documentation for developers. In practice, I rarely get around to it, and when I do, I don’t have time to keep it up-to-date. In short, time is short, and I would at least like to do the paperwork somehow so that the reader grasps the idea more quickly.</li>
@@ -451,50 +896,94 @@
 <p>In addition, students are regularly assigned homework for another project with similar issues. It needs to be analyzed and designed again and again, taking into account the new knowledge and limitations gained over the past week.</p>
 <p>So far, it's going great. The main concern is a lack of time. I read relatively slowly and try to take notes on the most captivating or simply difficult passages. Meanwhile, there is a lot of material in the course, and all of it is interesting, even if you count only the main part of the content.</p>
 <p>In addition, if you go to the additional links, you can even take away the saints. It takes six months, no less. I tried to read them at least diagonally, but it turned out to be a damn bad idea. I ended up seeing the main character of the course in a street advertisement :)</p>
-        <p class="f6 mt4">
-            7 Jule 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/singapore-doll/">Singapore Doll</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Is it possible to love your country's currency more than the people of Saudi Arabia? It is a rhetorical question: the answer is no.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/singapore-doll" class="block text-2xl font-semibold tracking-tight hover:underline">Singapore Doll</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 June 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Is it possible to love your country's currency more than the people of Saudi Arabia? It is a rhetorical question: the answer is no.</p>
 <p>I'm currently looking at the <a href="https://www.sama.gov.sa/en-US/FinExc/Pages/Currency.aspx" target="_blank">website</a> of their central bank. The country's currency is the Saudi riyal, and the Central Bank sets rates for other currencies in relation to it. Consequently, there is no point in asking the bank for the rate of the riyal itself. However, the website calmly suggests choosing it twice:</p>
 <p><img alt="The selection form" src="https://kostyanetsky.me/notes/singapore-doll/cb.png"/></p>
 <p>For your information, the first option breaks the website, and the second one pedantically displays “1” for any date.</p>
 <p>Another funny thing: colleagues seem to store currency names as 14-character strings. Otherwise, it is difficult to explain why, according to their data, Canada uses not the Canadian dollar but CANADIAN DOLLA, and Romania uses mysterious NEW ROMANIAN L instead of its leu. However, these two are rather lucky: Singapore, for example, conducts payments in SINGAPORE DOLL.</p>
-        <p class="f6 mt4">
-            22 June 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/data-history-duplication/">Non-Unique Metadata</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Once again, I came across a nasty bug when the platform broke the data history metadata table.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/data-history-duplication" class="block text-2xl font-semibold tracking-tight hover:underline">Non-Unique Metadata</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 June 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">MS SQL</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Once again, I came across a nasty bug when the platform broke the data history metadata table.</p>
 <p>Outwardly, it looks like this: you update the database configuration, and when you try to restructure, the error “The data history metadata table contains duplicate records. Delete the duplicate records” pops up. The platform does not offer any clear way to find such records.</p>
 <p><img alt="The data history metadata table contains duplicate records. Delete the duplicate records" src="https://kostyanetsky.me/notes/data-history-duplication/error.png"/></p>
 <p>The problem can be solved at the database level. The table referenced by the error is _DataHistoryMetadata. It contains metadata versions of each object for which data history is being maintained. This allows the platform to understand what attributes the object had at any point in time if the data history is maintained for the object.</p>
@@ -510,125 +999,193 @@
 <p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" target="_blank">here they are</a> for this DBMS.</p>
 <p>The queries will require a slight adaptation to a specific database: they use the _fld626 field, which is the data separator. In your _DataHistoryMetadata table, this field may be called differently, so you need to update its name to the current one. It will be difficult to make a mistake — the table has only one field with the _fld prefix.</p>
 <p>P.S. Please bear in mind that the license agreement prohibits access to the database, bypassing the platform’s tools, so you can only go for such experiments if there are no other options left.</p>
-        <p class="f6 mt4">
-            8 June 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/mssql/">MS SQL</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/uuid-main-issue/">The Main Issue of UUID</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/uuid-main-issue" class="block text-2xl font-semibold tracking-tight hover:underline">The Main Issue of UUID</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>2 June 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
 <p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
 <p>P.S. The remark about the probability of creating two identical UUIDs in one database made me laugh:</p>
 <blockquote>
 <p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
 </blockquote>
-        <p class="f6 mt4">
-            2 June 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/last-resort/">Screenshot With Sound</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Recently, we came up with the idea of dividing the internal ERP into several independent parts and organizing data exchange between them. We discussed the outlines of the task, the exchange model, transport, and roughly agreed on deadlines — in general, we did what we usually do.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/last-resort" class="block text-2xl font-semibold tracking-tight hover:underline">Screenshot With Sound</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>20 May 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Recently, we came up with the idea of dividing the internal ERP into several independent parts and organizing data exchange between them. We discussed the outlines of the task, the exchange model, transport, and roughly agreed on deadlines — in general, we did what we usually do.</p>
 <p>I created a task for the stuff. We give them names in English, so I wrote in the first wording that came to mind.</p>
 <p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.me/notes/last-resort/last-resort.png"/></p>
 <p>The title came out with sound. Okay, this one is funny, but what should I call it then? Well, let it be Distributed Internal ERP. Abbreviated... DIE?</p>
 <p>I let the first one be. Long live Papa Roach :)</p>
-        <p class="f6 mt4">
-            20 May 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-timesheet/">Timesheet for Obsidian</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I made another <a href="https://obsidian.md" target="_blank">Obsidian</a> plugin, this time for <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">daily notes</a>. Draws a nice report: what tasks I worked on, what I did, and how much time I spent. I tried to describe how it works in the <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">repository</a>; will be glad if it is useful to someone else!</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/obsidian-timesheet" class="block text-2xl font-semibold tracking-tight hover:underline">Timesheet for Obsidian</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 May 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">TypeScript</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I made another <a href="https://obsidian.md" target="_blank">Obsidian</a> plugin, this time for <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">daily notes</a>. Draws a nice report: what tasks I worked on, what I did, and how much time I spent. I tried to describe how it works in the <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">repository</a>; will be glad if it is useful to someone else!</p>
 <p>Funny thing: for the examples in the README, I used issue numbers FBI-1, FBI-2, and so on. This isn't a reference to the X-Files or Twin Peaks — it's just the first thing that came to mind. The fact is that our internal project for the development of FirstBit ERP is called First Bit Internal, abbreviated as FBI. The main pool of tasks we work on lives in it.</p>
 <p>We’re already used to it, but our colleagues outside the company always find our screenshots from JIRA or SonarQube amusing. Did you imagine that you were Agent Cooper? Well, I almost don’t even need to :)</p>
-        <p class="f6 mt4">
-            12 May 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/typescript/">TypeScript</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/payment-terms/">One Query More, One Query Less</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>One query more, one query less — it doesn’t matter, people often say. Like, the main thing is that the query must be cheap: it doesn’t read too much, uses index, and so on.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/payment-terms" class="block text-2xl font-semibold tracking-tight hover:underline">One Query More, One Query Less</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 May 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Optimization</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>One query more, one query less — it doesn’t matter, people often say. Like, the main thing is that the query must be cheap: it doesn’t read too much, uses index, and so on.</p>
 <p>This point of view makes sense, but mindlessly machine-gunning queries is a dangerous idea. Even if everything looks good at the moment, the system may change slightly in the future. And then a seemingly harmless patch will burn your production server to the ground right on Friday.</p>
 <p>Let me tell you about one example from recent practice. There is an ERP that contains a table with payment stages for customer orders. One of these stages is prepayment; until it is received, you cannot create an order for the supplier.</p>
 <p>Technically, the purchase order simply stores the customer's order ID; if the field is filled (that is, if the purchase order is created by the customer's order), ERP needs to read the payment stages of the customer's order and understand whether the purchase can be made.</p>
@@ -640,30 +1197,52 @@
 <p>The deal turned out to be big. The table of payment stages contained data not only for customer orders, but also for other types of documents. Their customer order ID field was empty. As a result, ERP, when trying to find payment stages using an empty customer order ID, unexpectedly found them.</p>
 <p>The query read about a gigabyte of data and wrote it to a temporary table. A gigabyte was read, then a gigabyte was written... History hit the disk, the DBMS buffer cache, and other components of the system (even the network, which had to drive this gigabyte back and forth without any benefit).</p>
 <p>Do you know what I think? If the result of a query is known, there is probably no need to do it after all.</p>
-        <p class="f6 mt4">
-            5 May 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-foodiary/">Foodiary for Obsidian</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Following my <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">first</a> plugin for Obsidian, I released <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" target="_blank">the second one</a> a couple of weeks ago. Counts calories, proteins, fats, and carbohydrates in food. It helps not to overeat out of nowhere — it’s rather difficult to judge by eye how much you’ve eaten today and whether you can afford that donut.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/obsidian-foodiary" class="block text-2xl font-semibold tracking-tight hover:underline">Foodiary for Obsidian</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 April 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">TypeScript</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Following my <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">first</a> plugin for Obsidian, I released <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" target="_blank">the second one</a> a couple of weeks ago. Counts calories, proteins, fats, and carbohydrates in food. It helps not to overeat out of nowhere — it’s rather difficult to judge by eye how much you’ve eaten today and whether you can afford that donut.</p>
 <p>In short, a useful thing if you:</p>
 <ol>
 <li>Fatty (like me)</li>
@@ -673,82 +1252,243 @@
 <p>In fact, there is a lot of software for this task. I tried some of them but was dissatisfied: it either has terrible design, is bugged, or is constantly trying to sell me a monthly subscription. In short, it's more annoying than helpful. I wanted something native, built into the usual routine; so, if routine settles in Obsidian, then the solution seems to suggest itself.</p>
 <p>You can install the plugin directly from the program — the developers have already approved it. Otherwise, everything is simple: you write in a daily note what you ate and how much it weighed, and you receive a simple table sorted by calories with numbers by proteins, fats, and carbohydrates.</p>
 <p>There are examples in the repository at the link above.</p>
-        <p class="f6 mt4">
-            14 April 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/typescript/">TypeScript</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/callouts-for-fastimer/">Fastimer's Look</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I just implemented <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">Fastimer</a>'s rendering through callouts: this is an Obsidian mechanic that allows you to turn an ordinary quote into a designed block of text that attracts the reader's attention. You've probably seen blocks like “advice” and “pay attention” — these are callouts.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/callouts-for-fastimer" class="block text-2xl font-semibold tracking-tight hover:underline">Fastimer's Look</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 Marth 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">TypeScript</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I just implemented <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">Fastimer</a>'s rendering through callouts: this is an Obsidian mechanic that allows you to turn an ordinary quote into a designed block of text that attracts the reader's attention. You've probably seen blocks like “advice” and “pay attention” — these are callouts.</p>
 <p>You can read more in <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a>. </p>
 <p>As a result, the timer now takes on a different color depending on the state: blue for an active fast, green for completed, and red for a failed one.</p>
 <p>In addition, I made the text more compact and worked on styling:</p>
 <p><img alt="Example" src="https://kostyanetsky.me/notes/callouts-for-fastimer/example.png"/></p>
 <p>It turned out to be way nicer than the block of preformatted text as it was before.</p>
-        <p class="f6 mt4">
-            9 Marth 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/typescript/">TypeScript</a>
-                </span>
-            
-        </p>
-    </div>
-
+            </div>
+          </div>
+          
+        </article>
 
 
         
+      </section>
 
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Found a typo? Edit me!
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
         
-
-            <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt5 mb3" href="https://kostyanetsky.me/notes/page-3">Earlier</a> Ctrl + &darr;
-            </p>
-
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/page-3"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Earlier
+        </a>
         
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Later →
+        </a>
+        
+      </nav>
 
-    </article>
 
 
-</section>
+    </main>
 
-</main>
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search: fetch notes.json, hide static, render results.
+  // - On clear search: show static again.
+  // ------------------------------------------------------------
 
-<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
-    
-    <p class="f6 lh-solid">Email: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.me</a></p>
-    <p class="f6 lh-solid">Telegram: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    <p class="f6 lh-solid">GitHub: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    
-    <a class="rss" href="https://kostyanetsky.me/rss.xml">RSS</a> 
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
 
-</footer>
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
 
-</div>
-</body>
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Page ${page} of ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function filterNotes(notes, q) {
+    const needle = (q ?? "").trim().toLowerCase();
+    if (!needle) return notes;
+
+    return notes.filter((n) => {
+      const hay = String(n?.text ?? "");
+      return hay.includes(needle);
+    });
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+
+    if (!q) {
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
+    const filtered = filterNotes(notes, q);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = "Search";
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  showStaticMode();
+
+  // Search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+    <!-- Shared wrapper: footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>

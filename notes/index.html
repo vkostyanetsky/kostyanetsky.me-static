@@ -1,9 +1,9 @@
 ﻿
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -31,94 +31,355 @@
     <meta property="og:type" content="article"/>
     <meta property="og:url" content= "https://kostyanetsky.me/notes" />    
 
-    <!-- Tachyons -->
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
+<style>
+
+  /* PT Sans (regular) — modern set */
+  @font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+      local("PT Sans"),
+      local("PTSans-Regular"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+  }
+
+  :root {
+    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+      "Apple Color Emoji", "Segoe UI Emoji";
+
+    --text: rgb(0 0 0);                /* black */
+    --text-strong: rgb(0 0 0);         /* black */
+    --muted: rgb(71 85 105);           /* slate-600 */
+    --link: rgb(15 23 42);             /* slate-900 */
+    --link-underline: rgb(203 213 225);/* slate-300 */
+    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+
+    --border: rgb(226 232 240);        /* slate-200 */
+    --surface: rgb(255 255 255);       /* white */
+    --surface-soft: rgb(248 250 252);  /* slate-50 */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+
+    --space-1: 0.35rem;
+    --space-2: 0.75rem;
+    --space-3: 0.9rem;
+    --space-4: 1.2rem;
+    --space-5: 1.8rem;
+  }
+
+  body {
+    font-family: var(--site-font);
+    color: var(--text);
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(226 232 240);
+  }
+
+  .prose-like > * + * {
+    margin-top: var(--space-3);
+  }
+
+  .prose-like p {
+    color: var(--text);
+  }
+
+  .prose-like strong {
+    color: var(--text-strong);
+    font-weight: 600;
+  }
+
+  .prose-like h2 {
+    margin-top: var(--space-5);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+
+  .prose-like ul,
+  .prose-like ol {
+    padding-left: 1.2rem;
+    color: var(--text);
+  }
+
+  .prose-like ul {
+    list-style: disc;
+  }
+
+  .prose-like ol {
+    list-style: decimal;
+  }
+
+  .prose-like li {
+    margin-top: var(--space-1);
+  }
+
+  .prose-like a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .prose-like a:hover {
+    text-decoration-color: var(--link-underline-hover);
+  }
+
+  .prose-like a:focus-visible {
+    outline: 2px solid rgb(148 163 184); /* slate-400 */
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  .prose-like :not(pre) > code {
+    font-size: 0.95em;
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface-soft);
+  }
+
+  .prose-like pre {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-soft);
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    tab-size: 2;
+  }
+
+  .prose-like pre code {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgb(15 23 42);
+    white-space: pre;
+    word-break: normal;
+  }
+
+  .prose-like a[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  .figure {
+    margin-top: var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .figure figcaption {
+    padding: var(--space-2) 1rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: var(--surface-soft);
+  }
+
+  .prose-like blockquote {
+    margin-top: var(--space-4);
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--border);
+    background: var(--surface-soft);
+    border-radius: var(--radius-sm);
+    color: rgb(30 41 59);
+  }
+
+  .prose-like hr {
+    margin-top: var(--space-5);
+    border: 0;
+    border-top: 1px solid var(--border);
+  }
+</style>
 
     <!-- Blog -->
 
     <script>
-
-        let ctrlUpUrl       = '';
-        let ctrlDownUrl     = 'https://kostyanetsky.me/notes/page-2';
-        let ctrlLeftUrl     = '';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/page-2';
         let ctrlRightUrl    = '';
-
     </script>
     
-    <link rel="stylesheet" href="https://kostyanetsky.me/assets/blog.css">
-    <script src="https://kostyanetsky.me/assets/blog.js"></script>
-                
-</head>
+    <script src="https://kostyanetsky.me/assets/blog.js"></script>    
 
-<body class="w-100 bg-white">
+  </head>
 
-<div id="app">        
-<main>
+  <body class="min-h-screen bg-white text-slate-900">
 
-<header class="db dt-l w-100-l border-box pa3 ph5-l">
-
-    <nav class="flex items-center lh-copy pa3 ph0-l">
-    
-        <a href="https://kostyanetsky.me"><img class="br-100" src="https://kostyanetsky.me/assets/images/me.jpg" title="Hi!" /></a>
-
-        <div class="pl4 flex-auto">
+<!-- Shared wrapper: top menu -->
+<header class="border-b border-slate-200">
+  <div class="mx-auto w-full max-w-4xl px-4 py-5">
+    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+      
+      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
         
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me">Vlad's Site</a>
-            
-
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me/projects/">Projects</a>
-                        
-
-            
-                <span class="black dib f4 mr3">Notes</span>
-            
-
-        </div>
         
-    </nav>
-    
-    <nav class="dtc-l v-mid tc tr-l">
-
         
-            <a href="https://kostyanetsky.ru/notes" class="link f5 f5-ns dim blue bb">RU</a>
+        
         
 
         
-
-            <div class="mt3">
-
-            
-                    <span class="f4 f4-ns">✎</span>
-            
-
-            </div>
-            
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
         
 
-    </nav>
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+        
 
+        
+        
+          <span class="inline-block text-[1.25rem] leading-tight mr-4 text-black font-medium">Notes</span>
+        
+      </nav>
+
+      
+      <div class="ml-auto flex items-center gap-4">
+        
+          
+            <span
+              class="inline-block text-[1.35rem] leading-none text-slate-400"
+              title="Found a typo? Edit me!"
+              aria-disabled="true"
+            >✎</span>
+          
+        
+
+        
+          
+          <a
+            href="https://kostyanetsky.ru/notes"
+            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+            title="RU"
+          >
+            RU
+          </a>
+        
+      </div>
+    </div>
+  </div>
 </header>
 
-<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
-    
+    <!-- Shared wrapper: content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="20"
+      data-total-pages="5"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
 
-    <article>
+      
 
-        <h1 class="f-subheadline lh-solid">Notes</h1>
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
 
-        
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search by title / tags/ text…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
 
-        
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/backup-ui/">Backup Management</a></h2>
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+                
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/backup-ui" class="block text-2xl font-semibold tracking-tight hover:underline">Backup Management</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 December 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
 <p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
 <p>You can pick one of three backup types:</p>
 <ul>
@@ -128,35 +389,54 @@
 </ul>
 <p>Also, the new solution detects when someone tries to request a backup for an app that's already being generated right now. And it rate-limits things too: you can't back up the same app more than once per hour.</p>
 <p>And yes — we're still sneaking jokes into the UI. Obviously.</p>
-<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/> <img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p>
-        <p class="f6 mt4">
-            6 December 2025
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-        </p>
-    </div>
+<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/></p>
+<p><img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/desire-paths/">Desire Paths</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Alright, Jean Fresco's riddle. You've got a table — say, ~50k rows. How do you end up reading half a billion?</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/desire-paths" class="block text-2xl font-semibold tracking-tight hover:underline">Desire Paths</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 November 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Optimization</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Alright, Jean Fresco's riddle. You've got a table — say, ~50k rows. How do you end up reading half a billion?</p>
 <p>Easy-peasy: Nested Loops + Clustered Index Seek:</p>
 <p><img alt="Half a billion" src="https://kostyanetsky.me/notes/desire-paths/500_million.png"/></p>
 <p>Clustered Index Seek is a bit of a marketing name here, of course. In reality, on every execution the operator walks the entire table (the whole clustered index) and checks every row against the predicates. And it does that 10 730 times for 51 391 rows. Result: 551 425 430 rows read, 13 343 returned.</p>
@@ -172,85 +452,139 @@ For Each Table1Row In Table1 Do
 <p>Some of those registers were huge on their own, and the virtual tables poured gasoline on the fire (each one turns into 2+ nested queries). The DB honestly tried to come up with an efficient strategy, but at some point it basically decided: "a garbage plan is still better than no plan at all".</p>
 <p>And the user? They tried to search a document by number — and the client app just straight-up froze.</p>
 <p>So, about virtual tables in dynamic lists. There's a nice English phrase: "desire path" — the trail people naturally carve because it's the easiest way. Slapping a virtual table onto the main one really is often the simplest, fastest, most familiar way to solve the task. But it's <strong>not efficient</strong>.</p>
-<p>There's an alternative, for example the OnGetDataAtServer() handler. It takes longer to implement, but it lets you properly tune the virtual table and avoid the scenario above. Scrolling the list will produce more queries, sure — but they'll be smaller, faster, and way more efficient than one single giant monster query.</p>
-        <p class="f6 mt4">
-            29 November 2025
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/optimization/">optimization</a>
-                </span>
-            
-        </p>
-    </div>
+<p>There's an alternative, for example the <code>OnGetDataAtServer()</code> handler. It takes longer to implement, but it lets you properly tune the virtual table and avoid the scenario above. Scrolling the list will produce more queries, sure — but they'll be smaller, faster, and way more efficient than one single giant monster query.</p>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/obsidian-foodiary-bases/">Food Diary In Obsidian Bases</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I've rebuilt last year’s <a href="https://kostyanetsky.me/notes/obsidian-foodiary" target="_blank">plugin</a> with <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> — it now tracks calories, protein, fat, and carbs in your food.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/obsidian-foodiary-bases" class="block text-2xl font-semibold tracking-tight hover:underline">Food Diary In Obsidian Bases</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>23 November 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I've rebuilt last year’s <a href="https://kostyanetsky.me/notes/obsidian-foodiary" target="_blank">plugin</a> with <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> — it now tracks calories, protein, fat, and carbs in your food.</p>
 <p>The result is way more flexible and customizable than the plugin version: if you suddenly decide you want to count fiber as well or just shuffle some columns in the report, you don't have to rewrite, rebuild, or release anything. You just tweak it to your heart's content.</p>
 <p>And it doesn't look half bad either:</p>
 <p><img alt="UI" src="https://kostyanetsky.me/notes/obsidian-foodiary-bases/base.png"/></p>
 <p>All the necessary settings and scripts live in the <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">GitHub repo</a>.</p>
-        <p class="f6 mt4">
-            23 November 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/obsidian/">Obsidian</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/well-there-are-some/">Well, There Are Some</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I'm out for a walk in the evening, and behind me there's some mom and her little kid — about five years old, I guess. I don't see them, I just hear them talking. The mom is explaining university to the kid: that you have to get in, study, there will be exams and all that.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/well-there-are-some" class="block text-2xl font-semibold tracking-tight hover:underline">Well, There Are Some</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 November 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I'm out for a walk in the evening, and behind me there's some mom and her little kid — about five years old, I guess. I don't see them, I just hear them talking. The mom is explaining university to the kid: that you have to get in, study, there will be exams and all that.</p>
 <p>The boy is quiet for a bit, then says sadly:</p>
 <p>— I thought there was only school, but it turns out there are more difficulties too...</p>
-        <p class="f6 mt4">
-            17 November 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/harmless-harm/">Harmless Harm</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>The other day my colleague and I were debugging an issue, nothing fancy, just another "why is this query behaving weird?" moment.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/harmless-harm" class="block text-2xl font-semibold tracking-tight hover:underline">Harmless Harm</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 November 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">MS SQL</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>The other day my colleague and I were debugging an issue, nothing fancy, just another "why is this query behaving weird?" moment.</p>
 <p>Simplified, the idea was: we read a table from the database and dump the result into a temp table. If a certain condition is met, we still want the temp table to be created, but it must be empty (regardless of whether the source table has rows or not).</p>
 <p>The query looked roughly like this:</p>
 <pre>
@@ -279,34 +613,48 @@ SELECT TOP 0
     UNDEFINED AS Field1
 </pre>
 <p>The performance gain, however, is so tiny that it's probably not worth over-optimizing for this. There are better hills to die on.</p>
-        <p class="f6 mt4">
-            16 November 2025
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/pgsql/">PostgreSQL</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/mssql/">MS SQL</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/voodoo/">Voodoo</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Looks like we finally caught our first lab-reproducible case of platform cache corruption. Short synopsis:</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/voodoo" class="block text-2xl font-semibold tracking-tight hover:underline">Voodoo</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 October 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Looks like we finally caught our first lab-reproducible case of platform cache corruption. Short synopsis:</p>
 <ul>
 <li>Spin up a fresh app from the v35 template of <a href="https://firstbit.ae" target="_blank">our ERP</a>.</li>
 <li>Run it and wait for initialization to finish.</li>
@@ -324,30 +672,48 @@ SELECT TOP 0
 <p>We still don't have a clean root cause. We traced it to a specific commit after which the bug started showing up, but the only weird thing there its <a href="https://kostyanetsky.me/notes/voodoo/the-commit.png" target="_blank">its name</a> (and honestly, there are nearby commits that look even <a href="https://kostyanetsky.me/notes/voodoo/the-other-commit.png" target="_blank">more suspicious</a> from this point of view). The rest were <a href="https://kostyanetsky.me/notes/voodoo/5ba6ac0956e0cc7bc6b520e5110420e6950478fe.diff" target="_blank">minor changes</a> that regenerate internal metadata IDs in the manifest. Yes, those IDs are tied to cache keys, but they get bumped on any metadata change and have never caused issues before.</p>
 <p>If you landed here from Google because you hit the same mess — make a no-op change to the problematic object so the platform refreshes the metadata IDs in the manifest. For example, add an empty method or even just a space in the module. That fixes the configuration so the recipe at the top stops corrupting the cache.</p>
 <p>Voodoo, sure — but hey, it works ¯\_(ツ)_/¯</p>
-        <p class="f6 mt4">
-            5 October 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/data-history-missing-indexes/">Slow Removal of Fresh Areas</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>A colleague noticed that on one of our Fresh instances, deleting data areas had become painfully slow. Dug into the metrics:</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/data-history-missing-indexes" class="block text-2xl font-semibold tracking-tight hover:underline">Slow Removal of Fresh Areas</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>3 August 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A colleague noticed that on one of our Fresh instances, deleting data areas had become painfully slow. Dug into the metrics:</p>
 <pre>
 DELETE FROM T1
 FROM _DataHistoryMetadata T1
@@ -385,30 +751,44 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <li>Technically this violates the license agreement, you've been warned and all that.</li>
 <li>There's a risk the platform will trip over the new indexes during future restructurings (especially on the "new" schema). Better to have a ready script to drop the index, and then (after restructuring) put it back.</li>
 </ol>
-        <p class="f6 mt4">
-            3 August 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/myth-buster/">Myth Buster</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I stumbled upon a hefty Infostart <a href="https://infostart.ru/1c/articles/2434171/" target="_blank">article</a> all about "debunking myths" around the platform.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/myth-buster" class="block text-2xl font-semibold tracking-tight hover:underline">Myth Buster</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 Jule 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I stumbled upon a hefty Infostart <a href="https://infostart.ru/1c/articles/2434171/" target="_blank">article</a> all about "debunking myths" around the platform.</p>
 <p>Honestly, about half of it reads like a joke. It's like:</p>
 <blockquote>
 <p>Hot off the press! Crime, intrigue, investigations! File‑based infobase is faster than client-server! DCS is slower than a plain request! Calling a server method on the server counts as a brand-new server call! <s>UFO over Red Square!</s></p>
@@ -416,79 +796,133 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>Still, there are some genuinely interesting nuggets! For instance, I'd never heard the claim that cramming your code into one single line makes it run ten times faster. Too bad you'd get your ass handed to you by the team for trying that kind of desperate swag before you even get to celebrate the speed boost. And let's be real — most enterprise app slowdowns usually come from totally different places.</p>
 <p>Or take their speed comparison for dumping data into a table: one test for object presentations and another for their descriptions. The presentation dump was literally tens of times slower! On paper, that sounds weird — both are just strings already pulled from the database at measurement time. My guess is it's down to typing: presentation strings can be unlimited length, unlike descriptions. So you get extra memory allocations, helper structures popping up, and bam — that's where the slowdown creeps in.</p>
 <p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> ValueIsFilled() and getting a nasty surprise from the built‑in <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">FindByNumber()</a>.</p>
-        <p class="f6 mt4">
-            27 Jule 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/delete-geometry/">Geometry Deletion</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I figured out a cool trick for cutting off parts of an object when it intersects with something else. Like, in this gif, there’s a monkey head model in the center, and as a plane moves through it, the part that intersects just disappears.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/delete-geometry" class="block text-2xl font-semibold tracking-tight hover:underline">Geometry Deletion</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 June 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">3D</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I figured out a cool trick for cutting off parts of an object when it intersects with something else. Like, in this gif, there’s a monkey head model in the center, and as a plane moves through it, the part that intersects just disappears.</p>
 <p><img alt="Demo" src="https://kostyanetsky.me/notes/delete-geometry/demo.gif"/></p>
 <p><a href="https://github.com/vkostyanetsky/3DPlayground/blob/main/Geometry%20Nodes/DeleteGeometry.blend" target="_blank">The idea</a> is pretty simple: you shrink the geometry of the "cutter" object down to a cube, get its min and max coordinates along each axis, and then for every point on the object you're trimming, you check whether it falls within that range. If it does — boom, it gets deleted.</p>
 <p>There are tons of ways you could use this. For example, I used it to automatically trim parts of decorative music staff lines on a wall so they wouldn't go across a doorway.</p>
 <p><img alt="Example" src="https://kostyanetsky.me/notes/delete-geometry/case.jpg"/></p>
 <p>Sure, you could do it by hand, without geometry nodes, but that would kill flexibility. If the wall size, door size, or the angle of the lines changes — you'd have to redo everything from scratch.</p>
-        <p class="f6 mt4">
-            12 June 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/3d/">3D</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/no/">No</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="No" src="https://kostyanetsky.me/notes/no/no.jpg"/></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/no" class="block text-2xl font-semibold tracking-tight hover:underline">No</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>11 June 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="No" src="https://kostyanetsky.me/notes/no/no.jpg"/></p>
 <p>This is the message the current platform throws up when you try to connect to an offline server cluster. I do appreciate minimalism in interfaces, of course, but this is definitely over the top.</p>
 <p>What's more, the platform is installed with only a single language pack (English) and even launched with a hard override to "Ven VLen", yet somehow the native birches still manage to sprout up. Maybe the C++ library that fires off the message (DataExchangeTcpClientImpl.cpp) is looking at the OS language (Russian) in my case — hard to say.</p>
 <p>Anyway, I can't shake the Bugs Bunny vibes every time I see that dialog box.</p>
 <p><img alt="No" src="https://kostyanetsky.me/notes/no/bugs-bunny.png"/></p>
-        <p class="f6 mt4">
-            11 June 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/hottabych/">The Genie Problem</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <blockquote>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/hottabych" class="block text-2xl font-semibold tracking-tight hover:underline">The Genie Problem</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 April 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">3D</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <blockquote>
 <p>Returning to Volka's room, the old man turned round slyly, snapped the fingers of his left hand, and there appeared on the wall over the aquarium an exact copy of the telephone hanging in the hall.</p>
 <p>"Now you can talk to your friends as much as you like without leaving your
 own room."</p>
@@ -506,128 +940,222 @@ own room."</p>
 <p>I’m just the same. For the past month, I’ve been putting the finishing touches on a model of a school music room, and guess what? I’ve learned more about how pianos work than I have in my whole life before. I could even give a quick lecture on heating systems in Russian schools — talking about sectional, panel, cast iron, and aluminum radiators, which types pop up most, the spacing between them, why you shouldn’t hook up three in a row, and so on.</p>
 <p>I read about this effect: like when you're drawing, say, samurai armor — you end up inadvertently learning heaps about the properties of leather, the different kinds of metal, and the whole tech stack of the samurai era. I never thought I'd run into that from day one — but hey, I think it's a good thing. It fires up your neural connections, broadens your view of the world, sparks your creativity, and all that jazz.</p>
 <p>Plus, it’s way more fun working on a model when you actually know what’s going on under the hood.</p>
-        <p class="f6 mt4">
-            12 April 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/3d/">3D</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/easter-eggs/">Easter Eggs</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Thank you, Mario!" src="https://kostyanetsky.me/notes/easter-eggs/mario.jpg"/> <img alt="Awaiting Signal" src="https://kostyanetsky.me/notes/easter-eggs/mothership.jpg"/></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/easter-eggs" class="block text-2xl font-semibold tracking-tight hover:underline">Easter Eggs</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 April 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Thank you, Mario!" src="https://kostyanetsky.me/notes/easter-eggs/mario.jpg"/> <img alt="Awaiting Signal" src="https://kostyanetsky.me/notes/easter-eggs/mothership.jpg"/></p>
 <p>A couple of Easter eggs hidden inside FirstBit ERP. They're tucked away for the developers: in the first case, users see just the form title and notification text, while in the second, they see the standard "waiting for connection" message.</p>
 <p>I like to add little things like this from time to time — it helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t checked out Bystronovsky’s "<a href="https://collab.ldwg.ru/stressless-design" target="_blank">Design Without Stress</a>", you really should — no way I could explain it better myself.</p>
 <p>By the way, here’s another Easter egg! Not from our ERP this time, but from a new tool we’re making for automated database updates. We're building it just for ourselves, so we can joke around with the user a bit :)</p>
 <p><img alt="Nice try, Marty!" src="https://kostyanetsky.me/notes/easter-eggs/marty.jpg"/></p>
-        <p class="f6 mt4">
-            6 April 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/across-meeting/">ERP Development In English</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mZwHTbu285A" width="560"></iframe>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/across-meeting" class="block text-2xl font-semibold tracking-tight hover:underline">ERP Development In English</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>19 January 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mZwHTbu285A" width="560"></iframe>
 <p>Our lead developer recently shared some insights about our work — specifically, developing ERP systems on 1C for the UAE and, more recently, Saudi Arabia. The session was hosted by the online English school Across, so the audience was spot-on: Russian-speaking folks interested in building careers and exploring international markets.</p>
 <p>Overall, it turned out pretty cool, especially as a language practice. Just a reminder: learning foreign languages is still one of the best ways to give your brain a workout, and it’s also super accessible. There’s no shortage of resources, communities, and interest-based clubs out there — you just need the motivation :)</p>
-        <p class="f6 mt4">
-            19 January 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/safe-code/">Mysterious Code</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Code" src="https://kostyanetsky.me/notes/safe-code/code.jpg"/></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/safe-code" class="block text-2xl font-semibold tracking-tight hover:underline">Mysterious Code</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>18 January 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Georgia</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Videogames</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Code" src="https://kostyanetsky.me/notes/safe-code/code.jpg"/></p>
 <p>Somewhere on the streets of Tbilisi. As a big fan of the Dishonored series, I just couldn’t walk past this. I’m sure there’s a safe nearby that this code unlocks!</p>
-        <p class="f6 mt4">
-            18 January 2025
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/georgia/">Georgia</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/negativity/">Go Away, Negativity!</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Chichilaki" src="https://kostyanetsky.me/notes/negativity/chichilaki.jpg"/></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/negativity" class="block text-2xl font-semibold tracking-tight hover:underline">Go Away, Negativity!</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 December 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Georgia</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Chichilaki" src="https://kostyanetsky.me/notes/negativity/chichilaki.jpg"/></p>
 <p>The white things in the background are called chichilaki. It’s a kind of Georgian New Year tree (in practice, it’s finely shaved hazelnut branches). It’s believed to absorb all the accumulated negativity, so after the holidays, it’s supposed to be burned (along with the negativity).</p>
 <p>Turns out, that last part is a bit of a challenge. The local police (and especially the fire department) view this good old tradition with suspicion — and understandably so (a chichilaki can be as tall as a person, making it quite the torch). So, we were advised to simply toss the "negativity-charged" chichilaki into the trash to avoid getting fresh troubles. Or donate it to the zoo — apparently, the animals play with them and even use them to clean their teeth.</p>
 <p>That last part made me smile. Getting rid of negativity with the help of cats — what a surprise. Big, toothy cats, sure, but still cats!</p>
-        <p class="f6 mt4">
-            29 December 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/georgia/">Georgia</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/bit-of-surgery/">A Little Bit Of Surgery</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>A few years ago, I stumbled upon a story about a programmer who had to debug software controlling a surgical robot — right in the middle of an operation. That blew my mind, to be frank.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/bit-of-surgery" class="block text-2xl font-semibold tracking-tight hover:underline">A Little Bit Of Surgery</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 December 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A few years ago, I stumbled upon a story about a programmer who had to debug software controlling a surgical robot — right in the middle of an operation. That blew my mind, to be frank.</p>
 <p>Today, my colleague and I were fixing a 1C cluster with databases running on 1cFresh. After migrating it to a neighboring server, the thing suddenly started acting up. Long story short: trying to print a document would send the client app into its death throes.  </p>
 <p>While we were knee-deep in troubleshooting, I had this thought: sure, it doesn’t look as terrifying as debugging software that someone’s life literally depends on. But if you think about all the clients sitting on edge because their business is grinding to a halt... Well, who knows where the stress levels are higher?  </p>
 <p><strong>P.S. Nerdy details for the curious.</strong> During the migration, the permissions for the server cache folder didn’t transfer properly. This led to a funny (well, not so funny) effect: the logs would happily land there, but session data wouldn’t.  </p>
@@ -635,55 +1163,91 @@ own room."</p>
 <p>We fixed the permissions, rebooted the cluster, and voilà! The problem was gone.  </p>
 <p><img alt="End of Report" src="https://kostyanetsky.me/notes/bit-of-surgery/report.jpeg"/></p>
 <p>All other hypotheses — cluster manager acting up, lack of hardware resources, configuration bugs, client-side issues, broken security profiles, network problems between the client and server — got tossed out during the diagnostics process.</p>
-        <p class="f6 mt4">
-            17 December 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/vaporia/">Vaguely Familiar Logo</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><del>Meanwhile, OpenAI opened a branch in Tbilisi</del> Actually, they just sell vapes here, and the logo designer was probably inspired by clouds of steam. But every time I walk by, it still catches my eye :)</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/vaporia" class="block text-2xl font-semibold tracking-tight hover:underline">Vaguely Familiar Logo</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 December 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Georgia</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><del>Meanwhile, OpenAI opened a branch in Tbilisi</del> Actually, they just sell vapes here, and the logo designer was probably inspired by clouds of steam. But every time I walk by, it still catches my eye :)</p>
 <p><img alt="Vaporia" src="https://kostyanetsky.me/notes/vaporia/vaporia.jpg"/></p>
-        <p class="f6 mt4">
-            14 December 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/ai/">AI</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/georgia/">Georgia</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/creepy-graveyard/">Creepy Graveyard</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Still learning 3D in my free time. Here's my first somewhat independent project after finishing a <a href="https://www.udemy.com/course/blender-environments-megacourse-create-3d-environments/" target="_blank">course</a> recently.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/creepy-graveyard" class="block text-2xl font-semibold tracking-tight hover:underline">Creepy Graveyard</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>26 November 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">3D</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Still learning 3D in my free time. Here's my first somewhat independent project after finishing a <a href="https://www.udemy.com/course/blender-environments-megacourse-create-3d-environments/" target="_blank">course</a> recently.</p>
 <p><a href="https://kostyanetsky.me/notes/creepy-graveyard/creepy-graveyard.png" target="_blank"><img alt="Creepy Graveyard" src="https://kostyanetsky.me/notes/creepy-graveyard/creepy-graveyard.png"/></a></p>
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mraGFR_Tr5k" width="560"></iframe>
 <p>Of course, there are plenty of issues: the models, the colors, the composition... Honestly, pretty much everything. Good thing the scene is set at night with fog, so it's easy to hide the worst spots. I wouldn't be surprised if the course creators picked this setting on purpose to keep beginners from getting too discouraged :)</p>
@@ -691,105 +1255,280 @@ own room."</p>
 <p>That approach works at the very beginning, but it doesn't help you learn how to solve problems. This time, I watched a few lessons back-to-back for about an hour or two, then tried to figure things out on my own. I only went back to the videos when I was completely stuck. Feels like I’m actually retaining a lot more this way.</p>
 <p>Long story short, the thing is done. On to the next one!</p>
 <p>UPD: One of the founders of FlippedNormals recorded a <a href="https://www.youtube.com/watch?v=izkRFqBzya0" target="_blank">video</a> with the same thoughts about training.</p>
-        <p class="f6 mt4">
-            26 November 2024
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/3d/">3D</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/slack-summary/">Summary to Slack</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I found a <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">script</a> that I wrote a couple of years ago for our work GitLab. In short, we run our development repository through a barrage of tests on Vanessa daily, resulting in a nice report showing how many tests passed, which ones failed, the reasons for failures, and so on.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/slack-summary" class="block text-2xl font-semibold tracking-tight hover:underline">Summary to Slack</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>10 November 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PowerShell</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I found a <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">script</a> that I wrote a couple of years ago for our work GitLab. In short, we run our development repository through a barrage of tests on Vanessa daily, resulting in a nice report showing how many tests passed, which ones failed, the reasons for failures, and so on.</p>
 <p>The report needs to be analyzed regularly, at least at a glance. Of course, we haven’t seen fully "green" tests in a long time, and that’s expected: for example, in the case of interdependent development, commits can break the checked functionality, and the tests still need adjustments. However, keeping a pulse on it is still essential.</p>
 <p>To simplify this routine, I expanded the pipeline code a bit: after generating the report, GitLab first creates a brief summary (client type, database type, test statistics) and sends it to Slack.</p>
 <p><img alt="Report" src="https://kostyanetsky.me/notes/slack-summary/report.jpg"/></p>
 <p>As a bonus, it’s now easier to answer the philosophical question, "who broke everything". Most often, it’s the author of the first commit on which the Scenarios Failed metric in the screenshot above hit the ceiling :)</p>
-        <p class="f6 mt4">
-            10 November 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/done/">done</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/powershell/">PowerShell</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/butterfly/">Log & Bug</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I love digging into the origins of words from time to time. For example, "log" comes from maritime terminology and literally means a log: a wooden float attached to a rope, which was thrown overboard from a ship. The rope had knots tied at regular intervals, and by counting how many knots unwound in a certain amount of time, sailors could determine the speed of the ship.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/butterfly" class="block text-2xl font-semibold tracking-tight hover:underline">Log & Bug</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 October 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I love digging into the origins of words from time to time. For example, "log" comes from maritime terminology and literally means a log: a wooden float attached to a rope, which was thrown overboard from a ship. The rope had knots tied at regular intervals, and by counting how many knots unwound in a certain amount of time, sailors could determine the speed of the ship.</p>
 <p>These measurements were recorded in the ship's journal, which was also called a log. Over time, the term started being used for any kind of record or journal of events, and in IT, the word got a second life :)</p>
 <p>Or take "bug" — well, you’ve probably heard about this one. A moth, which messed with a computer’s operation over seventy years ago, was documented in the log as "the first actual case of a bug being found". The insect gained a kind of digital immortality: now any mistake, especially in a program, is called a bug.</p>
 <p>(It’s just a pity that it wasn’t a prettier insect — like a butterfly, for instance? That would’ve added a touch of romance to our work)</p>
 <p>(Though, if you think about it... maybe "bug" isn’t such a bad option after all. "Butterfly" is a bit too long. Besides, someone would’ve shortened it to "butt," and right now, we’d be fixing butts instead of bugs)</p>
-        <p class="f6 mt4">
-            12 October 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
-                </span>
-            
-        </p>
-    </div>
-
+            </div>
+          </div>
+          
+        </article>
 
 
         
+      </section>
 
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Found a typo? Edit me!
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
         
-
-            <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt5 mb3" href="https://kostyanetsky.me/notes/page-2">Earlier</a> Ctrl + &darr;
-            </p>
-
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/page-2"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Earlier
+        </a>
         
+        <span class="w-[1px]"></span>
+        
+      </nav>
 
-    </article>
 
 
-</section>
+    </main>
 
-</main>
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search: fetch notes.json, hide static, render results.
+  // - On clear search: show static again.
+  // ------------------------------------------------------------
 
-<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
-    
-    <p class="f6 lh-solid">Email: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.me</a></p>
-    <p class="f6 lh-solid">Telegram: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    <p class="f6 lh-solid">GitHub: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    
-    <a class="rss" href="https://kostyanetsky.me/rss.xml">RSS</a> 
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
 
-</footer>
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
 
-</div>
-</body>
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Page ${page} of ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function filterNotes(notes, q) {
+    const needle = (q ?? "").trim().toLowerCase();
+    if (!needle) return notes;
+
+    return notes.filter((n) => {
+      const hay = String(n?.text ?? "");
+      return hay.includes(needle);
+    });
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+
+    if (!q) {
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
+    const filtered = filterNotes(notes, q);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = "Search";
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  showStaticMode();
+
+  // Search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+    <!-- Shared wrapper: footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>

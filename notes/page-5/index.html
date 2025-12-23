@@ -1,9 +1,9 @@
 ﻿
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -29,102 +29,349 @@
     <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/page-5" />    
 
-    <!-- Tachyons -->
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://kostyanetsky.me/assets/tachyons.min.css">
+<style>
+
+  /* PT Sans (regular) — modern set */
+  @font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+      local("PT Sans"),
+      local("PTSans-Regular"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+  }
+
+  :root {
+    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+      "Apple Color Emoji", "Segoe UI Emoji";
+
+    --text: rgb(0 0 0);                /* black */
+    --text-strong: rgb(0 0 0);         /* black */
+    --muted: rgb(71 85 105);           /* slate-600 */
+    --link: rgb(15 23 42);             /* slate-900 */
+    --link-underline: rgb(203 213 225);/* slate-300 */
+    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+
+    --border: rgb(226 232 240);        /* slate-200 */
+    --surface: rgb(255 255 255);       /* white */
+    --surface-soft: rgb(248 250 252);  /* slate-50 */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+
+    --space-1: 0.35rem;
+    --space-2: 0.75rem;
+    --space-3: 0.9rem;
+    --space-4: 1.2rem;
+    --space-5: 1.8rem;
+  }
+
+  body {
+    font-family: var(--site-font);
+    color: var(--text);
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(226 232 240);
+  }
+
+  .prose-like > * + * {
+    margin-top: var(--space-3);
+  }
+
+  .prose-like p {
+    color: var(--text);
+  }
+
+  .prose-like strong {
+    color: var(--text-strong);
+    font-weight: 600;
+  }
+
+  .prose-like h2 {
+    margin-top: var(--space-5);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+
+  .prose-like ul,
+  .prose-like ol {
+    padding-left: 1.2rem;
+    color: var(--text);
+  }
+
+  .prose-like ul {
+    list-style: disc;
+  }
+
+  .prose-like ol {
+    list-style: decimal;
+  }
+
+  .prose-like li {
+    margin-top: var(--space-1);
+  }
+
+  .prose-like a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .prose-like a:hover {
+    text-decoration-color: var(--link-underline-hover);
+  }
+
+  .prose-like a:focus-visible {
+    outline: 2px solid rgb(148 163 184); /* slate-400 */
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  .prose-like :not(pre) > code {
+    font-size: 0.95em;
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface-soft);
+  }
+
+  .prose-like pre {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-soft);
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    tab-size: 2;
+  }
+
+  .prose-like pre code {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgb(15 23 42);
+    white-space: pre;
+    word-break: normal;
+  }
+
+  .prose-like a[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  .figure {
+    margin-top: var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .figure figcaption {
+    padding: var(--space-2) 1rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: var(--surface-soft);
+  }
+
+  .prose-like blockquote {
+    margin-top: var(--space-4);
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--border);
+    background: var(--surface-soft);
+    border-radius: var(--radius-sm);
+    color: rgb(30 41 59);
+  }
+
+  .prose-like hr {
+    margin-top: var(--space-5);
+    border: 0;
+    border-top: 1px solid var(--border);
+  }
+</style>
 
     <!-- Blog -->
 
     <script>
-
-        let ctrlUpUrl       = 'https://kostyanetsky.me/notes/page-4';
-        let ctrlDownUrl     = '';
         let ctrlLeftUrl     = '';
-        let ctrlRightUrl    = '';
-
+        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/page-4';
     </script>
     
-    <link rel="stylesheet" href="https://kostyanetsky.me/assets/blog.css">
-    <script src="https://kostyanetsky.me/assets/blog.js"></script>
-                
-</head>
+    <script src="https://kostyanetsky.me/assets/blog.js"></script>    
 
-<body class="w-100 bg-white">
+  </head>
 
-<div id="app">        
-<main>
+  <body class="min-h-screen bg-white text-slate-900">
 
-<header class="db dt-l w-100-l border-box pa3 ph5-l">
-
-    <nav class="flex items-center lh-copy pa3 ph0-l">
-    
-        <a href="https://kostyanetsky.me"><img class="br-100" src="https://kostyanetsky.me/assets/images/me.jpg" title="Hi!" /></a>
-
-        <div class="pl4 flex-auto">
+<!-- Shared wrapper: top menu -->
+<header class="border-b border-slate-200">
+  <div class="mx-auto w-full max-w-4xl px-4 py-5">
+    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+      
+      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
         
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me">Vlad's Site</a>
-            
-
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.me/projects/">Projects</a>
-                        
-
-            
-                <span class="black dib f4 mr3">Notes</span>
-            
-
-        </div>
         
-    </nav>
-    
-    <nav class="dtc-l v-mid tc tr-l">
-
         
-            <a href="https://kostyanetsky.ru/notes" class="link f5 f5-ns dim blue bb">RU</a>
+        
         
 
         
-
-            <div class="mt3">
-
-            
-                    <span class="f4 f4-ns">✎</span>
-            
-
-            </div>
-            
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
         
 
-    </nav>
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+        
 
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+        
+      </nav>
+
+      
+      <div class="ml-auto flex items-center gap-4">
+        
+          
+            <span
+              class="inline-block text-[1.35rem] leading-none text-slate-400"
+              title="Found a typo? Edit me!"
+              aria-disabled="true"
+            >✎</span>
+          
+        
+
+        
+          
+          <a
+            href="https://kostyanetsky.ru/notes/page-5"
+            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+            title="RU"
+          >
+            RU
+          </a>
+        
+      </div>
+    </div>
+  </div>
 </header>
 
-<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
-    
+    <!-- Shared wrapper: content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="5"
+      data-total-notes="12"
+      data-total-pages="5"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
 
-    <article>
+      
 
-        <h1 class="f-subheadline lh-solid">Notes</h1>
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
 
-        
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search by title / tags/ text…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
 
-            <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt3 mb3" href="https://kostyanetsky.me/notes/page-4">Later</a> Ctrl + &uarr;
-            </p>
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
 
-        
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/snowboard-effect/">Snowboard Effect</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><a href="https://kostyanetsky.me/notes/snowboard-effect/standing.jpg" target="_blank"><img alt="Standing!" src="https://kostyanetsky.me/notes/snowboard-effect/standing-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/snowboard-effect/sitting.jpg" target="_blank"><img alt="Sitting!" src="https://kostyanetsky.me/notes/snowboard-effect/sitting-thumbnail.jpg"/></a></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/snowboard-effect" class="block text-2xl font-semibold tracking-tight hover:underline">Snowboard Effect</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>1 December 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Sport</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><a href="https://kostyanetsky.me/notes/snowboard-effect/standing.jpg" target="_blank"><img alt="Standing!" src="https://kostyanetsky.me/notes/snowboard-effect/standing-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/snowboard-effect/sitting.jpg" target="_blank"><img alt="Sitting!" src="https://kostyanetsky.me/notes/snowboard-effect/sitting-thumbnail.jpg"/></a></p>
 <p>You're sliding down the side of a mountain and trying to feel an equilibrium point, for the hundredth time. However, your nagging back is the only thing you're able to feel, and the Vaas speech from Far Cry 3 isn't going out of your mind.</p>
 <blockquote>
 <p>Did I ever tell you what the definition of insanity is? Insanity is doing the exact… Same fucking thing… Over and over again expecting… Shit to change… That. Is. Crazy.</p>
@@ -132,91 +379,167 @@
 </blockquote>
 <p>Surprisingly, you're certainly satisfied with the trip when it's done.</p>
 <p>There's some kind of magic in it.</p>
-        <p class="f6 mt4">
-            1 December 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/sport/">sport</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/non-judgmental-attitude/">A Principle of Non-Judgemental Attitude</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/non-judgmental-attitude" class="block text-2xl font-semibold tracking-tight hover:underline">A Principle of Non-Judgemental Attitude</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>2 September 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
 <p>By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p>
-        <p class="f6 mt4">
-            2 September 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/jaina/">Beware the Daughter of the Sea</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Natalia O'Shea has sung a Jaina's song in a Russian version of a trailer for a future update of World of Warcraft. As for me, she's extraordinary good in it — I mean, she knows how to make a proper mood and season a speech with steel.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/jaina" class="block text-2xl font-semibold tracking-tight hover:underline">Beware the Daughter of the Sea</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 Jule 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Videogames</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Natalia O'Shea has sung a Jaina's song in a Russian version of a trailer for a future update of World of Warcraft. As for me, she's extraordinary good in it — I mean, she knows how to make a proper mood and season a speech with steel.</p>
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5j-S448XC8k" width="560"></iframe>
 <p>By the way, speaking about her and “Melnitsa” as a whole thing — all of their most powerful songs are about something particular. We were at a concert dedicated to the “Luciferase” release and it's hard to compare, seriously. Perhaps, I didn't know something essential to understanding a context, but sometimes it was even barely possible to figure out a story which I was hearing.</p>
 <p>Just watch a video I posted under. You don't need to know something special about the World of Warcraft universe, do you? For example, I haven't played WoW and not planning to do it, but the end of the song literally creeps me out :-)</p>
-        <p class="f6 mt4">
-            29 Jule 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/hpmor-printing/">HPMoR Printing</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/hpmor-printing" class="block text-2xl font-semibold tracking-tight hover:underline">HPMoR Printing</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 Jule 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Books</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
 <p>The book is really good, I had <a href="https://kostyanetsky.me/notes/hpmor" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a href="https://planeta.ru/campaigns/hpmor" target="_blank">make a request</a> now.</p>
-        <p class="f6 mt4">
-            22 Jule 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/books/">books</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/fce-results/">FCE Results</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Cambridge just sent me results of my FCE exam in June and — dramatic drum roll — I passed it! According to the statement of results, I made a bunch of mistakes in writing tasks but particularly took it out during a Speaking test. It's a pity that examiners don't give comments and reasons so it's hard to estimate the results properly; however, it's quite clear what to do next :) My English teacher said that Cambridge used to provide an overall score only earlier and it sounded like “take it any way you want, dear pretenders”.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/fce-results" class="block text-2xl font-semibold tracking-tight hover:underline">FCE Results</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 Jule 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Books</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Cambridge just sent me results of my FCE exam in June and — dramatic drum roll — I passed it! According to the statement of results, I made a bunch of mistakes in writing tasks but particularly took it out during a Speaking test. It's a pity that examiners don't give comments and reasons so it's hard to estimate the results properly; however, it's quite clear what to do next :) My English teacher said that Cambridge used to provide an overall score only earlier and it sounded like “take it any way you want, dear pretenders”.</p>
 <p>Well, I guess I should begin my preparation for CAE in the next year.</p>
 <p>Speaking about languages, I remembered Feynman with his famous “Surely You're Joking”. Among many things, he told that he learned to play on a frigideira when he lived in Brazil and had reached so high level of skill that he served as a model for local musicians.</p>
 <blockquote>
@@ -224,207 +547,478 @@
 <p><em>― Richard Feynman, ”Surely You're Joking, Mr. Feynman!”</em></p>
 </blockquote>
 <p>As for me, there is a lot of efforts between “all kinds of mistakes” and “love to listen”, but it is such a good synopsis. Working on it!</p>
-        <p class="f6 mt4">
-            15 Jule 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/books/">books</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/message-to-user/">Message to User</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/message-to-user" class="block text-2xl font-semibold tracking-tight hover:underline">Message to User</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>30 April 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
 <p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
 <p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p>
-        <p class="f6 mt4">
-            30 April 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/these-nasty-smartphones/">These Nasty Smartphones</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/these-nasty-smartphones" class="block text-2xl font-semibold tracking-tight hover:underline">These Nasty Smartphones</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 Marth 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
 <p>The artist is <a href="https://www.patreon.com/adamtots" target="_blank">Adam Ellis</a>.</p>
 <p>As for me, it's a great illustration for an everlasting moan “why do you always stare at your smartphone blah blah blah”. A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
 <p>The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p>
-        <p class="f6 mt4">
-            31 Marth 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/meanwhile/">meanwhile</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/double-i/">Double “i”</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I was trying to understand how to transliterate my surname properly yesterday. Ministry of Foreign Affairs says it should be written as “Kostianetskii” in English — with double “i” at the end. It's the quite rare combination: “skiing” is the only frequency word that I'm able to remember.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/double-i" class="block text-2xl font-semibold tracking-tight hover:underline">Double “i”</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 Marth 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I was trying to understand how to transliterate my surname properly yesterday. Ministry of Foreign Affairs says it should be written as “Kostianetskii” in English — with double “i” at the end. It's the quite rare combination: “skiing” is the only frequency word that I'm able to remember.</p>
 <p>It caused my curiosity and I googled it. The possible reason I came across is funny: cursive writing! Double “i” looks well only on a computer screen but it suddenly turns into “u” when you try to write it on paper.</p>
 <p>More details are <a href="https://spellingisnotcrazy.weebly.com/blog/category/the-letter-i" target="_blank">here</a>.</p>
-        <p class="f6 mt4">
-            9 Marth 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/different-sides-of-one-coin/">Different Sides of One Coin</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Hi!" src="https://kostyanetsky.me/notes/different-sides-of-one-coin/en.png"/></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/different-sides-of-one-coin" class="block text-2xl font-semibold tracking-tight hover:underline">Different Sides of One Coin</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 Marth 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Hi!" src="https://kostyanetsky.me/notes/different-sides-of-one-coin/en.png"/></p>
 <p>Feedback is one of the coolest things in my work. It's not my first year of programming and I've written a lot of tools, mechanics and interfaces. However, ever complicated mechanism working as it should is… I don't know. It's like hearing “yes” on a graduation party, again and again :-)</p>
 <p>It partially compensates another side of the coin. I mean a case when you are trying to understand one hundred levels of some application's abstraction for the hundredth time, again and again, through a lot of mistakes. Meanwhile, it's 2 a.m. already and coffee had replaced blood in your veins ages ago.</p>
-        <p class="f6 mt4">
-            5 Marth 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/work/">work</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/why-so-serious/">Why So Serious?</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/why-so-serious" class="block text-2xl font-semibold tracking-tight hover:underline">Why So Serious?</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 February 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Films</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
 <p>It's what you should avoid despite it looks funny. You'll rewrite code you've written month or two later and it will be hard to shame its author because it is you.</p>
-        <p class="f6 mt4">
-            17 February 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/films/">films</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/sebby-x-player/">Sebby x Player</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>I have <a href="https://acomics.ru/~sebby-x-player" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">went out</a> a couple of years ago).</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/sebby-x-player" class="block text-2xl font-semibold tracking-tight hover:underline">Sebby x Player</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 August 2017</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Videogames</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I have <a href="https://acomics.ru/~sebby-x-player" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">went out</a> a couple of years ago).</p>
 <p>It was an amusing experience. Firstly, an author of the manga is Chinese and her work was already translated from Chinese to English. I'm not sure what was the bigger problem — cultural differences or language skills, but several frames were a bit difficult to understand what's going on. Secondly, I've figured out that it's a real challenge to pick proper Russian words and not to get something like a quote from an official government's letter in the end.</p>
 <p>So, a part of sense had lost during the process, I guess, although I tried to keep everything I could and even had a word with the author in order to solve the most problematic cases. It was quite funny — I don't know Chinese, she doesn't know Russian, so our a bit poor English was the only way to understand each other.</p>
 <p>Something could have been translated better, I suppose, and several pictures definitely could have been changed more accurately. But you know what? Hell it out, perfection is a cruel mistress and I like the result yet. Yeah, there is no big deal or something like it — a drawing style is quite common, a plot has no significant differences with the game, but… I don't know. Perhaps, visual novels made a too sentimental son of a bitch out of me :-)</p>
 <p>Thanks to <a href="https://vk.com/id54890849" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" target="_blank">Quantus</a> for the manga.</p>
-        <p class="f6 mt4">
-            14 August 2017
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/english/">English</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/videogames/">videogames</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.me/notes/hpmor/">HPMoR</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.me/notes/hpmor" class="block text-2xl font-semibold tracking-tight hover:underline">HPMoR</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 November 2016</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Books</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
 <p>First of all, it is the magnificent rethinking of the original saga. Many aspects seem not less fascinating, I may say; moreover, the plot itself is certainly excellent — I read two-thirds of the story without switching <a href="https://kostyanetsky.me/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Gene Wilder</a> off :-) Nevertheless, the author was skillful enough to make all points meet and finish a storyline in such a pretty way that I had almost nothing to complain about.</p>
 <p>In any case, this book is a well way to meet with a lot of scientific and just interesting things which were mentioned along the way. The author is smart and his book is a smart one too.</p>
-        <p class="f6 mt4">
-            6 November 2016
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.me/notes/tags/books/">books</a>
-                </span>
-            
-        </p>
-    </div>
-
+            </div>
+          </div>
+          
+        </article>
 
 
         
+      </section>
 
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Found a typo? Edit me!
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
         
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/page-4"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Later →
+        </a>
+        
+      </nav>
 
-    </article>
 
 
-</section>
+    </main>
 
-</main>
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search: fetch notes.json, hide static, render results.
+  // - On clear search: show static again.
+  // ------------------------------------------------------------
 
-<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
-    
-    <p class="f6 lh-solid">Email: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.me</a></p>
-    <p class="f6 lh-solid">Telegram: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    <p class="f6 lh-solid">GitHub: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    
-    <a class="rss" href="https://kostyanetsky.me/rss.xml">RSS</a> 
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
 
-</footer>
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
 
-</div>
-</body>
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Page ${page} of ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function filterNotes(notes, q) {
+    const needle = (q ?? "").trim().toLowerCase();
+    if (!needle) return notes;
+
+    return notes.filter((n) => {
+      const hay = String(n?.text ?? "");
+      return hay.includes(needle);
+    });
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+
+    if (!q) {
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
+    const filtered = filterNotes(notes, q);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = "Search";
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  showStaticMode();
+
+  // Search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+    <!-- Shared wrapper: footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>
