@@ -223,8 +223,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/data-history-missing-indexes';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/delete-geometry';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/delete-geometry';
+        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/data-history-missing-indexes';
     </script>
     
     <script src="https://kostyanetsky.me/assets/blog.js"></script>    
@@ -340,7 +340,7 @@
 </blockquote>
 <p>Still, there are some genuinely interesting nuggets! For instance, I'd never heard the claim that cramming your code into one single line makes it run ten times faster. Too bad you'd get your ass handed to you by the team for trying that kind of desperate swag before you even get to celebrate the speed boost. And let's be real — most enterprise app slowdowns usually come from totally different places.</p>
 <p>Or take their speed comparison for dumping data into a table: one test for object presentations and another for their descriptions. The presentation dump was literally tens of times slower! On paper, that sounds weird — both are just strings already pulled from the database at measurement time. My guess is it's down to typing: presentation strings can be unlimited length, unlike descriptions. So you get extra memory allocations, helper structures popping up, and bam — that's where the slowdown creeps in.</p>
-<p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> ValueIsFilled() and getting a nasty surprise from the built‑in <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">FindByNumber()</a>.</p>
+<p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> <code>ValueIsFilled()</code> and getting a nasty <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">surprise</a> from the built‑in <code>FindByNumber()</code>.</p>
             </div>
           </div>
           
@@ -359,20 +359,20 @@
         
         <a
           id="prevLink"
-          href="https://kostyanetsky.me/notes/data-history-missing-indexes"
+          href="https://kostyanetsky.me/notes/delete-geometry"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          ← Slow Removal of Fresh Areas
+          ← Geometry Deletion
         </a>
         
         <span class="w-[1px]"></span>
         
         <a
           id="nextLink"
-          href="https://kostyanetsky.me/notes/delete-geometry"
+          href="https://kostyanetsky.me/notes/data-history-missing-indexes"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          Geometry Deletion →
+          Slow Removal of Fresh Areas →
         </a>
         
       </nav>
