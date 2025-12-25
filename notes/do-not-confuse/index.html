@@ -34,191 +34,190 @@
     <!-- Tailwind (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
+    <style>
+        /* PT Sans (regular) — modern set */
+        @font-face {
+            font-family: "PT Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src:
+            local("PT Sans"),
+            local("PTSans-Regular"),
+            url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+            url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+        }
 
-  /* PT Sans (regular) — modern set */
-  @font-face {
-    font-family: "PT Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-      local("PT Sans"),
-      local("PTSans-Regular"),
-      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
-      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
-  }
+        :root {
+            --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+            "Apple Color Emoji", "Segoe UI Emoji";
 
-  :root {
-    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-      "Apple Color Emoji", "Segoe UI Emoji";
+            --text: rgb(0 0 0);                /* black */
+            --text-strong: rgb(0 0 0);         /* black */
+            --muted: rgb(71 85 105);           /* slate-600 */
+            --link: rgb(15 23 42);             /* slate-900 */
+            --link-underline: rgb(203 213 225);/* slate-300 */
+            --link-underline-hover: rgb(100 116 139); /* slate-500 */
 
-    --text: rgb(0 0 0);                /* black */
-    --text-strong: rgb(0 0 0);         /* black */
-    --muted: rgb(71 85 105);           /* slate-600 */
-    --link: rgb(15 23 42);             /* slate-900 */
-    --link-underline: rgb(203 213 225);/* slate-300 */
-    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+            --border: rgb(226 232 240);        /* slate-200 */
+            --surface: rgb(255 255 255);       /* white */
+            --surface-soft: rgb(248 250 252);  /* slate-50 */
 
-    --border: rgb(226 232 240);        /* slate-200 */
-    --surface: rgb(255 255 255);       /* white */
-    --surface-soft: rgb(248 250 252);  /* slate-50 */
+            --radius-sm: 10px;
+            --radius-md: 16px;
 
-    --radius-sm: 10px;
-    --radius-md: 16px;
+            --space-1: 0.35rem;
+            --space-2: 0.75rem;
+            --space-3: 0.9rem;
+            --space-4: 1.2rem;
+            --space-5: 1.8rem;
+        }
 
-    --space-1: 0.35rem;
-    --space-2: 0.75rem;
-    --space-3: 0.9rem;
-    --space-4: 1.2rem;
-    --space-5: 1.8rem;
-  }
+        body {
+            font-family: var(--site-font);
+            color: var(--text);
+            font-kerning: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
 
-  body {
-    font-family: var(--site-font);
-    color: var(--text);
-    font-kerning: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
+        ::selection {
+            background: rgb(226 232 240);
+        }
 
-  ::selection {
-    background: rgb(226 232 240);
-  }
+        .prose-like > * + * {
+            margin-top: var(--space-3);
+        }
 
-  .prose-like > * + * {
-    margin-top: var(--space-3);
-  }
+        .prose-like p {
+            color: var(--text);
+        }
 
-  .prose-like p {
-    color: var(--text);
-  }
+        .prose-like strong {
+            color: var(--text-strong);
+            font-weight: 600;
+        }
 
-  .prose-like strong {
-    color: var(--text-strong);
-    font-weight: 600;
-  }
+        .prose-like h2 {
+            margin-top: var(--space-5);
+            font-size: 1.25rem;
+            line-height: 1.5;
+            font-weight: 600;
+            color: var(--text-strong);
+        }
 
-  .prose-like h2 {
-    margin-top: var(--space-5);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    font-weight: 600;
-    color: var(--text-strong);
-  }
+        .prose-like ul,
+        .prose-like ol {
+            padding-left: 1.2rem;
+            color: var(--text);
+        }
 
-  .prose-like ul,
-  .prose-like ol {
-    padding-left: 1.2rem;
-    color: var(--text);
-  }
+        .prose-like ul {
+            list-style: disc;
+        }
 
-  .prose-like ul {
-    list-style: disc;
-  }
+        .prose-like ol {
+            list-style: decimal;
+        }
 
-  .prose-like ol {
-    list-style: decimal;
-  }
+        .prose-like li {
+            margin-top: var(--space-1);
+        }
 
-  .prose-like li {
-    margin-top: var(--space-1);
-  }
+        .prose-like a {
+            color: var(--link);
+            text-decoration: underline;
+            text-decoration-color: var(--link-underline);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.18em;
+        }
 
-  .prose-like a {
-    color: var(--link);
-    text-decoration: underline;
-    text-decoration-color: var(--link-underline);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
-  }
+        .prose-like a:hover {
+            text-decoration-color: var(--link-underline-hover);
+        }
 
-  .prose-like a:hover {
-    text-decoration-color: var(--link-underline-hover);
-  }
+        .prose-like a:focus-visible {
+            outline: 2px solid rgb(148 163 184); /* slate-400 */
+            outline-offset: 2px;
+            border-radius: 6px;
+        }
 
-  .prose-like a:focus-visible {
-    outline: 2px solid rgb(148 163 184); /* slate-400 */
-    outline-offset: 2px;
-    border-radius: 6px;
-  }
+        .prose-like :not(pre) > code {
+            font-size: 0.95em;
+            padding: 0.1em 0.35em;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--surface-soft);
+        }
 
-  .prose-like :not(pre) > code {
-    font-size: 0.95em;
-    padding: 0.1em 0.35em;
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    background: var(--surface-soft);
-  }
+        .prose-like pre {
+            margin-top: 1rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--surface-soft);
+            overflow-x: auto;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
+            tab-size: 2;
+        }
 
-  .prose-like pre {
-    margin-top: 1rem;
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface-soft);
-    overflow-x: auto;
-    max-width: 100%;
-    -webkit-overflow-scrolling: touch;
-    tab-size: 2;
-  }
+        .prose-like pre code {
+            display: block;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            border-radius: 0;
 
-  .prose-like pre code {
-    display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    border-radius: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(15 23 42);
+            white-space: pre;
+            word-break: normal;
+        }
 
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgb(15 23 42);
-    white-space: pre;
-    word-break: normal;
-  }
+        .prose-like a[id] {
+            scroll-margin-top: 6rem;
+        }
 
-  .prose-like a[id] {
-    scroll-margin-top: 6rem;
-  }
+        .figure {
+            margin-top: var(--space-4);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--surface);
+        }
 
-  .figure {
-    margin-top: var(--space-4);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--surface);
-  }
+        .figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  .figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+        .figure figcaption {
+            padding: var(--space-2) 1rem;
+            font-size: 0.875rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            background: var(--surface-soft);
+        }
 
-  .figure figcaption {
-    padding: var(--space-2) 1rem;
-    font-size: 0.875rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    background: var(--surface-soft);
-  }
+        .prose-like blockquote {
+            margin-top: var(--space-4);
+            padding: 0.75rem 1rem;
+            border-left: 4px solid var(--border);
+            background: var(--surface-soft);
+            border-radius: var(--radius-sm);
+            color: rgb(30 41 59);
+        }
 
-  .prose-like blockquote {
-    margin-top: var(--space-4);
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--border);
-    background: var(--surface-soft);
-    border-radius: var(--radius-sm);
-    color: rgb(30 41 59);
-  }
-
-  .prose-like hr {
-    margin-top: var(--space-5);
-    border: 0;
-    border-top: 1px solid var(--border);
-  }
-</style>
+        .prose-like hr {
+            margin-top: var(--space-5);
+            border: 0;
+            border-top: 1px solid var(--border);
+        }
+    </style>
 
     <!-- Blog -->
 
@@ -233,62 +232,63 @@
 
   <body class="min-h-screen bg-white text-slate-900">
 
-<!-- Shared wrapper: top menu -->
-<header class="border-b border-slate-200">
-  <div class="mx-auto w-full max-w-4xl px-4 py-5">
-    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
-      
-      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
-        
-        
-        
-        
-        
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
-        
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
-        
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
-        
-      </nav>
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
 
-      
-      <div class="ml-auto flex items-center gap-4">
-        
-          
-            <a
-              title="Found a typo? Edit me!"
-              href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/do-not-confuse/index.md"
-              class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
-            >✎</a>
-          
-        
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
 
-        
-          
-          <a
-            href="https://kostyanetsky.ru/notes/do-not-confuse"
-            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
-            title="RU"
-          >
-            RU
-          </a>
-        
-      </div>
-    </div>
-  </div>
-</header>
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Found a typo? Edit me!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/do-not-confuse/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
 
-    <!-- Shared wrapper: content -->
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/do-not-confuse"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
     <main
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
@@ -323,11 +323,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#1c</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#code-smell</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Code Smell</span>
                 </div>
                 
               
@@ -381,137 +381,7 @@
 
     </main>
 
-<script>
-  // ------------------------------------------------------------
-  // Hybrid mode:
-  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
-  // - On first user search: fetch notes.json, hide static, render results.
-  // - On clear search: show static again.
-  // ------------------------------------------------------------
-
-  const metaEl = document.getElementById("pageMeta");
-  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
-
-  const page = Number(metaEl.getAttribute("data-page") || "1");
-  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
-  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
-
-  const searchEl = document.getElementById("search");
-  const countEl = document.getElementById("count");
-  const pageInfoEl = document.getElementById("pageInfo");
-
-  const staticNotesEl = document.getElementById("staticNotes");
-  const dynamicNotesEl = document.getElementById("dynamicNotes");
-  const emptyEl = document.getElementById("empty");
-  const paginationEl = document.getElementById("pagination");
-
-  let notesCache = null;
-  let notesLoadPromise = null;
-
-  function debounce(fn, ms = 200) {
-    let t;
-    return (...args) => {
-      clearTimeout(t);
-      t = setTimeout(() => fn(...args), ms);
-    };
-  }
-
-  async function loadNotesJsonOnce() {
-    if (notesCache) return notesCache;
-
-    if (!notesLoadPromise) {
-      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
-        .then((r) => {
-          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
-          return r.json();
-        })
-        .then((data) => {
-          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
-          notesCache = Array.isArray(data) ? data : [];
-          return notesCache;
-        })
-        .catch((err) => {
-          console.error(err);
-          notesCache = [];
-          return notesCache;
-        });
-    }
-
-    return notesLoadPromise;
-  }
-
-  function showStaticMode() {
-    dynamicNotesEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = "";
-    emptyEl.classList.add("hidden");
-
-    staticNotesEl.classList.remove("hidden");
-    paginationEl.classList.remove("hidden");
-
-    countEl.textContent = String(totalNotes);
-    pageInfoEl.textContent = `Page ${page} of ${totalPages}`;
-  }
-
-  function showSearchMode() {
-    staticNotesEl.classList.add("hidden");
-    paginationEl.classList.add("hidden");
-
-    dynamicNotesEl.classList.remove("hidden");
-  }
-
-  function filterNotes(notes, q) {
-    const needle = (q ?? "").trim().toLowerCase();
-    if (!needle) return notes;
-
-    return notes.filter((n) => {
-      const hay = String(n?.text ?? "");
-      return hay.includes(needle);
-    });
-  }
-
-  async function runSearch() {
-    const q = (searchEl.value || "").trim();
-
-    if (!q) {
-      showStaticMode();
-      return;
-    }
-
-    showSearchMode();
-
-    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
-    const filtered = filterNotes(notes, q);
-
-    countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = "Search";
-
-    if (filtered.length === 0) {
-      dynamicNotesEl.innerHTML = "";
-      emptyEl.classList.remove("hidden");
-      return;
-    }
-
-    emptyEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
-  }
-
-  showStaticMode();
-
-  // Search handler
-  searchEl.addEventListener("input", debounce(runSearch, 200));
-
-  // Search autorun in case search string is set (refresh / back-forward cache)
-  function runSearchSoon() {
-    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
-  }
-
-  document.addEventListener("DOMContentLoaded", runSearchSoon);
-
-  window.addEventListener("pageshow", runSearchSoon);
-</script>
-
-
-    <!-- Shared wrapper: footer -->
+    <!-- footer -->
     <footer class="mt-12 border-t border-slate-200">
       <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">

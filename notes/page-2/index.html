@@ -34,191 +34,190 @@
     <!-- Tailwind (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
+    <style>
+        /* PT Sans (regular) — modern set */
+        @font-face {
+            font-family: "PT Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src:
+            local("PT Sans"),
+            local("PTSans-Regular"),
+            url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+            url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+        }
 
-  /* PT Sans (regular) — modern set */
-  @font-face {
-    font-family: "PT Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-      local("PT Sans"),
-      local("PTSans-Regular"),
-      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
-      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
-  }
+        :root {
+            --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+            "Apple Color Emoji", "Segoe UI Emoji";
 
-  :root {
-    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-      "Apple Color Emoji", "Segoe UI Emoji";
+            --text: rgb(0 0 0);                /* black */
+            --text-strong: rgb(0 0 0);         /* black */
+            --muted: rgb(71 85 105);           /* slate-600 */
+            --link: rgb(15 23 42);             /* slate-900 */
+            --link-underline: rgb(203 213 225);/* slate-300 */
+            --link-underline-hover: rgb(100 116 139); /* slate-500 */
 
-    --text: rgb(0 0 0);                /* black */
-    --text-strong: rgb(0 0 0);         /* black */
-    --muted: rgb(71 85 105);           /* slate-600 */
-    --link: rgb(15 23 42);             /* slate-900 */
-    --link-underline: rgb(203 213 225);/* slate-300 */
-    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+            --border: rgb(226 232 240);        /* slate-200 */
+            --surface: rgb(255 255 255);       /* white */
+            --surface-soft: rgb(248 250 252);  /* slate-50 */
 
-    --border: rgb(226 232 240);        /* slate-200 */
-    --surface: rgb(255 255 255);       /* white */
-    --surface-soft: rgb(248 250 252);  /* slate-50 */
+            --radius-sm: 10px;
+            --radius-md: 16px;
 
-    --radius-sm: 10px;
-    --radius-md: 16px;
+            --space-1: 0.35rem;
+            --space-2: 0.75rem;
+            --space-3: 0.9rem;
+            --space-4: 1.2rem;
+            --space-5: 1.8rem;
+        }
 
-    --space-1: 0.35rem;
-    --space-2: 0.75rem;
-    --space-3: 0.9rem;
-    --space-4: 1.2rem;
-    --space-5: 1.8rem;
-  }
+        body {
+            font-family: var(--site-font);
+            color: var(--text);
+            font-kerning: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
 
-  body {
-    font-family: var(--site-font);
-    color: var(--text);
-    font-kerning: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
+        ::selection {
+            background: rgb(226 232 240);
+        }
 
-  ::selection {
-    background: rgb(226 232 240);
-  }
+        .prose-like > * + * {
+            margin-top: var(--space-3);
+        }
 
-  .prose-like > * + * {
-    margin-top: var(--space-3);
-  }
+        .prose-like p {
+            color: var(--text);
+        }
 
-  .prose-like p {
-    color: var(--text);
-  }
+        .prose-like strong {
+            color: var(--text-strong);
+            font-weight: 600;
+        }
 
-  .prose-like strong {
-    color: var(--text-strong);
-    font-weight: 600;
-  }
+        .prose-like h2 {
+            margin-top: var(--space-5);
+            font-size: 1.25rem;
+            line-height: 1.5;
+            font-weight: 600;
+            color: var(--text-strong);
+        }
 
-  .prose-like h2 {
-    margin-top: var(--space-5);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    font-weight: 600;
-    color: var(--text-strong);
-  }
+        .prose-like ul,
+        .prose-like ol {
+            padding-left: 1.2rem;
+            color: var(--text);
+        }
 
-  .prose-like ul,
-  .prose-like ol {
-    padding-left: 1.2rem;
-    color: var(--text);
-  }
+        .prose-like ul {
+            list-style: disc;
+        }
 
-  .prose-like ul {
-    list-style: disc;
-  }
+        .prose-like ol {
+            list-style: decimal;
+        }
 
-  .prose-like ol {
-    list-style: decimal;
-  }
+        .prose-like li {
+            margin-top: var(--space-1);
+        }
 
-  .prose-like li {
-    margin-top: var(--space-1);
-  }
+        .prose-like a {
+            color: var(--link);
+            text-decoration: underline;
+            text-decoration-color: var(--link-underline);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.18em;
+        }
 
-  .prose-like a {
-    color: var(--link);
-    text-decoration: underline;
-    text-decoration-color: var(--link-underline);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
-  }
+        .prose-like a:hover {
+            text-decoration-color: var(--link-underline-hover);
+        }
 
-  .prose-like a:hover {
-    text-decoration-color: var(--link-underline-hover);
-  }
+        .prose-like a:focus-visible {
+            outline: 2px solid rgb(148 163 184); /* slate-400 */
+            outline-offset: 2px;
+            border-radius: 6px;
+        }
 
-  .prose-like a:focus-visible {
-    outline: 2px solid rgb(148 163 184); /* slate-400 */
-    outline-offset: 2px;
-    border-radius: 6px;
-  }
+        .prose-like :not(pre) > code {
+            font-size: 0.95em;
+            padding: 0.1em 0.35em;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--surface-soft);
+        }
 
-  .prose-like :not(pre) > code {
-    font-size: 0.95em;
-    padding: 0.1em 0.35em;
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    background: var(--surface-soft);
-  }
+        .prose-like pre {
+            margin-top: 1rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--surface-soft);
+            overflow-x: auto;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
+            tab-size: 2;
+        }
 
-  .prose-like pre {
-    margin-top: 1rem;
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface-soft);
-    overflow-x: auto;
-    max-width: 100%;
-    -webkit-overflow-scrolling: touch;
-    tab-size: 2;
-  }
+        .prose-like pre code {
+            display: block;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            border-radius: 0;
 
-  .prose-like pre code {
-    display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    border-radius: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(15 23 42);
+            white-space: pre;
+            word-break: normal;
+        }
 
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgb(15 23 42);
-    white-space: pre;
-    word-break: normal;
-  }
+        .prose-like a[id] {
+            scroll-margin-top: 6rem;
+        }
 
-  .prose-like a[id] {
-    scroll-margin-top: 6rem;
-  }
+        .figure {
+            margin-top: var(--space-4);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--surface);
+        }
 
-  .figure {
-    margin-top: var(--space-4);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--surface);
-  }
+        .figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  .figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+        .figure figcaption {
+            padding: var(--space-2) 1rem;
+            font-size: 0.875rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            background: var(--surface-soft);
+        }
 
-  .figure figcaption {
-    padding: var(--space-2) 1rem;
-    font-size: 0.875rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    background: var(--surface-soft);
-  }
+        .prose-like blockquote {
+            margin-top: var(--space-4);
+            padding: 0.75rem 1rem;
+            border-left: 4px solid var(--border);
+            background: var(--surface-soft);
+            border-radius: var(--radius-sm);
+            color: rgb(30 41 59);
+        }
 
-  .prose-like blockquote {
-    margin-top: var(--space-4);
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--border);
-    background: var(--surface-soft);
-    border-radius: var(--radius-sm);
-    color: rgb(30 41 59);
-  }
-
-  .prose-like hr {
-    margin-top: var(--space-5);
-    border: 0;
-    border-top: 1px solid var(--border);
-  }
-</style>
+        .prose-like hr {
+            margin-top: var(--space-5);
+            border: 0;
+            border-top: 1px solid var(--border);
+        }
+    </style>
 
     <!-- Blog -->
 
@@ -233,62 +232,63 @@
 
   <body class="min-h-screen bg-white text-slate-900">
 
-<!-- Shared wrapper: top menu -->
-<header class="border-b border-slate-200">
-  <div class="mx-auto w-full max-w-4xl px-4 py-5">
-    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
-      
-      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
-        
-        
-        
-        
-        
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
-        
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
-        
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
-        
-      </nav>
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
 
-      
-      <div class="ml-auto flex items-center gap-4">
-        
-          
-            <span
-              class="inline-block text-[1.35rem] leading-none text-slate-400"
-              title="Found a typo? Edit me!"
-              aria-disabled="true"
-            >✎</span>
-          
-        
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
 
-        
-          
-          <a
-            href="https://kostyanetsky.ru/notes/page-2"
-            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
-            title="RU"
-          >
-            RU
-          </a>
-        
-      </div>
-    </div>
-  </div>
-</header>
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
 
-    <!-- Shared wrapper: content -->
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/page-2"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
     <main
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
@@ -300,6 +300,8 @@
 
       
 
+    
+
       <header class="space-y-3">
         <h1 class="text-3xl font-semibold tracking-tight">Notes</h1>
         <p class="max-w-2xl text-slate-700">
@@ -307,12 +309,14 @@
         </p>
       </header>
 
+
+
       <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div class="relative w-full sm:w-[420px]">
           <input
             id="search"
             type="search"
-            placeholder="Search by title / tags/ text…"
+            placeholder="Search by title / text / tags…"
             class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
           />
           <svg
@@ -338,9 +342,211 @@
         </p>
       </section>
 
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Work
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Meanwhile
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Done
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Videogames
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Code Smell
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Georgia
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Typescript
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Bitrix
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Books
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Sport
+        </button>
+        
+        <button
+          data-chip="webdev"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Webdev
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Workplace
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Family
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+
+      </section>
+
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -362,11 +568,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#ai</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#videogames</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Videogames</span>
                 </div>
                 
               
@@ -387,7 +593,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -409,11 +615,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#meanwhile</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#georgia</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Georgia</span>
                 </div>
                 
               
@@ -434,7 +640,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -456,7 +662,7 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#work</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
                 </div>
                 
               
@@ -477,7 +683,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -499,15 +705,15 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#1c</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#pgsql</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#3d</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">3D</span>
                 </div>
                 
               
@@ -526,7 +732,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -548,11 +754,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#1c</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#sport</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Sport</span>
                 </div>
                 
               
@@ -572,7 +778,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -594,11 +800,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#done</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#meanwhile</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
                 </div>
                 
               
@@ -629,7 +835,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -651,7 +857,7 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#ai</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
                 </div>
                 
               
@@ -676,7 +882,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -698,11 +904,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#obsidian</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#javascript</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Javascript</span>
                 </div>
                 
               
@@ -727,7 +933,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -749,11 +955,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#ai</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#videogames</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Videogames</span>
                 </div>
                 
               
@@ -774,7 +980,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -796,7 +1002,7 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#english</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
                 </div>
                 
               
@@ -816,7 +1022,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -838,11 +1044,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#meanwhile</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#1c</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
                 </div>
                 
               
@@ -867,7 +1073,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -889,7 +1095,7 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#meanwhile</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
                 </div>
                 
               
@@ -914,7 +1120,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -936,7 +1142,7 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#work</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
                 </div>
                 
               
@@ -957,7 +1163,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -979,15 +1185,15 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#1c</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#pgsql</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#mssql</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">MS SQL</span>
                 </div>
                 
               
@@ -1019,7 +1225,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -1041,11 +1247,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#1c</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#pgsql</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
                 </div>
                 
               
@@ -1067,7 +1273,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -1089,11 +1295,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#work</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#meanwhile</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
                 </div>
                 
               
@@ -1114,7 +1320,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -1136,19 +1342,19 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#done</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#typescript</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Typescript</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#obsidian</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#work</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
                 </div>
                 
               
@@ -1167,7 +1373,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -1189,11 +1395,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#1c</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#optimization</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Optimization</span>
                 </div>
                 
               
@@ -1221,7 +1427,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -1243,15 +1449,15 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#done</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#typescript</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Typescript</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#obsidian</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
                 </div>
                 
               
@@ -1277,7 +1483,7 @@
         </article>
 
 
-                
+        
             
 
         <article class="rounded-2xl bg-white">
@@ -1299,11 +1505,11 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#obsidian</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">#typescript</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Typescript</span>
                 </div>
                 
               
@@ -1360,20 +1566,16 @@
         
       </nav>
 
-
-
-    </main>
-
 <script>
   // ------------------------------------------------------------
   // Hybrid mode:
   // - Default: show static HTML notes (SEO-friendly, no-JS ok).
-  // - On first user search: fetch notes.json, hide static, render results.
-  // - On clear search: show static again.
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
   // ------------------------------------------------------------
 
   const metaEl = document.getElementById("pageMeta");
-  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
+  const notesJsonUrl = "http://localhost:8085/notes.json";
 
   const page = Number(metaEl.getAttribute("data-page") || "1");
   const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
@@ -1390,6 +1592,23 @@
 
   let notesCache = null;
   let notesLoadPromise = null;
+
+  // Tag filter state (chip)
+  let activeTag = "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  try {
+    const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+    if (saved) activeTag = saved;
+  } catch (e) {
+    // no sessionStorage :|
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200";
 
   function debounce(fn, ms = 200) {
     let t;
@@ -1409,7 +1628,7 @@
           return r.json();
         })
         .then((data) => {
-          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
           notesCache = Array.isArray(data) ? data : [];
           return notesCache;
         })
@@ -1432,7 +1651,7 @@
     paginationEl.classList.remove("hidden");
 
     countEl.textContent = String(totalNotes);
-    pageInfoEl.textContent = `Page ${page} of ${totalPages}`;
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
   }
 
   function showSearchMode() {
@@ -1442,31 +1661,76 @@
     dynamicNotesEl.classList.remove("hidden");
   }
 
-  function filterNotes(notes, q) {
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
     const needle = (q ?? "").trim().toLowerCase();
-    if (!needle) return notes;
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
 
     return notes.filter((n) => {
-      const hay = String(n?.text ?? "");
-      return hay.includes(needle);
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
     });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
   }
 
   async function runSearch() {
     const q = (searchEl.value || "").trim();
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
 
-    if (!q) {
+    if (!hasQ && !hasTag) {
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
       showStaticMode();
       return;
     }
 
     showSearchMode();
 
-    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
-    const filtered = filterNotes(notes, q);
+    const notes = await loadNotesJsonOnce();
+    const filtered = filterNotes(notes, q, activeTag);
 
     countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = "Search";
+    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
 
     if (filtered.length === 0) {
       dynamicNotesEl.innerHTML = "";
@@ -1478,10 +1742,25 @@
     dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
   }
 
+  // Initial render
+  setActiveChipUI(activeTag);
   showStaticMode();
 
-  // Search handler
+  // Text search handler
   searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Tag chips handler
+  document.querySelectorAll(".chip").forEach((b) => {
+    b.addEventListener("click", () => {
+      activeTag = b.dataset.chip || "all";
+        try {
+        if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+        else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+        } catch (e) {}      
+      setActiveChipUI(activeTag);
+      runSearch();
+    });
+  });
 
   // Search autorun in case search string is set (refresh / back-forward cache)
   function runSearchSoon() {
@@ -1489,12 +1768,14 @@
   }
 
   document.addEventListener("DOMContentLoaded", runSearchSoon);
-
   window.addEventListener("pageshow", runSearchSoon);
 </script>
 
 
-    <!-- Shared wrapper: footer -->
+
+    </main>
+
+    <!-- footer -->
     <footer class="mt-12 border-t border-slate-200">
       <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">

@@ -10,7 +10,7 @@
 
     <title>Projects</title>
 
-    <meta name="description" content="Projects I work on. From newest to oldest." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -26,7 +26,7 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Projects"/>
-    <meta property="og:description" content="Projects I work on. From newest to oldest."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
     <meta property="og:url" content= "https://kostyanetsky.me/projects" />    
@@ -34,191 +34,190 @@
     <!-- Tailwind (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
+    <style>
+        /* PT Sans (regular) — modern set */
+        @font-face {
+            font-family: "PT Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src:
+            local("PT Sans"),
+            local("PTSans-Regular"),
+            url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+            url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+        }
 
-  /* PT Sans (regular) — modern set */
-  @font-face {
-    font-family: "PT Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-      local("PT Sans"),
-      local("PTSans-Regular"),
-      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
-      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
-  }
+        :root {
+            --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+            "Apple Color Emoji", "Segoe UI Emoji";
 
-  :root {
-    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-      "Apple Color Emoji", "Segoe UI Emoji";
+            --text: rgb(0 0 0);                /* black */
+            --text-strong: rgb(0 0 0);         /* black */
+            --muted: rgb(71 85 105);           /* slate-600 */
+            --link: rgb(15 23 42);             /* slate-900 */
+            --link-underline: rgb(203 213 225);/* slate-300 */
+            --link-underline-hover: rgb(100 116 139); /* slate-500 */
 
-    --text: rgb(0 0 0);                /* black */
-    --text-strong: rgb(0 0 0);         /* black */
-    --muted: rgb(71 85 105);           /* slate-600 */
-    --link: rgb(15 23 42);             /* slate-900 */
-    --link-underline: rgb(203 213 225);/* slate-300 */
-    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+            --border: rgb(226 232 240);        /* slate-200 */
+            --surface: rgb(255 255 255);       /* white */
+            --surface-soft: rgb(248 250 252);  /* slate-50 */
 
-    --border: rgb(226 232 240);        /* slate-200 */
-    --surface: rgb(255 255 255);       /* white */
-    --surface-soft: rgb(248 250 252);  /* slate-50 */
+            --radius-sm: 10px;
+            --radius-md: 16px;
 
-    --radius-sm: 10px;
-    --radius-md: 16px;
+            --space-1: 0.35rem;
+            --space-2: 0.75rem;
+            --space-3: 0.9rem;
+            --space-4: 1.2rem;
+            --space-5: 1.8rem;
+        }
 
-    --space-1: 0.35rem;
-    --space-2: 0.75rem;
-    --space-3: 0.9rem;
-    --space-4: 1.2rem;
-    --space-5: 1.8rem;
-  }
+        body {
+            font-family: var(--site-font);
+            color: var(--text);
+            font-kerning: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
 
-  body {
-    font-family: var(--site-font);
-    color: var(--text);
-    font-kerning: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
+        ::selection {
+            background: rgb(226 232 240);
+        }
 
-  ::selection {
-    background: rgb(226 232 240);
-  }
+        .prose-like > * + * {
+            margin-top: var(--space-3);
+        }
 
-  .prose-like > * + * {
-    margin-top: var(--space-3);
-  }
+        .prose-like p {
+            color: var(--text);
+        }
 
-  .prose-like p {
-    color: var(--text);
-  }
+        .prose-like strong {
+            color: var(--text-strong);
+            font-weight: 600;
+        }
 
-  .prose-like strong {
-    color: var(--text-strong);
-    font-weight: 600;
-  }
+        .prose-like h2 {
+            margin-top: var(--space-5);
+            font-size: 1.25rem;
+            line-height: 1.5;
+            font-weight: 600;
+            color: var(--text-strong);
+        }
 
-  .prose-like h2 {
-    margin-top: var(--space-5);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    font-weight: 600;
-    color: var(--text-strong);
-  }
+        .prose-like ul,
+        .prose-like ol {
+            padding-left: 1.2rem;
+            color: var(--text);
+        }
 
-  .prose-like ul,
-  .prose-like ol {
-    padding-left: 1.2rem;
-    color: var(--text);
-  }
+        .prose-like ul {
+            list-style: disc;
+        }
 
-  .prose-like ul {
-    list-style: disc;
-  }
+        .prose-like ol {
+            list-style: decimal;
+        }
 
-  .prose-like ol {
-    list-style: decimal;
-  }
+        .prose-like li {
+            margin-top: var(--space-1);
+        }
 
-  .prose-like li {
-    margin-top: var(--space-1);
-  }
+        .prose-like a {
+            color: var(--link);
+            text-decoration: underline;
+            text-decoration-color: var(--link-underline);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.18em;
+        }
 
-  .prose-like a {
-    color: var(--link);
-    text-decoration: underline;
-    text-decoration-color: var(--link-underline);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
-  }
+        .prose-like a:hover {
+            text-decoration-color: var(--link-underline-hover);
+        }
 
-  .prose-like a:hover {
-    text-decoration-color: var(--link-underline-hover);
-  }
+        .prose-like a:focus-visible {
+            outline: 2px solid rgb(148 163 184); /* slate-400 */
+            outline-offset: 2px;
+            border-radius: 6px;
+        }
 
-  .prose-like a:focus-visible {
-    outline: 2px solid rgb(148 163 184); /* slate-400 */
-    outline-offset: 2px;
-    border-radius: 6px;
-  }
+        .prose-like :not(pre) > code {
+            font-size: 0.95em;
+            padding: 0.1em 0.35em;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--surface-soft);
+        }
 
-  .prose-like :not(pre) > code {
-    font-size: 0.95em;
-    padding: 0.1em 0.35em;
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    background: var(--surface-soft);
-  }
+        .prose-like pre {
+            margin-top: 1rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--surface-soft);
+            overflow-x: auto;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
+            tab-size: 2;
+        }
 
-  .prose-like pre {
-    margin-top: 1rem;
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface-soft);
-    overflow-x: auto;
-    max-width: 100%;
-    -webkit-overflow-scrolling: touch;
-    tab-size: 2;
-  }
+        .prose-like pre code {
+            display: block;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            border-radius: 0;
 
-  .prose-like pre code {
-    display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    border-radius: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(15 23 42);
+            white-space: pre;
+            word-break: normal;
+        }
 
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgb(15 23 42);
-    white-space: pre;
-    word-break: normal;
-  }
+        .prose-like a[id] {
+            scroll-margin-top: 6rem;
+        }
 
-  .prose-like a[id] {
-    scroll-margin-top: 6rem;
-  }
+        .figure {
+            margin-top: var(--space-4);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--surface);
+        }
 
-  .figure {
-    margin-top: var(--space-4);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--surface);
-  }
+        .figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  .figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+        .figure figcaption {
+            padding: var(--space-2) 1rem;
+            font-size: 0.875rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            background: var(--surface-soft);
+        }
 
-  .figure figcaption {
-    padding: var(--space-2) 1rem;
-    font-size: 0.875rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    background: var(--surface-soft);
-  }
+        .prose-like blockquote {
+            margin-top: var(--space-4);
+            padding: 0.75rem 1rem;
+            border-left: 4px solid var(--border);
+            background: var(--surface-soft);
+            border-radius: var(--radius-sm);
+            color: rgb(30 41 59);
+        }
 
-  .prose-like blockquote {
-    margin-top: var(--space-4);
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--border);
-    background: var(--surface-soft);
-    border-radius: var(--radius-sm);
-    color: rgb(30 41 59);
-  }
-
-  .prose-like hr {
-    margin-top: var(--space-5);
-    border: 0;
-    border-top: 1px solid var(--border);
-  }
-</style>
+        .prose-like hr {
+            margin-top: var(--space-5);
+            border: 0;
+            border-top: 1px solid var(--border);
+        }
+    </style>
 
     <!-- Blog -->
 
@@ -233,62 +232,63 @@
 
   <body class="min-h-screen bg-white text-slate-900">
 
-<!-- Shared wrapper: top menu -->
-<header class="border-b border-slate-200">
-  <div class="mx-auto w-full max-w-4xl px-4 py-5">
-    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
-      
-      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
-        
-        
-        
-        
-        
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
-        
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
 
-        
-        
-          <span class="inline-block text-[1.25rem] leading-tight mr-4 text-black font-medium">Projects</span>
-        
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/notes/">Notes</a>
-        
-      </nav>
+                    
+                    
+                    <span class="inline-block text-[1.25rem] leading-tight mr-4 text-black font-medium">Projects</span>
+                    
 
-      
-      <div class="ml-auto flex items-center gap-4">
-        
-          
-            <a
-              title="Found a typo? Edit me!"
-              href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/projects/index.md"
-              class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
-            >✎</a>
-          
-        
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
 
-        
-          
-          <a
-            href="https://kostyanetsky.ru/projects"
-            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
-            title="RU"
-          >
-            RU
-          </a>
-        
-      </div>
-    </div>
-  </div>
-</header>
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
 
-    <!-- Shared wrapper: content -->
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/projects"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
     <main
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
@@ -300,198 +300,409 @@
 
       
 
-        <article class="rounded-2xl bg-white">
-          <a id="note-well-there-are-some" class="block scroll-mt-24"></a>
+    
 
-          <header class="space-y-2">
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Projects</h1>
+        <p class="max-w-2xl text-slate-700">
+          Some tasks I worked on — and managed to find time to write about.
+        </p>
+      </header>
 
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <div class="relative w-full sm:w-[360px]">
+            <input
+              id="search"
+              type="search"
+              placeholder="Search by title / description / stack…"
+              class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+            />
+            <svg
+              class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+
+          <div class="flex gap-2">
+            <button
+              id="btnGrid"
+              class="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100"
+              aria-pressed="true"
+            >
+              Grid
+            </button>
+            <button
+              id="btnList"
+              class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+              aria-pressed="false"
+            >
+              List
+            </button>
+          </div>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c-v8"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          1С:Enterprise
+        </button>
+        
+        <button
+          data-chip="1c-esb"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          1C:ESB
+        </button>
+        
+        <button
+          data-chip="fb-erp"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          FirstBit ERP
+        </button>
+        
+        <button
+          data-chip="rmq"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          RabbitMQ
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="fastapi"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          FastAPI
+        </button>
+        
+        <button
+          data-chip="flask"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Flask
+        </button>
+        
+        <button
+          data-chip="ts"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          TypeScript
+        </button>
+        
+        <button
+          data-chip="react"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          React
+        </button>
+        
+        <button
+          data-chip="postgresql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="mongodb"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          MongoDB
+        </button>
+        
+        <button
+          data-chip="telegram"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Telegram
+        </button>
+        
+
+      </section>
+
+      <section
+        id="cards"
+        class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+      ></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Nothing found. Try a different search?
+      </div>
+
+    <script>
+      const projects = [
+        
+        {
+          title: "Projects",
+          description: "Projects I work on. From newest to oldest.",
+          image: "https://kostyanetsky.me/projects/projects/thumbnail.png",
+          badges: [
             
-            <h1 class="text-3xl font-semibold tracking-tight">Projects</h1>
+          ],          
+          stacks: [
             
+          ],
+          href: "projects",
+        },
+        
+      ];
 
-            
-          </header>
+  const cardsEl = document.getElementById("cards");
+  const countEl = document.getElementById("count");
+  const emptyEl = document.getElementById("empty");
+  const searchEl = document.getElementById("search");
 
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>There are projects I worked on and wanted to write something about. From newest to oldest.</p>
-<h2>Integration between FirstBit ERP and Telegram</h2>
-<p>Now in the ERP it is possible to create Telegram bots that can send messages to private and group chats, as well as receive messages and reply to them.</p>
-<p>Incoming messages can be received by them in three ways:</p>
-<ul>
-<li>via periodic polling on a schedule;</li>
-<li>via continuous polling for new messages;</li>
-<li>via a webhook.</li>
-</ul>
-<p>Bots are able to identify a Telegram user as a company employee in three ways:</p>
-<ul>
-<li>by a pre-specified Telegram username assigned to the employee;</li>
-<li>if the employee followed a unique link created for them by an administrator;</li>
-<li>via two-factor authentication (the user messages the bot, it asks for their email and sends an OTP there, which must be entered).</li>
-</ul>
-<p>In addition, the notification subsystem in our ERP can now also deliver alerts via Telegram bots.</p>
-<h2>External Web Interface for Suppliers</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span></p>
-<p>Our customer was the owner of a trading company. Part of its activity is pricing: employees of the company contacted suppliers, determining which of them was more profitable to place customer orders considering prices, delivery times and other conditions.</p>
-<p>We were required to make it so that they could simply send suppliers links to a web interface where they could enter prices and answer additional questions.</p>
-<p>The platform's web interface could not be used due to license savings. Therefore, I wrote a React.js web application that works with the 1C:Enterprise database through a REST interface specially designed for this.</p>
-<p>Have a <a href="https://github.com/vkostyanetsky/RFQ" target="_blank">look</a> at project's demo on my GitHub.</p>
-<h2>UAC Currency Rates Crawler</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">MongoDB</span></p>
-<p>We wanted to give FirstBit ERP users the ability to automatically receive dirham exchange rates published by the UAE Central Bank website.</p>
-<p>The site parsing code could be added to the configuration itself, but this idea seemed to be problematic from several points of view: there is no convenient mechanism for obtaining rates on the Central Bank website, the site itself is unstable, and it is difficult to change the parsing logic in many databases in case we need to.</p>
-<p>Therefore, I wrote a Python console application that regularly parses published exchange rates to a special database and sends them through a REST service. We deployed this application on our server, and I added only regular requests to the service on FirstBit ERP side.</p>
-<p>Have a <a href="https://github.com/vkostyanetsky/UAExchangeRates" target="_blank">look</a> at project's backend code on my GitHub.</p>
-<h2>Native Data History for FirstBit ERP</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1C:Enterprise</span></p>
-<p>I replaced the BSP versioning subsystem In the FirstBit ERP configuration with a platform's built-in mechanism that solves the same problem. The project included:</p>
-<ol>
-<li>An algorithm for migrating the accumulated data history from information registers to the native storage.</li>
-<li>A data processor to turn on and off the history for objects and their attributes. An early version can be <a href="https://github.com/vkostyanetsky/AuditLogSettings" target="_blank">viewed</a> on GitHub.</li>
-<li>A data processor capable of displaying changes in different objects for a specified period in one list.</li>
-<li>Analysis of configuration objects (it was needed to turn off the data history for objects that do not make sense to version – non-shared 1cFresh objects, service catalogs, and so on).</li>
-<li>Improvements for the algorithm of unloading the infobase into XML files and loading from them to make it work with native data history.</li>
-</ol>
+  const btnGrid = document.getElementById("btnGrid");
+  const btnList = document.getElementById("btnList");
+
+  let mode = "grid";
+  let chip = "all";
+
+  // ------------------------------------------------------------
+  // Session state:
+  // - persists on F5 / reload
+  // - cleared when tab/browser is closed
+  // ------------------------------------------------------------
+  const STATE_KEY = "projects_ui_state_v1";
+
+  function saveState() {
+    try {
+      sessionStorage.setItem(STATE_KEY, JSON.stringify({ mode, chip }));
+    } catch (_) {}
+  }
+
+  function loadState() {
+    try {
+      const raw = sessionStorage.getItem(STATE_KEY);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function escapeAttr(str) {
+    return escapeHtml(str).replaceAll("\n", " ");
+  }
+
+  const badge = (text) => `
+    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">
+      ${escapeHtml(text)}
+    </span>
+  `;
+
+  function applyMode(nextMode) {
+    mode = nextMode;
+
+    if (mode === "grid") {
+      btnGrid.className =
+        "rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100";
+      btnList.className =
+        "rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50";
+      btnGrid.setAttribute("aria-pressed", "true");
+      btnList.setAttribute("aria-pressed", "false");
+    } else {
+      btnList.className =
+        "rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100";
+      btnGrid.className =
+        "rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50";
+      btnList.setAttribute("aria-pressed", "true");
+      btnGrid.setAttribute("aria-pressed", "false");
+    }
+  }
+
+  function applyChip(nextChip) {
+    chip = nextChip;
+
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className =
+        "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50";
+    });
+
+    const active = document.querySelector(`.chip[data-chip="${CSS.escape(chip)}"]`);
+
+    if (active) {
+      active.className =
+        "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200";
+    } else {
+      chip = "all";
+      const allBtn = document.querySelector(`.chip[data-chip="all"]`);
+      if (allBtn) {
+        allBtn.className =
+          "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200";
+      }
+    }
+  }
+
+  function card(project) {
+    const stacksHtml = (project.badges || []).map(badge).join("");
+
+    const body = `
+      <div class="flex flex-col gap-3 p-4">
+        <div class="flex items-start justify-between gap-3">
+          <a href="https://kostyanetsky.me/projects/${project.href}" class="inline text-2xl font-semibold tracking-tight hover:underline">
+            <h3 class="text-lg font-semibold leading-snug tracking-tight">${escapeHtml(project.title)}</h3>
+          </a>
+        </div>
+
+        <p class="text-sm text-slate-700 ${mode === "grid" ? "line-clamp-3" : "line-clamp-2"}">
+          ${escapeHtml(project.description)}
+        </p>
+
+        <div class="flex flex-wrap gap-2">${stacksHtml}</div>
+      </div>
+    `;
+
+    if (mode === "list") {
+      return `
+        <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:bg-slate-50">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-[320px]">
+              <img
+                src="${project.image}"
+                alt="${escapeAttr(project.title)}"
+                class="h-48 w-full object-cover md:h-full"
+                loading="lazy"
+              />
             </div>
-
+            <div class="flex-1">${body}</div>
           </div>
         </article>
-
-
-
-    </main>
-
-<script>
-  // ------------------------------------------------------------
-  // Hybrid mode:
-  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
-  // - On first user search: fetch notes.json, hide static, render results.
-  // - On clear search: show static again.
-  // ------------------------------------------------------------
-
-  const metaEl = document.getElementById("pageMeta");
-  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
-
-  const page = Number(metaEl.getAttribute("data-page") || "1");
-  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
-  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
-
-  const searchEl = document.getElementById("search");
-  const countEl = document.getElementById("count");
-  const pageInfoEl = document.getElementById("pageInfo");
-
-  const staticNotesEl = document.getElementById("staticNotes");
-  const dynamicNotesEl = document.getElementById("dynamicNotes");
-  const emptyEl = document.getElementById("empty");
-  const paginationEl = document.getElementById("pagination");
-
-  let notesCache = null;
-  let notesLoadPromise = null;
-
-  function debounce(fn, ms = 200) {
-    let t;
-    return (...args) => {
-      clearTimeout(t);
-      t = setTimeout(() => fn(...args), ms);
-    };
-  }
-
-  async function loadNotesJsonOnce() {
-    if (notesCache) return notesCache;
-
-    if (!notesLoadPromise) {
-      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
-        .then((r) => {
-          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
-          return r.json();
-        })
-        .then((data) => {
-          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
-          notesCache = Array.isArray(data) ? data : [];
-          return notesCache;
-        })
-        .catch((err) => {
-          console.error(err);
-          notesCache = [];
-          return notesCache;
-        });
+      `;
     }
 
-    return notesLoadPromise;
+    return `
+      <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:bg-slate-50">
+        <img
+          src="${project.image}"
+          alt="${escapeAttr(project.title)}"
+          class="h-44 w-full object-cover"
+          loading="lazy"
+        />
+        ${body}
+      </article>
+    `;
   }
 
-  function showStaticMode() {
-    dynamicNotesEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = "";
-    emptyEl.classList.add("hidden");
+  function render() {
+    const q = (searchEl.value || "").trim().toLowerCase();
 
-    staticNotesEl.classList.remove("hidden");
-    paginationEl.classList.remove("hidden");
-
-    countEl.textContent = String(totalNotes);
-    pageInfoEl.textContent = `Page ${page} of ${totalPages}`;
-  }
-
-  function showSearchMode() {
-    staticNotesEl.classList.add("hidden");
-    paginationEl.classList.add("hidden");
-
-    dynamicNotesEl.classList.remove("hidden");
-  }
-
-  function filterNotes(notes, q) {
-    const needle = (q ?? "").trim().toLowerCase();
-    if (!needle) return notes;
-
-    return notes.filter((n) => {
-      const hay = String(n?.text ?? "");
-      return hay.includes(needle);
+    const filtered = projects.filter((p) => {
+      const matchesChip = chip === "all" ? true : (p.stacks || []).includes(chip);
+      const haystack = `${p.title} ${p.description} ${(p.badges || []).join(" ")}`.toLowerCase();
+      return matchesChip && (q ? haystack.includes(q) : true);
     });
-  }
-
-  async function runSearch() {
-    const q = (searchEl.value || "").trim();
-
-    if (!q) {
-      showStaticMode();
-      return;
-    }
-
-    showSearchMode();
-
-    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
-    const filtered = filterNotes(notes, q);
 
     countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = "Search";
 
     if (filtered.length === 0) {
-      dynamicNotesEl.innerHTML = "";
+      cardsEl.innerHTML = "";
       emptyEl.classList.remove("hidden");
       return;
     }
 
     emptyEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+
+    cardsEl.className =
+      mode === "grid"
+        ? "mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+        : "mt-8 grid grid-cols-1 gap-4";
+
+    cardsEl.innerHTML = filtered.map(card).join("");
   }
 
-  showStaticMode();
+  // -----------------------
+  // Events
+  // -----------------------
+  btnGrid.addEventListener("click", () => {
+    applyMode("grid");
+    saveState();
+    render();
+  });
 
-  // Search handler
-  searchEl.addEventListener("input", debounce(runSearch, 200));
+  btnList.addEventListener("click", () => {
+    applyMode("list");
+    saveState();
+    render();
+  });
 
-  // Search autorun in case search string is set (refresh / back-forward cache)
-  function runSearchSoon() {
-    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
-  }
+  searchEl.addEventListener("input", render);
 
-  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  document.querySelectorAll(".chip").forEach((b) => {
+    b.addEventListener("click", () => {
+      applyChip(b.dataset.chip);
+      saveState();
+      render();
+    });
+  });
 
-  window.addEventListener("pageshow", runSearchSoon);
-</script>
+  // -----------------------
+  // Init (restore state, then render)
+  // -----------------------
+  const st = loadState();
+
+  if (st?.mode === "grid" || st?.mode === "list") applyMode(st.mode);
+  else applyMode("grid");
+
+  if (typeof st?.chip === "string") applyChip(st.chip);
+  else applyChip("all");
+
+  render();
+    </script>
 
 
-    <!-- Shared wrapper: footer -->
+
+    </main>
+
+    <!-- footer -->
     <footer class="mt-12 border-t border-slate-200">
       <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
