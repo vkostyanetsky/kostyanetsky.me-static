@@ -1,0 +1,275 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>RFQ Service</title>
+
+    <meta name="description" content="A web application for a trading company, needed for estimating orders from suppliers." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="RFQ Service"/>
+    <meta property="og:description" content="A web application for a trading company, needed for estimating orders from suppliers."/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/projects/rfq-service" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Found a typo? Edit me!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/projects/rfq-service/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/projects/rfq-service"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+        <article class="rounded-2xl bg-white">
+          <a id="note-well-there-are-some" class="block scroll-mt-24"></a>
+
+          <header class="space-y-2">
+
+            
+            <h1 class="text-3xl font-semibold tracking-tight">RFQ Service</h1>
+            
+
+            
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+
+                <div class="flex flex-wrap gap-2">
+                
+                    <span
+                    class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700"
+                    >
+                    TypeScript
+                    </span>
+                
+                    <span
+                    class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700"
+                    >
+                    Node.js
+                    </span>
+                
+                    <span
+                    class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700"
+                    >
+                    React
+                    </span>
+                
+                    <span
+                    class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700"
+                    >
+                    Python
+                    </span>
+                
+                    <span
+                    class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700"
+                    >
+                    Flask
+                    </span>
+                
+                    <span
+                    class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700"
+                    >
+                    1С:Enterprise
+                    </span>
+                
+                    <span
+                    class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700"
+                    >
+                    FirstBit ERP
+                    </span>
+                
+                </div>
+            </div>
+            
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Cover" src="https://kostyanetsky.me/projects/rfq-service/cover.png"/></p>
+              <h2>👀 Situation</h2>
+<p>A trading company (our client) runs a regular request-for-quotation (RFQ) process. Before placing a customer order, their managers contact several suppliers to get prices, lead times, and terms, then pick the best offer.</p>
+<h2>💡 Task</h2>
+<p>The problem: suppliers replied in whatever format was convenient for them — some by email, some in WhatsApp, some in Google Sheets. Then a manager had to manually collect all that info and re-enter it into the ERP system.</p>
+<p>Result: wasted time, typos, and the classic "Wait… Did the supplier really send that?" debates.</p>
+<p>So we decided to build a supplier-facing web app — intentionally super simple (because nobody wants to train suppliers).</p>
+<h2>💪 Actions</h2>
+<p>We split the solution into two parts:</p>
+<ul>
+<li>extending the 1C configuration (create RFQs + receive replies);</li>
+<li>building the web app (the actual RFQ UI).</li>
+</ul>
+<p><strong>1. The 1C flow</strong></p>
+<p>In 1C, a manager creates a document called <code>Procurement Requisition</code> containing three data sets:</p>
+<ul>
+<li>suppliers (who we're sending to);</li>
+<li>items (what needs pricing);</li>
+<li>extra questions (terms, deadlines, comments, etc.).</li>
+</ul>
+<p>After saving, 1C generates a personal link for each supplier. This link acts like an access token: it's sent only to that supplier, so extra login/password checks would be a bit of security theater.</p>
+<p><img alt="Procurement Requisition" src="https://kostyanetsky.me/projects/rfq-service/document.png"/></p>
+<p>On the 1C side, we also implemented an HTTP service that:</p>
+<ul>
+<li>returns the <code>Procurement Requisition</code> data;</li>
+<li>accepts supplier replies and stores them as <code>Response to RFQ</code> documents.</li>
+</ul>
+<p><strong>2. Supplier UX</strong></p>
+<p>To avoid exposing the internal ERP web client to the internet — and to avoid creating supplier accounts inside 1C — we built a separate web application.</p>
+<p>In practice it's a straightforward form where a supplier can:</p>
+<ul>
+<li>enter prices per line item from the <code>Procurement Requisition</code>;</li>
+<li>answer extra questions (delivery dates, terms, etc.).</li>
+</ul>
+<p>In real life, suppliers rarely finish everything in one go, so we added two actions:</p>
+<ul>
+<li>Save as draft: saves progress. They can reopen the same link later and continue editing. The customer's managers don't see drafts because the quote isn't "official" yet;</li>
+<li>Submit: final send. After this, the supplier's response becomes visible to managers — and the supplier can't change it (no "oops I meant a different price" after the fact).</li>
+</ul>
+<p><img alt="UI" src="https://kostyanetsky.me/projects/rfq-service/ui.png"/></p>
+<p>Frontend: React, backend: Flask. </p>
+<p>The backend works as a proxy between the web app and 1C:</p>
+<ul>
+<li>the web app receives the unique supplier link;</li>
+<li>sends it to the proxy;</li>
+<li>the proxy uses that link to fetch the RFQ items from 1C and returns them to the web app.</li>
+</ul>
+<p>With this setup, the web app doesn't need to know where 1C is hosted, how to authenticate to it and how to submit results back.</p>
+<p><img alt="Schema" src="https://kostyanetsky.me/projects/rfq-service/schema.png"/></p>
+<p>Yes, the web app could call 1C's HTTP service directly — but the proxy means we don't have to expose 1C interfaces to the public internet. Also, secure authentication between a public web client and 1C would be much more painful. The proxy basically acts like the bouncer at the club: "You can come in, but only through me" :)</p>
+<h2>😎 Result</h2>
+<p>In the end, RFQ processing turned into an actual pipeline:</p>
+<ol>
+<li>The customer's manager creates an RFQ in 1C (Procurement Requisition);</li>
+<li>Sends suppliers their personal links;</li>
+<li>Suppliers respond in a clean, simple web UI;</li>
+<li>Replies (both draft and final) are stored as <code>Response to RFQ</code> documents.</li>
+</ol>
+<p>Practical impact:</p>
+<ul>
+<li>no more manual merging from email/WhatsApp/Sheets;</li>
+<li>fewer data-entry mistakes in 1C;</li>
+<li>faster quote turnaround;</li>
+<li>and most importantly: no supplier access to the internal 1C environment, no publishing internal components to the internet, no extra 1C licenses, and no supplier account management at all.</li>
+</ul>
+<p>A simplified version of the project can be deployed from the <a href="https://github.com/vkostyanetsky/RFQ" target="_blank">GitHub repository</a>.</p>
+            </div>
+
+          </div>
+        </article>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

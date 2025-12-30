@@ -1,25 +1,30 @@
-// Hotkeys
+// Hotkeys: Ctrl/Cmd + ArrowLeft/ArrowRight
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener("keydown", (event) => {
+  if (!(event.ctrlKey || event.metaKey)) return;
+  if (event.altKey) return;
 
-    if (! (event.ctrlKey || event.metaKey)) return;
+  const target = event.target;
+  const isTypingField =
+    target instanceof HTMLElement &&
+    (target.isContentEditable ||
+      target.tagName === "INPUT" ||
+      target.tagName === "TEXTAREA" ||
+      target.tagName === "SELECT");
 
-    if (event.code == 'ArrowLeft') {
-        goToUrl(event, ctrlLeftUrl);
-    }
-    else if (event.code == 'ArrowRight') {
-        goToUrl(event, ctrlRightUrl);
-    }        
+  if (isTypingField) return;
 
+  if (event.key === "ArrowLeft") {
+    goToUrl(event, ctrlLeftUrl);
+  } else if (event.key === "ArrowRight") {
+    goToUrl(event, ctrlRightUrl);
+  }
 });
 
 function goToUrl(event, href) {
+  const url = (href ?? "").trim();
+  if (!url) return;
 
-    if (href != '') {
-
-        event.preventDefault();
-        document.location.href = href;    
-
-    }
-
+  event.preventDefault();
+  window.location.assign(url);
 }
