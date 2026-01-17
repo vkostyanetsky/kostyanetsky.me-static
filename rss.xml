@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 06 Dec 2025 20:57:48 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 17 Jan 2026 18:18:43 +0700</lastBuildDate>
+        
+        <item>
+            <title>New Blog&#x27;s UI</title>
+            <link>https://kostyanetsky.me/notes/new-ui</link>
+            <guid isPermaLink="false">note-new-ui</guid>
+            <pubDate>Sat, 17 Jan 2026 18:18:43 +0700</pubDate>
+            <description><p>Over the New Year holidays I randomly got obsessed and rewrote my blog's UI. I only wanted to add search for my notes — there are a lot of them now, and every so often I need to quickly fish something out of the pile (like "here's that link" to a coworker).</p>
+<p>The blog runs on <a href="https://docs.github.com/ru/pages" target="_blank">GitHub Pages</a>, so the options aren’t exactly infinite: either outsource search to Google, or build a static index and ship it to the user's browser so it can grep through it locally. I went with the second route: faster, more controllable, <s>and, yes, an excuse to write code</s>. The first time you search it has to download <a href="https://kostyanetsky.me/notes.json" target="_blank">the index file</a>, but... It's 200 KB. That's basically one medium-sized sigh in 2026 internet terms.</p>
+<p>And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn't get <a href="https://tachyons.io" target="_blank">Tachyons</a> to play nice with the search input — got annoyed and migrated everything to <a href="https://tailwindcss.com" target="_blank">Tailwind</a> (I'd been meaning to try it anyway, just never had a "good reason", so I invented one). While I was writing the search code, I figured it'd be dumb not to add tags too, because why do the same work twice. Next thing I know I "wake up" and there's a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it's not tags, it's tech stacks...</p>
+<p>So yeah, it turned into that "Fear and Loathing in Las Vegas" meme. The tendency is to push it as far as you can.</p>
+<p>Now the only thing left is to make myself actually write into the new project log. There's always a ton of work, and it's genuinely interesting — but if I don't write things down… Welp. Everything sinks into coffee.</p></description>
+        </item>
         
         <item>
             <title>Backup Management</title>
@@ -203,18 +215,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>There are tons of ways you could use this. For example, I used it to automatically trim parts of decorative music staff lines on a wall so they wouldn't go across a doorway.</p>
 <p><img alt="Example" src="https://kostyanetsky.me/notes/delete-geometry/case.jpg"/></p>
 <p>Sure, you could do it by hand, without geometry nodes, but that would kill flexibility. If the wall size, door size, or the angle of the lines changes — you'd have to redo everything from scratch.</p></description>
-        </item>
-        
-        <item>
-            <title>No</title>
-            <link>https://kostyanetsky.me/notes/no</link>
-            <guid isPermaLink="false">note-no</guid>
-            <pubDate>Wed, 11 Jun 2025 19:29:33 +0700</pubDate>
-            <description><p><img alt="No" src="https://kostyanetsky.me/notes/no/no.jpg"/></p>
-<p>This is the message the current platform throws up when you try to connect to an offline server cluster. I do appreciate minimalism in interfaces, of course, but this is definitely over the top.</p>
-<p>What's more, the platform is installed with only a single language pack (English) and even launched with a hard override to "Ven VLen", yet somehow the native birches still manage to sprout up. Maybe the C++ library that fires off the message (DataExchangeTcpClientImpl.cpp) is looking at the OS language (Russian) in my case — hard to say.</p>
-<p>Anyway, I can't shake the Bugs Bunny vibes every time I see that dialog box.</p>
-<p><img alt="No" src="https://kostyanetsky.me/notes/no/bugs-bunny.png"/></p></description>
         </item>
         
     </channel>

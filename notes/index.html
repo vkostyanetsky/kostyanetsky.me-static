@@ -254,6 +254,13 @@
         </button>
         
         <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
           data-chip="typescript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -265,13 +272,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Bitrix
-        </button>
-        
-        <button
-          data-chip="blog"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Blog
         </button>
         
         <button
@@ -363,6 +363,53 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/new-ui"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                New Blog's UI
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 January 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Blog</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Over the New Year holidays I randomly got obsessed and rewrote my blog's UI. I only wanted to add search for my notes — there are a lot of them now, and every so often I need to quickly fish something out of the pile (like "here's that link" to a coworker).</p>
+<p>The blog runs on <a href="https://docs.github.com/ru/pages" target="_blank">GitHub Pages</a>, so the options aren’t exactly infinite: either outsource search to Google, or build a static index and ship it to the user's browser so it can grep through it locally. I went with the second route: faster, more controllable, <s>and, yes, an excuse to write code</s>. The first time you search it has to download <a href="https://kostyanetsky.me/notes.json" target="_blank">the index file</a>, but... It's 200 KB. That's basically one medium-sized sigh in 2026 internet terms.</p>
+<p>And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn't get <a href="https://tachyons.io" target="_blank">Tachyons</a> to play nice with the search input — got annoyed and migrated everything to <a href="https://tailwindcss.com" target="_blank">Tailwind</a> (I'd been meaning to try it anyway, just never had a "good reason", so I invented one). While I was writing the search code, I figured it'd be dumb not to add tags too, because why do the same work twice. Next thing I know I "wake up" and there's a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it's not tags, it's tech stacks...</p>
+<p>So yeah, it turned into that "Fear and Loathing in Las Vegas" meme. The tendency is to push it as far as you can.</p>
+<p>Now the only thing left is to make myself actually write into the new project log. There's always a ton of work, and it's genuinely interesting — but if I don't write things down… Welp. Everything sinks into coffee.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1348,49 +1395,6 @@ own room."</p>
 <p>To simplify this routine, I expanded the pipeline code a bit: after generating the report, GitLab first creates a brief summary (client type, database type, test statistics) and sends it to Slack.</p>
 <p><img alt="Report" src="https://kostyanetsky.me/notes/slack-summary/report.jpg"/></p>
 <p>As a bonus, it’s now easier to answer the philosophical question, "who broke everything". Most often, it’s the author of the first commit on which the Scenarios Failed metric in the screenshot above hit the ceiling :)</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/butterfly"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Log & Bug
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>12 October 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>I love digging into the origins of words from time to time. For example, "log" comes from maritime terminology and literally means a log: a wooden float attached to a rope, which was thrown overboard from a ship. The rope had knots tied at regular intervals, and by counting how many knots unwound in a certain amount of time, sailors could determine the speed of the ship.</p>
-<p>These measurements were recorded in the ship's journal, which was also called a log. Over time, the term started being used for any kind of record or journal of events, and in IT, the word got a second life :)</p>
-<p>Or take "bug" — well, you’ve probably heard about this one. A moth, which messed with a computer’s operation over seventy years ago, was documented in the log as "the first actual case of a bug being found". The insect gained a kind of digital immortality: now any mistake, especially in a program, is called a bug.</p>
-<p>(It’s just a pity that it wasn’t a prettier insect — like a butterfly, for instance? That would’ve added a touch of romance to our work)</p>
-<p>(Though, if you think about it... maybe "bug" isn’t such a bad option after all. "Butterfly" is a bit too long. Someone would’ve shortened it to "butt" and right now, we’d be fixing butts instead of bugs)</p>
             </div>
           </div>
           

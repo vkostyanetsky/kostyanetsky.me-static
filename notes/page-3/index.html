@@ -254,6 +254,13 @@
         </button>
         
         <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
           data-chip="typescript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -265,13 +272,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Bitrix
-        </button>
-        
-        <button
-          data-chip="blog"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Blog
         </button>
         
         <button
@@ -363,6 +363,54 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/callouts-for-fastimer"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Fastimer's Look
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 Marth 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Typescript</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I just implemented <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">Fastimer</a>'s rendering through callouts: this is an Obsidian mechanic that allows you to turn an ordinary quote into a designed block of text that attracts the reader's attention. You've probably seen blocks like “advice” and “pay attention” — these are callouts.</p>
+<p>You can read more in <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a>. </p>
+<p>As a result, the timer now takes on a different color depending on the state: blue for an active fast, green for completed, and red for a failed one.</p>
+<p>In addition, I made the text more compact and worked on styling:</p>
+<p><img alt="Example" src="https://kostyanetsky.me/notes/callouts-for-fastimer/example.png"/></p>
+<p>It turned out to be way nicer than the block of preformatted text as it was before.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1266,52 +1314,6 @@ EndIf;
               <p>For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
 <p>They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
 <p>Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/slack"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Slack Advises
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>25 August 2022</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Slack, of course, is a thing to scold. For being slow, for having bugs, for notifications. However, I just love his stubs in case there are no new messages.</p>
-<p>Look at this cuteness:</p>
-<p><img alt="All done. The future is yours." src="https://kostyanetsky.me/notes/slack/all-done.png"/></p>
-<p>Why do we need psychotherapists at all?</p>
-<p><img alt="You're up to date. Go forth and do great things." src="https://kostyanetsky.me/notes/slack/up-to-date.png"/></p>
-<p>Or this:</p>
-<p><img alt="You're all read. Here is a tractor." src="https://kostyanetsky.me/notes/slack/here-is-tractor.png"/></p>
-<p>Geez-Louise, Slack, hold on. You're not the first who advices this, believe me.</p>
             </div>
           </div>
           

@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Backup Management</title>
+    <title>New Blog's UI</title>
 
-    <meta name="description" content="About the new feature in the internal cloud management software." />
+    <meta name="description" content="About the new blog interface, which was created during the New Year holidays." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Backup Management"/>
-    <meta property="og:description" content="About the new feature in the internal cloud management software."/>
+    <meta property="og:title" content="New Blog's UI"/>
+    <meta property="og:description" content="About the new blog interface, which was created during the New Year holidays."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/backup-ui" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/new-ui" />    
 
     <!-- CSS -->
      
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/desire-paths';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/new-ui';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/backup-ui';
+        let ctrlRightUrl    = '';
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -84,7 +84,7 @@
                     
                         <a
                         title="Found a typo? Edit me!"
-                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/backup-ui/index.md"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/new-ui/index.md"
                         class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
                         >✎</a>
                     
@@ -93,7 +93,7 @@
                     
                     
                     <a
-                        href="https://kostyanetsky.ru/notes/backup-ui"
+                        href="https://kostyanetsky.ru/notes/new-ui"
                         class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
                         title="RU"
                     >
@@ -121,7 +121,7 @@
         <article class="rounded-2xl bg-white">
           
           <header class="text-3xl font-semibold tracking-tight space-y-2">
-            Backup Management
+            New Blog's UI
           </header>
 
           <div class="mt-5">
@@ -135,16 +135,12 @@
             
 
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>6 December 2025</span>
+              <span>17 January 2026</span>
               
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Blog</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
@@ -158,18 +154,11 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
-<p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
-<p>You can pick one of three backup types:</p>
-<ul>
-<li>Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);</li>
-<li>File backup (a regular .dt file you can download and spin up locally);</li>
-<li>Configuration + extensions backup (.cf + .cfe).</li>
-</ul>
-<p>Also, the new solution detects when someone tries to request a backup for an app that's already being generated right now. And it rate-limits things too: you can't back up the same app more than once per hour.</p>
-<p>And yes — we're still sneaking jokes into the UI. Obviously.</p>
-<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/></p>
-<p><img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p>
+              <p>Over the New Year holidays I randomly got obsessed and rewrote my blog's UI. I only wanted to add search for my notes — there are a lot of them now, and every so often I need to quickly fish something out of the pile (like "here's that link" to a coworker).</p>
+<p>The blog runs on <a href="https://docs.github.com/ru/pages" target="_blank">GitHub Pages</a>, so the options aren’t exactly infinite: either outsource search to Google, or build a static index and ship it to the user's browser so it can grep through it locally. I went with the second route: faster, more controllable, <s>and, yes, an excuse to write code</s>. The first time you search it has to download <a href="https://kostyanetsky.me/notes.json" target="_blank">the index file</a>, but... It's 200 KB. That's basically one medium-sized sigh in 2026 internet terms.</p>
+<p>And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn't get <a href="https://tachyons.io" target="_blank">Tachyons</a> to play nice with the search input — got annoyed and migrated everything to <a href="https://tailwindcss.com" target="_blank">Tailwind</a> (I'd been meaning to try it anyway, just never had a "good reason", so I invented one). While I was writing the search code, I figured it'd be dumb not to add tags too, because why do the same work twice. Next thing I know I "wake up" and there's a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it's not tags, it's tech stacks...</p>
+<p>So yeah, it turned into that "Fear and Loathing in Las Vegas" meme. The tendency is to push it as far as you can.</p>
+<p>Now the only thing left is to make myself actually write into the new project log. There's always a ton of work, and it's genuinely interesting — but if I don't write things down… Welp. Everything sinks into coffee.</p>
             </div>
           </div>
           
@@ -188,21 +177,13 @@
         
         <a
           id="prevLink"
-          href="https://kostyanetsky.me/notes/desire-paths"
+          href="https://kostyanetsky.me/notes/backup-ui"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          ← Desire Paths
+          ← Backup Management
         </a>
         
         <span class="w-[1px]"></span>
-        
-        <a
-          id="nextLink"
-          href="https://kostyanetsky.me/notes/new-ui"
-          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
-        >
-          New Blog's UI →
-        </a>
         
       </nav>
 

@@ -254,6 +254,13 @@
         </button>
         
         <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
           data-chip="typescript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -265,13 +272,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Bitrix
-        </button>
-        
-        <button
-          data-chip="blog"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Blog
         </button>
         
         <button
@@ -363,6 +363,49 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/butterfly"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Log & Bug
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 October 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I love digging into the origins of words from time to time. For example, "log" comes from maritime terminology and literally means a log: a wooden float attached to a rope, which was thrown overboard from a ship. The rope had knots tied at regular intervals, and by counting how many knots unwound in a certain amount of time, sailors could determine the speed of the ship.</p>
+<p>These measurements were recorded in the ship's journal, which was also called a log. Over time, the term started being used for any kind of record or journal of events, and in IT, the word got a second life :)</p>
+<p>Or take "bug" — well, you’ve probably heard about this one. A moth, which messed with a computer’s operation over seventy years ago, was documented in the log as "the first actual case of a bug being found". The insect gained a kind of digital immortality: now any mistake, especially in a program, is called a bug.</p>
+<p>(It’s just a pity that it wasn’t a prettier insect — like a butterfly, for instance? That would’ve added a touch of romance to our work)</p>
+<p>(Though, if you think about it... maybe "bug" isn’t such a bad option after all. "Butterfly" is a bit too long. Someone would’ve shortened it to "butt" and right now, we’d be fixing butts instead of bugs)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1294,54 +1337,6 @@
 <p>In fact, there is a lot of software for this task. I tried some of them but was dissatisfied: it either has terrible design, is bugged, or is constantly trying to sell me a monthly subscription. In short, it's more annoying than helpful. I wanted something native, built into the usual routine; so, if routine settles in Obsidian, then the solution seems to suggest itself.</p>
 <p>You can install the plugin directly from the program — the developers have already approved it. Otherwise, everything is simple: you write in a daily note what you ate and how much it weighed, and you receive a simple table sorted by calories with numbers by proteins, fats, and carbohydrates.</p>
 <p>There are examples in the repository at the link above.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/callouts-for-fastimer"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Fastimer's Look
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>9 Marth 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Typescript</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>I just implemented <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">Fastimer</a>'s rendering through callouts: this is an Obsidian mechanic that allows you to turn an ordinary quote into a designed block of text that attracts the reader's attention. You've probably seen blocks like “advice” and “pay attention” — these are callouts.</p>
-<p>You can read more in <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a>. </p>
-<p>As a result, the timer now takes on a different color depending on the state: blue for an active fast, green for completed, and red for a failed one.</p>
-<p>In addition, I made the text more compact and worked on styling:</p>
-<p><img alt="Example" src="https://kostyanetsky.me/notes/callouts-for-fastimer/example.png"/></p>
-<p>It turned out to be way nicer than the block of preformatted text as it was before.</p>
             </div>
           </div>
           
