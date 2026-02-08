@@ -219,6 +219,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
           data-chip="code-smell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -244,13 +251,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           3D
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          AI
         </button>
         
         <button
@@ -363,6 +363,73 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/autosummary"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Autosummary
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 February 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I started recording all my meetings back in 2020 — at least, that’s what my own <a href="https://kostyanetsky.me/notes/video-recording" target="_blank">notes</a> say. Video is always more accurate than memory, and clicking "Start Recording" in OBS is the cheapest way to not lose some random-but-important detail.</p>
+<p>The downsides are obvious, though: you can't quickly grasp the gist of a meeting from a video, searching through it is basically impossible, it eats disk space like it's bulking season, and it's painfully easy to accidentally capture something private. To partially compensate, I used to jot down key points in bullet form during the meeting, and later either throw them into a task tracker or write a mini-summary for myself: who I met with, what we discussed, what decisions we landed on. If I forgot something or missed details, I'd double-check the video.</p>
+<p>But this method isn't perfect either. Even a rough outline steals focus from the actual meeting. And some "oh right, that detail matters" moments only reveal themselves when it's already too late.</p>
+<p><img alt="Forgot" src="https://kostyanetsky.me/notes/autosummary/forgot.jpeg"/></p>
+<p>So I ended up with a better approach: extract the meeting audio from the video, turn it into text (with a neural net), then turn that transcript into a detailed meeting summary (with another neural net). Yes, it's neural nets all the way down.</p>
+<p>The easiest way to rip the audio is with <a href="https://www.ffmpeg.org" target="_blank">ffmpeg</a> (a command-line utility for working with audio/video). Here's an example (mono, 16 kHz sampling rate + loudness normalization):</p>
+<pre>
+ffmpeg.exe -y -i "D:\video.mkv" -vn -ac 1 -ar 16000 -af loudnorm -c:a pcm_s16le "D:\audio.wav"
+</pre>
+<p>As for speech-to-text: I experimented with <a href="https://alphacephei.com/vosk/" target="_blank">Vosk</a> + <a href="https://github.com/benob/recasepunc" target="_blank">recasepunc</a>, but... Yeah, no. Let's just say I'd rather not relive that experience. Meanwhile <s>Boromir</s> <a href="https://openai.com/index/whisper" target="_blank">Whisper</a> (OpenAI's speech recognition model) installs in the background in about 10 minutes:</p>
+<pre>
+py -3.10 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install setuptools wheel
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install openai-whisper
+</pre>
+<p>Example run:</p>
+<pre>
+whisper "D:\audio.wav" --model medium --language Russian --output_format txt
+</pre>
+<p>The result is a plain text transcript you can shove into any chatbot and get a fairly coherent summary. Sure, you still need to proofread it — fix mistakes and hallucinations, rephrase a couple things — but it's still way better than trying to write notes live.</p>
+<p>(If you really want, you can wire up an API call or point it at some local model via LM Studio — but for my personal setup I decided: nope, that's already too much engineering for a lazy win)</p>
+<p>And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can’t be bothered to vibe-code your own script, you can <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" target="_blank">grab mine</a> and tweak it.</p>
+<p>The script finds the first .mkv in its folder, runs it through ffmpeg + Whisper, and saves the result back into the same folder. If you use it: note that it runs via <a href="https://developer.nvidia.com/cuda" target="_blank">CUDA</a> (CPU works too, just much slower), and it stores downloaded Whisper models not in the default cache, but inside the current Python virtual environment folder.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1344,57 +1411,6 @@ own room."</p>
 <p>That approach works at the very beginning, but it doesn't help you learn how to solve problems. This time, I watched a few lessons back-to-back for about an hour or two, then tried to figure things out on my own. I only went back to the videos when I was completely stuck. Feels like I’m actually retaining a lot more this way.</p>
 <p>Long story short, the thing is done. On to the next one!</p>
 <p>UPD: One of the founders of FlippedNormals recorded a <a href="https://www.youtube.com/watch?v=izkRFqBzya0" target="_blank">video</a> with the same thoughts about training.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/slack-summary"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Summary to Slack
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>10 November 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Powershell</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>I found a <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">script</a> that I wrote a couple of years ago for our work GitLab. In short, we run our development repository through a barrage of tests on Vanessa daily, resulting in a nice report showing how many tests passed, which ones failed, the reasons for failures, and so on.</p>
-<p>The report needs to be analyzed regularly, at least at a glance. Of course, we haven’t seen fully "green" tests in a long time, and that’s expected: for example, in the case of interdependent development, commits can break the checked functionality, and the tests still need adjustments. However, keeping a pulse on it is still essential.</p>
-<p>To simplify this routine, I expanded the pipeline code a bit: after generating the report, GitLab first creates a brief summary (client type, database type, test statistics) and sends it to Slack.</p>
-<p><img alt="Report" src="https://kostyanetsky.me/notes/slack-summary/report.jpg"/></p>
-<p>As a bonus, it’s now easier to answer the philosophical question, "who broke everything". Most often, it’s the author of the first commit on which the Scenarios Failed metric in the screenshot above hit the ceiling :)</p>
             </div>
           </div>
           

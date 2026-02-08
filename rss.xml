@@ -4,7 +4,39 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 17 Jan 2026 18:18:43 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 08 Feb 2026 09:53:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Autosummary</title>
+            <link>https://kostyanetsky.me/notes/autosummary</link>
+            <guid isPermaLink="false">note-autosummary</guid>
+            <pubDate>Sun, 08 Feb 2026 09:53:48 +0700</pubDate>
+            <description><p>I started recording all my meetings back in 2020 — at least, that’s what my own <a href="https://kostyanetsky.me/notes/video-recording" target="_blank">notes</a> say. Video is always more accurate than memory, and clicking "Start Recording" in OBS is the cheapest way to not lose some random-but-important detail.</p>
+<p>The downsides are obvious, though: you can't quickly grasp the gist of a meeting from a video, searching through it is basically impossible, it eats disk space like it's bulking season, and it's painfully easy to accidentally capture something private. To partially compensate, I used to jot down key points in bullet form during the meeting, and later either throw them into a task tracker or write a mini-summary for myself: who I met with, what we discussed, what decisions we landed on. If I forgot something or missed details, I'd double-check the video.</p>
+<p>But this method isn't perfect either. Even a rough outline steals focus from the actual meeting. And some "oh right, that detail matters" moments only reveal themselves when it's already too late.</p>
+<p><img alt="Forgot" src="https://kostyanetsky.me/notes/autosummary/forgot.jpeg"/></p>
+<p>So I ended up with a better approach: extract the meeting audio from the video, turn it into text (with a neural net), then turn that transcript into a detailed meeting summary (with another neural net). Yes, it's neural nets all the way down.</p>
+<p>The easiest way to rip the audio is with <a href="https://www.ffmpeg.org" target="_blank">ffmpeg</a> (a command-line utility for working with audio/video). Here's an example (mono, 16 kHz sampling rate + loudness normalization):</p>
+<pre>
+ffmpeg.exe -y -i "D:\video.mkv" -vn -ac 1 -ar 16000 -af loudnorm -c:a pcm_s16le "D:\audio.wav"
+</pre>
+<p>As for speech-to-text: I experimented with <a href="https://alphacephei.com/vosk/" target="_blank">Vosk</a> + <a href="https://github.com/benob/recasepunc" target="_blank">recasepunc</a>, but... Yeah, no. Let's just say I'd rather not relive that experience. Meanwhile <s>Boromir</s> <a href="https://openai.com/index/whisper" target="_blank">Whisper</a> (OpenAI's speech recognition model) installs in the background in about 10 minutes:</p>
+<pre>
+py -3.10 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install setuptools wheel
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install openai-whisper
+</pre>
+<p>Example run:</p>
+<pre>
+whisper "D:\audio.wav" --model medium --language Russian --output_format txt
+</pre>
+<p>The result is a plain text transcript you can shove into any chatbot and get a fairly coherent summary. Sure, you still need to proofread it — fix mistakes and hallucinations, rephrase a couple things — but it's still way better than trying to write notes live.</p>
+<p>(If you really want, you can wire up an API call or point it at some local model via LM Studio — but for my personal setup I decided: nope, that's already too much engineering for a lazy win)</p>
+<p>And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can’t be bothered to vibe-code your own script, you can <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" target="_blank">grab mine</a> and tweak it.</p>
+<p>The script finds the first .mkv in its folder, runs it through ffmpeg + Whisper, and saves the result back into the same folder. If you use it: note that it runs via <a href="https://developer.nvidia.com/cuda" target="_blank">CUDA</a> (CPU works too, just much slower), and it stores downloaded Whisper models not in the default cache, but inside the current Python virtual environment folder.</p></description>
+        </item>
         
         <item>
             <title>New Blog&#x27;s UI</title>
@@ -202,19 +234,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>Still, there are some genuinely interesting nuggets! For instance, I'd never heard the claim that cramming your code into one single line makes it run ten times faster. Too bad you'd get your ass handed to you by the team for trying that kind of desperate swag before you even get to celebrate the speed boost. And let's be real — most enterprise app slowdowns usually come from totally different places.</p>
 <p>Or take their speed comparison for dumping data into a table: one test for object presentations and another for their descriptions. The presentation dump was literally tens of times slower! On paper, that sounds weird — both are just strings already pulled from the database at measurement time. My guess is it's down to typing: presentation strings can be unlimited length, unlike descriptions. So you get extra memory allocations, helper structures popping up, and bam — that's where the slowdown creeps in.</p>
 <p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> <code>ValueIsFilled()</code> and getting a nasty <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">surprise</a> from the built‑in <code>FindByNumber()</code>.</p></description>
-        </item>
-        
-        <item>
-            <title>Geometry Deletion</title>
-            <link>https://kostyanetsky.me/notes/delete-geometry</link>
-            <guid isPermaLink="false">note-delete-geometry</guid>
-            <pubDate>Thu, 12 Jun 2025 10:40:43 +0700</pubDate>
-            <description><p>I figured out a cool trick for cutting off parts of an object when it intersects with something else. Like, in this gif, there’s a monkey head model in the center, and as a plane moves through it, the part that intersects just disappears.</p>
-<p><img alt="Demo" src="https://kostyanetsky.me/notes/delete-geometry/demo.gif"/></p>
-<p><a href="https://github.com/vkostyanetsky/3DPlayground/blob/main/Geometry%20Nodes/DeleteGeometry.blend" target="_blank">The idea</a> is pretty simple: you shrink the geometry of the "cutter" object down to a cube, get its min and max coordinates along each axis, and then for every point on the object you're trimming, you check whether it falls within that range. If it does — boom, it gets deleted.</p>
-<p>There are tons of ways you could use this. For example, I used it to automatically trim parts of decorative music staff lines on a wall so they wouldn't go across a doorway.</p>
-<p><img alt="Example" src="https://kostyanetsky.me/notes/delete-geometry/case.jpg"/></p>
-<p>Sure, you could do it by hand, without geometry nodes, but that would kill flexibility. If the wall size, door size, or the angle of the lines changes — you'd have to redo everything from scratch.</p></description>
         </item>
         
     </channel>

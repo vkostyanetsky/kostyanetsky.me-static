@@ -219,6 +219,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
           data-chip="code-smell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -244,13 +251,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           3D
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          AI
         </button>
         
         <button
@@ -363,6 +363,62 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/obsidian-foodiary"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Foodiary for Obsidian
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 April 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Typescript</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Following my <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">first</a> plugin for Obsidian, I released <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" target="_blank">the second one</a> a couple of weeks ago. Counts calories, proteins, fats, and carbohydrates in food. It helps not to overeat out of nowhere — it’s rather difficult to judge by eye how much you’ve eaten today and whether you can afford that donut.</p>
+<p>In short, a useful thing if you:</p>
+<ol>
+<li>Fatty (like me)</li>
+<li>Want to stop being fatty (like me)</li>
+<li>You take notes in Obsidian (like me) 🙂</li>
+</ol>
+<p>In fact, there is a lot of software for this task. I tried some of them but was dissatisfied: it either has terrible design, is bugged, or is constantly trying to sell me a monthly subscription. In short, it's more annoying than helpful. I wanted something native, built into the usual routine; so, if routine settles in Obsidian, then the solution seems to suggest itself.</p>
+<p>You can install the plugin directly from the program — the developers have already approved it. Otherwise, everything is simple: you write in a daily note what you ate and how much it weighed, and you receive a simple table sorted by calories with numbers by proteins, fats, and carbohydrates.</p>
+<p>There are examples in the repository at the link above.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1265,55 +1321,6 @@ EndIf;
 <p>Where'd I digress? Yeah, a product line. It contains a product, a VAT rate, and a unit of measure. All three entities are completely independent: each has a separate table with auxiliary information and its own unique identifier. It is logical to assume that identifiers are stored in the product line: product ID, VAT rate ID, and unit ID.</p>
 <p>Well, yes, but no. The product field actually contains ID, but for the VAT rate field it's a rate value. What's for the unit of measure field? Well, it contains a measurement code ¯\_(ツ)_/¯</p>
 <p>Database normalization? What? What does it mean? Back off, man, you're distracting us from work.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/anonymous-quokka"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Group Work in Google Docs
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>18 September 2022</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Bitrix</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
-<p>They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
-<p>Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p>
             </div>
           </div>
           

@@ -219,6 +219,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
           data-chip="code-smell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -244,13 +251,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           3D
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          AI
         </button>
         
         <button
@@ -363,6 +363,55 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/anonymous-quokka"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Group Work in Google Docs
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>18 September 2022</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Bitrix</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>For the last month I have been rewriting standard data exchange between FirstBit ERP and Bitrix for a client task. Co-workers doing the same on the Bitrix side prepared a huge mapping for this case: which field on the 1C side should be transferred to which Bitrix field (and vice versa).</p>
+<p>They published this mapping as Google Docs tables, in the interface of which you can see users using any document at this moment — both logged in and anonymous. Anonymous ones traditionally are displaying as <a href="https://support.google.com/docs/answer/2494888?hl=en" target="_blank">animals</a>.</p>
+<p>Colleagues generally prefer to work anonymously. As a result, I definetely used to feel like a Disney princess: you start working in the morning, and anonymous quokkas, penguins and chinchillas roll out from everywhere :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1317,60 +1366,6 @@ MultiMonitorTool.exe / switch 2
               <p>I posted on GitHub a Python <a href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
 <p>I suffered with the problem for some time and eventually returned to the good old <a href="https://rclone.org" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
 <p>Secondly, I had many files and folders to sync: a directory here, a directory there, a config from there, a profile from here… In order not to produce spaghetti code, I wrote a simple script that takes sources and receivers from a config file, and then executes rclone for each pair.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/nerdview"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Nerd View
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>19 October 2020</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Family</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><img alt="A chat with my daughter" src="https://kostyanetsky.me/notes/nerdview/telegram.png"/></p>
-<p>On the screenshot above my little one is just letting me know where she is: walking down the street, at the school, at a playground. It's not her fault that I have a sort of nerd view: when I look at this chat I see nothing but code on Gherkin, which is just a bit broken. A little patch here and there and it will be fine :-)</p>
-<pre><code>And I exit home
-Then I enter school
-And I exit school
-Then I gonna swing
-</code></pre>
-<p>We use Gherkin to write our autotests for <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. I can't say I've made very many of them, especially in comparison with some of my colleagues… Well, it seems like I've made them enough to twist the reality a few.</p>
             </div>
           </div>
           
