@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Autosummary</title>
+    <title>Ikigai</title>
 
-    <meta name="description" content="About how to automate the generation of meeting summaries." />
+    <meta name="description" content="What is the meaning of life?" />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Autosummary"/>
-    <meta property="og:description" content="About how to automate the generation of meeting summaries."/>
+    <meta property="og:title" content="Ikigai"/>
+    <meta property="og:description" content="What is the meaning of life?"/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/autosummary" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/ikigai" />    
 
     <!-- CSS -->
      
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/new-ui';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/ikigai';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/autosummary';
+        let ctrlRightUrl    = '';
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -84,7 +84,7 @@
                     
                         <a
                         title="Found a typo? Edit me!"
-                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/autosummary/index.md"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/ikigai/index.md"
                         class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
                         >✎</a>
                     
@@ -93,7 +93,7 @@
                     
                     
                     <a
-                        href="https://kostyanetsky.ru/notes/autosummary"
+                        href="https://kostyanetsky.ru/notes/ikigai"
                         class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
                         title="RU"
                     >
@@ -121,7 +121,7 @@
         <article class="rounded-2xl bg-white">
           
           <header class="text-3xl font-semibold tracking-tight space-y-2">
-            Autosummary
+            Ikigai
           </header>
 
           <div class="mt-5">
@@ -135,16 +135,12 @@
             
 
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>8 February 2026</span>
+              <span>9 Marth 2026</span>
               
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
                 </div>
                 
               
@@ -154,31 +150,10 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I started recording all my meetings back in 2020 — at least, that’s what my own <a href="https://kostyanetsky.me/notes/video-recording" target="_blank">notes</a> say. Video is always more accurate than memory, and clicking "Start Recording" in <a href="https://obsproject.com" target="_blank">OBS</a> is the cheapest way to not lose some random-but-important detail.</p>
-<p>The downsides are obvious, though: you can't quickly grasp the gist of a meeting from a video, searching through it is basically impossible, it eats disk space like it's bulking season, and it's painfully easy to accidentally capture something private. To partially compensate, I used to jot down key points in bullet form during the meeting, and later either throw them into a task tracker or write a mini-summary for myself: who I met with, what we discussed, what decisions we landed on. If I forgot something or missed details, I'd double-check the video.</p>
-<p>But this method isn't perfect either. Even a rough outline steals focus from the actual meeting. And some "oh right, that detail matters" moments only reveal themselves when it's already too late.</p>
-<p><img alt="Forgot" src="https://kostyanetsky.me/notes/autosummary/forgot.jpeg"/></p>
-<p>So I ended up with a better approach: extract the meeting audio from the video, turn it into text (with a neural net), then turn that transcript into a detailed meeting summary (with another neural net). Yes, it's neural nets all the way down.</p>
-<p>The easiest way to rip the audio is with <a href="https://www.ffmpeg.org" target="_blank">ffmpeg</a> (a command-line utility for working with audio/video). Here's an example (mono, 16 kHz sampling rate + loudness normalization):</p>
-<pre>
-ffmpeg.exe -y -i "D:\video.mkv" -vn -ac 1 -ar 16000 -af loudnorm -c:a pcm_s16le "D:\audio.wav"
-</pre>
-<p>As for speech-to-text: I experimented with <a href="https://alphacephei.com/vosk/" target="_blank">Vosk</a> + <a href="https://github.com/benob/recasepunc" target="_blank">recasepunc</a>, but... Yeah, no. Let's just say I'd rather not relive that experience. Meanwhile <s>Boromir</s> <a href="https://openai.com/index/whisper" target="_blank">Whisper</a> (OpenAI's speech recognition model) installs in the background in about 10 minutes:</p>
-<pre>
-py -3.10 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install setuptools wheel
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install openai-whisper
-</pre>
-<p>Example run:</p>
-<pre>
-whisper "D:\audio.wav" --model medium --language Russian --output_format txt
-</pre>
-<p>The result is a plain text transcript you can shove into any chatbot and get a fairly coherent summary. Sure, you still need to proofread it — fix mistakes and hallucinations, rephrase a couple things — but it's still way better than trying to write notes live.</p>
-<p>And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can't be bothered to vibe-code, you can grab <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" target="_blank">my script</a> and tweak it.</p>
-<p>The script finds the first .mkv in its folder, runs it through ffmpeg + Whisper, and saves the result back into the same folder. If you use it: note that it runs via <a href="https://developer.nvidia.com/cuda" target="_blank">CUDA</a> (CPU works too, just much slower), and it stores downloaded Whisper models not in the default cache, but inside the current Python virtual environment folder.</p>
-<p>(if you really want, you can wire up an API call or point it at some local model via <a href="https://lmstudio.ai" target="_blank">LM Studio</a> — but for my personal setup I decided: nope, that's already too much engineering for a lazy win)</p>
+              <p>In Japanese, there's a wonderful word: ikigai. It's kind of like your reason for living, but not in some huge existential sense — more in a grounded, everyday way. A source of inner energy, a source of joy. Basically, the thing that makes you want to get out of bed in the morning.</p>
+<p>A person can have several of those anchors, and they're different for everyone. Coffee, a cat, a craft you love, taking care of the people close to you, a garden, walks, video games...</p>
+<p>Anyway, that's what got me thinking. I stumbled across a channel called "<a href="https://t.me/aleshkino_svoe" target="_blank">Alyoshkino Svoe</a>". From what I understand, the guy behind it is a lawyer from St. Petersburg who breeds fancy chickens and regularly posts videos about specific breeds, incubation details, feeding, and so on.</p>
+<p>I'm not into birds at all, but I caught myself just sitting there for twenty minutes, completely mesmerized, listening without looking away. It almost works like therapy, honestly. And it struck me that this is actually a pretty solid kind of ikigai: finding something you'll love the way this guy loves his chickens.</p>
             </div>
           </div>
           
@@ -197,21 +172,13 @@ whisper "D:\audio.wav" --model medium --language Russian --output_format txt
         
         <a
           id="prevLink"
-          href="https://kostyanetsky.me/notes/new-ui"
+          href="https://kostyanetsky.me/notes/autosummary"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          ← New Blog's UI
+          ← Autosummary
         </a>
         
         <span class="w-[1px]"></span>
-        
-        <a
-          id="nextLink"
-          href="https://kostyanetsky.me/notes/ikigai"
-          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
-        >
-          Ikigai →
-        </a>
         
       </nav>
 

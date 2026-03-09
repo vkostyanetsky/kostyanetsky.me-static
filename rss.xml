@@ -4,7 +4,18 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 08 Feb 2026 09:53:48 +0700</lastBuildDate>
+        <lastBuildDate>Mon, 09 Mar 2026 22:01:43 +0700</lastBuildDate>
+        
+        <item>
+            <title>Ikigai</title>
+            <link>https://kostyanetsky.me/notes/ikigai</link>
+            <guid isPermaLink="false">note-ikigai</guid>
+            <pubDate>Mon, 09 Mar 2026 22:01:43 +0700</pubDate>
+            <description><p>In Japanese, there's a wonderful word: ikigai. It's kind of like your reason for living, but not in some huge existential sense — more in a grounded, everyday way. A source of inner energy, a source of joy. Basically, the thing that makes you want to get out of bed in the morning.</p>
+<p>A person can have several of those anchors, and they're different for everyone. Coffee, a cat, a craft you love, taking care of the people close to you, a garden, walks, video games...</p>
+<p>Anyway, that's what got me thinking. I stumbled across a channel called "<a href="https://t.me/aleshkino_svoe" target="_blank">Alyoshkino Svoe</a>". From what I understand, the guy behind it is a lawyer from St. Petersburg who breeds fancy chickens and regularly posts videos about specific breeds, incubation details, feeding, and so on.</p>
+<p>I'm not into birds at all, but I caught myself just sitting there for twenty minutes, completely mesmerized, listening without looking away. It almost works like therapy, honestly. And it struck me that this is actually a pretty solid kind of ikigai: finding something you'll love the way this guy loves his chickens.</p></description>
+        </item>
         
         <item>
             <title>Autosummary</title>
@@ -219,21 +230,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <li>Technically this violates the license agreement, you've been warned and all that.</li>
 <li>There's a risk the platform will trip over the new indexes during future restructurings (especially on the "new" schema). Better to have a ready script to drop the index, and then (after restructuring) put it back.</li>
 </ol></description>
-        </item>
-        
-        <item>
-            <title>Myth Buster</title>
-            <link>https://kostyanetsky.me/notes/myth-buster</link>
-            <guid isPermaLink="false">note-myth-buster</guid>
-            <pubDate>Sun, 27 Jul 2025 12:21:32 +0700</pubDate>
-            <description><p>I stumbled upon a hefty Infostart <a href="https://infostart.ru/1c/articles/2434171/" target="_blank">article</a> all about "debunking myths" around the platform.</p>
-<p>Honestly, about half of it reads like a joke. It's like:</p>
-<blockquote>
-<p>Hot off the press! Crime, intrigue, investigations! File‑based infobase is faster than client-server! DCS is slower than a plain request! Calling a server method on the server counts as a brand-new server call! <s>UFO over Red Square!</s></p>
-</blockquote>
-<p>Still, there are some genuinely interesting nuggets! For instance, I'd never heard the claim that cramming your code into one single line makes it run ten times faster. Too bad you'd get your ass handed to you by the team for trying that kind of desperate swag before you even get to celebrate the speed boost. And let's be real — most enterprise app slowdowns usually come from totally different places.</p>
-<p>Or take their speed comparison for dumping data into a table: one test for object presentations and another for their descriptions. The presentation dump was literally tens of times slower! On paper, that sounds weird — both are just strings already pulled from the database at measurement time. My guess is it's down to typing: presentation strings can be unlimited length, unlike descriptions. So you get extra memory allocations, helper structures popping up, and bam — that's where the slowdown creeps in.</p>
-<p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> <code>ValueIsFilled()</code> and getting a nasty <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">surprise</a> from the built‑in <code>FindByNumber()</code>.</p></description>
         </item>
         
     </channel>
