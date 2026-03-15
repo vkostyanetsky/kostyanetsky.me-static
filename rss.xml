@@ -4,7 +4,24 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Mon, 09 Mar 2026 22:01:43 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 15 Mar 2026 12:24:12 +0700</lastBuildDate>
+        
+        <item>
+            <title>With Side Effect</title>
+            <link>https://kostyanetsky.me/notes/with-side-effect</link>
+            <guid isPermaLink="false">note-with-side-effect</guid>
+            <pubDate>Sun, 15 Mar 2026 12:24:12 +0700</pubDate>
+            <description><p>In the latest release of <a href="https://firstbit.ae" target="_blank">our ERP</a>, we optimized several heavy dynamic lists — orders, invoices, proforma invoices, and so on. Over time they had accumulated a pretty solid pile of technical debt, mostly in the form of mountains of helper tables bolted onto the main queries: contact info, technical attributes, balances, turnovers, you name it.</p>
+<p>At some point even in fairly small deployments the DB optimizer started producing complete nonsense instead of query plans, and the resource cost of letting that happen was getting less and less funny.</p>
+<p>So, we patched things up using several different approaches. One of them was loading extra row data inside the <code>OnGetDataAtServer()</code> handler (I actually <a href="https://kostyanetsky.me/notes/desire-paths" target="_blank">mentioned</a> this mechanism not that long ago). We built a nice little framework around it, rolled it out, tested it, and... Well, now we're all sitting here with those deeply unimpressed engineer faces.</p>
+<p>To be fair, performance really did get a lot better. Inside a compact handler, you can tune queries against heavy virtual tables almost perfectly. The problem is somewhere else: field values populated by this handler are not passed into the standard dynamic list mechanisms. Which means search, sorting, and grouping simply do not work for those fields.</p>
+<p>So you type a value that is clearly visible in the column — and the row is not found. Or not all matching rows are found. Or rows show up that visibly should not match at all. From the user's point of view, this looks absolutely terrible. A bug is a bug. Those fields don't look any different in the UI, so how exactly are you supposed to explain that this is "just how the platform works™"?</p>
+<p>And if you explicitly exclude such a field from the mechanisms that can't handle it, that's somehow even worse. For example, try to sort by it — and boom, giant error message. Explaining why sorting blows up on this "Amount" column while the one right next to it works just fine is... Not exactly a beginner-friendly support conversation.</p>
+<p>Honestly, how do you come up with such a great handler concept and then completely fumble the platform-level implementation?</p>
+<p>This randomly reminded me of Reddit. Some communities love threads like "invent a superpower, but with a side effect". Like, one person comments: "I can run at the speed of the wind!" and someone replies: "yeah, but you can't stop". That kind of thing. Sometimes it gets pretty funny.</p>
+<p><img alt="Superpower" src="https://kostyanetsky.me/notes/with-side-effect/reddit.png"/></p>
+<p>That's basically the kind of conversation we're having with the platform developers. You can massively speed up dynamic lists, but the UI will make your users furious. You can automatically send binary data to an S3 bucket, but lose it all with one careless click. You can teleport anywhere, but it takes exactly as long as walking. You can shapeshift, but only into an elderly pug. You have thick, silky, luxurious hair, but on your ass.</p></description>
+        </item>
         
         <item>
             <title>Ikigai</title>
@@ -185,51 +202,6 @@ SELECT TOP 0
 <p>We still don't have a clean root cause. We traced it to a specific commit after which the bug started showing up, but the only weird thing there its <a href="https://kostyanetsky.me/notes/voodoo/the-commit.png" target="_blank">its name</a> (and honestly, there are nearby commits that look even <a href="https://kostyanetsky.me/notes/voodoo/the-other-commit.png" target="_blank">more suspicious</a> from this point of view). The rest were <a href="https://kostyanetsky.me/notes/voodoo/5ba6ac0956e0cc7bc6b520e5110420e6950478fe.diff" target="_blank">minor changes</a> that regenerate internal metadata IDs in the manifest. Yes, those IDs are tied to cache keys, but they get bumped on any metadata change and have never caused issues before.</p>
 <p>If you landed here from Google because you hit the same mess — make a no-op change to the problematic object so the platform refreshes the metadata IDs in the manifest. For example, add an empty method or even just a space in the module. That fixes the configuration so the recipe at the top stops corrupting the cache.</p>
 <p>Voodoo, sure — but hey, it works ¯\_(ツ)_/¯</p></description>
-        </item>
-        
-        <item>
-            <title>Slow Removal of Fresh Areas</title>
-            <link>https://kostyanetsky.me/notes/data-history-missing-indexes</link>
-            <guid isPermaLink="false">note-data-history-missing-indexes</guid>
-            <pubDate>Sun, 03 Aug 2025 16:25:35 +0700</pubDate>
-            <description><p>A colleague noticed that on one of our Fresh instances, deleting data areas had become painfully slow. Dug into the metrics:</p>
-<pre>
-DELETE FROM T1
-FROM _DataHistoryMetadata T1
-WHERE 
-    T1._MetadataId = ?
-    AND T1._IsActual = 0x00 
-    AND NOT (
-        T1._MetadataVersionNumber IN (
-            SELECT T2._MetadataVersionNumber AS MetadataVersionNumber_
-            FROM _DataHistoryVersions T2
-            WHERE T2._HistoryDataId IN (
-                SELECT DataHistoryLatestVersions1.DataHistoryLatestVersions._HistoryDataId AS HistoryDataId_
-                FROM DataHistoryLatestVersions1.DataHistoryLatestVersions T3
-                WHERE DataHistoryLatestVersions1.DataHistoryLatestVersions._MetadataId = ?
-            )
-        )
-    )
-</pre>
-<p>Each of these queries was reading around 20GB. What's happening is mostly clear: the platform is trying to delete an area's data history, but the janky DB query causes a full scan over the whole history table across all areas instead of using an index. Someone on Dmitrovskaya got lazy again.</p>
-<p><a href="https://x.com/EffinBirds/status/1945545263407301033" target="_blank"><img alt="Why are you surpised?" src="https://kostyanetsky.me/notes/data-history-missing-indexes/why.png"/></a></p>
-<p>So we were losing between 30 seconds and a half an hour per operation. Wanted it faster. Fix:</p>
-<pre>
-CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
-  ON dbo._DataHistoryLatestVersions1 (_MetadataId)
-  INCLUDE (_HistoryDataId)
-  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
-
-CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
-  ON dbo._DataHistoryVersions (_MetadataVersionNumber)
-  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
-</pre>
-<p>Deletion cost predictably dropped ~99%.</p>
-<p>If you're going to repeat this on your side:</p>
-<ol>
-<li>Technically this violates the license agreement, you've been warned and all that.</li>
-<li>There's a risk the platform will trip over the new indexes during future restructurings (especially on the "new" schema). Better to have a ready script to drop the index, and then (after restructuring) put it back.</li>
-</ol></description>
         </item>
         
     </channel>

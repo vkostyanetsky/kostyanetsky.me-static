@@ -372,6 +372,58 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/with-side-effect"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                With Side Effect
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 Marth 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>In the latest release of <a href="https://firstbit.ae" target="_blank">our ERP</a>, we optimized several heavy dynamic lists — orders, invoices, proforma invoices, and so on. Over time they had accumulated a pretty solid pile of technical debt, mostly in the form of mountains of helper tables bolted onto the main queries: contact info, technical attributes, balances, turnovers, you name it.</p>
+<p>At some point even in fairly small deployments the DB optimizer started producing complete nonsense instead of query plans, and the resource cost of letting that happen was getting less and less funny.</p>
+<p>So, we patched things up using several different approaches. One of them was loading extra row data inside the <code>OnGetDataAtServer()</code> handler (I actually <a href="https://kostyanetsky.me/notes/desire-paths" target="_blank">mentioned</a> this mechanism not that long ago). We built a nice little framework around it, rolled it out, tested it, and... Well, now we're all sitting here with those deeply unimpressed engineer faces.</p>
+<p>To be fair, performance really did get a lot better. Inside a compact handler, you can tune queries against heavy virtual tables almost perfectly. The problem is somewhere else: field values populated by this handler are not passed into the standard dynamic list mechanisms. Which means search, sorting, and grouping simply do not work for those fields.</p>
+<p>So you type a value that is clearly visible in the column — and the row is not found. Or not all matching rows are found. Or rows show up that visibly should not match at all. From the user's point of view, this looks absolutely terrible. A bug is a bug. Those fields don't look any different in the UI, so how exactly are you supposed to explain that this is "just how the platform works™"?</p>
+<p>And if you explicitly exclude such a field from the mechanisms that can't handle it, that's somehow even worse. For example, try to sort by it — and boom, giant error message. Explaining why sorting blows up on this "Amount" column while the one right next to it works just fine is... Not exactly a beginner-friendly support conversation.</p>
+<p>Honestly, how do you come up with such a great handler concept and then completely fumble the platform-level implementation?</p>
+<p>This randomly reminded me of Reddit. Some communities love threads like "invent a superpower, but with a side effect". Like, one person comments: "I can run at the speed of the wind!" and someone replies: "yeah, but you can't stop". That kind of thing. Sometimes it gets pretty funny.</p>
+<p><img alt="Superpower" src="https://kostyanetsky.me/notes/with-side-effect/reddit.png"/></p>
+<p>That's basically the kind of conversation we're having with the platform developers. You can massively speed up dynamic lists, but the UI will make your users furious. You can automatically send binary data to an S3 bucket, but lose it all with one careless click. You can teleport anywhere, but it takes exactly as long as walking. You can shapeshift, but only into an elderly pug. You have thick, silky, luxurious hair, but on your ass.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/ikigai"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Ikigai
@@ -1363,50 +1415,6 @@ own room."</p>
 <p>We fixed the permissions, rebooted the cluster, and voilà! The problem was gone.  </p>
 <p><img alt="End of Report" src="https://kostyanetsky.me/notes/bit-of-surgery/report.jpeg"/></p>
 <p>All other hypotheses — cluster manager acting up, lack of hardware resources, configuration bugs, client-side issues, broken security profiles, network problems between the client and server — got tossed out during the diagnostics process.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/vaporia"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Vaguely Familiar Logo
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>14 December 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Georgia</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><del>Meanwhile, OpenAI opened a branch in Tbilisi</del> Actually, they just sell vapes here, and the logo designer was probably inspired by clouds of steam. But every time I walk by, it still catches my eye :)</p>
-<p><img alt="Vaporia" src="https://kostyanetsky.me/notes/vaporia/vaporia.jpg"/></p>
             </div>
           </div>
           
