@@ -372,6 +372,62 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                The Year In The Date Literal Exceeds 3999
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 Marth 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I already wrote about the error mentioned in this post’s title <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999" target="_blank">earlier</a>, but here's the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.</p>
+<p>The usual symptoms are pretty random and annoying: some reports stop working, some documents refuse to post, totals recalculation crashes, and so on. Basically, any code that touches records with those broken dates is now having a bad day.</p>
+<p>The fix I outlined in the post linked above does work, but it's relatively slow: you need to configure the tech log, collect the output, and then parse it. The problem is that the platform crashes the moment it touches the first bad date, and there may be lots of them scattered across different tables. So you often end up doing this in multiple passes: run a check, hit an error, fix it, run again, hit the next one, repeat.</p>
+<p><img alt="Thank You, Mario!" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
+<p>A few years ago, because I wanted a faster way to deal with this, I wrote a <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" target="_blank">PostgreSQL query</a> for it. The idea is simple:</p>
+<ol>
+<li>Find all date fields in the database.</li>
+<li>Build one giant query against those fields to look for dates beyond 1C's limit.</li>
+</ol>
+<p>So yes, this query generates another query. Very normal behavior. Run the generated query, and you get the full picture: a list of tables containing invalid dates. After that, it's just engineering work — inspect the tables and decide what to do. In our case, bad dates sometimes show up in totals and turnovers, so we can just delete those rows and recalculate totals using the standard tools.</p>
+<p>Why do this at the DBMS level? Because 1C itself can't really help here — as a reminder, the platform crashes as soon as it touches the bad records. That includes reads, not just writes. Also, in this case, going directly against the database is simply faster and more convenient.</p>
+<p>The other day I rewrote the same <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" target="_blank">query for MS SQL</a>. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.</p>
+<p>If you want to use it, keep this in mind:</p>
+<ul>
+<li>The <code>_Fld626</code> field in the query text is the Fresh separator. In your database it may have a different name, or it may not exist at all.</li>
+<li>The query is written for a database that uses a 2000-year offset. If your database does not use that offset, you'll need to adjust the condition accordingly — see <code>DATEADD()</code>.</li>
+<li>I added the XML output trick (<code>FOR XML</code>) to stop SSMS from truncating the generated mega-query. That seemed faster than messing around with type casts. The side effect is that before running the generated query, you need to replace <code>&amp;gt;</code> with <code>&gt;</code>.</li>
+</ul>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/with-side-effect"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 With Side Effect
@@ -1365,56 +1421,6 @@ own room."</p>
 <p>The white things in the background are called chichilaki. It’s a kind of Georgian New Year tree (in practice, it’s finely shaved hazelnut branches). It’s believed to absorb all the accumulated negativity, so after the holidays, it’s supposed to be burned (along with the negativity).</p>
 <p>Turns out, that last part is a bit of a challenge. The local police (and especially the fire department) view this good old tradition with suspicion — and understandably so (a chichilaki can be as tall as a person, making it quite the torch). So, we were advised to simply toss the "negativity-charged" chichilaki into the trash to avoid getting fresh troubles. Or donate it to the zoo — apparently, the animals play with them and even use them to clean their teeth.</p>
 <p>That last part made me smile. Getting rid of negativity with the help of cats — what a surprise. Big, toothy cats, sure, but still cats!</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/bit-of-surgery"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                A Little Bit Of Surgery
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>17 December 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>A few years ago, I stumbled upon a story about a programmer who had to debug software controlling a surgical robot — right in the middle of an operation. That blew my mind, to be frank.</p>
-<p>Today, my colleague and I were fixing a 1C cluster with databases running on 1cFresh. After migrating it to a neighboring server, the thing suddenly started acting up. Long story short: trying to print a document would send the client app into its death throes.  </p>
-<p>While we were knee-deep in troubleshooting, I had this thought: sure, it doesn’t look as terrifying as debugging software that someone’s life literally depends on. But if you think about all the clients sitting on edge because their business is grinding to a halt... Well, who knows where the stress levels are higher?  </p>
-<p>P.S. Nerdy details for the curious. During the migration, the permissions for the server cache folder didn’t transfer properly. This led to a funny (well, not so funny) effect: the logs would happily land there, but session data wouldn’t.  </p>
-<p>So, when someone opened a print form, the configuration tried saving it to the storage, and rphost, in turn, attempted to shove it into the session cache. Here’s where things went sideways: the worker' process (probably) got slapped on the wrist by the OS. Due to (apparently) some funky file system event handling in the platform, the exception wasn’t caught, so the poor thing had no better idea than to kill the session. Naturally, this caused the client process to crash.  </p>
-<p>We fixed the permissions, rebooted the cluster, and voilà! The problem was gone.  </p>
-<p><img alt="End of Report" src="https://kostyanetsky.me/notes/bit-of-surgery/report.jpeg"/></p>
-<p>All other hypotheses — cluster manager acting up, lack of hardware resources, configuration bugs, client-side issues, broken security profiles, network problems between the client and server — got tossed out during the diagnostics process.</p>
             </div>
           </div>
           

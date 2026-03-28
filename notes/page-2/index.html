@@ -372,6 +372,56 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/bit-of-surgery"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A Little Bit Of Surgery
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 December 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A few years ago, I stumbled upon a story about a programmer who had to debug software controlling a surgical robot — right in the middle of an operation. That blew my mind, to be frank.</p>
+<p>Today, my colleague and I were fixing a 1C cluster with databases running on 1cFresh. After migrating it to a neighboring server, the thing suddenly started acting up. Long story short: trying to print a document would send the client app into its death throes.  </p>
+<p>While we were knee-deep in troubleshooting, I had this thought: sure, it doesn’t look as terrifying as debugging software that someone’s life literally depends on. But if you think about all the clients sitting on edge because their business is grinding to a halt... Well, who knows where the stress levels are higher?  </p>
+<p>P.S. Nerdy details for the curious. During the migration, the permissions for the server cache folder didn’t transfer properly. This led to a funny (well, not so funny) effect: the logs would happily land there, but session data wouldn’t.  </p>
+<p>So, when someone opened a print form, the configuration tried saving it to the storage, and rphost, in turn, attempted to shove it into the session cache. Here’s where things went sideways: the worker' process (probably) got slapped on the wrist by the OS. Due to (apparently) some funky file system event handling in the platform, the exception wasn’t caught, so the poor thing had no better idea than to kill the session. Naturally, this caused the client process to crash.  </p>
+<p>We fixed the permissions, rebooted the cluster, and voilà! The problem was gone.  </p>
+<p><img alt="End of Report" src="https://kostyanetsky.me/notes/bit-of-surgery/report.jpeg"/></p>
+<p>All other hypotheses — cluster manager acting up, lack of hardware resources, configuration bugs, client-side issues, broken security profiles, network problems between the client and server — got tossed out during the diagnostics process.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/vaporia"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Vaguely Familiar Logo
@@ -1272,53 +1322,6 @@
 <blockquote>
 <p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
 </blockquote>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/last-resort"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Screenshot With Sound
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>20 May 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Recently, we came up with the idea of dividing the internal ERP into several independent parts and organizing data exchange between them. We discussed the outlines of the task, the exchange model, transport, and roughly agreed on deadlines — in general, we did what we usually do.</p>
-<p>I created a task for the stuff. We give them names in English, so I wrote in the first wording that came to mind.</p>
-<p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.me/notes/last-resort/last-resort.png"/></p>
-<p>The title came out with sound. Okay, this one is funny, but what should I call it then? Well, let it be Distributed Internal ERP. Abbreviated... DIE?</p>
-<p>I let the first one be. Long live Papa Roach :)</p>
             </div>
           </div>
           

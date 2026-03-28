@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>With Side Effect</title>
+    <title>The Date Literal Problem During Totals Recalculation</title>
 
-    <meta name="description" content="About the dark side of the OnGetDataAtServer() handler." />
+    <meta name="description" content="A short guide on why the date literal problem happens during totals recalculation and how to deal with it." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="With Side Effect"/>
-    <meta property="og:description" content="About the dark side of the OnGetDataAtServer() handler."/>
+    <meta property="og:title" content="The Date Literal Problem During Totals Recalculation"/>
+    <meta property="og:description" content="A short guide on why the date literal problem happens during totals recalculation and how to deal with it."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/with-side-effect" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/date-literal-exceeds-3999" />    
 
     <!-- CSS -->
      
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/ikigai';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/nerdview';
+        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/rclone-abuser';
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -84,7 +84,7 @@
                     
                         <a
                         title="Found a typo? Edit me!"
-                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/with-side-effect/index.md"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/date-literal-exceeds-3999/index.md"
                         class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
                         >✎</a>
                     
@@ -93,7 +93,7 @@
                     
                     
                     <a
-                        href="https://kostyanetsky.ru/notes/with-side-effect"
+                        href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999"
                         class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
                         title="RU"
                     >
@@ -121,7 +121,7 @@
         <article class="rounded-2xl bg-white">
           
           <header class="text-3xl font-semibold tracking-tight space-y-2">
-            With Side Effect
+            The Date Literal Problem During Totals Recalculation
           </header>
 
           <div class="mt-5">
@@ -135,13 +135,9 @@
             
 
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>15 Marth 2026</span>
+              <span>6 February 2021</span>
               
                 <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
                 
                 <div class="flex flex-wrap gap-2">
                     <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
@@ -154,16 +150,14 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>In the latest release of <a href="https://firstbit.ae" target="_blank">our ERP</a>, we optimized several heavy dynamic lists — orders, invoices, proforma invoices, and so on. Over time they had accumulated a pretty solid pile of technical debt, mostly in the form of mountains of helper tables bolted onto the main queries: contact info, technical attributes, balances, turnovers, you name it.</p>
-<p>At some point even in fairly small deployments the DB optimizer started producing complete nonsense instead of query plans, and the resource cost of letting that happen was getting less and less funny.</p>
-<p>So, we patched things up using several different approaches. One of them was loading extra row data inside the <code>OnGetDataAtServer()</code> handler (I actually <a href="https://kostyanetsky.me/notes/desire-paths" target="_blank">mentioned</a> this mechanism not that long ago). We built a nice little framework around it, rolled it out, tested it, and... Well, now we're all sitting here with those deeply unimpressed engineer faces.</p>
-<p>To be fair, performance really did get a lot better. Inside a compact handler, you can tune queries against heavy virtual tables almost perfectly. The problem is somewhere else: field values populated by this handler are not passed into the standard dynamic list mechanisms. Which means search, sorting, and grouping simply do not work for those fields.</p>
-<p>So you type a value that is clearly visible in the column — and the row is not found. Or not all matching rows are found. Or rows show up that visibly should not match at all. From the user's point of view, this looks absolutely terrible. A bug is a bug. Those fields don't look any different in the UI, so how exactly are you supposed to explain that this is "just how the platform works™"?</p>
-<p>And if you explicitly exclude such a field from the mechanisms that can't handle it, that's somehow even worse. For example, try to sort by it — and boom, giant error message. Explaining why sorting blows up on this "Amount" column while the one right next to it works just fine is... Not exactly a beginner-friendly support conversation.</p>
-<p>Honestly, how do you come up with such a great handler concept and then completely fumble the platform-level implementation?</p>
-<p>This randomly reminded me of Reddit. Some communities love threads like "invent a superpower, but with a side effect". Like, one person comments: "I can run at the speed of the wind!" and someone replies: "yeah, but you can't stop". That kind of thing. Sometimes it gets pretty funny.</p>
-<p><img alt="Superpower" src="https://kostyanetsky.me/notes/with-side-effect/reddit.png"/></p>
-<p>That's basically the kind of conversation we're having with the platform developers. You can massively speed up dynamic lists, but the UI will make your users furious. You can automatically send binary data to an S3 bucket, but lose it all with one careless click. You can teleport anywhere, but it takes exactly as long as walking. You can shapeshift, but only into an elderly pug. You have thick, silky, luxurious hair, but on your ass.</p>
+              <p>So, during a routine totals recalculation from the Configurator, we suddenly got the error: "the year in the Date literal exceeds 3999". Which means there's a date somewhere in the database — or trying to get there — that is beyond the maximum 1C can handle: 31.12.3999 23:59:59.</p>
+<p><img alt="Exception" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.png"/></p>
+<p>Alright. What do we do with that?</p>
+<p>The main thing is to identify the exact table that contains the bad dates. Since the error showed up during totals recalculation, the obvious place to look is the registers. Open the standard totals management tool, start recalculation, and <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/totals.png" target="_blank">you'll get</a> the name of the register the platform trips over.</p>
+<p>Another approach — more proper, methodologically speaking — is to enable tech log collection (<code>SDBL</code>, <code>EXCP</code>, and <code>EXCPCNTX</code>) and get a log that looks roughly like <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.log" target="_blank">this</a>. In that log, find the <code>EXCP</code> event, and right before it the <code>SDBL</code> event. That <code>SDBL</code> entry contains the SQL query that caused the crash. In its text, you'll see the table name you need (<code>AccumRgTn11530</code>). The corresponding configuration object name can be pulled out with pretty much any utility built around <code>GetDBStorageStructureInfo()</code>.</p>
+<p>One way or another, you end up with the register name. Open its form, sort by period, and you'll quickly get to the <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/entries.png" target="_blank">bad entries</a>. Then the job is to inspect the documents that created those records, fix the root cause, and repost the documents. If totals recalculation is still broken after that, then either this is not the only table with broken dates, or those dates have already spread somewhere beyond the records table.</p>
+<p>For example, I once had a case where fixing the records was not enough, because records with invalid dates were still sitting in the turnover table. The platform itself could not remove them, but the database was small enough that I could get away with some restructuring tricks. I pulled the following stunt: turned off the "Use in totals" flag for all register dimensions and applied the changes; then turned it back on and recalculated totals again. As a result, the register's turnover table was physically dropped, then recreated and filled from scratch — this time without dates from the distant future.</p>
+<p>As a last resort, you could delete the bad records with direct SQL queries (<code>DELETE</code> or even <code>TRUNCATE</code>). But first, that violates the platform vendor's license agreement, and second, it's risky: it's very easy to remove something important and not notice until later. So I would, uh, not recommend trying that at home.</p>
             </div>
           </div>
           
@@ -182,20 +176,20 @@
         
         <a
           id="prevLink"
-          href="https://kostyanetsky.me/notes/ikigai"
+          href="https://kostyanetsky.me/notes/nerdview"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          ← Ikigai
+          ← Nerd View
         </a>
         
         <span class="w-[1px]"></span>
         
         <a
           id="nextLink"
-          href="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again"
+          href="https://kostyanetsky.me/notes/rclone-abuser"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          The Year In The Date Literal Exceeds 3999 →
+          A Script to Sync With NAS →
         </a>
         
       </nav>

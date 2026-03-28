@@ -372,6 +372,53 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/last-resort"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Screenshot With Sound
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>20 May 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Meanwhile</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Recently, we came up with the idea of dividing the internal ERP into several independent parts and organizing data exchange between them. We discussed the outlines of the task, the exchange model, transport, and roughly agreed on deadlines — in general, we did what we usually do.</p>
+<p>I created a task for the stuff. We give them names in English, so I wrote in the first wording that came to mind.</p>
+<p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.me/notes/last-resort/last-resort.png"/></p>
+<p>The title came out with sound. Okay, this one is funny, but what should I call it then? Well, let it be Distributed Internal ERP. Abbreviated... DIE?</p>
+<p>I let the first one be. Long live Papa Roach :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/obsidian-timesheet"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Timesheet for Obsidian
@@ -1285,58 +1332,6 @@ EndIf;
 <p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
 <p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p>
 <p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. This approach is not suitable for high-loaded systems, but otherwise it can come in handy.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/rest-service-4-sm"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                REST service for Service Manager
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>25 February 2023</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>This week, I developed a REST service to set up our service manager (this is a configuration for managing a 1cFresh instance). Deploying the development environment is a regular task for us, and every time the manager's database had to be tuned by hand: tweaking the storefront, changing application addresses, overwriting scheduled tasks, and so on.</p>
-<p>The implementation was simple. Come up with a JSON structure, write a parser, find a code in the configuration, make it work by external call, and make sure you don't break anything. Routine work, in general, but I love to do such things from time to time: I mean, to look around and try to figure out which of the daily tasks is annoying enough.</p>
-<p>This one is a good example. To be frank, setting up the Service Manager wasn't a problem (launching the app and fiddling with the settings), but it was a thing to pay attention &amp; spend time to. What do we have now:</p>
-<ol>
-<li>There is a JSON file with all the settings;</li>
-<li>There is a REST service for its processing;</li>
-<li>There is a script that will put the first into the second;</li>
-<li>There is a pipeline that will do it all by itself.</li>
-</ol>
-<p>In short, a boot was rubbing a leg, and now it isn't. Yahoo!</p>
             </div>
           </div>
           

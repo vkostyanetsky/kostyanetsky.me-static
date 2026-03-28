@@ -4,7 +4,32 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 15 Mar 2026 12:24:12 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 28 Mar 2026 19:42:53 +0700</lastBuildDate>
+        
+        <item>
+            <title>The Year In The Date Literal Exceeds 3999</title>
+            <link>https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again</link>
+            <guid isPermaLink="false">note-date-literal-exceeds-3999-once-again</guid>
+            <pubDate>Sat, 28 Mar 2026 19:42:53 +0700</pubDate>
+            <description><p>I already wrote about the error mentioned in this post’s title <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999" target="_blank">earlier</a>, but here's the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.</p>
+<p>The usual symptoms are pretty random and annoying: some reports stop working, some documents refuse to post, totals recalculation crashes, and so on. Basically, any code that touches records with those broken dates is now having a bad day.</p>
+<p>The fix I outlined in the post linked above does work, but it's relatively slow: you need to configure the tech log, collect the output, and then parse it. The problem is that the platform crashes the moment it touches the first bad date, and there may be lots of them scattered across different tables. So you often end up doing this in multiple passes: run a check, hit an error, fix it, run again, hit the next one, repeat.</p>
+<p><img alt="Thank You, Mario!" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
+<p>A few years ago, because I wanted a faster way to deal with this, I wrote a <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" target="_blank">PostgreSQL query</a> for it. The idea is simple:</p>
+<ol>
+<li>Find all date fields in the database.</li>
+<li>Build one giant query against those fields to look for dates beyond 1C's limit.</li>
+</ol>
+<p>So yes, this query generates another query. Very normal behavior. Run the generated query, and you get the full picture: a list of tables containing invalid dates. After that, it's just engineering work — inspect the tables and decide what to do. In our case, bad dates sometimes show up in totals and turnovers, so we can just delete those rows and recalculate totals using the standard tools.</p>
+<p>Why do this at the DBMS level? Because 1C itself can't really help here — as a reminder, the platform crashes as soon as it touches the bad records. That includes reads, not just writes. Also, in this case, going directly against the database is simply faster and more convenient.</p>
+<p>The other day I rewrote the same <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" target="_blank">query for MS SQL</a>. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.</p>
+<p>If you want to use it, keep this in mind:</p>
+<ul>
+<li>The <code>_Fld626</code> field in the query text is the Fresh separator. In your database it may have a different name, or it may not exist at all.</li>
+<li>The query is written for a database that uses a 2000-year offset. If your database does not use that offset, you'll need to adjust the condition accordingly — see <code>DATEADD()</code>.</li>
+<li>I added the XML output trick (<code>FOR XML</code>) to stop SSMS from truncating the generated mega-query. That seemed faster than messing around with type casts. The side effect is that before running the generated query, you need to replace <code>&amp;gt;</code> with <code>&gt;</code>.</li>
+</ul></description>
+        </item>
         
         <item>
             <title>With Side Effect</title>
@@ -177,31 +202,6 @@ SELECT TOP 0
     UNDEFINED AS Field1
 </pre>
 <p>The performance gain, however, is so tiny that it's probably not worth over-optimizing for this. There are better hills to die on.</p></description>
-        </item>
-        
-        <item>
-            <title>Voodoo</title>
-            <link>https://kostyanetsky.me/notes/voodoo</link>
-            <guid isPermaLink="false">note-voodoo</guid>
-            <pubDate>Sun, 05 Oct 2025 23:54:12 +0700</pubDate>
-            <description><p>Looks like we finally caught our first lab-reproducible case of platform cache corruption. Short synopsis:</p>
-<ul>
-<li>Spin up a fresh app from the v35 template of <a href="https://firstbit.ae" target="_blank">our ERP</a>.</li>
-<li>Run it and wait for initialization to finish.</li>
-<li>Swap the app configuration to the v36 release (specifically build 28537 from the dev repo) and run it again.</li>
-</ul>
-<p>After this super simple sequence, about half the team sees the platform suddenly lose one of the enums. And it's annoyingly selective: hit an enum value on the client — all good; do the same on the server — boom, exception.</p>
-<p>Same story with the manager module of one catalog: its methods exist and are exported, but after the update the platform pretends they don't and throw an exception when you call them.</p>
-<p><a href="https://x.com/EffinBirds/status/1970264357427704080" target="_blank"><img alt="Welcome To Dipshit Central" src="https://kostyanetsky.me/notes/voodoo/welcome.jpg"/></a></p>
-<p>As always, when the magic blooms — look at the cache. Clear it and symptoms vanish. There are indirect hints too:</p>
-<ul>
-<li>The enum did exist in v35, but it was renamed in v36.</li>
-<li>Those manager-module methods didn't exist in v35 (they were added in v36).</li>
-</ul>
-<p>So the v35 cache didn't contain either of these in their v36 identities, yet for some reason the platform insists on digging into that old cache.</p>
-<p>We still don't have a clean root cause. We traced it to a specific commit after which the bug started showing up, but the only weird thing there its <a href="https://kostyanetsky.me/notes/voodoo/the-commit.png" target="_blank">its name</a> (and honestly, there are nearby commits that look even <a href="https://kostyanetsky.me/notes/voodoo/the-other-commit.png" target="_blank">more suspicious</a> from this point of view). The rest were <a href="https://kostyanetsky.me/notes/voodoo/5ba6ac0956e0cc7bc6b520e5110420e6950478fe.diff" target="_blank">minor changes</a> that regenerate internal metadata IDs in the manifest. Yes, those IDs are tied to cache keys, but they get bumped on any metadata change and have never caused issues before.</p>
-<p>If you landed here from Google because you hit the same mess — make a no-op change to the problematic object so the platform refreshes the metadata IDs in the manifest. For example, add an empty method or even just a space in the module. That fixes the configuration so the recipe at the top stops corrupting the cache.</p>
-<p>Voodoo, sure — but hey, it works ¯\_(ツ)_/¯</p></description>
         </item>
         
     </channel>

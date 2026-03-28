@@ -372,6 +372,58 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/rest-service-4-sm"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                REST service for Service Manager
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>25 February 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>This week, I developed a REST service to set up our service manager (this is a configuration for managing a 1cFresh instance). Deploying the development environment is a regular task for us, and every time the manager's database had to be tuned by hand: tweaking the storefront, changing application addresses, overwriting scheduled tasks, and so on.</p>
+<p>The implementation was simple. Come up with a JSON structure, write a parser, find a code in the configuration, make it work by external call, and make sure you don't break anything. Routine work, in general, but I love to do such things from time to time: I mean, to look around and try to figure out which of the daily tasks is annoying enough.</p>
+<p>This one is a good example. To be frank, setting up the Service Manager wasn't a problem (launching the app and fiddling with the settings), but it was a thing to pay attention &amp; spend time to. What do we have now:</p>
+<ol>
+<li>There is a JSON file with all the settings;</li>
+<li>There is a REST service for its processing;</li>
+<li>There is a script that will put the first into the second;</li>
+<li>There is a pipeline that will do it all by itself.</li>
+</ol>
+<p>In short, a boot was rubbing a leg, and now it isn't. Yahoo!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/haul-trucks"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Haul Trucks
@@ -1308,60 +1360,6 @@ MultiMonitorTool.exe / switch 2
 <p>There was such a game — Diablo. RPG, all sorts of spells, you know. A character has mana and health, and when you have no mana to cast… Ha, I sound like a nerd! Well, nevermind. Briefly speaking, when you have no mana to cast, it's taken from your health.</p>
 <p><em>— Doctor Cat</em></p>
 </blockquote>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/hammer-and-nails"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Hammer & Nails
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>15 September 2021</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Code Smell</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
-<p>Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
-<p>The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
-<p>However, instead of a short cycle, I saw this:</p>
-<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
-<p>There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
-<p>Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
-<p>You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p>
             </div>
           </div>
           

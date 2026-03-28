@@ -110,7 +110,7 @@
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
       data-page="5"
-      data-total-notes="16"
+      data-total-notes="18"
       data-total-pages="5"
     >
       <a id="top" class="block scroll-mt-24"></a>
@@ -372,6 +372,60 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/hammer-and-nails"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Hammer & Nails
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 September 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Code Smell</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I was developing payment documents in our configuration last week and came across an incredibly redundant solution to a primitive problem. Sorry, I can't keep to myself.</p>
+<p>Just imagine: you have a document, which contains several tabular sections. Each of them has a comment field. You make a print form for this document; if at least one row of any TS contains a comment — you need to use one template 1, if there are no comments — template 2.</p>
+<p>The task is pretty primitive, isn't it? All of us have done something like this a million times. Just read the selection, use IsBlankString() on the comment field and load the appropriate template. Coffee time!</p>
+<p>However, instead of a short cycle, I saw this:</p>
+<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
+<p>There is a chain of queries, in the lowest of which we scan all the TS (which, I remind you, we just raked out for printing). We are looking for comments in them, then we group the result several times and return it to the script.</p>
+<p>Well, I'm not even talking about the load on the DBMS (I would venture to guess that this trick doesn't give a noticeable effect — after all, the selection is going to be small). It's just… Well… Checking a selection of rows is, like, five lines of code. Clear, simple, short, Sonar has no room to swear. How could you give birth to this? Because of great love for queries?</p>
+<p>You know what? I bet that it's the correct answer. I can almost see this programmer, who has just mastered the query language more or less tolerably. He is in the absolute delight of new opportunities, so… If all you have is a hammer, everything around looks like nails.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/no-comment"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 No Comment
@@ -452,6 +506,52 @@
               <p>I posted on GitHub a Python <a href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
 <p>I suffered with the problem for some time and eventually returned to the good old <a href="https://rclone.org" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
 <p>Secondly, I had many files and folders to sync: a directory here, a directory there, a config from there, a profile from here… In order not to produce spaghetti code, I wrote a simple script that takes sources and receivers from a config file, and then executes rclone for each pair.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                The Date Literal Problem During Totals Recalculation
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 February 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>So, during a routine totals recalculation from the Configurator, we suddenly got the error: "the year in the Date literal exceeds 3999". Which means there's a date somewhere in the database — or trying to get there — that is beyond the maximum 1C can handle: 31.12.3999 23:59:59.</p>
+<p><img alt="Exception" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.png"/></p>
+<p>Alright. What do we do with that?</p>
+<p>The main thing is to identify the exact table that contains the bad dates. Since the error showed up during totals recalculation, the obvious place to look is the registers. Open the standard totals management tool, start recalculation, and <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/totals.png" target="_blank">you'll get</a> the name of the register the platform trips over.</p>
+<p>Another approach — more proper, methodologically speaking — is to enable tech log collection (<code>SDBL</code>, <code>EXCP</code>, and <code>EXCPCNTX</code>) and get a log that looks roughly like <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.log" target="_blank">this</a>. In that log, find the <code>EXCP</code> event, and right before it the <code>SDBL</code> event. That <code>SDBL</code> entry contains the SQL query that caused the crash. In its text, you'll see the table name you need (<code>AccumRgTn11530</code>). The corresponding configuration object name can be pulled out with pretty much any utility built around <code>GetDBStorageStructureInfo()</code>.</p>
+<p>One way or another, you end up with the register name. Open its form, sort by period, and you'll quickly get to the <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/entries.png" target="_blank">bad entries</a>. Then the job is to inspect the documents that created those records, fix the root cause, and repost the documents. If totals recalculation is still broken after that, then either this is not the only table with broken dates, or those dates have already spread somewhere beyond the records table.</p>
+<p>For example, I once had a case where fixing the records was not enough, because records with invalid dates were still sitting in the turnover table. The platform itself could not remove them, but the database was small enough that I could get away with some restructuring tricks. I pulled the following stunt: turned off the "Use in totals" flag for all register dimensions and applied the changes; then turned it back on and recalculated totals again. As a result, the register's turnover table was physically dropped, then recreated and filled from scratch — this time without dates from the distant future.</p>
+<p>As a last resort, you could delete the bad records with direct SQL queries (<code>DELETE</code> or even <code>TRUNCATE</code>). But first, that violates the platform vendor's license agreement, and second, it's risky: it's very easy to remove something important and not notice until later. So I would, uh, not recommend trying that at home.</p>
             </div>
           </div>
           
