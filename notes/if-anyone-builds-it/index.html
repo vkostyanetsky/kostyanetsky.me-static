@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>The Year In The Date Literal Exceeds 3999</title>
+    <title>If Anyone Builds It</title>
 
-    <meta name="description" content="Scripts for finding invalid dates in a 1C database." />
+    <meta name="description" content="An excellent book on the grim prospects of creating AGI/ASI given humanity's current level of knowledge regarding artificial intelligence." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="The Year In The Date Literal Exceeds 3999"/>
-    <meta property="og:description" content="Scripts for finding invalid dates in a 1C database."/>
+    <meta property="og:title" content="If Anyone Builds It"/>
+    <meta property="og:description" content="An excellent book on the grim prospects of creating AGI/ASI given humanity's current level of knowledge regarding artificial intelligence."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/if-anyone-builds-it" />    
 
     <!-- CSS -->
      
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/with-side-effect';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/if-anyone-builds-it';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again';
+        let ctrlRightUrl    = '';
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -84,7 +84,7 @@
                     
                         <a
                         title="Found a typo? Edit me!"
-                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/date-literal-exceeds-3999-once-again/index.md"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/if-anyone-builds-it/index.md"
                         class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
                         >✎</a>
                     
@@ -93,7 +93,7 @@
                     
                     
                     <a
-                        href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999-once-again"
+                        href="https://kostyanetsky.ru/notes/if-anyone-builds-it"
                         class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
                         title="RU"
                     >
@@ -121,7 +121,7 @@
         <article class="rounded-2xl bg-white">
           
           <header class="text-3xl font-semibold tracking-tight space-y-2">
-            The Year In The Date Literal Exceeds 3999
+            If Anyone Builds It
           </header>
 
           <div class="mt-5">
@@ -135,24 +135,12 @@
             
 
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>28 Marth 2026</span>
+              <span>28 June 2026</span>
               
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">MS SQL</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
                 </div>
                 
               
@@ -162,24 +150,10 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I already wrote about the error mentioned in this post’s title <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999" target="_blank">earlier</a>, but here's the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.</p>
-<p>The usual symptoms are pretty random and annoying: some reports stop working, some documents refuse to post, totals recalculation crashes, and so on. Basically, any code that touches records with those broken dates is now having a bad day.</p>
-<p>The fix I outlined in the post linked above does work, but it's relatively slow: you need to configure the tech log, collect the output, and then parse it. The problem is that the platform crashes the moment it touches the first bad date, and there may be lots of them scattered across different tables. So you often end up doing this in multiple passes: run a check, hit an error, fix it, run again, hit the next one, repeat.</p>
-<p><img alt="Thank You, Mario!" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
-<p>A few years ago, because I wanted a faster way to deal with this, I wrote a <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" target="_blank">PostgreSQL query</a> for it. The idea is simple:</p>
-<ol>
-<li>Find all date fields in the database.</li>
-<li>Build one giant query against those fields to look for dates beyond 1C's limit.</li>
-</ol>
-<p>So yes, this query generates another query. Very normal behavior. Run the generated query, and you get the full picture: a list of tables containing invalid dates. After that, it's just engineering work — inspect the tables and decide what to do. In our case, bad dates sometimes show up in totals and turnovers, so we can just delete those rows and recalculate totals using the standard tools.</p>
-<p>Why do this at the DBMS level? Because 1C itself can't really help here — as a reminder, the platform crashes as soon as it touches the bad records. That includes reads, not just writes. Also, in this case, going directly against the database is simply faster and more convenient.</p>
-<p>The other day I rewrote the same <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" target="_blank">query for MS SQL</a>. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.</p>
-<p>If you want to use it, keep this in mind:</p>
-<ul>
-<li>The <code>_Fld626</code> field in the query text is the Fresh separator. In your database it may have a different name, or it may not exist at all.</li>
-<li>The query is written for a database that uses a 2000-year offset. If your database does not use that offset, you'll need to adjust the condition accordingly — see <code>DATEADD()</code>.</li>
-<li>I added the XML output trick (<code>FOR XML</code>) to stop SSMS from truncating the generated mega-query. That seemed faster than messing around with type casts. The side effect is that before running the generated query, you need to replace <code>&amp;gt;</code> with <code>&gt;</code>.</li>
-</ul>
+              <p>Corpus has published the Russian edition of <a href="https://www.corpus.ru/products/ehliezer-yudkovskij-esli-kto-to-ego-sozdast-vse-pogibnut.htm" target="_blank">If Anyone Builds It, Everyone Dies</a> by Eliezer Yudkowsky and Nate Soares. Both are well-known researchers in AI safety, AI alignment, and the risks of superintelligence.</p>
+<p>In the book, the authors explain clearly and step by step why the title isn't hysteria, exaggeration, or clickbait. The point is simple and unpleasant: if anyone on the planet actually builds AGI or ASI using technology anywhere close to what we have now, humanity is screwed.</p>
+<p>I hadn't read Soares before, but Yudkowsky has always had this rare combination of deep expertise and the ability to talk about it like a normal human being, without disappearing into galaxy-brain jargon every thirty seconds. So you don't need a specialist background: a lot of work has clearly gone into making the text understandable for people who don't happen to have a PhD in applied math.</p>
+<p>Anyway, the book is great. I honestly can't remember the last time I tore through something like this in one sitting. It's available on Ozon, at Chitai-Gorod, and even in certain suspiciously nautical corners of the internet — which I condemn, obviously, but if your black-flag frigate is already parked outside your building, what can I do? :)</p>
             </div>
           </div>
           
@@ -198,21 +172,13 @@
         
         <a
           id="prevLink"
-          href="https://kostyanetsky.me/notes/with-side-effect"
+          href="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          ← With Side Effect
+          ← The Year In The Date Literal Exceeds 3999
         </a>
         
         <span class="w-[1px]"></span>
-        
-        <a
-          id="nextLink"
-          href="https://kostyanetsky.me/notes/if-anyone-builds-it"
-          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
-        >
-          If Anyone Builds It →
-        </a>
         
       </nav>
 

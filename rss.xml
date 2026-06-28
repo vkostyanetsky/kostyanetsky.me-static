@@ -4,7 +4,18 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sat, 28 Mar 2026 19:42:53 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 28 Jun 2026 22:00:00 +0700</lastBuildDate>
+        
+        <item>
+            <title>If Anyone Builds It</title>
+            <link>https://kostyanetsky.me/notes/if-anyone-builds-it</link>
+            <guid isPermaLink="false">note-if-anyone-builds-it</guid>
+            <pubDate>Sun, 28 Jun 2026 22:00:00 +0700</pubDate>
+            <description><p>Corpus has published the Russian edition of <a href="https://www.corpus.ru/products/ehliezer-yudkovskij-esli-kto-to-ego-sozdast-vse-pogibnut.htm" target="_blank">If Anyone Builds It, Everyone Dies</a> by Eliezer Yudkowsky and Nate Soares. Both are well-known researchers in AI safety, AI alignment, and the risks of superintelligence.</p>
+<p>In the book, the authors explain clearly and step by step why the title isn't hysteria, exaggeration, or clickbait. The point is simple and unpleasant: if anyone on the planet actually builds AGI or ASI using technology anywhere close to what we have now, humanity is screwed.</p>
+<p>I hadn't read Soares before, but Yudkowsky has always had this rare combination of deep expertise and the ability to talk about it like a normal human being, without disappearing into galaxy-brain jargon every thirty seconds. So you don't need a specialist background: a lot of work has clearly gone into making the text understandable for people who don't happen to have a PhD in applied math.</p>
+<p>Anyway, the book is great. I honestly can't remember the last time I tore through something like this in one sitting. It's available on Ozon, at Chitai-Gorod, and even in certain suspiciously nautical corners of the internet — which I condemn, obviously, but if your black-flag frigate is already parked outside your building, what can I do? :)</p></description>
+        </item>
         
         <item>
             <title>The Year In The Date Literal Exceeds 3999</title>
@@ -166,42 +177,6 @@ For Each Table1Row In Table1 Do
             <description><p>I'm out for a walk in the evening, and behind me there's some mom and her little kid — about five years old, I guess. I don't see them, I just hear them talking. The mom is explaining university to the kid: that you have to get in, study, there will be exams and all that.</p>
 <p>The boy is quiet for a bit, then says sadly:</p>
 <p>— I thought there was only school, but it turns out there are more difficulties too...</p></description>
-        </item>
-        
-        <item>
-            <title>Harmless Harm</title>
-            <link>https://kostyanetsky.me/notes/harmless-harm</link>
-            <guid isPermaLink="false">note-harmless-harm</guid>
-            <pubDate>Sun, 16 Nov 2025 10:36:00 +0700</pubDate>
-            <description><p>The other day my colleague and I were debugging an issue, nothing fancy, just another "why is this query behaving weird?" moment.</p>
-<p>Simplified, the idea was: we read a table from the database and dump the result into a temp table. If a certain condition is met, we still want the temp table to be created, but it must be empty (regardless of whether the source table has rows or not).</p>
-<p>The query looked roughly like this:</p>
-<pre>
-SELECT
-    Table.Field1 AS Field1
-FROM
-    Table AS Table
-WHERE 
-    &amp;Parameter
-</pre>
-<p>If we needed to copy rows from the source table into the temp table, we passed TRUE into the parameter; if we wanted the temp table to be empty, we passed FALSE.</p>
-<p>Looks simple at first glance, but this trick is a silent performance foot-gun if the table being read is large.</p>
-<p>The reason is how DB engines work with parameterized queries. Both MS SQL and PostgreSQL build the execution plan based on the query text, and in this example the parameter value does <strong>not</strong> affect the decision of whether the table should be read or not.</p>
-<p>As a result, when this query runs, both engines will pedantically scan the whole table (or its index), even if the parameter is FALSE. In that case each row is just discarded, so the logic is technically correct, but we're wasting resources on a pointless scan and polluting the buffer cache, slowing down the system overall and diligently contributing to global warming :)</p>
-<p>The fix is simple: inline TRUE/FALSE in the query body as a constant instead of using a parameter. Or use TOP so the query text is even simpler:</p>
-<pre>
-SELECT TOP 0
-    Table.Field1 AS Field1
-FROM
-    Table AS Table
-</pre>
-<p>At the SQL level this turns into something like "SELECT TOP 0 ... FROM Table" for MS SQL and "SELECT ... FROM Table LIMIT 0" for PostgreSQL. The final plan will still contain a read operator, but the executor won't actually request any rows, so there's no real data scan (yay).</p>
-<p>P.S. If you don't care about having proper column types in the temp table, you can even do this:</p>
-<pre>
-SELECT TOP 0
-    UNDEFINED AS Field1
-</pre>
-<p>The performance gain, however, is so tiny that it's probably not worth over-optimizing for this. There are better hills to die on.</p></description>
         </item>
         
     </channel>
