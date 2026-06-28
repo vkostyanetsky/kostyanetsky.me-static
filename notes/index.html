@@ -626,7 +626,7 @@ pip install openai-whisper
 </pre>
 <p>Example run:</p>
 <pre>
-whisper "D:\audio.wav" --model medium --language Russian --output_format txt
+whisper "D:\audio.wav" --model small --language Russian --output_format txt
 </pre>
 <p>The result is a plain text transcript you can shove into any chatbot and get a fairly coherent summary. Sure, you still need to proofread it — fix mistakes and hallucinations, rephrase a couple things — but it's still way better than trying to write notes live.</p>
 <p>And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can't be bothered to vibe-code, you can grab <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" target="_blank">my script</a> and tweak it.</p>
