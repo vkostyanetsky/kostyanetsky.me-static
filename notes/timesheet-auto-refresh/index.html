@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>If Anyone Builds It</title>
+    <title>Auto-Refresh for Timesheet</title>
 
-    <meta name="description" content="An excellent book on the grim prospects of creating AGI/ASI given humanity's current level of knowledge regarding artificial intelligence." />
+    <meta name="description" content="Made a few improvements to my Obsidian plugin that generates a list of tasks with the time spent on each one." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="If Anyone Builds It"/>
-    <meta property="og:description" content="An excellent book on the grim prospects of creating AGI/ASI given humanity's current level of knowledge regarding artificial intelligence."/>
+    <meta property="og:title" content="Auto-Refresh for Timesheet"/>
+    <meta property="og:description" content="Made a few improvements to my Obsidian plugin that generates a list of tasks with the time spent on each one."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.me/notes/if-anyone-builds-it" />    
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/timesheet-auto-refresh" />    
 
     <!-- CSS -->
      
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/timesheet-auto-refresh';
+        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/if-anyone-builds-it';
+        let ctrlRightUrl    = '';
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -84,7 +84,7 @@
                     
                         <a
                         title="Found a typo? Edit me!"
-                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/if-anyone-builds-it/index.md"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/timesheet-auto-refresh/index.md"
                         class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
                         >✎</a>
                     
@@ -93,7 +93,7 @@
                     
                     
                     <a
-                        href="https://kostyanetsky.ru/notes/if-anyone-builds-it"
+                        href="https://kostyanetsky.ru/notes/timesheet-auto-refresh"
                         class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
                         title="RU"
                     >
@@ -121,7 +121,7 @@
         <article class="rounded-2xl bg-white">
           
           <header class="text-3xl font-semibold tracking-tight space-y-2">
-            If Anyone Builds It
+            Auto-Refresh for Timesheet
           </header>
 
           <div class="mt-5">
@@ -135,16 +135,16 @@
             
 
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>28 June 2026</span>
+              <span>26 Jule 2026</span>
               
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Books</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Node.js</span>
                 </div>
                 
               
@@ -154,10 +154,11 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Corpus has published the Russian edition of <a href="https://www.corpus.ru/products/ehliezer-yudkovskij-esli-kto-to-ego-sozdast-vse-pogibnut.htm" target="_blank">If Anyone Builds It, Everyone Dies</a> by Eliezer Yudkowsky and Nate Soares. Both are well-known researchers in AI safety, AI alignment, and the risks of superintelligence.</p>
-<p>In the book, the authors explain clearly and step by step why the title isn't hysteria, exaggeration, or clickbait. The point is simple and unpleasant: if anyone on the planet actually builds AGI or ASI using technology anywhere close to what we have now, humanity is screwed.</p>
-<p>I hadn't read Soares before, but Yudkowsky has always had this rare combination of deep expertise and the ability to talk about it like a normal human being, without disappearing into galaxy-brain jargon every thirty seconds. So you don't need a specialist background: a lot of work has clearly gone into making the text understandable for people who don't happen to have a PhD in applied math.</p>
-<p>Anyway, the book is great. I honestly can't remember the last time I tore through something like this in one sitting. It's available on Ozon, at Chitai-Gorod, and even in certain suspiciously nautical corners of the internet — which I condemn, obviously, but if your black-flag frigate is already parked outside your building, what can I do? :)</p>
+              <p>I spontaneously returned to my old <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">Obsidian plugin</a>, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.</p>
+<p>The plugin had an original sin of a bug: whenever the note text changed, the plugin block would not refresh on its own. So you would add a task, change the time spent, or fix a description, while the report kept showing the old data. You had to either reopen the note itself or start editing the block and then cancel, just to trigger a manual render. It was annoying — and smelled suspiciously like reinventing the wheel.</p>
+<p>Now the plugin block automatically re-renders after changes — just the block, not the entire note. There is also a short delay after typing and an additional check: if the report has not actually changed, no render happens at all.</p>
+<p>I also wanted to update the dependencies while I was at it — it has been a year, after all — but... You know, NPM remains its usual shining example of order and discipline. Every tiny library for adding two numbers inevitably depends on ten others, every package is somehow a second cousin twice removed of the fence next door, and you cannot replace a single one without consequences: <code>npm audit</code> complains whenever someone sneezes. So, at first glance, I could not figure out how to update the dependencies reliably without breaking the plugin itself.</p>
+<p>Oh well. That is a problem for tomorrow me.</p>
             </div>
           </div>
           
@@ -176,21 +177,13 @@
         
         <a
           id="prevLink"
-          href="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again"
+          href="https://kostyanetsky.me/notes/if-anyone-builds-it"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          ← The Year In The Date Literal Exceeds 3999
+          ← If Anyone Builds It
         </a>
         
         <span class="w-[1px]"></span>
-        
-        <a
-          id="nextLink"
-          href="https://kostyanetsky.me/notes/timesheet-auto-refresh"
-          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
-        >
-          Auto-Refresh for Timesheet →
-        </a>
         
       </nav>
 

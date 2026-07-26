@@ -4,7 +4,19 @@
         <description>Hello! My name is Vlad, I'm business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 28 Jun 2026 22:00:00 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 26 Jul 2026 12:37:00 +0700</lastBuildDate>
+        
+        <item>
+            <title>Auto-Refresh for Timesheet</title>
+            <link>https://kostyanetsky.me/notes/timesheet-auto-refresh</link>
+            <guid isPermaLink="false">note-timesheet-auto-refresh</guid>
+            <pubDate>Sun, 26 Jul 2026 12:37:00 +0700</pubDate>
+            <description><p>I spontaneously returned to my old <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">Obsidian plugin</a>, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.</p>
+<p>The plugin had an original sin of a bug: whenever the note text changed, the plugin block would not refresh on its own. So you would add a task, change the time spent, or fix a description, while the report kept showing the old data. You had to either reopen the note itself or start editing the block and then cancel, just to trigger a manual render. It was annoying — and smelled suspiciously like reinventing the wheel.</p>
+<p>Now the plugin block automatically re-renders after changes — just the block, not the entire note. There is also a short delay after typing and an additional check: if the report has not actually changed, no render happens at all.</p>
+<p>I also wanted to update the dependencies while I was at it — it has been a year, after all — but... You know, NPM remains its usual shining example of order and discipline. Every tiny library for adding two numbers inevitably depends on ten others, every package is somehow a second cousin twice removed of the fence next door, and you cannot replace a single one without consequences: <code>npm audit</code> complains whenever someone sneezes. So, at first glance, I could not figure out how to update the dependencies reliably without breaking the plugin itself.</p>
+<p>Oh well. That is a problem for tomorrow me.</p></description>
+        </item>
         
         <item>
             <title>If Anyone Builds It</title>
@@ -167,16 +179,6 @@ For Each Table1Row In Table1 Do
 <p>And it doesn't look half bad either:</p>
 <p><img alt="UI" src="https://kostyanetsky.me/notes/obsidian-foodiary-bases/base.png"/></p>
 <p>All the necessary settings and scripts live in the <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">GitHub repo</a>.</p></description>
-        </item>
-        
-        <item>
-            <title>Well, There Are Some</title>
-            <link>https://kostyanetsky.me/notes/well-there-are-some</link>
-            <guid isPermaLink="false">note-well-there-are-some</guid>
-            <pubDate>Mon, 17 Nov 2025 13:26:00 +0700</pubDate>
-            <description><p>I'm out for a walk in the evening, and behind me there's some mom and her little kid — about five years old, I guess. I don't see them, I just hear them talking. The mom is explaining university to the kid: that you have to get in, study, there will be exams and all that.</p>
-<p>The boy is quiet for a bit, then says sadly:</p>
-<p>— I thought there was only school, but it turns out there are more difficulties too...</p></description>
         </item>
         
     </channel>
