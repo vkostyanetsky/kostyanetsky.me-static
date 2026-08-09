@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/page-4';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/page-2';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/page-4";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/page-2";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -111,7 +111,7 @@
       id="pageMeta"
       data-page="3"
       data-total-notes="20"
-      data-total-pages="5"
+      data-total-pages="6"
     >
       <a id="top" class="block scroll-mt-24"></a>
 
@@ -372,6 +372,49 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/singapore-doll"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Singapore Doll
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 June 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Is it possible to love your country's currency more than the people of Saudi Arabia? It is a rhetorical question: the answer is no.</p>
+<p>I'm currently looking at the <a href="https://www.sama.gov.sa/en-US/FinExc/Pages/Currency.aspx" rel="noopener noreferrer" target="_blank">website</a> of their central bank. The country's currency is the Saudi riyal, and the Central Bank sets rates for other currencies in relation to it. Consequently, there is no point in asking the bank for the rate of the riyal itself. However, the website calmly suggests choosing it twice:</p>
+<p><img alt="The selection form" src="https://kostyanetsky.me/notes/singapore-doll/cb.png"/></p>
+<p>For your information, the first option breaks the website, and the second one pedantically displays “1” for any date.</p>
+<p>Another funny thing: colleagues seem to store currency names as 14-character strings. Otherwise, it is difficult to explain why, according to their data, Canada uses not the Canadian dollar but CANADIAN DOLLA, and Romania uses mysterious NEW ROMANIAN L instead of its leu. However, these two are rather lucky: Singapore, for example, conducts payments in SINGAPORE DOLL.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/data-history-duplication"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Non-Unique Metadata
@@ -411,12 +454,12 @@
 <p>The platform also puts a mark in the created record that this particular version of the object is the most actual, and then removes this mark from the version that was marked as actual before.</p>
 <p>So, the problem is that the platform sometimes forgets to take the last step, and two versions appear in the table at once, marked as current. The Designer understands this but cannot do anything.</p>
 <p>The solution follows from the algorithm above: you need to find conflicting versions and revoke the mark of actuality from the one that is older. It is better to use queries: data history is often enabled for a bunch of objects, and the list of their attributes is constantly changing — in general, there will be so many versions in the table that the devil will break his leg.</p>
-<p>If you also encountered this problem and are therefore reading this text, you can use the <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" target="_blank">queries</a> that I wrote:</p>
+<p>If you also encountered this problem and are therefore reading this text, you can use the <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" rel="noopener noreferrer" target="_blank">queries</a> that I wrote:</p>
 <ol>
 <li>get-issues.sql checks that there is an issue: it looks for metadata versions that are also marked as actual.</li>
 <li>fix-issues.sql removes the actuality mark from those versions that are actually outdated.</li>
 </ol>
-<p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" target="_blank">here they are</a> for this DBMS.</p>
+<p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" rel="noopener noreferrer" target="_blank">here they are</a> for this DBMS.</p>
 <p>The queries will require a slight adaptation to a specific database: they use the _fld626 field, which is the data separator. In your _DataHistoryMetadata table, this field may be called differently, so you need to update its name to the current one. It will be difficult to make a mistake — the table has only one field with the _fld prefix.</p>
 <p>P.S. Please bear in mind that the license agreement prohibits access to the database, bypassing the platform’s tools, so you can only go for such experiments if there are no other options left.</p>
             </div>
@@ -461,8 +504,8 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
-<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
+              <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" rel="noopener noreferrer" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
+<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" rel="noopener noreferrer" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
 <p>P.S. The remark about the probability of creating two identical UUIDs in one database made me laugh:</p>
 <blockquote>
 <p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
@@ -564,7 +607,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I made another <a href="https://obsidian.md" target="_blank">Obsidian</a> plugin, this time for <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">daily notes</a>. Draws a nice report: what tasks I worked on, what I did, and how much time I spent. I tried to describe how it works in the <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">repository</a>; will be glad if it is useful to someone else!</p>
+              <p>I made another <a href="https://obsidian.md" rel="noopener noreferrer" target="_blank">Obsidian</a> plugin, this time for <a href="https://help.obsidian.md/Plugins/Daily+notes" rel="noopener noreferrer" target="_blank">daily notes</a>. Draws a nice report: what tasks I worked on, what I did, and how much time I spent. I tried to describe how it works in the <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" rel="noopener noreferrer" target="_blank">repository</a>; will be glad if it is useful to someone else!</p>
 <p>Funny thing: for the examples in the README, I used issue numbers FBI-1, FBI-2, and so on. This isn't a reference to the X-Files or Twin Peaks — it's just the first thing that came to mind. The fact is that our internal project for the development of FirstBit ERP is called First Bit Internal, abbreviated as FBI. The main pool of tasks we work on lives in it.</p>
 <p>We’re already used to it, but our colleagues outside the company always find our screenshots from JIRA or SonarQube amusing. Did you imagine that you were Agent Cooper? Well, I almost don’t even need to :)</p>
             </div>
@@ -667,7 +710,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Following my <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">first</a> plugin for Obsidian, I released <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" target="_blank">the second one</a> a couple of weeks ago. Counts calories, proteins, fats, and carbohydrates in food. It helps not to overeat out of nowhere — it’s rather difficult to judge by eye how much you’ve eaten today and whether you can afford that donut.</p>
+              <p>Following my <a href="https://kostyanetsky.me/notes/obsidian-fastimer" rel="noopener noreferrer" target="_blank">first</a> plugin for Obsidian, I released <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" rel="noopener noreferrer" target="_blank">the second one</a> a couple of weeks ago. Counts calories, proteins, fats, and carbohydrates in food. It helps not to overeat out of nowhere — it’s rather difficult to judge by eye how much you’ve eaten today and whether you can afford that donut.</p>
 <p>In short, a useful thing if you:</p>
 <ol>
 <li>Fatty (like me)</li>
@@ -694,7 +737,7 @@
             <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/callouts-for-fastimer"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Fastimer's Look
+                Fastimer&#39;s Look
             </a>
             </header>
             
@@ -719,8 +762,8 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I just implemented <a href="https://kostyanetsky.me/notes/obsidian-fastimer" target="_blank">Fastimer</a>'s rendering through callouts: this is an Obsidian mechanic that allows you to turn an ordinary quote into a designed block of text that attracts the reader's attention. You've probably seen blocks like “advice” and “pay attention” — these are callouts.</p>
-<p>You can read more in <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a>. </p>
+              <p>I just implemented <a href="https://kostyanetsky.me/notes/obsidian-fastimer" rel="noopener noreferrer" target="_blank">Fastimer</a>'s rendering through callouts: this is an Obsidian mechanic that allows you to turn an ordinary quote into a designed block of text that attracts the reader's attention. You've probably seen blocks like “advice” and “pay attention” — these are callouts.</p>
+<p>You can read more in <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" rel="noopener noreferrer" target="_blank">Obsidian Help</a>. </p>
 <p>As a result, the timer now takes on a different color depending on the state: blue for an active fast, green for completed, and red for a failed one.</p>
 <p>In addition, I made the text more compact and worked on styling:</p>
 <p><img alt="Example" src="https://kostyanetsky.me/notes/callouts-for-fastimer/example.png"/></p>
@@ -856,9 +899,9 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>The <a href="https://obsidian.md/" target="_blank">Obsidian</a> developers recently approved one of my TypeScript pet plugins — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" target="_blank">Fastimer</a>. It is an intermittent fasting tracker that adds a new code block to your vault: you enter the start date of the fasting interval and get the date of its finish, the time until this moment, and a list of the zones to be passed.</p>
+              <p>The <a href="https://obsidian.md/" rel="noopener noreferrer" target="_blank">Obsidian</a> developers recently approved one of my TypeScript pet plugins — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" rel="noopener noreferrer" target="_blank">Fastimer</a>. It is an intermittent fasting tracker that adds a new code block to your vault: you enter the start date of the fasting interval and get the date of its finish, the time until this moment, and a list of the zones to be passed.</p>
 <p>The block shows an up-to-date picture every time Obsidian renders it, which means you can monitor your progress in real time. When a fasting window ends, you can enter the end date, and the code block will show the result: whether you managed to achieve the goal, how much time you fasted beyond the plan, and so on.</p>
-<p>I'm thinking of improving the visual part a bit (currently, everything is displayed as plain text without any design). In addition, I want to add functions for calculating statistics so that you can draw cute graphs like <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" target="_blank">Charts </a> and show achievements. I already made the same in implementing the same <a href="https://github.com/vkostyanetsky/Fastimer" target="_blank">application</a> in Python, but I’m unlikely to return to it — it’s easier to solve the task in the Obsidian vault than to roll out an additional utility.</p>
+<p>I'm thinking of improving the visual part a bit (currently, everything is displayed as plain text without any design). In addition, I want to add functions for calculating statistics so that you can draw cute graphs like <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" rel="noopener noreferrer" target="_blank">Charts </a> and show achievements. I already made the same in implementing the same <a href="https://github.com/vkostyanetsky/Fastimer" rel="noopener noreferrer" target="_blank">application</a> in Python, but I’m unlikely to return to it — it’s easier to solve the task in the Obsidian vault than to roll out an additional utility.</p>
 <p>In short, check out the plugin! :) You can find it by name (Fastimer) in the Obsidian library, or install it manually from the repository.</p>
             </div>
           </div>
@@ -1056,8 +1099,8 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Some time ago, I was setting up <a href="https://swagger.io" target="_blank">Swagger</a> for the internal API. While I was fiddling around, it became clear that some functionality did not need to be included in the documentation. I was looking for a way to do this without crutches and came across a funny <a href="https://github.com/tiangolo/full-stack-fastapi-couchbase/issues/10" target="_blank">question</a> on GitHub.</p>
-<p>What's funny, you ask? Well, I involuntarily remembered <a href="https://forum.mista.ru" target="_blank">Mista</a>. Among 1C developers, this is synonymous with the word “toxicity”: if you ask anything there, you get a bucket of slop by the collar instead of an answer. Here, of course, everything is not so neglected, but holy crap! These persistent guys who referring to the 14-page manual made me laugh a lot.</p>
+              <p>Some time ago, I was setting up <a href="https://swagger.io" rel="noopener noreferrer" target="_blank">Swagger</a> for the internal API. While I was fiddling around, it became clear that some functionality did not need to be included in the documentation. I was looking for a way to do this without crutches and came across a funny <a href="https://github.com/tiangolo/full-stack-fastapi-couchbase/issues/10" rel="noopener noreferrer" target="_blank">question</a> on GitHub.</p>
+<p>What's funny, you ask? Well, I involuntarily remembered <a href="https://forum.mista.ru" rel="noopener noreferrer" target="_blank">Mista</a>. Among 1C developers, this is synonymous with the word “toxicity”: if you ask anything there, you get a bucket of slop by the collar instead of an answer. Here, of course, everything is not so neglected, but holy crap! These persistent guys who referring to the 14-page manual made me laugh a lot.</p>
 <p>One thing is good: by the end of the thread, there appeared a brave rebel who just answered the question. They, like, named the required parameter for a FastAPI method's decorator, which is not supposed to be shown in the documentation. No links — could you imagine?</p>
 <p>Not all heroes wear capes, I would say.</p>
             </div>
@@ -1077,7 +1120,7 @@
             <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/crossed"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Romania's Feature
+                Romania&#39;s Feature
             </a>
             </header>
             
@@ -1102,7 +1145,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Making a password recover function via SMS for our customer portal. Got to the Twilio <a href="https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID" target="_blank">documentation</a> related to <a href="https://www.twilio.com/docs/glossary/what-alphanumeric-sender-id" target="_blank">alphanumeric sender ID</a> support in different countries; this feature allows you to send messages so that the recipient sees not the sender's number but something meaningful (a company name, for example).</p>
+              <p>Making a password recover function via SMS for our customer portal. Got to the Twilio <a href="https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID" rel="noopener noreferrer" target="_blank">documentation</a> related to <a href="https://www.twilio.com/docs/glossary/what-alphanumeric-sender-id" rel="noopener noreferrer" target="_blank">alphanumeric sender ID</a> support in different countries; this feature allows you to send messages so that the recipient sees not the sender's number but something meaningful (a company name, for example).</p>
 <p>The feature is regulated differently everywhere: in some countries it just works, but in others registration is possible or even required.</p>
 <p>Well, let's take a look:</p>
 <p><img alt="Screenshot" src="https://kostyanetsky.me/notes/crossed/twilio.png"/></p>
@@ -1159,7 +1202,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Released a new <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" target="_blank">version</a> of my console timer for <a href="https://en.wikipedia.org/wiki/Intermittent_fasting" target="_blank">intermittent fasting</a>. I wrote this app about a year ago, when I was once again upset by the <a href="https://www.zerolongevity.com/" target="_blank">Zero</a> application for Android: some very primitive functions (like viewing a specific interval) did not work. Oh my gosh, guys, you had one job!</p>
+              <p>Released a new <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" rel="noopener noreferrer" target="_blank">version</a> of my console timer for <a href="https://en.wikipedia.org/wiki/Intermittent_fasting" rel="noopener noreferrer" target="_blank">intermittent fasting</a>. I wrote this app about a year ago, when I was once again upset by the <a href="https://www.zerolongevity.com/" rel="noopener noreferrer" target="_blank">Zero</a> application for Android: some very primitive functions (like viewing a specific interval) did not work. Oh my gosh, guys, you had one job!</p>
 <p>The main difference between 1.3.1 and 1.2.3 is that the console menu has been cut to hell in favor of the good old arguments and options. The menu concept looks convenient only if an application has few features. However, as soon as you take a step forward, the need to answer a list of questions each time you need something starts to irritate you.</p>
             </div>
           </div>
@@ -1242,7 +1285,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
+              <p>Recently, I was working with vocabulary in an attempt to describe my latest adventures to an English-speaking friend and got to know about the colorful idiom “to go postal”. It means something like “go crazy with anger”; appeared somewhere between the 80s and 90s in the USA after a series of rather <a href="https://en.wikipedia.org/wiki/Going_postal" rel="noopener noreferrer" target="_blank">insane incidents</a> in which postal workers went crazy and attacked people around, including colleagues and visitors.</p>
 <p>The expression sounds funny at first glance, but the story behind the scenes is painfully gloomy. I think I will continue to use the good old “to go ballistic”. Literally, “get angry that strong so you become a rocket which lost control”. Or, to simplify, “explode with anger”.</p>
 <p>By the way, there are similar rocket-like connotations in Russian, but for some reason they are about a more manageable cases. Mostly, they implies something like "the fire in the ass was so damn strong that the poor guy left Earth and successfully landed on Mars". Sounds a bit better than a simple explosion — you didn't completely waste the precious resource, at least :-)</p>
             </div>
@@ -1285,64 +1328,10 @@
             <div class="prose-like">
               <blockquote>
 <p>An important detail: the CallPause method is not available in a client-server call; when a client calls a server method in which CallPause is called, the exception "Cannot call the CallPause method in a client-server call" will be thrown.</p>
-<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" target="_blank">CallPause Method</a> (RU)</p>
+<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" rel="noopener noreferrer" target="_blank">CallPause Method</a> (RU)</p>
 </blockquote>
 <p>What a strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it makes it anyway (by checking time in a cycle, for example). Does security by obscurity worth the efforts?</p>
 <p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. You know what? Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/in-a-pedantic-way"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                In a Pedantic Way
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>21 Marth 2023</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Code Smell</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>The daily award for the most philosophical code goes to the author of this elegant way to check that two boolean variables are not equal to each other:</p>
-<pre><code>If DataStructure.Property("AmountVATIn")
-    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
-    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
-    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
-EndIf;
-</code></pre>
-<p>I'm thinking of adding something like “And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)” here to spice it up with a subtle note of insanity.</p>
             </div>
           </div>
           

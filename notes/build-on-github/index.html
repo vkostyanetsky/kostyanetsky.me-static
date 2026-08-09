@@ -10,11 +10,11 @@
 
     <title>Building The Blog on GitHub</title>
 
-    <meta name="description" content="I've made a build-and-deploy pipeline for this site on each push to its repository!" />
+    <meta name="description" content="I&#39;ve made a build-and-deploy pipeline for this site on each push to its repository!" />
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -26,7 +26,7 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Building The Blog on GitHub"/>
-    <meta property="og:description" content="I've made a build-and-deploy pipeline for this site on each push to its repository!"/>
+    <meta property="og:description" content="I&#39;ve made a build-and-deploy pipeline for this site on each push to its repository!"/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
     <meta property="og:url" content= "https://kostyanetsky.me/notes/build-on-github" />    
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/diablo';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/top-salaries';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/diablo";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/top-salaries";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -154,15 +154,15 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>For the last year this site has been working on a simple platform: statics, GitHub and my domain. All the pages were pre-generated and placed in a GitHub's <a href="https://github.com/vkostyanetsky/kostyanetsky.me-static" target="_blank">repository</a> with <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> enabled.</p>
+              <p>For the last year this site has been working on a simple platform: statics, GitHub and my domain. All the pages were pre-generated and placed in a GitHub's <a href="https://github.com/vkostyanetsky/kostyanetsky.me-static" rel="noopener noreferrer" target="_blank">repository</a> with <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">GitHub Pages</a> enabled.</p>
 <p>I collected statics using a script. It was working with a list of text files, pedantically arranged in folders. The script rummaged through them and generated HTML files. Then I manually pushed them to the repository.</p>
 <p>This scheme worked well, but the number of clicks annoyed me. Here is the script pull, and there is the script pull, and then you have to tinker with the git. I wanted it to be simpler.</p>
 <p>At some point, I figured out that not only the deployment of statics, but also the assembly can be shifted onto the shoulders of GitHub. I put together some thoughts and added two more repositories:</p>
 <ol>
-<li>A <a href="https://github.com/vkostyanetsky/kostyanetsky.me" target="_blank">repository</a> of initial data. Here I put the content of the site: the text files and a bit of metadata (page titles, dates of pages creation, tags for notes, and so on).</li>
-<li>A <a href="https://github.com/vkostyanetsky/BlogBuilder" target="_blank">repository</a> of the script for generating statics. In addition to the script itself, I put various assets here (icons, styles, manifests — in general, everything that doesn't need to be generated every time, but you have to “put” it next to the resulting HTML).</li>
+<li>A <a href="https://github.com/vkostyanetsky/kostyanetsky.me" rel="noopener noreferrer" target="_blank">repository</a> of initial data. Here I put the content of the site: the text files and a bit of metadata (page titles, dates of pages creation, tags for notes, and so on).</li>
+<li>A <a href="https://github.com/vkostyanetsky/BlogBuilder" rel="noopener noreferrer" target="_blank">repository</a> of the script for generating statics. In addition to the script itself, I put various assets here (icons, styles, manifests — in general, everything that doesn't need to be generated every time, but you have to “put” it next to the resulting HTML).</li>
 </ol>
-<p>Then I wrote an <a href="https://github.com/vkostyanetsky/kostyanetsky.me/blob/main/.github/workflows/main.yml" target="_blank">action</a> that wakes up with every push to the repository with the initial data. Shortly, its logic:</p>
+<p>Then I wrote an <a href="https://github.com/vkostyanetsky/kostyanetsky.me/blob/main/.github/workflows/main.yml" rel="noopener noreferrer" target="_blank">action</a> that wakes up with every push to the repository with the initial data. Shortly, its logic:</p>
 <ol>
 <li>Clone the repository with statics and the repository with the generating script;</li>
 <li>Update the repository with statics using the generating script;</li>

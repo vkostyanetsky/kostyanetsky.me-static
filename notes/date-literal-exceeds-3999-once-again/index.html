@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/with-side-effect';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/if-anyone-builds-it';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/with-side-effect";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/if-anyone-builds-it";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -162,18 +162,18 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I already wrote about the error mentioned in this post’s title <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999" target="_blank">earlier</a>, but here's the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.</p>
+              <p>I already wrote about the error mentioned in this post’s title <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999" rel="noopener noreferrer" target="_blank">earlier</a>, but here's the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.</p>
 <p>The usual symptoms are pretty random and annoying: some reports stop working, some documents refuse to post, totals recalculation crashes, and so on. Basically, any code that touches records with those broken dates is now having a bad day.</p>
 <p>The fix I outlined in the post linked above does work, but it's relatively slow: you need to configure the tech log, collect the output, and then parse it. The problem is that the platform crashes the moment it touches the first bad date, and there may be lots of them scattered across different tables. So you often end up doing this in multiple passes: run a check, hit an error, fix it, run again, hit the next one, repeat.</p>
 <p><img alt="Thank You, Mario!" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
-<p>A few years ago, because I wanted a faster way to deal with this, I wrote a <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" target="_blank">PostgreSQL query</a> for it. The idea is simple:</p>
+<p>A few years ago, because I wanted a faster way to deal with this, I wrote a <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" rel="noopener noreferrer" target="_blank">PostgreSQL query</a> for it. The idea is simple:</p>
 <ol>
 <li>Find all date fields in the database.</li>
 <li>Build one giant query against those fields to look for dates beyond 1C's limit.</li>
 </ol>
 <p>So yes, this query generates another query. Very normal behavior. Run the generated query, and you get the full picture: a list of tables containing invalid dates. After that, it's just engineering work — inspect the tables and decide what to do. In our case, bad dates sometimes show up in totals and turnovers, so we can just delete those rows and recalculate totals using the standard tools.</p>
 <p>Why do this at the DBMS level? Because 1C itself can't really help here — as a reminder, the platform crashes as soon as it touches the bad records. That includes reads, not just writes. Also, in this case, going directly against the database is simply faster and more convenient.</p>
-<p>The other day I rewrote the same <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" target="_blank">query for MS SQL</a>. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.</p>
+<p>The other day I rewrote the same <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" rel="noopener noreferrer" target="_blank">query for MS SQL</a>. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.</p>
 <p>If you want to use it, keep this in mind:</p>
 <ul>
 <li>The <code>_Fld626</code> field in the query text is the Fresh separator. In your database it may have a different name, or it may not exist at all.</li>

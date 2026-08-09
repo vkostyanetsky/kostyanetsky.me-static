@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/page-2';
-        let ctrlRightUrl    = '';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/page-2";
+        let ctrlRightUrl    = "";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -111,7 +111,7 @@
       id="pageMeta"
       data-page="1"
       data-total-notes="20"
-      data-total-pages="5"
+      data-total-pages="6"
     >
       <a id="top" class="block scroll-mt-24"></a>
 
@@ -372,6 +372,58 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/obsidian-property-organizer"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Obsidian Property Organizer
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 August 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">AI</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Done</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>One thing AI has genuinely made better for developers: tiny side projects actually get finished now.</p>
+<p>I'm talking about all those little tools, MVPs, and random ideas that used to go straight into the "maybe someday" pile. You want to build them, sure, but spending three evenings on yet another tiny utility is a pretty hard sell.</p>
+<p>Last week, for example, I vibe-coded an <a href="https://community.obsidian.md/plugins/property-organizer" rel="noopener noreferrer" target="_blank">Obsidian plugin</a> for keeping note properties tidy. The idea is simple: for each folder, you can define which properties notes are supposed to have and what order they should appear in. The plugin adds missing ones, removes unwanted ones, and puts everything back where it belongs — instead of preserving whatever mess I hastily threw together months ago and never bothered to fix.</p>
+<p>There's a <a href="https://github.com/vkostyanetsky/ObsidianPropertyOrganizer/blob/main/README.md" rel="noopener noreferrer" target="_blank">more detailed explanation</a> in the GitHub repo if you're curious.</p>
+<p>It's a tiny thing, obviously. Mostly just me feeding my inner perfectionist. But I do like things neat, and apparently I'm not alone: seventy people downloaded the plugin in its first three days.</p>
+<p>Greetings, fellow people who derive unreasonable satisfaction from tidy metadata :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/timesheet-auto-refresh"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Auto-Refresh for Timesheet
@@ -399,7 +451,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I spontaneously returned to my old <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">Obsidian plugin</a>, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.</p>
+              <p>I spontaneously returned to my old <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" rel="noopener noreferrer" target="_blank">Obsidian plugin</a>, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.</p>
 <p>The plugin had an original sin of a bug: whenever the note text changed, the plugin block would not refresh on its own. So you would add a task, change the time spent, or fix a description, while the report kept showing the old data. You had to either reopen the note itself or start editing the block and then cancel, just to trigger a manual render. It was annoying — and smelled suspiciously like reinventing the wheel.</p>
 <p>Now the plugin block automatically re-renders after changes — just the block, not the entire note. There is also a short delay after typing and an additional check: if the report has not actually changed, no render happens at all.</p>
 <p>I also wanted to update the dependencies while I was at it — it has been a year, after all — but... You know, NPM remains its usual shining example of order and discipline. Every tiny library for adding two numbers inevitably depends on ten others, every package is somehow a second cousin twice removed of the fence next door, and you cannot replace a single one without consequences: <code>npm audit</code> complains whenever someone sneezes. So, at first glance, I could not figure out how to update the dependencies reliably without breaking the plugin itself.</p>
@@ -446,7 +498,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Corpus has published the Russian edition of <a href="https://www.corpus.ru/products/ehliezer-yudkovskij-esli-kto-to-ego-sozdast-vse-pogibnut.htm" target="_blank">If Anyone Builds It, Everyone Dies</a> by Eliezer Yudkowsky and Nate Soares. Both are well-known researchers in AI safety, AI alignment, and the risks of superintelligence.</p>
+              <p>Corpus has published the Russian edition of <a href="https://www.corpus.ru/products/ehliezer-yudkovskij-esli-kto-to-ego-sozdast-vse-pogibnut.htm" rel="noopener noreferrer" target="_blank">If Anyone Builds It, Everyone Dies</a> by Eliezer Yudkowsky and Nate Soares. Both are well-known researchers in AI safety, AI alignment, and the risks of superintelligence.</p>
 <p>In the book, the authors explain clearly and step by step why the title isn't hysteria, exaggeration, or clickbait. The point is simple and unpleasant: if anyone on the planet actually builds AGI or ASI using technology anywhere close to what we have now, humanity is screwed.</p>
 <p>I hadn't read Soares before, but Yudkowsky has always had this rare combination of deep expertise and the ability to talk about it like a normal human being, without disappearing into galaxy-brain jargon every thirty seconds. So you don't need a specialist background: a lot of work has clearly gone into making the text understandable for people who don't happen to have a PhD in applied math.</p>
 <p>Anyway, the book is great. I honestly can't remember the last time I tore through something like this in one sitting. It's available on Ozon, at Chitai-Gorod, and even in certain suspiciously nautical corners of the internet — which I condemn, obviously, but if your black-flag frigate is already parked outside your building, what can I do? :)</p>
@@ -500,18 +552,18 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I already wrote about the error mentioned in this post’s title <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999" target="_blank">earlier</a>, but here's the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.</p>
+              <p>I already wrote about the error mentioned in this post’s title <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999" rel="noopener noreferrer" target="_blank">earlier</a>, but here's the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.</p>
 <p>The usual symptoms are pretty random and annoying: some reports stop working, some documents refuse to post, totals recalculation crashes, and so on. Basically, any code that touches records with those broken dates is now having a bad day.</p>
 <p>The fix I outlined in the post linked above does work, but it's relatively slow: you need to configure the tech log, collect the output, and then parse it. The problem is that the platform crashes the moment it touches the first bad date, and there may be lots of them scattered across different tables. So you often end up doing this in multiple passes: run a check, hit an error, fix it, run again, hit the next one, repeat.</p>
 <p><img alt="Thank You, Mario!" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
-<p>A few years ago, because I wanted a faster way to deal with this, I wrote a <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" target="_blank">PostgreSQL query</a> for it. The idea is simple:</p>
+<p>A few years ago, because I wanted a faster way to deal with this, I wrote a <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" rel="noopener noreferrer" target="_blank">PostgreSQL query</a> for it. The idea is simple:</p>
 <ol>
 <li>Find all date fields in the database.</li>
 <li>Build one giant query against those fields to look for dates beyond 1C's limit.</li>
 </ol>
 <p>So yes, this query generates another query. Very normal behavior. Run the generated query, and you get the full picture: a list of tables containing invalid dates. After that, it's just engineering work — inspect the tables and decide what to do. In our case, bad dates sometimes show up in totals and turnovers, so we can just delete those rows and recalculate totals using the standard tools.</p>
 <p>Why do this at the DBMS level? Because 1C itself can't really help here — as a reminder, the platform crashes as soon as it touches the bad records. That includes reads, not just writes. Also, in this case, going directly against the database is simply faster and more convenient.</p>
-<p>The other day I rewrote the same <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" target="_blank">query for MS SQL</a>. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.</p>
+<p>The other day I rewrote the same <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" rel="noopener noreferrer" target="_blank">query for MS SQL</a>. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.</p>
 <p>If you want to use it, keep this in mind:</p>
 <ul>
 <li>The <code>_Fld626</code> field in the query text is the Fresh separator. In your database it may have a different name, or it may not exist at all.</li>
@@ -560,9 +612,9 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>In the latest release of <a href="https://firstbit.ae" target="_blank">our ERP</a>, we optimized several heavy dynamic lists — orders, invoices, proforma invoices, and so on. Over time they had accumulated a pretty solid pile of technical debt, mostly in the form of mountains of helper tables bolted onto the main queries: contact info, technical attributes, balances, turnovers, you name it.</p>
+              <p>In the latest release of <a href="https://firstbit.ae" rel="noopener noreferrer" target="_blank">our ERP</a>, we optimized several heavy dynamic lists — orders, invoices, proforma invoices, and so on. Over time they had accumulated a pretty solid pile of technical debt, mostly in the form of mountains of helper tables bolted onto the main queries: contact info, technical attributes, balances, turnovers, you name it.</p>
 <p>At some point even in fairly small deployments the DB optimizer started producing complete nonsense instead of query plans, and the resource cost of letting that happen was getting less and less funny.</p>
-<p>So, we patched things up using several different approaches. One of them was loading extra row data inside the <code>OnGetDataAtServer()</code> handler (I actually <a href="https://kostyanetsky.me/notes/desire-paths" target="_blank">mentioned</a> this mechanism not that long ago). We built a nice little framework around it, rolled it out, tested it, and... Well, now we're all sitting here with those deeply unimpressed engineer faces.</p>
+<p>So, we patched things up using several different approaches. One of them was loading extra row data inside the <code>OnGetDataAtServer()</code> handler (I actually <a href="https://kostyanetsky.me/notes/desire-paths" rel="noopener noreferrer" target="_blank">mentioned</a> this mechanism not that long ago). We built a nice little framework around it, rolled it out, tested it, and... Well, now we're all sitting here with those deeply unimpressed engineer faces.</p>
 <p>To be fair, performance really did get a lot better. Inside a compact handler, you can tune queries against heavy virtual tables almost perfectly. The problem is somewhere else: field values populated by this handler are not passed into the standard dynamic list mechanisms. Which means search, sorting, and grouping simply do not work for those fields.</p>
 <p>So you type a value that is clearly visible in the column — and the row is not found. Or not all matching rows are found. Or rows show up that visibly should not match at all. From the user's point of view, this looks absolutely terrible. A bug is a bug. Those fields don't look any different in the UI, so how exactly are you supposed to explain that this is "just how the platform works™"?</p>
 <p>And if you explicitly exclude such a field from the mechanisms that can't handle it, that's somehow even worse. For example, try to sort by it — and boom, giant error message. Explaining why sorting blows up on this "Amount" column while the one right next to it works just fine is... Not exactly a beginner-friendly support conversation.</p>
@@ -610,7 +662,7 @@
             <div class="prose-like">
               <p>In Japanese, there's a wonderful word: ikigai. It's kind of like your reason for living, but not in some huge existential sense — more in a grounded, everyday way. A source of inner energy, a source of joy. Basically, the thing that makes you want to get out of bed in the morning.</p>
 <p>A person can have several of those anchors, and they're different for everyone. Coffee, a cat, a craft you love, taking care of the people close to you, a garden, walks, video games...</p>
-<p>Anyway, that's what got me thinking. I stumbled across a channel called "<a href="https://t.me/aleshkino_svoe" target="_blank">Alyoshkino Svoe</a>". From what I understand, the guy behind it is a lawyer from St. Petersburg who breeds fancy chickens and regularly posts videos about specific breeds, incubation details, feeding, and so on.</p>
+<p>Anyway, that's what got me thinking. I stumbled across a channel called "<a href="https://t.me/aleshkino_svoe" rel="noopener noreferrer" target="_blank">Alyoshkino Svoe</a>". From what I understand, the guy behind it is a lawyer from St. Petersburg who breeds fancy chickens and regularly posts videos about specific breeds, incubation details, feeding, and so on.</p>
 <p>I'm not into birds at all, but I caught myself just sitting there for twenty minutes, completely mesmerized, listening without looking away. It almost works like therapy, honestly. And it struck me that this is actually a pretty solid kind of ikigai: something you'll love the way this guy loves his chickens.</p>
             </div>
           </div>
@@ -654,16 +706,16 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I started recording all my meetings back in 2020 — at least, that’s what my own <a href="https://kostyanetsky.me/notes/video-recording" target="_blank">notes</a> say. Video is always more accurate than memory, and clicking "Start Recording" in <a href="https://obsproject.com" target="_blank">OBS</a> is the cheapest way to not lose some random-but-important detail.</p>
+              <p>I started recording all my meetings back in 2020 — at least, that’s what my own <a href="https://kostyanetsky.me/notes/video-recording" rel="noopener noreferrer" target="_blank">notes</a> say. Video is always more accurate than memory, and clicking "Start Recording" in <a href="https://obsproject.com" rel="noopener noreferrer" target="_blank">OBS</a> is the cheapest way to not lose some random-but-important detail.</p>
 <p>The downsides are obvious, though: you can't quickly grasp the gist of a meeting from a video, searching through it is basically impossible, it eats disk space like it's bulking season, and it's painfully easy to accidentally capture something private. To partially compensate, I used to jot down key points in bullet form during the meeting, and later either throw them into a task tracker or write a mini-summary for myself: who I met with, what we discussed, what decisions we landed on. If I forgot something or missed details, I'd double-check the video.</p>
 <p>But this method isn't perfect either. Even a rough outline steals focus from the actual meeting. And some "oh right, that detail matters" moments only reveal themselves when it's already too late.</p>
 <p><img alt="Forgot" src="https://kostyanetsky.me/notes/autosummary/forgot.jpeg"/></p>
 <p>So I ended up with a better approach: extract the meeting audio from the video, turn it into text (with a neural net), then turn that transcript into a detailed meeting summary (with another neural net). Yes, it's neural nets all the way down.</p>
-<p>The easiest way to rip the audio is with <a href="https://www.ffmpeg.org" target="_blank">ffmpeg</a> (a command-line utility for working with audio/video). Here's an example (mono, 16 kHz sampling rate + loudness normalization):</p>
+<p>The easiest way to rip the audio is with <a href="https://www.ffmpeg.org" rel="noopener noreferrer" target="_blank">ffmpeg</a> (a command-line utility for working with audio/video). Here's an example (mono, 16 kHz sampling rate + loudness normalization):</p>
 <pre>
 ffmpeg.exe -y -i "D:\video.mkv" -vn -ac 1 -ar 16000 -af loudnorm -c:a pcm_s16le "D:\audio.wav"
 </pre>
-<p>As for speech-to-text: I experimented with <a href="https://alphacephei.com/vosk/" target="_blank">Vosk</a> + <a href="https://github.com/benob/recasepunc" target="_blank">recasepunc</a>, but... Yeah, no. Let's just say I'd rather not relive that experience. Meanwhile <s>Boromir</s> <a href="https://openai.com/index/whisper" target="_blank">Whisper</a> (OpenAI's speech recognition model) installs in the background in about 10 minutes:</p>
+<p>As for speech-to-text: I experimented with <a href="https://alphacephei.com/vosk/" rel="noopener noreferrer" target="_blank">Vosk</a> + <a href="https://github.com/benob/recasepunc" rel="noopener noreferrer" target="_blank">recasepunc</a>, but... Yeah, no. Let's just say I'd rather not relive that experience. Meanwhile <s>Boromir</s> <a href="https://openai.com/index/whisper" rel="noopener noreferrer" target="_blank">Whisper</a> (OpenAI's speech recognition model) installs in the background in about 10 minutes:</p>
 <pre>
 py -3.10 -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -676,9 +728,9 @@ pip install openai-whisper
 whisper "D:\audio.wav" --model small --language Russian --output_format txt
 </pre>
 <p>The result is a plain text transcript you can shove into any chatbot and get a fairly coherent summary. Sure, you still need to proofread it — fix mistakes and hallucinations, rephrase a couple things — but it's still way better than trying to write notes live.</p>
-<p>And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can't be bothered to vibe-code, you can grab <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" target="_blank">my script</a> and tweak it.</p>
-<p>The script finds the first .mkv in its folder, runs it through ffmpeg + Whisper, and saves the result back into the same folder. If you use it: note that it runs via <a href="https://developer.nvidia.com/cuda" target="_blank">CUDA</a> (CPU works too, just much slower), and it stores downloaded Whisper models not in the default cache, but inside the current Python virtual environment folder.</p>
-<p>(if you really want, you can wire up an API call or point it at some local model via <a href="https://lmstudio.ai" target="_blank">LM Studio</a> — but for my personal setup I decided: nope, that's already too much engineering for a lazy win)</p>
+<p>And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can't be bothered to vibe-code, you can grab <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" rel="noopener noreferrer" target="_blank">my script</a> and tweak it.</p>
+<p>The script finds the first .mkv in its folder, runs it through ffmpeg + Whisper, and saves the result back into the same folder. If you use it: note that it runs via <a href="https://developer.nvidia.com/cuda" rel="noopener noreferrer" target="_blank">CUDA</a> (CPU works too, just much slower), and it stores downloaded Whisper models not in the default cache, but inside the current Python virtual environment folder.</p>
+<p>(if you really want, you can wire up an API call or point it at some local model via <a href="https://lmstudio.ai" rel="noopener noreferrer" target="_blank">LM Studio</a> — but for my personal setup I decided: nope, that's already too much engineering for a lazy win)</p>
             </div>
           </div>
           
@@ -696,7 +748,7 @@ whisper "D:\audio.wav" --model small --language Russian --output_format txt
             <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/new-ui"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
-                New Blog's UI
+                New Blog&#39;s UI
             </a>
             </header>
             
@@ -726,8 +778,8 @@ whisper "D:\audio.wav" --model small --language Russian --output_format txt
           <div class="mt-5">
             <div class="prose-like">
               <p>Over the New Year holidays I randomly got obsessed and rewrote my blog's UI. I only wanted to add search for my notes — there are a lot of them now, and every so often I need to quickly fish something out of the pile (like "here's that link" to a coworker).</p>
-<p>The blog runs on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>, so the options aren’t exactly infinite: either outsource search to Google, or build a static index and ship it to the user's browser so it can grep through it locally. I went with the second route: faster, more controllable, <s>and, yes, an excuse to write code</s>. The first time you search it has to download <a href="https://kostyanetsky.me/notes.json" target="_blank">the index file</a>, but... It's 200 KB. That's basically one medium-sized sigh in 2026 internet terms.</p>
-<p>And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn't get <a href="https://tachyons.io" target="_blank">Tachyons</a> to play nice with the search input — got annoyed and migrated everything to <a href="https://tailwindcss.com" target="_blank">Tailwind</a> (I'd been meaning to try it anyway, just never had a "good reason", so I invented one). While I was writing the search code, I figured it'd be dumb not to add tags too, because why do the same work twice. Next thing I know I "wake up" and there's a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it's not tags, it's tech stacks...</p>
+<p>The blog runs on <a href="https://pages.github.com" rel="noopener noreferrer" target="_blank">GitHub Pages</a>, so the options aren’t exactly infinite: either outsource search to Google, or build a static index and ship it to the user's browser so it can grep through it locally. I went with the second route: faster, more controllable, <s>and, yes, an excuse to write code</s>. The first time you search it has to download <a href="https://kostyanetsky.me/notes.json" rel="noopener noreferrer" target="_blank">the index file</a>, but... It's 200 KB. That's basically one medium-sized sigh in 2026 internet terms.</p>
+<p>And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn't get <a href="https://tachyons.io" rel="noopener noreferrer" target="_blank">Tachyons</a> to play nice with the search input — got annoyed and migrated everything to <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank">Tailwind</a> (I'd been meaning to try it anyway, just never had a "good reason", so I invented one). While I was writing the search code, I figured it'd be dumb not to add tags too, because why do the same work twice. Next thing I know I "wake up" and there's a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it's not tags, it's tech stacks...</p>
 <p>So yeah, it turned into that "Fear and Loathing in Las Vegas" meme. The tendency was to push it as far as I can, kinda.</p>
 <p>Now the only thing left is to make myself actually write into the new project log. There's always a ton of work, and it's genuinely interesting — but if I don't write things down... Welp. Everything sinks into coffee.</p>
             </div>
@@ -776,7 +828,7 @@ whisper "D:\audio.wav" --model small --language Russian --output_format txt
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
+              <p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" rel="noopener noreferrer" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
 <p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
 <p>You can pick one of three backup types:</p>
 <ul>
@@ -893,11 +945,11 @@ For Each Table1Row In Table1 Do
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I've rebuilt last year’s <a href="https://kostyanetsky.me/notes/obsidian-foodiary" target="_blank">plugin</a> with <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> — it now tracks calories, protein, fat, and carbs in your food.</p>
+              <p>I've rebuilt last year’s <a href="https://kostyanetsky.me/notes/obsidian-foodiary" rel="noopener noreferrer" target="_blank">plugin</a> with <a href="https://help.obsidian.md/bases" rel="noopener noreferrer" target="_blank">Obsidian Bases</a> — it now tracks calories, protein, fat, and carbs in your food.</p>
 <p>The result is way more flexible and customizable than the plugin version: if you suddenly decide you want to count fiber as well or just shuffle some columns in the report, you don't have to rewrite, rebuild, or release anything. You just tweak it to your heart's content.</p>
 <p>And it doesn't look half bad either:</p>
 <p><img alt="UI" src="https://kostyanetsky.me/notes/obsidian-foodiary-bases/base.png"/></p>
-<p>All the necessary settings and scripts live in the <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">GitHub repo</a>.</p>
+<p>All the necessary settings and scripts live in the <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" rel="noopener noreferrer" target="_blank">GitHub repo</a>.</p>
             </div>
           </div>
           
@@ -1058,20 +1110,20 @@ SELECT TOP 0
             <div class="prose-like">
               <p>Looks like we finally caught our first lab-reproducible case of platform cache corruption. Short synopsis:</p>
 <ul>
-<li>Spin up a fresh app from the v35 template of <a href="https://firstbit.ae" target="_blank">our ERP</a>.</li>
+<li>Spin up a fresh app from the v35 template of <a href="https://firstbit.ae" rel="noopener noreferrer" target="_blank">our ERP</a>.</li>
 <li>Run it and wait for initialization to finish.</li>
 <li>Swap the app configuration to the v36 release (specifically build 28537 from the dev repo) and run it again.</li>
 </ul>
 <p>After this super simple sequence, about half the team sees the platform suddenly lose one of the enums. And it's annoyingly selective: hit an enum value on the client — all good; do the same on the server — boom, exception.</p>
 <p>Same story with the manager module of one catalog: its methods exist and are exported, but after the update the platform pretends they don't and throw an exception when you call them.</p>
-<p><a href="https://x.com/EffinBirds/status/1970264357427704080" target="_blank"><img alt="Welcome To Dipshit Central" src="https://kostyanetsky.me/notes/voodoo/welcome.jpg"/></a></p>
+<p><a href="https://x.com/EffinBirds/status/1970264357427704080" rel="noopener noreferrer" target="_blank"><img alt="Welcome To Dipshit Central" src="https://kostyanetsky.me/notes/voodoo/welcome.jpg"/></a></p>
 <p>As always, when the magic blooms — look at the cache. Clear it and symptoms vanish. There are indirect hints too:</p>
 <ul>
 <li>The enum did exist in v35, but it was renamed in v36.</li>
 <li>Those manager-module methods didn't exist in v35 (they were added in v36).</li>
 </ul>
 <p>So the v35 cache didn't contain either of these in their v36 identities, yet for some reason the platform insists on digging into that old cache.</p>
-<p>We still don't have a clean root cause. We traced it to a specific commit after which the bug started showing up, but the only weird thing there its <a href="https://kostyanetsky.me/notes/voodoo/the-commit.png" target="_blank">its name</a> (and honestly, there are nearby commits that look even <a href="https://kostyanetsky.me/notes/voodoo/the-other-commit.png" target="_blank">more suspicious</a> from this point of view). The rest were <a href="https://kostyanetsky.me/notes/voodoo/5ba6ac0956e0cc7bc6b520e5110420e6950478fe.diff" target="_blank">minor changes</a> that regenerate internal metadata IDs in the manifest. Yes, those IDs are tied to cache keys, but they get bumped on any metadata change and have never caused issues before.</p>
+<p>We still don't have a clean root cause. We traced it to a specific commit after which the bug started showing up, but the only weird thing there its <a href="https://kostyanetsky.me/notes/voodoo/the-commit.png" rel="noopener noreferrer" target="_blank">its name</a> (and honestly, there are nearby commits that look even <a href="https://kostyanetsky.me/notes/voodoo/the-other-commit.png" rel="noopener noreferrer" target="_blank">more suspicious</a> from this point of view). The rest were <a href="https://kostyanetsky.me/notes/voodoo/5ba6ac0956e0cc7bc6b520e5110420e6950478fe.diff" rel="noopener noreferrer" target="_blank">minor changes</a> that regenerate internal metadata IDs in the manifest. Yes, those IDs are tied to cache keys, but they get bumped on any metadata change and have never caused issues before.</p>
 <p>If you landed here from Google because you hit the same mess — make a no-op change to the problematic object so the platform refreshes the metadata IDs in the manifest. For example, add an empty method or even just a space in the module. That fixes the configuration so the recipe at the top stops corrupting the cache.</p>
 <p>Voodoo, sure — but hey, it works ¯\_(ツ)_/¯</p>
             </div>
@@ -1136,7 +1188,7 @@ WHERE
     )
 </pre>
 <p>Each of these queries was reading around 20GB. What's happening is mostly clear: the platform is trying to delete an area's data history, but the janky DB query causes a full scan over the whole history table across all areas instead of using an index. Someone on Dmitrovskaya got lazy again.</p>
-<p><a href="https://x.com/EffinBirds/status/1945545263407301033" target="_blank"><img alt="Why are you surpised?" src="https://kostyanetsky.me/notes/data-history-missing-indexes/why.png"/></a></p>
+<p><a href="https://x.com/EffinBirds/status/1945545263407301033" rel="noopener noreferrer" target="_blank"><img alt="Why are you surpised?" src="https://kostyanetsky.me/notes/data-history-missing-indexes/why.png"/></a></p>
 <p>So we were losing between 30 seconds and a half an hour per operation. Wanted it faster. Fix:</p>
 <pre>
 CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
@@ -1192,14 +1244,14 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I stumbled upon a hefty Infostart <a href="https://infostart.ru/1c/articles/2434171/" target="_blank">article</a> all about "debunking myths" around the platform.</p>
+              <p>I stumbled upon a hefty Infostart <a href="https://infostart.ru/1c/articles/2434171/" rel="noopener noreferrer" target="_blank">article</a> all about "debunking myths" around the platform.</p>
 <p>Honestly, about half of it reads like a joke. It's like:</p>
 <blockquote>
 <p>Hot off the press! Crime, intrigue, investigations! File‑based infobase is faster than client-server! DCS is slower than a plain request! Calling a server method on the server counts as a brand-new server call! <s>UFO over Red Square!</s></p>
 </blockquote>
 <p>Still, there are some genuinely interesting nuggets! For instance, I'd never heard the claim that cramming your code into one single line makes it run ten times faster. Too bad you'd get your ass handed to you by the team for trying that kind of desperate swag before you even get to celebrate the speed boost. And let's be real — most enterprise app slowdowns usually come from totally different places.</p>
 <p>Or take their speed comparison for dumping data into a table: one test for object presentations and another for their descriptions. The presentation dump was literally tens of times slower! On paper, that sounds weird — both are just strings already pulled from the database at measurement time. My guess is it's down to typing: presentation strings can be unlimited length, unlike descriptions. So you get extra memory allocations, helper structures popping up, and bam — that's where the slowdown creeps in.</p>
-<p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" target="_blank">benchmarking</a> <code>ValueIsFilled()</code> and getting a nasty <a href="https://kostyanetsky.me/notes/method-with-surprise" target="_blank">surprise</a> from the built‑in <code>FindByNumber()</code>.</p>
+<p>P.S. I've jotted down some of these points myself before. Off the top of my head — I remember <a href="https://kostyanetsky.me/notes/is-ref-empty" rel="noopener noreferrer" target="_blank">benchmarking</a> <code>ValueIsFilled()</code> and getting a nasty <a href="https://kostyanetsky.me/notes/method-with-surprise" rel="noopener noreferrer" target="_blank">surprise</a> from the built‑in <code>FindByNumber()</code>.</p>
             </div>
           </div>
           
@@ -1240,7 +1292,7 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
             <div class="prose-like">
               <p>I figured out a cool trick for cutting off parts of an object when it intersects with something else. Like, in this gif, there’s a monkey head model in the center, and as a plane moves through it, the part that intersects just disappears.</p>
 <p><img alt="Demo" src="https://kostyanetsky.me/notes/delete-geometry/demo.gif"/></p>
-<p><a href="https://github.com/vkostyanetsky/3DPlayground/blob/main/Geometry%20Nodes/DeleteGeometry.blend" target="_blank">The idea</a> is pretty simple: you shrink the geometry of the "cutter" object down to a cube, get its min and max coordinates along each axis, and then for every point on the object you're trimming, you check whether it falls within that range. If it does — boom, it gets deleted.</p>
+<p><a href="https://github.com/vkostyanetsky/3DPlayground/blob/main/Geometry%20Nodes/DeleteGeometry.blend" rel="noopener noreferrer" target="_blank">The idea</a> is pretty simple: you shrink the geometry of the "cutter" object down to a cube, get its min and max coordinates along each axis, and then for every point on the object you're trimming, you check whether it falls within that range. If it does — boom, it gets deleted.</p>
 <p>There are tons of ways you could use this. For example, I used it to automatically trim parts of decorative music staff lines on a wall so they wouldn't go across a doorway.</p>
 <p><img alt="Example" src="https://kostyanetsky.me/notes/delete-geometry/case.jpg"/></p>
 <p>Sure, you could do it by hand, without geometry nodes, but that would kill flexibility. If the wall size, door size, or the angle of the lines changes — you'd have to redo everything from scratch.</p>
@@ -1388,54 +1440,9 @@ own room."</p>
               <p><img alt="Thank you, Mario!" src="https://kostyanetsky.me/notes/easter-eggs/mario.jpg"/></p>
 <p><img alt="Awaiting Signal" src="https://kostyanetsky.me/notes/easter-eggs/mothership.jpg"/></p>
 <p>A couple of Easter eggs hidden inside FirstBit ERP. They're tucked away for the developers: in the first case, users see just the form title and notification text, while in the second, they see the standard "waiting for connection" message.</p>
-<p>I like to add little things like this from time to time — it helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t checked out Bystronovsky’s "<a href="https://collab.ldwg.ru/stressless-design" target="_blank">Design Without Stress</a>", you really should — no way I could explain it better myself.</p>
+<p>I like to add little things like this from time to time — it helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t checked out Bystronovsky’s "<a href="https://collab.ldwg.ru/stressless-design" rel="noopener noreferrer" target="_blank">Design Without Stress</a>", you really should — no way I could explain it better myself.</p>
 <p>By the way, here’s another Easter egg! Not from our ERP this time, but from a new tool we’re making for automated database updates. We're building it just for ourselves, so we can joke around with the user a bit :)</p>
 <p><img alt="Nice try, Marty!" src="https://kostyanetsky.me/notes/easter-eggs/marty.jpg"/></p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/across-meeting"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                ERP Development In English
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>19 January 2025</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Work</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mZwHTbu285A" width="560"></iframe>
-<p>Our lead developer recently shared some insights about our work — specifically, developing ERP systems on 1C for the UAE and, more recently, Saudi Arabia. The session was hosted by the online English school Across, so the audience was spot-on: Russian-speaking folks interested in building careers and exploring international markets.</p>
-<p>Overall, it turned out pretty cool, especially as a language practice. Just a reminder: learning foreign languages is still one of the best ways to give your brain a workout, and it’s also super accessible. There’s no shortage of resources, communities, and interest-based clubs out there — you just need the motivation :)</p>
             </div>
           </div>
           

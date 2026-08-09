@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/clementine';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/first-pancake';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/clementine";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/first-pancake";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -155,9 +155,9 @@
           <div class="mt-5">
             <div class="prose-like">
               <p>When you're actively working in daily notes in Obsidian, you often want to quickly peek into the note from yesterday or, conversely, for tomorrow. For example, when sorting today's tasks and wanting to postpone some of them for tomorrow.</p>
-<p>I'm too lazy to type the exact date every time, so I wrote a <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" target="_blank">script</a> for this. It takes the note's date from its title (expects it to be in <abbr title="2024-08-17, for example.">ISO 8601</abbr> format) and generates a tooltip with links to yesterday's and tomorrow's notes. The day of the week is displayed in the header for additional convenience:</p>
+<p>I'm too lazy to type the exact date every time, so I wrote a <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" rel="noopener noreferrer" target="_blank">script</a> for this. It takes the note's date from its title (expects it to be in <abbr title="2024-08-17, for example.">ISO 8601</abbr> format) and generates a tooltip with links to yesterday's and tomorrow's notes. The day of the week is displayed in the header for additional convenience:</p>
 <p><img alt="Example" src="https://kostyanetsky.me/notes/obsidian-day-switcher/callout.jpg"/></p>
-<p>The script is written for the <a href="https://github.com/blacksmithgu/obsidian-dataview" target="_blank">Dataview</a> plugin since I'm already using it for other tasks. In general, it can easily be adapted for <a href="https://github.com/SilentVoid13/Templater" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" target="_blank">CustomJS</a>, or even turned into a standalone plugin (again, I'm too lazy to bother with that).</p>
+<p>The script is written for the <a href="https://github.com/blacksmithgu/obsidian-dataview" rel="noopener noreferrer" target="_blank">Dataview</a> plugin since I'm already using it for other tasks. In general, it can easily be adapted for <a href="https://github.com/SilentVoid13/Templater" rel="noopener noreferrer" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" rel="noopener noreferrer" target="_blank">CustomJS</a>, or even turned into a standalone plugin (again, I'm too lazy to bother with that).</p>
 <p>If you plan to use it:</p>
 <ol>
 <li>In the noteLink() function, specify the path to your daily notes folder (currently, the path contains a 'Days' folder for example; I mean the path is indicated in the Daily notes/Template file location setting);</li>

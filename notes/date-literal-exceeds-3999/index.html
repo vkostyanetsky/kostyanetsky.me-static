@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/nerdview';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/rclone-abuser';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/nerdview";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/rclone-abuser";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -153,9 +153,9 @@
               <p>So, during a routine totals recalculation from the Configurator, we suddenly got the error: "the year in the Date literal exceeds 3999". Which means there's a date somewhere in the database — or trying to get there — that is beyond the maximum 1C can handle: 31.12.3999 23:59:59.</p>
 <p><img alt="Exception" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.png"/></p>
 <p>Alright. What do we do with that?</p>
-<p>The main thing is to identify the exact table that contains the bad dates. Since the error showed up during totals recalculation, the obvious place to look is the registers. Open the standard totals management tool, start recalculation, and <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/totals.png" target="_blank">you'll get</a> the name of the register the platform trips over.</p>
-<p>Another approach — more proper, methodologically speaking — is to enable tech log collection (<code>SDBL</code>, <code>EXCP</code>, and <code>EXCPCNTX</code>) and get a log that looks roughly like <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.log" target="_blank">this</a>. In that log, find the <code>EXCP</code> event, and right before it the <code>SDBL</code> event. That <code>SDBL</code> entry contains the SQL query that caused the crash. In its text, you'll see the table name you need (<code>AccumRgTn11530</code>). The corresponding configuration object name can be pulled out with pretty much any utility built around <code>GetDBStorageStructureInfo()</code>.</p>
-<p>One way or another, you end up with the register name. Open its form, sort by period, and you'll quickly get to the <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/entries.png" target="_blank">bad entries</a>. Then the job is to inspect the documents that created those records, fix the root cause, and repost the documents. If totals recalculation is still broken after that, then either this is not the only table with broken dates, or those dates have already spread somewhere beyond the records table.</p>
+<p>The main thing is to identify the exact table that contains the bad dates. Since the error showed up during totals recalculation, the obvious place to look is the registers. Open the standard totals management tool, start recalculation, and <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/totals.png" rel="noopener noreferrer" target="_blank">you'll get</a> the name of the register the platform trips over.</p>
+<p>Another approach — more proper, methodologically speaking — is to enable tech log collection (<code>SDBL</code>, <code>EXCP</code>, and <code>EXCPCNTX</code>) and get a log that looks roughly like <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.log" rel="noopener noreferrer" target="_blank">this</a>. In that log, find the <code>EXCP</code> event, and right before it the <code>SDBL</code> event. That <code>SDBL</code> entry contains the SQL query that caused the crash. In its text, you'll see the table name you need (<code>AccumRgTn11530</code>). The corresponding configuration object name can be pulled out with pretty much any utility built around <code>GetDBStorageStructureInfo()</code>.</p>
+<p>One way or another, you end up with the register name. Open its form, sort by period, and you'll quickly get to the <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/entries.png" rel="noopener noreferrer" target="_blank">bad entries</a>. Then the job is to inspect the documents that created those records, fix the root cause, and repost the documents. If totals recalculation is still broken after that, then either this is not the only table with broken dates, or those dates have already spread somewhere beyond the records table.</p>
 <p>For example, I once had a case where fixing the records was not enough, because records with invalid dates were still sitting in the turnover table. The platform itself could not remove them, but the database was small enough that I could get away with some restructuring tricks. I pulled the following stunt: turned off the "Use in totals" flag for all register dimensions and applied the changes; then turned it back on and recalculated totals again. As a result, the register's turnover table was physically dropped, then recreated and filled from scratch — this time without dates from the distant future.</p>
 <p>As a last resort, you could delete the bad records with direct SQL queries (<code>DELETE</code> or even <code>TRUNCATE</code>). But first, that violates the platform vendor's license agreement, and second, it's risky: it's very easy to remove something important and not notice until later. So I would, uh, not recommend trying that at home.</p>
             </div>

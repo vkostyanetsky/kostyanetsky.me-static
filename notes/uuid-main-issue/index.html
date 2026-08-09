@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/last-resort';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/data-history-duplication';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/last-resort";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/data-history-duplication";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -154,8 +154,8 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
-<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
+              <p>I came across a <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" rel="noopener noreferrer" target="_blank">good text</a> about the main problem that UUID brings with itself. It is also relevant for 1C: all platform reference objects (catalog items, documents, and so on) have their own UUID. They are stored in a database, actively used in searches, and, of course, extensively indexed (with all the ensuing consequences).</p>
+<p>1C tries to suppress the issue by creating consistent UUIDs. It may not be perfect, but overall, this thing works, and the indexes turn out to be more or less compact. In general, the community has been talking about this for a long time: for example, the old <a href="https://forum.mista.ru/topic.php?id=801986" rel="noopener noreferrer" target="_blank">thread on Mista</a> (though the conversation here quickly turned into a chicken coop, and out of six dozen comments, at most one and a half are on point).</p>
 <p>P.S. The remark about the probability of creating two identical UUIDs in one database made me laugh:</p>
 <blockquote>
 <p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>

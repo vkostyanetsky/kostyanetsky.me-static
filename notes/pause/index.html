@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/in-a-pedantic-way';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/going-postal';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/in-a-pedantic-way";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/going-postal";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -152,7 +152,7 @@
             <div class="prose-like">
               <blockquote>
 <p>An important detail: the CallPause method is not available in a client-server call; when a client calls a server method in which CallPause is called, the exception "Cannot call the CallPause method in a client-server call" will be thrown.</p>
-<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" target="_blank">CallPause Method</a> (RU)</p>
+<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" rel="noopener noreferrer" target="_blank">CallPause Method</a> (RU)</p>
 </blockquote>
 <p>What a strange restriction, to be frank. On the one hand, an experienced developer will not make an intentional pause in a client-server call anyway; on the other hand, whoever wants to make it makes it anyway (by checking time in a cycle, for example). Does security by obscurity worth the efforts?</p>
 <p>At best, some junior will catch this exception, think “welp, it looks like I'm doing something wrong” and move in the right direction. However, putting the restriction on the platform for the sake of this case is like firing a cannon at sparrows. You know what? Let's implement a number limit as well — like, no more than 1000 pauses per session, otherwise users will suddenly think that the program is too slow :-)</p>

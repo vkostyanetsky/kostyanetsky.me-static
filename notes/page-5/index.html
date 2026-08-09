@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = '';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/page-4';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/page-6";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/page-4";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -111,7 +111,7 @@
       id="pageMeta"
       data-page="5"
       data-total-notes="20"
-      data-total-pages="5"
+      data-total-pages="6"
     >
       <a id="top" class="block scroll-mt-24"></a>
 
@@ -372,6 +372,52 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/top-salaries"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Top Salaries
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>2 October 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <blockquote>
+<p>There is a path to a CSV file. You need to open it, read the header (first line), find the Salary column and display the top 10 salaries.</p>
+<p><em><a href="https://t.me/nikitonsky_chat/26402" rel="noopener noreferrer" target="_blank">Link</a></em></p>
+</blockquote>
+<p>Threw in my <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" rel="noopener noreferrer" target="_blank">two cents</a> just to complete the picture. If you forget about stability, readability, and performance — you can cut it in half. Here it was obvious from the very beginning that it would be shorter in bash and clearer in Python, so I just wrote it as I was used to.</p>
+<p>What was useful: there are a bunch of examples in other languages ​​in the comments to the post. Frankly speaking, I haven’t come across some of them; it was really curious to look at the syntax and try to understand the way to solve the task.</p>
+<p>In general, the whole story reminded Eugene Stepanishev's <a href="https://bolknote.ru/tags/beer99/" rel="noopener noreferrer" target="_blank">hobby</a> — to write the output of the American “beer song” in all languages ​​in a row. By the way, Tonsky's issue looks as fun for me too — too trivial to seriously compare something on its basis.</p>
+<p>What was funny: for a couple of <a href="https://t.me/nikitonsky_pub/201?comment=26703" rel="noopener noreferrer" target="_blank">colleagues</a>, the 1C code caused such acute vision problems that they considered it necessary to report it :-) I partly understand the desire to assert itself on the stereotype “1C is bad, mkay?”, but it's the wrong case. The preference in syntax is nothing but a matter of taste, and besides it, the solution in 1C is no different from solutions in any other language without a built-in library for parsing CSV.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/build-on-github"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Building The Blog on GitHub
@@ -399,15 +445,15 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>For the last year this site has been working on a simple platform: statics, GitHub and my domain. All the pages were pre-generated and placed in a GitHub's <a href="https://github.com/vkostyanetsky/kostyanetsky.me-static" target="_blank">repository</a> with <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> enabled.</p>
+              <p>For the last year this site has been working on a simple platform: statics, GitHub and my domain. All the pages were pre-generated and placed in a GitHub's <a href="https://github.com/vkostyanetsky/kostyanetsky.me-static" rel="noopener noreferrer" target="_blank">repository</a> with <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">GitHub Pages</a> enabled.</p>
 <p>I collected statics using a script. It was working with a list of text files, pedantically arranged in folders. The script rummaged through them and generated HTML files. Then I manually pushed them to the repository.</p>
 <p>This scheme worked well, but the number of clicks annoyed me. Here is the script pull, and there is the script pull, and then you have to tinker with the git. I wanted it to be simpler.</p>
 <p>At some point, I figured out that not only the deployment of statics, but also the assembly can be shifted onto the shoulders of GitHub. I put together some thoughts and added two more repositories:</p>
 <ol>
-<li>A <a href="https://github.com/vkostyanetsky/kostyanetsky.me" target="_blank">repository</a> of initial data. Here I put the content of the site: the text files and a bit of metadata (page titles, dates of pages creation, tags for notes, and so on).</li>
-<li>A <a href="https://github.com/vkostyanetsky/BlogBuilder" target="_blank">repository</a> of the script for generating statics. In addition to the script itself, I put various assets here (icons, styles, manifests — in general, everything that doesn't need to be generated every time, but you have to “put” it next to the resulting HTML).</li>
+<li>A <a href="https://github.com/vkostyanetsky/kostyanetsky.me" rel="noopener noreferrer" target="_blank">repository</a> of initial data. Here I put the content of the site: the text files and a bit of metadata (page titles, dates of pages creation, tags for notes, and so on).</li>
+<li>A <a href="https://github.com/vkostyanetsky/BlogBuilder" rel="noopener noreferrer" target="_blank">repository</a> of the script for generating statics. In addition to the script itself, I put various assets here (icons, styles, manifests — in general, everything that doesn't need to be generated every time, but you have to “put” it next to the resulting HTML).</li>
 </ol>
-<p>Then I wrote an <a href="https://github.com/vkostyanetsky/kostyanetsky.me/blob/main/.github/workflows/main.yml" target="_blank">action</a> that wakes up with every push to the repository with the initial data. Shortly, its logic:</p>
+<p>Then I wrote an <a href="https://github.com/vkostyanetsky/kostyanetsky.me/blob/main/.github/workflows/main.yml" rel="noopener noreferrer" target="_blank">action</a> that wakes up with every push to the repository with the initial data. Shortly, its logic:</p>
 <ol>
 <li>Clone the repository with statics and the repository with the generating script;</li>
 <li>Update the repository with statics using the generating script;</li>
@@ -481,7 +527,7 @@
             <header class="space-y-2">
             <a href="https://kostyanetsky.me/notes/hammer-and-nails"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Hammer & Nails
+                Hammer &amp; Nails
             </a>
             </header>
             
@@ -610,8 +656,8 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I posted on GitHub a Python <a href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
-<p>I suffered with the problem for some time and eventually returned to the good old <a href="https://rclone.org" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
+              <p>I posted on GitHub a Python <a href="https://github.com/vkostyanetsky/RCloneAbuser" rel="noopener noreferrer" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
+<p>I suffered with the problem for some time and eventually returned to the good old <a href="https://rclone.org" rel="noopener noreferrer" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
 <p>Secondly, I had many files and folders to sync: a directory here, a directory there, a config from there, a profile from here… In order not to produce spaghetti code, I wrote a simple script that takes sources and receivers from a config file, and then executes rclone for each pair.</p>
             </div>
           </div>
@@ -654,9 +700,9 @@
               <p>So, during a routine totals recalculation from the Configurator, we suddenly got the error: "the year in the Date literal exceeds 3999". Which means there's a date somewhere in the database — or trying to get there — that is beyond the maximum 1C can handle: 31.12.3999 23:59:59.</p>
 <p><img alt="Exception" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.png"/></p>
 <p>Alright. What do we do with that?</p>
-<p>The main thing is to identify the exact table that contains the bad dates. Since the error showed up during totals recalculation, the obvious place to look is the registers. Open the standard totals management tool, start recalculation, and <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/totals.png" target="_blank">you'll get</a> the name of the register the platform trips over.</p>
-<p>Another approach — more proper, methodologically speaking — is to enable tech log collection (<code>SDBL</code>, <code>EXCP</code>, and <code>EXCPCNTX</code>) and get a log that looks roughly like <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.log" target="_blank">this</a>. In that log, find the <code>EXCP</code> event, and right before it the <code>SDBL</code> event. That <code>SDBL</code> entry contains the SQL query that caused the crash. In its text, you'll see the table name you need (<code>AccumRgTn11530</code>). The corresponding configuration object name can be pulled out with pretty much any utility built around <code>GetDBStorageStructureInfo()</code>.</p>
-<p>One way or another, you end up with the register name. Open its form, sort by period, and you'll quickly get to the <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/entries.png" target="_blank">bad entries</a>. Then the job is to inspect the documents that created those records, fix the root cause, and repost the documents. If totals recalculation is still broken after that, then either this is not the only table with broken dates, or those dates have already spread somewhere beyond the records table.</p>
+<p>The main thing is to identify the exact table that contains the bad dates. Since the error showed up during totals recalculation, the obvious place to look is the registers. Open the standard totals management tool, start recalculation, and <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/totals.png" rel="noopener noreferrer" target="_blank">you'll get</a> the name of the register the platform trips over.</p>
+<p>Another approach — more proper, methodologically speaking — is to enable tech log collection (<code>SDBL</code>, <code>EXCP</code>, and <code>EXCPCNTX</code>) and get a log that looks roughly like <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/excp.log" rel="noopener noreferrer" target="_blank">this</a>. In that log, find the <code>EXCP</code> event, and right before it the <code>SDBL</code> event. That <code>SDBL</code> entry contains the SQL query that caused the crash. In its text, you'll see the table name you need (<code>AccumRgTn11530</code>). The corresponding configuration object name can be pulled out with pretty much any utility built around <code>GetDBStorageStructureInfo()</code>.</p>
+<p>One way or another, you end up with the register name. Open its form, sort by period, and you'll quickly get to the <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999/entries.png" rel="noopener noreferrer" target="_blank">bad entries</a>. Then the job is to inspect the documents that created those records, fix the root cause, and repost the documents. If totals recalculation is still broken after that, then either this is not the only table with broken dates, or those dates have already spread somewhere beyond the records table.</p>
 <p>For example, I once had a case where fixing the records was not enough, because records with invalid dates were still sitting in the turnover table. The platform itself could not remove them, but the database was small enough that I could get away with some restructuring tricks. I pulled the following stunt: turned off the "Use in totals" flag for all register dimensions and applied the changes; then turned it back on and recalculated totals again. As a result, the register's turnover table was physically dropped, then recreated and filled from scratch — this time without dates from the distant future.</p>
 <p>As a last resort, you could delete the bad records with direct SQL queries (<code>DELETE</code> or even <code>TRUNCATE</code>). But first, that violates the platform vendor's license agreement, and second, it's risky: it's very easy to remove something important and not notice until later. So I would, uh, not recommend trying that at home.</p>
             </div>
@@ -712,7 +758,7 @@ Then I enter school
 And I exit school
 Then I gonna swing
 </code></pre>
-<p>We use Gherkin to write our autotests for <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. I can't say I've made very many of them, especially in comparison with some of my colleagues… Well, it seems like I've made them enough to twist the reality a few.</p>
+<p>We use Gherkin to write our autotests for <a href="https://github.com/Pr-Mex/vanessa-automation" rel="noopener noreferrer" target="_blank">Vanessa Automation</a>. I can't say I've made very many of them, especially in comparison with some of my colleagues… Well, it seems like I've made them enough to twist the reality a few.</p>
             </div>
           </div>
           
@@ -753,7 +799,7 @@ Then I gonna swing
             <div class="prose-like">
               <p>Yesterday morning, I was buying gifts for my women. While a florist was makings bouquets for me, we had a small talk and I suddenly caught her eye. She was looking at the growing crowd of customers with calmness and a clearly readable shadow of doom. This is probably how sailors looking at a surging wave which is about to bury their boat :-)</p>
 <p>People outside the flower industry grin sometimes — they say, eight of March is such a magical holiday for all the florists who make a fortune in ten hours. Well, income is really good these days, but literally anybody who has ever worked in this sphere more often associates the holiday (and a couple of days before it, by the way) with a monstrous strain on health and nerves.</p>
-<p>I can say that I got off cheaply: was just deploying and servicing some IT of a local net of flower shops, nothing more (by the way, I want to proudly <a href="http://rosetta.florist/" target="_blank">recommend</a> my former colleagues!). Nonetheless, the smell of flowers caused me Vietnam syndrome for a long time :-)</p>
+<p>I can say that I got off cheaply: was just deploying and servicing some IT of a local net of flower shops, nothing more (by the way, I want to proudly <a href="http://rosetta.florist/" rel="noopener noreferrer" target="_blank">recommend</a> my former colleagues!). Nonetheless, the smell of flowers caused me Vietnam syndrome for a long time :-)</p>
             </div>
           </div>
           
@@ -792,7 +838,7 @@ Then I gonna swing
 
           <div class="mt-5">
             <div class="prose-like">
-              <p><a href="https://kostyanetsky.me/notes/snowboard-effect/standing.jpg" target="_blank"><img alt="Standing!" src="https://kostyanetsky.me/notes/snowboard-effect/standing-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/snowboard-effect/sitting.jpg" target="_blank"><img alt="Sitting!" src="https://kostyanetsky.me/notes/snowboard-effect/sitting-thumbnail.jpg"/></a></p>
+              <p><a href="https://kostyanetsky.me/notes/snowboard-effect/standing.jpg" rel="noopener noreferrer" target="_blank"><img alt="Standing!" src="https://kostyanetsky.me/notes/snowboard-effect/standing-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/snowboard-effect/sitting.jpg" rel="noopener noreferrer" target="_blank"><img alt="Sitting!" src="https://kostyanetsky.me/notes/snowboard-effect/sitting-thumbnail.jpg"/></a></p>
 <p>You're sliding down the side of a mountain and trying to feel an equilibrium point, for the hundredth time. However, your nagging back is the only thing you're able to feel, and the Vaas speech from Far Cry 3 isn't going out of your mind.</p>
 <blockquote>
 <p>Did I ever tell you what the definition of insanity is? Insanity is doing the exact… Same fucking thing… Over and over again expecting… Shit to change… That. Is. Crazy.</p>
@@ -838,7 +884,7 @@ Then I gonna swing
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
+              <p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" rel="noopener noreferrer" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
 <p>By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p>
             </div>
           </div>
@@ -921,7 +967,7 @@ Then I gonna swing
           <div class="mt-5">
             <div class="prose-like">
               <p>Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
-<p>The book is really good, I had <a href="https://kostyanetsky.me/notes/hpmor" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a href="https://planeta.ru/campaigns/hpmor" target="_blank">make a request</a> now.</p>
+<p>The book is really good, I had <a href="https://kostyanetsky.me/notes/hpmor" rel="noopener noreferrer" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a href="https://planeta.ru/campaigns/hpmor" rel="noopener noreferrer" target="_blank">make a request</a> now.</p>
             </div>
           </div>
           
@@ -1012,7 +1058,7 @@ Then I gonna swing
             <div class="prose-like">
               <p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
 <p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
-<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p>
+<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" rel="noopener noreferrer" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p>
             </div>
           </div>
           
@@ -1052,7 +1098,7 @@ Then I gonna swing
           <div class="mt-5">
             <div class="prose-like">
               <p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
-<p>The artist is <a href="https://www.patreon.com/adamtots" target="_blank">Adam Ellis</a>.</p>
+<p>The artist is <a href="https://www.patreon.com/adamtots" rel="noopener noreferrer" target="_blank">Adam Ellis</a>.</p>
 <p>As for me, it's a great illustration for an everlasting moan “why do you always stare at your smartphone blah blah blah”. A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
 <p>The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p>
             </div>
@@ -1095,7 +1141,7 @@ Then I gonna swing
             <div class="prose-like">
               <p>I was trying to understand how to transliterate my surname properly yesterday. Ministry of Foreign Affairs says it should be written as “Kostianetskii” in English — with double “i” at the end. It's the quite rare combination: “skiing” is the only frequency word that I'm able to remember.</p>
 <p>It caused my curiosity and I googled it. The possible reason I came across is funny: cursive writing! Double “i” looks well only on a computer screen but it suddenly turns into “u” when you try to write it on paper.</p>
-<p>More details are <a href="https://spellingisnotcrazy.weebly.com/blog/category/the-letter-i" target="_blank">here</a>.</p>
+<p>More details are <a href="https://spellingisnotcrazy.weebly.com/blog/category/the-letter-i" rel="noopener noreferrer" target="_blank">here</a>.</p>
             </div>
           </div>
           
@@ -1219,52 +1265,11 @@ Then I gonna swing
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I have <a href="https://acomics.ru/~sebby-x-player" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">went out</a> a couple of years ago).</p>
+              <p>I have <a href="https://acomics.ru/~sebby-x-player" rel="noopener noreferrer" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" rel="noopener noreferrer" target="_blank">went out</a> a couple of years ago).</p>
 <p>It was an amusing experience. Firstly, an author of the manga is Chinese and her work was already translated from Chinese to English. I'm not sure what was the bigger problem — cultural differences or language skills, but several frames were a bit difficult to understand what's going on. Secondly, I've figured out that it's a real challenge to pick proper Russian words and not to get something like a quote from an official government's letter in the end.</p>
 <p>So, a part of sense had lost during the process, I guess, although I tried to keep everything I could and even had a word with the author in order to solve the most problematic cases. It was quite funny — I don't know Chinese, she doesn't know Russian, so our a bit poor English was the only way to understand each other.</p>
 <p>Something could have been translated better, I suppose, and several pictures definitely could have been changed more accurately. But you know what? Hell it out, perfection is a cruel mistress and I like the result yet. Yeah, there is no big deal or something like it — a drawing style is quite common, a plot has no significant differences with the game, but… I don't know. Perhaps, visual novels made a too sentimental son of a bitch out of me :-)</p>
-<p>Thanks to <a href="https://vk.com/id54890849" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" target="_blank">Quantus</a> for the manga.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/hpmor"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                HPMoR
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>6 November 2016</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Books</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Just finished reading “Harry Potter and Methods of Rationality” — the epic fanfic based on the you-know-whose universe. An author is a tough specialist in the field of artificial intelligence and interesting on his own, but his book is what I insistently <a href="http://hpmor.com/" target="_blank">recommend</a> to read.</p>
-<p>First of all, it is the magnificent rethinking of the original saga. Many aspects seem not less fascinating, I may say; moreover, the plot itself is certainly excellent — I read two-thirds of the story without switching <a href="https://kostyanetsky.me/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Gene Wilder</a> off :-) Nevertheless, the author was skillful enough to make all points meet and finish a storyline in such a pretty way that I had almost nothing to complain about.</p>
-<p>In any case, this book is a well way to meet with a lot of scientific and just interesting things which were mentioned along the way. The author is smart and his book is a smart one too.</p>
+<p>Thanks to <a href="https://vk.com/id54890849" rel="noopener noreferrer" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" rel="noopener noreferrer" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" rel="noopener noreferrer" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" rel="noopener noreferrer" target="_blank">Quantus</a> for the manga.</p>
             </div>
           </div>
           
@@ -1285,6 +1290,14 @@ Then I gonna swing
 
       <!-- Static pagination (works without JS; hide during search) -->
       <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/page-6"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Earlier
+        </a>
         
         <span class="w-[1px]"></span>
         

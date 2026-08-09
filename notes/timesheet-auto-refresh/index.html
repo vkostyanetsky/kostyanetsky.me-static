@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/if-anyone-builds-it';
-        let ctrlRightUrl    = '';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/if-anyone-builds-it";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/obsidian-property-organizer";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -154,7 +154,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>I spontaneously returned to my old <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">Obsidian plugin</a>, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.</p>
+              <p>I spontaneously returned to my old <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" rel="noopener noreferrer" target="_blank">Obsidian plugin</a>, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.</p>
 <p>The plugin had an original sin of a bug: whenever the note text changed, the plugin block would not refresh on its own. So you would add a task, change the time spent, or fix a description, while the report kept showing the old data. You had to either reopen the note itself or start editing the block and then cancel, just to trigger a manual render. It was annoying — and smelled suspiciously like reinventing the wheel.</p>
 <p>Now the plugin block automatically re-renders after changes — just the block, not the entire note. There is also a short delay after typing and an additional check: if the report has not actually changed, no render happens at all.</p>
 <p>I also wanted to update the dependencies while I was at it — it has been a year, after all — but... You know, NPM remains its usual shining example of order and discipline. Every tiny library for adding two numbers inevitably depends on ten others, every package is somehow a second cousin twice removed of the fence next door, and you cannot replace a single one without consequences: <code>npm audit</code> complains whenever someone sneezes. So, at first glance, I could not figure out how to update the dependencies reliably without breaking the plugin itself.</p>
@@ -184,6 +184,14 @@
         </a>
         
         <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/obsidian-property-organizer"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Obsidian Property Organizer →
+        </a>
         
       </nav>
 

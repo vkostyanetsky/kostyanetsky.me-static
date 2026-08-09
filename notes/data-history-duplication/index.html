@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/uuid-main-issue';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/singapore-doll';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/uuid-main-issue";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/singapore-doll";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -166,12 +166,12 @@
 <p>The platform also puts a mark in the created record that this particular version of the object is the most actual, and then removes this mark from the version that was marked as actual before.</p>
 <p>So, the problem is that the platform sometimes forgets to take the last step, and two versions appear in the table at once, marked as current. The Designer understands this but cannot do anything.</p>
 <p>The solution follows from the algorithm above: you need to find conflicting versions and revoke the mark of actuality from the one that is older. It is better to use queries: data history is often enabled for a bunch of objects, and the list of their attributes is constantly changing — in general, there will be so many versions in the table that the devil will break his leg.</p>
-<p>If you also encountered this problem and are therefore reading this text, you can use the <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" target="_blank">queries</a> that I wrote:</p>
+<p>If you also encountered this problem and are therefore reading this text, you can use the <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" rel="noopener noreferrer" target="_blank">queries</a> that I wrote:</p>
 <ol>
 <li>get-issues.sql checks that there is an issue: it looks for metadata versions that are also marked as actual.</li>
 <li>fix-issues.sql removes the actuality mark from those versions that are actually outdated.</li>
 </ol>
-<p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" target="_blank">here they are</a> for this DBMS.</p>
+<p>Both queries are written for Microsoft SQL Server. If you use PostgreSQL, then <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" rel="noopener noreferrer" target="_blank">here they are</a> for this DBMS.</p>
 <p>The queries will require a slight adaptation to a specific database: they use the _fld626 field, which is the data separator. In your _DataHistoryMetadata table, this field may be called differently, so you need to update its name to the current one. It will be difficult to make a mistake — the table has only one field with the _fld prefix.</p>
 <p>P.S. Please bear in mind that the license agreement prohibits access to the database, bypassing the platform’s tools, so you can only go for such experiments if there are no other options left.</p>
             </div>

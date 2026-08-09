@@ -14,7 +14,7 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/do-not-confuse';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/cookie-jar';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/do-not-confuse";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/cookie-jar";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -162,12 +162,12 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>As soon as I <a href="https://kostyanetsky.me/notes/no-more-google-fonts" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
-<p>How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">commit</a> shows you how it worked.</p>
+              <p>As soon as I <a href="https://kostyanetsky.me/notes/no-more-google-fonts" rel="noopener noreferrer" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
+<p>How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" rel="noopener noreferrer" target="_blank">commit</a> shows you how it worked.</p>
 <p>How does it work now? You're right, it does not! Twitter is blocked in Russia.</p>
 <p><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
 <p>The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
-<p>A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a href="https://github.com/privatenumber/snap-tweet" target="_blank">tool</a>: a console script for Node.js.</p>
+<p>A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a href="https://github.com/privatenumber/snap-tweet" rel="noopener noreferrer" target="_blank">tool</a>: a console script for Node.js.</p>
 <p>Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
 <blockquote>
 <p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>

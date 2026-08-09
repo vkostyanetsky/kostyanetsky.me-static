@@ -8,13 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Slow down, I'm recording</title>
+    <title>Slow down, I&#39;m recording</title>
 
     <meta name="description" content="A relatively simple way to slow down the execution of requests from a configuration to external services." />
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Vlad's Site" href="https://kostyanetsky.me/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
 
     <!-- Icons -->
 
@@ -25,7 +25,7 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Slow down, I'm recording"/>
+    <meta property="og:title" content="Slow down, I&#39;m recording"/>
     <meta property="og:description" content="A relatively simple way to slow down the execution of requests from a configuration to external services."/>
     <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.me/notes/rest-service-4-sm';
-        let ctrlRightUrl    = 'https://kostyanetsky.me/notes/environmental-storytelling';
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/rest-service-4-sm";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/environmental-storytelling";
     </script>
     
     <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
@@ -64,7 +64,7 @@
 
                     
                     
-                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad's Site</a>
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
                     
 
                     
@@ -121,7 +121,7 @@
         <article class="rounded-2xl bg-white">
           
           <header class="text-3xl font-semibold tracking-tight space-y-2">
-            Slow down, I'm recording
+            Slow down, I&#39;m recording
           </header>
 
           <div class="mt-5">
@@ -159,8 +159,8 @@
           <div class="mt-5">
             <div class="prose-like">
               <p>Usually the idea of developing is simple: the faster it works, the better. For example, the more requests an application manages to execute per unit of time, the faster the task for which these requests are needed will be solved.</p>
-<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
-<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p>
+<p>However, it also happens the other way around: you need to reduce the number of operations that a program is able to perform. Let's imagine we exchange data with an external service and it bans if we hit it with requests too often. For example: the cloud version of <a href="https://bitrix24.net" rel="noopener noreferrer" target="_blank">Bitrix24</a> requires sending requests to it no more than two per second.</p>
+<p>Here is an <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" rel="noopener noreferrer" target="_blank">implementation</a> of such a slowdown, which I wrote last week. There is no queue support; the main solved problem is to execute as many requests as possible without going beyond the limit (taking into account the fact that requests can be made from different sessions).</p>
 <p>The problem is solved through a constant that stores the date for the current second and the number of requests that have already been sent. Clients who run into a limitation are waiting. This approach is not suitable for high-loaded systems, but otherwise it can come in handy.</p>
             </div>
           </div>

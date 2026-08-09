@@ -1,184 +1,187 @@
 ﻿<rss version="2.0">
     <channel>    
         <title>Vlad Kostyanetsky</title>
-        <description>Hello! My name is Vlad, I'm business app developer.</description>
+        <description>Hello! My name is Vlad, I&#39;m business app developer.</description>
         <language>en</language>
         <link>https://kostyanetsky.me</link>
-        <lastBuildDate>Sun, 26 Jul 2026 12:37:00 +0700</lastBuildDate>
+        
+        <lastBuildDate>Sun, 09 Aug 2026 14:41:26 +0000</lastBuildDate>
+        
+        
+        <item>
+            <title>Obsidian Property Organizer</title>
+            <link>https://kostyanetsky.me/notes/obsidian-property-organizer</link>
+            <guid isPermaLink="false">note-obsidian-property-organizer</guid>
+            <pubDate>Sun, 09 Aug 2026 14:41:26 +0000</pubDate>
+            <description>&lt;p&gt;One thing AI has genuinely made better for developers: tiny side projects actually get finished now.&lt;/p&gt;
+&lt;p&gt;I&#39;m talking about all those little tools, MVPs, and random ideas that used to go straight into the &#34;maybe someday&#34; pile. You want to build them, sure, but spending three evenings on yet another tiny utility is a pretty hard sell.&lt;/p&gt;
+&lt;p&gt;Last week, for example, I vibe-coded an &lt;a href=&#34;https://community.obsidian.md/plugins/property-organizer&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Obsidian plugin&lt;/a&gt; for keeping note properties tidy. The idea is simple: for each folder, you can define which properties notes are supposed to have and what order they should appear in. The plugin adds missing ones, removes unwanted ones, and puts everything back where it belongs — instead of preserving whatever mess I hastily threw together months ago and never bothered to fix.&lt;/p&gt;
+&lt;p&gt;There&#39;s a &lt;a href=&#34;https://github.com/vkostyanetsky/ObsidianPropertyOrganizer/blob/main/README.md&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;more detailed explanation&lt;/a&gt; in the GitHub repo if you&#39;re curious.&lt;/p&gt;
+&lt;p&gt;It&#39;s a tiny thing, obviously. Mostly just me feeding my inner perfectionist. But I do like things neat, and apparently I&#39;m not alone: seventy people downloaded the plugin in its first three days.&lt;/p&gt;
+&lt;p&gt;Greetings, fellow people who derive unreasonable satisfaction from tidy metadata :)&lt;/p&gt;</description>
+        </item>
         
         <item>
             <title>Auto-Refresh for Timesheet</title>
             <link>https://kostyanetsky.me/notes/timesheet-auto-refresh</link>
             <guid isPermaLink="false">note-timesheet-auto-refresh</guid>
-            <pubDate>Sun, 26 Jul 2026 12:37:00 +0700</pubDate>
-            <description><p>I spontaneously returned to my old <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">Obsidian plugin</a>, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.</p>
-<p>The plugin had an original sin of a bug: whenever the note text changed, the plugin block would not refresh on its own. So you would add a task, change the time spent, or fix a description, while the report kept showing the old data. You had to either reopen the note itself or start editing the block and then cancel, just to trigger a manual render. It was annoying — and smelled suspiciously like reinventing the wheel.</p>
-<p>Now the plugin block automatically re-renders after changes — just the block, not the entire note. There is also a short delay after typing and an additional check: if the report has not actually changed, no render happens at all.</p>
-<p>I also wanted to update the dependencies while I was at it — it has been a year, after all — but... You know, NPM remains its usual shining example of order and discipline. Every tiny library for adding two numbers inevitably depends on ten others, every package is somehow a second cousin twice removed of the fence next door, and you cannot replace a single one without consequences: <code>npm audit</code> complains whenever someone sneezes. So, at first glance, I could not figure out how to update the dependencies reliably without breaking the plugin itself.</p>
-<p>Oh well. That is a problem for tomorrow me.</p></description>
+            <pubDate>Sun, 26 Jul 2026 12:37:00 +0000</pubDate>
+            <description>&lt;p&gt;I spontaneously returned to my old &lt;a href=&#34;https://github.com/vkostyanetsky/ObsidianTimesheet&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Obsidian plugin&lt;/a&gt;, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.&lt;/p&gt;
+&lt;p&gt;The plugin had an original sin of a bug: whenever the note text changed, the plugin block would not refresh on its own. So you would add a task, change the time spent, or fix a description, while the report kept showing the old data. You had to either reopen the note itself or start editing the block and then cancel, just to trigger a manual render. It was annoying — and smelled suspiciously like reinventing the wheel.&lt;/p&gt;
+&lt;p&gt;Now the plugin block automatically re-renders after changes — just the block, not the entire note. There is also a short delay after typing and an additional check: if the report has not actually changed, no render happens at all.&lt;/p&gt;
+&lt;p&gt;I also wanted to update the dependencies while I was at it — it has been a year, after all — but... You know, NPM remains its usual shining example of order and discipline. Every tiny library for adding two numbers inevitably depends on ten others, every package is somehow a second cousin twice removed of the fence next door, and you cannot replace a single one without consequences: &lt;code&gt;npm audit&lt;/code&gt; complains whenever someone sneezes. So, at first glance, I could not figure out how to update the dependencies reliably without breaking the plugin itself.&lt;/p&gt;
+&lt;p&gt;Oh well. That is a problem for tomorrow me.&lt;/p&gt;</description>
         </item>
         
         <item>
             <title>If Anyone Builds It</title>
             <link>https://kostyanetsky.me/notes/if-anyone-builds-it</link>
             <guid isPermaLink="false">note-if-anyone-builds-it</guid>
-            <pubDate>Sun, 28 Jun 2026 22:00:00 +0700</pubDate>
-            <description><p>Corpus has published the Russian edition of <a href="https://www.corpus.ru/products/ehliezer-yudkovskij-esli-kto-to-ego-sozdast-vse-pogibnut.htm" target="_blank">If Anyone Builds It, Everyone Dies</a> by Eliezer Yudkowsky and Nate Soares. Both are well-known researchers in AI safety, AI alignment, and the risks of superintelligence.</p>
-<p>In the book, the authors explain clearly and step by step why the title isn't hysteria, exaggeration, or clickbait. The point is simple and unpleasant: if anyone on the planet actually builds AGI or ASI using technology anywhere close to what we have now, humanity is screwed.</p>
-<p>I hadn't read Soares before, but Yudkowsky has always had this rare combination of deep expertise and the ability to talk about it like a normal human being, without disappearing into galaxy-brain jargon every thirty seconds. So you don't need a specialist background: a lot of work has clearly gone into making the text understandable for people who don't happen to have a PhD in applied math.</p>
-<p>Anyway, the book is great. I honestly can't remember the last time I tore through something like this in one sitting. It's available on Ozon, at Chitai-Gorod, and even in certain suspiciously nautical corners of the internet — which I condemn, obviously, but if your black-flag frigate is already parked outside your building, what can I do? :)</p></description>
+            <pubDate>Sun, 28 Jun 2026 22:00:00 +0000</pubDate>
+            <description>&lt;p&gt;Corpus has published the Russian edition of &lt;a href=&#34;https://www.corpus.ru/products/ehliezer-yudkovskij-esli-kto-to-ego-sozdast-vse-pogibnut.htm&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;If Anyone Builds It, Everyone Dies&lt;/a&gt; by Eliezer Yudkowsky and Nate Soares. Both are well-known researchers in AI safety, AI alignment, and the risks of superintelligence.&lt;/p&gt;
+&lt;p&gt;In the book, the authors explain clearly and step by step why the title isn&#39;t hysteria, exaggeration, or clickbait. The point is simple and unpleasant: if anyone on the planet actually builds AGI or ASI using technology anywhere close to what we have now, humanity is screwed.&lt;/p&gt;
+&lt;p&gt;I hadn&#39;t read Soares before, but Yudkowsky has always had this rare combination of deep expertise and the ability to talk about it like a normal human being, without disappearing into galaxy-brain jargon every thirty seconds. So you don&#39;t need a specialist background: a lot of work has clearly gone into making the text understandable for people who don&#39;t happen to have a PhD in applied math.&lt;/p&gt;
+&lt;p&gt;Anyway, the book is great. I honestly can&#39;t remember the last time I tore through something like this in one sitting. It&#39;s available on Ozon, at Chitai-Gorod, and even in certain suspiciously nautical corners of the internet — which I condemn, obviously, but if your black-flag frigate is already parked outside your building, what can I do? :)&lt;/p&gt;</description>
         </item>
         
         <item>
             <title>The Year In The Date Literal Exceeds 3999</title>
             <link>https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again</link>
             <guid isPermaLink="false">note-date-literal-exceeds-3999-once-again</guid>
-            <pubDate>Sat, 28 Mar 2026 19:42:53 +0700</pubDate>
-            <description><p>I already wrote about the error mentioned in this post’s title <a href="https://kostyanetsky.me/notes/date-literal-exceeds-3999" target="_blank">earlier</a>, but here's the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.</p>
-<p>The usual symptoms are pretty random and annoying: some reports stop working, some documents refuse to post, totals recalculation crashes, and so on. Basically, any code that touches records with those broken dates is now having a bad day.</p>
-<p>The fix I outlined in the post linked above does work, but it's relatively slow: you need to configure the tech log, collect the output, and then parse it. The problem is that the platform crashes the moment it touches the first bad date, and there may be lots of them scattered across different tables. So you often end up doing this in multiple passes: run a check, hit an error, fix it, run again, hit the next one, repeat.</p>
-<p><img alt="Thank You, Mario!" src="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
-<p>A few years ago, because I wanted a faster way to deal with this, I wrote a <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" target="_blank">PostgreSQL query</a> for it. The idea is simple:</p>
-<ol>
-<li>Find all date fields in the database.</li>
-<li>Build one giant query against those fields to look for dates beyond 1C's limit.</li>
-</ol>
-<p>So yes, this query generates another query. Very normal behavior. Run the generated query, and you get the full picture: a list of tables containing invalid dates. After that, it's just engineering work — inspect the tables and decide what to do. In our case, bad dates sometimes show up in totals and turnovers, so we can just delete those rows and recalculate totals using the standard tools.</p>
-<p>Why do this at the DBMS level? Because 1C itself can't really help here — as a reminder, the platform crashes as soon as it touches the bad records. That includes reads, not just writes. Also, in this case, going directly against the database is simply faster and more convenient.</p>
-<p>The other day I rewrote the same <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" target="_blank">query for MS SQL</a>. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.</p>
-<p>If you want to use it, keep this in mind:</p>
-<ul>
-<li>The <code>_Fld626</code> field in the query text is the Fresh separator. In your database it may have a different name, or it may not exist at all.</li>
-<li>The query is written for a database that uses a 2000-year offset. If your database does not use that offset, you'll need to adjust the condition accordingly — see <code>DATEADD()</code>.</li>
-<li>I added the XML output trick (<code>FOR XML</code>) to stop SSMS from truncating the generated mega-query. That seemed faster than messing around with type casts. The side effect is that before running the generated query, you need to replace <code>&amp;gt;</code> with <code>&gt;</code>.</li>
-</ul></description>
+            <pubDate>Sat, 28 Mar 2026 19:42:53 +0000</pubDate>
+            <description>&lt;p&gt;I already wrote about the error mentioned in this post’s title &lt;a href=&#34;https://kostyanetsky.me/notes/date-literal-exceeds-3999&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;earlier&lt;/a&gt;, but here&#39;s the refresher: the platform chokes on dates later than the year 3999 (things start blowing up at 3999-12-01, I guess). In theory, dates like that should never make it into the database in the first place. In practice... Well, thanks to bugs in application code — and in the platform itself — they sometimes do.&lt;/p&gt;
+&lt;p&gt;The usual symptoms are pretty random and annoying: some reports stop working, some documents refuse to post, totals recalculation crashes, and so on. Basically, any code that touches records with those broken dates is now having a bad day.&lt;/p&gt;
+&lt;p&gt;The fix I outlined in the post linked above does work, but it&#39;s relatively slow: you need to configure the tech log, collect the output, and then parse it. The problem is that the platform crashes the moment it touches the first bad date, and there may be lots of them scattered across different tables. So you often end up doing this in multiple passes: run a check, hit an error, fix it, run again, hit the next one, repeat.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Thank You, Mario!&#34; src=&#34;https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again/thanks.jpg&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;A few years ago, because I wanted a faster way to deal with this, I wrote a &lt;a href=&#34;https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;PostgreSQL query&lt;/a&gt; for it. The idea is simple:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Find all date fields in the database.&lt;/li&gt;
+&lt;li&gt;Build one giant query against those fields to look for dates beyond 1C&#39;s limit.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;So yes, this query generates another query. Very normal behavior. Run the generated query, and you get the full picture: a list of tables containing invalid dates. After that, it&#39;s just engineering work — inspect the tables and decide what to do. In our case, bad dates sometimes show up in totals and turnovers, so we can just delete those rows and recalculate totals using the standard tools.&lt;/p&gt;
+&lt;p&gt;Why do this at the DBMS level? Because 1C itself can&#39;t really help here — as a reminder, the platform crashes as soon as it touches the bad records. That includes reads, not just writes. Also, in this case, going directly against the database is simply faster and more convenient.&lt;/p&gt;
+&lt;p&gt;The other day I rewrote the same &lt;a href=&#34;https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;query for MS SQL&lt;/a&gt;. It turned out longer — because, well, MS SQL likes to make you earn it — but the idea is exactly the same.&lt;/p&gt;
+&lt;p&gt;If you want to use it, keep this in mind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;code&gt;_Fld626&lt;/code&gt; field in the query text is the Fresh separator. In your database it may have a different name, or it may not exist at all.&lt;/li&gt;
+&lt;li&gt;The query is written for a database that uses a 2000-year offset. If your database does not use that offset, you&#39;ll need to adjust the condition accordingly — see &lt;code&gt;DATEADD()&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;I added the XML output trick (&lt;code&gt;FOR XML&lt;/code&gt;) to stop SSMS from truncating the generated mega-query. That seemed faster than messing around with type casts. The side effect is that before running the generated query, you need to replace &lt;code&gt;&amp;amp;gt;&lt;/code&gt; with &lt;code&gt;&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description>
         </item>
         
         <item>
             <title>With Side Effect</title>
             <link>https://kostyanetsky.me/notes/with-side-effect</link>
             <guid isPermaLink="false">note-with-side-effect</guid>
-            <pubDate>Sun, 15 Mar 2026 12:24:12 +0700</pubDate>
-            <description><p>In the latest release of <a href="https://firstbit.ae" target="_blank">our ERP</a>, we optimized several heavy dynamic lists — orders, invoices, proforma invoices, and so on. Over time they had accumulated a pretty solid pile of technical debt, mostly in the form of mountains of helper tables bolted onto the main queries: contact info, technical attributes, balances, turnovers, you name it.</p>
-<p>At some point even in fairly small deployments the DB optimizer started producing complete nonsense instead of query plans, and the resource cost of letting that happen was getting less and less funny.</p>
-<p>So, we patched things up using several different approaches. One of them was loading extra row data inside the <code>OnGetDataAtServer()</code> handler (I actually <a href="https://kostyanetsky.me/notes/desire-paths" target="_blank">mentioned</a> this mechanism not that long ago). We built a nice little framework around it, rolled it out, tested it, and... Well, now we're all sitting here with those deeply unimpressed engineer faces.</p>
-<p>To be fair, performance really did get a lot better. Inside a compact handler, you can tune queries against heavy virtual tables almost perfectly. The problem is somewhere else: field values populated by this handler are not passed into the standard dynamic list mechanisms. Which means search, sorting, and grouping simply do not work for those fields.</p>
-<p>So you type a value that is clearly visible in the column — and the row is not found. Or not all matching rows are found. Or rows show up that visibly should not match at all. From the user's point of view, this looks absolutely terrible. A bug is a bug. Those fields don't look any different in the UI, so how exactly are you supposed to explain that this is "just how the platform works™"?</p>
-<p>And if you explicitly exclude such a field from the mechanisms that can't handle it, that's somehow even worse. For example, try to sort by it — and boom, giant error message. Explaining why sorting blows up on this "Amount" column while the one right next to it works just fine is... Not exactly a beginner-friendly support conversation.</p>
-<p>Honestly, how do you come up with such a great handler concept and then completely fumble the platform-level implementation?</p>
-<p>This randomly reminded me of Reddit. Some communities love threads like "invent a superpower, but with a side effect". Like, one person comments: "I can run at the speed of the wind!" and someone replies: "yeah, but you can't stop". That kind of thing. Sometimes it gets pretty funny.</p>
-<p><img alt="Superpower" src="https://kostyanetsky.me/notes/with-side-effect/reddit.png"/></p>
-<p>That's basically the kind of conversation we're having with the platform developers. You can massively speed up dynamic lists, but the UI will make your users furious. You can automatically send binary data to an S3 bucket, but lose it all with one careless click. You can teleport anywhere, but it takes exactly as long as walking. You can shapeshift, but only into an elderly pug. You have thick, silky, luxurious hair, but on your ass.</p></description>
+            <pubDate>Sun, 15 Mar 2026 12:24:12 +0000</pubDate>
+            <description>&lt;p&gt;In the latest release of &lt;a href=&#34;https://firstbit.ae&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;our ERP&lt;/a&gt;, we optimized several heavy dynamic lists — orders, invoices, proforma invoices, and so on. Over time they had accumulated a pretty solid pile of technical debt, mostly in the form of mountains of helper tables bolted onto the main queries: contact info, technical attributes, balances, turnovers, you name it.&lt;/p&gt;
+&lt;p&gt;At some point even in fairly small deployments the DB optimizer started producing complete nonsense instead of query plans, and the resource cost of letting that happen was getting less and less funny.&lt;/p&gt;
+&lt;p&gt;So, we patched things up using several different approaches. One of them was loading extra row data inside the &lt;code&gt;OnGetDataAtServer()&lt;/code&gt; handler (I actually &lt;a href=&#34;https://kostyanetsky.me/notes/desire-paths&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;mentioned&lt;/a&gt; this mechanism not that long ago). We built a nice little framework around it, rolled it out, tested it, and... Well, now we&#39;re all sitting here with those deeply unimpressed engineer faces.&lt;/p&gt;
+&lt;p&gt;To be fair, performance really did get a lot better. Inside a compact handler, you can tune queries against heavy virtual tables almost perfectly. The problem is somewhere else: field values populated by this handler are not passed into the standard dynamic list mechanisms. Which means search, sorting, and grouping simply do not work for those fields.&lt;/p&gt;
+&lt;p&gt;So you type a value that is clearly visible in the column — and the row is not found. Or not all matching rows are found. Or rows show up that visibly should not match at all. From the user&#39;s point of view, this looks absolutely terrible. A bug is a bug. Those fields don&#39;t look any different in the UI, so how exactly are you supposed to explain that this is &#34;just how the platform works™&#34;?&lt;/p&gt;
+&lt;p&gt;And if you explicitly exclude such a field from the mechanisms that can&#39;t handle it, that&#39;s somehow even worse. For example, try to sort by it — and boom, giant error message. Explaining why sorting blows up on this &#34;Amount&#34; column while the one right next to it works just fine is... Not exactly a beginner-friendly support conversation.&lt;/p&gt;
+&lt;p&gt;Honestly, how do you come up with such a great handler concept and then completely fumble the platform-level implementation?&lt;/p&gt;
+&lt;p&gt;This randomly reminded me of Reddit. Some communities love threads like &#34;invent a superpower, but with a side effect&#34;. Like, one person comments: &#34;I can run at the speed of the wind!&#34; and someone replies: &#34;yeah, but you can&#39;t stop&#34;. That kind of thing. Sometimes it gets pretty funny.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Superpower&#34; src=&#34;https://kostyanetsky.me/notes/with-side-effect/reddit.png&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;That&#39;s basically the kind of conversation we&#39;re having with the platform developers. You can massively speed up dynamic lists, but the UI will make your users furious. You can automatically send binary data to an S3 bucket, but lose it all with one careless click. You can teleport anywhere, but it takes exactly as long as walking. You can shapeshift, but only into an elderly pug. You have thick, silky, luxurious hair, but on your ass.&lt;/p&gt;</description>
         </item>
         
         <item>
             <title>Ikigai</title>
             <link>https://kostyanetsky.me/notes/ikigai</link>
             <guid isPermaLink="false">note-ikigai</guid>
-            <pubDate>Mon, 09 Mar 2026 22:01:43 +0700</pubDate>
-            <description><p>In Japanese, there's a wonderful word: ikigai. It's kind of like your reason for living, but not in some huge existential sense — more in a grounded, everyday way. A source of inner energy, a source of joy. Basically, the thing that makes you want to get out of bed in the morning.</p>
-<p>A person can have several of those anchors, and they're different for everyone. Coffee, a cat, a craft you love, taking care of the people close to you, a garden, walks, video games...</p>
-<p>Anyway, that's what got me thinking. I stumbled across a channel called "<a href="https://t.me/aleshkino_svoe" target="_blank">Alyoshkino Svoe</a>". From what I understand, the guy behind it is a lawyer from St. Petersburg who breeds fancy chickens and regularly posts videos about specific breeds, incubation details, feeding, and so on.</p>
-<p>I'm not into birds at all, but I caught myself just sitting there for twenty minutes, completely mesmerized, listening without looking away. It almost works like therapy, honestly. And it struck me that this is actually a pretty solid kind of ikigai: something you'll love the way this guy loves his chickens.</p></description>
+            <pubDate>Mon, 09 Mar 2026 22:01:43 +0000</pubDate>
+            <description>&lt;p&gt;In Japanese, there&#39;s a wonderful word: ikigai. It&#39;s kind of like your reason for living, but not in some huge existential sense — more in a grounded, everyday way. A source of inner energy, a source of joy. Basically, the thing that makes you want to get out of bed in the morning.&lt;/p&gt;
+&lt;p&gt;A person can have several of those anchors, and they&#39;re different for everyone. Coffee, a cat, a craft you love, taking care of the people close to you, a garden, walks, video games...&lt;/p&gt;
+&lt;p&gt;Anyway, that&#39;s what got me thinking. I stumbled across a channel called &#34;&lt;a href=&#34;https://t.me/aleshkino_svoe&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Alyoshkino Svoe&lt;/a&gt;&#34;. From what I understand, the guy behind it is a lawyer from St. Petersburg who breeds fancy chickens and regularly posts videos about specific breeds, incubation details, feeding, and so on.&lt;/p&gt;
+&lt;p&gt;I&#39;m not into birds at all, but I caught myself just sitting there for twenty minutes, completely mesmerized, listening without looking away. It almost works like therapy, honestly. And it struck me that this is actually a pretty solid kind of ikigai: something you&#39;ll love the way this guy loves his chickens.&lt;/p&gt;</description>
         </item>
         
         <item>
             <title>Autosummary</title>
             <link>https://kostyanetsky.me/notes/autosummary</link>
             <guid isPermaLink="false">note-autosummary</guid>
-            <pubDate>Sun, 08 Feb 2026 09:53:48 +0700</pubDate>
-            <description><p>I started recording all my meetings back in 2020 — at least, that’s what my own <a href="https://kostyanetsky.me/notes/video-recording" target="_blank">notes</a> say. Video is always more accurate than memory, and clicking "Start Recording" in <a href="https://obsproject.com" target="_blank">OBS</a> is the cheapest way to not lose some random-but-important detail.</p>
-<p>The downsides are obvious, though: you can't quickly grasp the gist of a meeting from a video, searching through it is basically impossible, it eats disk space like it's bulking season, and it's painfully easy to accidentally capture something private. To partially compensate, I used to jot down key points in bullet form during the meeting, and later either throw them into a task tracker or write a mini-summary for myself: who I met with, what we discussed, what decisions we landed on. If I forgot something or missed details, I'd double-check the video.</p>
-<p>But this method isn't perfect either. Even a rough outline steals focus from the actual meeting. And some "oh right, that detail matters" moments only reveal themselves when it's already too late.</p>
-<p><img alt="Forgot" src="https://kostyanetsky.me/notes/autosummary/forgot.jpeg"/></p>
-<p>So I ended up with a better approach: extract the meeting audio from the video, turn it into text (with a neural net), then turn that transcript into a detailed meeting summary (with another neural net). Yes, it's neural nets all the way down.</p>
-<p>The easiest way to rip the audio is with <a href="https://www.ffmpeg.org" target="_blank">ffmpeg</a> (a command-line utility for working with audio/video). Here's an example (mono, 16 kHz sampling rate + loudness normalization):</p>
-<pre>
-ffmpeg.exe -y -i "D:\video.mkv" -vn -ac 1 -ar 16000 -af loudnorm -c:a pcm_s16le "D:\audio.wav"
-</pre>
-<p>As for speech-to-text: I experimented with <a href="https://alphacephei.com/vosk/" target="_blank">Vosk</a> + <a href="https://github.com/benob/recasepunc" target="_blank">recasepunc</a>, but... Yeah, no. Let's just say I'd rather not relive that experience. Meanwhile <s>Boromir</s> <a href="https://openai.com/index/whisper" target="_blank">Whisper</a> (OpenAI's speech recognition model) installs in the background in about 10 minutes:</p>
-<pre>
+            <pubDate>Sun, 08 Feb 2026 09:53:48 +0000</pubDate>
+            <description>&lt;p&gt;I started recording all my meetings back in 2020 — at least, that’s what my own &lt;a href=&#34;https://kostyanetsky.me/notes/video-recording&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;notes&lt;/a&gt; say. Video is always more accurate than memory, and clicking &#34;Start Recording&#34; in &lt;a href=&#34;https://obsproject.com&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;OBS&lt;/a&gt; is the cheapest way to not lose some random-but-important detail.&lt;/p&gt;
+&lt;p&gt;The downsides are obvious, though: you can&#39;t quickly grasp the gist of a meeting from a video, searching through it is basically impossible, it eats disk space like it&#39;s bulking season, and it&#39;s painfully easy to accidentally capture something private. To partially compensate, I used to jot down key points in bullet form during the meeting, and later either throw them into a task tracker or write a mini-summary for myself: who I met with, what we discussed, what decisions we landed on. If I forgot something or missed details, I&#39;d double-check the video.&lt;/p&gt;
+&lt;p&gt;But this method isn&#39;t perfect either. Even a rough outline steals focus from the actual meeting. And some &#34;oh right, that detail matters&#34; moments only reveal themselves when it&#39;s already too late.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Forgot&#34; src=&#34;https://kostyanetsky.me/notes/autosummary/forgot.jpeg&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;So I ended up with a better approach: extract the meeting audio from the video, turn it into text (with a neural net), then turn that transcript into a detailed meeting summary (with another neural net). Yes, it&#39;s neural nets all the way down.&lt;/p&gt;
+&lt;p&gt;The easiest way to rip the audio is with &lt;a href=&#34;https://www.ffmpeg.org&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;ffmpeg&lt;/a&gt; (a command-line utility for working with audio/video). Here&#39;s an example (mono, 16 kHz sampling rate + loudness normalization):&lt;/p&gt;
+&lt;pre&gt;
+ffmpeg.exe -y -i &#34;D:\video.mkv&#34; -vn -ac 1 -ar 16000 -af loudnorm -c:a pcm_s16le &#34;D:\audio.wav&#34;
+&lt;/pre&gt;
+&lt;p&gt;As for speech-to-text: I experimented with &lt;a href=&#34;https://alphacephei.com/vosk/&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Vosk&lt;/a&gt; + &lt;a href=&#34;https://github.com/benob/recasepunc&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;recasepunc&lt;/a&gt;, but... Yeah, no. Let&#39;s just say I&#39;d rather not relive that experience. Meanwhile &lt;s&gt;Boromir&lt;/s&gt; &lt;a href=&#34;https://openai.com/index/whisper&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Whisper&lt;/a&gt; (OpenAI&#39;s speech recognition model) installs in the background in about 10 minutes:&lt;/p&gt;
+&lt;pre&gt;
 py -3.10 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install setuptools wheel
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install openai-whisper
-</pre>
-<p>Example run:</p>
-<pre>
-whisper "D:\audio.wav" --model small --language Russian --output_format txt
-</pre>
-<p>The result is a plain text transcript you can shove into any chatbot and get a fairly coherent summary. Sure, you still need to proofread it — fix mistakes and hallucinations, rephrase a couple things — but it's still way better than trying to write notes live.</p>
-<p>And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can't be bothered to vibe-code, you can grab <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" target="_blank">my script</a> and tweak it.</p>
-<p>The script finds the first .mkv in its folder, runs it through ffmpeg + Whisper, and saves the result back into the same folder. If you use it: note that it runs via <a href="https://developer.nvidia.com/cuda" target="_blank">CUDA</a> (CPU works too, just much slower), and it stores downloaded Whisper models not in the default cache, but inside the current Python virtual environment folder.</p>
-<p>(if you really want, you can wire up an API call or point it at some local model via <a href="https://lmstudio.ai" target="_blank">LM Studio</a> — but for my personal setup I decided: nope, that's already too much engineering for a lazy win)</p></description>
+&lt;/pre&gt;
+&lt;p&gt;Example run:&lt;/p&gt;
+&lt;pre&gt;
+whisper &#34;D:\audio.wav&#34; --model small --language Russian --output_format txt
+&lt;/pre&gt;
+&lt;p&gt;The result is a plain text transcript you can shove into any chatbot and get a fairly coherent summary. Sure, you still need to proofread it — fix mistakes and hallucinations, rephrase a couple things — but it&#39;s still way better than trying to write notes live.&lt;/p&gt;
+&lt;p&gt;And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can&#39;t be bothered to vibe-code, you can grab &lt;a href=&#34;https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;my script&lt;/a&gt; and tweak it.&lt;/p&gt;
+&lt;p&gt;The script finds the first .mkv in its folder, runs it through ffmpeg + Whisper, and saves the result back into the same folder. If you use it: note that it runs via &lt;a href=&#34;https://developer.nvidia.com/cuda&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;CUDA&lt;/a&gt; (CPU works too, just much slower), and it stores downloaded Whisper models not in the default cache, but inside the current Python virtual environment folder.&lt;/p&gt;
+&lt;p&gt;(if you really want, you can wire up an API call or point it at some local model via &lt;a href=&#34;https://lmstudio.ai&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;LM Studio&lt;/a&gt; — but for my personal setup I decided: nope, that&#39;s already too much engineering for a lazy win)&lt;/p&gt;</description>
         </item>
         
         <item>
-            <title>New Blog&#x27;s UI</title>
+            <title>New Blog&#39;s UI</title>
             <link>https://kostyanetsky.me/notes/new-ui</link>
             <guid isPermaLink="false">note-new-ui</guid>
-            <pubDate>Sat, 17 Jan 2026 18:18:43 +0700</pubDate>
-            <description><p>Over the New Year holidays I randomly got obsessed and rewrote my blog's UI. I only wanted to add search for my notes — there are a lot of them now, and every so often I need to quickly fish something out of the pile (like "here's that link" to a coworker).</p>
-<p>The blog runs on <a href="https://pages.github.com" target="_blank">GitHub Pages</a>, so the options aren’t exactly infinite: either outsource search to Google, or build a static index and ship it to the user's browser so it can grep through it locally. I went with the second route: faster, more controllable, <s>and, yes, an excuse to write code</s>. The first time you search it has to download <a href="https://kostyanetsky.me/notes.json" target="_blank">the index file</a>, but... It's 200 KB. That's basically one medium-sized sigh in 2026 internet terms.</p>
-<p>And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn't get <a href="https://tachyons.io" target="_blank">Tachyons</a> to play nice with the search input — got annoyed and migrated everything to <a href="https://tailwindcss.com" target="_blank">Tailwind</a> (I'd been meaning to try it anyway, just never had a "good reason", so I invented one). While I was writing the search code, I figured it'd be dumb not to add tags too, because why do the same work twice. Next thing I know I "wake up" and there's a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it's not tags, it's tech stacks...</p>
-<p>So yeah, it turned into that "Fear and Loathing in Las Vegas" meme. The tendency was to push it as far as I can, kinda.</p>
-<p>Now the only thing left is to make myself actually write into the new project log. There's always a ton of work, and it's genuinely interesting — but if I don't write things down... Welp. Everything sinks into coffee.</p></description>
+            <pubDate>Sat, 17 Jan 2026 18:18:43 +0000</pubDate>
+            <description>&lt;p&gt;Over the New Year holidays I randomly got obsessed and rewrote my blog&#39;s UI. I only wanted to add search for my notes — there are a lot of them now, and every so often I need to quickly fish something out of the pile (like &#34;here&#39;s that link&#34; to a coworker).&lt;/p&gt;
+&lt;p&gt;The blog runs on &lt;a href=&#34;https://pages.github.com&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub Pages&lt;/a&gt;, so the options aren’t exactly infinite: either outsource search to Google, or build a static index and ship it to the user&#39;s browser so it can grep through it locally. I went with the second route: faster, more controllable, &lt;s&gt;and, yes, an excuse to write code&lt;/s&gt;. The first time you search it has to download &lt;a href=&#34;https://kostyanetsky.me/notes.json&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;the index file&lt;/a&gt;, but... It&#39;s 200 KB. That&#39;s basically one medium-sized sigh in 2026 internet terms.&lt;/p&gt;
+&lt;p&gt;And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn&#39;t get &lt;a href=&#34;https://tachyons.io&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Tachyons&lt;/a&gt; to play nice with the search input — got annoyed and migrated everything to &lt;a href=&#34;https://tailwindcss.com&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Tailwind&lt;/a&gt; (I&#39;d been meaning to try it anyway, just never had a &#34;good reason&#34;, so I invented one). While I was writing the search code, I figured it&#39;d be dumb not to add tags too, because why do the same work twice. Next thing I know I &#34;wake up&#34; and there&#39;s a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it&#39;s not tags, it&#39;s tech stacks...&lt;/p&gt;
+&lt;p&gt;So yeah, it turned into that &#34;Fear and Loathing in Las Vegas&#34; meme. The tendency was to push it as far as I can, kinda.&lt;/p&gt;
+&lt;p&gt;Now the only thing left is to make myself actually write into the new project log. There&#39;s always a ton of work, and it&#39;s genuinely interesting — but if I don&#39;t write things down... Welp. Everything sinks into coffee.&lt;/p&gt;</description>
         </item>
         
         <item>
             <title>Backup Management</title>
             <link>https://kostyanetsky.me/notes/backup-ui</link>
             <guid isPermaLink="false">note-backup-ui</guid>
-            <pubDate>Sat, 06 Dec 2025 20:57:48 +0700</pubDate>
-            <description><p>At the end of the year we shipped a big update to our internal tool (I briefly <a href="https://kostyanetsky.me/notes/easter-eggs" target="_blank">wrote</a> about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it "works", but you end up chewing through 3x the resources for zero extra value.</p>
-<p>We did have a solution built on top of the Bitrix UI, but due to, uh... the unique "evolutionary path" of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it's a clean, friendly UI where you can request a backup in literally two clicks.</p>
-<p>You can pick one of three backup types:</p>
-<ul>
-<li>Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);</li>
-<li>File backup (a regular .dt file you can download and spin up locally);</li>
-<li>Configuration + extensions backup (.cf + .cfe).</li>
-</ul>
-<p>Also, the new solution detects when someone tries to request a backup for an app that's already being generated right now. And it rate-limits things too: you can't back up the same app more than once per hour.</p>
-<p>And yes — we're still sneaking jokes into the UI. Obviously.</p>
-<p><img alt="But Still!" src="https://kostyanetsky.me/notes/backup-ui/but-still.png"/></p>
-<p><img alt="Coffee First!" src="https://kostyanetsky.me/notes/backup-ui/coffee-first.png"/></p></description>
+            <pubDate>Sat, 06 Dec 2025 20:57:48 +0000</pubDate>
+            <description>&lt;p&gt;At the end of the year we shipped a big update to our internal tool (I briefly &lt;a href=&#34;https://kostyanetsky.me/notes/easter-eggs&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;wrote&lt;/a&gt; about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it &#34;works&#34;, but you end up chewing through 3x the resources for zero extra value.&lt;/p&gt;
+&lt;p&gt;We did have a solution built on top of the Bitrix UI, but due to, uh... the unique &#34;evolutionary path&#34; of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it&#39;s a clean, friendly UI where you can request a backup in literally two clicks.&lt;/p&gt;
+&lt;p&gt;You can pick one of three backup types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);&lt;/li&gt;
+&lt;li&gt;File backup (a regular .dt file you can download and spin up locally);&lt;/li&gt;
+&lt;li&gt;Configuration + extensions backup (.cf + .cfe).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Also, the new solution detects when someone tries to request a backup for an app that&#39;s already being generated right now. And it rate-limits things too: you can&#39;t back up the same app more than once per hour.&lt;/p&gt;
+&lt;p&gt;And yes — we&#39;re still sneaking jokes into the UI. Obviously.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;But Still!&#34; src=&#34;https://kostyanetsky.me/notes/backup-ui/but-still.png&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Coffee First!&#34; src=&#34;https://kostyanetsky.me/notes/backup-ui/coffee-first.png&#34;/&gt;&lt;/p&gt;</description>
         </item>
         
         <item>
             <title>Desire Paths</title>
             <link>https://kostyanetsky.me/notes/desire-paths</link>
             <guid isPermaLink="false">note-desire-paths</guid>
-            <pubDate>Sat, 29 Nov 2025 21:00:48 +0700</pubDate>
-            <description><p>Alright, Jean Fresco's riddle. You've got a table — say, ~50k rows. How do you end up reading half a billion?</p>
-<p>Easy-peasy: Nested Loops + Clustered Index Seek:</p>
-<p><img alt="Half a billion" src="https://kostyanetsky.me/notes/desire-paths/500_million.png"/></p>
-<p>Clustered Index Seek is a bit of a marketing name here, of course. In reality, on every execution the operator walks the entire table (the whole clustered index) and checks every row against the predicates. And it does that 10 730 times for 51 391 rows. Result: 551 425 430 rows read, 13 343 returned.</p>
-<p><img alt="Ouch" src="https://kostyanetsky.me/notes/desire-paths/ouch.gif"/></p>
-<p>So yeah — a perfect textbook example of a horrible query plan in a vacuum. Put it in a museum. Nested Loops, if you've forgotten, works roughly like this:</p>
-<pre>
+            <pubDate>Sat, 29 Nov 2025 21:00:48 +0000</pubDate>
+            <description>&lt;p&gt;Alright, Jean Fresco&#39;s riddle. You&#39;ve got a table — say, ~50k rows. How do you end up reading half a billion?&lt;/p&gt;
+&lt;p&gt;Easy-peasy: Nested Loops + Clustered Index Seek:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Half a billion&#34; src=&#34;https://kostyanetsky.me/notes/desire-paths/500_million.png&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;Clustered Index Seek is a bit of a marketing name here, of course. In reality, on every execution the operator walks the entire table (the whole clustered index) and checks every row against the predicates. And it does that 10 730 times for 51 391 rows. Result: 551 425 430 rows read, 13 343 returned.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Ouch&#34; src=&#34;https://kostyanetsky.me/notes/desire-paths/ouch.gif&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;So yeah — a perfect textbook example of a horrible query plan in a vacuum. Put it in a museum. Nested Loops, if you&#39;ve forgotten, works roughly like this:&lt;/p&gt;
+&lt;pre&gt;
 For Each Table1Row In Table1 Do
     For Each Table2Row In Table2 Do
         ...
-</pre>
-<p>That's fine for small tables, but the DB can also pick it for bigger ones — for example, if it runs out of time to build a proper plan.</p>
-<p>That's exactly what happened here. Zooming out to the platform level: we've got a dynamic list that queries a documents table, and the devs bolted on like a dozen virtual tables from accumulation registers.</p>
-<p>Some of those registers were huge on their own, and the virtual tables poured gasoline on the fire (each one turns into 2+ nested queries). The DB honestly tried to come up with an efficient strategy, but at some point it basically decided: "a garbage plan is still better than no plan at all".</p>
-<p>And the user? They tried to search a document by number — and the client app just straight-up froze.</p>
-<p>So, about virtual tables in dynamic lists. There's a nice English phrase: "desire path" — the trail people naturally carve because it's the easiest way. Slapping a virtual table onto the main one really is often the simplest, fastest, most familiar way to solve the task. But it's <strong>not efficient</strong>.</p>
-<p>There's an alternative, for example the <code>OnGetDataAtServer()</code> handler. It takes longer to implement, but it lets you properly tune the virtual table and avoid the scenario above. Scrolling the list will produce more queries, sure — but they'll be smaller, faster, and way more efficient than one single giant monster query.</p></description>
-        </item>
-        
-        <item>
-            <title>Food Diary In Obsidian Bases</title>
-            <link>https://kostyanetsky.me/notes/obsidian-foodiary-bases</link>
-            <guid isPermaLink="false">note-obsidian-foodiary-bases</guid>
-            <pubDate>Sun, 23 Nov 2025 00:01:58 +0700</pubDate>
-            <description><p>I've rebuilt last year’s <a href="https://kostyanetsky.me/notes/obsidian-foodiary" target="_blank">plugin</a> with <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> — it now tracks calories, protein, fat, and carbs in your food.</p>
-<p>The result is way more flexible and customizable than the plugin version: if you suddenly decide you want to count fiber as well or just shuffle some columns in the report, you don't have to rewrite, rebuild, or release anything. You just tweak it to your heart's content.</p>
-<p>And it doesn't look half bad either:</p>
-<p><img alt="UI" src="https://kostyanetsky.me/notes/obsidian-foodiary-bases/base.png"/></p>
-<p>All the necessary settings and scripts live in the <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">GitHub repo</a>.</p></description>
+&lt;/pre&gt;
+&lt;p&gt;That&#39;s fine for small tables, but the DB can also pick it for bigger ones — for example, if it runs out of time to build a proper plan.&lt;/p&gt;
+&lt;p&gt;That&#39;s exactly what happened here. Zooming out to the platform level: we&#39;ve got a dynamic list that queries a documents table, and the devs bolted on like a dozen virtual tables from accumulation registers.&lt;/p&gt;
+&lt;p&gt;Some of those registers were huge on their own, and the virtual tables poured gasoline on the fire (each one turns into 2+ nested queries). The DB honestly tried to come up with an efficient strategy, but at some point it basically decided: &#34;a garbage plan is still better than no plan at all&#34;.&lt;/p&gt;
+&lt;p&gt;And the user? They tried to search a document by number — and the client app just straight-up froze.&lt;/p&gt;
+&lt;p&gt;So, about virtual tables in dynamic lists. There&#39;s a nice English phrase: &#34;desire path&#34; — the trail people naturally carve because it&#39;s the easiest way. Slapping a virtual table onto the main one really is often the simplest, fastest, most familiar way to solve the task. But it&#39;s &lt;strong&gt;not efficient&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;There&#39;s an alternative, for example the &lt;code&gt;OnGetDataAtServer()&lt;/code&gt; handler. It takes longer to implement, but it lets you properly tune the virtual table and avoid the scenario above. Scrolling the list will produce more queries, sure — but they&#39;ll be smaller, faster, and way more efficient than one single giant monster query.&lt;/p&gt;</description>
         </item>
         
     </channel>
