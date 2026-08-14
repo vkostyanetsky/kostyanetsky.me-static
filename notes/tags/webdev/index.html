@@ -1,0 +1,768 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Notes: Webdev</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Notes: Webdev"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/webdev" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/tags/webdev"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="2"
+      data-total-pages="1"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes: Webdev</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search by title / text / tags…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Work
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Meanwhile
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Done
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Videogames
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Code Smell
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Georgia
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Books
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Typescript
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bitrix
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Sport
+        </button>
+        
+        <button
+          data-chip="webdev"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Webdev
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Workplace
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Family
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/no-more-embedded-tweets"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                No More Embedded Tweets
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>21 Marth 2022</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Blog</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="webdev" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Webdev</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="nodejs" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Node.js</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>As soon as I <a href="https://kostyanetsky.me/notes/no-more-google-fonts" rel="noopener noreferrer" target="_blank">removed</a> Google Fonts from my blog, I had to remove embedded tweets as well.</p>
+<p>How did it work before? I want to link a tweet — I simply insert the link to it. The build script replaces it with an HTML block, then Twitter founds this block and replaces it with the text of the tweet (and some useful links as well). This <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" rel="noopener noreferrer" target="_blank">commit</a> shows you how it worked.</p>
+<p>How does it work now? You're right, it does not! Twitter is blocked in Russia.</p>
+<p><img alt="Well" src="https://kostyanetsky.me/notes/no-more-embedded-tweets/well.jpg"/></p>
+<p>The solution: I had to screen all the tweets that I once referred to and add them to the notes in the form of pictures with links. Whoever needs the original will turn on VPN and go to Twitter, and the rest, at least, can read the text.</p>
+<p>A few words about the technical side. I was too lazy to screen each tweet manually, so I was thinking about how to automate the process. At first, I came across only services that were ready to solve the problem for some pathetic ten dollars (thanks guys, maybe, one day…), but then I came across the perfect <a href="https://github.com/privatenumber/snap-tweet" rel="noopener noreferrer" target="_blank">tool</a>: a console script for Node.js.</p>
+<p>Nothing that you don't need. Pure functionality. You give a tweet to it. It gives you a picture back:</p>
+<blockquote>
+<p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
+</blockquote>
+<p>That's all. I want to donate the author, really.</p>
+<p>I thought about attaching snap-tweet to my build script (so that it would be like before: I insert a link to a tweet, and then it generates a picture by itself and puts it where it needs to be). Decided that I'm not gonna do it. Rude violation of KISS, and indeed… There's enough entropy in the world so far. Especially now.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/no-more-google-fonts"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                No More Google Fonts
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>19 February 2022</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Blog</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="webdev" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Webdev</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><a href="https://twitter.com/PixelAmbacht/status/1494272370076536840" rel="noopener noreferrer" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/no-more-google-fonts/snap-tweet-PixelAmbacht-1494272370076536840.png"/></a></p>
+<p>A year ago, damn it. Okay, hello everyone! Johnny Slowpoke is here! Today we will throw out Google Fonts from my blog. I used to load the main font (PT Sans) from this service, but it makes almost no sense without cross-domain caching. Frankly speaking, the only point to do this further is if a server on which the site is running is slow, so it is faster to load fonts from Google. </p>
+<p>I host my blog on GitHub servers and have no complaints about performance. So, I'm self-hosting PT Sans now, and you know what? The difference is dramatic. When updating a page before, there was clearly a noticeable delay between loading the page and loading the font. For now, it is barely recognizable. If you have a blog and want to try to self-host fonts — here is a cool <a href="https://google-webfonts-helper.herokuapp.com/fonts" rel="noopener noreferrer" target="_blank">service</a> that solves the problem in a few clicks.</p>
+<p>Don't forget to put a big, nice star on the <a href="https://github.com/majodev/google-webfonts-helper" rel="noopener noreferrer" target="_blank">repository</a>!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Nothing found. Try a different search?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "webdev";
+  const notesListUrl = "https://kostyanetsky.me/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce();
+    const filtered = filterNotes(notes, q, activeTag);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,957 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Notes: Videogames</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Notes: Videogames"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/videogames" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/tags/videogames"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="6"
+      data-total-pages="1"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes: Videogames</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search by title / text / tags…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Work
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Meanwhile
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Done
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Videogames
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Code Smell
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Georgia
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Books
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Typescript
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bitrix
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Sport
+        </button>
+        
+        <button
+          data-chip="webdev"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Webdev
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Workplace
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Family
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/safe-code"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Mysterious Code
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>18 January 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="georgia" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Georgia</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Code" src="https://kostyanetsky.me/notes/safe-code/code.jpg"/></p>
+<p>Somewhere on the streets of Tbilisi. As a big fan of the Dishonored series, I just couldn’t walk past this. I’m sure there’s a safe nearby that this code unlocks!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/love"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                ChatGPT Mimicry
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 September 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="ai" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">AI</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Colleagues are actively <a href="https://t.me/denissexy/8767" rel="noopener noreferrer" target="_blank">experimenting</a> with o1-preview from OpenAI: the model turned out to be genuinely interesting. Unfortunately, tasks for it don’t come up too often — regular 4o handles most day-to-day stuff just fine. Bug-finding in code, analyzing medical tests in an unfamiliar language, or trying to recall the name of a childhood book with only a vague recollection of the plot — I can’t easily think of anything it wouldn’t handle.</p>
+<p>It’s always fascinating to see how the AI reasons, jokes, and generally tries to act human. I’d say it won’t pass the Turing test just yet, but every now and then, it comes eerily close.</p>
+<p><img alt="Carrot" src="https://kostyanetsky.me/notes/love/carrot.jpg"/> <img alt="Fists" src="https://kostyanetsky.me/notes/love/fists.jpg"/> <img alt="Jokes" src="https://kostyanetsky.me/notes/love/joke.jpg"/></p>
+<p>The answer below made me smile. Even leaving philosophy aside — looks like Skynet is off the table! :) Though, I’m afraid the future from the <a href="https://store.steampowered.com/app/282140/SOMA/" rel="noopener noreferrer" target="_blank">SOMA</a> ending is still possible.</p>
+<p><img alt="Love" src="https://kostyanetsky.me/notes/love/love.jpg"/></p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/clementine"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Clementine Will Remember That
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 August 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="ai" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">AI</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>When ChatGPT remembers a detail from a conversation for the future, it displays a "Memory updated" badge above its response. Like, got it:</p>
+<p><img alt="Memory updated" src="https://kostyanetsky.me/notes/clementine/memory-updated.jpg"/></p>
+<p>Every time I see it, it makes me smile because it instantly reminds me of <a href="https://store.steampowered.com/app/207610/The_Walking_Dead/" rel="noopener noreferrer" target="_blank">The Walking Dead</a> and the meme “Clementine will remember that”. In that game, the characters surrounding the protagonist would remember his decisions, and it would influence their behavior. This included Clementine — a girl the main character saved at the beginning of the game.</p>
+<p><img alt="Clementine will remember that" src="https://kostyanetsky.me/notes/clementine/remember.jpeg"/></p>
+<p>In the game, this mechanic was honestly implemented in a rather mediocre way, but when it comes to ChatGPT — it works. The attention to detail is so strong that sometimes I have to remind myself that I’m talking to a language model, not an extraordinarily attentive and very knowledgeable person.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/diablo"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Diablo
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 September 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Work</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
+<p>The nice episode of the “We Are Doomed” IT podcast about developer burnout. No insights, but you can hear something useful for yourself. I liked the analogy with video games, somewhere close to the middle:</p>
+<blockquote>
+<p>There was such a game — Diablo. RPG, all sorts of spells, you know. A character has mana and health, and when you have no mana to cast… Ha, I sound like a nerd! Well, nevermind. Briefly speaking, when you have no mana to cast, it's taken from your health.</p>
+<p><em>— Doctor Cat</em></p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/jaina"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Beware the Daughter of the Sea
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 Jule 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Natalia O'Shea has sung a Jaina's song in a Russian version of a trailer for a future update of World of Warcraft. As for me, she's extraordinary good in it — I mean, she knows how to make a proper mood and season a speech with steel.</p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5j-S448XC8k" width="560"></iframe>
+<p>By the way, speaking about her and “Melnitsa” as a whole thing — all of their most powerful songs are about something particular. We were at a concert dedicated to the “Luciferase” release and it's hard to compare, seriously. Perhaps, I didn't know something essential to understanding a context, but sometimes it was even barely possible to figure out a story which I was hearing.</p>
+<p>Just watch a video I posted under. You don't need to know something special about the World of Warcraft universe, do you? For example, I haven't played WoW and not planning to do it, but the end of the song literally creeps me out :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/sebby-x-player"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Sebby x Player
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 August 2017</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="english" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">English</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I have <a href="https://acomics.ru/~sebby-x-player" rel="noopener noreferrer" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" rel="noopener noreferrer" target="_blank">went out</a> a couple of years ago).</p>
+<p>It was an amusing experience. Firstly, an author of the manga is Chinese and her work was already translated from Chinese to English. I'm not sure what was the bigger problem — cultural differences or language skills, but several frames were a bit difficult to understand what's going on. Secondly, I've figured out that it's a real challenge to pick proper Russian words and not to get something like a quote from an official government's letter in the end.</p>
+<p>So, a part of sense had lost during the process, I guess, although I tried to keep everything I could and even had a word with the author in order to solve the most problematic cases. It was quite funny — I don't know Chinese, she doesn't know Russian, so our a bit poor English was the only way to understand each other.</p>
+<p>Something could have been translated better, I suppose, and several pictures definitely could have been changed more accurately. But you know what? Hell it out, perfection is a cruel mistress and I like the result yet. Yeah, there is no big deal or something like it — a drawing style is quite common, a plot has no significant differences with the game, but… I don't know. Perhaps, visual novels made a too sentimental son of a bitch out of me :-)</p>
+<p>Thanks to <a href="https://vk.com/id54890849" rel="noopener noreferrer" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" rel="noopener noreferrer" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" rel="noopener noreferrer" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" rel="noopener noreferrer" target="_blank">Quantus</a> for the manga.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Nothing found. Try a different search?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "videogames";
+  const notesListUrl = "https://kostyanetsky.me/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce();
+    const filtered = filterNotes(notes, q, activeTag);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

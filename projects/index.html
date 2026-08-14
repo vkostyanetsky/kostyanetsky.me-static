@@ -180,7 +180,7 @@
       
         <button
           data-chip="all"
-          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
         >
           All
         </button>
@@ -188,49 +188,49 @@
         
         <button
           data-chip="1c-v8"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           1С:Enterprise
         </button>
         
         <button
           data-chip="fb-erp"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           FirstBit ERP
         </button>
         
         <button
           data-chip="python"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Python
         </button>
         
         <button
           data-chip="flask"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Flask
         </button>
         
         <button
           data-chip="typescript"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           TypeScript
         </button>
         
         <button
           data-chip="nodejs"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Node.js
         </button>
         
         <button
           data-chip="react"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           React
         </button>
@@ -257,44 +257,62 @@
           title: "RFQ Service",
           description: "A web application for a trading company, needed for estimating orders from suppliers.",
           image: "https://kostyanetsky.me/projects/rfq-service/thumbnail.png",
-          badges: [
+          
+          chips: [
             
-            "TypeScript",
+            {
+              key: "typescript",
+              title: "TypeScript",
+              known: true,
+            },
             
-            "Node.js",
+            {
+              key: "nodejs",
+              title: "Node.js",
+              known: true,
+            },
             
-            "React",
+            {
+              key: "react",
+              title: "React",
+              known: true,
+            },
             
-            "Python",
+            {
+              key: "python",
+              title: "Python",
+              known: true,
+            },
             
-            "Flask",
+            {
+              key: "flask",
+              title: "Flask",
+              known: true,
+            },
             
-            "1\u0421:Enterprise",
+            {
+              key: "1c-v8",
+              title: "1\u0421:Enterprise",
+              known: true,
+            },
             
-            "FirstBit ERP",
-            
-          ],
-          stacks: [
-            
-            "typescript",
-            
-            "nodejs",
-            
-            "react",
-            
-            "python",
-            
-            "flask",
-            
-            "1c-v8",
-            
-            "fb-erp",
+            {
+              key: "fb-erp",
+              title: "FirstBit ERP",
+              known: true,
+            },
             
           ],
           href: "rfq-service",
         },
         
       ];
+
+      // A stack of a pre-generated list (projects/stacks/<stack>), empty for
+      // a common one.
+
+      const pageStack = "";
+      const projectsListUrl = "https://kostyanetsky.me/projects/";
 
   const cardsEl = document.getElementById("cards");
   const countEl = document.getElementById("count");
@@ -305,7 +323,7 @@
   const btnList = document.getElementById("btnList");
 
   let mode = "grid";
-  let chip = "all";
+  let chip = pageStack || "all";
 
   // ------------------------------------------------------------
   // Session state:
@@ -343,9 +361,21 @@
     return escapeHtml(str).replaceAll("\n", " ");
   }
 
-  const badge = (text) => `
-    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">
-      ${escapeHtml(text)}
+  const BADGE_CLASS =
+    "inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700";
+  const BADGE_CLASS_CLICKABLE =
+    BADGE_CLASS + " cursor-pointer transition hover:bg-slate-100";
+
+  const badge = (chipData) =>
+    chipData.known
+      ? `
+    <button type="button" data-chip="${escapeAttr(chipData.key)}" class="${BADGE_CLASS_CLICKABLE}">
+      ${escapeHtml(chipData.title)}
+    </button>
+  `
+      : `
+    <span class="${BADGE_CLASS}">
+      ${escapeHtml(chipData.title)}
     </span>
   `;
 
@@ -369,31 +399,33 @@
     }
   }
 
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
   function applyChip(nextChip) {
     chip = nextChip;
 
     document.querySelectorAll(".chip").forEach((x) => {
-      x.className =
-        "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50";
+      x.className = CHIP_CLASS_DEFAULT;
     });
 
     const active = document.querySelector(`.chip[data-chip="${CSS.escape(chip)}"]`);
 
     if (active) {
-      active.className =
-        "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200";
+      active.className = CHIP_CLASS_ACTIVE;
     } else {
       chip = "all";
       const allBtn = document.querySelector(`.chip[data-chip="all"]`);
       if (allBtn) {
-        allBtn.className =
-          "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200";
+        allBtn.className = CHIP_CLASS_ACTIVE;
       }
     }
   }
 
   function card(project) {
-    const stacksHtml = (project.badges || []).map(badge).join("");
+    const stacksHtml = (project.chips || []).map(badge).join("");
 
     const body = `
       <div class="flex flex-col gap-3 p-4">
@@ -446,8 +478,9 @@
     const q = (searchEl.value || "").trim().toLowerCase();
 
     const filtered = projects.filter((p) => {
-      const matchesChip = chip === "all" ? true : (p.stacks || []).includes(chip);
-      const haystack = `${p.title} ${p.description} ${(p.badges || []).join(" ")}`.toLowerCase();
+      const chips = p.chips || [];
+      const matchesChip = chip === "all" ? true : chips.some((c) => c.key === chip);
+      const haystack = `${p.title} ${p.description} ${chips.map((c) => c.title).join(" ")}`.toLowerCase();
       return matchesChip && (q ? haystack.includes(q) : true);
     });
 
@@ -486,12 +519,30 @@
 
   searchEl.addEventListener("input", render);
 
-  document.querySelectorAll(".chip").forEach((b) => {
-    b.addEventListener("click", () => {
-      applyChip(b.dataset.chip);
+  // A delegated handler, since stack chips of a project card are rendered
+  // dynamically as well: both the chips above and the ones of a card filter
+  // the list.
+
+  document.addEventListener("click", (event) => {
+    const clickedChip = event.target.closest("[data-chip]");
+
+    if (!clickedChip) return;
+
+    const nextChip = clickedChip.dataset.chip || "all";
+
+    // Projects of a pre-generated list are filtered by its stack, so dropping
+    // the stack means leaving the page for the common list.
+
+    if (pageStack && nextChip === "all") {
+      chip = "all";
       saveState();
-      render();
-    });
+      window.location.href = projectsListUrl;
+      return;
+    }
+
+    applyChip(nextChip);
+    saveState();
+    render();
   });
 
   // -----------------------
@@ -502,7 +553,11 @@
   if (st?.mode === "grid" || st?.mode === "list") applyMode(st.mode);
   else applyMode("grid");
 
-  if (typeof st?.chip === "string") applyChip(st.chip);
+  // A pre-generated list is filtered by its own stack, so a saved one has to
+  // be ignored: an URL wins over a state of a previously visited page.
+
+  if (pageStack) applyChip(pageStack);
+  else if (typeof st?.chip === "string") applyChip(st.chip);
   else applyChip("all");
 
   render();

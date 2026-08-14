@@ -1,0 +1,801 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Notes: Python</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Notes: Python"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/python" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/tags/python"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="3"
+      data-total-pages="1"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes: Python</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Search by title / text / tags…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Work
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Meanwhile
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Done
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Videogames
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Code Smell
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Georgia
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Books
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Typescript
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bitrix
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Sport
+        </button>
+        
+        <button
+          data-chip="webdev"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Webdev
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Workplace
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Family
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/fastimer-1-3-1"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                New Fastimer
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>23 August 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Released a new <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" rel="noopener noreferrer" target="_blank">version</a> of my console timer for <a href="https://en.wikipedia.org/wiki/Intermittent_fasting" rel="noopener noreferrer" target="_blank">intermittent fasting</a>. I wrote this app about a year ago, when I was once again upset by the <a href="https://www.zerolongevity.com/" rel="noopener noreferrer" target="_blank">Zero</a> application for Android: some very primitive functions (like viewing a specific interval) did not work. Oh my gosh, guys, you had one job!</p>
+<p>The main difference between 1.3.1 and 1.2.3 is that the console menu has been cut to hell in favor of the good old arguments and options. The menu concept looks convenient only if an application has few features. However, as soon as you take a step forward, the need to answer a list of questions each time you need something starts to irritate you.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/cookie-jar"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Cookie Jar
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 May 2022</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>The other day, I was working with cookies in one of my scripts. While searching for the optimal solution, I came across an absolutely charming (100% working, by the way) <a href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" rel="noopener noreferrer" target="_blank">tip</a> from StackOverflow:</p>
+<blockquote>
+<p>You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
+</blockquote>
+<p>So, literally: keep your cookies in a jar, and to store them, pickle them. The jar with pickled cookies, by the way, can be put on the shelf later.</p>
+<p>How can you not love python after that, huh?</p>
+<p>P.S. While writing this post, I got curious – why pickle and not serialization? So, briefly: <a href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" rel="noopener noreferrer" target="_blank">this is the way</a>.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/rclone-abuser"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A Script to Sync With NAS
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>7 June 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Workplace</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I posted on GitHub a Python <a href="https://github.com/vkostyanetsky/RCloneAbuser" rel="noopener noreferrer" target="_blank">script</a> which I use to sync files between my PC and a NAS. I have a Synology DS220j; a lot of software comes with it, including a backup utility. However, it seems to have been made for show only: the program began to fail even at the setup stage, so I lost confidence in it pretty fast.</p>
+<p>I suffered with the problem for some time and eventually returned to the good old <a href="https://rclone.org" rel="noopener noreferrer" target="_blank">rclone</a>, which has only two problems for me. Firstly, I can't normally connect to an SMB share: yes, the login and password can be saved in Windows and rclone will use them, but OS will forget it as soon as possible. I got out of the situation by connecting my NAS as an external drive.</p>
+<p>Secondly, I had many files and folders to sync: a directory here, a directory there, a config from there, a profile from here… In order not to produce spaghetti code, I wrote a simple script that takes sources and receivers from a config file, and then executes rclone for each pair.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Nothing found. Try a different search?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "python";
+  const notesListUrl = "https://kostyanetsky.me/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce();
+    const filtered = filterNotes(notes, q, activeTag);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

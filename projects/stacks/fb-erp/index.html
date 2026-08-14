@@ -1,0 +1,587 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Projects: FirstBit ERP</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Projects: FirstBit ERP"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/projects/stacks/fb-erp" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/projects/stacks/fb-erp"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Projects: FirstBit ERP</h1>
+        <p class="max-w-2xl text-slate-700">
+          Some tasks I worked on — and managed to find time to write about.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <div class="relative w-full sm:w-[360px]">
+            <input
+              id="search"
+              type="search"
+              placeholder="Search by title / description / stack…"
+              class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+            />
+            <svg
+              class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+
+          <div class="flex gap-2">
+            <button
+              id="btnGrid"
+              class="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100"
+              aria-pressed="true"
+            >
+              Grid
+            </button>
+            <button
+              id="btnList"
+              class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+              aria-pressed="false"
+            >
+              List
+            </button>
+          </div>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c-v8"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С:Enterprise
+        </button>
+        
+        <button
+          data-chip="fb-erp"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          FirstBit ERP
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="flask"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Flask
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          TypeScript
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="react"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          React
+        </button>
+        
+
+      </section>
+
+      <section
+        id="cards"
+        class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+      ></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Nothing found. Try a different search?
+      </div>
+
+    <script>
+      const projects = [
+        
+        {
+          title: "RFQ Service",
+          description: "A web application for a trading company, needed for estimating orders from suppliers.",
+          image: "https://kostyanetsky.me/projects/rfq-service/thumbnail.png",
+          
+          chips: [
+            
+            {
+              key: "typescript",
+              title: "TypeScript",
+              known: true,
+            },
+            
+            {
+              key: "nodejs",
+              title: "Node.js",
+              known: true,
+            },
+            
+            {
+              key: "react",
+              title: "React",
+              known: true,
+            },
+            
+            {
+              key: "python",
+              title: "Python",
+              known: true,
+            },
+            
+            {
+              key: "flask",
+              title: "Flask",
+              known: true,
+            },
+            
+            {
+              key: "1c-v8",
+              title: "1\u0421:Enterprise",
+              known: true,
+            },
+            
+            {
+              key: "fb-erp",
+              title: "FirstBit ERP",
+              known: true,
+            },
+            
+          ],
+          href: "rfq-service",
+        },
+        
+      ];
+
+      // A stack of a pre-generated list (projects/stacks/<stack>), empty for
+      // a common one.
+
+      const pageStack = "fb-erp";
+      const projectsListUrl = "https://kostyanetsky.me/projects/";
+
+  const cardsEl = document.getElementById("cards");
+  const countEl = document.getElementById("count");
+  const emptyEl = document.getElementById("empty");
+  const searchEl = document.getElementById("search");
+
+  const btnGrid = document.getElementById("btnGrid");
+  const btnList = document.getElementById("btnList");
+
+  let mode = "grid";
+  let chip = pageStack || "all";
+
+  // ------------------------------------------------------------
+  // Session state:
+  // - persists on F5 / reload
+  // - cleared when tab/browser is closed
+  // ------------------------------------------------------------
+  const STATE_KEY = "projects_ui_state_v1";
+
+  function saveState() {
+    try {
+      sessionStorage.setItem(STATE_KEY, JSON.stringify({ mode, chip }));
+    } catch (_) {}
+  }
+
+  function loadState() {
+    try {
+      const raw = sessionStorage.getItem(STATE_KEY);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function escapeAttr(str) {
+    return escapeHtml(str).replaceAll("\n", " ");
+  }
+
+  const BADGE_CLASS =
+    "inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700";
+  const BADGE_CLASS_CLICKABLE =
+    BADGE_CLASS + " cursor-pointer transition hover:bg-slate-100";
+
+  const badge = (chipData) =>
+    chipData.known
+      ? `
+    <button type="button" data-chip="${escapeAttr(chipData.key)}" class="${BADGE_CLASS_CLICKABLE}">
+      ${escapeHtml(chipData.title)}
+    </button>
+  `
+      : `
+    <span class="${BADGE_CLASS}">
+      ${escapeHtml(chipData.title)}
+    </span>
+  `;
+
+  function applyMode(nextMode) {
+    mode = nextMode;
+
+    if (mode === "grid") {
+      btnGrid.className =
+        "rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100";
+      btnList.className =
+        "rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50";
+      btnGrid.setAttribute("aria-pressed", "true");
+      btnList.setAttribute("aria-pressed", "false");
+    } else {
+      btnList.className =
+        "rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100";
+      btnGrid.className =
+        "rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50";
+      btnList.setAttribute("aria-pressed", "true");
+      btnGrid.setAttribute("aria-pressed", "false");
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function applyChip(nextChip) {
+    chip = nextChip;
+
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+    });
+
+    const active = document.querySelector(`.chip[data-chip="${CSS.escape(chip)}"]`);
+
+    if (active) {
+      active.className = CHIP_CLASS_ACTIVE;
+    } else {
+      chip = "all";
+      const allBtn = document.querySelector(`.chip[data-chip="all"]`);
+      if (allBtn) {
+        allBtn.className = CHIP_CLASS_ACTIVE;
+      }
+    }
+  }
+
+  function card(project) {
+    const stacksHtml = (project.chips || []).map(badge).join("");
+
+    const body = `
+      <div class="flex flex-col gap-3 p-4">
+        <div class="flex items-start justify-between gap-3">
+          <a href="https://kostyanetsky.me/projects/${project.href}" class="inline text-2xl font-semibold tracking-tight hover:underline">
+            <h3 class="text-lg font-semibold leading-snug tracking-tight">${escapeHtml(project.title)}</h3>
+          </a>
+        </div>
+
+        <p class="text-sm text-slate-700 ${mode === "grid" ? "line-clamp-3" : "line-clamp-2"}">
+          ${escapeHtml(project.description)}
+        </p>
+
+        <div class="flex flex-wrap gap-2">${stacksHtml}</div>
+      </div>
+    `;
+
+    if (mode === "list") {
+      return `
+        <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:bg-slate-50">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-[320px]">
+              <img
+                src="${project.image}"
+                alt="${escapeAttr(project.title)}"
+                class="h-48 w-full object-cover md:h-full"
+                loading="lazy"
+              />
+            </div>
+            <div class="flex-1">${body}</div>
+          </div>
+        </article>
+      `;
+    }
+
+    return `
+      <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:bg-slate-50">
+        <img
+          src="${project.image}"
+          alt="${escapeAttr(project.title)}"
+          class="h-44 w-full object-cover"
+          loading="lazy"
+        />
+        ${body}
+      </article>
+    `;
+  }
+
+  function render() {
+    const q = (searchEl.value || "").trim().toLowerCase();
+
+    const filtered = projects.filter((p) => {
+      const chips = p.chips || [];
+      const matchesChip = chip === "all" ? true : chips.some((c) => c.key === chip);
+      const haystack = `${p.title} ${p.description} ${chips.map((c) => c.title).join(" ")}`.toLowerCase();
+      return matchesChip && (q ? haystack.includes(q) : true);
+    });
+
+    countEl.textContent = String(filtered.length);
+
+    if (filtered.length === 0) {
+      cardsEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+
+    cardsEl.className =
+      mode === "grid"
+        ? "mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+        : "mt-8 grid grid-cols-1 gap-4";
+
+    cardsEl.innerHTML = filtered.map(card).join("");
+  }
+
+  // -----------------------
+  // Events
+  // -----------------------
+  btnGrid.addEventListener("click", () => {
+    applyMode("grid");
+    saveState();
+    render();
+  });
+
+  btnList.addEventListener("click", () => {
+    applyMode("list");
+    saveState();
+    render();
+  });
+
+  searchEl.addEventListener("input", render);
+
+  // A delegated handler, since stack chips of a project card are rendered
+  // dynamically as well: both the chips above and the ones of a card filter
+  // the list.
+
+  document.addEventListener("click", (event) => {
+    const clickedChip = event.target.closest("[data-chip]");
+
+    if (!clickedChip) return;
+
+    const nextChip = clickedChip.dataset.chip || "all";
+
+    // Projects of a pre-generated list are filtered by its stack, so dropping
+    // the stack means leaving the page for the common list.
+
+    if (pageStack && nextChip === "all") {
+      chip = "all";
+      saveState();
+      window.location.href = projectsListUrl;
+      return;
+    }
+
+    applyChip(nextChip);
+    saveState();
+    render();
+  });
+
+  // -----------------------
+  // Init (restore state, then render)
+  // -----------------------
+  const st = loadState();
+
+  if (st?.mode === "grid" || st?.mode === "list") applyMode(st.mode);
+  else applyMode("grid");
+
+  // A pre-generated list is filtered by its own stack, so a saved one has to
+  // be ignored: an URL wins over a state of a previously visited page.
+
+  if (pageStack) applyChip(pageStack);
+  else if (typeof st?.chip === "string") applyChip(st.chip);
+  else applyChip("all");
+
+  render();
+    </script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
