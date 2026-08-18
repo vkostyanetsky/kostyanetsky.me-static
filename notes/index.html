@@ -205,17 +205,17 @@
         </button>
         
         <button
-          data-chip="obsidian"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Obsidian
-        </button>
-        
-        <button
           data-chip="ai"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           AI
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
         </button>
         
         <button
@@ -363,6 +363,60 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/miku-codex-pet"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A Miku Pet for Codex
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>18 August 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="ai" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">AI</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>The desktop version of <a href="https://openai.com/codex" rel="noopener noreferrer" target="_blank">Codex</a> has pets — little pixel characters rendered on top of the UI that show what the agent is currently doing. When it's working, the pet walks around; when it's waiting for input, it calls for you; when something goes wrong, it squints, and so on. The general idea is that you kick off some workflow, go do something else, and can still tell at a glance how things are going.</p>
+<p>Not exactly a killer feature, but it's fun. I wasn’t particularly into the built-in pets, though, so I started browsing community-made ones and somehow ended up making my own — based on Hatsune Miku's design from <a href="https://chaim-videogames.itch.io/mikun-pop" rel="noopener noreferrer" target="_blank">Miku'n POP</a>, an ancient little platformer.</p>
+<p>Turns out it's not especially complicated. I took the sprites from <a href="https://github.com/CharlesWiiFlowers/MikuPet" rel="noopener noreferrer" target="_blank">MikuPet</a>, whose author uses the same Miku'n POP design. The pet format itself is pretty straightforward, and with Codex helping me poke around, there wasn't much reverse-engineering involved. I actually spent more time <a href="https://github.com/vkostyanetsky/MikuCodexPet/blob/main/ATTRIBUTION.md" rel="noopener noreferrer" target="_blank">figuring out</a> who owns which bits of artwork, what the reuse terms are, and all that fun licensing stuff.</p>
+<p>You can <a href="https://github.com/vkostyanetsky/MikuCodexPet/releases" rel="noopener noreferrer" target="_blank">grab the pet</a> from GitHub. There’s also a screenshot and a <a href="https://github.com/vkostyanetsky/MikuCodexPet" rel="noopener noreferrer" target="_blank">detailed rundown</a> of what's under the hood.</p>
+<p>Free bonus: the <a href="https://github.com/vkostyanetsky/MikuCodexPet/actions/workflows/release.yml" rel="noopener noreferrer" target="_blank">release workflow</a> for a project like this can, with complete justification, be called "Release pet" :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1536,55 +1590,6 @@ own room."</p>
 <p>I’m just the same. For the past month, I’ve been putting the finishing touches on a model of a school music room, and guess what? I’ve learned more about how pianos work than I have in my whole life before. I could even give a quick lecture on heating systems in Russian schools — talking about sectional, panel, cast iron, and aluminum radiators, which types pop up most, the spacing between them, why you shouldn’t hook up three in a row, and so on.</p>
 <p>I read about this effect: like when you're drawing, say, samurai armor — you end up inadvertently learning heaps about the properties of leather, the different kinds of metal, and the whole tech stack of the samurai era. I never thought I'd run into that from day one — but hey, I think it's a good thing. It fires up your neural connections, broadens your view of the world, sparks your creativity, and all that jazz.</p>
 <p>Plus, it’s way more fun working on a model when you actually know what’s going on under the hood.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/easter-eggs"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Easter Eggs
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>6 April 2025</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Work</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><img alt="Thank you, Mario!" src="https://kostyanetsky.me/notes/easter-eggs/mario.jpg"/></p>
-<p><img alt="Awaiting Signal" src="https://kostyanetsky.me/notes/easter-eggs/mothership.jpg"/></p>
-<p>A couple of Easter eggs hidden inside FirstBit ERP. They're tucked away for the developers: in the first case, users see just the form title and notification text, while in the second, they see the standard "waiting for connection" message.</p>
-<p>I like to add little things like this from time to time — it helps to keep things fun, even when the task isn’t the most exciting or I’m just feeling tired. If you haven’t checked out Bystronovsky’s "<a href="https://collab.ldwg.ru/stressless-design" rel="noopener noreferrer" target="_blank">Design Without Stress</a>", you really should — no way I could explain it better myself.</p>
-<p>By the way, here’s another Easter egg! Not from our ERP this time, but from a new tool we’re making for automated database updates. We're building it just for ourselves, so we can joke around with the user a bit :)</p>
-<p><img alt="Nice try, Marty!" src="https://kostyanetsky.me/notes/easter-eggs/marty.jpg"/></p>
             </div>
           </div>
           

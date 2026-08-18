@@ -205,17 +205,17 @@
         </button>
         
         <button
-          data-chip="obsidian"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Obsidian
-        </button>
-        
-        <button
           data-chip="ai"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           AI
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
         </button>
         
         <button
@@ -363,6 +363,63 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/2nd-monitor-and-console"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Second Monitor Management via Console
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 October 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Workplace</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I have two monitors. I use the second one during meetings in Zoom or when playing together with friends (in both cases it's convenient to bring the people's cameras there). There are more examples when it's useful, but often the device is simply idle. In order not to be distracted, I decided to turn it off.</p>
+<p>What is the ambush here: it is inconvenient to enable or disable the second monitor via OS (a few clicks, and you need to scroll, and all the time you get confused where to go — in “Screen settings” or “Personalization”). I would like one command, and the command on a hotkey. And, ideally, from the script to rule all this.</p>
+<p>I did not find the script, but I found a ready-made utility — MultiMonitorTool. It's free. Works under the Windows 10 without problems. The commands below turn on / off the 2nd monitor:</p>
+<pre><code>MultiMonitorTool.exe / disable 2
+MultiMonitorTool.exe / enable 2
+MultiMonitorTool.exe / switch 2
+</code></pre>
+<p>For some reason, when you turn on a monitor via enable or switch, it's positioned incorrectly sometimes (for example, before it was turned off, it was on the right, and after turning it on, it was on the left). This is fixable. First, let's save the configuration at the moment when both monitors are on:</p>
+<pre><code>MultiMonitorTool.exe / SaveConfig Monitors.cfg
+</code></pre>
+<p>And then, when you need to turn on the monitor, load the saved config:</p>
+<pre><code>MultiMonitorTool.exe / LoadConfig Monitors.cfg
+</code></pre>
+<p>The utility can do a lot more (for example, one of the commands flips application windows between monitors). Follow the link above for the description.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1338,60 +1395,6 @@ Then I gonna swing
             <div class="prose-like">
               <p>Sometimes when you developing some complex mechanic you don't have enough time time for the adequate naming of variables. As a result, there is a lot of mysterious WhatTheHeck, ApplyMagic and bunch of other LivingFailures.</p>
 <p>It's what you should avoid despite it looks funny. You'll rewrite code you've written month or two later and it will be hard to shame its author because it is you.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/sebby-x-player"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Sebby x Player
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>14 August 2017</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="english" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">English</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>I have <a href="https://acomics.ru/~sebby-x-player" rel="noopener noreferrer" target="_blank">translated</a> Stardew Valley fan manga on a wave of enthusiasm at the end of July (SV is an enormously addictive farmer simulator which <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" rel="noopener noreferrer" target="_blank">went out</a> a couple of years ago).</p>
-<p>It was an amusing experience. Firstly, an author of the manga is Chinese and her work was already translated from Chinese to English. I'm not sure what was the bigger problem — cultural differences or language skills, but several frames were a bit difficult to understand what's going on. Secondly, I've figured out that it's a real challenge to pick proper Russian words and not to get something like a quote from an official government's letter in the end.</p>
-<p>So, a part of sense had lost during the process, I guess, although I tried to keep everything I could and even had a word with the author in order to solve the most problematic cases. It was quite funny — I don't know Chinese, she doesn't know Russian, so our a bit poor English was the only way to understand each other.</p>
-<p>Something could have been translated better, I suppose, and several pictures definitely could have been changed more accurately. But you know what? Hell it out, perfection is a cruel mistress and I like the result yet. Yeah, there is no big deal or something like it — a drawing style is quite common, a plot has no significant differences with the game, but… I don't know. Perhaps, visual novels made a too sentimental son of a bitch out of me :-)</p>
-<p>Thanks to <a href="https://vk.com/id54890849" rel="noopener noreferrer" target="_blank">Alice</a> for helping me with image processing, <a href="https://twitter.com/amish77kin" rel="noopener noreferrer" target="_blank">Lem</a> for helping me with the translation and <a href="https://vk.com/mahrunteka" rel="noopener noreferrer" target="_blank">Marika</a> for the inspiration. And, sure, thanks to <a href="https://curayukie.deviantart.com" rel="noopener noreferrer" target="_blank">Quantus</a> for the manga.</p>
             </div>
           </div>
           

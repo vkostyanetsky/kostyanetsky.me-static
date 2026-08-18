@@ -5,8 +5,20 @@
         <language>en</language>
         <link>https://kostyanetsky.me</link>
         
-        <lastBuildDate>Sun, 09 Aug 2026 14:41:26 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 18 Aug 2026 09:17:10 +0000</lastBuildDate>
         
+        
+        <item>
+            <title>A Miku Pet for Codex</title>
+            <link>https://kostyanetsky.me/notes/miku-codex-pet</link>
+            <guid isPermaLink="false">note-miku-codex-pet</guid>
+            <pubDate>Tue, 18 Aug 2026 09:17:10 +0000</pubDate>
+            <description>&lt;p&gt;The desktop version of &lt;a href=&#34;https://openai.com/codex&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Codex&lt;/a&gt; has pets — little pixel characters rendered on top of the UI that show what the agent is currently doing. When it&#39;s working, the pet walks around; when it&#39;s waiting for input, it calls for you; when something goes wrong, it squints, and so on. The general idea is that you kick off some workflow, go do something else, and can still tell at a glance how things are going.&lt;/p&gt;
+&lt;p&gt;Not exactly a killer feature, but it&#39;s fun. I wasn’t particularly into the built-in pets, though, so I started browsing community-made ones and somehow ended up making my own — based on Hatsune Miku&#39;s design from &lt;a href=&#34;https://chaim-videogames.itch.io/mikun-pop&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Miku&#39;n POP&lt;/a&gt;, an ancient little platformer.&lt;/p&gt;
+&lt;p&gt;Turns out it&#39;s not especially complicated. I took the sprites from &lt;a href=&#34;https://github.com/CharlesWiiFlowers/MikuPet&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;MikuPet&lt;/a&gt;, whose author uses the same Miku&#39;n POP design. The pet format itself is pretty straightforward, and with Codex helping me poke around, there wasn&#39;t much reverse-engineering involved. I actually spent more time &lt;a href=&#34;https://github.com/vkostyanetsky/MikuCodexPet/blob/main/ATTRIBUTION.md&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;figuring out&lt;/a&gt; who owns which bits of artwork, what the reuse terms are, and all that fun licensing stuff.&lt;/p&gt;
+&lt;p&gt;You can &lt;a href=&#34;https://github.com/vkostyanetsky/MikuCodexPet/releases&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;grab the pet&lt;/a&gt; from GitHub. There’s also a screenshot and a &lt;a href=&#34;https://github.com/vkostyanetsky/MikuCodexPet&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;detailed rundown&lt;/a&gt; of what&#39;s under the hood.&lt;/p&gt;
+&lt;p&gt;Free bonus: the &lt;a href=&#34;https://github.com/vkostyanetsky/MikuCodexPet/actions/workflows/release.yml&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;release workflow&lt;/a&gt; for a project like this can, with complete justification, be called &#34;Release pet&#34; :)&lt;/p&gt;</description>
+        </item>
         
         <item>
             <title>Obsidian Property Organizer</title>
@@ -158,30 +170,6 @@ whisper &#34;D:\audio.wav&#34; --model small --language Russian --output_format 
 &lt;p&gt;And yes — we&#39;re still sneaking jokes into the UI. Obviously.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;But Still!&#34; src=&#34;https://kostyanetsky.me/notes/backup-ui/but-still.png&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;Coffee First!&#34; src=&#34;https://kostyanetsky.me/notes/backup-ui/coffee-first.png&#34;/&gt;&lt;/p&gt;</description>
-        </item>
-        
-        <item>
-            <title>Desire Paths</title>
-            <link>https://kostyanetsky.me/notes/desire-paths</link>
-            <guid isPermaLink="false">note-desire-paths</guid>
-            <pubDate>Sat, 29 Nov 2025 21:00:48 +0000</pubDate>
-            <description>&lt;p&gt;Alright, Jean Fresco&#39;s riddle. You&#39;ve got a table — say, ~50k rows. How do you end up reading half a billion?&lt;/p&gt;
-&lt;p&gt;Easy-peasy: Nested Loops + Clustered Index Seek:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Half a billion&#34; src=&#34;https://kostyanetsky.me/notes/desire-paths/500_million.png&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;Clustered Index Seek is a bit of a marketing name here, of course. In reality, on every execution the operator walks the entire table (the whole clustered index) and checks every row against the predicates. And it does that 10 730 times for 51 391 rows. Result: 551 425 430 rows read, 13 343 returned.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Ouch&#34; src=&#34;https://kostyanetsky.me/notes/desire-paths/ouch.gif&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;So yeah — a perfect textbook example of a horrible query plan in a vacuum. Put it in a museum. Nested Loops, if you&#39;ve forgotten, works roughly like this:&lt;/p&gt;
-&lt;pre&gt;
-For Each Table1Row In Table1 Do
-    For Each Table2Row In Table2 Do
-        ...
-&lt;/pre&gt;
-&lt;p&gt;That&#39;s fine for small tables, but the DB can also pick it for bigger ones — for example, if it runs out of time to build a proper plan.&lt;/p&gt;
-&lt;p&gt;That&#39;s exactly what happened here. Zooming out to the platform level: we&#39;ve got a dynamic list that queries a documents table, and the devs bolted on like a dozen virtual tables from accumulation registers.&lt;/p&gt;
-&lt;p&gt;Some of those registers were huge on their own, and the virtual tables poured gasoline on the fire (each one turns into 2+ nested queries). The DB honestly tried to come up with an efficient strategy, but at some point it basically decided: &#34;a garbage plan is still better than no plan at all&#34;.&lt;/p&gt;
-&lt;p&gt;And the user? They tried to search a document by number — and the client app just straight-up froze.&lt;/p&gt;
-&lt;p&gt;So, about virtual tables in dynamic lists. There&#39;s a nice English phrase: &#34;desire path&#34; — the trail people naturally carve because it&#39;s the easiest way. Slapping a virtual table onto the main one really is often the simplest, fastest, most familiar way to solve the task. But it&#39;s &lt;strong&gt;not efficient&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;There&#39;s an alternative, for example the &lt;code&gt;OnGetDataAtServer()&lt;/code&gt; handler. It takes longer to implement, but it lets you properly tune the virtual table and avoid the scenario above. Scrolling the list will produce more queries, sure — but they&#39;ll be smaller, faster, and way more efficient than one single giant monster query.&lt;/p&gt;</description>
         </item>
         
     </channel>
