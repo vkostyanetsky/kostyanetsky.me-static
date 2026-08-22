@@ -13,7 +13,7 @@
             <link>https://kostyanetsky.me/notes/egorova</link>
             <guid isPermaLink="false">note-egorova</guid>
             <pubDate>Sat, 22 Aug 2026 22:23:03 +0000</pubDate>
-            <description>&lt;p&gt;I&#39;ve been using Whisper pretty much nonstop for meeting transcription over the past six months, and I&#39;ve noticed a funny effect: the bigger the model, the better it is at recognizing actual speech — and the more confidently it makes shit up when there is no speech at all.&lt;/p&gt;
+            <description>&lt;p&gt;I&#39;ve been &lt;a href=&#34;https://kostyanetsky.me/notes/autosummary&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;using&lt;/a&gt; Whisper pretty much nonstop for meeting transcription over the past six months, and I&#39;ve noticed a funny effect: the bigger the model, the better it is at recognizing actual speech — and the more confidently it makes shit up when there is no speech at all.&lt;/p&gt;
 &lt;p&gt;For example, this often happens at the beginning of a webinar or a meeting while people are still joining. It&#39;s quiet, nobody is talking, maybe someone is loudly sipping coffee. And then Whisper suddenly starts spitting out something like this:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Subtitle editor A. Sinetskaya, proofreader A. Yegorova&lt;br/&gt;
