@@ -5,8 +5,49 @@
         <language>en</language>
         <link>https://kostyanetsky.me</link>
         
-        <lastBuildDate>Tue, 18 Aug 2026 09:17:10 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 22 Aug 2026 22:23:03 +0000</lastBuildDate>
         
+        
+        <item>
+            <title>The Yegorova Phenomenon</title>
+            <link>https://kostyanetsky.me/notes/egorova</link>
+            <guid isPermaLink="false">note-egorova</guid>
+            <pubDate>Sat, 22 Aug 2026 22:23:03 +0000</pubDate>
+            <description>&lt;p&gt;I&#39;ve been using Whisper pretty much nonstop for meeting transcription over the past six months, and I&#39;ve noticed a funny effect: the bigger the model, the better it is at recognizing actual speech — and the more confidently it makes shit up when there is no speech at all.&lt;/p&gt;
+&lt;p&gt;For example, this often happens at the beginning of a webinar or a meeting while people are still joining. It&#39;s quiet, nobody is talking, maybe someone is loudly sipping coffee. And then Whisper suddenly starts spitting out something like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Subtitle editor A. Sinetskaya, proofreader A. Yegorova&lt;br/&gt;
+Subtitle editor A. Sinetskaya, proofreader A. Yegorova&lt;br/&gt;
+Subtitle editor A. Sinetskaya, proofreader A. Yegorova&lt;br/&gt;
+Subtitle editor A. Sinetskaya, proofreader A. Yegorova  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And worse, &lt;strong&gt;it sometimes keeps doing this even after perfectly intelligible speech has started&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;This got annoying enough that I finally went down the rabbit hole.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Who the hell is this Yegorova anyway&#34; src=&#34;https://kostyanetsky.me/notes/egorova/egorova.png&#34;/&gt;&lt;/p&gt;
+&lt;h2&gt;Why does it transcribe silence like that?&lt;/h2&gt;
+&lt;p&gt;Whisper isn&#39;t just a sound-to-text recognizer. Under the hood, there&#39;s a pretty powerful language model trying to predict the most likely text based on both the audio and the context it has already transcribed. Most of the time, that&#39;s exactly what you want: it handles speech, context, names, and complicated phrases remarkably well.&lt;/p&gt;
+&lt;p&gt;But if the input is silence, noise, or some unintelligible mumbling, the audio stops being very useful. And that&#39;s where the model starts guessing: okay, what kind of text could plausibly go here? It was trained on a gigantic dataset of audio with text transcripts scraped together by OpenAI from all over the internet — around 700,000 hours, if I remember correctly.&lt;/p&gt;
+&lt;p&gt;And I assume plenty of that stuff came from videos with subtitles — and subtitles are messy as hell. During a silent bit, the subtitle track might happily contain the translator&#39;s name, an editor credit, a studio name, &#34;thanks for watching&#34;, or some other garbage that isn&#39;t present in the audio at all.&lt;/p&gt;
+&lt;p&gt;And that, I suspect, is how Sinetskaya and Yegorova entered the history books. I couldn&#39;t figure out what exactly they worked on, but apparently some subtitle credit mentioning them occurred often enough in the training data for Whisper to eventually decide that silence and Yegorova are, statistically speaking, basically the same thing.&lt;/p&gt;
+&lt;h2&gt;Why doesn&#39;t this happen only during silence?&lt;/h2&gt;
+&lt;p&gt;Yeah, if it merely produced garbage during pauses, this wouldn&#39;t really be a problem. The garbage phrase is known, so you could just filter it out. The nasty part is that a bad transcription poisons the model&#39;s context. Oversimplifying a bit: Whisper hears silence, decides it&#39;s Yegorova, then feeds “Yegorova” back into itself as context for the next chunk and carries on from there.&lt;/p&gt;
+&lt;p&gt;The next chunk might also become Yegorova. And the next one. And the next... By the time the speaker finally starts talking, they&#39;d better enunciate REALLY clearly if they want to convince the model that yes, this is in fact human speech and not Yegorova, who has now accumulated twenty chunks&#39; worth of momentum. As a result, Whisper can get stuck in this state for a surprisingly long time.&lt;/p&gt;
+&lt;p&gt;The problem is ancient history by ML standards — okay, fine, about four years — and it exists in a bunch of languages. Russian, incidentally, &lt;a href=&#34;https://github.com/openai/whisper/discussions/928#discussioncomment-5372187&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;has its own special flavor&lt;/a&gt;: while some poor Italian might be haunted by a boring “Subtitles created by the Amara.org community,” we, shall we say, have our own fandom.&lt;/p&gt;
+&lt;h2&gt;How do you deal with it?&lt;/h2&gt;
+&lt;p&gt;The usual advice is to tune inference: reset context after long pauses, fiddle with &lt;code&gt;no_speech_threshold&lt;/code&gt; and &lt;code&gt;condition_on_previous_text&lt;/code&gt;, strip silence beforehand using VAD, and so on. I never got around to trying VAD, but I did experiment with the other options, and yes — you can get perfectly decent results for a particular troublesome video.&lt;/p&gt;
+&lt;p&gt;The problem is that this doesn&#39;t really work for my use case. I need to transcribe all kinds of stuff: meeting recordings, lectures, phone calls, whatever. A combination of tricks carefully tuned for one video tends to fall apart on another. Out of pure engineering stubbornness, I even tried building a wrapper along the lines of: &#34;run the video through three different inference setups, analyze all three outputs, then pick whichever one has the lowest Yegorova concentration&#34;. It still worked kinda meh.&lt;/p&gt;
+&lt;p&gt;So I eventually went with a different solution: &lt;strong&gt;use a dumber model!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Seriously. It works. At least on my recordings, Whisper Small falls into repetition loops on silence much less often. My guess is that the weaker model simply has a harder time confidently hallucinating a garbage pattern, so when it hears silence, it just outputs nothing.&lt;/p&gt;
+&lt;p&gt;Oversimplifying again:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Whisper Small: Uh... I can&#39;t hear anything. No idea.&lt;/li&gt;
+&lt;li&gt;Whisper Medium: Uh... I can&#39;t hear anything... &lt;em&gt;(strains all its parameters)&lt;/em&gt; OH! I KNOW! &lt;em&gt;(fanfare starts playing)&lt;/em&gt; THAT&#39;S YEGOROVA!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:D&lt;/p&gt;
+&lt;p&gt;Suffering from success. Literally.&lt;/p&gt;
+&lt;p&gt;The transcription quality with Whisper Small is obviously a bit worse — more mangled words, less coherent phrasing — but &lt;s&gt;that&#39;s still better than Sinetskaya eating a third of the recording and Yegorova devouring the rest&lt;/s&gt; overall, the result is much more predictable.&lt;/p&gt;
+&lt;p&gt;Besides, I&#39;m going to throw the transcript into something like ChatGPT afterwards anyway to generate a summary, and for that absolute gigachad, reconstructing the conversation context is barely an inconvenience even if a few chunks of dialogue got mangled or dropped.&lt;/p&gt;</description>
+        </item>
         
         <item>
             <title>A Miku Pet for Codex</title>
@@ -151,25 +192,6 @@ whisper &#34;D:\audio.wav&#34; --model small --language Russian --output_format 
 &lt;p&gt;And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn&#39;t get &lt;a href=&#34;https://tachyons.io&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Tachyons&lt;/a&gt; to play nice with the search input — got annoyed and migrated everything to &lt;a href=&#34;https://tailwindcss.com&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Tailwind&lt;/a&gt; (I&#39;d been meaning to try it anyway, just never had a &#34;good reason&#34;, so I invented one). While I was writing the search code, I figured it&#39;d be dumb not to add tags too, because why do the same work twice. Next thing I know I &#34;wake up&#34; and there&#39;s a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it&#39;s not tags, it&#39;s tech stacks...&lt;/p&gt;
 &lt;p&gt;So yeah, it turned into that &#34;Fear and Loathing in Las Vegas&#34; meme. The tendency was to push it as far as I can, kinda.&lt;/p&gt;
 &lt;p&gt;Now the only thing left is to make myself actually write into the new project log. There&#39;s always a ton of work, and it&#39;s genuinely interesting — but if I don&#39;t write things down... Welp. Everything sinks into coffee.&lt;/p&gt;</description>
-        </item>
-        
-        <item>
-            <title>Backup Management</title>
-            <link>https://kostyanetsky.me/notes/backup-ui</link>
-            <guid isPermaLink="false">note-backup-ui</guid>
-            <pubDate>Sat, 06 Dec 2025 20:57:48 +0000</pubDate>
-            <description>&lt;p&gt;At the end of the year we shipped a big update to our internal tool (I briefly &lt;a href=&#34;https://kostyanetsky.me/notes/easter-eggs&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;wrote&lt;/a&gt; about it before). The goal: give teammates sane, usable access to backups of customer apps. In a SaaS company, everyone needs backups all the time — dev, QA, incident investigations, you name it. Without proper tracking the whole thing turns into a petting zoo: three people, same moment, three requests for almost identical copies of the same database. Sure, it &#34;works&#34;, but you end up chewing through 3x the resources for zero extra value.&lt;/p&gt;
-&lt;p&gt;We did have a solution built on top of the Bitrix UI, but due to, uh... the unique &#34;evolutionary path&#34; of that product, it delivered more pain than gain. So we rethought the workflow and rewrote everything. Frontend is 1C; backend is PostgREST, PostgreSQL, PowerShell, and a bunch of other bits and bobs. The internal logic is fairly gnarly, but for the user it&#39;s a clean, friendly UI where you can request a backup in literally two clicks.&lt;/p&gt;
-&lt;p&gt;You can pick one of three backup types:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cloud backup (a copy of the real app deployed in the cloud and accessible — including via the browser);&lt;/li&gt;
-&lt;li&gt;File backup (a regular .dt file you can download and spin up locally);&lt;/li&gt;
-&lt;li&gt;Configuration + extensions backup (.cf + .cfe).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Also, the new solution detects when someone tries to request a backup for an app that&#39;s already being generated right now. And it rate-limits things too: you can&#39;t back up the same app more than once per hour.&lt;/p&gt;
-&lt;p&gt;And yes — we&#39;re still sneaking jokes into the UI. Obviously.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;But Still!&#34; src=&#34;https://kostyanetsky.me/notes/backup-ui/but-still.png&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Coffee First!&#34; src=&#34;https://kostyanetsky.me/notes/backup-ui/coffee-first.png&#34;/&gt;&lt;/p&gt;</description>
         </item>
         
     </channel>

@@ -198,17 +198,17 @@
         </button>
         
         <button
-          data-chip="english"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          English
-        </button>
-        
-        <button
           data-chip="ai"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           AI
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
         </button>
         
         <button
@@ -363,6 +363,83 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/egorova"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                The Yegorova Phenomenon
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 August 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="ai" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">AI</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I've been using Whisper pretty much nonstop for meeting transcription over the past six months, and I've noticed a funny effect: the bigger the model, the better it is at recognizing actual speech — and the more confidently it makes shit up when there is no speech at all.</p>
+<p>For example, this often happens at the beginning of a webinar or a meeting while people are still joining. It's quiet, nobody is talking, maybe someone is loudly sipping coffee. And then Whisper suddenly starts spitting out something like this:</p>
+<blockquote>
+<p>Subtitle editor A. Sinetskaya, proofreader A. Yegorova<br/>
+Subtitle editor A. Sinetskaya, proofreader A. Yegorova<br/>
+Subtitle editor A. Sinetskaya, proofreader A. Yegorova<br/>
+Subtitle editor A. Sinetskaya, proofreader A. Yegorova  </p>
+</blockquote>
+<p>And worse, <strong>it sometimes keeps doing this even after perfectly intelligible speech has started</strong>.</p>
+<p>This got annoying enough that I finally went down the rabbit hole.</p>
+<p><img alt="Who the hell is this Yegorova anyway" src="https://kostyanetsky.me/notes/egorova/egorova.png"/></p>
+<h2>Why does it transcribe silence like that?</h2>
+<p>Whisper isn't just a sound-to-text recognizer. Under the hood, there's a pretty powerful language model trying to predict the most likely text based on both the audio and the context it has already transcribed. Most of the time, that's exactly what you want: it handles speech, context, names, and complicated phrases remarkably well.</p>
+<p>But if the input is silence, noise, or some unintelligible mumbling, the audio stops being very useful. And that's where the model starts guessing: okay, what kind of text could plausibly go here? It was trained on a gigantic dataset of audio with text transcripts scraped together by OpenAI from all over the internet — around 700,000 hours, if I remember correctly.</p>
+<p>And I assume plenty of that stuff came from videos with subtitles — and subtitles are messy as hell. During a silent bit, the subtitle track might happily contain the translator's name, an editor credit, a studio name, "thanks for watching", or some other garbage that isn't present in the audio at all.</p>
+<p>And that, I suspect, is how Sinetskaya and Yegorova entered the history books. I couldn't figure out what exactly they worked on, but apparently some subtitle credit mentioning them occurred often enough in the training data for Whisper to eventually decide that silence and Yegorova are, statistically speaking, basically the same thing.</p>
+<h2>Why doesn't this happen only during silence?</h2>
+<p>Yeah, if it merely produced garbage during pauses, this wouldn't really be a problem. The garbage phrase is known, so you could just filter it out. The nasty part is that a bad transcription poisons the model's context. Oversimplifying a bit: Whisper hears silence, decides it's Yegorova, then feeds “Yegorova” back into itself as context for the next chunk and carries on from there.</p>
+<p>The next chunk might also become Yegorova. And the next one. And the next... By the time the speaker finally starts talking, they'd better enunciate REALLY clearly if they want to convince the model that yes, this is in fact human speech and not Yegorova, who has now accumulated twenty chunks' worth of momentum. As a result, Whisper can get stuck in this state for a surprisingly long time.</p>
+<p>The problem is ancient history by ML standards — okay, fine, about four years — and it exists in a bunch of languages. Russian, incidentally, <a href="https://github.com/openai/whisper/discussions/928#discussioncomment-5372187" rel="noopener noreferrer" target="_blank">has its own special flavor</a>: while some poor Italian might be haunted by a boring “Subtitles created by the Amara.org community,” we, shall we say, have our own fandom.</p>
+<h2>How do you deal with it?</h2>
+<p>The usual advice is to tune inference: reset context after long pauses, fiddle with <code>no_speech_threshold</code> and <code>condition_on_previous_text</code>, strip silence beforehand using VAD, and so on. I never got around to trying VAD, but I did experiment with the other options, and yes — you can get perfectly decent results for a particular troublesome video.</p>
+<p>The problem is that this doesn't really work for my use case. I need to transcribe all kinds of stuff: meeting recordings, lectures, phone calls, whatever. A combination of tricks carefully tuned for one video tends to fall apart on another. Out of pure engineering stubbornness, I even tried building a wrapper along the lines of: "run the video through three different inference setups, analyze all three outputs, then pick whichever one has the lowest Yegorova concentration". It still worked kinda meh.</p>
+<p>So I eventually went with a different solution: <strong>use a dumber model!</strong></p>
+<p>Seriously. It works. At least on my recordings, Whisper Small falls into repetition loops on silence much less often. My guess is that the weaker model simply has a harder time confidently hallucinating a garbage pattern, so when it hears silence, it just outputs nothing.</p>
+<p>Oversimplifying again:</p>
+<ul>
+<li>Whisper Small: Uh... I can't hear anything. No idea.</li>
+<li>Whisper Medium: Uh... I can't hear anything... <em>(strains all its parameters)</em> OH! I KNOW! <em>(fanfare starts playing)</em> THAT'S YEGOROVA!</li>
+</ul>
+<p>:D</p>
+<p>Suffering from success. Literally.</p>
+<p>The transcription quality with Whisper Small is obviously a bit worse — more mangled words, less coherent phrasing — but <s>that's still better than Sinetskaya eating a third of the recording and Yegorova devouring the rest</s> overall, the result is much more predictable.</p>
+<p>Besides, I'm going to throw the transcript into something like ChatGPT afterwards anyway to generate a summary, and for that absolute gigachad, reconstructing the conversation context is barely an inconvenience even if a few chunks of dialogue got mangled or dropped.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1529,67 +1606,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>What's more, the platform is installed with only a single language pack (English) and even launched with a hard override to "Ven VLen", yet somehow the native birches still manage to sprout up. Maybe the C++ library that fires off the message (DataExchangeTcpClientImpl.cpp) is looking at the OS language (Russian) in my case — hard to say.</p>
 <p>Anyway, I can't shake the Bugs Bunny vibes every time I see that dialog box.</p>
 <p><img alt="No" src="https://kostyanetsky.me/notes/no/bugs-bunny.png"/></p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/hottabych"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                The Genie Problem
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>12 April 2025</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="3d" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">3D</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <blockquote>
-<p>Returning to Volka's room, the old man turned round slyly, snapped the fingers of his left hand, and there appeared on the wall over the aquarium an exact copy of the telephone hanging in the hall.</p>
-<p>"Now you can talk to your friends as much as you like without leaving your
-own room."</p>
-<p>"Golly, thanks a lot!" Volka said gratefully. He removed the receiver, pressed it to his ear and listened. There was no dial tone.</p>
-<p>"Hello! Hello!" he shouted. He shook the receiver and then blew into it. Still, there was no dial tone.</p>
-<p>"The phone's broken," he explained to Hottabych. "Let's unscrew the receiver and see what's wrong."</p>
-<p>However, despite all his efforts, he could not unscrew it.</p>
-<p>"It's made of the finest black marble," Hottabych boasted.</p>
-<p>"Then there's nothing inside?" Volka asked disappointedly.</p>
-<p>"Why, is there supposed to be something inside this, too? Just like in a watch?"</p>
-<p>"Now I know why it doesn't work. You've only made a model of a telephone, without anything that's supposed to go inside it. But the insides are the most important part."</p>
-<p><em>"The Old Genie Hottabych", Lazar Lagin</em></p>
-</blockquote>
-<p>When I’m doing 3D modeling, I often feel like that genie. He also tried to mimic the shape of things and jazz them up, but always ended up failing ‘cause he hadn’t got a clue about what was inside.</p>
-<p>I’m just the same. For the past month, I’ve been putting the finishing touches on a model of a school music room, and guess what? I’ve learned more about how pianos work than I have in my whole life before. I could even give a quick lecture on heating systems in Russian schools — talking about sectional, panel, cast iron, and aluminum radiators, which types pop up most, the spacing between them, why you shouldn’t hook up three in a row, and so on.</p>
-<p>I read about this effect: like when you're drawing, say, samurai armor — you end up inadvertently learning heaps about the properties of leather, the different kinds of metal, and the whole tech stack of the samurai era. I never thought I'd run into that from day one — but hey, I think it's a good thing. It fires up your neural connections, broadens your view of the world, sparks your creativity, and all that jazz.</p>
-<p>Plus, it’s way more fun working on a model when you actually know what’s going on under the hood.</p>
             </div>
           </div>
           
