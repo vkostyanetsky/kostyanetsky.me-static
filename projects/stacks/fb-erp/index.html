@@ -133,24 +133,27 @@
           <div class="relative w-full sm:w-[360px]">
             <input
               id="search"
+              aria-busy="false"
               type="search"
               placeholder="Search by title / description / stack…"
               class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
             />
-            <svg
-              class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-              />
-            </svg>
+            
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
           </div>
 
           <div class="flex gap-2">
@@ -324,6 +327,19 @@
 
   let mode = "grid";
   let chip = pageStack || "all";
+  let searchTimer;
+
+  function scheduleSearch() {
+    clearTimeout(searchTimer);
+    searchEl.setAttribute("aria-busy", "true");
+    searchTimer = setTimeout(() => {
+      try {
+        render();
+      } finally {
+        searchEl.setAttribute("aria-busy", "false");
+      }
+    }, 200);
+  }
 
   // ------------------------------------------------------------
   // Session state:
@@ -517,7 +533,7 @@
     render();
   });
 
-  searchEl.addEventListener("input", render);
+  searchEl.addEventListener("input", scheduleSearch);
 
   // A delegated handler, since stack chips of a project card are rendered
   // dynamically as well: both the chips above and the ones of a card filter

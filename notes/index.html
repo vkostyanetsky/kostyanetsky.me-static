@@ -132,24 +132,27 @@
         <div class="relative w-full sm:w-[420px]">
           <input
             id="search"
+            aria-busy="false"
             type="search"
             placeholder="Search by title / text / tags…"
             class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
           />
-          <svg
-            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-            />
-          </svg>
+          
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
         </div>
 
         <p class="text-sm text-slate-600">
@@ -289,6 +292,13 @@
         </button>
         
         <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
           data-chip="python"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -307,13 +317,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Node.js
-        </button>
-        
-        <button
-          data-chip="optimization"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Optimization
         </button>
         
         <button
@@ -363,6 +366,81 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/reordered-uuid"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                1C&#39;s UUID Storage Trick
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 October 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="optimization" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Optimization</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I was patching up our 1cFresh setup again (more trouble with data history — I'll tell that story sometime) when I ran into the platform's little UUID storage trick once more. Figured I'd write about it.</p>
+<p>Long story short, UUIDs for metadata objects, just like those for regular object references, are stored in a 1C database as sixteen bytes. Except when you look at those bytes, they don't look anything like the UUIDs you're used to: for example, <code>8e1f9db8-4be2-11ed-a101-2c4d5450919d</code> shows up in the database as <code>0xA1012C4D5450919D11ED4BE28E1F9DB8</code>. The first time I saw this, I thought: some kind of hash, or a bit of little-endian wizardry.</p>
+<p>What the platform actually does is rearrange the UUID groups while keeping the byte order within each group intact:</p>
+<p><code>UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa</code></p>
+<p>Why? My guess is that it's an attempt to make database indexes work more efficiently. The thing is, the platform uses UUID v1 when automatically generating references for documents, catalog items, and similar objects. These UUIDs are time-based, with the timestamp split into three parts. The low part comes first, followed by the middle and high parts:</p>
+<p><code>8e1f9db8-4be2-11ed-a101-2c4d5450919d
+│        │    │    │    │
+│        │    │    │    └─ Node ID (48 bits)
+│        │    │    └────── Clock sequence + variant (16 bits)
+│        │    └─────────── Time high + version (16 bits)
+│        └──────────────── Time mid (16 bits)
+└───────────────────────── Time low (32 bits)</code></p>
+<p>In a 1C database, the same UUID looks like this:</p>
+<p><code>0xA1012C4D5450919D11ED4BE28E1F9DB8
+  │   │           │   │   │
+  │   │           │   │   └─ Time low (32 bits)
+  │   │           │   └───── Time mid (16 bits)
+  │   │           └───────── Time high + version (16 bits)
+  │   └───────────────────── Node ID (48 bits)
+  └───────────────────────── Clock sequence + variant (16 bits)</code></p>
+<p>So the rearrangement puts the timestamp parts in order from most to least significant. With the same clock sequence and Node ID, a later timestamp gives you a larger binary UUID value.</p>
+<p>References form part of index keys. When index keys arrive in a random order, new entries land all over the B-tree. If the target index page is already full, it has to be split: allocate a new page, move some entries over, and update the links in the tree. That's called a page split, and it can increase index fragmentation and hurt performance — both immediately and down the road.</p>
+<p>With mostly increasing keys, though, new entries usually go at the end of the index. Pages fill up more sequentially, and inserts are often cheaper.</p>
+<p>(of course, lots of concurrent inserts bring another problem: everyone wants to write to that same last page and starts elbowing each other out of the way, but that's a story for another day)</p>
+<p>Small thing, right? But I like this kind of stuff: you're staring at sixteen odd-looking bytes in a database, and behind them, you can almost make out a perfectly sensible architectural decision somebody made all those years ago.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1558,60 +1636,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 
 
         
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.me/notes/no"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                No
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>11 June 2025</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Work</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><img alt="No" src="https://kostyanetsky.me/notes/no/no.jpg"/></p>
-<p>This is the message the current platform throws up when you try to connect to an offline server cluster. I do appreciate minimalism in interfaces, of course, but this is definitely over the top.</p>
-<p>What's more, the platform is installed with only a single language pack (English) and even launched with a hard override to "Ven VLen", yet somehow the native birches still manage to sprout up. Maybe the C++ library that fires off the message (DataExchangeTcpClientImpl.cpp) is looking at the OS language (Russian) in my case — hard to say.</p>
-<p>Anyway, I can't shake the Bugs Bunny vibes every time I see that dialog box.</p>
-<p><img alt="No" src="https://kostyanetsky.me/notes/no/bugs-bunny.png"/></p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
       </section>
 
       <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
@@ -1669,6 +1693,12 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 
   let notesCache = null;
   let notesLoadPromise = null;
+  let searchVersion = 0;
+
+  function setSearchBusy(busy) {
+    searchEl.setAttribute("aria-busy", String(busy));
+    dynamicNotesEl.setAttribute("aria-busy", String(busy));
+  }
 
   // Tag filter state (chip)
   let activeTag = pageTag || "all";
@@ -1796,7 +1826,9 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
   }
 
   async function runSearch() {
+    const version = ++searchVersion;
     const q = (searchEl.value || "").trim();
+    const tag = activeTag;
     const hasQ = q.length > 0;
     const hasTag = activeTag && activeTag !== "all";
 
@@ -1806,37 +1838,50 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
       // means leaving the page for the common list.
 
       if (!hasTag) {
+        setSearchBusy(false);
         try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
         window.location.href = notesListUrl;
         return;
       }
 
       if (activeTag === pageTag && !hasQ) {
+        setSearchBusy(false);
         showStaticMode();
         return;
       }
     } else if (!hasQ && !hasTag) {
+      setSearchBusy(false);
       try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
       showStaticMode();
       return;
     }
 
     showSearchMode();
-
-    const notes = await loadNotesJsonOnce();
-    const filtered = filterNotes(notes, q, activeTag);
-
-    countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
-
-    if (filtered.length === 0) {
-      dynamicNotesEl.innerHTML = "";
-      emptyEl.classList.remove("hidden");
-      return;
-    }
-
+    setSearchBusy(true);
     emptyEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+
+    try {
+      // Allow the busy icon to paint even when the index is already cached.
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (version !== searchVersion) return;
+      const notes = await loadNotesJsonOnce();
+      if (version !== searchVersion) return;
+      const filtered = filterNotes(notes, q, tag);
+
+      countEl.textContent = String(filtered.length);
+      pageInfoEl.textContent = makeSearchLabel(q, tag);
+
+      if (filtered.length === 0) {
+        dynamicNotesEl.innerHTML = "";
+        emptyEl.classList.remove("hidden");
+        return;
+      }
+
+      emptyEl.classList.add("hidden");
+      dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+    } finally {
+      if (version === searchVersion) setSearchBusy(false);
+    }
   }
 
   // Initial render
@@ -1844,7 +1889,13 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
   showStaticMode();
 
   // Text search handler
-  searchEl.addEventListener("input", debounce(runSearch, 200));
+  const debouncedSearch = debounce(runSearch, 200);
+  searchEl.addEventListener("input", () => {
+    // Invalidate an in-flight search immediately, including during debounce.
+    ++searchVersion;
+    setSearchBusy(true);
+    debouncedSearch();
+  });
 
   // Tag chips handler.
   //

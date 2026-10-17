@@ -5,8 +5,41 @@
         <language>en</language>
         <link>https://kostyanetsky.me</link>
         
-        <lastBuildDate>Sat, 22 Aug 2026 22:23:03 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 17 Oct 2026 19:24:10 +0000</lastBuildDate>
         
+        
+        <item>
+            <title>1C&#39;s UUID Storage Trick</title>
+            <link>https://kostyanetsky.me/notes/reordered-uuid</link>
+            <guid isPermaLink="false">note-reordered-uuid</guid>
+            <pubDate>Sat, 17 Oct 2026 19:24:10 +0000</pubDate>
+            <description>&lt;p&gt;I was patching up our 1cFresh setup again (more trouble with data history — I&#39;ll tell that story sometime) when I ran into the platform&#39;s little UUID storage trick once more. Figured I&#39;d write about it.&lt;/p&gt;
+&lt;p&gt;Long story short, UUIDs for metadata objects, just like those for regular object references, are stored in a 1C database as sixteen bytes. Except when you look at those bytes, they don&#39;t look anything like the UUIDs you&#39;re used to: for example, &lt;code&gt;8e1f9db8-4be2-11ed-a101-2c4d5450919d&lt;/code&gt; shows up in the database as &lt;code&gt;0xA1012C4D5450919D11ED4BE28E1F9DB8&lt;/code&gt;. The first time I saw this, I thought: some kind of hash, or a bit of little-endian wizardry.&lt;/p&gt;
+&lt;p&gt;What the platform actually does is rearrange the UUID groups while keeping the byte order within each group intact:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Why? My guess is that it&#39;s an attempt to make database indexes work more efficiently. The thing is, the platform uses UUID v1 when automatically generating references for documents, catalog items, and similar objects. These UUIDs are time-based, with the timestamp split into three parts. The low part comes first, followed by the middle and high parts:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;8e1f9db8-4be2-11ed-a101-2c4d5450919d
+│        │    │    │    │
+│        │    │    │    └─ Node ID (48 bits)
+│        │    │    └────── Clock sequence + variant (16 bits)
+│        │    └─────────── Time high + version (16 bits)
+│        └──────────────── Time mid (16 bits)
+└───────────────────────── Time low (32 bits)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In a 1C database, the same UUID looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;0xA1012C4D5450919D11ED4BE28E1F9DB8
+  │   │           │   │   │
+  │   │           │   │   └─ Time low (32 bits)
+  │   │           │   └───── Time mid (16 bits)
+  │   │           └───────── Time high + version (16 bits)
+  │   └───────────────────── Node ID (48 bits)
+  └───────────────────────── Clock sequence + variant (16 bits)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;So the rearrangement puts the timestamp parts in order from most to least significant. With the same clock sequence and Node ID, a later timestamp gives you a larger binary UUID value.&lt;/p&gt;
+&lt;p&gt;References form part of index keys. When index keys arrive in a random order, new entries land all over the B-tree. If the target index page is already full, it has to be split: allocate a new page, move some entries over, and update the links in the tree. That&#39;s called a page split, and it can increase index fragmentation and hurt performance — both immediately and down the road.&lt;/p&gt;
+&lt;p&gt;With mostly increasing keys, though, new entries usually go at the end of the index. Pages fill up more sequentially, and inserts are often cheaper.&lt;/p&gt;
+&lt;p&gt;(of course, lots of concurrent inserts bring another problem: everyone wants to write to that same last page and starts elbowing each other out of the way, but that&#39;s a story for another day)&lt;/p&gt;
+&lt;p&gt;Small thing, right? But I like this kind of stuff: you&#39;re staring at sixteen odd-looking bytes in a database, and behind them, you can almost make out a perfectly sensible architectural decision somebody made all those years ago.&lt;/p&gt;</description>
+        </item>
         
         <item>
             <title>The Yegorova Phenomenon</title>
@@ -179,18 +212,6 @@ whisper &#34;D:\audio.wav&#34; --model small --language Russian --output_format 
 &lt;p&gt;And that’s basically the whole method. The only thing left is writing a simple script so you don’t have to run two commands manually every time. If you’re on Windows and you can&#39;t be bothered to vibe-code, you can grab &lt;a href=&#34;https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;my script&lt;/a&gt; and tweak it.&lt;/p&gt;
 &lt;p&gt;The script finds the first .mkv in its folder, runs it through ffmpeg + Whisper, and saves the result back into the same folder. If you use it: note that it runs via &lt;a href=&#34;https://developer.nvidia.com/cuda&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;CUDA&lt;/a&gt; (CPU works too, just much slower), and it stores downloaded Whisper models not in the default cache, but inside the current Python virtual environment folder.&lt;/p&gt;
 &lt;p&gt;(if you really want, you can wire up an API call or point it at some local model via &lt;a href=&#34;https://lmstudio.ai&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;LM Studio&lt;/a&gt; — but for my personal setup I decided: nope, that&#39;s already too much engineering for a lazy win)&lt;/p&gt;</description>
-        </item>
-        
-        <item>
-            <title>New Blog&#39;s UI</title>
-            <link>https://kostyanetsky.me/notes/new-ui</link>
-            <guid isPermaLink="false">note-new-ui</guid>
-            <pubDate>Sat, 17 Jan 2026 18:18:43 +0000</pubDate>
-            <description>&lt;p&gt;Over the New Year holidays I randomly got obsessed and rewrote my blog&#39;s UI. I only wanted to add search for my notes — there are a lot of them now, and every so often I need to quickly fish something out of the pile (like &#34;here&#39;s that link&#34; to a coworker).&lt;/p&gt;
-&lt;p&gt;The blog runs on &lt;a href=&#34;https://pages.github.com&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;GitHub Pages&lt;/a&gt;, so the options aren’t exactly infinite: either outsource search to Google, or build a static index and ship it to the user&#39;s browser so it can grep through it locally. I went with the second route: faster, more controllable, &lt;s&gt;and, yes, an excuse to write code&lt;/s&gt;. The first time you search it has to download &lt;a href=&#34;https://kostyanetsky.me/notes.json&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;the index file&lt;/a&gt;, but... It&#39;s 200 KB. That&#39;s basically one medium-sized sigh in 2026 internet terms.&lt;/p&gt;
-&lt;p&gt;And then, you know how it goes... Scope creep grabbed me by the hoodie. First I couldn&#39;t get &lt;a href=&#34;https://tachyons.io&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Tachyons&lt;/a&gt; to play nice with the search input — got annoyed and migrated everything to &lt;a href=&#34;https://tailwindcss.com&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Tailwind&lt;/a&gt; (I&#39;d been meaning to try it anyway, just never had a &#34;good reason&#34;, so I invented one). While I was writing the search code, I figured it&#39;d be dumb not to add tags too, because why do the same work twice. Next thing I know I &#34;wake up&#34; and there&#39;s a whole tag cloud sitting above my notes. At that point it felt only logical to do the same for the projects page — except there it&#39;s not tags, it&#39;s tech stacks...&lt;/p&gt;
-&lt;p&gt;So yeah, it turned into that &#34;Fear and Loathing in Las Vegas&#34; meme. The tendency was to push it as far as I can, kinda.&lt;/p&gt;
-&lt;p&gt;Now the only thing left is to make myself actually write into the new project log. There&#39;s always a ton of work, and it&#39;s genuinely interesting — but if I don&#39;t write things down... Welp. Everything sinks into coffee.&lt;/p&gt;</description>
         </item>
         
     </channel>

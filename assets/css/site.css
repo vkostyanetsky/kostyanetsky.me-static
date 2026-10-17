@@ -180,3 +180,25 @@
             border: 0;
             border-top: 1px solid var(--border);
         }
+/* The search icon reflects the input's busy state on both list pages. */
+.search-spinner {
+    display: none;
+    transform-origin: center;
+    animation: search-spin 0.8s linear infinite;
+}
+
+input[aria-busy="true"] ~ .search-indicator .search-symbol {
+    display: none;
+}
+
+input[aria-busy="true"] ~ .search-indicator .search-spinner {
+    display: block;
+}
+
+@keyframes search-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .search-spinner { animation: none; }
+}

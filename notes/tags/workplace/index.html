@@ -132,24 +132,27 @@
         <div class="relative w-full sm:w-[420px]">
           <input
             id="search"
+            aria-busy="false"
             type="search"
             placeholder="Search by title / text / tags…"
             class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
           />
-          <svg
-            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-            />
-          </svg>
+          
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
         </div>
 
         <p class="text-sm text-slate-600">
@@ -289,6 +292,13 @@
         </button>
         
         <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
           data-chip="python"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -307,13 +317,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Node.js
-        </button>
-        
-        <button
-          data-chip="optimization"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Optimization
         </button>
         
         <button
@@ -528,6 +531,12 @@ MultiMonitorTool.exe / switch 2
 
   let notesCache = null;
   let notesLoadPromise = null;
+  let searchVersion = 0;
+
+  function setSearchBusy(busy) {
+    searchEl.setAttribute("aria-busy", String(busy));
+    dynamicNotesEl.setAttribute("aria-busy", String(busy));
+  }
 
   // Tag filter state (chip)
   let activeTag = pageTag || "all";
@@ -655,7 +664,9 @@ MultiMonitorTool.exe / switch 2
   }
 
   async function runSearch() {
+    const version = ++searchVersion;
     const q = (searchEl.value || "").trim();
+    const tag = activeTag;
     const hasQ = q.length > 0;
     const hasTag = activeTag && activeTag !== "all";
 
@@ -665,37 +676,50 @@ MultiMonitorTool.exe / switch 2
       // means leaving the page for the common list.
 
       if (!hasTag) {
+        setSearchBusy(false);
         try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
         window.location.href = notesListUrl;
         return;
       }
 
       if (activeTag === pageTag && !hasQ) {
+        setSearchBusy(false);
         showStaticMode();
         return;
       }
     } else if (!hasQ && !hasTag) {
+      setSearchBusy(false);
       try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
       showStaticMode();
       return;
     }
 
     showSearchMode();
-
-    const notes = await loadNotesJsonOnce();
-    const filtered = filterNotes(notes, q, activeTag);
-
-    countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
-
-    if (filtered.length === 0) {
-      dynamicNotesEl.innerHTML = "";
-      emptyEl.classList.remove("hidden");
-      return;
-    }
-
+    setSearchBusy(true);
     emptyEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+
+    try {
+      // Allow the busy icon to paint even when the index is already cached.
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (version !== searchVersion) return;
+      const notes = await loadNotesJsonOnce();
+      if (version !== searchVersion) return;
+      const filtered = filterNotes(notes, q, tag);
+
+      countEl.textContent = String(filtered.length);
+      pageInfoEl.textContent = makeSearchLabel(q, tag);
+
+      if (filtered.length === 0) {
+        dynamicNotesEl.innerHTML = "";
+        emptyEl.classList.remove("hidden");
+        return;
+      }
+
+      emptyEl.classList.add("hidden");
+      dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+    } finally {
+      if (version === searchVersion) setSearchBusy(false);
+    }
   }
 
   // Initial render
@@ -703,7 +727,13 @@ MultiMonitorTool.exe / switch 2
   showStaticMode();
 
   // Text search handler
-  searchEl.addEventListener("input", debounce(runSearch, 200));
+  const debouncedSearch = debounce(runSearch, 200);
+  searchEl.addEventListener("input", () => {
+    // Invalidate an in-flight search immediately, including during debounce.
+    ++searchVersion;
+    setSearchBusy(true);
+    debouncedSearch();
+  });
 
   // Tag chips handler.
   //
