@@ -434,7 +434,7 @@ SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa
   └───────────────────────── Clock sequence + variant (16 bits)
 </code></pre>
 <p>So the rearrangement puts the timestamp parts in order from most to least significant. With the same clock sequence and Node ID, a later timestamp gives you a larger binary UUID value.</p>
-<p>References form part of index keys. When index keys arrive in a random order, new entries land all over the B-tree. If the target index page is already full, it has to be split: allocate a new page, move some entries over, and update the links in the tree. That's called a page split, and it can increase index fragmentation and hurt performance — both immediately and down the road.</p>
+<p>References form part of index keys. When keys arrive in a random order, new entries land all over the B-tree. If the target index page is already full, it has to be split: allocate a new page, move some entries over, and update the links in the tree. That's called a page split, and it can increase index fragmentation and hurt performance — both immediately and down the road.</p>
 <p>With mostly increasing keys, though, new entries usually go at the end of the index. Pages fill up more sequentially, and inserts are often cheaper.</p>
 <p>(of course, lots of concurrent inserts bring another problem: everyone wants to write to that same last page and starts elbowing each other out of the way, but that's a story for another day)</p>
 <p>Small thing, right? But I like this kind of stuff: you're staring at sixteen odd-looking bytes in a database, and behind them, you can almost make out a perfectly sensible architectural decision somebody made all those years ago.</p>
