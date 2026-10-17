@@ -164,24 +164,27 @@
               <p>I was patching up our 1cFresh setup again (more trouble with data history — I'll tell that story sometime) when I ran into the platform's little UUID storage trick once more. Figured I'd write about it.</p>
 <p>Long story short, UUIDs for metadata objects, just like those for regular object references, are stored in a 1C database as sixteen bytes. Except when you look at those bytes, they don't look anything like the UUIDs you're used to: for example, <code>8e1f9db8-4be2-11ed-a101-2c4d5450919d</code> shows up in the database as <code>0xA1012C4D5450919D11ED4BE28E1F9DB8</code>. The first time I saw this, I thought: some kind of hash, or a bit of little-endian wizardry.</p>
 <p>What the platform actually does is rearrange the UUID groups while keeping the byte order within each group intact:</p>
-<p><code>UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
-SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa</code></p>
+<pre><code>UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa
+</code></pre>
 <p>Why? My guess is that it's an attempt to make database indexes work more efficiently. The thing is, the platform uses UUID v1 when automatically generating references for documents, catalog items, and similar objects. These UUIDs are time-based, with the timestamp split into three parts. The low part comes first, followed by the middle and high parts:</p>
-<p><code>8e1f9db8-4be2-11ed-a101-2c4d5450919d
+<pre><code>8e1f9db8-4be2-11ed-a101-2c4d5450919d
 │        │    │    │    │
 │        │    │    │    └─ Node ID (48 bits)
 │        │    │    └────── Clock sequence + variant (16 bits)
 │        │    └─────────── Time high + version (16 bits)
 │        └──────────────── Time mid (16 bits)
-└───────────────────────── Time low (32 bits)</code></p>
+└───────────────────────── Time low (32 bits)
+</code></pre>
 <p>In a 1C database, the same UUID looks like this:</p>
-<p><code>0xA1012C4D5450919D11ED4BE28E1F9DB8
+<pre><code>0xA1012C4D5450919D11ED4BE28E1F9DB8
   │   │           │   │   │
   │   │           │   │   └─ Time low (32 bits)
   │   │           │   └───── Time mid (16 bits)
   │   │           └───────── Time high + version (16 bits)
   │   └───────────────────── Node ID (48 bits)
-  └───────────────────────── Clock sequence + variant (16 bits)</code></p>
+  └───────────────────────── Clock sequence + variant (16 bits)
+</code></pre>
 <p>So the rearrangement puts the timestamp parts in order from most to least significant. With the same clock sequence and Node ID, a later timestamp gives you a larger binary UUID value.</p>
 <p>References form part of index keys. When index keys arrive in a random order, new entries land all over the B-tree. If the target index page is already full, it has to be split: allocate a new page, move some entries over, and update the links in the tree. That's called a page split, and it can increase index fragmentation and hurt performance — both immediately and down the road.</p>
 <p>With mostly increasing keys, though, new entries usually go at the end of the index. Pages fill up more sequentially, and inserts are often cheaper.</p>

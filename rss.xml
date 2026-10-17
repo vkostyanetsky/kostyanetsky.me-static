@@ -5,35 +5,38 @@
         <language>en</language>
         <link>https://kostyanetsky.me</link>
         
-        <lastBuildDate>Sat, 17 Oct 2026 19:24:10 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 17 Oct 2026 19:24:11 +0000</lastBuildDate>
         
         
         <item>
             <title>1C&#39;s UUID Storage Trick</title>
             <link>https://kostyanetsky.me/notes/reordered-uuid</link>
             <guid isPermaLink="false">note-reordered-uuid</guid>
-            <pubDate>Sat, 17 Oct 2026 19:24:10 +0000</pubDate>
+            <pubDate>Sat, 17 Oct 2026 19:24:11 +0000</pubDate>
             <description>&lt;p&gt;I was patching up our 1cFresh setup again (more trouble with data history — I&#39;ll tell that story sometime) when I ran into the platform&#39;s little UUID storage trick once more. Figured I&#39;d write about it.&lt;/p&gt;
 &lt;p&gt;Long story short, UUIDs for metadata objects, just like those for regular object references, are stored in a 1C database as sixteen bytes. Except when you look at those bytes, they don&#39;t look anything like the UUIDs you&#39;re used to: for example, &lt;code&gt;8e1f9db8-4be2-11ed-a101-2c4d5450919d&lt;/code&gt; shows up in the database as &lt;code&gt;0xA1012C4D5450919D11ED4BE28E1F9DB8&lt;/code&gt;. The first time I saw this, I thought: some kind of hash, or a bit of little-endian wizardry.&lt;/p&gt;
 &lt;p&gt;What the platform actually does is rearrange the UUID groups while keeping the byte order within each group intact:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
-SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Why? My guess is that it&#39;s an attempt to make database indexes work more efficiently. The thing is, the platform uses UUID v1 when automatically generating references for documents, catalog items, and similar objects. These UUIDs are time-based, with the timestamp split into three parts. The low part comes first, followed by the middle and high parts:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;8e1f9db8-4be2-11ed-a101-2c4d5450919d
+&lt;pre&gt;&lt;code&gt;8e1f9db8-4be2-11ed-a101-2c4d5450919d
 │        │    │    │    │
 │        │    │    │    └─ Node ID (48 bits)
 │        │    │    └────── Clock sequence + variant (16 bits)
 │        │    └─────────── Time high + version (16 bits)
 │        └──────────────── Time mid (16 bits)
-└───────────────────────── Time low (32 bits)&lt;/code&gt;&lt;/p&gt;
+└───────────────────────── Time low (32 bits)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In a 1C database, the same UUID looks like this:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;0xA1012C4D5450919D11ED4BE28E1F9DB8
+&lt;pre&gt;&lt;code&gt;0xA1012C4D5450919D11ED4BE28E1F9DB8
   │   │           │   │   │
   │   │           │   │   └─ Time low (32 bits)
   │   │           │   └───── Time mid (16 bits)
   │   │           └───────── Time high + version (16 bits)
   │   └───────────────────── Node ID (48 bits)
-  └───────────────────────── Clock sequence + variant (16 bits)&lt;/code&gt;&lt;/p&gt;
+  └───────────────────────── Clock sequence + variant (16 bits)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;So the rearrangement puts the timestamp parts in order from most to least significant. With the same clock sequence and Node ID, a later timestamp gives you a larger binary UUID value.&lt;/p&gt;
 &lt;p&gt;References form part of index keys. When index keys arrive in a random order, new entries land all over the B-tree. If the target index page is already full, it has to be split: allocate a new page, move some entries over, and update the links in the tree. That&#39;s called a page split, and it can increase index fragmentation and hurt performance — both immediately and down the road.&lt;/p&gt;
 &lt;p&gt;With mostly increasing keys, though, new entries usually go at the end of the index. Pages fill up more sequentially, and inserts are often cheaper.&lt;/p&gt;
