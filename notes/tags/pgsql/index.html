@@ -110,7 +110,7 @@
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
       data-page="1"
-      data-total-notes="6"
+      data-total-notes="7"
       data-total-pages="1"
     >
       <a id="top" class="block scroll-mt-24"></a>
@@ -271,6 +271,13 @@
         </button>
         
         <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
           data-chip="typescript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -282,13 +289,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Bitrix
-        </button>
-        
-        <button
-          data-chip="mssql"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          MS SQL
         </button>
         
         <button
@@ -366,6 +366,96 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/reordered-uuid"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                UUID In 1C&#39;s DB
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 October 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="mssql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">MS SQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="optimization" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Optimization</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I was patching up our 1cFresh setup again (more trouble with data history — I'll tell that story sometime) when I ran into the platform's little UUID storage trick once more. Figured I'd write about it.</p>
+<p>Long story short, UUIDs for metadata objects, just like those for regular object references, are stored in a 1C database as sixteen bytes. Except when you look at those bytes, they don't look anything like the UUIDs you're used to: for example, <code>8e1f9db8-4be2-11ed-a101-2c4d5450919d</code> shows up in the database as <code>0xA1012C4D5450919D11ED4BE28E1F9DB8</code>. The first time I saw this, I thought: some kind of hash, or a bit of little-endian wizardry.</p>
+<p>What the platform actually does is rearrange the UUID groups while keeping the byte order within each group intact:</p>
+<pre><code>UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa
+</code></pre>
+<p>Why? My guess is that it's an attempt to make database indexes work more efficiently. The thing is, the platform uses UUID v1 when automatically generating references for documents, catalog items, and similar objects. These UUIDs are time-based, with the timestamp split into three parts. The low part comes first, followed by the middle and high parts:</p>
+<pre><code>8e1f9db8-4be2-11ed-a101-2c4d5450919d
+│        │    │    │    │
+│        │    │    │    └─ Node ID (48 bits)
+│        │    │    └────── Clock sequence + variant (16 bits)
+│        │    └─────────── Time high + version (16 bits)
+│        └──────────────── Time mid (16 bits)
+└───────────────────────── Time low (32 bits)
+</code></pre>
+<p>In a 1C database, the same UUID looks like this:</p>
+<pre><code>0xA1012C4D5450919D11ED4BE28E1F9DB8
+  │   │           │   │   │
+  │   │           │   │   └─ Time low (32 bits)
+  │   │           │   └───── Time mid (16 bits)
+  │   │           └───────── Time high + version (16 bits)
+  │   └───────────────────── Node ID (48 bits)
+  └───────────────────────── Clock sequence + variant (16 bits)
+</code></pre>
+<p>So the rearrangement puts the timestamp parts in order from most to least significant. With the same clock sequence and Node ID, a later timestamp gives you a larger binary UUID value.</p>
+<p>References form part of index keys. When keys arrive in a random order, new entries land all over the B-tree. If the target index page is already full, it has to be split: allocate a new page, move some entries over, and update the links in the tree. That's called a page split, and it can increase index fragmentation and hurt performance — both immediately and down the road.</p>
+<p>With mostly increasing keys, though, new entries usually go at the end of the index. Pages fill up more sequentially, and inserts are often cheaper.</p>
+<p>(of course, lots of concurrent inserts bring another problem: everyone wants to write to that same last page and starts elbowing each other out of the way, but that's a story for another day)</p>
+<p>(love this kind of stuff: you're just staring at some weird-looking sixteen bytes in a database, and suddenly you start to see what looks like a perfectly sensible architectural decision made by some unknown person years ago)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
