@@ -428,7 +428,7 @@ SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa
 <p>References form part of index keys. When keys arrive in a random order, new entries land all over the B-tree. If the target index page is already full, it has to be split: allocate a new page, move some entries over, and update the links in the tree. That's called a page split, and it can increase index fragmentation and hurt performance — both immediately and down the road.</p>
 <p>With mostly increasing keys, though, new entries usually go at the end of the index. Pages fill up more sequentially, and inserts are often cheaper.</p>
 <p>(of course, lots of concurrent inserts bring another problem: everyone wants to write to that same last page and starts elbowing each other out of the way, but that's a story for another day)</p>
-<p>(love this kind of stuff: you're just staring at some weird-looking bunch of bytes in a database, and suddenly you start to see what looks like a perfectly sensible architectural decision made by some unknown person years ago)</p>
+<p>(love stuff like this: you're just staring at some weird little bunch of bytes in a database, and then you start to see what looks like a perfectly reasonable architectural decision made by some unknown developer years ago)</p>
             </div>
           </div>
           
