@@ -1,0 +1,233 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Recording Video</title>
+
+    <meta name="description" content="I talk to colleagues through Zoom and Slack, mostly in chats, but some things are easier to discuss by voice. And that creates a problem!" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Recording Video"/>
+    <meta property="og:description" content="I talk to colleagues through Zoom and Slack, mostly in chats, but some things are easier to discuss by voice. And that creates a problem!"/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/video-recording" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/unresolved-references";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/sharex-video-recording";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Found a typo? Edit me!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/video-recording/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/video-recording"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Recording Video
+          </header>
+
+          
+          <div class="mt-5">
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>3 April 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="https://kostyanetsky.me/notes/tags/workplace/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Workplace</a>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I work remotely, so I talk to colleagues over Zoom and Slack. Mostly in chats, but many subjects are still easier to discuss by voice. That’s where it gets awkward: forget message indexing and search, and, most importantly, there’s no conversation archive. Sometimes you really need to remember: who said it? What exactly? When?</p>
+<p>Zoom and Slack don’t solve this on their own. Zoom only records meetings you organize or have permission to record, which is far from all of them, while Slack doesn’t record video at all.</p>
+<h2>Solving the Problem</h2>
+<p>I solved it some time ago by installing <a href="https://obsproject.com" rel="noopener noreferrer" target="_blank">OBS Studio</a>, screen recording software popular with streamers. It handles conference recording beautifully. Setup is minimal: record the entire screen, microphone audio, and all playback audio. After a few test recordings, you can add mixer filters such as gain and noise suppression.</p>
+<p><img alt="Configuring OBS Studio" src="https://kostyanetsky.me/notes/video-recording/video-recording.png"/></p>
+<p>Choose where to save the recordings under Output → Recording → Recording Path. We’re recording calls, so there’ll be lots of files. Might as well sort them into folders by day from the start. Go to Advanced settings and set Filename Formatting to something like %CCYY-%MM-%DD/%hh-%mm-%ss.</p>
+<h2>Quick Recording Controls</h2>
+<p>Opening OBS for every call is inconvenient, but it supports plenty of hotkeys. You can press some elaborate combination at the start and end of a conversation. That didn’t work for me, though: for some reason, the shortcuts kept slipping my mind. Even sticky notes didn’t help.</p>
+<p>At first I got quite annoyed, then realized: if I can’t remember a shortcut, I should get rid of it. Start recording with one button, stop with another.</p>
+<p>The hardware was easy: I have an ergonomic Microsoft <a href="https://www.microsoft.com/accessories/ru-ru/products/keyboards/natural-ergonomic-keyboard-4000/b2m-00020" rel="noopener noreferrer" target="_blank">keyboard</a> with a wagonload of programmable buttons. Software was harder: OBS Studio understands some launch <a href="https://github.com/obsproject/obs-studio/wiki/Launch-Parameters" rel="noopener noreferrer" target="_blank">parameters</a>, but there’s not much to choose from. There isn’t even a stop-recording option. I wanted more.</p>
+<p>I eventually solved it with an OBS Studio plugin that lets you control a running instance. It was designed for remote recording control, from a smartphone for example, but it works just as well on the same machine.</p>
+<p>Here’s what I ended up with:</p>
+<ol>
+<li>Install OBS Studio and the <a href="https://obsproject.com/forum/resources/obs-websocket-remote-control-of-obs-studio-made-easy.466/" rel="noopener noreferrer" target="_blank">obs-websocket</a> plugin. Clear “Enable System Tray Alerts” under Tools → WebSockets Server Settings, or it will report every little thing.</li>
+<li>Put this <a href="https://obsproject.com/forum/resources/command-line-tool-for-obs-websocket-plugin-windows.615/" rel="noopener noreferrer" target="_blank">utility</a> somewhere convenient to control the plugin from the command line.</li>
+<li>Assign OBSCommand.exe /startrecording to one button and OBSCommand.exe /stoprecording to another.</li>
+<li>Done. Look at you go!</li>
+</ol>
+<p>A console window pops up for a moment when you press the button: OBSCommand launches, contacts obs-websocket, and waits for a reply. I initially wanted to hide the window, but changed my mind. If OBS Studio isn’t running or something goes wrong, the console will stay open, and at least I’ll know recording hasn’t started.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+          </div>
+
+        </article>
+
+      </section>
+        
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/unresolved-references"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Unresolved References
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/sharex-video-recording"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Recording Video with ShareX →
+        </a>
+        
+      </nav>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

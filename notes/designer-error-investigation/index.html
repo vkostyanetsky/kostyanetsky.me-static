@@ -1,0 +1,239 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Investigating an Error in Designer</title>
+
+    <meta name="description" content="Designer reports an error, and we need to fix it or find a workaround. What can help?" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Investigating an Error in Designer"/>
+    <meta property="og:description" content="Designer reports an error, and we need to fix it or find a workaround. What can help?"/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/designer-error-investigation" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/excp-number-by-minutes";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/time-to-wink";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Found a typo? Edit me!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/designer-error-investigation/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/designer-error-investigation"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Investigating an Error in Designer
+          </header>
+
+          
+          <div class="mt-5">
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 October 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="https://kostyanetsky.me/notes/tags/1c/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</a>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>So, Designer reports an error, and we need to fix it or find a workaround. This could get awkward: we can’t look at the application’s code. Still, to fix it, we need to work out what Designer was doing before it fell over, and why it couldn’t finish.</p>
+<p>What can help?</p>
+<p>First, the error message itself. Often, that alone is enough to get your thoughts moving in the right direction. If a query caused the failure, the error will also include a message from the DBMS.</p>
+<p>Second, the technological log, capturing EXCP, SDBL, and DBMSSQL (DBPOSTGRS?) events for t:applicationName=Designer. That shows us the exceptions inside Designer and the queries it runs, which are often what went wrong.</p>
+<p>A database query trace can also help. With MS SQL, you can capture it using Extended Events; specifically, we’re interested in error_reported, rpc_completed, and sql_batch_completed. The principle is the same: capture query execution errors and the queries themselves.</p>
+<p>Here’s an example. Maybe not the best one, but it’s fresh.</p>
+<p>We’re working with a configuration that uses <a href="https://v8.1c.ru/platforma/razdelenie-dannyh/" rel="noopener noreferrer" target="_blank">data separation</a>. Its database is divided into pieces, or data areas, each of which knows nothing about its neighbors: how many there are, their sizes, and so forth. The database also contains shared data, such as catalogs accessible from any area. These usually hold technical information, for example a list of metadata objects.</p>
+<p>We need to take the FileStorageVolumes catalog out of the main separator. The catalog is currently separated, meaning its data differs from one area to another. We need its contents to become the same across all areas.</p>
+<p>This should be straightforward, since the catalog table is empty: no area stores anything in it. We apply the <a href="https://kostyanetsky.me/notes/designer-error-investigation/setup.png" rel="noopener noreferrer" target="_blank">setting</a>, and:</p>
+<p><img alt="Exception" src="https://kostyanetsky.me/notes/designer-error-investigation/error.png"/></p>
+<p>The exception <a href="https://kostyanetsky.me/notes/designer-error-investigation/error.txt" rel="noopener noreferrer" target="_blank">text</a> contains two messages: one from the platform, the other from the DBMS. The first one makes me scratch my head: what does it mean, the data isn’t unique? The catalog is empty; there’s no data. Maybe something’s wrong with one of the supporting structures, rather than the catalog data itself.</p>
+<p>The DBMS message is clearer: MS SQL Server tried to create a unique index on _DataHistorySettingsNG, but couldn’t because combinations of indexed fields weren’t unique. It even gives the specific value that prevented index creation: NULL.</p>
+<p>Conclusions?</p>
+<ol>
+<li>The problem clearly arose during restructuring. First, that’s exactly what we were doing. Second, both CREATE UNIQUE INDEX, since creating indexes is part of restructuring, and the problematic table’s name point to it. The NG suffix is assigned to table copies created during restructuring. If restructuring succeeds, the platform drops the original table and renames the copy.</li>
+<li>The problem involves the data history mechanism’s settings, _DataHistorySettings. This table stores each metadata object’s status: whether to maintain data history for the object, its fields, and its tabular section fields, if any.</li>
+</ol>
+<p>That explains how an empty catalog can have a uniqueness problem: an object’s data history settings exist independently of whether the object contains data. The settings table has just three fields: _MetadataId (the metadata object’s ID), _Content (setting values), and _Fld626 (the area separator).</p>
+<p>Before restructuring, the data looks roughly like this:</p>
+<p><img alt="The _DataHistorySettings table" src="https://kostyanetsky.me/notes/designer-error-investigation/table.png"/></p>
+<p>But then the picture changed. When we excluded the catalog from the common attribute, Designer started restructuring: it created _DataHistorySettingsNG, copied the data from _DataHistorySettings, and set _Fld626 to NULL for all records belonging to FileStorageVolumes.</p>
+<p>The result? A whole pile of settings for FileStorageVolumes that belong to no data area. That sounds unhealthy in itself, but the real trouble started when Designer tried to create the table’s clustered index. It is <a href="https://kostyanetsky.me/notes/designer-error-investigation/index.png" rel="noopener noreferrer" target="_blank">built</a> on _MetadataId and _Fld626 and is unique, so it cannot be created: many records differ only in _Content, while _MetadataId and _Fld626 are guaranteed to be identical.</p>
+<p>Just to be sure, let’s check the <a href="https://kostyanetsky.me/notes/designer-error-investigation/20103116.log" rel="noopener noreferrer" target="_blank">technological log</a>. I’ve stripped out the unrelated events and other clutter. Sure enough: Designer creates and populates _DataHistorySettingsNG, tries to index it, receives an error, and drops it. The DBMS <a href="https://kostyanetsky.me/notes/designer-error-investigation/20103116.png" rel="noopener noreferrer" target="_blank">trace</a> shows roughly the same picture.</p>
+<p>That’s where the interesting part ends, since the solution is fairly obvious: delete the catalog’s data history settings in every data area and repeat restructuring. This doesn’t fix the bug, of course. Really, Designer should catch this and give us a sensible error message, as it does when deleting an information register dimension would violate the uniqueness of its records. But it does get the task done.</p>
+<p>And we’re done. Look at us go!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+          </div>
+
+        </article>
+
+      </section>
+        
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/excp-number-by-minutes"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Counting Exceptions in the Technological Log
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/time-to-wink"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Time for a Walk →
+        </a>
+        
+      </nav>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

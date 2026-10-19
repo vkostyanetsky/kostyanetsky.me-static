@@ -1,0 +1,223 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Metadata Not Found</title>
+
+    <meta name="description" content="A few words about the “Metadata not found” error when updating data history." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Metadata Not Found"/>
+    <meta property="og:description" content="A few words about the “Metadata not found” error when updating data history."/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/metadata-not-found" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/rclone-abuser";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/why-bash";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Found a typo? Edit me!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/metadata-not-found/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/metadata-not-found"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Metadata Not Found
+          </header>
+
+          
+          <div class="mt-5">
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 June 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="https://kostyanetsky.me/notes/tags/1c/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</a>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Metadata not found" src="https://kostyanetsky.me/notes/metadata-not-found/error-ru.png"/></p>
+<p>I doubt many people have run into this one. First, you need to use the platform’s built-in data history, which isn’t especially popular. Some people are tied to the Standard Subsystems Library, which still uses familiar versioning through information registers; others don’t like how it’s implemented, and to be fair, the performance does have some rough edges.</p>
+<p>Second, you need to disable data history for a metadata object and delete its accumulated object versions <strong>before</strong> new changes move from the buffer into the main table.</p>
+<p>Here’s how data history works. It’s off by default. If you have the right permissions, you can turn it on for the objects you need: constants, catalogs, documents, and so on. The platform then records exactly what changes in those objects. It does this in two stages: first, a relatively fast write to an intermediate buffer, _DataHistoryQueue0; then, when UpdateHistory() is called, the data moves to the main version table, _DataHistoryVersions, and shows up in the app.</p>
+<p>History can be updated immediately on writing, but to shorten the transaction, that step is usually moved into a scheduled job. So the data moves out of the buffer every so often, say once every five minutes. If, between an object’s data change and the history update, you disable its history and delete its versions, UpdateHistory() throws an exception: it tries to move changes from the buffer to the main table, but can’t match them up with the data already there.</p>
+<p>Here’s some <a href="https://gist.github.com/vkostyanetsky/ca766fe281425953e0e2bbfe12fc70e2" rel="noopener noreferrer" target="_blank">code</a> that reproduces the problem with the Items catalog on platform 8.3.17.1989. Swap in any other object that supports data history; the result is the same.</p>
+<p><strong>How do you avoid the error?</strong> Obviously, call UpdateHistory() immediately before disabling history for the object. Ideally, do this when users aren’t working in the system: someone’s transaction could slip in between updating and disabling history and cause the same problem. Exclusive mode can guarantee that won’t happen.</p>
+<p>An exclusive lock on the object’s table also comes to mind, but the documentation advises against calling UpdateHistory() inside transactions, so I’m not sure about that.</p>
+<p><strong>How do you fix the error?</strong> Enable data history for the affected object, update history, and disable it again. Back out, then try again properly, so to speak.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+          </div>
+
+        </article>
+
+      </section>
+        
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/rclone-abuser"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← A Script to Sync With NAS
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/why-bash"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Why Bash? →
+        </a>
+        
+      </nav>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -8,8 +8,57 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/trip-to-kok-kol</loc>
+        <lastmod>2019-01-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/gear-suitability</loc>
+        <lastmod>2014-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/bioshock-infinite</loc>
+        <lastmod>2016-01-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/fermi-paradox</loc>
+        <lastmod>2019-08-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/unresolved-references</loc>
+        <lastmod>2020-03-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/excp-number-by-minutes</loc>
+        <lastmod>2020-10-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/no-more-embedded-tweets</loc>
         <lastmod>2022-03-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/outlast-2</loc>
+        <lastmod>2017-04-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -22,8 +71,22 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/doom</loc>
+        <lastmod>2016-06-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/crossed</loc>
         <lastmod>2023-08-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/control</loc>
+        <lastmod>2019-09-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -43,6 +106,20 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/top-exceptions</loc>
+        <lastmod>2020-02-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/unsupported-code</loc>
+        <lastmod>2020-01-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/not-but</loc>
         <lastmod>2022-07-23</lastmod>
         <changefreq>weekly</changefreq>
@@ -50,8 +127,43 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/vue-i18n</loc>
+        <lastmod>2019-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/is-ref-empty</loc>
+        <lastmod>2020-04-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/easter-eggs</loc>
         <lastmod>2025-04-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/drummer</loc>
+        <lastmod>2019-02-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/video-recording</loc>
+        <lastmod>2020-04-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/papers-please-short-film</loc>
+        <lastmod>2018-03-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -71,8 +183,50 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/queries-and-lock-waits</loc>
+        <lastmod>2020-10-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/ideal-pronunciation</loc>
+        <lastmod>2018-10-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/callouts-for-fastimer</loc>
         <lastmod>2024-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/debug-via-http</loc>
+        <lastmod>2020-01-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/semiconductors</loc>
+        <lastmod>2017-01-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/loneliness</loc>
+        <lastmod>2019-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/bablox</loc>
+        <lastmod>2019-10-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -85,6 +239,20 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/why-not-bash</loc>
+        <lastmod>2021-07-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/manage-services-with-powershell</loc>
+        <lastmod>2020-04-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/these-nasty-smartphones</loc>
         <lastmod>2018-03-31</lastmod>
         <changefreq>weekly</changefreq>
@@ -92,8 +260,36 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/mssql-server-start-date</loc>
+        <lastmod>2019-03-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/why-so-serious</loc>
         <lastmod>2018-02-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/techprof</loc>
+        <lastmod>2020-09-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/firewatch</loc>
+        <lastmod>2017-04-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/bus-trips-uploading</loc>
+        <lastmod>2017-11-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -127,8 +323,29 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/skittles</loc>
+        <lastmod>2013-06-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/clementine</loc>
         <lastmod>2024-08-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/temporary-tables-deletion</loc>
+        <lastmod>2019-02-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/ampersand-sign-in-1c</loc>
+        <lastmod>2018-12-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -155,6 +372,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/what-is-inside-the-drum</loc>
+        <lastmod>2020-07-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/desire-paths</loc>
         <lastmod>2025-11-29</lastmod>
         <changefreq>weekly</changefreq>
@@ -162,8 +386,50 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/valve-in-a-china-shop</loc>
+        <lastmod>2018-12-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/recursive-search</loc>
+        <lastmod>2021-01-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/myth-buster</loc>
         <lastmod>2025-07-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/time-to-wink</loc>
+        <lastmod>2020-11-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/gris</loc>
+        <lastmod>2019-04-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/method-with-surprise</loc>
+        <lastmod>2020-07-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/top-exceptions-v2</loc>
+        <lastmod>2020-10-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -185,6 +451,27 @@
     <url>
         <loc>https://kostyanetsky.me/notes/small-pleasures</loc>
         <lastmod>2024-03-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/data-size-console</loc>
+        <lastmod>2020-07-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/incompiled-code</loc>
+        <lastmod>2019-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/longest-queries-v2</loc>
+        <lastmod>2021-04-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -218,6 +505,27 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/fat-roles</loc>
+        <lastmod>2019-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/avibus-pro</loc>
+        <lastmod>2015-02-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/draugen</loc>
+        <lastmod>2019-06-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/obsidian-fastimer</loc>
         <lastmod>2024-02-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -239,6 +547,27 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/pagelatch</loc>
+        <lastmod>2019-04-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/hulk-removes</loc>
+        <lastmod>2020-11-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/kholat</loc>
+        <lastmod>2016-10-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/egorova</loc>
         <lastmod>2026-08-22</lastmod>
         <changefreq>weekly</changefreq>
@@ -253,6 +582,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/fred</loc>
+        <lastmod>2020-05-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/no</loc>
         <lastmod>2025-06-11</lastmod>
         <changefreq>weekly</changefreq>
@@ -260,8 +596,29 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/evolution</loc>
+        <lastmod>2019-02-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/autosummary</loc>
         <lastmod>2026-02-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/rights-for-dcs</loc>
+        <lastmod>2018-08-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/yomawari-night-alone</loc>
+        <lastmod>2019-05-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -288,6 +645,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/places-of-imprisonment</loc>
+        <lastmod>2015-02-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/vaporia</loc>
         <lastmod>2024-12-14</lastmod>
         <changefreq>weekly</changefreq>
@@ -309,8 +673,50 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/service-launcher-update</loc>
+        <lastmod>2020-07-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/cookie-jar</loc>
         <lastmod>2022-05-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/control-and-poets-of-the-fall</loc>
+        <lastmod>2019-08-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/do-you-see-it</loc>
+        <lastmod>2021-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/vulnerabilities</loc>
+        <lastmod>2020-10-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/how-not-to-land</loc>
+        <lastmod>2020-05-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/pageiolatch</loc>
+        <lastmod>2019-04-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -358,6 +764,20 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/cursed-forest</loc>
+        <lastmod>2019-03-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/alien-isolation</loc>
+        <lastmod>2015-01-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/snowboard-effect</loc>
         <lastmod>2018-12-01</lastmod>
         <changefreq>weekly</changefreq>
@@ -365,8 +785,50 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/designer-error-investigation</loc>
+        <lastmod>2020-10-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/simple-checkbox</loc>
+        <lastmod>2019-03-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/1001-nights-with-1c</loc>
+        <lastmod>2020-01-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/do-you-speak-english</loc>
         <lastmod>2023-05-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/string-concatenation</loc>
+        <lastmod>2019-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/standard-attributes-filtering</loc>
+        <lastmod>2020-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/1c-expert</loc>
+        <lastmod>2021-05-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -428,6 +890,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/old-but-gold</loc>
+        <lastmod>2020-11-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/fastimer-1-3-1</loc>
         <lastmod>2023-08-23</lastmod>
         <changefreq>weekly</changefreq>
@@ -449,6 +918,69 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/why-bash</loc>
+        <lastmod>2021-06-23</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/river-city-girls</loc>
+        <lastmod>2019-09-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/completely-lazy</loc>
+        <lastmod>2014-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/unresolved-gopher</loc>
+        <lastmod>2020-08-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/layers-of-fear</loc>
+        <lastmod>2017-07-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/sharex-video-recording</loc>
+        <lastmod>2020-04-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/object-locks</loc>
+        <lastmod>2019-04-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/duplicate-key</loc>
+        <lastmod>2019-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/zombies-run</loc>
+        <lastmod>2014-08-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/reuse-carefully</loc>
         <lastmod>2022-02-08</lastmod>
         <changefreq>weekly</changefreq>
@@ -458,6 +990,13 @@
     <url>
         <loc>https://kostyanetsky.me/notes/make-my-window-a-door</loc>
         <lastmod>2024-08-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/bunch-of-scrips</loc>
+        <lastmod>2021-04-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -477,8 +1016,85 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/trip-plan</loc>
+        <lastmod>2013-03-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/lost-time</loc>
+        <lastmod>2020-11-10</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/skuuuid</loc>
+        <lastmod>2021-02-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/single-sign-on</loc>
+        <lastmod>2020-09-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/how-to-be-a-hero</loc>
         <lastmod>2023-09-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/find-rows-at-client</loc>
+        <lastmod>2019-02-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/big-value-tables</loc>
+        <lastmod>2019-02-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/one-query-to-rule-them-all</loc>
+        <lastmod>2020-07-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/unhappy</loc>
+        <lastmod>2017-03-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/distributed-design</loc>
+        <lastmod>2018-10-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/feist</loc>
+        <lastmod>2016-06-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/my-school</loc>
+        <lastmod>2014-06-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -512,8 +1128,36 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/perfectly-balanced</loc>
+        <lastmod>2020-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/last-meth</loc>
         <lastmod>2023-12-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/observation</loc>
+        <lastmod>2019-07-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/self-documenting-code</loc>
+        <lastmod>2020-05-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/set-new-object-ref</loc>
+        <lastmod>2018-11-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -535,6 +1179,20 @@
     <url>
         <loc>https://kostyanetsky.me/notes/hpmor</loc>
         <lastmod>2016-11-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/this-is-the-way</loc>
+        <lastmod>2023-07-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/pavel-chistov-passed-away</loc>
+        <lastmod>2021-08-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -568,6 +1226,34 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/white-day</loc>
+        <lastmod>2018-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/big-implementation</loc>
+        <lastmod>2019-10-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/close-to-the-sun</loc>
+        <lastmod>2019-05-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/blogging-benefits</loc>
+        <lastmod>2015-02-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/pause</loc>
         <lastmod>2023-04-30</lastmod>
         <changefreq>weekly</changefreq>
@@ -577,6 +1263,13 @@
     <url>
         <loc>https://kostyanetsky.me/notes/backup-ui</loc>
         <lastmod>2025-12-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/slow-notification</loc>
+        <lastmod>2021-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -596,6 +1289,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/vuejs-blog</loc>
+        <lastmod>2020-07-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/in-a-pedantic-way</loc>
         <lastmod>2023-03-21</lastmod>
         <changefreq>weekly</changefreq>
@@ -603,8 +1303,43 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/broken-bicycle</loc>
+        <lastmod>2020-07-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/so-much</loc>
+        <lastmod>2019-06-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/move-on</loc>
+        <lastmod>2015-01-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/duct-tape</loc>
+        <lastmod>2019-08-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/delete-geometry</loc>
         <lastmod>2025-06-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/find-methods-with-parameter</loc>
+        <lastmod>2019-11-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -631,6 +1366,27 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/stardew-valley</loc>
+        <lastmod>2017-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/fifty-times-faster</loc>
+        <lastmod>2019-12-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/gone-home</loc>
+        <lastmod>2015-03-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/strange-bitrix</loc>
         <lastmod>2022-10-15</lastmod>
         <changefreq>weekly</changefreq>
@@ -652,8 +1408,64 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/black-mesa</loc>
+        <lastmod>2020-04-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/last-resort</loc>
         <lastmod>2024-05-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/eagles</loc>
+        <lastmod>2013-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/thisobject-thisobject</loc>
+        <lastmod>2020-07-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/pillar-of-light</loc>
+        <lastmod>2014-04-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/what-is-pmc-for</loc>
+        <lastmod>2019-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/theme-hospital</loc>
+        <lastmod>2013-02-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/rapunzel</loc>
+        <lastmod>2019-07-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/data-history-settings</loc>
+        <lastmod>2020-03-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -675,6 +1487,48 @@
     <url>
         <loc>https://kostyanetsky.me/notes/totals-of-2021</loc>
         <lastmod>2022-02-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/service-launcher</loc>
+        <lastmod>2020-07-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/kona</loc>
+        <lastmod>2018-05-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/longest-queries-using-python</loc>
+        <lastmod>2021-07-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/big-table-at-client</loc>
+        <lastmod>2019-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/silent-night</loc>
+        <lastmod>2013-04-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/burned-people</loc>
+        <lastmod>2019-06-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -708,6 +1562,20 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/failed-hunt</loc>
+        <lastmod>2019-02-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/i-wish-i-could</loc>
+        <lastmod>2019-02-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/sebby-x-player</loc>
         <lastmod>2017-08-14</lastmod>
         <changefreq>weekly</changefreq>
@@ -722,6 +1590,41 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.me/notes/cake-recipe</loc>
+        <lastmod>2013-12-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/metadata-not-found</loc>
+        <lastmod>2021-06-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/what-are-our-girls-made-of</loc>
+        <lastmod>2019-02-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/value-table-view</loc>
+        <lastmod>2020-05-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/no-turnovers</loc>
+        <lastmod>2019-10-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.me/notes/payment-terms</loc>
         <lastmod>2024-05-05</lastmod>
         <changefreq>weekly</changefreq>
@@ -731,6 +1634,13 @@
     <url>
         <loc>https://kostyanetsky.me/notes/anonymous-quokka</loc>
         <lastmod>2022-09-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.me/notes/mssql-server-waits</loc>
+        <lastmod>2019-03-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>

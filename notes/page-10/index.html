@@ -1,0 +1,1633 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Notes</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Notes"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/page-10" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/page-11";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/page-9";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/page-10"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="10"
+      data-total-notes="20"
+      data-total-pages="12"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            aria-busy="false"
+            type="search"
+            placeholder="Search by title / text / tags…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Work
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Done
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Videogames
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Meanwhile
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Family
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Code Smell
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Workplace
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Books
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Georgia
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Sport
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bitrix
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/drummer"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                An Unexpected Drummer
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 February 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve been writing for the 1C platform for quite a while and have seen some shit, but honestly, this is a first.</p>
+<p><a href="https://kostyanetsky.me/notes/drummer/bug.png" rel="noopener noreferrer" target="_blank"><img alt="Well, would you look at that!" src="https://kostyanetsky.me/notes/drummer/bug-thumbnail.png"/></a></p>
+<p>At first, I didn’t even know where to begin. I looked up a translation of the character: Wikipedia just told me it was a <a href="https://en.wiktionary.org/wiki/%E4%80%80" rel="noopener noreferrer" target="_blank">type of cup</a>, while Google Translate <a href="https://translate.google.com/#view=home&amp;op=translate&amp;sl=auto&amp;tl=ru&amp;text=%E4%80%80" rel="noopener noreferrer" target="_blank">gave up entirely</a>.</p>
+<p>A colleague said it looked a bit like a warehouse worker moving stuff between boxes. I’m not so sure. To me, it looks more like a drummer at work. But what the hell does it mean? Is 1C trying to tell me something? Something about music?</p>
+<p>Maybe I should have become a bass player instead of doing all this.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/temporary-tables-deletion"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Deleting Temporary Tables
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>7 February 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A curious detail: closing a temporary tables manager doesn’t remove its tables from tempdb. It doesn’t matter whether you call Close() yourself or let the manager object disappear when the method that created it finishes. In both cases, only TRUNCATE runs, deleting the table’s data. The table sticks around in case the user runs another query with the same fields. That’s cheaper than making it all over again.</p>
+<p>The same thing, deleting data rather than the table itself, happens when you explicitly use DESTROY in query text. That command doesn’t come in handy very often anyway. Maybe if the manager hangs around for a while and you’ve got a huge temporary table you’d like to empty sooner rather than later.</p>
+<p>The table is only deleted when the connection to the application server closes.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/string-concatenation"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                String Concatenation
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 January 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Work</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Like many companies, we give applicants a test assignment. It’s intentionally straightforward, mainly to see how well the candidate understands the platform and how carefully they work with configuration objects and code.</p>
+<p>One little thing we look at is how they put together a long message with lots of parameters in it. A developer can use StrTemplate() or StrConcat(), or simply concatenate strings. We mark that last option down a little: the user sees the same result, but the code makes it much harder to picture roughly what the message will look like.</p>
+<p>But there’s something else to it. In the first half of last year, Rarus published a <a href="http://techlab.rarus.ru/upload/iblock/2/185/Beeline-obespechenie-bespereboynoy-raboti.pdf" rel="noopener noreferrer" target="_blank">report</a> about its work for Beeline. There’s lots of interesting stuff in there, but one bit floored me: dropping string concatenation cut CPU load by 40%! They didn’t even need those two extra servers anymore.</p>
+<p>The problem was that worker processes spent too much time allocating memory to concatenate strings. Joining two strings once isn’t going to hurt, but building a large query in a loop and doing it repeatedly can make the load snowball. Don’t use concatenation in those cases. The right tools are the same StrTemplate() or StrConcat(). On older platform versions without those methods, you can use a text document object: add lines to it, then retrieve the text.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/incompiled-code"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Uncompiled Code
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 January 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Here’s something you might not expect: an external data processor runs noticeably slower than the exact same processor built into a configuration or extension. Its code has to be compiled again for every user, every time they run it. Built-in processors get compiled once for everyone. According to an <a href="https://kb.1c.ru/articleView.jsp?id=111" rel="noopener noreferrer" target="_blank">article</a> in 1C’s knowledge base, this was outright catastrophic in platform 8.3.10. But a fifty-percent increase in CPU load in 8.3.13 isn’t exactly good news either.</p>
+<p>Storing code inside the infobase does the same thing, for example if you keep it in utility catalog attributes. Every time you run it, the platform fetches it from the database and compiles it. In <a href="https://firstbit.ae/products/erp-dubai/financial_management/" rel="noopener noreferrer" target="_blank">our configuration</a>, for example, scheduled jobs can be created without changing metadata: add an item to a special catalog, load the code into it, and set its schedule.</p>
+<p>That’s more or less fine: scheduled jobs don’t usually run all that often, so compiling them probably won’t make a noticeable dent in the CPU. But the same catalog can also be used to run code automatically after pretty much any event, say saving a certain kind of document. If lots of users will be running that code all the time, move the logic into a common module method in an extension and leave only a call to that logic in the stored code.</p>
+<p>Or you could ditch stored code altogether and put the whole thing in an extension. It might be less flexible, but that’s still better than staring at a low APDEX later.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/trip-to-kok-kol"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A Trip to Kok-Kol
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 January 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="sport" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Sport</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>This summer, my friends and I traveled to the Mongolian border: by car to Tashanta, then by bicycle to <a href="http://rasulka.ru/ооо-расул---кок-коль.html" rel="noopener noreferrer" target="_blank">Kok-Kol</a>. We were absolutely knackered, but it was worth it: the mountain views were incredible! Shame we didn’t see more wildlife. We didn’t even run into the plague-carrying ground squirrels everyone, including the border guards, kept promising us :-)</p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/4HbJAdYQ-xM" width="560"></iframe>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/ampersand-sign-in-1c"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                The Ampersand in 1C
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 December 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>For ampersands in labels, the platform does the usual Windows thing: the ampersand itself disappears, and the following character becomes a keyboard shortcut for the action associated with the label, such as a command handler or a control event.</p>
+<p>The example below shows up as “Project Costing.” The “P” is underlined and becomes the shortcut key; if this is a command title, for example, you can run it with Alt + P.</p>
+<pre><code>ТекстНадписи = "&amp;Project Costing";
+</code></pre>
+<p>The only catch is when you want an actual ampersand in the label. Then you need to double it: the example below will appear as “Project P&amp;L.” No shortcut keys will be created.</p>
+<pre><code>ТекстНадписи = "Project P&amp;&amp;L";
+</code></pre>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/valve-in-a-china-shop"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Like Valve in a China Shop
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>10 December 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>The folks at Valve keep teasing fans of their games, whether out of habit or because someone there really thinks it’s a great way to stay in people’s minds.</p>
+<p>Sure, we all know where things stand with Valve making games. Few people seriously expect Half-Life 3 or, say, a Portal sequel. Still, I can’t help smiling at the effortless grace of Valve dealing with its fans. Like a bull in a china shop.</p>
+<p><a href="https://twitter.com/retropcan/status/1072013105515913216" rel="noopener noreferrer" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/valve-in-a-china-shop/snap-tweet-retropcan-1072013105515913216.png"/></a></p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/snowboard-effect"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Snowboard Effect
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>1 December 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="sport" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Sport</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><a href="https://kostyanetsky.me/notes/snowboard-effect/standing.jpg" rel="noopener noreferrer" target="_blank"><img alt="Standing!" src="https://kostyanetsky.me/notes/snowboard-effect/standing-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/snowboard-effect/sitting.jpg" rel="noopener noreferrer" target="_blank"><img alt="Sitting!" src="https://kostyanetsky.me/notes/snowboard-effect/sitting-thumbnail.jpg"/></a></p>
+<p>You're sliding down the side of a mountain and trying to feel an equilibrium point, for the hundredth time. However, your nagging back is the only thing you're able to feel, and the Vaas speech from Far Cry 3 isn't going out of your mind.</p>
+<blockquote>
+<p>Did I ever tell you what the definition of insanity is? Insanity is doing the exact… Same fucking thing… Over and over again expecting… Shit to change… That. Is. Crazy.</p>
+<p><em>― Vaas Montenegro, Far Cry 3</em></p>
+</blockquote>
+<p>Surprisingly, you're certainly satisfied with the trip when it's done.</p>
+<p>There's some kind of magic in it.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/set-new-object-ref"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A New Object’s Reference
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 November 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A unique identifier is a convenient way to match objects across configurations, for example when transferring invoices from one infobase to another. How can the receiving infobase tell whether an invoice has already been loaded? The first idea is simply to find the object by UUID:</p>
+<pre><code>ИнвойсЗагружен = Документы.Инвойс.ПолучитьСсылку(UUID).Пустая();
+</code></pre>
+<p>Sometimes, though, unique identifiers are used to link objects within the same configuration. Maybe the task won’t let us add a regular reference attribute, so document A can’t point straight to document B. Or perhaps we create a catalog item based on a document and want a direct link between them, assigning the item a reference obtained from the document’s unique identifier. The platform guarantees identifier uniqueness within a table, so such tricks are perfectly safe.</p>
+<p>My point is: use SetNewObjectRef() carefully! Check whether a reference has already been assigned before your code runs:</p>
+<pre><code>СсылкаЗадана = ПолучитьСсылкуНового().Пустая();
+</code></pre>
+<p>If there’s already a reference, deal with it: leave it alone if that works for your task, or throw an exception. Otherwise, you can break the links between your data, and good luck tracking that down. Or even noticing it.</p>
+<p>This works both ways, of course: some other code, such as an object event handler or subscription, might overwrite the reference you assigned. Testing is the only reliable way to catch that.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/distributed-design"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Distributed Design
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>20 October 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Work</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A designer at Stack Overflow <a href="http://www.tedgoas.com/blog/distributed-design" rel="noopener noreferrer" target="_blank">wrote</a> about how they organize remote work. I liked the structure: it doesn’t just say “here’s how we do it,” but pairs each problem with a solution.</p>
+<p>Almost all development at our company is remote, and I work remotely too. I really like working this way; the main thing is remembering how easy it is to pick up unexpected problems when your workplace and your home are the same place. Take the advice to drink water and get some sun: during a crunch, those things really are easy to forget.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/ideal-pronunciation"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Perfect Pronunciation
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 October 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="english" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">English</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><a href="https://twitter.com/vanswan/status/1051001827104178177" rel="noopener noreferrer" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/ideal-pronunciation/snap-tweet-vanswan-1051001827104178177.png"/></a></p>
+<p>A Bloomberg engineer told me much the same thing several years ago. We were writing an application for a client to track share prices automatically and had run into a pile of problems: Bloomberg provides a powerful but rather complicated API for working with financial instruments.</p>
+<p>Eventually, we contacted technical support, and after a few messages, the engineer suggested a voice call. I was quite embarrassed and said that, well, we could, but “my English isn’t fluent enough.” He just shrugged: they were used to it. Everyone uses English, and everyone puts their own spin on it. Where I put the stress in a word was the last thing on his mind, as long as he could follow what I was saying.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/non-judgmental-attitude"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A Principle of Non-Judgemental Attitude
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>2 September 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="meanwhile" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Meanwhile</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>There is a good <a href="http://maximilyahov.ru/blog/all/mne-ok/" rel="noopener noreferrer" target="_blank">note</a> from Maxim Ilyahov about a way of analyzing something which doesn't concern you but annoys you anyway. It's reminded me of an American principle of non-judgemental attitude which I read about a couple of years ago. As for me, it uses different words to make the same point.</p>
+<p>By the way, this principle presents in Russia too — there is even a famous adage “don't be judgemental so you won't be judged”. What a pity for us that it isn't so widespread yet.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/rights-for-dcs"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                DCS and View Rights
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 August 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>The Data Composition System goes by the rule “if the user can’t view it, it might as well not exist.” Sometimes that leads to some pretty weird behavior. For a nice simple textbook report, it works fine: if the user lacks view rights for a catalog, for example, that catalog won’t appear in the report. Real examples can be more complicated, though.</p>
+<p>A couple of weeks ago, I was debugging a report that produced a seemingly clear error when generated:</p>
+<p><img alt="Your settings are wrong, comrade!" src="https://kostyanetsky.me/notes/rights-for-dcs/ru.png"/></p>
+<p>The report is enormous: a query of a good thousand lines, complex settings, a huge template, and tangled composition code. We first suspected a settings error, but the investigation quickly led from a currency reference in the dataset to a constant holding that currency at the report’s lowest level. The user had no view rights for that constant.</p>
+<p>I couldn’t tell you exactly what threw the platform off and made the error so unhelpful. Maybe it was what we did with the temporary table holding the constant. Maybe it was reading it inside a CASE expression. Or maybe it was that we had all the rights we needed for the currency catalog itself. I didn’t dig around to find the exact trigger. I think it’s simply an implementation detail of the DCS engine that may change between versions. Just keep view rights in mind, and you can avoid the problem.</p>
+<p>If you encounter the error, try generating the problematic report with full rights. If that works, list the tables from which it reads data and check that both read and view rights are granted for all of them.</p>
+<p>Tedious, but it can save a lot of time.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/jaina"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Beware the Daughter of the Sea
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 Jule 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Natalia O'Shea has sung a Jaina's song in a Russian version of a trailer for a future update of World of Warcraft. As for me, she's extraordinary good in it — I mean, she knows how to make a proper mood and season a speech with steel.</p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5j-S448XC8k" width="560"></iframe>
+<p>By the way, speaking about her and “Melnitsa” as a whole thing — all of their most powerful songs are about something particular. We were at a concert dedicated to the “Luciferase” release and it's hard to compare, seriously. Perhaps, I didn't know something essential to understanding a context, but sometimes it was even barely possible to figure out a story which I was hearing.</p>
+<p>Just watch a video I posted under. You don't need to know something special about the World of Warcraft universe, do you? For example, I haven't played WoW and not planning to do it, but the end of the song literally creeps me out :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/hpmor-printing"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                HPMoR Printing
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 Jule 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="books" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Books</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Perhaps you already know that Eliezer Yudkowsky's “Methods of Rationality” in Russian is going to be published as a standard book (thanks to “Evolution” and other information partners), but I still want to remind again.</p>
+<p>The book is really good, I had <a href="https://kostyanetsky.me/notes/hpmor" rel="noopener noreferrer" target="_blank">written</a> about it a couple of years ago. It teaches useful things in such an attractive way that it's really hard to stop reading. The whole text is in public access, but if you want a hard copy — you can <a href="https://planeta.ru/campaigns/hpmor" rel="noopener noreferrer" target="_blank">make a request</a> now.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/fce-results"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                FCE Results
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 Jule 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="books" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Books</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="english" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">English</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Cambridge just sent me results of my FCE exam in June and — dramatic drum roll — I passed it! According to the statement of results, I made a bunch of mistakes in writing tasks but particularly took it out during a Speaking test. It's a pity that examiners don't give comments and reasons so it's hard to estimate the results properly; however, it's quite clear what to do next :) My English teacher said that Cambridge used to provide an overall score only earlier and it sounded like “take it any way you want, dear pretenders”.</p>
+<p>Well, I guess I should begin my preparation for CAE in the next year.</p>
+<p>Speaking about languages, I remembered Feynman with his famous “Surely You're Joking”. Among many things, he told that he learned to play on a frigideira when he lived in Brazil and had reached so high level of skill that he served as a model for local musicians.</p>
+<blockquote>
+<p>My theory is that it's like a person who speaks French who comes to America. At first they're making all kinds of mistakes, and you can hardly understand them. Then they keep on practicing until they speak rather well, and you find there's a delightful twist to their way of speaking their accent is rather nice, and you love to listen to it.</p>
+<p><em>― Richard Feynman, ”Surely You're Joking, Mr. Feynman!”</em></p>
+</blockquote>
+<p>As for me, there is a lot of efforts between “all kinds of mistakes” and “love to listen”, but it is such a good synopsis. Working on it!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/kona"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Kona
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 May 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/M6KizfrASRY" width="560"></iframe>
+<p>There’s plenty here that did its best to keep me interested: there are places to explore, things to read, things to think about, and sights to see. If you value that in games, you might like it. Almost nothing interrupts the walking and thinking: it’s pretty hard to get yourself killed. So is getting lost: the protagonist has a map and a car, and later you can get a snowmobile too.</p>
+<p>But the story really disappointed me. It starts with an intriguing mystery, but before that can go anywhere, it all dissolves into supernatural stuff. Fine, except the mystery goes out the window with it. Why look for clues, form theories, or worry about anything? Unexplained visions from nowhere will tell and show you everything that happened. Before long, you catch yourself sharing the hero’s weary shrug at all the weirdness around him.</p>
+<p>Meanwhile, the mystical side of the plot has gaping holes of its own. The tragedy becomes more or less clear toward the end, yes, but even the final, most complete vision raises a whole host of questions that nobody bothers to answer. The plot is a lot like the game’s map: it looks complete, but in practice you can access at most half of it, with the rest brushed aside under a plainly visible “well, because magic, that’s how magic works, you see?”</p>
+<p>No, damn it, I don’t.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/message-to-user"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Message to User
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>30 April 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>1C:Enterprise has a convenient and accustomed method of showing information for a user — it's a UserMessage object. It outputs messages at the bottom of a form and suddenly it's a potential problem. The thing is, most users don't look at it. It's like: well, I see no critical errors for now so there is nothing to worry about.</p>
+<p>Therefore, in case an error happens or you just have an essential message, you should show it through a dialogue window — by the ShowQueryBox() method or a ShowMessageBox() method, for example. Otherwise, a user may not notice a problem and continue to work in spite of some action might not be executed or might be executed in a wrong way. The issue will come out later and you will be rightfully blamed for it.</p>
+<p>In addition, using of a UserMessage object should be prohibited in case of small service forms. Yes, in fact, it's hard to overlook a text if a window is small, but that's a different matter: the messages below literally <a href="https://kostyanetsky.me/notes/message-to-user/en.png" rel="noopener noreferrer" target="_blank">devour</a> form's workspace and it becomes hard to work with.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/these-nasty-smartphones"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                These Nasty Smartphones
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 Marth 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="meanwhile" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Meanwhile</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Society" src="https://kostyanetsky.me/notes/these-nasty-smartphones/drawing.png"/></p>
+<p>The artist is <a href="https://www.patreon.com/adamtots" rel="noopener noreferrer" target="_blank">Adam Ellis</a>.</p>
+<p>As for me, it's a great illustration for an everlasting moan “why do you always stare at your smartphone blah blah blah”. A reason is quite simple: people have their friends, books, podcasts, games, and YouTube in their smartphones. It's much more fun than a frowning man or a grim women with guru syndrome next to them, for example.</p>
+<p>The same is true of children. Social networks are full of arguments about it, but a reason is still the same: if a teenager flips through pictures in his phone in front of you, you bore him and a problem obviously is you.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/double-i"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Double “i”
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 Marth 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="english" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">English</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I was trying to understand how to transliterate my surname properly yesterday. Ministry of Foreign Affairs says it should be written as “Kostianetskii” in English — with double “i” at the end. It's the quite rare combination: “skiing” is the only frequency word that I'm able to remember.</p>
+<p>It caused my curiosity and I googled it. The possible reason I came across is funny: cursive writing! Double “i” looks well only on a computer screen but it suddenly turns into “u” when you try to write it on paper.</p>
+<p>More details are <a href="https://spellingisnotcrazy.weebly.com/blog/category/the-letter-i" rel="noopener noreferrer" target="_blank">here</a>.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Nothing found. Try a different search?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/page-11"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Earlier
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/page-9"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Later →
+        </a>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "";
+  const notesListUrl = "https://kostyanetsky.me/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+  let searchVersion = 0;
+
+  function setSearchBusy(busy) {
+    searchEl.setAttribute("aria-busy", String(busy));
+    dynamicNotesEl.setAttribute("aria-busy", String(busy));
+  }
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const version = ++searchVersion;
+    const q = (searchEl.value || "").trim();
+    const tag = activeTag;
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        setSearchBusy(false);
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        setSearchBusy(false);
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      setSearchBusy(false);
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+    setSearchBusy(true);
+    emptyEl.classList.add("hidden");
+
+    try {
+      // Allow the busy icon to paint even when the index is already cached.
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (version !== searchVersion) return;
+      const notes = await loadNotesJsonOnce();
+      if (version !== searchVersion) return;
+      const filtered = filterNotes(notes, q, tag);
+
+      countEl.textContent = String(filtered.length);
+      pageInfoEl.textContent = makeSearchLabel(q, tag);
+
+      if (filtered.length === 0) {
+        dynamicNotesEl.innerHTML = "";
+        emptyEl.classList.remove("hidden");
+        return;
+      }
+
+      emptyEl.classList.add("hidden");
+      dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+    } finally {
+      if (version === searchVersion) setSearchBusy(false);
+    }
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  const debouncedSearch = debounce(runSearch, 200);
+  searchEl.addEventListener("input", () => {
+    // Invalidate an in-flight search immediately, including during debounce.
+    ++searchVersion;
+    setSearchBusy(true);
+    debouncedSearch();
+  });
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

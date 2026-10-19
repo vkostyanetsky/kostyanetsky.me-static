@@ -1,0 +1,218 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Uncompiled Code</title>
+
+    <meta name="description" content="A non-obvious detail: an external data processor runs slower than an identical one built into a configuration or extension." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Uncompiled Code"/>
+    <meta property="og:description" content="A non-obvious detail: an external data processor runs slower than an identical one built into a configuration or extension."/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/incompiled-code" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/trip-to-kok-kol";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/string-concatenation";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Found a typo? Edit me!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/incompiled-code/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/incompiled-code"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Uncompiled Code
+          </header>
+
+          
+          <div class="mt-5">
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 January 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="https://kostyanetsky.me/notes/tags/1c/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</a>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Here’s something you might not expect: an external data processor runs noticeably slower than the exact same processor built into a configuration or extension. Its code has to be compiled again for every user, every time they run it. Built-in processors get compiled once for everyone. According to an <a href="https://kb.1c.ru/articleView.jsp?id=111" rel="noopener noreferrer" target="_blank">article</a> in 1C’s knowledge base, this was outright catastrophic in platform 8.3.10. But a fifty-percent increase in CPU load in 8.3.13 isn’t exactly good news either.</p>
+<p>Storing code inside the infobase does the same thing, for example if you keep it in utility catalog attributes. Every time you run it, the platform fetches it from the database and compiles it. In <a href="https://firstbit.ae/products/erp-dubai/financial_management/" rel="noopener noreferrer" target="_blank">our configuration</a>, for example, scheduled jobs can be created without changing metadata: add an item to a special catalog, load the code into it, and set its schedule.</p>
+<p>That’s more or less fine: scheduled jobs don’t usually run all that often, so compiling them probably won’t make a noticeable dent in the CPU. But the same catalog can also be used to run code automatically after pretty much any event, say saving a certain kind of document. If lots of users will be running that code all the time, move the logic into a common module method in an extension and leave only a call to that logic in the stored code.</p>
+<p>Or you could ditch stored code altogether and put the whole thing in an extension. It might be less flexible, but that’s still better than staring at a low APDEX later.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+          </div>
+
+        </article>
+
+      </section>
+        
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/trip-to-kok-kol"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← A Trip to Kok-Kol
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/string-concatenation"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          String Concatenation →
+        </a>
+        
+      </nav>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

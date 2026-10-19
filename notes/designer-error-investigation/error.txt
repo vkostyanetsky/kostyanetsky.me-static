@@ -1,0 +1,7 @@
+﻿В процессе обновления информационной базы произошла критическая ошибка
+по причине:
+Нарушено условие уникальности данных.
+
+Попытка вставки неуникального значения в уникальный индекс:
+Microsoft SQL Server Native Client 11.0: The CREATE UNIQUE INDEX statement terminated because a duplicate key was found for the object name 'dbo._DataHistorySettingsNG' and the index name '_DataHistorySettings_1NG'. The duplicate key value is (<NULL>, 0xo82gj1hksesqt7wapzrg99munw3x16ji).
+HRESULT=80040E2F, SQLSrvr: SQLSTATE=23000, state=1, Severity=10, native=1505, line=1

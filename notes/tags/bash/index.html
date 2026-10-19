@@ -1,0 +1,1441 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Notes: Bash</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Notes: Bash"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/tags/bash" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/tags/bash"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="13"
+      data-total-pages="1"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes: Bash</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            aria-busy="false"
+            type="search"
+            placeholder="Search by title / text / tags…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Work
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Done
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Videogames
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Meanwhile
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Family
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Code Smell
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Workplace
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Books
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Georgia
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Sport
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bitrix
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/longest-queries-using-python"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Finding Long Queries with Python
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>18 Jule 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve published a <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.py" rel="noopener noreferrer" target="_blank">Python script</a> for finding long-running queries in the 1C technological log. I wrote it in a fit of despair: I couldn’t understand why my <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" rel="noopener noreferrer" target="_blank">trusty Bash script</a> reported an average execution time higher than the maximum for one query.</p>
+<p>The problem turned out to be gawk. With some log events, it couldn’t work out the duration: it tried to convert a string to a number, failed, and… Oh, no! Of course it didn’t throw an exception! It simply treated those strings as zero and calmly carried on.</p>
+<p>The fix was even sillier than the problem: I simply <a href="https://github.com/vkostyanetsky/ScriptsFor1C/commit/946f271d6ea0c1e618b180cee11ae91ce4632c18" rel="noopener noreferrer" target="_blank">added</a> an explicit string-to-number conversion, and everything worked. How the hell is an explicit conversion different from an implicit one in gawk-land? And, more importantly, why?</p>
+<p>Well, that was a circus. At least I got a new script out of it, and it goes easier on memory and CPU too. In the Bash version, I used three collections to calculate execution count, total execution time, and maximum execution time, each keyed by query text and context. All three had to be updated and kept in memory.</p>
+<p>That works until you get into hundreds of thousands of entries. Then the collections start eating gigabytes of RAM, and searching them burns through CPU time. The new script is more straightforward: one collection stores all the data for each query.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/why-not-bash"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Why Not Bash?
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>3 Jule 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>In my previous note, I discussed tasks where Bash is the perfect tool: minimal constraints and simple requirements. I also mentioned that sometimes it can’t cope at all.</p>
+<p>Here’s one I actually ran into. Suppose we have around seventy gigabytes of 1C technological logs and need to rank exception descriptions from most to least frequent.</p>
+<p>Easy, right? Extract EXCP, get Descr, count repetitions. I’d even written the necessary <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.sh" rel="noopener noreferrer" target="_blank">script</a> before. I run it and patiently wait…</p>
+<p>Know how long it took? Neither do I: after a day, I stopped it and investigated. Something was getting stuck inside gawk: it was hammering the CPU, with cat occasionally chipping in to read more data.</p>
+<p><img alt="Processes" src="https://kostyanetsky.me/notes/why-not-bash/procexp64.png"/></p>
+<p>Well, crap. I thought about it and <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.py" rel="noopener noreferrer" target="_blank">rewrote</a> the script in Python. The new version finished in fifteen minutes and gave me:</p>
+<ol>
+<li>A ranking of exception descriptions;</li>
+<li>A script I can read six months later without Google;</li>
+<li>Confidence that I can add two or three conditions without accidentally summoning Satan through a combination of operators and flags.</li>
+</ol>
+<p>Of course, I could have optimized the Bash version. The array lookups are probably what’s slow: the more descriptions you’ve collected, the longer each search takes, growing linearly with the array size. I could change the collection approach, using gawk only to extract descriptions and passing the results to sort and uniq.</p>
+<p>But that starts to resemble the <a href="https://kostyanetsky.me/notes/why-not-bash/but-why.jpg" rel="noopener noreferrer" target="_blank">meme</a> about a loaf of bread: you can build a trolleybus out of it, sure, but why? Come on, I just need to solve the problem. Python already did that with flying colors, saving me a lot of time and nerves.</p>
+<p>That’s my point. We know Bash has its quirks, and often we can live with them. We know what it’s good at too. But sometimes the question becomes: is getting a solution specifically in Bash worth spending two hours wrestling with utilities, parameters, manuals, and Stack Overflow posts?</p>
+<p><a href="https://twitter.com/EffinBirds/status/1408560771877965825" rel="noopener noreferrer" target="_blank"><img alt="Tweet" src="https://kostyanetsky.me/notes/why-not-bash/snap-tweet-EffinBirds-1408560771877965825.png"/></a></p>
+<p>That’s why not Bash.</p>
+<p>UPDATE: A good <a href="https://grishaev.me/no-bash/" rel="noopener noreferrer" target="_blank">post</a> by Ivan Grishaev on the same subject.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/why-bash"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Why Bash?
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>23 June 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I occasionally see colleagues asking: is 1C still messing around with Bash? Why not Python? Or PowerShell, at least? Weirdos!</p>
+<p>Yes, Bash isn’t native to Windows, which is native territory for 1C, and getting it onto Windows is a job in itself. Yes, as a task grows more complicated, script readability drops exponentially. Yes, Bash simply can’t handle some tasks.</p>
+<p>But its main advantage is that, for many 1C technological log analysis tasks, it is the simplest and fastest solution. Like an old screwdriver your grandfather used: always at hand, scratched, nicked, and a little awkward, but still working perfectly.</p>
+<p>An example? Suppose we need to extract exceptions from the log. Let’s keep it simple and say we only need the first line of each event. We get <a href="https://gist.github.com/vkostyanetsky/f95b30e2f09edd64d9e7a39575bb289a" rel="noopener noreferrer" target="_blank">something like this</a> in Python.</p>
+<p>You’ll say it can easily be cut in half, or even to a third. After all, it’s just a one-off job. Why fuss about readability and predictability?</p>
+<p>Agreed! But let’s first solve the same task in Bash:</p>
+<pre><code>grep -r --include "*.log" ',EXCP,' &gt; result.txt
+</code></pre>
+<p>That’s why Bash.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/longest-queries-v2"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                An Updated Script for Finding Long Queries
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>26 April 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve updated the <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" rel="noopener noreferrer" target="_blank">script</a> for finding long queries in the platform’s technological log. The old version had a pretty big bug: it happily grouped DBMSSQL events by Sql and Content, but ignored cases where Sql was missing. That isn’t exactly normal for DBMSSQL, but it happens.</p>
+<p>While I was at it, I tidied the code: added formatting and comments, and moved some gawk logic out of the main body into functions. Yes, the script now looks longer than it actually is, but it’s much easier to read.</p>
+<p>Honestly, I don’t understand why Bash veterans cram all their logic into two or three lines. The language isn’t exactly a shining example of readability to begin with; Nikita Prokopov’s Telegram channel has an <a href="https://t.me/nikitonsky_pub/55" rel="noopener noreferrer" target="_blank">excellent piece</a> about that. A page of pipelines without a single line break makes me want to quietly climb out of the window.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/bunch-of-scrips"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A Bunch of Scripts
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>24 April 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve put a few more scripts on GitHub that I wrote recently to dig through the platform’s technological log:</p>
+<ul>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentEvents.sh" rel="noopener noreferrer" target="_blank">Frequent Events</a>. Groups events by name, counts occurrences, and lists them in descending order, from most to least frequent. Not sure this one is much use in practice; I just wanted to note down which cluster process writes which events.</li>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/ExceptionDescriptions.sh" rel="noopener noreferrer" target="_blank">Exception Descriptions</a>. Groups EXCP events by the Name field; for each name, it lists the Description values found in exceptions with that name. This script gives you a rough picture of which exceptions are real problems and which are just background noise you can ignore and, for example, filter out in Kibana.</li>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LocksByConnectIDAndRegions.sh" rel="noopener noreferrer" target="_blank">Locks by Connection ID and Region</a>. Useful for finding the culprit behind a managed lock timeout: it extracts all TLOCK events for a particular region and connection from the technological log, then puts them in chronological order.</li>
+</ul>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/recursive-search"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Searching Files Recursively
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 January 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Some time ago, I <a href="https://kostyanetsky.me/notes/vulnerabilities" rel="noopener noreferrer" target="_blank">tried</a> finding code vulnerabilities with Bash scripts. Sounds intimidating, but it’s just recursive text searching with regular expressions. I wrote the scripts, but as I realized today, I did it in a rather… ass-backwards way, ahem. All you need is egrep! Out of find, xargs, and egrep, we can throw away two of the three.</p>
+<p>For example, today our configuration stopped building in the latest EDT release. We suspected broken GUIDs: references to metadata objects removed from the configuration. The platform doesn’t always clean these up after deleting the objects themselves. I’ve written about this a couple of times, for example <a href="https://kostyanetsky.me/notes/designer-error-investigation" rel="noopener noreferrer" target="_blank">here</a> and <a href="https://kostyanetsky.me/notes/unresolved-gopher" rel="noopener noreferrer" target="_blank">here</a>.</p>
+<p>We decided to search the configuration export for GUIDs and check whether they all belonged where they were. All it takes is one command:</p>
+<pre><code>egrep -rn '.{8}-.{4}-.{4}-.{4}-.{12}' dump
+</code></pre>
+<p>The r flag enables recursive search; n adds not only the filename but also the line number to each match. The final parameter, dump, is the directory to search.</p>
+<p>You could make the regex more precise, but this is plenty. False positives, GUIDs that aren’t broken references, are easy to filter through a pipe. For example, the following script excludes GUID-containing lines that include “uuid”:</p>
+<pre><code>egrep -rn '.{8}-.{4}-.{4}-.{4}-.{12}' dump | grep -v 'uuid'
+</code></pre>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/time-to-wink"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Time for a Walk
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>2 November 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>How do you know when to take a break from work? Put it this way: if your script suddenly starts winking at you, it’s definitely time for some fresh air.</p>
+<p><img alt="Hello!" src="https://kostyanetsky.me/notes/time-to-wink/wink.png"/></p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/excp-number-by-minutes"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Counting Exceptions in the Technological Log
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>24 October 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Another <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/ExceptionsNumberByMinutes.sh" rel="noopener noreferrer" target="_blank">script</a>. It counts exceptions per minute and ranks the results, so you can quickly see when the applications were having a particularly bad time.</p>
+<p>Along the way, two odd little problems threw me off. First, for some reason I was convinced that uniq -c groups lines regardless of where they occur in the data stream. Take this:</p>
+<pre><code>банан
+банан
+груша
+банан
+</code></pre>
+<p>I thought that feeding this data to uniq -c would group identical lines, count repetitions, and produce something like this:</p>
+<pre><code>3 банан
+1 груша
+</code></pre>
+<p>But what I actually got was:</p>
+<pre><code>2 банан
+1 груша
+1 банан
+</code></pre>
+<p>Turns out uniq expects repeated lines to sit next to each other. If a line differs from the previous one, it starts a new count for that line. To get the result I expected, you have to sort the data first, then pass it to uniq.</p>
+<p>The second problem involved sed. I was trying to use it to remove everything from the data stream except hours and minutes; the attempt is on line 12 of the script. But some events stubbornly failed to match the regular expression despite looking exactly the same. I wasted a lot of time and got thoroughly annoyed before remembering <a href="https://ru.wikipedia.org/wiki/Маркер_последовательности_байтов" rel="noopener noreferrer" target="_blank">BOM</a>. Once I removed the markers, everything went smoothly.</p>
+<p>Every technological log file uses a BOM, which you can confirm with this <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LogFilesWithoutBOM.sh" rel="noopener noreferrer" target="_blank">script</a>, for example. Each log begins with special characters invisible to the naked eye, and these can prevent the first line from being processed because they don’t match the regular expression.</p>
+<p>My takeaway is to strip BOMs out by default, rather than wonder every time whether they’ll cause trouble. Sometimes this will be unnecessary; a BOM doesn’t interfere with solving the task above using grep, for instance. But I don’t like surprises. Besides, a few processor cycles spent on a simple replacement are a much better deal than the equivalent in fried nerves and wasted time.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/queries-and-lock-waits"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Queries and Lock Waits
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>19 October 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve put together two more technological log analysis scripts: the <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestQueries.sh" rel="noopener noreferrer" target="_blank">first</a> ranks heavy MS SQL queries, and the <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestLockWaitsByRegions.sh" rel="noopener noreferrer" target="_blank">second</a> ranks long lock waits.</p>
+<p>I pick out heavy queries by how long their DBMSSQL events lasted. The longer a query takes, the more likely it is to have eaten a lot of resources. That usually holds up, though you’d need a trace to diagnose it properly.</p>
+<p>Lock waits are also measured by duration. The script also checks that the TLOCK event has something in WaitConnections. That tells us the platform really was waiting to get a lock, rather than just taking a while to set one.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/top-exceptions-v2"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                An Updated Top Exceptions Script
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 October 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I rewrote the Bash <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" rel="noopener noreferrer" target="_blank">script</a> that ranks exceptions in a collected technological log: I wanted a simpler way to do it.</p>
+<p>Out went all the fiddling with replacing event beginnings with a gawk record separator: you can just give gawk a regex for that. I also moved more of the logic into gawk itself. It’s easier to follow, especially if I want to add to it later.</p>
+<p>It’s clearly better than <a href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0" rel="noopener noreferrer" target="_blank">before</a>, or at least the logic is easier to understand. Originally, though, I wanted to make the script smaller and get something like this:</p>
+<pre><code>grep -hoP ",EXCP,.*\KDescr=.*" */*.log | uniq -c | sort -rn
+</code></pre>
+<p>Filter only lines with EXCP events, cut everything before the error description, and group with uniq. Very elegant, I think.</p>
+<p>Except EXCP descriptions can run over several lines. So sometimes we’d lose information we need to figure out what happened: everything after the first line break. I haven’t yet worked out how to solve that without tripling the script’s size :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/vulnerabilities"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Vulnerabilities in 1C Configurations
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>13 October 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Last month, I attended an Infostart <a href="https://infostart.ru/events/1269292/" rel="noopener noreferrer" target="_blank">meetup</a> about security in 1C-based solutions. I learned a lot! Among other things, Oleg Tymko talked about things we do in code that can leave a product vulnerable: hard-coded IP addresses, links, email addresses, passwords, that sort of thing.</p>
+<p>Yesterday, I put together a simple Bash <a href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/Vulnerabilities.sh" rel="noopener noreferrer" target="_blank">script</a> that searches a configuration export for such issues. Essentially, it just runs regular expressions over the configuration. I didn’t put too much thought into it, just tried a couple of approaches for the fun of it.</p>
+<p>My takeaway? If you’re going to keep developing this seriously, start with something like SonarQube. Brute-force approaches produce too many false positives; you need filters, exceptions, history, and supporting infrastructure.</p>
+<p>For a quick look, though, this does the job: no infrastructure, no fussing with configuration or hardware. Export the configuration, kick Bash into action, and that’s it: results in a few seconds.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/top-exceptions"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Top Exceptions in the Technological Log
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 February 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve published a Bash <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" rel="noopener noreferrer" target="_blank">script</a> on GitHub that identifies the most frequent exceptions in a collected 1C technological log.</p>
+<p>It analyzes EXCP events. These are the main source of error information, though certainly not the only one: EXCPCNTX, for example, describes an event that had started but hadn’t finished when an error occurred. Also, if an exception occurs during a server call, the CALL event’s RetExcp field contains the error text returned to the client.</p>
+<p>Most of the time, though, EXCP and the occasional EXCPCNTX will do. People often collect them by default: it doesn’t put any real load on the system and lets you run the logs through an analysis tool, such as the script above, to keep a finger on the pulse.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/find-methods-with-parameter"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Finding Methods with a Parameter
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>18 November 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>The task: find methods in a configuration’s common modules that have a specific parameter, DecimalPlacesFor in this example.</p>
+<p>A normal search through the configuration code produces many false positives, such as every reference to a parameter with that name inside method bodies. The platform doesn’t support regular expression searches yet, so the easy way is to export the configuration to files and run a Bash <a href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/MethodsWithParameter.sh" rel="noopener noreferrer" target="_blank">script</a> on the common modules directory.</p>
+<p>The bit before the pipe does the searching. The rest trims the output down to module names and the methods found in them. For example:</p>
+<p><img alt="Console screenshot" src="https://kostyanetsky.me/notes/find-methods-with-parameter/bash.png"/></p>
+<p>Profit? Profit!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Nothing found. Try a different search?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "bash";
+  const notesListUrl = "https://kostyanetsky.me/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+  let searchVersion = 0;
+
+  function setSearchBusy(busy) {
+    searchEl.setAttribute("aria-busy", String(busy));
+    dynamicNotesEl.setAttribute("aria-busy", String(busy));
+  }
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const version = ++searchVersion;
+    const q = (searchEl.value || "").trim();
+    const tag = activeTag;
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        setSearchBusy(false);
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        setSearchBusy(false);
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      setSearchBusy(false);
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+    setSearchBusy(true);
+    emptyEl.classList.add("hidden");
+
+    try {
+      // Allow the busy icon to paint even when the index is already cached.
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (version !== searchVersion) return;
+      const notes = await loadNotesJsonOnce();
+      if (version !== searchVersion) return;
+      const filtered = filterNotes(notes, q, tag);
+
+      countEl.textContent = String(filtered.length);
+      pageInfoEl.textContent = makeSearchLabel(q, tag);
+
+      if (filtered.length === 0) {
+        dynamicNotesEl.innerHTML = "";
+        emptyEl.classList.remove("hidden");
+        return;
+      }
+
+      emptyEl.classList.add("hidden");
+      dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+    } finally {
+      if (version === searchVersion) setSearchBusy(false);
+    }
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  const debouncedSearch = debounce(runSearch, 200);
+  searchEl.addEventListener("input", () => {
+    // Invalidate an in-flight search immediately, including during debounce.
+    ++searchVersion;
+    setSearchBusy(true);
+    debouncedSearch();
+  });
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

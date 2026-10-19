@@ -1,0 +1,235 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Preparing for the 1C:Expert Exam</title>
+
+    <meta name="description" content="A few things that helped me keep my head together while preparing for the exam." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Preparing for the 1C:Expert Exam"/>
+    <meta property="og:description" content="A few things that helped me keep my head together while preparing for the exam."/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/1c-expert" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/longest-queries-v2";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/rclone-abuser";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Found a typo? Edit me!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.me/edit/main/notes/1c-expert/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/1c-expert"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Preparing for the 1C:Expert Exam
+          </header>
+
+          
+          <div class="mt-5">
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>25 May 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="https://kostyanetsky.me/notes/tags/1c/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</a>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="https://kostyanetsky.me/notes/tags/done/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</a>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>In mid-May, I passed the 1C Expert exam on the technical side of large implementations. I’d spent almost two years preparing, so I’m damn glad I finally got through it.</p>
+<p>There’s tons of material online about the exam and everything around it, from Viktor Bogachev’s <a href="https://uc1.1c.ru/course/podgotovka-k-1s-ekspertu-po-tehnologicheskim-voprosam-osnovnoj-kurs/" rel="noopener noreferrer" target="_blank">course</a> to, say, a Telegram <a href="https://t.me/OneC_Expert" rel="noopener noreferrer" target="_blank">chat</a> on the subject. So there’s no shortage of answers to the question in the title. But there are a couple of ways this can mess with your head that people rarely talk about. It helps to know about them beforehand.</p>
+<h2>Not Enough Dopamine</h2>
+<p>This exam is hard. Preparing can take a long time, and so can passing it: there’s a good chance you’ll need several attempts. I passed on my second try, but it varies. Some people I know passed on their third, fifth, or even eighth attempt.</p>
+<p>You can end up putting in a huge effort again and again with nothing to show for it. Eventually, your brain decides this is something to avoid: it never works out, it feels pointless, and it makes you miserable. You can guess what that does to your chances of passing.</p>
+<p>That’s why it’s better to treat preparation as a long, risky project: break it up with small tasks you can actually finish and feel good about. Your brain doesn’t draw much distinction between big and small successes, and getting back to the main project will be easier.</p>
+<p>For example, as a distraction I wrote home automation scripts: the <a href="https://github.com/vkostyanetsky/BlogBuilder" rel="noopener noreferrer" target="_blank">static site generator</a> for this website, an organizer based on text files, tools for my home NAS, and other things I’d never got around to. Any tasks will do, including ones that have nothing to do with IT. Unclog the bathroom drain? Excellent idea!</p>
+<h2>Not Enough Memory</h2>
+<p>Unless you deal with 1C performance problems every day, this exam eats up a lot of mental RAM. You have to keep all sorts of things in your head that you’d normally just look up: Microsoft SQL Server trace flags and dynamic view names, PostgreSQL settings and recommended values, the platform’s standard indexes, and so on and so forth. A hu-u-uge pile of information! <em>(gestures to show how huge)</em></p>
+<p>Give your brain enough data, and it starts acting suspiciously like a DBMS with an overflowing buffer cache. In other words, anything you don’t need right now will be evicted from memory. Be prepared to forget the most unexpected things: your apartment number, the neighbor’s dog’s name, your wife’s birthday, and those aren’t even the strangest consequences. While preparing, I could really relate to Johnny Mnemonic, the guy from an ancient cyberpunk film who loaded so much data into his brain that he nearly died :-)</p>
+<p><img alt="Don’t do this" src="https://kostyanetsky.me/notes/1c-expert/dont-do-it.jpg"/></p>
+<p>I see two ways out, both fairly obvious.</p>
+<p>First, get some practice in. Complicated technical details are a hundred times easier to remember when they bring up a picture of the app where you tried them out.</p>
+<p>Second, find something to associate the really tricky bits with. Take Bash! The utility name sed is easier to remember if you know it stands for Stream EDitor. The name cat comes from concatenate, not the animal, but if the animal helps you remember it, use that. Why not?</p>
+<p>Or take the byte order mark: \xef\xbb\xbf, yes. I got it to stick with, don’t laugh, the completely unrelated phrase “Elf Friend BB Best Fight.” I have no idea why my brain needs <s>such ass-backwards</s> such roundabout ways of getting things in, but I’m not complaining. Whatever works!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+          </div>
+
+        </article>
+
+      </section>
+        
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/longest-queries-v2"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← An Updated Script for Finding Long Queries
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/rclone-abuser"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          A Script to Sync With NAS →
+        </a>
+        
+      </nav>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

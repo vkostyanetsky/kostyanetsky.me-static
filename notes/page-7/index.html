@@ -1,0 +1,1779 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Notes</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Vlad&#39;s Site" href="https://kostyanetsky.me/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.me/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.me/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.me/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.me/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Notes"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.me/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.me/notes/page-7" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.me/notes/page-8";
+        let ctrlRightUrl    = "https://kostyanetsky.me/notes/page-6";
+    </script>
+    
+    <script src="https://kostyanetsky.me/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/">Vlad&#39;s Site</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.me/projects/">Projects</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.me/notes/">Notes</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Found a typo? Edit me!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.ru/notes/page-7"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="RU"
+                    >
+                        RU
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="7"
+      data-total-notes="20"
+      data-total-pages="12"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Notes</h1>
+        <p class="max-w-2xl text-slate-700">
+          My notes about life, work and other fascinating things around me.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            aria-busy="false"
+            type="search"
+            placeholder="Search by title / text / tags…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Shown: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Page</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          All
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Work
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Done
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Videogames
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Meanwhile
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          AI
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Family
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Blog
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Code Smell
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Workplace
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Optimization
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Books
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Georgia
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Sport
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bitrix
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/vuejs-blog"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A Blog in Vue.js
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>21 Jule 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Blog</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>In the middle of last year, I <a href="https://kostyanetsky.me/notes/so-much" rel="noopener noreferrer" target="_blank">got excited</a> about rewriting this website with something more modern than PHP, chose Vue.js as the framework, and got to work. I barely knew JavaScript at the time, so I stumbled over plenty of things like “the date formatting method crashes in Safari.” Eventually, though, I had a working app.</p>
+<p>Well, sort of. On one hand, I achieved my main goal: a client-side web application that only asks the server for data and builds the entire interface itself. On the other, I had to bolt an army of <s>workarounds</s> hooks onto the framework even for basic things, like highlighting menu items or returning the correct HTTP codes. Some things I couldn’t get working at all on the first go, such as serving HTML versions of pages to Yandex, whose crawlers in 2020 can’t index JavaScript websites.</p>
+<p>I learned a lot, but the end result was such a mixed bag that I eventually gave up on the idea and <a href="https://github.com/vkostyanetsky/VuejsBlog" rel="noopener noreferrer" target="_blank">published</a> the resulting Frankenstein on GitHub. Perhaps it will save someone time on tasks like “display arbitrary HTML through Vue.js” or “make VueI18n work with Russian.”</p>
+<p>There’s no documentation, though. I initially wanted to explain how everything worked, but quickly realized it would take a lot of time for little obvious benefit. I’ll probably return to the subject when the mood strikes. For now, let’s call it an MVP :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/broken-bicycle"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                A Broken Bicycle
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>20 Jule 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><a href="https://www.1ci.com/applications/1c-drive/" rel="noopener noreferrer" target="_blank"><img alt="1C:Drive" src="https://kostyanetsky.me/notes/broken-bicycle/broken-bicycle.png"/></a></p>
+<p>I suspect whoever drew this image for 1Ci was about as far removed from developing the configuration, and from programming in general, as possible. Because a programmer sees exactly two messages about the product here:</p>
+<ol>
+<li>It reinvents the wheel.</li>
+<li>The wheel is broken.</li>
+</ol>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/service-launcher"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Service Launcher
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>13 Jule 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="powershell" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Powershell</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Workplace</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Some time ago, I <a href="https://kostyanetsky.me/notes/manage-services-with-powershell" rel="noopener noreferrer" target="_blank">wrote</a> about PowerShell cmdlets for starting and stopping services. I’ve now turned those sketches into a proper script: it reads the list of services to start or stop from a separate file, and checks whether it has admin rights, asking for them if it doesn’t.</p>
+<p>You can <a href="https://github.com/vkostyanetsky/ServiceLauncher" rel="noopener noreferrer" target="_blank">see the result</a> on GitHub. No big deal: I wanted to practice the language and simplify my daily routine. My system has about fifteen resource-hungry services needed for work but useless at other times. Stopping and starting that whole zoo by hand is a pain. Doing it with one command? Much better!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/data-size-console"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                The Size of Data in a 1C Database
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>11 Jule 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Last week, while browsing the 8.3.15 release notes, I came across GetDatabaseDataSize(). I got curious about how it works and how its numbers compare with what you get from, say, Management Studio.</p>
+<p>I ended up writing a sort of <a href="https://github.com/vkostyanetsky/DataSizeConsole" rel="noopener noreferrer" target="_blank">console</a> to pass various metadata objects to the method, and started watching the platform’s database queries.</p>
+<p>Basically, the platform works out the data size with something like this:</p>
+<pre><code>CAST(
+    SUM(
+        CAST(
+            DATALENGTH(T1._Fld40) AS NUMERIC(12, 0)
+        )
+    ) AS NUMERIC(18, 0)
+)
+</code></pre>
+<p>It does this for every field in the object, including standard attributes. If there are tabular sections, it counts those too, then sums the results.</p>
+<p>Conclusions?</p>
+<p>First, now I understand the method’s awkward name. It doesn’t calculate table size, as I initially thought, but <strong>data size</strong> specifically. The estimate excludes schema overhead, index overhead, and extent allocation. It counts only the size of the data stored directly in the object.</p>
+<p>So a product catalog, say, will actually take up more space than this method reports. Possibly a lot more. You wouldn’t use it for precise analysis, but it’s fine for a quick look at where the data is piling up.</p>
+<p>Second, the method doesn’t count the data history overhead for the objects being analyzed, which the docs are quite clear about. In theory, you could calculate it manually starting from _DataHistoryMetadata, but let’s wait a release or two: perhaps the developers will add it.</p>
+<p>Third, the DBMS reads all the data in the tables it needs, then works out how big that data is. That probably means a whole bunch of scans, which can flush the buffer cache pretty quickly. In 1cFresh, the queries respect data separators, but that’s cold comfort to me.</p>
+<p>Use it with care on a live production system.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/what-is-inside-the-drum"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Exporting Standard Data Processors
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 Jule 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Work</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>We recently swapped out SSLi’s creaky old homegrown versioning for the platform’s built-in data history in our configuration. I’m now finishing data history backup and restore. Surprisingly, neither the Standard Subsystems Library, the Standard Technologies Library, nor SSLi can do this yet, though I didn’t expect it from the last one.</p>
+<p>I’ll write more when it’s finished. For now, here’s a neat trick that came in handy: the platform’s built-in data processors available through “All Functions” can be exported as ordinary epf files! Colleagues on Infostart explained the trick in detail <a href="https://infostart.ru/public/369487/" rel="noopener noreferrer" target="_blank">here</a> and <a href="https://infostart.ru/public/538300/" rel="noopener noreferrer" target="_blank">here</a>. In brief, the magic looks like this:</p>
+<pre><code>КопироватьФайл(
+    "v8res://mngbase/StandardDataChangeHistory.epf",
+    "Q:/StandardDataChangeHistory.epf"
+);
+</code></pre>
+<p>The links above have the full list of forms and processors you can pull out, how to get that list, and plenty of people arguing about it all.</p>
+<p>Why might this help you? Honestly, I don’t know. In our case, we were building interfaces for data history and were curious about how 1C had written its own. Spoiler: it’s pretty messy.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/how-not-to-land"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                The Subtle Art of Landing
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 May 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="meanwhile" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Meanwhile</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/bvim4rsNHkQ" width="560"></iframe>
+<p>With all the news lately, I ended up watching a three-year-old SpaceX compilation of failed landings on a floating platform. To me, it’s a great example of how to treat your mistakes: with humor!</p>
+<blockquote>
+<p>Well, technically, it did land… Just not in one piece.</p>
+</blockquote>
+<p>:D</p>
+<p>The comments are in fine form too:</p>
+<blockquote>
+<p>Space X : Launches astronauts for the first time.</p>
+<p>Youtube: Let's recommend this video!</p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/fred"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Fred
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>24 May 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="english" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">English</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Igor Sakharov covered Korol i Shut’s “Fred” in English:</p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/MsFQmXdC29g" width="560"></iframe>
+<p>Rock! Ro-o-ock! :-)</p>
+<p>Seriously, I’ve <a href="https://kostyanetsky.me/notes/i-wish-i-could" rel="noopener noreferrer" target="_blank">written</a> about this before, but I’m happy to repeat myself: things like this are one of the simplest and most enjoyable ways to memorize lots of words and expressions.</p>
+<p>Sure, there are plenty of sharp-minded people who don’t need this trick. It’s more for ordinary folks like me. Otherwise, all those “what a good match you and I” and “spellbound by your beauty pure and true” phrases sometimes evaporate from our heads in, well… Ten seconds?</p>
+<p>This way, you watch the video, catch yourself singing along, and the words stick before you know it.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/perfectly-balanced"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                On Perfect Balance
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>20 May 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Work</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I want to share a couple of great pieces about modern software. Neither is exactly new, especially the first, but I’m sure some of you haven’t seen them:</p>
+<ul>
+<li><a href="https://tonsky.me/blog/disenchantment/ru/" rel="noopener noreferrer" target="_blank">Software Disenchantment</a> by Nikita Tonsky</li>
+<li><a href="https://habr.com/ru/company/jugru/blog/493178/" rel="noopener noreferrer" target="_blank">Everything in Software Is Amazing, but Nobody Is Happy</a> by Evgeny Trifonov</li>
+</ul>
+<p>What brought this to mind? Last week, I took part in a hackathon for developers at our company. I learned a lot of cool things and even shared first place with two other people who came up with very similar solutions.</p>
+<p>(If you also work at First BIT, the <a href="https://newportal.1cbit.ru/news/3066979/" rel="noopener noreferrer" target="_blank">results</a> are on the portal, along with a <a href="https://newportal.1cbit.ru/news/3066980/" rel="noopener noreferrer" target="_blank">review</a> by another winner, Dima Leshchenko.)</p>
+<p>Along the way, we had to deploy and configure a mountain of software: EDT, RabbitMQ, Docker, GitLab, JIRA, SonarQube, and a wagonload of smaller, simpler tools. All right, no complaints about RabbitMQ: it’s light and fast. But the rest… I already knew EDT had an appetite, but GitLab and JIRA’s hunger really surprised me.</p>
+<p>Yes, everything ran in Docker; yes, the configuration wasn’t optimal, with several PostgreSQL servers instead of one, for example; yes, it was Docker for Windows, which every sysadmin I know loves to make jokes about. But twelve gigabytes of RAM straight out of the gate?! I won’t even mention the CPU: the load looked as if the computer were simulating a nuclear explosion in real time.</p>
+<p>It’s hard to find a better illustration of Nikita’s points: this software devoured a sea of resources and calmly asked for more before it had even started doing anything useful. But Evgeny has a point too: with one single command, I got several operating systems up and running, complete with some pretty complicated servers. And it took a tiny fraction of the time it would have a few years ago.</p>
+<p>I don’t have an answer. I don’t think anyone does. We’ve been having this argument forever. Pick either side, and you still end up trying to find a balance. You need to write good, fast code, while also avoiding premature optimization. Getting the code right feels great: you remember that, damn it, you’re pretty good! The second simply keeps you from losing your mind in search of the perfect bubble sort algorithm :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/value-table-view"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Viewing a Value Table
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 May 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve uploaded a <a href="https://gist.github.com/vkostyanetsky/ef44bbb18f36a1c51826a5d0b4f3960e" rel="noopener noreferrer" target="_blank">short function</a> to GitHub that converts any value table into a spreadsheet document.</p>
+<p>Why? So you can see what’s in it. You can’t pass the value table itself to the client, but you can pass a spreadsheet document based on it. A spreadsheet document also has a client-side Show() method that displays it in a separate window.</p>
+<p>That way, you can poke around in utility tables right in Enterprise mode, without building an interface for each one. Feed a table to the function above, get a spreadsheet document back, send it to the client, and show it.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/self-documenting-code"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Self-Documenting Code
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>3 May 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="code-smell" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Code Smell</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Hello, everyone! Johnny Catswill is back with another episode of Self-Documenting Code!</p>
+<p>Today, we’ll iterate over value table rows from Н to Й:</p>
+<p><img alt=":|" src="https://kostyanetsky.me/notes/self-documenting-code/self-documenting-code.png"/></p>
+<p>It seems like a tiny thing, but by the fifth time you run into this kind of variable naming in the same module, your eye starts twitching :-)</p>
+<p>It isn’t even that this section is <a href="https://kostyanetsky.me/notes/why-so-serious" rel="noopener noreferrer" target="_blank">harder to understand</a>; it says a lot about the module’s overall quality. The programmer who wrote it was probably exhausted, and somewhere nearby you’ll likely find something like someone cheerfully dumping the entire product catalog into a value table, reading a bunch of objects “through a dot,” and more of the same slapdash stuff.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/manage-services-with-powershell"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Managing Services with PowerShell
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 April 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="powershell" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Powershell</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Workplace</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>The other day, I sketched out a few PowerShell scripts for starting and stopping services on my work PC. I didn’t end up needing them, so I’ll leave a couple of examples here before I lose them:</p>
+<pre><code>get-service -Name 1C:Enterprise* | Where-Object {$_.status -eq 'running'} | stop-service -pass
+get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service -pass
+</code></pre>
+<p>Both lines above do the same thing: find services with a particular name, check their status, and stop them if they’re running. Patterns come in handy for the service names. Microsoft SQL Server, for example, has a whole brood of services with different purposes, and it’s handy to kill them with one line. Or take the 1C:Enterprise server service: there’s only one, but its name is so long that I can’t be bothered to type it in full :-)</p>
+<p>You can do pretty much the same thing with regular processes. This line looks for obs64 and stops it if it’s there.</p>
+<pre><code>get-process -Name obs64 | stop-process -pass
+</code></pre>
+<p>If you want the details, there’s plenty of <a href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" rel="noopener noreferrer" target="_blank">documentation</a>, packed with examples and discussions along the lines of “how to start a service while meditating on one leg in artificial zero gravity.”</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/black-mesa"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Black Mesa
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>13 April 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Videogames</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/YkBrNGeFwoU" width="560"></iframe>
+<p>They’ve given the legendary, but now pretty creaky, Half-Life a careful makeover and thrown in a bunch of new ideas. It turned out great; you can really see the fans put their hearts into it :-) Xen benefited especially, although I think the factory could have been shorter. Still, the reworked Nihilanth fight more than makes up for all the suffering.</p>
+<p>There are minor issues with music, optimization, and translation, but nothing particularly serious. Given how long it was in development, it’s amazing they got it out at all. Long projects tend to wear people out and burn them out, and that’s before you even get to the enormous job of bringing a twenty-year-old game up to date! Quite a nasty piece of work you managed over there, guys. I am impressed.</p>
+<p><a href="https://kostyanetsky.me/notes/black-mesa/swamp.jpg" rel="noopener noreferrer" target="_blank"><img alt="Swamp" src="https://kostyanetsky.me/notes/black-mesa/swamp-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/black-mesa/crystaline-cave.jpg" rel="noopener noreferrer" target="_blank"><img alt="Crystal Cave" src="https://kostyanetsky.me/notes/black-mesa/crystaline-cave-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/black-mesa/burning-sky.jpg" rel="noopener noreferrer" target="_blank"><img alt="Burning Sky" src="https://kostyanetsky.me/notes/black-mesa/burning-sky-thumbnail.jpg"/></a> <a href="https://kostyanetsky.me/notes/black-mesa/flycatcher.jpg" rel="noopener noreferrer" target="_blank"><img alt="Flytrap" src="https://kostyanetsky.me/notes/black-mesa/flycatcher-thumbnail.jpg"/></a></p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/is-ref-empty"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                IsEmpty() or ValueIsFilled()?
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>11 April 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A few days ago, a colleague and I discussed the best way to check whether a reference is filled. I remembered an instructor telling us, very confidently, to be careful with ValueIsFilled(). Supposedly, it compares the variable with every possible empty value in the configuration, and the whole thing is a huge, slow mess. As an alternative, the instructor recommended the reference’s IsEmpty() method and checking composite attributes roughly like this:</p>
+<pre><code>СсылкаЗаполнена = Ссылка &lt;&gt; Неопределено И Не Ссылка.Пустая();
+</code></pre>
+<p>My colleague argued that ValueIsFilled() is faster because it’s a built-in function and doesn’t spend time looking up a method on an object, a relatively slow operation in scripting languages.</p>
+<p>I can’t recall either method ever being a bottleneck, but I got curious and wrote a <a href="https://github.com/vkostyanetsky/IsEmptyOrValueIsFilled" rel="noopener noreferrer" target="_blank">test</a> that checks a reference variable for an empty value both ways and measures the time taken.</p>
+<p>The average result looks <a href="https://kostyanetsky.me/notes/is-ref-empty/is-ref-empty.png" rel="noopener noreferrer" target="_blank">roughly like this</a>. There are four steps: the first two assume the reference is defined, while the third and fourth add a check for that. The table’s last column shows the execution context, client or server.</p>
+<p>The result is pretty clear: ValueIsFilled() doesn’t slow things down at all. It’s actually faster than IsEmpty(), especially once we start checking the variable for Undefined. The difference isn’t enormous, of course, but it could save a couple of seconds in some lengthy scheduled operations.</p>
+<p>Besides, one check that works for everything is easier than trying to guess every value the variable might have.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/sharex-video-recording"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Recording Video with ShareX
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 April 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Workplace</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Before switching to OBS Studio for video recording, which I wrote about in my <a href="https://kostyanetsky.me/notes/video-recording" rel="noopener noreferrer" target="_blank">previous note</a>, I tried <a href="https://getsharex.com/" rel="noopener noreferrer" target="_blank">ShareX</a>. It worked well at first, but one nasty bug made me give up on it. Sometimes I’d stop recording and end up with a broken video.</p>
+<p>I googled around but never figured out why. That isn’t surprising: ShareX uses <a href="https://www.ffmpeg.org/" rel="noopener noreferrer" target="_blank">ffmpeg</a> to record video, and this child of open source calmly dumps a whole scroll of logs instead of useful diagnostics. Trying to make sense of that without knowing your way around it is a job for an incurable optimist.</p>
+<p>As a screenshot tool, though, ShareX is almost flawless. All those options remind me a bit of an exhausted person having a sudden burst of hyperactivity :-)</p>
+<p><a href="https://kostyanetsky.me/notes/sharex-video-recording/interface.png" rel="noopener noreferrer" target="_blank"><img alt="Configuring screenshots" src="https://kostyanetsky.me/notes/sharex-video-recording/interface-thumb.png"/></a></p>
+<blockquote>
+<p>“I’ll test it myself! I’ll test everything myself! And mop the floors!”</p>
+<p><em><a href="https://www.youtube.com/watch?v=K6oZuB8_dU8&amp;feature=youtu.be&amp;t=640" rel="noopener noreferrer" target="_blank">Efficiency Doesn’t Work. Ilya Yakyamtsev</a></em></p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/video-recording"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Recording Video
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>3 April 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Workplace</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I work remotely, so I talk to colleagues over Zoom and Slack. Mostly in chats, but many subjects are still easier to discuss by voice. That’s where it gets awkward: forget message indexing and search, and, most importantly, there’s no conversation archive. Sometimes you really need to remember: who said it? What exactly? When?</p>
+<p>Zoom and Slack don’t solve this on their own. Zoom only records meetings you organize or have permission to record, which is far from all of them, while Slack doesn’t record video at all.</p>
+<h2>Solving the Problem</h2>
+<p>I solved it some time ago by installing <a href="https://obsproject.com" rel="noopener noreferrer" target="_blank">OBS Studio</a>, screen recording software popular with streamers. It handles conference recording beautifully. Setup is minimal: record the entire screen, microphone audio, and all playback audio. After a few test recordings, you can add mixer filters such as gain and noise suppression.</p>
+<p><img alt="Configuring OBS Studio" src="https://kostyanetsky.me/notes/video-recording/video-recording.png"/></p>
+<p>Choose where to save the recordings under Output → Recording → Recording Path. We’re recording calls, so there’ll be lots of files. Might as well sort them into folders by day from the start. Go to Advanced settings and set Filename Formatting to something like %CCYY-%MM-%DD/%hh-%mm-%ss.</p>
+<h2>Quick Recording Controls</h2>
+<p>Opening OBS for every call is inconvenient, but it supports plenty of hotkeys. You can press some elaborate combination at the start and end of a conversation. That didn’t work for me, though: for some reason, the shortcuts kept slipping my mind. Even sticky notes didn’t help.</p>
+<p>At first I got quite annoyed, then realized: if I can’t remember a shortcut, I should get rid of it. Start recording with one button, stop with another.</p>
+<p>The hardware was easy: I have an ergonomic Microsoft <a href="https://www.microsoft.com/accessories/ru-ru/products/keyboards/natural-ergonomic-keyboard-4000/b2m-00020" rel="noopener noreferrer" target="_blank">keyboard</a> with a wagonload of programmable buttons. Software was harder: OBS Studio understands some launch <a href="https://github.com/obsproject/obs-studio/wiki/Launch-Parameters" rel="noopener noreferrer" target="_blank">parameters</a>, but there’s not much to choose from. There isn’t even a stop-recording option. I wanted more.</p>
+<p>I eventually solved it with an OBS Studio plugin that lets you control a running instance. It was designed for remote recording control, from a smartphone for example, but it works just as well on the same machine.</p>
+<p>Here’s what I ended up with:</p>
+<ol>
+<li>Install OBS Studio and the <a href="https://obsproject.com/forum/resources/obs-websocket-remote-control-of-obs-studio-made-easy.466/" rel="noopener noreferrer" target="_blank">obs-websocket</a> plugin. Clear “Enable System Tray Alerts” under Tools → WebSockets Server Settings, or it will report every little thing.</li>
+<li>Put this <a href="https://obsproject.com/forum/resources/command-line-tool-for-obs-websocket-plugin-windows.615/" rel="noopener noreferrer" target="_blank">utility</a> somewhere convenient to control the plugin from the command line.</li>
+<li>Assign OBSCommand.exe /startrecording to one button and OBSCommand.exe /stoprecording to another.</li>
+<li>Done. Look at you go!</li>
+</ol>
+<p>A console window pops up for a moment when you press the button: OBSCommand launches, contacts obs-websocket, and waits for a reply. I initially wanted to hide the window, but changed my mind. If OBS Studio isn’t running or something goes wrong, the console will stay open, and at least I’ll know recording hasn’t started.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/unresolved-references"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Unresolved References
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>10 Marth 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Unresolved references to metadata objects usually appear when objects are deleted, and sometimes when configurations are merged. ITS has an <a href="https://its.1c.ru/db/metod8dev#content:2290:hdoc" rel="noopener noreferrer" target="_blank">article</a> with a good explanation of the details.</p>
+<p>Broken references don’t always affect the application’s behavior. A field without a data binding is easy to notice, of course. But suppose you delete a functional option: what does it matter if a reference remains somewhere in a form command? It simply sits there like a cut wire, inert and harmless. Nothing passes through it.</p>
+<p>Still, these things gradually clutter the configuration and should be removed. The ITS advice isn’t all that helpful: go through every place a broken reference might be hiding. Imagine a complicated document form with lots of controls. How long would that search take? And success isn’t guaranteed.</p>
+<p>There’s a rougher way that works: delete groups of controls from the form, one after another. Start with large groups, such as pages. After each removal, check the configuration and see whether the broken reference has disappeared. Before starting, it’s best to delete all form code so the platform doesn’t complain about references to nonexistent controls.</p>
+<p>The problem might also be in the form itself rather than its controls, but that’s much easier to locate: settings storage, conditional appearance, commands. There aren’t many candidates.</p>
+<p>You can also export the configuration to files and dig through the XML. That’s also worth doing because what you see in Designer can be misleading. If a form command references a missing functional option, for example, you might see nothing wrong in the command’s properties. But the XML will contain a suspicious GUID instead of an option name: practically a signed confession :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/standard-attributes-filtering"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Filtering Standard Attributes
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 Marth 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>A short <a href="https://gist.github.com/vkostyanetsky/ee1f913868673c2218877dfbecc9b08a" rel="noopener noreferrer" target="_blank">code fragment</a> from the data history settings processor I just <a href="https://kostyanetsky.me/notes/data-history-settings" rel="noopener noreferrer" target="_blank">wrote about</a>. It checks whether Attribute is MetadataObject’s standard attribute named StandardAttributeName. When is that useful? Suppose you’re iterating over an object’s standard attributes and want to skip one for some reason.</p>
+<p>At first glance, the solution looks absurdly convoluted. Why not simply compare the attribute being checked with the one we want to exclude?</p>
+<pre><code>If Attribute = MetadataObject.StandardAttributes.Order Then
+</code></pre>
+<p>Because that code doesn’t work: comparing two standard attributes of a metadata object in the 1C platform always returns False.</p>
+<p>All right, you might say, why complicate things? How about this?</p>
+<pre><code>If Attribute.Name = "Order" Then
+</code></pre>
+<p>That won’t work either if your code runs in a Russian configuration: the standard attribute we’re looking for is then named “Порядок.”</p>
+<p>But you can look up the standard attribute in the collection by either its Russian or English name. Then you get its actual name and compare that with the name of the attribute you’re checking.</p>
+<p>Of course, we could simply compare the name with both “Order” and “Порядок.” But first, that’s ugly; second, our coding standards don’t allow Russian in the code. I wanted a more general solution.</p>
+<p>The Try/Catch is there in case the configuration has no standard attribute with that name at all. Trying to look it up would throw an error.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/data-history-settings"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Data History Settings
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 Marth 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Work</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve put a <a href="https://github.com/vkostyanetsky/AuditLogSettings" rel="noopener noreferrer" target="_blank">data processor</a> on GitHub for setting up the data history feature that <a href="https://its.1c.ru/db/v8312doc#bookmark:dev:TI000001938" rel="noopener noreferrer" target="_blank">arrived</a> in the platform not long ago. Here’s what it does:</p>
+<ol>
+<li>Builds a tree of objects that support data history;</li>
+<li>Shows which objects currently have data history enabled;</li>
+<li>Lets you enable or disable data history for objects and their attributes.</li>
+</ol>
+<p>It supports batch operations: for example, you can enable history for several documents and all catalogs at once. Or wipe all your changes and go back to the defaults the configuration developer set.</p>
+<p>I think it turned out well. I mostly wrote it for myself, to give my brain a workout in the evenings, but we might even include it in <a href="https://firstbit.ae" rel="noopener noreferrer" target="_blank">our configuration</a>! Right now, SSLi handles our data versioning, and it’s not exactly efficient: it’s slow and makes the database balloon. Hopefully, the platform will do better when we test it.</p>
+<p>You can find similar tools on Infostart and ITS, but they’re either buggy, work only with Russian configurations (no English interface and dependencies on the Russian Standard Subsystems Library), or are just out of date, with no support for constants, for example.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/ninth-wave"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                The Ninth Wave
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 Marth 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="meanwhile" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Meanwhile</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Yesterday morning, I was buying gifts for my women. While a florist was makings bouquets for me, we had a small talk and I suddenly caught her eye. She was looking at the growing crowd of customers with calmness and a clearly readable shadow of doom. This is probably how sailors looking at a surging wave which is about to bury their boat :-)</p>
+<p>People outside the flower industry grin sometimes — they say, eight of March is such a magical holiday for all the florists who make a fortune in ten hours. Well, income is really good these days, but literally anybody who has ever worked in this sphere more often associates the holiday (and a couple of days before it, by the way) with a monstrous strain on health and nerves.</p>
+<p>I can say that I got off cheaply: was just deploying and servicing some IT of a local net of flower shops, nothing more (by the way, I want to proudly <a href="http://rosetta.florist/" rel="noopener noreferrer" target="_blank">recommend</a> my former colleagues!). Nonetheless, the smell of flowers caused me Vietnam syndrome for a long time :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/top-exceptions"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Top Exceptions in the Technological Log
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 February 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Done</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I’ve published a Bash <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" rel="noopener noreferrer" target="_blank">script</a> on GitHub that identifies the most frequent exceptions in a collected 1C technological log.</p>
+<p>It analyzes EXCP events. These are the main source of error information, though certainly not the only one: EXCPCNTX, for example, describes an event that had started but hadn’t finished when an error occurred. Also, if an exception occurs during a server call, the CALL event’s RetExcp field contains the error text returned to the client.</p>
+<p>Most of the time, though, EXCP and the occasional EXCPCNTX will do. People often collect them by default: it doesn’t put any real load on the system and lets you run the logs through an analysis tool, such as the script above, to keep a finger on the pulse.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Nothing found. Try a different search?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.me/notes/page-8"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Earlier
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.me/notes/page-6"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Later →
+        </a>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.me/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "";
+  const notesListUrl = "https://kostyanetsky.me/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+  let searchVersion = 0;
+
+  function setSearchBusy(busy) {
+    searchEl.setAttribute("aria-busy", String(busy));
+    dynamicNotesEl.setAttribute("aria-busy", String(busy));
+  }
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const version = ++searchVersion;
+    const q = (searchEl.value || "").trim();
+    const tag = activeTag;
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        setSearchBusy(false);
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        setSearchBusy(false);
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      setSearchBusy(false);
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+    setSearchBusy(true);
+    emptyEl.classList.add("hidden");
+
+    try {
+      // Allow the busy icon to paint even when the index is already cached.
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (version !== searchVersion) return;
+      const notes = await loadNotesJsonOnce();
+      if (version !== searchVersion) return;
+      const filtered = filterNotes(notes, q, tag);
+
+      countEl.textContent = String(filtered.length);
+      pageInfoEl.textContent = makeSearchLabel(q, tag);
+
+      if (filtered.length === 0) {
+        dynamicNotesEl.innerHTML = "";
+        emptyEl.classList.remove("hidden");
+        return;
+      }
+
+      emptyEl.classList.add("hidden");
+      dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+    } finally {
+      if (version === searchVersion) setSearchBusy(false);
+    }
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  const debouncedSearch = debounce(runSearch, 200);
+  searchEl.addEventListener("input", () => {
+    // Invalidate an in-flight search immediately, including during debounce.
+    ++searchVersion;
+    setSearchBusy(true);
+    debouncedSearch();
+  });
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Vlad Kostyanetsky</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.me/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,90 @@
+﻿06:56.430029-1,DBMSSQL,4,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql='create table dbo._DataHistorySettingsNG (
+_MetadataId binary(16) not null,
+_Content varbinary(max) not null,
+_Fld626 numeric(7, 0)
+)
+'
+06:56.430031-1,DBMSSQL,4,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql='CREATE UNIQUE CLUSTERED INDEX _DataHistorySettings_1NG ON dbo._DataHistorySettingsNG (_Fld626, _MetadataId) WITH (SORT_IN_TEMPDB = ON, MAXDOP = 0)'
+06:56.430036-13,SDBL,3,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,Sdbl='CREATE NEW GENERATION
+(
+--Data history settings
+TABLE DataHistorySettings REF 13601
+(
+    --Metadata id
+    FIELD MetadataId BINARY(16),
+
+    --Object settings data
+    FIELD Content BINARY,
+
+    --Field  "DataAreaMainData"
+    FIELD Fld626 NUMERIC(7) NULL,
+
+    --By separators, metadata id
+    INDEX SeparatorsMetadataId(Fld626,MetadataId) UNIQUE CLUSTERED
+--End data history settings table: DataHistorySettings
+)
+);',Rows=0
+06:56.446000-15959,DBMSSQL,5,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql=drop index _DataHistorySettings_1NG on dbo._DataHistorySettingsNG
+06:56.539000-45990,DBMSSQL,5,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql='INSERT INTO dbo._DataHistorySettingsNG WITH(TABLOCK) (_MetadataId, _Content, _Fld626) SELECT
+T1._MetadataId,
+T1._Content,
+CAST(NULL AS NUMERIC(7, 0))
+FROM dbo._DataHistorySettings T1 WITH(NOLOCK)
+WHERE (T1._MetadataId IN (?, ?, ?, ?, ?))
+p_0: 0xMHQZQBDL7X2BOO1V9B65Z89NZBZQSQPR
+p_1: 0xLHBJKBUQ8JWFZYWJL9ASMM4D9B89EGGA
+p_2: 0x91173850771CF5C94A4320C58F5F7E63
+p_3: 0xM9WSB3NQP03Z93DYU4W6985PK98M3WPR
+p_4: 0xF3HIFASTAWXE2MS9D8P816SJBAGLXAND
+',Rows=0,RowsAffected=5
+06:56.539001-45992,SDBL,4,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,Sdbl='INSERT INTO DataHistorySettings
+(MetadataId,Content,Fld626)
+VALUES (
+SELECT MetadataId,Content,NULL
+FROM DataHistorySettings
+WHERE MetadataId IN ( 0x8292ae1511c35f27433839a0206349fe, 0xad5ea77af4f9cf5c42e8e111296f1417, 0x91173850771cf5c94a4320c58f5f7e63, 0x8d61c12df714c090485d3f789c800aa1, 0xbe8b44ae042864d148f9196ffad6e4fb ) 
+)',Rows=1
+06:56.555000-15983,DBMSSQL,5,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql='INSERT INTO dbo._DataHistorySettingsNG WITH(TABLOCK) (_MetadataId, _Content, _Fld626) SELECT
+T1._MetadataId,
+T1._Content,
+CAST(NULL AS NUMERIC(7, 0))
+FROM dbo._DataHistorySettings T1 WITH(NOLOCK)
+WHERE (T1._MetadataId IN (?))
+p_0: 0x8B167AAFF6C142394B969553D912E472
+',Rows=0,RowsAffected=286
+06:56.555001-15985,SDBL,4,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,Sdbl='INSERT INTO DataHistorySettings
+(MetadataId,Content,Fld626)
+VALUES (
+SELECT MetadataId,Content,NULL
+FROM DataHistorySettings
+WHERE MetadataId IN ( 0x8b167aaff6c142394b969553d912e472 ) 
+)',Rows=1
+06:56.555018-1,DBMSSQL,5,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,Func=lookupTmpTable
+06:56.555020-1,DBMSSQL,5,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,Func=quickInsert,tableName=#tt1,RowsAffected=574
+06:56.758000-202979,DBMSSQL,5,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql='INSERT INTO dbo._DataHistorySettingsNG WITH(TABLOCK) (_MetadataId, _Content, _Fld626) SELECT
+T1._MetadataId,
+T1._Content,
+T1._Fld626
+FROM dbo._DataHistorySettings T1 WITH(NOLOCK)
+WHERE T1._MetadataId IN
+(SELECT
+T2._INVALUELIST AS INVALUELIST_
+FROM #tt1 T2 WITH(NOLOCK)
+WHERE T2._INVALUELIST IS NOT NULL)',Rows=0,RowsAffected=164164
+06:56.758003-1,DBMSSQL,6,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql=TRUNCATE TABLE #tt1
+06:56.758004-3,DBMSSQL,5,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,Func=returnTmpTable
+06:56.758005-202989,SDBL,4,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,Sdbl='INSERT INTO DataHistorySettings
+(MetadataId,Content,Fld626)
+VALUES (
+SELECT MetadataId,Content,Fld626
+FROM DataHistorySettings
+WHERE MetadataId IN ( 0xl9h9kw2k5a1o7s2df2trmn51xzou31ko, 0xsdr1lepbedsxlfm69h6gza2kd5p0oe9j, (множество других ID) ) 
+)',Rows=1
+06:57.024000-0,EXCP,6,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,dbpid=56,Exception=DataBaseException,Descr="Нарушено условие уникальности данных.
+
+Попытка вставки неуникального значения в уникальный индекс:
+Microsoft SQL Server Native Client 11.0: The CREATE UNIQUE INDEX statement terminated because a duplicate key was found for the object name 'dbo._DataHistorySettingsNG' and the index name '_DataHistorySettings_1NG'. The duplicate key value is (<NULL>, 0xo82gj1hksesqt7wapzrg99munw3x16ji).
+HRESULT=80040E2F, SQLSrvr: SQLSTATE=23000, state=1, Severity=10, native=1505, line=1
+"
+06:57.024001-265986,DBMSSQL,5,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql='CREATE UNIQUE CLUSTERED INDEX _DataHistorySettings_1NG ON dbo._DataHistorySettingsNG (_Fld626, _MetadataId) WITH (SORT_IN_TEMPDB = ON, MAXDOP = 0)'
+06:57.024018-1,DBMSSQL,4,process=rphost,p:processName=Dev1cFreshAcc01,OSThread=8384,t:clientID=121,t:applicationName=Designer,t:computerName=BET-C,t:connectID=103,SessionID=1,Usr=root,DBMS=DBMSSQL,DataBase=localhost\Dev1cFreshAcc01,Trans=0,dbpid=56,Sql=drop table dbo._DataHistorySettingsNG
