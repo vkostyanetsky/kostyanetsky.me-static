@@ -110,7 +110,7 @@
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
       data-page="1"
-      data-total-notes="2"
+      data-total-notes="3"
       data-total-pages="1"
     >
       <a id="top" class="block scroll-mt-24"></a>
@@ -292,6 +292,13 @@
         </button>
         
         <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
           data-chip="optimization"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -303,20 +310,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Python
-        </button>
-        
-        <button
-          data-chip="javascript"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Javascript
-        </button>
-        
-        <button
-          data-chip="nodejs"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Node.js
         </button>
         
         <button
@@ -359,6 +352,60 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.me/notes/timesheet-auto-refresh"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Auto-Refresh for Timesheet
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>26 Jule 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>I spontaneously returned to my old <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" rel="noopener noreferrer" target="_blank">Obsidian plugin</a>, which takes the daily note for a given day and generates a list of tasks along with the time spent on each one.</p>
+<p>The plugin had an original sin of a bug: whenever the note text changed, the plugin block would not refresh on its own. So you would add a task, change the time spent, or fix a description, while the report kept showing the old data. You had to either reopen the note itself or start editing the block and then cancel, just to trigger a manual render. It was annoying — and smelled suspiciously like reinventing the wheel.</p>
+<p>Now the plugin block automatically re-renders after changes — just the block, not the entire note. There is also a short delay after typing and an additional check: if the report has not actually changed, no render happens at all.</p>
+<p>I also wanted to update the dependencies while I was at it — it has been a year, after all — but... You know, NPM remains its usual shining example of order and discipline. Every tiny library for adding two numbers inevitably depends on ten others, every package is somehow a second cousin twice removed of the fence next door, and you cannot replace a single one without consequences: <code>npm audit</code> complains whenever someone sneezes. So, at first glance, I could not figure out how to update the dependencies reliably without breaking the plugin itself.</p>
+<p>Oh well. That is a problem for tomorrow me.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -444,12 +491,6 @@
                 <div class="flex flex-wrap gap-2">
                     
                     <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Blog</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="nodejs" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Node.js</button>
                     
                 </div>
                 
