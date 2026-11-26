@@ -3,7 +3,7 @@ FROM _datahistorymetadata AS metadata
         INNER JOIN (
             SELECT _metadataid, _fld626, MAX(_metadataversionnumber) AS "_version"
             FROM   _datahistorymetadata
-            WHERE  _fld626 IS NOT NULL
+            WHERE  _fld626 IS NOT NULL AND _isactual = True
             GROUP  BY _metadataid, _fld626
         ) AS max_versions
         ON 
